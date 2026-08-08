@@ -1,0 +1,10 @@
+# Context protection (AGENTS.md §9): agents do not auto-read these
+archive/
+tools/render/fonts/
+**/outputs/
+**/renders/
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.webp
+**/*.zip
