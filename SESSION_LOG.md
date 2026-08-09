@@ -680,3 +680,38 @@ in `_inbox/` as new weights needing their own SMOKE run.
 **Queue:** PENDING-P-009/010/011 CLOSED. New: **PENDING-P-012** (OPEN, canon/sources — where
 artwork-borne labels live; ~75 map names have no second channel at all) and **PENDING-P-013**
 (OPEN, scholarship — six curation facts the units record that step ② must rule on).
+
+## 2026-08-09 · Cowork · Spot-check depth and the step-② rulings (CD-048, CD-049)
+
+**Depth (CD-048).** SOURCE_POLICY v1.2. §7.4: where `source_textcheck.py` reports Section B
+clean **and** every word-level disagreement is provenance-proven, the spot-check is **one
+sampled passage per unit — the longest**, with the machine diff standing as the second and
+third channel. The conditions are conjunctive and read off an executed run; a unit that fails
+either returns to the older depth. §2.3 carries a supersede note and is not edited.
+
+§7.5: artwork-borne text — Unit 4's maps hold ~75 place names of which the text layer has **not
+one character** — lives in the names/labels section, flagged raster-only, outside the
+cross-checked body, **checked in full and never sampled**, and **any consumer citing it inherits
+the flag**. Made executable the same day: SIGNOFF now **FAILs** an extraction that records such
+text without a full-check row, with a sixth seeded selftest, and the selftest fixture now prefers
+a file carrying that content so the seed can bite. Otherwise the depth ruling would have been a
+paragraph, and the one kind of content no machine can corroborate would have been the one kind
+nobody was obliged to look at.
+
+All 19 sign-off tables rewritten, the sampled passage chosen mechanically as each unit's longest
+transcribed section. Units 4 and 11 carry the extra full-check row.
+
+**Step ② rulings (CD-049).** PENDING-P-013 closed in six parts, written into
+`MODEL_PAPERS_POLICY.md` §8 (v1.1) because step ② is where they apply, and the poem ruling into
+`MarkLogic_ENG_Spine.md` under `ENG-S03` as a forward-only application note with no mark changed.
+**No extraction was edited.** The shape they share: *a source records what the book says; canon
+governs what the school prints* — deer stimulus substituted downstream, MCQs not mirrored,
+"Quater" kept in the source and "Quarter" printed, lift-the-line not mirrored, Bidhan replaced
+under the existing CD-042 name rule, and S03's passage on Units 10 and 15 **is the poem**.
+
+**Gates before sync:** `canon_check.py` CLEAN (0 fail) · `tools_check.py` CLEAN (0 fail) ·
+`source_check.py --selftest` PASS (6 seeds + control) · `source_textcheck.py --selftest` PASS ·
+full 20-unit sweep 20/20 PASS on RANGE/SLOTS/PAGES.
+
+**Queue: 0 OPEN.** Next session: C5 Bangla পাঠ ১–১২ and ২৪+ per §7.1, once the Principal stages
+the Bangla PDF in `_inbox/`.

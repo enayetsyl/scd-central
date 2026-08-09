@@ -1,7 +1,7 @@
-# SOURCE_POLICY — v1.1
+# SOURCE_POLICY — v1.2
 
 *Canon. Adopted v1.0 by Principal ruling 2026-08-09 (CD-037), superseding the v0.1 draft staged in `_inbox/`.*
-*v1.1 (CD-046) adds **§7 Amendments** — three Principal rulings made when the first extraction was built. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
+*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
 *Consumed by: question-banks · scholarship · class-tests · support-books.*
 *Cited, never copied (AGENTS.md §8).*
 
@@ -47,6 +47,10 @@ supplied list overturned two recorded `needs_review: false` entries.
 
 **Spot-check:** the Principal or the teacher confirms 2–3 sampled passages per book verbatim,
 and the sign-off is recorded in the file header.
+
+> **SUPERSEDE NOTE (CD-048).** The sampling depth in the line above is superseded by **§7.4**,
+> and artwork-borne text is governed by **§7.5**. The text stands as written; read §7.4/§7.5
+> for what is in force.
 
 ## 3. Rules
 
@@ -167,3 +171,39 @@ extraction on the text layer's authority, and a text-layer reading may not overr
 
 The extraction header records which class the source was, so a later reader knows which
 hazards applied.
+
+## 7.4 Spot-check depth — amends §2.3 (Principal ruling 2026-08-09, CD-048)
+
+§2.3 asks for 2–3 sampled passages per book. That was written when the human eye was the only
+check on the transcription. It no longer is.
+
+**Where `tools/audits/source_textcheck.py` reports Section B clean AND every word-level
+disagreement is provenance-proven as a decoder limit, the spot-check is ONE sampled passage per
+unit — the longest.** The machine diff stands as the second and third channel: Section B is
+what would catch a dropped or invented passage, and a clean Section B means no stretch of the
+book is unaccounted for in either direction.
+
+The conditions are conjunctive and are read off an executed run, never assumed. A unit whose
+Section B is dirty, or whose word-level disagreements have not been traced to the raw text
+layer, returns to the older depth — the ruling buys depth with evidence, and without the
+evidence there is nothing to buy it with.
+
+**Sign-off rows stay Principal-only.** Nothing here lets an agent sign, and
+`source_check.py`'s SIGNOFF check still reports PENDING rather than PASS until a human does.
+
+## 7.5 Raster-only content — adds to §2.2 (Principal ruling 2026-08-09, CD-048, closing PENDING-P-012)
+
+Some of a book's text is drawn, not typeset: map labels, diagram callouts, words inside artwork.
+Unit 4's two maps carry about seventy-five place names of which the PDF text layer holds **not
+one character**.
+
+- Such text lives in the unit's **names/labels section, explicitly flagged raster-only**, and
+  **outside the cross-checked body** — otherwise the cross-channel check reports dozens of
+  correct words as missing and its output stops being read.
+- It is **single-channel and Principal-verified**: the machine has nothing to say about it, so
+  §7.4's one-sample depth does **not** apply. **The full set is checked by eye, not sampled.**
+  `source_check.py` fails an extraction that records artwork-borne text without a full-check
+  row in its sign-off table.
+- **Any consumer citing those labels inherits the flag.** A question built on a map label rests
+  on one human reading; that fact travels with the citation rather than being lost at the
+  boundary between canon and the workstream that uses it.

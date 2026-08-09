@@ -143,18 +143,33 @@ def check_pages(text, scope, offset_rows):
                     f"{len(inline)} in-body refs monotonic within {first}-{last}")
 
 
+RASTER_ONLY = ("টেক্সট-লেয়ারে নেই", "## ছবির ভেতরের লেখা")
+RASTER_ROW = ("ছবির", "মানচিত্র", "লেবেল")
+
+
 def check_signoff(text):
+    """SOURCE_POLICY §5 sign-off, at the depth CD-048 sets.
+
+    One sampled passage is enough where the machine diff stands as the second and third
+    channel — but **artwork-borne text has no second channel at all**, so a file that records
+    any must carry its own full-check row. Without this the depth ruling would be a paragraph
+    in a policy: the one kind of content nothing else covers would be the one kind nobody was
+    obliged to look at.
+    """
     m = re.search(r"^## স্পট-চেক সই.*?(?=^---|\Z)", text, re.M | re.S)
     if not m:
         return "FAIL", "no spot-check sign-off section in header"
     block = m.group(0)
-    rows = [l for l in block.splitlines() if l.strip().startswith("|") and "—" in l or
-            (l.strip().startswith("|") and re.search(r"\|\s*[^|\s—-]+\s*\|\s*\d", l))]
     data = [l for l in block.splitlines()
             if l.strip().startswith("|") and not re.match(r"^\|[\s\-:|]+\|$", l.strip())]
     data = [l for l in data if "যাচাই করার অংশ" not in l]
     if not data:
         return "FAIL", "sign-off table has no rows"
+    if any(k in text for k in RASTER_ONLY) and not any(
+            any(k in l for k in RASTER_ROW) for l in data):
+        return "FAIL", ("this extraction records artwork-borne text, which the cross-channel "
+                        "check cannot corroborate, but the sign-off table has no full-check "
+                        "row for it (CD-048, SOURCE_POLICY §7.5)")
     unsigned = [l for l in data if re.search(r"\|\s*—\s*\|\s*—\s*\|", l)]
     if unsigned:
         return "PENDING", (f"{len(unsigned)} of {len(data)} spot-check row(s) unsigned — "
@@ -207,9 +222,13 @@ def selftest():
     # The fixture is whichever C5 English extraction is on disk — Unit 1 moved out of _wip
     # when it was signed off, and a selftest that dies because its fixture was promoted is a
     # selftest nobody runs.
-    src = next((p for p in sorted(
-        list((REPO / "canon/sources/c5/english").glob("C5_ENG_Source_*.md")) +
-        list((REPO / "canon/_wip/c5-english").glob("C5_ENG_Source_*.md")))), None)
+    pool = sorted(list((REPO / "canon/sources/c5/english").glob("C5_ENG_Source_*.md")) +
+                  list((REPO / "canon/_wip/c5-english").glob("C5_ENG_Source_*.md")))
+    # Prefer a fixture that records artwork-borne text, so the SIGNOFF seed has something to
+    # bite on. A seed that cannot bite is reported BROKEN, never quietly skipped.
+    src = next((p for p in pool
+                if any(k in p.read_text(encoding="utf-8") for k in RASTER_ONLY)),
+               pool[0] if pool else None)
     if src is None:
         print("SELFTEST: no extraction on disk to mutate — nothing to prove against")
         return 2
@@ -241,8 +260,15 @@ def selftest():
         last = hits[-1]
         return t[:last.start()] + "(পৃষ্ঠা ১" + t[last.end():]
 
+    def drop_raster_row(t):
+        # Only bites on a file that records artwork-borne text; reported BROKEN otherwise,
+        # which is the honest outcome rather than a silent pass.
+        return re.sub(r"^\|[^\n]*(ছবির|মানচিত্র|লেবেল)[^\n]*\|\s*—\s*\|\s*—\s*\|\n", "", t,
+                      count=1, flags=re.M)
+
     seeds = [
         ("RANGE  · the stated unit has no section", bump_unit),
+        ("SIGNOFF· raster-only content with no full-check row", drop_raster_row),
         ("SLOTS  · one spine slot dropped from the cross-reference", drop_slot),
         ("PAGES  · offset broken on one row", break_offset),
         ("PAGES  · in-body page reference outside the stated range", page_out_of_range),
@@ -268,6 +294,7 @@ def selftest():
                 rs.append(check_range(text, scope)[0])
                 rs.append(check_pages(text, scope, parse_offset_table(text))[0])
             rs.append(check_slots(text, cls_subj[1])[0])
+            rs.append(check_signoff(text)[0])
             red = "FAIL" in rs
             print(f"[{'RED    ' if red else 'MISSED '}] {label}")
             ok = ok and red
@@ -276,7 +303,7 @@ def selftest():
         p.write_text(good, encoding="utf-8")
         scope = parse_scope(good)
         rs = [check_range(good, scope)[0], check_pages(good, scope, parse_offset_table(good))[0],
-              check_slots(good, "ENG")[0]]
+              check_slots(good, "ENG")[0], check_signoff(good)[0]]
         clean = "FAIL" not in rs
         print(f"[{'CLEAN  ' if clean else 'FALSE+ '}] control · unmutated file must not be red")
         ok = ok and clean

@@ -1,7 +1,7 @@
-# MODEL_PAPERS_POLICY — v1.0
+# MODEL_PAPERS_POLICY — v1.1
 
-*Workstream: scholarship. Adopted by Principal ruling 2026-08-09 (CD-038),
-superseding the v0.1 draft staged in `_inbox/`.*
+*Workstream: scholarship. Adopted v1.0 by Principal ruling 2026-08-09 (CD-038), superseding the
+v0.1 draft staged in `_inbox/`. v1.1 adds **§8**, the six C5 English source-fact rulings (CD-049).*
 *Authority: `canon/marklogic/` — cited, never copied (AGENTS.md §8).*
 
 ## 1. Purpose
@@ -71,3 +71,26 @@ stated reason.
 No model paper has been produced. `audits/gates.py` in this workstream has **no gates defined and
 therefore FAILS by design** (the `_template` behaviour: a workstream with zero gates cannot declare
 anything final). The gates in §5 are written when the first C5 model paper is built.
+
+## 8. C5 English — six source facts, and what step ② does with each (CD-049)
+
+The C5 English extractions record the book as printed, because that is what an extraction is
+for (`canon/sources/SOURCE_POLICY.md` §3). Six of the things they record would otherwise be
+rediscovered — or worse, silently copied — when the first model paper is built. The Principal
+ruled all six on 2026-08-09. **The extractions are not edited by any of these rulings.**
+
+**The line that runs through all six: a source records what the book says; canon governs what
+the school prints.** Every ruling below is applied on the output side.
+
+| # | What the source records | What step ② does |
+|---|---|---|
+| 1 | **Unit 20's only writing stimulus is six pictures of a deer** (printed 106–107). | Source keeps it as-is. The model paper **substitutes a REF-1-compliant stimulus**. **C-05 governs outputs, never the source record** — an extraction that self-censored would misreport the book and break the spot-check. |
+| 2 | **Units 14 and 17 open with five-item MCQ exercises.** | **Not mirrored.** MarkLogic retired MCQ from English at every class (`MarkLogic_ENG_Spine.md` — fourteen written slots, no MCQ anywhere). The book's MCQs are **classwork-only history**. |
+| 3 | **"Quater past" / "Quater to" printed twice** on printed 43 — the page `ENG-S11` draws on, which spells *quarter* correctly three times elsewhere. | Source keeps the printed typo. **Every authored item uses "Quarter past".** A printed typo is never canon for output. |
+| 4 | **Unit 7's 2.1 is four-fifths lift-the-line** — answers copyable verbatim from the passage. | **Not mirrored.** `MarkLogic_QuestionPolicy.md` domain ratios govern what the paper asks. |
+| 5 | **Unit 17's only named character is Bidhan.** | The **CD-042 name rule** applies unchanged: replaced from the REF-2 C5 pool in all authored items, **exercise structure kept**. Not a new ruling — the existing one, applied. |
+| 6 | **Unit 15 is a poem with no prose passage** (and Unit 10 likewise). | **S03's passage IS the poem.** Chapter-bound means chapter-bound: S03's 18 marks on Unit 15 are set on the poem itself. Recorded forward-only as an application note under `ENG-S03` in `MarkLogic_ENG_Spine.md`, where an author reads what the passage must be — no mark in that table changed. |
+
+Rows 1, 3 and 5 share one shape worth stating for the next subject: **where the book and canon
+disagree, the extraction records the book and the paper follows canon.** Neither file is bent to
+match the other, and the disagreement stays visible in both.

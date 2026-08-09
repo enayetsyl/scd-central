@@ -60,13 +60,17 @@ word · dropped table row): all three caught.
 
 ## Open / next
 
-1. Principal spot-checks Units 2–20 (three sampled passages named in each file header), signs,
-   then "done" → promote.
-2. **PENDING-P-012 (OPEN, canon/sources)** — where artwork-borne labels live. ~75 map names in
-   Unit 4 alone have no text layer at all and rest on the spot-check only.
-3. **PENDING-P-013 (OPEN, scholarship)** — six curation facts recorded in the units that step ②
-   must rule on before the first model paper.
-4. Then C5 Bangla remainder (পাঠ ১–১২, ২৪+), per SOURCE_POLICY §7.1.
+1. Principal spot-checks Units 2–20 and signs, then "done" → promote. **Depth per CD-048:
+   one sampled passage per unit — the longest, named in each file's header — because Section B
+   is clean and every word-level disagreement is provenance-proven. Units 4 and 11 additionally
+   carry a full-check row for their artwork-borne text, which no machine can corroborate; the
+   gate FAILs either of them without it.**
+2. Then **C5 Bangla পাঠ ১–১২ and ২৪+** per SOURCE_POLICY §7.1 — next session, once the Principal
+   has staged the Bangla PDF in `_inbox/`. Expect §7.5 to bite there: a Bangla book carries maps
+   and figure labels too, and CD-029 already proved that book's script needs the raster.
+
+**Queue is clear.** PENDING-P-009/010/011 closed at CD-046, PENDING-P-012 at CD-048,
+PENDING-P-013 at CD-049. Nothing OPEN blocks this workstream.
 
 ## Housekeeping
 
