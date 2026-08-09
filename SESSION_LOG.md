@@ -175,3 +175,32 @@ One block per agent session, appended at "save state and sync". Format:
   Evidence must come from the **rasterised pdftoppm page, not the .docx XML**: a correct
   codepoint in the XML can still render as a box, which is precisely what this test exists to
   catch. Carried: **UP-001** (upstream), **WATCH review** mid-December 2026.
+
+## 2026-08-09 · tools/render (Step 2 item 2) · Principal · cowork
+- Did: Vendored `tools/render/` — 6 fonts (Regular + Bold only; Naskh Medium/SemiBold skipped),
+  `render_plan.py`, and the two reference CTs. **Authored `ct_docx.py`**, a class-test
+  Markdown→.docx generator with font family as configuration that routes every character to a
+  font which actually covers it. Promoted `glyph_probe.py` out of `_wip`. Ran both smoke tests
+  end-to-end and recorded the proven glyph set in `tools/render/SMOKE.md`.
+- Decisions logged: **CD-019** — R-2 (fonts as supplied; **no Nikosh**, so printed CTs will not
+  match the NCTB face, accepted) and R-1 (`✅`→`✓`, `⚠`→`দ্রষ্টব্য:`, `✓` kept and routed to an
+  explicit symbol run; `→` routed by the same mechanism, an extension of that ruling).
+  Proven glyph set: Bengali, Arabic-with-harakat, em-dash/ellipsis and Latin all render;
+  **🔴 🟦 ✅ ⚠ tofu and must not appear in CT templates** (constrains templates, not canon).
+  **CD-014 condition (1) SATISFIED for the docx path** — ayah rendered, RTL + joining + harakat
+  eyeball-verified on the raster; condition (2) is a human gate and stays open, so
+  `islamic-studies` remains on `ARABIC-SLOT`.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 2 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 3 warn)**. `tools_check` went **red once during the work** — it demanded a
+  `SMOKE.md` for `fonts/` after font rows were added to the tool manifest. Correct behaviour:
+  fonts are data, not tools. Rows removed; the manifest now states rows are executable tools
+  only, and font presence is asserted at runtime by the scripts instead.
+- Open items / PENDING-P raised: none for the Principal. Three carried in
+  `tools/_wip/STATE.md`: (1) **`render_plan.py` is vendored but UNPROVEN** — no P03 plan JSON,
+  never executed, row left PENDING; (2) **⚑ gate blind spot** — `tools_check.py` warns when a
+  PENDING file is missing but goes silent once it is present-yet-unrun, so a vendored-but-unproven
+  tool gives no signal at all; proposed fix is a third status, not implemented because changing
+  gate semantics is a decision row, not a quiet edit; (3) **Nikosh absent** — if NCTB-matching
+  print matters, sourcing it means re-proving the path, since CD-018 proves per render path.
+  Also recorded: **fonts must be installed via `fc-cache`, not merely vendored** — LibreOffice
+  substituted silently on the first run and would have passed a careless reading.

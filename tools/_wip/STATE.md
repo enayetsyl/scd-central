@@ -88,9 +88,129 @@ for one term. Old SLOT summary corrected on three of its four items in the CD-01
 Harness gap logged as **UP-001** (`tools/hub-export/UPSTREAM_ISSUES.md`) for `scd-hub`'s own
 D-series — **not patched locally**, the harness is supersede-only (CD-013).
 
+## Session 2026-08-09 (later) — render vendoring ATTEMPTED, BLOCKED on inputs
+
+`_inbox/` contained **only the 5 support-books files held for Step 3**. No fonts, no reference
+CTs, no `render_plan.py`; `uploads/` and `outputs/` were empty and no font file exists anywhere
+in the workspace. Nothing was vendored and no MANIFEST row was flipped.
+
+**Toolchain verified present** (this was the other unknown, and it is now closed):
+
+| Tool | Version |
+|---|---|
+| node / npm | v22.22.3 / 10.9.8 |
+| LibreOffice (`soffice`) | 26.2.4.2 |
+| poppler (`pdftoppm`, `pdffonts`, `pdftotext`) | present |
+| python-docx, fontTools | present (fontTools 4.63.0) |
+
+⚠️ **The sandbox has no Bengali or Arabic fonts** — only Latin/CJK Noto and DejaVu. `apt-get` is
+not permitted (no root). So the vendored fonts are not merely a convenience: **without them
+nothing Bengali can render here at all.** This also means the smoke test cannot be dry-run
+against a substitute.
+
+### Built while blocked: `tools/_wip/glyph_probe.py`
+
+The instrument CD-018 requires ("each render path proves its own glyph set empirically").
+Not promoted to `tools/render/` — it is `_wip` until it runs against the real vendored fonts.
+Three independent signals, because no single one is trustworthy:
+
+1. **COVERAGE** (fontTools cmap) — definitive: a missing cmap entry *is* tofu.
+2. **SUBSTITUTION** (pdffonts) — reveals LibreOffice fallback.
+3. **RASTER** (pdftoppm PNG) — for the human eyeball CD-014 requires on Arabic.
+
+**Self-validated on DejaVu Sans, and it earned its design.** Two findings:
+
+- **The text-layer check is invalid, demonstrated not asserted.** `pdftotext` returned
+  perfectly correct Bengali from a page that renders as solid tofu boxes — confirmed by eye on
+  the raster. Anything that verified via .docx XML or text round-trip would have reported a
+  clean pass on a completely broken page.
+- **Signal 2 is weaker than expected.** With glyphs missing, `pdffonts` still listed only the
+  requested font and flagged no substitution. So **coverage + raster are load-bearing;
+  substitution is supplementary.** Do not rely on it alone.
+
+**Early result on the legend glyphs, independent of the vendored fonts:** DejaVu covers
+**★ ↑ ↓** and both tier-3 WATCH characters (**—** and **…**), but does **not** cover
+**🔴 (U+1F534)** or **🟦 (U+1F7E6)** — those are colour-emoji codepoints. If Nikosh and Noto Sans
+Bengali also lack them (very likely — text fonts rarely carry emoji), then under CD-018 the
+finding is: **CT templates must not carry 🔴/🟦**, and the canon legend stays as it is. Not
+concluded yet — it needs the real fonts.
+
+## Probe results 2026-08-09 — fonts + reference CTs received, BOTH proofs run
+
+Inputs received: 8 fonts (NotoSerifBengali ×2, NotoSerif ×2, NotoNaskhArabic ×4), two reference
+CTs (`C5_Bangla_ClassTest_Ch19.md`, `Ch20.md`), `render_plan.py`. **Nothing vendored yet** — the
+findings below need rulings first. Fonts installed to the sandbox font path (`~/.local/share/fonts`
++ `fc-cache`); without that step LibreOffice silently falls back and signals 2–3 are void.
+
+### Proven glyph set — docx → LibreOffice → pdftoppm, eyeball-verified on raster
+
+| | Result |
+|---|---|
+| Bengali: numerals, যুক্তবর্ণ, কারচিহ্ন, special marks | ✅ correct (Noto Serif Bengali) |
+| **Arabic incl. harakat — RTL + joining** | ✅ **correct (Noto Naskh Arabic)** |
+| Em-dash, ellipsis (tier-3 WATCH) | ✅ correct |
+| Latin + digits | ✅ correct |
+| 🔴 U+1F534 · 🟦 U+1F7E6 | ❌ **TOFU — empty boxes on the page** |
+| ✓ U+2713 · ✅ U+2705 · → U+2192 · ⚠ U+26A0 | ❌ **TOFU** |
+| ★ U+2605 · ↑ U+2191 · ↓ U+2193 | ⚠ render only via DejaVu fallback, visually collided |
+
+### CD-014 condition (1): SATISFIED for the docx path
+
+Arabic ayah rendered and eyeball-verified: RTL correct, letters joined, diacritics positioned.
+Font: **Noto Naskh Arabic**. Condition (2) — verbatim source with `source_note`, আলিম-reviewed —
+is a human gate and remains open. islamic-studies stays on `ARABIC-SLOT` until (2) is met.
+
+### ⚑ Finding R-1 — the reference CTs use glyphs that tofu
+
+`✓` appears in **student-facing** text: *"সঠিক উত্তরটিতে টিকচিহ্ন (✓) দাও"* (Ch19 Q1, Ch20).
+`→` and `✅`/`⚠` appear in the teacher section. All tofu in this path.
+Under **CD-018** this constrains the template, not canon. Needs a ruling — options: substitute a
+covered character (e.g. `(টিক)` or a Bengali-covered mark), or add a symbol fallback font to the
+render path. **The generator cannot be finalised until this is decided — `✓` is in the template.**
+
+### ⚑ Finding R-2 — font supply differs from the checklist
+
+Checklist and `tools/render/README.md` specify **Nikosh + Noto Sans Bengali**. Supplied:
+**Noto *Serif* Bengali**, and **no Nikosh at all**. Noto Serif Bengali covers everything Bengali
+and renders correctly, so this is not a defect — but Nikosh is the Bangladesh government/NCTB
+standard face, so the printed CT will not match NCTB's look. Confirm the substitution is intended.
+
+## R-1 / R-2 RULED 2026-08-09 → CD-019 · `tools/render/` VENDORED AND PROVEN
+
+Fonts vendored (Regular + Bold only; Naskh Medium/SemiBold skipped, left in `_inbox/`).
+`render_plan.py` vendored. `ct_docx.py` authored against both reference CTs, font family as
+config. `glyph_probe.py` promoted out of `_wip` to `tools/render/`. Both smoke tests run
+end-to-end; proven glyph set and the font-install prerequisite recorded in
+`tools/render/SMOKE.md`. **CD-014 condition (1) satisfied for the docx path.**
+
+## Open items from this session
+
+1. **`render_plan.py` is vendored but UNPROVEN** — no P03 plan JSON was supplied, so it has
+   never been executed. Its MANIFEST row stays PENDING. Needs a plan JSON to smoke-test.
+2. **⚑ Gate blind spot found.** `tools_check.py` warns when a PENDING row's file is *missing*,
+   but goes silent once the file is *present yet unproven* — exactly `render_plan.py`'s state.
+   A vendored-but-unrun tool currently produces no signal at all. Proposed fix: a third status
+   (e.g. `VENDORED`) that warns until the folder's `SMOKE.md` names the file. Not implemented —
+   changing gate semantics is a decision row, not a quiet edit.
+3. **Nikosh absent (R-2, accepted).** Printed CTs will not match the NCTB face. If that matters
+   for parent- or board-facing print, Nikosh has to be sourced and the path re-proven —
+   CD-018 proves per render path, and a font change is a new path.
+
 ## Blockers
 
-None in Step 2.
+None. Step 2 remaining: `tools/images/`; `tools/assets/` DEFERRED.
+
+Earlier input list (now satisfied except as noted):
+
+1. **Font files** — Nikosh + Noto Sans Bengali (`.ttf`/`.otf`). Nothing Bengali renders without them.
+2. **Reference CTs** — the produced class tests the generator is to be authored against.
+   Authoring it without them would be improvising a format (AGENTS.md §2: agents never improvise).
+3. **`render_plan.py`** (P03) and the existing Node docx scripts, if they are to be vendored
+   rather than written fresh.
+4. **For the CD-014 Arabic proof:** confirmation of which font is intended to carry Arabic.
+   Neither Nikosh nor Noto Sans Bengali covers Arabic script, so a third font (e.g. a Noto
+   Naskh Arabic) is required — or the proof cannot pass and islamic-studies stays on
+   `ARABIC-SLOT`.
 
 New, non-blocking: **PENDING-P-003** — CD-012 makes Arabic script RED everywhere, but
 islamic-studies and the Arabic subject will need it. Nothing is authored there yet.
