@@ -387,3 +387,18 @@ One block per agent session, appended at "save state and sync". Format:
   5-period re-cut that supersedes D-044's 8-period v2 and retires its S07–S08 locks. It takes 045
   on its own row rather than being folded into 044; the other five mint nothing. All four plan
   artifacts are now proven end-to-end.
+
+## 2026-08-09 · lesson-plans (OVERRIDE ruling) · Principal · cowork
+- Did: Recorded the C2 MATH U05 override ruling as **D-PROJ03-047** and folded
+  `D-PROJ03-OVERRIDE-2026-07-26` into the numbered sequence, so nothing sits outside it. Register
+  now continuous to **D-047**; new work continues at 048. REGISTRY and LOCAL.md updated.
+- Decisions logged: **CD-032** — the ruling in full, with its execution explicitly marked owed.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 4 warn)**. No chain run: there was no artifact to run.
+- Open items / PENDING-P raised: ⛔ **D-PROJ03-047's execution is blocked — the C2 MATH U05
+  Chapter Plan is not in this repo, in either byte-set.** Step 4 imported no C2 MATH artifact at
+  all, so v3 could not be cut from the current bytes and the pre-override bytes could not be
+  archived or declared lost. **Nothing was fabricated and no archive was claimed that does not
+  exist** — the ruling itself warned against exactly that. On import the sequence is: cut v3 →
+  archive-or-declare-lost the pre-override set → run v3 through the full chain. **B-LP.1c**
+  remains the one open brief awaiting a ruling.

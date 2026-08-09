@@ -19,12 +19,12 @@ three handoffs, `validate_plan.py`.
 
 **D-PROJ03-###**, log at `governance/PROJECT03_DECISIONS.md`.
 
-**Register reconstructed and continuous to D-PROJ03-046** (CD-031). The body had ended at 042
+**Register reconstructed and continuous to D-PROJ03-047** (CD-031, CD-032). The body had ended at 042
 while 043/044 were cited as applied but never written, and 045 was claimed by six handoffs.
 043, 044 and 045 are now written from their application citations, marked *reconstructed from
 applied citations — Principal re-approved*; **only one of the six 045 claims had actually been
 applied**, and it holds 045 on its own row rather than being folded into 044. The other five
-minted nothing. New work continues at **047**.
+minted nothing. New work continues at **048**.
 
 ## Canon citations used
 
@@ -73,9 +73,11 @@ so the two can never silently diverge — the divergence that would otherwise be
   repo**, so the sweep cannot start here yet.
 - ~~U20 Chapter Plan newline~~ — **CLOSED**: superseded to **v4** (D-PROJ03-046), v3 archived,
   v4 clears the full chain. Never normalised in place.
-- **`D-PROJ03-OVERRIDE-2026-07-26`** — C2 MATH U05 Chapter Plan corrected in place with no
-  version bump, so that v2 byte-set is non-unique, disambiguated only by a `footer.version_log`
-  row.
+- **C2 MATH U05 v3 re-issue — RULED, EXECUTION OWED (D-PROJ03-047).** The 2026-07-26 in-place
+  override is folded into the numbered register and the name "v2" is retired as ambiguous.
+  ⚠️ **Neither byte-set is in this repo**, so v3 cannot be cut and the pre-override set cannot be
+  archived or declared lost yet. On import of the C2 MATH U05 Chapter Plan: cut v3 from the
+  current bytes, archive-or-declare-lost the pre-override set, run v3 through the full chain.
 - **B-LP.1c contradiction** — one handoff records it resolved project-wide; every other treats
   it as open. Escalated on the TODO watch-list; the P00 patch is not applied.
 

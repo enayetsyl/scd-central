@@ -55,7 +55,23 @@ They close at Step 4b / question-banks, not here.
 | U20 newline | **Superseded to v4**, v3 archived, v4 clears the full chain (D-PROJ03-046) |
 | D-038 sweep | Deferred — stays a LOCAL.md debt row; neither standalone is in this repo |
 | Packs/handoffs | **Reference imports.** JSON-source-of-record governs **Plans only**; scope line written into LOCAL.md |
-| OVERRIDE · B-LP.1c | Briefs given to the Principal; awaiting ruling |
+| OVERRIDE | **Ruled → D-PROJ03-047 / CD-032. Execution OWED — neither byte-set is in this repo** |
+| B-LP.1c | Brief given; awaiting ruling |
+
+### ⛔ D-PROJ03-047 cannot be executed here
+
+The ruling is binding and recorded: re-issue the post-override bytes as **v3**, retire the name
+**v2** as ambiguous, archive the pre-override bytes **if they survive** or record them **lost**
+if they do not, and fold `D-PROJ03-OVERRIDE-2026-07-26` into the numbered sequence (done).
+
+**But the C2 MATH U05 Chapter Plan is not in this repo — neither byte-set.** Step 4 imported no
+C2 MATH artifact at all. So v3 could not be cut, the pre-override set could not be archived or
+declared lost, and no chain run was possible. **Nothing was fabricated**, and no archive was
+claimed that does not exist — which is the part of the ruling that would have been easiest to
+quietly get wrong.
+
+**On import:** cut v3 from the current bytes → archive-or-declare-lost the pre-override set →
+run v3 through the full chain → add it to the proven set.
 
 All four plan artifacts are now proven end-to-end.
 

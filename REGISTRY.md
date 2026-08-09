@@ -9,7 +9,7 @@ One row per workstream. Adding a workstream = copy `workstreams/_template/` + ad
 | Class Test Generator | `workstreams/class-tests/` | MIGRATING | CT-D-### (new) | 2 | Claude project "class test question" |
 | Scholarship / MarkLogic | `workstreams/scholarship/` | MIGRATING | CD-### via canon (reader files stay history-free) | 1 (canon extract) | Scholarship Claude project |
 | Support Books (সহায়িকা) | `workstreams/support-books/` | **LIVE** | D-### (imported at D-019) | 3 ✅ | SB-Governance + SB-P Production projects |
-| Lesson Plans (P03) | `workstreams/lesson-plans/` | **LIVE** | D-PROJ03-### (register ends D-042; 043/044 cited-but-unwritten) | 4 ✅ | P03 project |
+| Lesson Plans (P03) | `workstreams/lesson-plans/` | **LIVE** | D-PROJ03-### (reconstructed; register continuous to D-047) | 4 ✅ | P03 project |
 | Question Banks (P04) | `workstreams/question-banks/` | PLANNED | QB-D-### (new) | 4 | P04 project |
 | English Programme (EIA + phonics) | `workstreams/english-programme/` | PLANNED | EP-D-### (new) | 5 | recovered old-account instructions |
 | Islamic Studies C1–5 | `workstreams/islamic-studies/` | GREENFIELD | IS-D-### (new) | 5 | none (new) |
