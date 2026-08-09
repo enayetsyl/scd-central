@@ -19,12 +19,12 @@ three handoffs, `validate_plan.py`.
 
 **D-PROJ03-###**, log at `governance/PROJECT03_DECISIONS.md`.
 
-**Register reconstructed and continuous to D-PROJ03-050** (CD-031…CD-035). The body had ended at 042
+**Register reconstructed and continuous to D-PROJ03-051** (CD-031…CD-036). The body had ended at 042
 while 043/044 were cited as applied but never written, and 045 was claimed by six handoffs.
 043, 044 and 045 are now written from their application citations, marked *reconstructed from
 applied citations — Principal re-approved*; **only one of the six 045 claims had actually been
 applied**, and it holds 045 on its own row rather than being folded into 044. The other five
-minted nothing. New work continues at **051**.
+minted nothing. New work continues at **052**.
 
 ## Canon citations used
 
@@ -86,8 +86,9 @@ have a same-numbered `D-PROJ03` row**, so the bare form is ambiguous at each, in
 D-045, D-046, D-049 and the heaviest users D-022 (103×), D-046 (81×), D-049 (80×). **Always check
 both registers; never read the series off the bare string.**
 
-⚠️ **`D-051` DANGLES** — cited **93 times**, present in **neither** register. §3 runs to D-053 but
-holds only 52 rows, so D-051 has no body. Cited-but-unwritten master row; **not reconstructed**.
+✅ **`D-051` RECONSTRUCTED** (CD-036) — Homework Question Pool → Project 04, superseding D-029.
+Recorded in the **ERRATA section** of `references/PROJECT00_README.md`, never in §3. **All 36 bare
+master citations now resolve: 2 cleanly · 33 via the two-register rule · 1 reconstructed.**
 
 ## Known debts
 

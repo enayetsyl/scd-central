@@ -11,8 +11,10 @@
 > **Cited, never continued from here.** New master rows belong to the future P00 fold-in
 > workstream, not to `scd-central`.
 >
-> ⚠️ **D-051 is missing from the sequence** — §3 runs D-001…D-053 with 52 rows and no D-051 body,
-> while the P03 files cite `D-051` 82 times. Batched for the Principal; **not reconstructed**.
+> ✅ **D-051 — RECONSTRUCTED 2026-08-09 (CD-036).** §3 runs D-001…D-053 but carries no D-051 body.
+> The row is reconstructed from **78 substantive applied citations**, Principal-approved, and
+> recorded in the **ERRATA section at the foot of this file** — never inserted into §3, which is
+> read-only here. **All 36 bare master citations in the P03 corpus now resolve.**
 >
 > ⏳ **Pending against this register (D-PROJ03-048):** the **B-LP.1c** ruling — bismillah is
 > canonical in lesson-plan openings project-wide, followed by the objective cue; the two compose.
@@ -527,3 +529,20 @@ These will be migrated into the 8-Project structure on Day 2:
 | v1.40 | 2026-06-10 | **D-053 logged — Project 06 charter narrows to spec/design; SCD Hub software = tracker system-of-record + runtime.** Trackers run in the software, not spreadsheets; Project 06 specs them (PRD-per-tracker, software-adopted via ADR D-#22; consult-via-human). Amends D-PROJ06-001/-002, refines -003; ratifies two software requirements (6-stage HW/AS lifecycle; identity-bearing Complaint on the operational plane). Extends the D-052 owed-reword to REF-07/08's spreadsheet/register *runtime* wording. Master range **D-001 → D-053**. Companion: DECISIONS v1.55 (D-PROJ00-067), TODO v1.60, PROJECT06 README/DECISIONS/TODO v1.1, bridge handoff 2026-06-10. Header v1.39 → v1.40. | Claude (drafted); Principal (apply on confirm) |
 | v1.41 | 2026-07-16 | **REF-25 Paper Assembly Template Standard produced & LOCKED v1.0 (D-PROJ00-071; from Project 04 D-PROJ04-014) — version-log row only (local-only canonical reference; no §3 change).** The school exam-scheme record REF-09 §4.2 defers to — the §4 exam-scheme reconciliation (D-PROJ00-054 Open item) closes without a REF-09 supersede (option-b precedent D-PROJ00-010). One template per (class × subject × exam horizon); Annex A = 21 ANNUAL lane templates from the 2026 Sylhet finals; papers assembled template + Project-04 bank selection, never freehand (§3); format authority per lane = its uploaded 2026 final; no বিসমিল্লাহ header; legacy formats made bankable in Project 04 (Conventions v1.2 → v1.3, D-PROJ04-014). Kept in Project knowledge. **Master range unchanged (D-001 through D-053).** Cross-reference: `LOCKED_REF-25_Paper_Assembly_Template_Standard_v1_0.md`, `PROJECT00_DECISIONS.md` v1.59, `PROJECT00_TODO.md` v1.63, `PROJECT00_CROSS_PROJECT_INDEX.md` v1.54, `PROJECT00_GLOSSARY.md` v1.29. | Claude (drafted); Principal (apply on confirm) |
 | v1.42 | 2026-07-17 | **REF-26 Exam Anchor Set produced & LOCKED v1.0 (D-PROJ00-072; from Project 04 D-PROJ04-015) — version-log row only (local-only canonical living data reference; no §3 change).** The data companion to REF-25: all 21 uploaded 2026 Sylhet finals distilled into machine-checkable anchors (F/S/W/ADMIN); the Principal's substrate ruling (a) embedded; consumed by Project 04 Conventions v1.4 §9 step 8a — every chapter bank prints its anchor-coverage table at the Review Gate. Annual lane-replacement maintenance. Kept in Project knowledge. **Master range unchanged (D-001 through D-053).** Cross-reference: `LOCKED_REF-26_Exam_Anchor_Set_v1_0.md`, `PROJECT00_DECISIONS.md` v1.60, `PROJECT00_TODO.md` v1.64, `PROJECT00_CROSS_PROJECT_INDEX.md` v1.55, `PROJECT00_GLOSSARY.md` v1.30. | Claude (drafted); Principal (apply on confirm) |
+
+---
+
+## ERRATA — reconstructed rows (CD-036)
+
+Rows cited across the corpus but **absent from §3's decision table**. They are recorded **here,
+not in §3**: this file is a **read-only reference import** and §3 is never continued from
+`scd-central`. At P00's migration these fold into §3 proper.
+
+| ID | Date | Decision | Status |
+|---|---|---|---|
+| **D-051** | 2026-05-31 | **Homework Question Pool placement moves to Project 04 — supersedes D-029.** The Pool is no longer inline in the lesson-plan file: it lives in Project 04, and plans **link by topic tag**. **Questions are not printed in the plan.** The Session-Map homework cell carries **topic + count** from the Project 04 register; the daily time cap stays per session. The Spine's eighth field "Homework Questions" is **removed**, leaving a **seven-field Spine**. Fires the rebuild cascade: REF-02 v1.5→v1.6 (§2.8 Pool field retired), REF-08 v1.2→v1.3 (§4 placement), Production Core v2→v3, Session-Plan Layout v8→v9, Chapter-Plan Layout v3.1→v3.2, Build Policy v1→v1.1 (logged in P03 as D-PROJ03-020); Project 04 conventions locked (D-PROJ04-002). *Reconstructed from 78 substantive applied citations — Principal re-approved.* Corroborated by `D-PROJ00-064` ("Executes master D-051 … supersedes D-029") and by §3's own **D-029**, which states the inline rule this supersedes. | **RECONSTRUCTED** 2026-08-09 |
+
+**Why this row went missing, and the precedent for restoring it.** `D-PROJ00-064` carries its own
+restoration note — *"this row was referenced in the v1.51 version-log but the decision-table row
+itself had not landed."* Project 00 hit exactly this failure before and fixed it by restoring the
+row from its citations. Same disease, same remedy, already sanctioned once in this corpus.

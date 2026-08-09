@@ -455,3 +455,20 @@ One block per agent session, appended at "save state and sync". Format:
   — the two C1 BAN standalones were searched for and not found; it reopens if they surface.
   One correction to my own method: an earlier regex used `D-0[0-9]{3}`, which demands four digits
   after `D-0` and silently matched nothing; caught by cross-checking against a visible §3 row.
+
+## 2026-08-09 · lesson-plans (D-051 reconstructed) · Principal · cowork
+- Did: Wrote the approved **D-051** row into the **ERRATA section** of
+  `references/PROJECT00_README.md` — never into §3, per the read-only rule — and flipped its
+  status **dangling → RECONSTRUCTED** in the file header, LOCAL.md and STATE.md.
+- Decisions logged: **CD-036** (canon) and **D-PROJ03-051** (workstream).
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 4 warn)**.
+- Open items / PENDING-P raised: none. **The master-citation sweep is closed: 36 of 36 —
+  2 resolve cleanly, 33 via the CD-034 two-register rule, 1 reconstructed.** D-051 =
+  Homework Question Pool → Project 04, superseding D-029; plans link by topic tag, questions are
+  not printed, and the Spine drops to seven fields. Reconstructed from **78 substantive
+  citations** (96 raw, less 14 boilerplate range statements and 4 rows written this session) and
+  corroborated twice from registers already in the repo — `D-PROJ00-064` and §3's own D-029.
+  **No divergence existed**, so nothing was synthesised. Precedent recorded in the errata:
+  `D-PROJ00-064` carries its own restoration note, so P00 hit this failure before and fixed it
+  the same way. Step 5 now needs only a **question-bank artifact**.

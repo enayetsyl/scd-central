@@ -23,13 +23,13 @@ applied citations; 046 = U20 supersede; 047 = C2 MATH override (parked); 048 = B
 | D-047 C2 MATH U05 | **PARKED** — surviving copy is pre-override, archived; post-override bytes **lost**; no v3 |
 | D-038 re-render sweep | **PARKED** — the two C1 BAN standalones were **searched for and not found** in the P03 project; **reopens if they surface**; scope now also normalises openings (D-048) |
 | B-LP.1c P00 patch | **pending-P00-fold-in** — approved in substance, applied at P00's migration |
-| Master D-series | **imported + swept (CD-035)** — 35/36 resolve; **`D-051` dangles, cited 93×** |
+| Master D-series | **imported + swept + closed (CD-035, CD-036)** — **36/36 resolve**; D-051 reconstructed into ERRATA |
 | Question-bank rows | 2 VENDORED-UNPROVEN rows await a question artifact |
 
 ## What Step 5 needs from the Principal
 
-1. **A ruling on `D-051`** — cited 93× and written nowhere. No reconstruction without it.
-2. **A question-bank artifact** — closes the last two VENDORED-UNPROVEN rows.
+1. **A question-bank artifact** — closes the last two VENDORED-UNPROVEN rows. *(D-051 is closed:
+   reconstructed and approved, CD-036.)*
 3. *(Parked, not needed)* the two C1 BAN standalones — searched for and not found; the D-038
    sweep reopens only if they surface.
 4. Step 5 proper: **english-programme** (recovered instructions), **islamic-studies** (greenfield),
