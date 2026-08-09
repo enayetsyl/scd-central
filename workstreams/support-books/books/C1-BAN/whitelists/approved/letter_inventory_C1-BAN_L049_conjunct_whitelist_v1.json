@@ -1,0 +1,26 @@
+{
+  "amendment_id": "letter_inventory_C1-BAN_L049_conjunct_whitelist_v1",
+  "target_file": "letter_inventory_C1-BAN.json",
+  "kind": "conjunct_whitelist_enumeration",
+  "status": "DERIVED FROM NCTB PAGE — awaiting Principal per-পাঠ approval",
+  "date": "2026-08-09",
+  "lesson_no": 49,
+  "path": "lessons.49.conjunct_whitelist",
+  "before": {
+    "glyphs": [],
+    "needs_review": false
+  },
+  "after": {
+    "glyphs": [
+      "ন্দ"
+    ],
+    "source": "NCTB Class 1 Bangla পাঠ ৪৯ (printed p.72) যুক্তবর্ণ শিখি box, decomposed from the taught word",
+    "derivation": {
+      "আনন্দ": "ন্দ (ন + ্ + দ)"
+    },
+    "note": "Rule B-1: these are the ONLY conjuncts legal in decodable text at পাঠ 49; no systematic conjunct construction (Class-2 deferral). Running text on p.71 uses ন্দ (সুন্দর) — consistent with the taught box. No other conjunct appears in পাঠ ৪৯ decodable content.",
+    "needs_review": false
+  },
+  "reviewer_note": "Derived by reading NCTB printed p.72 (PDF p.81; offset +9, verified against printed folio). The PDF has NO text layer — it is a scan — so the page was rasterised and read visually. Method follows the L045 precedent exactly: the whitelist is enumerated from the page's own যুক্তবর্ণ শিখি box, which is the page's statement of what it teaches.",
+  "overturns": "The master inventory recorded glyphs:[] with needs_review:false — a POSITIVE, reviewed claim that no conjunct is taught at this পাঠ. The NCTB page contradicts it: the যুক্তবর্ণ শিখি box teaches ন্দ. This amendment therefore OVERTURNS a recorded decision rather than filling a blank. Principal-approved 2026-08-09 on the page derivation."
+}

@@ -1,0 +1,81 @@
+
+========================================================================
+STAGE 1 — validator seeded-error selftest
+========================================================================
+SEEDED-ERROR SELFTEST — validator_v2_rebuilt
+  [PASS] clean_p10_vowels: expected_fail=False got_fail=False ([])
+  [PASS] clean_p26_baba: expected_fail=False got_fail=False ([])
+  [PASS] v2fix_precomposed_p33: expected_fail=False got_fail=False ([])
+  [PASS] v2fix_DECOMPOSED_p33: expected_fail=False got_fail=False ([])
+  [PASS] v2fix_cloze_underscores: expected_fail=False got_fail=False ([])
+  [PASS] v2fix_cloze_slash: expected_fail=False got_fail=False ([])
+  [PASS] seed_borno_early: expected_fail=True got_fail=True (['borno_not_taught'])
+  [PASS] seed_kar_early: expected_fail=True got_fail=True (['kar_not_taught'])
+  [PASS] seed_DECOMPOSED_borno_early: expected_fail=True got_fail=True (['borno_not_taught'])
+  [PASS] seed_conjunct_no_whitelist: expected_fail=True got_fail=True (['conjunct_not_whitelisted'])
+  [PASS] seed_conjunct_null_default_none: expected_fail=True got_fail=True (['conjunct_not_whitelisted'])
+  [PASS] seed_arabic_in_text: expected_fail=True got_fail=True (['guard'])
+  [PASS] seed_stray_nukta: expected_fail=True got_fail=True (['stray_nukta'])
+  [PASS] book_letter_red: caught=True
+  [PASS] book_stripe_red: caught=True
+  [PASS] book_boolean_red: caught=True
+
+RESULT: PASS — rebuilt validator is a working net
+EXIT=0
+
+========================================================================
+STAGE 2 — book validation (10 checks)
+========================================================================
+========================================================================
+VALIDATOR REPORT — validator_v2_rebuilt · book C1-BAN · 54 lessons
+========================================================================
+
+CHECK 1 — JSON valid · schema_version · book_id
+  [PASS] book parses as valid JSON
+  [PASS] schema_version == "1.0"
+  [PASS] book_id 'C1-BAN' well-formed
+
+CHECK 2 — Lesson inventory & action flags
+  [PASS] lesson_no 1..54 complete, ordered, no gaps
+  [PASS] every lesson carries exactly one valid action flag
+
+CHECK 3 — যোগ্যতা/শিখনফল codes present per lesson
+  [PASS] codes non-empty on all lessons (MOTOR sentinel counts)
+
+CHECK 4 — Letter audit (C1–2 BAN school decodable text; v2 fixes active)
+  [PASS] letter audit clean on all school decodable text
+
+CHECK 5 — Genre tag on every replace lesson
+  [PASS] genre present on all replace lessons
+
+CHECK 6 — Image-slot booleans
+  [PASS] contains_living_being + photocopy_safe boolean on every slot
+
+CHECK 7 — source_note on Islamic-narrative blocks (grey; heuristic)
+  [PASS] no school block with Islamic-narrative markers lacks a source_note
+
+CHECK 8 — Script guard (RED on rendered text; Arabic RED anywhere; CD-008 watch)
+  [PASS] no red script-guard hit in rendered text; no Arabic script anywhere
+  [INFO] CD-008 WATCH — zero em-dash/ellipsis in rendered text
+
+CHECK 9 — No stripe language in image prompts
+  [PASS] no stripe-instruction strings in any prompt
+
+CHECK 10 — Compliance map derivable
+  [PASS] every lesson has codes + action + nctb_pages
+
+GREY-AT-MERGE — prompts · refs · bw_treatment
+  [GREY] L11/L011-img-05: narrative_figure with no refs (red before Images)
+  [GREY] L19/L019-img-05: narrative_figure with no refs (red before Images)
+  [GREY] L20/L020-img-10: narrative_figure with no refs (red before Images)
+  [GREY] L21/L021-img-05: narrative_figure with no refs (red before Images)
+
+========================================================================
+RESULT:  RED=0   GREY=4   PASS=13
+VERDICT: PASS — no red failures; greys listed for reviewer
+========================================================================
+EXIT=0
+
+========================================================================
+GATE RESULT: GREEN
+========================================================================

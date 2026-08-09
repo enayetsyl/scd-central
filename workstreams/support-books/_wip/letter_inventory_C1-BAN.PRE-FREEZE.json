@@ -12,8 +12,7 @@
     "consonant_kar_interleave": "19-34 (39 review)"
   },
   "open_items": [
-    "conjunct_whitelist.glyphs is null+needs_review at পাঠ 21/45/52: TG flags যুক্তবর্ণ outcomes there but does not enumerate the specific whole-unit glyphs. Per D-009/D-011 not invented. Resolve from the NCTB পাঠ pages before decodable replacement text uses any conjunct; until resolved, B-1 default = 'none' (no conjuncts permitted in replacement decodable text).",
-    "2026-08-09 CONJUNCT WHITELIST FROZEN for পাঠ 45/49/51/52 from Principal-approved amendments (CD-029). Standing method: the যুক্তবর্ণ শিখি box is the taught set; running-text conjuncts are never whitelisted by mere appearance. পাঠ 49 and 51 previously held glyphs:[] needs_review:false — those claims are overturned."
+    "conjunct_whitelist.glyphs is null+needs_review at পাঠ 21/45/52: TG flags যুক্তবর্ণ outcomes there but does not enumerate the specific whole-unit glyphs. Per D-009/D-011 not invented. Resolve from the NCTB পাঠ pages before decodable replacement text uses any conjunct; until resolved, B-1 default = 'none' (no conjuncts permitted in replacement decodable text)."
   ],
   "lessons": {
     "1": {
@@ -1952,26 +1951,9 @@
         "ৌ"
       ],
       "conjunct_whitelist": {
-        "tg_evidence": "শিখনফল ১.১.৪ (যুক্তবর্ণ) at পাঠ ৪৫; enumerated from the NCTB পাঠ ৪৫ 'যুক্তবর্ণ শিখি' box",
-        "glyphs": [
-          "প্ত",
-          "ট্র",
-          "ঙ্গ",
-          "স্প",
-          "ক্র"
-        ],
-        "source": "NCTB Class 1 Bangla পাঠ ৪৫ (p65) যুক্তবর্ণ শিখি box, decomposed from the five taught words",
-        "derivation": {
-          "সপ্তাহ": "প্ত (প + ্ + ত)",
-          "ট্রেন": "ট্র (ট + ্ + র)",
-          "মঙ্গলবার": "ঙ্গ (ঙ + ্ + গ)",
-          "বৃহস্পতিবার": "স্প (স + ্ + প)",
-          "শুক্রবার": "ক্র (ক + ্ + র)"
-        },
-        "note": "NCTB box visually tiles সপ্তাহ next to 'প | ত' component cells; the whole-unit conjunct in সপ্তাহ is প্ত (not স্প). স্প is the বৃহস্পতিবার conjunct. Whitelist enumerates the actual whole-unit conjuncts of the five words. Rule B-1: these are the ONLY conjuncts legal in decodable text at পাঠ ৪৫; no systematic conjunct construction (Class-2 deferral).",
-        "needs_review": false,
-        "frozen_from": "letter_inventory_C1-BAN_L045_conjunct_whitelist_v1",
-        "frozen_on": "2026-08-09"
+        "tg_evidence": "শিখনফল ১.১.৪ (যুক্তবর্ণ) at পাঠ ৪৫",
+        "glyphs": null,
+        "needs_review": true
       }
     },
     "46": {
@@ -2258,18 +2240,8 @@
         "ৌ"
       ],
       "conjunct_whitelist": {
-        "glyphs": [
-          "ন্দ"
-        ],
-        "source": "NCTB Class 1 Bangla পাঠ ৪৯ (printed p.72) যুক্তবর্ণ শিখি box, decomposed from the taught word",
-        "derivation": {
-          "আনন্দ": "ন্দ (ন + ্ + দ)"
-        },
-        "note": "Rule B-1: these are the ONLY conjuncts legal in decodable text at পাঠ 49; no systematic conjunct construction (Class-2 deferral). Running text on p.71 uses ন্দ (সুন্দর) — consistent with the taught box. No other conjunct appears in পাঠ ৪৯ decodable content.",
-        "needs_review": false,
-        "frozen_from": "letter_inventory_C1-BAN_L049_conjunct_whitelist_v1",
-        "frozen_on": "2026-08-09",
-        "overturns": "The master inventory recorded glyphs:[] with needs_review:false — a POSITIVE, reviewed claim that no conjunct is taught at this পাঠ. The NCTB page contradicts it: the যুক্তবর্ণ শিখি box teaches ন্দ. This amendment therefore OVERTURNS a recorded decision rather than filling a blank. Principal-approved 2026-08-09 on the page derivation."
+        "glyphs": [],
+        "needs_review": false
       }
     },
     "50": {
@@ -2412,18 +2384,8 @@
         "ৌ"
       ],
       "conjunct_whitelist": {
-        "glyphs": [
-          "দ্দ"
-        ],
-        "source": "NCTB Class 1 Bangla পাঠ ৫১ (printed p.76) যুক্তবর্ণ শিখি box, decomposed from the taught word",
-        "derivation": {
-          "চৌদ্দ": "দ্দ (দ + ্ + দ)"
-        },
-        "note": "Rule B-1: these are the ONLY conjuncts legal in decodable text at পাঠ 51; no systematic conjunct construction (Class-2 deferral). p.74–75 running text and the Bengali-months table carry খ্য (সংখ্যা), শ্র/ষ্ঠ (বীরশ্রেষ্ঠ), গ্র (গ্রহ, অগ্রহায়ণ), জ্য/ষ্ঠ (জ্যৈষ্ঠ), শ্ব (আশ্বিন), ল্গ (ফাল্গুন), ত্র (চৈত্র), দ্র (ভাদ্র). NONE is in the যুক্তবর্ণ শিখি box, so none is a taught conjunct and none is legal in school decodable text at পাঠ ৫১ under B-1.",
-        "needs_review": false,
-        "frozen_from": "letter_inventory_C1-BAN_L051_conjunct_whitelist_v1",
-        "frozen_on": "2026-08-09",
-        "overturns": "The master inventory recorded glyphs:[] with needs_review:false — a POSITIVE, reviewed claim that no conjunct is taught at this পাঠ. The NCTB page contradicts it: the যুক্তবর্ণ শিখি box teaches দ্দ. This amendment therefore OVERTURNS a recorded decision rather than filling a blank. Principal-approved 2026-08-09 on the page derivation."
+        "glyphs": [],
+        "needs_review": false
       }
     },
     "52": {
@@ -2494,25 +2456,9 @@
         "ৌ"
       ],
       "conjunct_whitelist": {
-        "glyphs": [
-          "স্ত",
-          "ক্ত",
-          "দ্ধ",
-          "ম্ব",
-          "ষ্ট"
-        ],
-        "source": "NCTB Class 1 Bangla পাঠ ৫২ (printed p.78) যুক্তবর্ণ শিখি box, decomposed from the five taught words",
-        "derivation": {
-          "পাকিস্তানি": "স্ত (স + ্ + ত)",
-          "মুক্তি": "ক্ত (ক + ্ + ত)",
-          "যুদ্ধ": "দ্ধ (দ + ্ + ধ)",
-          "ডিসেম্বর": "ম্ব (ম + ্ + ব)",
-          "কষ্ট": "ষ্ট (ষ + ্ + ট)"
-        },
-        "note": "Rule B-1: these are the ONLY conjuncts legal in decodable text at পাঠ 52; no systematic conjunct construction (Class-2 deferral). The p.77 শুনি ও পড়ি narrative additionally carries স্ব (স্বাধীন, স্বাধীনতা) and ন্য (জন্য). Neither is in the যুক্তবর্ণ শিখি box, so neither is taught at পাঠ ৫২ and neither is whitelisted. That block is শুনি ও পড়ি (listen-and-read), which is oral-exempt from the letter audit in any case.",
-        "needs_review": false,
-        "frozen_from": "letter_inventory_C1-BAN_L052_conjunct_whitelist_v1",
-        "frozen_on": "2026-08-09"
+        "tg_evidence": "শিখনফল ৯.২.২ (যুক্তবর্ণ) at পাঠ ৫২",
+        "glyphs": null,
+        "needs_review": true
       }
     },
     "53": {

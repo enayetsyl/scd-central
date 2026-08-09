@@ -2,23 +2,65 @@
 
 ## Phase
 
-**All questions ruled and applied except Q-1, which is BLOCKED on a missing file.** The L53
-merge remains withheld; the book on disk is unmerged and untouched.
+# ✅ STEP 3 BOOK WORK CLOSED — 2026-08-09
 
-**Closed since:** Q-6 (canon precedence) → **CD-027** · Q-7 (D-020) → **CD-028**.
-The only thing standing between here and a merged book is `_inbox/Class 1 Bangla.pdf`.
+**Whitelist frozen · gate GREEN · L53 merged.** All seven questions ruled and applied.
 
-## ⛔ Q-1 BLOCKED — `_inbox/Class 1 Bangla.pdf` does not exist
+```
+STAGE 1 selftest : PASS (16/16) — the instrument is a working net
+STAGE 2 book     : RED=0  GREY=4  PASS=13   VERDICT: PASS
+GATE RESULT      : GREEN   EXIT=0
+```
 
-The ruling requires deriving conjuncts from NCTB pages 71–72 (পাঠ ৪৯), 74–76 (পাঠ ৫১) and
-77–78 (পাঠ ৫২) of `_inbox/Class 1 Bangla.pdf`, with the page winning over SCHEMA §6 where they
-disagree. **That PDF is not in `_inbox/`, and no PDF exists anywhere in the workspace.**
+Evidence: `books/C1-BAN/reports/GATE_C1BAN_post-L53-merge_2026-08-09.txt` (CD-024).
 
-Nothing was derived. The whole point of the ruling is that the *page* is the authority — a
-conjunct list produced from memory or by reasoning backwards from the candidate file would be
-exactly the phantom content AGENTS.md §4 forbids, and it would silently defeat the check the
-Principal asked for. **Drop the PDF into `_inbox/` and the derivation, freeze, re-validation and
-L53 merge all complete in one pass.**
+## The freeze (CD-029)
+
+Derived from the NCTB pages. The PDF is a **scan with no text layer**, so pages were rasterised
+and read visually; the printed-folio offset (+9) was **verified, not assumed**.
+
+| পাঠ | Printed p. | Taught word → conjunct | Frozen |
+|---|---|---|---|
+| ৪৫ | 65 | (pre-approved L045 amendment) | প্ত ট্র ঙ্গ স্প ক্র |
+| ৪৯ | 72 | আনন্দ → ন্দ | **ন্দ** |
+| ৫১ | 76 | চৌদ্দ → দ্দ | **দ্দ** |
+| ৫২ | 78 | পাকিস্তানি·মুক্তি·যুদ্ধ·ডিসেম্বর·কষ্ট | **স্ত ক্ত দ্ধ ম্ব ষ্ট** |
+
+**Standing method (now canon):** the যুক্তবর্ণ শিখি box IS the taught set. Conjuncts in running
+text, tables or শুনি ও পড়ি narrative are **never** whitelisted by mere appearance. Deliberately
+excluded: খ্য শ্র ষ্ঠ গ্র জ্য শ্ব ল্গ ত্র দ্র (পাঠ ৫১) and **স্ব** (স্বাধীনতা), **ন্য** (জন্য)
+at পাঠ ৫২ — printed by NCTB but never taught.
+
+### ⚠️ The freeze overturned a recorded decision
+
+পাঠ ৪৯ and ৫১ held `glyphs: []` with **`needs_review: false`** — a positive *reviewed* claim that
+no conjunct is taught, contradicted by the pages. **Caught by the freeze script's pre-write
+assertion**, which compares each amendment's recorded `before` against the file on disk and
+refused to write until the mismatch was reconciled. Recorded in the amendments and in the frozen
+entries (`overturns` field); logged as **CR-005**. Nothing was silently overwritten.
+
+## L53 — steps 7, 8, 9 COMPLETE
+
+Merged **wholesale-by-lesson**, asserted to touch lesson 53 only before writing. Pre-merge and
+pre-freeze copies kept in `_wip/`. Approved amendments filed at
+`books/C1-BAN/whitelists/approved/`.
+
+## Q-6 loop closed
+
+The imported validation report's caveat now records that the freeze **resolved** it: CHECK 4 is
+reproducible against the master inventory. The report body remains unedited.
+
+## Blockers
+
+None.
+
+## Next step
+
+**Step 4 — lesson-plans (P03).** It also closes five of the six VENDORED-UNPROVEN rows
+(`render_plan.py`, both `build_*` scripts, the plan and question payload schemas), which need a
+real plan or question artifact to run through them.
+
+---
 
 ## Rulings applied 2026-08-09
 

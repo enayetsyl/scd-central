@@ -9,9 +9,11 @@
 # Re-running against the master inventory yields 5 RED at L52/L052-b08
 # (দ্ধ, ক্ত).
 #
-# This line is SUPERSEDED by whatever the conjunct-whitelist freeze produces.
-# Until the freeze is ruled and applied, treat CHECK 4 here as unproven.
-# See workstreams/support-books/_wip/STATE.md.
+# RESOLVED 2026-08-09 by the conjunct-whitelist freeze (CD-029). The whitelists for
+# পাঠ 45/49/51/52 were derived from the NCTB যুক্তবর্ণ শিখি boxes, Principal-approved
+# per-পাঠ, and frozen into letter_inventory_C1-BAN.json. CHECK 4 now passes against the
+# MASTER inventory, so the claim below is reproducible and no longer conditional.
+# Current evidence: reports/GATE_C1BAN_post-L53-merge_2026-08-09.txt (RED=0, GREEN).
 ########################################################################
 
 ========================================================================

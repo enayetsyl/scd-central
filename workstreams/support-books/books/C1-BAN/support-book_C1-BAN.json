@@ -14851,8 +14851,12 @@
         79
       ],
       "genre": "সৃজনশীলতা / মুক্ত-চিন্তা (শব্দ-খেলা; শিখনফল-নেই strand)",
-      "competency_codes": [],
-      "outcome_codes": [],
+      "competency_codes": [
+        "MOTOR"
+      ],
+      "outcome_codes": [
+        "MOTOR"
+      ],
       "action": "retain-curated",
       "c_codes": [
         "C-06",
@@ -14898,8 +14902,7 @@
           "refs": [],
           "prompt": "A simple, cheerful children's-textbook illustration of a few everyday school objects arranged in a loose circle on green grass, with small flowering plants around them and a clear sky. For example a pen, a book and a leaf. No people, no animals, no birds. Bold clean outlines, soft flat colour, high contrast and clear linework for black-and-white photocopy.",
           "aspect": "4:3",
-          "status": "draft",
-          "filename": "L053-img-01.png"
+          "status": "draft"
         }
       ],
       "nctb_omitted": [
@@ -14918,30 +14921,7 @@
         "date": null,
         "checklist_passed": false
       },
-      "notes": "Creativity/free-thinking strand পাঠ (শিখনফল-নেই, protected own-expression). C-06: NCTB cast oval swapped to approved C1 cast (আনাস/খাদিজা/উমর/ফাতিমা). Text marked oral (Principal ruling): spoken word-chain game whose subject-words বর্ণ/শব্দ (র্ণ/ব্দ) are never decodable through ৫৩, so oral is the correct audit-exempt home; game mechanics kept verbatim. Image -> objects/scenery, no children, no crutch (Principal ruling). REVIEWER FLAG: inclusive mobility-aid (crutch) dropped for this পাঠ per ruling  - note it's preserved via ফাতিমা cast elsewhere. C-01 anti-repetition: four distinct cast names.",
-      "layout": [
-        {
-          "arrangement": "text-only",
-          "refs": [
-            "L053-b01"
-          ],
-          "row": 1
-        },
-        {
-          "arrangement": "text-only",
-          "refs": [
-            "L053-b02"
-          ],
-          "row": 2
-        },
-        {
-          "arrangement": "image-only",
-          "refs": [
-            "L053-img-01"
-          ],
-          "row": 3
-        }
-      ]
+      "notes": "Creativity/free-thinking strand পাঠ (শিখনফল-নেই, protected own-expression). C-06: NCTB cast oval swapped to approved C1 cast (আনাস/খাদিজা/উমর/ফাতিমা). Text marked oral (Principal ruling): spoken word-chain game whose subject-words বর্ণ/শব্দ (র্ণ/ব্দ) are never decodable through ৫৩, so oral is the correct audit-exempt home; game mechanics kept verbatim. Image -> objects/scenery, no children, no crutch (Principal ruling). REVIEWER FLAG: inclusive mobility-aid (crutch) dropped for this পাঠ per ruling  - note it's preserved via ফাতিমা cast elsewhere. C-01 anti-repetition: four distinct cast names."
     },
     {
       "lesson_no": 54,

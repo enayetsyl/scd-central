@@ -328,3 +328,24 @@ One block per agent session, appended at "save state and sync". Format:
   all-boys pending any recorded DECISIONS.md amendment"). ⚠️ **One correction to the ruling:**
   D-020 was *not* already listed in the reviewer queue — that file held only RQ-001 and RQ-002 —
   so it was added as **RQ-003** rather than assumed present.
+
+## 2026-08-09 · support-books (freeze + merge) · Principal · cowork
+- Did: Read NCTB pages from the supplied PDF, derived the three conjunct whitelists, froze all
+  four approved amendments into `letter_inventory_C1-BAN.json`, re-ran the gate, and **completed
+  step 9 — L53 is merged.** Closed the Q-6 report-annotation loop.
+- Decisions logged: **CD-029** — whitelists frozen for পাঠ ৪৫/৪৯/৫১/৫২; **standing derivation
+  method now canon: the যুক্তবর্ণ শিখি box is the taught set, and running-text conjuncts are never
+  whitelisted by mere appearance.**
+- Gates run + result: `audits/gates.py` — selftest **16/16 PASS**, book **RED=0 GREY=4 PASS=13,
+  GREEN**. Evidence saved to `books/C1-BAN/reports/GATE_C1BAN_post-L53-merge_2026-08-09.txt`.
+  `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` → **CLEAN (0 fail, 7 warn)**.
+  `canon_check` went **red once, correctly** — CD-029 was cited in the inventory and the report
+  before the row existed; the CD-CITE check caught the phantom, and the row was written.
+- Open items / PENDING-P raised: none. Two findings worth the record. **(1)** The PDF is a scan
+  with no text layer, so pages were rasterised and read visually, and the printed-folio offset
+  (+9) was verified rather than assumed. **(2)** The freeze **overturned a recorded decision**:
+  পাঠ ৪৯ and ৫১ held `glyphs: []` with `needs_review: false` — a positive *reviewed* claim that no
+  conjunct is taught, contradicted by the pages. The freeze script's pre-write assertion caught it
+  and refused to write until it was reconciled; recorded in the amendments, in the frozen entries
+  and as **CR-005**. Nothing silently overwritten. Next: **Step 4 — lesson-plans**, which also
+  closes five of the six VENDORED-UNPROVEN rows.
