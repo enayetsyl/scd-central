@@ -19,12 +19,12 @@ three handoffs, `validate_plan.py`.
 
 **D-PROJ03-###**, log at `governance/PROJECT03_DECISIONS.md`.
 
-**Register reconstructed and continuous to D-PROJ03-049** (CD-031…CD-034). The body had ended at 042
+**Register reconstructed and continuous to D-PROJ03-050** (CD-031…CD-035). The body had ended at 042
 while 043/044 were cited as applied but never written, and 045 was claimed by six handoffs.
 043, 044 and 045 are now written from their application citations, marked *reconstructed from
 applied citations — Principal re-approved*; **only one of the six 045 claims had actually been
 applied**, and it holds 045 on its own row rather than being folded into 044. The other five
-minted nothing. New work continues at **050**.
+minted nothing. New work continues at **051**.
 
 ## Canon citations used
 
@@ -71,16 +71,23 @@ Lesson-plan openings carry **bismillah, then the objective cue**. The two compos
 alternatives. **Forward-only:** new and re-locked plans carry it, existing locked plans stay valid
 until the D-038 sweep — whose scope now also **normalises openings**.
 
-## ⚠️ Master-series citations do not resolve in this repo
+## Registers — three of them, and bare `D-0NN` is ambiguous
 
-`references/PROJECT00_DECISIONS.md` is Project 00's **local** register (`D-PROJ00-###`). All 17
-P00-local rows the quartet cites resolve against it. But the **master D-series (D-001…D-053) lives
-in `PROJECT00_README.md` §3**, which is not here — so **D-038, D-045, D-046, D-049, D-051** and
-every other master citation is **unresolvable**. Treat them as cited-unverified.
+| Register | File | Series |
+|---|---|---|
+| **Master** | `references/PROJECT00_README.md` §3 | `D-001…D-053` (52 rows) |
+| P00 local | `references/PROJECT00_DECISIONS.md` | `D-PROJ00-###` (72 rows) |
+| P03 local | `governance/PROJECT03_DECISIONS.md` | `D-PROJ03-###` (50 rows) |
 
-**And bare `D-0NN` is ambiguous.** `D-049` appears bare 65 times with no local counterpart, so it
-is master-series; `D-038` appears bare 33 times *and* as `D-PROJ03-038` 10 times. The same bare
-string means different rows in different places — never assume which without checking.
+Both references are **read-only**: cited, never continued from here.
+
+**Sweep result (CD-035):** of 36 distinct bare citations, **35 resolve** — but **33 of those also
+have a same-numbered `D-PROJ03` row**, so the bare form is ambiguous at each, including D-038,
+D-045, D-046, D-049 and the heaviest users D-022 (103×), D-046 (81×), D-049 (80×). **Always check
+both registers; never read the series off the bare string.**
+
+⚠️ **`D-051` DANGLES** — cited **93 times**, present in **neither** register. §3 runs to D-053 but
+holds only 52 rows, so D-051 has no body. Cited-but-unwritten master row; **not reconstructed**.
 
 ## Known debts
 

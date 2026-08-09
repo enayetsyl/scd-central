@@ -1,0 +1,34 @@
+MASTER-CITATION SWEEP — 2026-08-09
+Registers consulted (CD-034 rule: check both, never assume from the bare string)
+  MASTER  references/PROJECT00_README.md §3 "Locked Decisions" — D-001…D-053, 52 rows
+  P00     references/PROJECT00_DECISIONS.md — D-PROJ00-###, 72 rows (local, not master)
+  P03     governance/PROJECT03_DECISIONS.md — D-PROJ03-###, 49 rows
+
+VERIFICATION THAT §3 IS THE MASTER REGISTER
+  Row format "| D-001 | Pilot scope: ... |"; sequence D-001…D-053; 52 rows.
+  Labelled by its own content, not by the drop.
+
+RESULT — 36 distinct bare D-0NN citations across the P03 corpus
+
+  RESOLVED cleanly against master (2)
+    D-050 (33 uses) · D-053 (1 use)
+
+  RESOLVED against master, but a same-numbered D-PROJ03 row ALSO exists (33)
+    The bare form is ambiguous at every one of these; the reading must come from context,
+    never from the string. Highest-traffic: D-022 (103), D-046 (81), D-049 (80),
+    D-035 (73), D-034 (71), D-045 (67), D-037 (56), D-044 (38), D-038 (35).
+    Full list: D-001 D-002 D-004 D-005 D-017 D-019 D-020 D-022 D-023 D-024 D-027 D-028
+    D-029 D-030 D-031 D-032 D-033 D-034 D-035 D-036 D-037 D-038 D-039 D-040 D-041
+    D-042 D-043 D-044 D-045 D-046 D-047 D-048 D-049
+
+  DANGLING — cited but present in NEITHER register (1)
+    D-051 — cited 93 times. §3 runs D-001…D-053 but contains only 52 rows: D-051 has
+    no body. This is a cited-but-unwritten MASTER row.
+    NOT RECONSTRUCTED — batched for the Principal.
+
+THE FIVE NAMED IN THE INSTRUCTION
+  D-038  resolved (master) — ambiguous, D-PROJ03-038 also exists
+  D-045  resolved (master) — ambiguous, D-PROJ03-045 also exists
+  D-046  resolved (master) — ambiguous, D-PROJ03-046 also exists
+  D-049  resolved (master) — ambiguous, D-PROJ03-049 also exists
+  D-051  DANGLING — no body in either register

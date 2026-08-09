@@ -21,17 +21,17 @@ applied citations; 046 = U20 supersede; 047 = C2 MATH override (parked); 048 = B
 | Item | State |
 |---|---|
 | D-047 C2 MATH U05 | **PARKED** — surviving copy is pre-override, archived; post-override bytes **lost**; no v3 |
-| D-038 re-render sweep | **owed** — neither C1 BAN standalone is in this repo; scope now also normalises openings (D-048) |
+| D-038 re-render sweep | **PARKED** — the two C1 BAN standalones were **searched for and not found** in the P03 project; **reopens if they surface**; scope now also normalises openings (D-048) |
 | B-LP.1c P00 patch | **pending-P00-fold-in** — approved in substance, applied at P00's migration |
-| Master D-series | **unresolvable here** — D-001…D-053 live in `PROJECT00_README.md` §3, not supplied |
+| Master D-series | **imported + swept (CD-035)** — 35/36 resolve; **`D-051` dangles, cited 93×** |
 | Question-bank rows | 2 VENDORED-UNPROVEN rows await a question artifact |
 
 ## What Step 5 needs from the Principal
 
-1. **`PROJECT00_README.md`** — the only file that resolves D-038/D-045/D-046/D-049/D-051 and
-   every other master citation the quartet leans on.
-2. **The two C1 BAN standalones** (`U21`, `U28`) — to run the D-038 sweep, now widened to openings.
-3. **A question-bank artifact** — closes the last two VENDORED-UNPROVEN rows.
+1. **A ruling on `D-051`** — cited 93× and written nowhere. No reconstruction without it.
+2. **A question-bank artifact** — closes the last two VENDORED-UNPROVEN rows.
+3. *(Parked, not needed)* the two C1 BAN standalones — searched for and not found; the D-038
+   sweep reopens only if they surface.
 4. Step 5 proper: **english-programme** (recovered instructions), **islamic-studies** (greenfield),
    **accounting** (recovery package, open: Check-5 423,533; +28,592 residual).
 

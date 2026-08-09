@@ -435,3 +435,23 @@ One block per agent session, appended at "save state and sync". Format:
   `D-0NN` is ambiguous** — `D-049` appears bare 65× with no local row (master-series), while
   `D-038` appears bare 33× *and* as `D-PROJ03-038` 10×. Step 5 needs: `PROJECT00_README.md`, the
   two C1 BAN standalones for the D-038 sweep, and a question-bank artifact.
+
+## 2026-08-09 · lesson-plans (master register + sweep) · Principal · cowork
+- Did: Verified `PROJECT00_README.md` §3 carries the master **D-001…D-053** and imported it as a
+  read-only master-register reference — **labelled by its own content**. Ran the **full
+  master-citation sweep** under the CD-034 rule. Applied the B-LP.1c pending-patch note to its
+  header. Recorded the D-038 sweep's parked status. Evidence:
+  `reports/MASTER_CITATION_SWEEP_2026-08-09.txt`.
+- Decisions logged: **CD-035** (canon) and **D-PROJ03-050** (workstream).
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 4 warn)**. `canon_check` caught CD-035 as a phantom citation before its row
+  existed — the fourth such catch this session.
+- Open items / PENDING-P raised: **`D-051` DANGLES — cited 93 times, present in neither register.**
+  §3 runs to D-053 but holds only **52 rows**, so D-051 has no body. A cited-but-unwritten *master*
+  row; **not reconstructed**, batched. Sweep result: of **36** distinct bare citations, **35
+  resolve**, but **33 of those also have a same-numbered `D-PROJ03` row** — so the bare form is
+  ambiguous at each, including D-038/D-045/D-046/D-049 and the heaviest users D-022 (103×),
+  D-046 (81×), D-049 (80×). Only **D-050 and D-053** resolve unambiguously. **D-038 sweep PARKED**
+  — the two C1 BAN standalones were searched for and not found; it reopens if they surface.
+  One correction to my own method: an earlier regex used `D-0[0-9]{3}`, which demands four digits
+  after `D-0` and silently matched nothing; caught by cross-checking against a visible §3 row.
