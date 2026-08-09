@@ -308,3 +308,23 @@ One block per agent session, appended at "save state and sync". Format:
   ⚠️ **The reply's renumbering displaced one open item**: the original **Q-6 — do canon rules beat
   the imported governance files where they overlap? — was never answered**, and is carried
   forward on its working default (canon wins, as recorded in LOCAL.md).
+
+## 2026-08-09 · support-books (Q-6, Q-7) · Principal · cowork
+- Did: Ruled the last two open items. **Q-6** — added canon-precedence banners to
+  `governance/README.md` and `governance/SCHEMA_support-book_v1.md`, naming each overlapping
+  section and the canon file that supersedes it; nothing was edited out. **Q-7** — filled the
+  reserved **D-020** row and added **RQ-003** to the reviewer queue.
+- Decisions logged: **CD-027** (canon beats the imported governance files on overlap; overlapping
+  sections are superseded-by-citation and marked with a pointer, not deleted) · **CD-028**
+  (D-020 reconstructed and filled; supersedes the gap wording written under CD-026).
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 7 warn)**. `audits/gates.py` not re-run — the book is unchanged and the freeze
+  that would change its result is still blocked.
+- Open items / PENDING-P raised: none new. **All batched questions are now closed except Q-1**,
+  which is ruled but blocked on `_inbox/Class 1 Bangla.pdf`. Two things worth recording:
+  the D-020 citations were **verified at source before the row was written** — AGENTS.md §4 applies
+  to Principal-supplied citations too — and all three (L003, L004, L006) resolved, with L003 the
+  fullest ("NOT applied here — flagged as S4 governance/আলিম question, পাঠ ৩ kept compliant
+  all-boys pending any recorded DECISIONS.md amendment"). ⚠️ **One correction to the ruling:**
+  D-020 was *not* already listed in the reviewer queue — that file held only RQ-001 and RQ-002 —
+  so it was added as **RQ-003** rather than assumed present.

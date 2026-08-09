@@ -1,4 +1,24 @@
 # SCHEMA — support-book.json v1
+
+> ## ⚖️ Canon precedence (CD-027)
+>
+> This file is the workstream's **operating spec for everything canon does not cover** — the
+> nine-step loop, roles, the annual cycle, the validator profile's mechanics.
+>
+> **Where it restates canon, canon wins.** Those sections are **superseded-by-citation**: they
+> are left in place as the historical spec, not edited out, and the citation below is the
+> authority to read instead.
+>
+> | Section here | Superseded by |
+> |---|---|
+> | §6 Letter-audit algorithm — script-guard portion | `canon/language/LANGUAGE_RULES.md` §7 (CD-012, CD-018) |
+> | §7 check↔field map — image fields | `canon/image-rules/IMAGE_RULES.md` (CD-007) |
+> | Any C-code semantics | `canon/islamic-curation/REF-1_Curation_Policy.md` v1.2 (CD-005) |
+> | Name/cast fields | `canon/names/REF-2_Content_Register.md` (CD-006) |
+>
+> If this file and a canon file disagree, the canon file is right and this one is stale.
+
+
 **Support-Book Programme · The single source of truth per book, and the contract for patches, the validator, and assembly**
 *Version 1.0-draft (freezes with Principal approval together with Master Guide v1.0) · July 2026*
 

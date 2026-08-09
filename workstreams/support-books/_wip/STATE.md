@@ -2,8 +2,11 @@
 
 ## Phase
 
-**Five of six rulings applied. Q-1 (whitelist freeze) is BLOCKED on a missing file, so the
-L53 merge is still withheld.** The book on disk remains unmerged and untouched.
+**All questions ruled and applied except Q-1, which is BLOCKED on a missing file.** The L53
+merge remains withheld; the book on disk is unmerged and untouched.
+
+**Closed since:** Q-6 (canon precedence) → **CD-027** · Q-7 (D-020) → **CD-028**.
+The only thing standing between here and a merged book is `_inbox/Class 1 Bangla.pdf`.
 
 ## ⛔ Q-1 BLOCKED — `_inbox/Class 1 Bangla.pdf` does not exist
 
@@ -106,10 +109,11 @@ entries. **Not done without the ruling.**
 | Q-4 (L009/L024/L026) | Q-4 | ruled |
 | Q-5 (MOTOR note) | Q-5 | ruled |
 | Q-6 (validation report) | *(not in my batch)* | new item, ruled + applied |
-| — | **Q-6 governance vs canon** | ⚠️ **STILL OPEN — not answered** |
+| — | **Q-6 governance vs canon** | ✅ ruled 2026-08-09 → **CD-027** |
+| — | Q-7 D-020 | ✅ ruled 2026-08-09 → **CD-028** |
 
-**My Q-6 was displaced by the reply's own Q-6 and never ruled.** It is carried below, still on
-its stated default. Original batch text follows unedited.
+My Q-6 was displaced by the reply's own Q-6; it was raised again and is now ruled (CD-027).
+Original batch text follows unedited.
 
 
 **[Principal] Q-1 — the whitelist freeze.** Approve enumerated conjuncts for পাঠ 49 (ন্দ),
@@ -143,16 +147,17 @@ overlap**. Confirm — or should the governance files be trimmed to process-only
 **Q-1 blocks the L53 merge, and Q-1 is blocked on a missing file** — `_inbox/Class 1 Bangla.pdf`.
 Nothing else in Step 3 is blocked.
 
-## New questions — batched per §6
+## Questions — all closed
 
-**[Principal] Q-6 (carried, unanswered) — governance vs canon.** The imported `governance/`
-files restate rules that are now canon (image doctrine, script guard, names). `LOCAL.md` records
-**canon wins on overlap** as the working default. Confirm, or trim the governance files to
-process-only? Displaced by the reply's renumbering; still open.
+**Q-6 → CD-027.** Canon beats the governance files on overlap; overlapping sections are
+superseded-by-citation and marked with a canon pointer, not edited out. Banners added to
+`governance/README.md` and `governance/SCHEMA_support-book_v1.md`.
 
-**[Principal] Q-7 — D-020 has no source.** Zero citations anywhere in the import. Is there
-another export carrying it, or should it be re-ruled from scratch? *Default:* the D-020 row
-records the gap and reserves the number; nothing invented.
+**Q-7 → CD-028.** D-020 filled: *mixed-classroom fiqh (pre-puberty free-mixing), S4, raised at
+পাঠ ৩, OPEN, referred to the আলিম lane.* All three citations verified at source before writing.
+⚠️ It was **not** already in the reviewer queue as the ruling assumed — added as **RQ-003**.
+
+**None open.** Q-1 is ruled but blocked on the missing PDF.
 
 ## Next step
 

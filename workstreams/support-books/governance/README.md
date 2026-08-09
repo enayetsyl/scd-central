@@ -1,4 +1,25 @@
 # README — Support-Book Programme
+
+> ## ⚖️ Canon precedence (CD-027)
+>
+> This file is the workstream's **operating spec for everything canon does not cover** — the
+> nine-step loop, roles, the annual cycle, the validator profile's mechanics.
+>
+> **Where it restates canon, canon wins.** Those sections are **superseded-by-citation**: they
+> are left in place as the historical spec, not edited out, and the citation below is the
+> authority to read instead.
+>
+> | Section here | Superseded by |
+> |---|---|
+> | §4 Writing rules — names and cast | `canon/names/REF-2_Content_Register.md` (CD-006) |
+> | §5 Image doctrine (decision table) | `canon/image-rules/IMAGE_RULES.md` (CD-007) |
+> | §6 Validator profile — script-guard rows | `canon/language/LANGUAGE_RULES.md` §7 (CD-012, CD-018) |
+> | §6 Validator profile — numerals / register | `canon/language/LANGUAGE_RULES.md` §1–§2 |
+> | C-code definitions wherever cited | `canon/islamic-curation/REF-1_Curation_Policy.md` v1.2 (CD-005) |
+>
+> If this file and a canon file disagree, the canon file is right and this one is stale.
+
+
 *Orientation + operating rulebook. Read this first in any new chat that needs project context. v2.0 · July 2026*
 
 > **v2.0 note.** This README replaces both the old README (v1.0) and the retired `school-support-book-master-guide.md`. The Master Guide's operative rules are absorbed here and into the founding decisions in `DECISIONS.md`. The programme's production flow was redesigned; the content and posture rules are unchanged and carried forward as founding decisions D-001…D-0xx. Curation taxonomy lives in `REF-1`; names and per-class cast in `REF-2`; the field-by-field JSON contract in `SCHEMA_support-book_v1.md`.

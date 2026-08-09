@@ -9,6 +9,7 @@ Rows are append-only. A reversal is a new row citing the old.
 | ID | Date | Book / lesson | What needs review | Raised by | Status |
 |---|---|---|---|---|---|
 | RQ-001 | 2026-08-09 | C1-BAN / L53 | Principal-ruled drop of the inclusive mobility-aid (crutch) for this পাঠ. The lesson's own note carries **REVIEWER FLAG** and records that inclusion is preserved via the ফাতিমা cast elsewhere. Confirm that reads as intended across the book, not just in this lesson. | agent (from the L53 patch note) | OPEN |
+| RQ-003 | 2026-08-09 | C1-BAN / L03, L04, L06 (and all future mixed-cast scenes) | **D-020 — mixed-classroom fiqh, pre-puberty free-mixing.** Raised by the Principal at পাঠ ৩, flagged **S4**, never applied. The lane must rule before any mixed-cast scene is authored. Until then লessons hold the compliant default (all-boys at পাঠ ৩). | agent (D-020, reconstructed) | OPEN |
 | RQ-002 | 2026-08-09 | C1-BAN / L11, L19, L20, L21 | Four `narrative_figure` image slots carry no refs — GREY at merge, **red before Images**. Reviewer confirmation needed that each figure matches the cast reference sheet before the image step. | agent (validator GREY) | OPEN |
 
 ## What blocks on this lane
