@@ -3,17 +3,21 @@
 Work top-down; after each slot, flip the file's row in `canon/MANIFEST.md` to REQUIRED and
 re-run `python tools/audits/canon_check.py`.
 
-## Step 1 — canon extract (before anything else)
+## Step 1 — canon extract (before anything else) ✅ CLOSED 2026-08-09
 
-- [ ] `canon/marklogic/` ← the 7 MarkLogic files from the Scholarship project
-      (while slotting: fix `MarkLogic_Rules.md` §6 — ENG/MATH spines DO exist).
-- [ ] `canon/islamic-curation/REF-1_Curation_Policy.md` ← SB-Governance (slot the
-      Principal-approved version; note version in canon/DECISIONS.md).
-- [ ] `canon/names/REF-2_Content_Register.md` ← SB-Governance.
-- [ ] `canon/image-rules/IMAGE_RULES.md` ← consolidate from REF-1 image sections +
-      school-applicable stripe/faceless rules (agent can draft; Principal approves).
-- [ ] `canon/language/LANGUAGE_RULES.md` ← consolidate (agent can draft; Principal approves).
-- [ ] `canon/school-facts/SCHOOL_FACTS.md` — stub included; Principal completes.
+- [x] `canon/marklogic/` ← the 7 MarkLogic files from the Scholarship project. **CD-004.**
+      The §6 fix was unnecessary — the supplied v১ already lists all five spines.
+- [x] `canon/islamic-curation/REF-1_Curation_Policy.md` ← **v1.2 LOCKED. CD-005.**
+      The "v1.0 / 11 C-codes / S1–S4 / SB-016" description was stale: 19 categories C-01…C-19,
+      three annotation tags, no severity scheme, flag ruling is C-18.
+- [x] `canon/names/REF-2_Content_Register.md` ← **REF-20 Approved Names Pool v1.0. CD-006.**
+      Recurring-cast reference-sheet claim withdrawn (storybook material).
+- [x] `canon/image-rules/IMAGE_RULES.md` ← **REF-1-derived only. CD-007.** Stripe /
+      largest-being / carve-out / photocopy-safe / silhouette ruled out of scope.
+- [x] `canon/language/LANGUAGE_RULES.md` ← **CD-008.** সাধু/চলিত ruled; swarabritta out of
+      scope; Hub renderer script guard deferred to Step 2 with its own CD row.
+- [ ] `canon/school-facts/SCHOOL_FACTS.md` — stub in place and REQUIRED-passing.
+      **Principal completes** (academic-calendar, staffing facts). Not agent-executable.
 
 ## Step 2 — tools
 

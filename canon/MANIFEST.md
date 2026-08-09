@@ -13,6 +13,6 @@ On slotting a file, flip its row to REQUIRED.
 | canon/islamic-curation/REF-1_Curation_Policy.md | REQUIRED |
 | canon/names/REF-2_Content_Register.md | REQUIRED |
 | canon/image-rules/IMAGE_RULES.md | REQUIRED |
-| canon/language/LANGUAGE_RULES.md | PENDING |
+| canon/language/LANGUAGE_RULES.md | REQUIRED |
 | canon/school-facts/SCHOOL_FACTS.md | REQUIRED |
 | canon/DECISIONS.md | REQUIRED |

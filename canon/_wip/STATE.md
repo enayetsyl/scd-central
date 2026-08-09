@@ -61,7 +61,7 @@ the 4 `tools/` placeholder warns remain (Step 2, out of scope here).
 | 8 | canon/islamic-curation/REF-1_Curation_Policy.md | was `LOCKED_CurationPolicy_v1_2.md` | ✅ slotted 2026-08-09 · v1.2 LOCKED · CD-005 |
 | 9 | canon/names/REF-2_Content_Register.md | was `LOCKED_REF-20_Approved_Names_Pool_v1_0.md` | ✅ slotted 2026-08-09 · v1.0 · CD-006 |
 | 10 | canon/image-rules/IMAGE_RULES.md | consolidate (agent drafts) | ✅ slotted 2026-08-09 · REF-1-derived only · CD-007 |
-| 11 | canon/language/LANGUAGE_RULES.md | consolidate (agent drafts) | 🟡 DRAFT in `_wip/DRAFT_LANGUAGE_RULES.md` — 3 gaps, awaiting Principal |
+| 11 | canon/language/LANGUAGE_RULES.md | consolidate (agent drafts) | ✅ slotted 2026-08-09 · CD-008 |
 | 12 | canon/school-facts/SCHOOL_FACTS.md | stub in repo | ⬜ Principal to complete (not blocking Step 1) |
 
 ## Per-file slot procedure (repeat for each row)
@@ -121,23 +121,39 @@ the four storybook-sourced gaps ruled out of scope and recorded as such in the f
 nobody re-applies them by assumption. `_wip/DRAFT_IMAGE_RULES.md` removed on promotion
 (a second copy of a canon file is exactly what the NO-COPY rule exists to prevent). CD-007.
 
+## Row 11 ruling (2026-08-09, Principal) — CD-008
+
+- **G-3 সাধু/চলিত ruled:** school-authored text is always চলিত; সাধু source texts are quoted
+  verbatim; every question, instruction, mark scheme and answer key about them is in চলিত.
+- **G-2 swarabritta:** out of scope; enters by a new CD row if a workstream ever writes verse.
+- **G-1 Hub renderer script guard:** deferred to Step 2, lands with the LOCKED import contract
+  at `tools/hub-export/` as its own CD row. **No script guard may be asserted as canon meanwhile.**
+
+Draft removed from `_wip/` on promotion.
+
+# ✅ STEP 1 CLOSED — 2026-08-09
+
+All 11 slotted rows are canon and MANIFEST-REQUIRED. Row 12 (`SCHOOL_FACTS.md`) is a stub that
+already passes REQUIRED; completing it is the Principal's, not agent-executable.
+`SLOTTING_CHECKLIST.md` Step 1 is ticked. The checklist file is **not** deleted — Steps 2–5
+are still live.
+
 ## Blockers
 
-**Row 11 only.** `LANGUAGE_RULES` cannot be finished from repo sources. Draft is written and
-traced at `_wip/DRAFT_LANGUAGE_RULES.md`; three gaps await a Principal ruling:
+None for Step 1.
 
-- **G-1 Hub renderer script guard** — blocked behind `tools/hub-export/`, a Step 2 slot.
-  Cannot be resolved before Step 2 regardless of ruling.
-- **G-2 swarabritta rhyme spec** — agent recommendation: drop until a workstream needs it.
-- **G-3 সাধু-vs-চলিত** — no source anywhere; surfaced by C5 Bangla lesson 20.
-
-The same ruling shape as row 10 would close G-2 and G-3 immediately; G-1 waits on Step 2.
+Carried forward, not blocking: **PENDING-P-001** (REF-1's C1-only scope) and open item **F-2**
+(MarkLogic Rules §6 does not list `C5_Bangla_Source_13-23.md`).
 
 ## Next step
 
-Principal rules on row 11's three gaps (or defers G-1 to Step 2 and closes G-2/G-3), then
-row 11 promotes, MANIFEST flips, gate re-runs, and **Step 1 closes** — after which
-`SLOTTING_CHECKLIST.md` Step 1 is ticked and Step 2 (tools) begins.
+**Step 2 — tools.** `tools/render/` (fonts + Node docx class-test generator + `render_plan.py`),
+`tools/images/` (`apply_strips.py` + pdftoppm helpers), `tools/hub-export/` (`validate_import.py`
++ L1–L4 harness — this one also unblocks the deferred script-guard CD row), `tools/assets/`
+(rclone `sync.py`). Then Step 2b (english-drive + class-tests fold-in).
+
+When Step 2 begins, this file should be superseded by a Step 2 state file or rewritten in place;
+its Step 1 content is history and lives in Git + CD-004…CD-008.
 
 ## Open PENDING-P rows
 

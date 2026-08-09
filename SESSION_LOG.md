@@ -34,3 +34,22 @@ One block per agent session, appended at "save state and sync". Format:
   changes are the Principal's). **Step 1 is not closed:** row 11 LANGUAGE_RULES remains a traced
   draft in `canon/_wip/` with three gaps (Hub renderer script guard — blocked behind Step 2;
   swarabritta spec; সাধু-vs-চলিত).
+
+## 2026-08-09 · canon (Step 1 close) · Principal · cowork
+- Did: Slotted the last canon row — `canon/language/LANGUAGE_RULES.md` — and replaced the
+  language SLOT README with a real index. MANIFEST is now **13 REQUIRED, 0 PENDING**.
+  Ticked Step 1 in `SLOTTING_CHECKLIST.md` (file kept; Steps 2–5 are live).
+  Both `_wip/` drafts removed on promotion.
+- Decisions logged: **CD-008** — (a) সাধু/চলিত: school-authored text is always চলিত, সাধু source
+  texts are quoted verbatim, and every question, instruction, mark scheme and answer key about
+  them is written in চলিত; (b) Bengali swarabritta rhyme spec out of scope until a workstream
+  writes verse; (c) Hub renderer script guard deferred to Step 2 — it lands with the LOCKED
+  import contract at `tools/hub-export/` as its own CD row, and **no script guard may be
+  asserted as canon until then**.
+- Gates run + result: `python tools/audits/canon_check.py` → **CLEAN (0 fail, 4 warn)**.
+  All four remaining warns are `tools/` placeholders, i.e. Step 2 work. Every canon warn is gone.
+- Open items / PENDING-P raised: none new. **Step 1 is CLOSED.** Carried forward, not blocking:
+  PENDING-P-001 (REF-1's Class-1-only scope) and F-2 (MarkLogic Rules §6 does not list
+  `C5_Bangla_Source_13-23.md`). `canon/school-facts/SCHOOL_FACTS.md` remains a Principal-completed
+  stub by design — it already passes REQUIRED. Next: **Step 2 — tools**, where `tools/hub-export/`
+  also unblocks the deferred script-guard CD row.
