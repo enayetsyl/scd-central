@@ -15,7 +15,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-OUT = ROOT / "workstreams/question-banks/banks/C5_BAN_U21_QuestionBank_v1.json"
+OUT = ROOT / "workstreams/question-banks/_wip/C5_BAN_U21_QuestionBank_v1.json"
 
 TOP_INFO, TOP_VOCAB, TOP_SENT, TOP_PUNCT = (
     "TOP-BAN-C5-07", "TOP-BAN-C5-01", "TOP-BAN-C5-02", "TOP-BAN-C5-11")
@@ -392,14 +392,16 @@ bank = {
     # The ⚑ flag travels WITH the artifact, not merely near it — a downstream reader sees the
     # unverified topic tag without having to open the corrections ledger (QB-D-009, CD-042).
     "flags": [{
-        "tag": "PENDING-P-005",
-        "status": "FLAGGED",
-        "scope": f"the {len([q for q in Q if q['topic_tag'] == TOP_SENT])} S03 items carrying {TOP_SENT}",
-        "what": "TOP-BAN-C5-02 is a stated default, not verified. পাঠ ২১'s attested tags are "
-                "TOP-BAN-C5-07, -01 and -11; -02 is attested as sentence/রচনা from the U20 "
-                "Chapter Plan but not for this পাঠ.",
-        "closes_on": "verification against the per-subject revision chart, to be staged in _inbox/",
-        "do_not": "change the tag on any agent's judgement while this flag stands",
+        "tag": "PENDING-P-007",
+        "status": "OPEN",
+        "scope": "QP-BAN-C5-U21-Q52 — the বিরামচিহ্ন fill_blank item, tagged TOP-BAN-C5-11",
+        "what": "PROJECT04_DECISIONS.md D-PROJ04-011 attests TOP-BAN-C5-11 = মূল্যবোধ/মুক্ত-চিন্তা, "
+                "not punctuation. The tag was inferred from MarkLogic spine slot S11 = বিরামচিহ্ন; "
+                "the S-slot and TOP- schemes are unrelated and collide at 11 by coincidence. "
+                "No number is attested for বিরামচিহ্ন anywhere in the register.",
+        "closes_on": "a Principal ruling on which TOP- number a punctuation item carries "
+                     "(agent recommendation: mint TOP-BAN-C5-13)",
+        "do_not": "export this bank to the Hub, or substitute a guessed tag, while this stands",
     }],
     "pool_index": POOLS,
     "slot_index": SLOTS,

@@ -1,0 +1,99 @@
+=== PENDING-P-005 — VERIFICATION AT SOURCE, attempt 2 — 2026-08-09 ===
+Files staged in _inbox/ by the Principal and classified per canon/sources/SOURCE_POLICY.md §2.1.
+
+FILE 1  LOCKED_REF-19_Vertical_Topic_Progression_Map_v1_10.md
+        sha256 43a4d83799d91fc0bfbb8a3565cdb37190bb38b4e78a399103bc128ba73d837a
+        1391 lines · 257821 bytes · header: "Status: Canonical v1.10"
+FILE 2  PROJECT04_DECISIONS.md
+        sha256 49173426b34f978b3feade7e546330d852b53a0ec70223e71f5a3baf1977bcae
+        86 lines · 57358 bytes · header: "Status: v1.12 · Last updated: 2026-07-17"
+
+Both copied byte-identical into the repo (cmp -s, verified) and removed from _inbox/ —
+_inbox/ is staging, not archive, and a canon basename left there would trip canon_check's
+NO-COPY rule.
+
+-------------------------------------------------------------------------------
+CHECK 1 — REF-19 is slugs-only, no ## numbering.   VERDICT: PASS
+-------------------------------------------------------------------------------
+Read from the actual file, not from the harness constant (CD-011).
+
+  TOP-<SUBJ>-C#-## occurrences in REF-19 ....... 0
+  bare "TOP-" occurrences anywhere in REF-19 ... 0
+  distinct SUBJ-XXX topic ids ................... 122 raw
+  ids carrying a numeric suffix ................. NONE
+
+The 122nd raw match is BGS-REF19, a false positive: it is a fragment of the task label
+"TGR-BGS-REF19.1" in the version log, not a topic id. 122 - 1 = 121 topic ids.
+
+Per-subject: BAN 24 · ENG 23 · MATH 24 · SCI 23 · BGS 26.
+
+-------------------------------------------------------------------------------
+CHECK 2 — reconcile REF-19 against the vendored harness constant.   VERDICT: PASS
+-------------------------------------------------------------------------------
+tools/hub-export/validate_import.py carries REF19_SLUGS_DEFAULT, described in-file as
+"auto-extracted from LOCKED_REF-19 v1.10 ... the doc-reference artifact 'BGS-REF19' excluded".
+
+  harness slugs ................ 121
+  REF-19 topic ids ............. 121  (after setting aside BGS-REF19, exactly as the harness says)
+  in harness but NOT in file ... none
+  in file but NOT in harness ... none
+
+Exact set match. The derived copy is now reconciled against the artifact, which is what CD-011
+required before any of this could be treated as canon.
+
+-------------------------------------------------------------------------------
+CHECK 3 — D-PROJ04-011 attests TOP-BAN-C5-02 = বাক্য-রচনা.   VERDICT: PASS
+-------------------------------------------------------------------------------
+PROJECT04_DECISIONS.md line 33, D-PROJ04-011, 2026-07-08, verbatim extract:
+
+  "C5 BAN U15 (সংকল্প) question bank rebuilt + re-LOCKED at v2 — supersedes the v1 shipped
+   inside D-PROJ04-003. ... Topics `TOP-BAN-C5-05` poem/মূলভাব (39) + `TOP-BAN-C5-01` শব্দার্থ
+   (21) + `TOP-BAN-C5-02` বাক্য-রচনা (29) + `TOP-BAN-C5-11` মূল্যবোধ/মুক্ত-চিন্তা (11)."
+
+-------------------------------------------------------------------------------
+CHECK 4 — D-PROJ04-003 carries -02 for U14.   VERDICT: PASS
+-------------------------------------------------------------------------------
+PROJECT04_DECISIONS.md line 26, D-PROJ04-003, 2026-06-01, verbatim extract:
+
+  "(b) **U14 উসামার বাহিনী** — 150 items = 30 × 5 topics `TOP-BAN-C5-06/01/02/11/12`"
+
+-------------------------------------------------------------------------------
+CHECK 5 — register continuity.   VERDICT: PASS
+-------------------------------------------------------------------------------
+D-PROJ04-001 … D-PROJ04-016 present, continuous, no gaps, no duplicates. The five numbers
+previously cited in this repo (001, 002, 005, 014, 015) all now resolve to bodies, as do 003
+and 011. QB-CR-007's dangling-citation finding is closed by this import.
+
+The register's own header confirms the boundary the CD-034 two-register rule assumes:
+"Initiative-wide decisions (D-001 through D-051 and successors) live in Project 00
+PROJECT00_README.md §3 and are not duplicated here."
+
+===============================================================================
+RESULT ON THE RULING AS PUT: PASS on all four stated conditions.
+TOP-BAN-C5-02 on the 8 S03 items of the পাঠ ২১ bank is CONFIRMED.
+===============================================================================
+
+-------------------------------------------------------------------------------
+CHECK 6 — NOT part of the ruling. Every OTHER tag in the promoted bank, now that
+          the register makes them checkable for the first time.
+-------------------------------------------------------------------------------
+The bank uses four tags. The ruling asked about one. Checking the other three:
+
+  TOP-BAN-C5-01  6 items (শব্দার্থ)      -> attested শব্দার্থ,  D-PROJ04-011   CORRECT
+  TOP-BAN-C5-02  8 items (S03 বাক্য)     -> attested বাক্য-রচনা, D-PROJ04-011   CORRECT
+  TOP-BAN-C5-07 42 items (info prose)    -> attested BAN-INFOTEXT, D-PROJ04-013 CORRECT
+  TOP-BAN-C5-11  1 item  (বিরামচিহ্ন)    -> attested মূল্যবোধ/মুক্ত-চিন্তা      ** WRONG **
+
+  QP-BAN-C5-U21-Q52, the বিরামচিহ্ন fill_blank, carries TOP-BAN-C5-11.
+  D-PROJ04-011 attests TOP-BAN-C5-11 = মূল্যবোধ / মুক্ত-চিন্তা — values and free-thinking,
+  not punctuation. D-PROJ04-003 further shows -11 as a PROTECTED, rubric-only strand.
+
+  Origin of the error: it was inferred from the MarkLogic spine slot number S11 = বিরামচিহ্ন.
+  The spine's S-slot numbers and the TOP- topic numbers are unrelated schemes that happen to
+  collide at 11. That inference was never queued and never flagged — PENDING-P-005 covered
+  only the S03 items.
+
+  Searched the whole register: NO number is attested for বিরামচিহ্ন or punctuation anywhere.
+  So there is no correct value to substitute, and nothing in any file settles it.
+
+  Raised as PENDING-P-007, OPEN (Principal-owed). Q52's tag was NOT changed.

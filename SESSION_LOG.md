@@ -568,3 +568,40 @@ One block per agent session, appended at "save state and sync". Format:
   numbers coming from the revision chart + REF-19 — **but CD-011 forbids writing such a registry
   from a summary or derived copy**, so canon was not synthesised from a harness constant.
   **Nothing closed, nothing committed to `canon/`, `TOP-BAN-C5-02` unchanged.**
+
+## 2026-08-09 · PENDING-P-005 CLOSED; REF-19 + P04 register imported; wave 1 DE-PROMOTED · Principal · cowork
+- Did: Classified and verified both staged files per SOURCE_POLICY §2.1, imported them, closed
+  P-005 — and then returned wave 1 to `_wip/` when the import exposed a mis-tag.
+  **REF-19 v1.10 → `canon/topics/`** read-only (sha256 `43a4d837…`), **`PROJECT04_DECISIONS.md` →
+  `workstreams/question-banks/references/`** read-only (sha256 `49173426…`), both byte-identical,
+  both removed from `_inbox/` afterwards (staging, not archive — and a canon basename left there
+  would trip NO-COPY).
+- Decisions logged: **CD-043** (P-005 closed on verification; REF-19 canon; P04 register imported;
+  interim numbering authority named; residual raised) and **QB-D-010** (wave 1 returned to `_wip/`).
+- Gates run + result: `gates.py` → **FAIL (1 failure), EXIT=1 — FLAG-TRACE red, as intended**;
+  **57/57 envelopes PASS** L1–L4, 0 warn / 0 advisory; `canon_check.py` **CLEAN (0 fail, 1 warn)**;
+  `tools_check.py` **CLEAN (0 fail, 2 warn)**. Verbatim:
+  `reports/BAN_U21_GATES_2026-08-09-depromoted.txt`; verification evidence:
+  `reports/P005_VERIFICATION_2026-08-09.txt`.
+- Open items / PENDING-P raised: **P-005 CLOSED** — PASS on all four conditions. REF-19 holds
+  **zero `TOP-` strings and no numeric-suffixed id**; its 121 slugs reconcile **exactly** with the
+  vendored harness constant (zero diff either way), which is the CD-011 reconciliation finally done
+  artifact-first. `D-PROJ04-011` attests *"`TOP-BAN-C5-02` বাক্য-রচনা (29)"*, `D-PROJ04-003` carries
+  `-02` for U14 — **the 8 S03 items are correctly tagged**. QB-CR-004 and QB-CR-007 close with it.
+  **PENDING-P-008 raised (FLAGGED, non-blocking):** the authoritative `##` chart owed to REF-07 §3.5
+  is still not a file; interim authority is REF-19 slugs + the register's attested numbering, and the
+  register carries that same caveat in its own rows. **PENDING-P-007 raised (OPEN, BLOCKING):**
+  checking the three tags the ruling did *not* ask about — possible for the first time now that the
+  register is here — found **`TOP-BAN-C5-11` attested as মূল্যবোধ/মুক্ত-চিন্তা** while the bank's
+  বিরামচিহ্ন item `Q52` carries it. I had read it off MarkLogic spine slot **S11 = বিরামচিহ্ন**; the
+  two schemes are unrelated and collide at 11. No punctuation number is attested anywhere, so
+  **nothing was substituted**. **Two gate findings:** FLAG-TRACE **passed the bank before it failed
+  it** — it matched the literal `**OPEN**` while the row reads `**OPEN — Principal-owed.**`, so the
+  gate written for exactly this case sailed past it; fixed to read the status cell and match the
+  word, with a seeded case now exercising a **real OPEN row** (the original two covered only a
+  missing tag and a missing field, which is why the hole survived). Selftest 25 → **26**. Then the
+  red gate did its job: **AGENTS.md §5 returns a red artifact to its build phase**, so wave 1 went
+  back to `_wip/` — promotion means ready for the Hub, and a bank carrying a tag the register
+  contradicts is not. Re-promotion is one ruling and one regenerate away; the 57 items are untouched.
+  Recommendation on P-007: **mint `TOP-BAN-C5-13`** for বিরামচিহ্ন rather than folding it into `-02`,
+  since the C5 spine keeps S03 and S11 as separate mark slots.

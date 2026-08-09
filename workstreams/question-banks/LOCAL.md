@@ -19,7 +19,7 @@ workstream starts from the policy and the pilot, not from a legacy file set.
 
 ## Decision series
 
-**`QB-D-###`** · log: `DECISIONS.md` in this folder · current highest: **QB-D-009**.
+**`QB-D-###`** · log: `DECISIONS.md` in this folder · current highest: **QB-D-010**.
 The agent assigns the next free number itself, verified at source (AGENTS.md §4).
 
 ## Canon citations used
@@ -32,6 +32,13 @@ The agent assigns the next free number itself, verified at source (AGENTS.md §4
 - `canon/names/REF-2_Content_Register.md` — names, by class pool.
 - `canon/language/LANGUAGE_RULES.md` — §2 numerals, §4 সাধু/চলিত, §7 script guard.
 - `canon/islamic-curation/REF-1_Curation_Policy.md` — C-codes, via QuestionPolicy §৯.
+- `canon/topics/LOCKED_REF-19_Vertical_Topic_Progression_Map_v1_10.md` — the 121 canonical topic
+  **slugs** that `ref19_topic_id` takes (CD-043). It settles **no** `TOP-` numbers; it contains none.
+
+**Read-only reference (not canon), in `references/`:** `PROJECT04_DECISIONS.md` — the P04 register,
+cited never continued. Until REF-07 §3.5's chart exists, it is the **only** attestation of what a
+`TOP-<SUBJ>-C<n>-##` number means, and therefore the interim numbering authority alongside REF-19's
+slugs (CD-043, PENDING-P-008). **A number with no attestation there is not used — it is queued.**
 
 Cite, never copy (AGENTS.md §8).
 
@@ -39,7 +46,7 @@ Cite, never copy (AGENTS.md §8).
 
 | Artifact | Path | Naming |
 |---|---|---|
-| Bank (source of record) | `_wip/` while building → **`banks/`** on "done" | `C<n>_<SUBJ>_U<unit>_QuestionBank_v<v>.json` |
+| Bank (source of record) | `_wip/` while building → `banks/` on "done" (currently **back in `_wip/`**, QB-D-010) | `C<n>_<SUBJ>_U<unit>_QuestionBank_v<v>.json` |
 | Authoring script | **`authoring/`** | `author_U<unit>_wave<n>.py` |
 | Built envelopes | **`banks/envelopes/`** (+ `single/` per item) | `<bank stem>.envelopes.json` |
 | Gate reports | `reports/` | `<subject>_U<unit>_GATES_<date>.txt` |

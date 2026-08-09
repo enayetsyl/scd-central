@@ -414,7 +414,13 @@ def g_flag_trace(bank, ctx):
         if not rows:
             errs.append(f"flag {tag} does not resolve to a row in PENDING_PRINCIPAL.md")
             continue
-        if "**OPEN**" in rows[0]:
+        # Read the STATUS cell (last non-empty cell), not the whole row: a question or default
+        # cell may legitimately contain the word. And match the word, not the literal "**OPEN**"
+        # — the first version of this check looked for "**OPEN**" and so sailed straight past a
+        # row reading "**OPEN — Principal-owed.**". It passed a bank it was written to stop.
+        cells = [c.strip() for c in rows[0].strip().strip("|").split("|")]
+        status = cells[-1] if cells else ""
+        if re.search(r"\bOPEN\b", status):
             errs.append(f"flag {tag} is OPEN (Principal-owed) — an OPEN row blocks promotion "
                         f"(AGENTS.md §6, CD-042); it cannot ride along in a promoted bank")
         for key in ("status", "scope", "what", "closes_on"):
@@ -659,6 +665,9 @@ def selftest():
     add("RUBRIC-SPECIFICITY", "two S08 items sharing one rubric", _twin_rubrics)
     add("FLAG-TRACE", "a flag pointing at a tag that does not exist",
         lambda b: b.update({"flags": [{"tag": "PENDING-P-999", "status": "FLAGGED",
+                                       "scope": "x", "what": "y", "closes_on": "z"}]}))
+    add("FLAG-TRACE", "a flag naming a row that is OPEN (Principal-owed)",
+        lambda b: b.update({"flags": [{"tag": "PENDING-P-007", "status": "OPEN",
                                        "scope": "x", "what": "y", "closes_on": "z"}]}))
     add("FLAG-TRACE", "a flag with no closes_on",
         lambda b: b.update({"flags": [{"tag": "PENDING-P-005", "status": "FLAGGED",
