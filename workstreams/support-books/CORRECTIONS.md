@@ -7,6 +7,9 @@ same session.
 
 | ID | Date | Artifact | Correction | Action taken | Status |
 |---|---|---|---|---|---|
+| CR-002 | 2026-08-09 | L002 patch note | The note claims the MOTOR sentinel covers 2/5/7/18/53. **L18 was built with real codes** (`১.১/৫.১/১৩.১`), not the sentinel — the note overstates its reach. | Correction logged now (Principal ruling Q-5): **the sentinel covers 2/5/7/53 only.** The note text is fixed at L002's next patch — the book is not churned for a comment. | LOGGED |
+| CR-003 | 2026-08-09 | L009 · L024 · L026 | No `patch_C1-BAN_L0##` file in the export, though all three lessons exist in the book, carry images and validate. | No action (Principal ruling Q-4). Provenance note recorded: **"merged in chat era, patch file not exported."** Nothing reconstructed. | CLOSED |
+| CR-004 | 2026-08-09 | L017 patches | `v2` dated 2026-07-28, `v3` dated 2026-07-18 — version number and date disagree. | Ruled by content (Principal ruling Q-3): **v2 is operative.** The book's `L017-b04` rhyme is **byte-identical to v2**; v3 carries an entirely different rhyme ("ছাতা মাথায় ঘরে ফিরি"), so the book was built from v2 and v3 is a superseded alternative that was mis-numbered. Only `source_note` differs between book and v2, added at merge. **Forward-only naming from here** — no renumbering. | RULED |
 | CR-001 | 2026-08-09 | C1-BAN / L53 | L53 carried empty competency/outcome codes — validator CHECK 3 and CHECK 10 red. | Applied the **MOTOR sentinel**, verified at source rather than invented: the L002 patch carries `["MOTOR"]` and its note records the Principal ruling (option (i)) covering all six no-outcome পাঠ — 2/5/7/18/53. Checks 3 and 10 now PASS. | FIXED |
 
 ## Sibling check (AGENTS.md §6)

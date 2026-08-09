@@ -291,3 +291,20 @@ One block per agent session, appended at "save state and sync". Format:
   at D-019 against a registry claim of D-021+; L009/L024/L026 have no patch file though the
   lessons exist; and the L002 MOTOR note claims a reach it does not have — **L18 was built with
   real codes, not the sentinel**.
+
+## 2026-08-09 · support-books (Step 3 rulings) · Principal · cowork
+- Did: Applied five of six rulings. Reconstructed **D-021** and recorded **D-020** as a gap;
+  settled the **L017** version conflict by content; logged provenance and correction rows
+  (CR-002…CR-004); annotated the imported validation report in place without editing its body.
+  **The L53 merge is still withheld.**
+- Decisions logged: **CD-026** — see the row for each ruling's outcome.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 7 warn)**. `audits/gates.py` not re-run — nothing changed in the book, and
+  the freeze that would change the result is blocked.
+- Open items / PENDING-P raised: **Q-1 is blocked — `_inbox/Class 1 Bangla.pdf` does not exist**,
+  and no PDF is anywhere in the workspace. Nothing was derived: the ruling makes the page the
+  authority, so a list from memory would defeat the check it was meant to be. **Q-7** raised —
+  D-020 has zero citations anywhere, so its row records the gap rather than inventing a decision.
+  ⚠️ **The reply's renumbering displaced one open item**: the original **Q-6 — do canon rules beat
+  the imported governance files where they overlap? — was never answered**, and is carried
+  forward on its working default (canon wins, as recorded in LOCAL.md).

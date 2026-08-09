@@ -1,3 +1,19 @@
+########################################################################
+# ANNOTATION added on import, 2026-08-09 (Principal ruling Q-6). The report
+# body below is the historical record and is NOT edited.
+#
+# CHECK 4's "letter audit clean on all school decodable text" was CONDITIONAL
+# ON THE CANDIDATE WHITELIST. It is NOT reproducible against the master
+# inventory `letter_inventory_C1-BAN.json`, where পাঠ 52's conjunct whitelist
+# is `glyphs: null` -- and null means NO conjunct is legal under rule B-1.
+# Re-running against the master inventory yields 5 RED at L52/L052-b08
+# (দ্ধ, ক্ত).
+#
+# This line is SUPERSEDED by whatever the conjunct-whitelist freeze produces.
+# Until the freeze is ruled and applied, treat CHECK 4 here as unproven.
+# See workstreams/support-books/_wip/STATE.md.
+########################################################################
+
 ========================================================================
 VALIDATOR REPORT — validator_v2_rebuilt · book C1-BAN · 54 lessons
 ========================================================================

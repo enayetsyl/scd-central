@@ -2,19 +2,56 @@
 
 ## Phase
 
-**Step 3 import DONE. C1-BAN book NOT merged** — the L53 lesson object is prepared and its own
-checks pass, but the gate is red on a **pre-existing, unrelated** L52 conjunct failure that only
-the whitelist freeze resolves. Per governance README §3.2 step 8, a red does not merge.
+**Five of six rulings applied. Q-1 (whitelist freeze) is BLOCKED on a missing file, so the
+L53 merge is still withheld.** The book on disk remains unmerged and untouched.
 
-## Done 2026-08-09
+## ⛔ Q-1 BLOCKED — `_inbox/Class 1 Bangla.pdf` does not exist
 
-- Imported the 54-পাঠ book, 55 patches, 5 governance files, letter inventory, 2 whitelist
-  candidates, skeleton + TG reconciliation + word map, the compliant image set, the validator
-  report, and 3 validators.
-- `audits/gates.py` written — runs the **seeded-error selftest first**, then the 10 checks.
-  The selftest passes 16/16, so the instrument is proven before any book verdict is believed.
-- L53 MOTOR fix prepared (steps 7–8 run; step 9 merge withheld).
-- `LOCAL.md` filled, `REVIEW_QUEUE.md` and `CORRECTIONS.md` created, `REGISTRY.md` → **LIVE**.
+The ruling requires deriving conjuncts from NCTB pages 71–72 (পাঠ ৪৯), 74–76 (পাঠ ৫১) and
+77–78 (পাঠ ৫২) of `_inbox/Class 1 Bangla.pdf`, with the page winning over SCHEMA §6 where they
+disagree. **That PDF is not in `_inbox/`, and no PDF exists anywhere in the workspace.**
+
+Nothing was derived. The whole point of the ruling is that the *page* is the authority — a
+conjunct list produced from memory or by reasoning backwards from the candidate file would be
+exactly the phantom content AGENTS.md §4 forbids, and it would silently defeat the check the
+Principal asked for. **Drop the PDF into `_inbox/` and the derivation, freeze, re-validation and
+L53 merge all complete in one pass.**
+
+## Rulings applied 2026-08-09
+
+| Q | Ruling | Outcome |
+|---|---|---|
+| Q-1 | derive from NCTB pages, then freeze | ⛔ **BLOCKED** — PDF absent |
+| Q-2 | reconstruct D-020 + D-021 | ⚠️ **partial** — D-021 done; **D-020 has no source** |
+| Q-3 | rule L017 by content | ✅ **v2 operative**, proven byte-identical |
+| Q-4 | no action on L009/L024/L026 | ✅ provenance note logged (CR-003) |
+| Q-5 | log MOTOR-note correction | ✅ logged (CR-002); note fixed at L002's next patch |
+| Q-6 | annotate the validation report | ✅ annotated in place, body unedited |
+
+### Q-2 — D-021 reconstructed, D-020 could not be
+
+**D-021 is solid**: 9 in-book citations. পাঠ ২৩'s ঢ sentence *'ঢাল তলোয়ার ঝনঝনিয়ে বাজে।'*
+(p.33) was flagged **S4, no C-code**, and resolved to the static *'ঢাল তলোয়ার দেয়ালে সাজানো।'*
+It establishes the **weapon-as-object precedent**, applied at পাঠ ২৪ (ধনুক). Row written, marked
+*reconstructed from in-book citations — Principal re-approved.*
+
+**D-020 has zero citations** — searched the book JSON, its version log, all 55 patches, the
+governance files and the references. Nothing. A row reconstructed from the one-line description
+"mixed-classroom fiqh, open S4" would be invented, not reconstructed, so **the row records the
+gap instead** and reserves the number so D-021 is not renumbered. ⚑ New question **Q-7**: is
+there another export that carries D-020, or should it be re-ruled from scratch?
+
+### Q-3 — L017 settled by content, not by date or version number
+
+The book's `L017-b04` rhyme is **byte-identical to v2**:
+
+```
+ঝমঝমিয়ে বৃষ্টি পড়ে, / গাছের পাতা নড়েচড়ে। / গাছের তলায় ব্যাঙের ছাতা, / ব্যাঙ বসে তার ছায়ায় একা।
+```
+
+v3 carries a **different rhyme entirely** ("ছাতা মাথায় ঘরে ফিরি…"). So the book was built from
+**v2**, which is also the newer file by date — the *version number* is what is wrong, not the
+date. Only `source_note` differs between book and v2, added at merge. Forward-only from here.
 
 ## L53 — steps 7, 8, 9
 
@@ -57,7 +94,23 @@ Only **পাঠ 45** is approved, and it has a separate standalone amendment fi
 L53's merge is waiting behind. Freezing therefore is not mechanical: it approves three unreviewed
 entries. **Not done without the ruling.**
 
-## Questions — batched per AGENTS.md §6
+## Questions — the original batch, with the Principal's numbering mapped
+
+⚠️ **The Principal's reply renumbered the batch, and one item fell out.** Mapping:
+
+| Principal's Q | My original Q | Status |
+|---|---|---|
+| Q-1 freeze | Q-1 | ruled — blocked on the missing PDF |
+| Q-2 (D-019 vs D-021+) | **Q-3** | ruled |
+| Q-3 (L017 v2/v3) | **Q-2** | ruled |
+| Q-4 (L009/L024/L026) | Q-4 | ruled |
+| Q-5 (MOTOR note) | Q-5 | ruled |
+| Q-6 (validation report) | *(not in my batch)* | new item, ruled + applied |
+| — | **Q-6 governance vs canon** | ⚠️ **STILL OPEN — not answered** |
+
+**My Q-6 was displaced by the reply's own Q-6 and never ruled.** It is carried below, still on
+its stated default. Original batch text follows unedited.
+
 
 **[Principal] Q-1 — the whitelist freeze.** Approve enumerated conjuncts for পাঠ 49 (ন্দ),
 51 (দ্দ) and 52 (স্ত ক্ত দ্ধ ম্ব ষ্ট), or freeze only the approved পাঠ 45 amendment? Only the
@@ -87,11 +140,23 @@ overlap**. Confirm — or should the governance files be trimmed to process-only
 
 ## Blockers
 
-**Q-1 blocks the L53 merge.** Nothing else in Step 3 is blocked.
+**Q-1 blocks the L53 merge, and Q-1 is blocked on a missing file** — `_inbox/Class 1 Bangla.pdf`.
+Nothing else in Step 3 is blocked.
+
+## New questions — batched per §6
+
+**[Principal] Q-6 (carried, unanswered) — governance vs canon.** The imported `governance/`
+files restate rules that are now canon (image doctrine, script guard, names). `LOCAL.md` records
+**canon wins on overlap** as the working default. Confirm, or trim the governance files to
+process-only? Displaced by the reply's renumbering; still open.
+
+**[Principal] Q-7 — D-020 has no source.** Zero citations anywhere in the import. Is there
+another export carrying it, or should it be re-ruled from scratch? *Default:* the D-020 row
+records the gap and reserves the number; nothing invented.
 
 ## Next step
 
-Principal answers Q-1 → freeze the approved whitelist entries into
+Principal drops `Class 1 Bangla.pdf` into `_inbox/` → freeze the approved whitelist entries into
 `books/C1-BAN/letter_inventory_C1-BAN.json` as a recorded amendment (never a silent edit) →
 re-run `audits/gates.py` → on green, complete step 9 and merge L53 → move the report into
 `books/C1-BAN/reports/`.
