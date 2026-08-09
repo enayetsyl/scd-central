@@ -6,7 +6,7 @@ Changes are Principal-gated and logged as CD-### rows in `DECISIONS.md`.
 
 | Sub-folder | Holds | Consumed by |
 |---|---|---|
-| islamic-curation/ | REF-1 Curation Policy v1.2 LOCKED — 19 categories C-01…C-19 (C1 Bangla/English scope, CD-005) | support-books, storybooks(conventions), lesson-plans |
+| islamic-curation/ | REF-1 Curation Policy v1.2 LOCKED — 19 categories C-01…C-19; whole-school scope, extending one class per year (CD-005, CD-015) | support-books, storybooks(conventions), lesson-plans |
 | names/ | REF-2 Content Register — Approved Names Pool, 220 names in 5 class pools (CD-006) | support-books, class-tests, english-drive |
 | marklogic/ | 7 MarkLogic files (mark authority) | scholarship, class-tests, question-banks, english-drive |
 | image-rules/ | living-being image doctrine | support-books, storybooks(conventions) |

@@ -117,8 +117,12 @@ The gate is protocol, not just practice.
 
 ## Carried forward from Step 1 (not blocking)
 
-- **PENDING-P-001** — REF-1 v1.2 governs Class 1 Bangla/English only.
-- **PENDING-P-003** — Arabic is RED everywhere under CD-012, but islamic-studies will need it.
+- ~~PENDING-P-001~~ — RULED 2026-08-09 → **CD-015**. REF-1's scope is the **whole school**, all
+  current classes, extending one class per year; the class list is read from `SCHOOL_FACTS.md`.
+  Overrides REF-1 §1.2, which is LOCKED and not edited. **The PENDING-P queue is now empty.**
+- ~~PENDING-P-003~~ — RULED 2026-08-09 → **CD-014**. Tier 1 stands; ground restated as renderer
+  capability; lifts **per render path** on proven Arabic shaping + verbatim আলিম-reviewed source.
+  `ARABIC-SLOT` placeholder meanwhile. Recorded in `workstreams/islamic-studies/LOCAL.md`.
 - **F-2** — MarkLogic Rules §6 does not list `C5_Bangla_Source_13-23.md`, now canon.
 - **UP-001** — the Hub harness has no charset check; upstream's to fix, not ours (CD-013).
 - **WATCH counter review** — em-dash/ellipsis counter runs for one term, then is retired or
@@ -138,5 +142,10 @@ Two things to get right for `render/`:
 2. **The smoke test is a real render**, not a `--help`. Render an actual class test to .docx and
    confirm Bengali numerals per `LANGUAGE_RULES` §2 and the script guard per §7. A renderer that
    loads but produces tofu is exactly the failure UP-001 warns about.
+3. **Optional but valuable while the fonts are in hand:** CD-014 lifts tier 1 per render path on
+   an executed Arabic-shaping proof. If Noto/Nikosh shape Arabic correctly through this docx
+   path, that test can be run now and logged in `render/SMOKE.md` — it is the only thing standing
+   between islamic-studies and real ayat. Condition (2), আলিম-reviewed verbatim source, is a
+   separate human gate and is not satisfied by any render test.
 
 CD-008 is closed by CD-012 (2026-08-09). Remaining Step 2 order: render/ then images/; assets/ DEFERRED.

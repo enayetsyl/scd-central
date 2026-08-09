@@ -1,4 +1,9 @@
-# canon/_wip/STATE.md — Step 1 canon extract (session state)
+# canon/_wip/STATE.md — Step 1 canon extract (session state) · FROZEN
+
+> **This file is closed Step 1 history, frozen 2026-08-09.** Statuses below were true when
+> written and are not maintained. In particular every PENDING-P item it mentions has since been
+> ruled — the live queue is root `PENDING_PRINCIPAL.md` (currently empty), and the live state
+> for Step 2 is `tools/_wip/STATE.md`.
 
 Canon slotting is repo-level, not a workstream, so its `_wip/` lives here (AGENTS.md §3 intent).
 A killed session must be resumable from this file alone.

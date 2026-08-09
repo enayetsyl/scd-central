@@ -4,6 +4,9 @@
   Mohammadpur papers = historical source/guide corpus only ("Muhammadpur STRUCTURE +
   Sylhet CONTENT" is retired as a binding rule; MarkLogic governs now).
 - Classes: Nursery, KG, C1–C5; adding one class per year up to C10.
+  ⚠️ **Load-bearing.** REF-1's curation scope is read from this line (CD-015) and is not
+  restated anywhere else. Update it the year a class is added — C6 in 2027 — and the curation
+  scope follows automatically.
 - Assessment architecture: HY 100 + Annual 100 + class tests 20–30 marks/chapter;
   all papers 100 marks (80-mark withdrawn).
 - App: SCD Hub (github.com/enayetsyl/scd-hub) — publisher + system of record; does not author.

@@ -14,9 +14,23 @@ scholarly-disagreement register (§5). Theological framing: D-020, Salafi method
 Consumed by: lesson-plans, question-banks, support-books, islamic-studies, and storybook
 conventions. **Cite the path and the C-code; never copy the text** (AGENTS.md §8).
 
-⚠️ **Scope.** v1.2 governs **Class 1 Bangla and English only**. Other subjects and Classes 2–5
-expand at v2.0. Citing REF-1 outside that scope is not yet authorised — see `PENDING-P-001`
-in root `PENDING_PRINCIPAL.md`.
+## ⚠️ Scope — read this before reading the file
+
+**REF-1 governs the whole school (CD-015).** All current classes — today Nursery–C5 as
+applicable, C1–C5 for support-book work — extending **automatically by one class each year** as
+the school adds one (C6 in 2027, through C10). It is not a Class-1 or pilot-only policy.
+
+The current-classes list is read from `canon/school-facts/SCHOOL_FACTS.md`. It is **not**
+restated here or in any workstream file.
+
+**The file itself still says otherwise.** REF-1 v1.2 §1.2 reads "Class 1 Bangla and English
+only". That is superseded by CD-015. The file is LOCKED and deliberately **not edited** — the
+override lives in the decision row and here. Do not "fix" §1.2.
+
+**One thing to carry when applying it above Class 1.** The 19 categories were developed against
+C1 Bangla/English content. At higher classes, **a category that has not been written yet is not
+a permission** — a genuinely unclear case escalates via REF-1 §4.5 rather than defaulting to
+allowed.
 
 **Correction on slotting (CD-005).** The earlier description of this slot — "v1.0, 11 C-codes,
 S1–S4 severity, anthem/flag ruling SB-016" — was stale. There is no S1–S4 severity scheme, the

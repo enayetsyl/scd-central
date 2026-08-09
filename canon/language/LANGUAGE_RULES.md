@@ -59,8 +59,9 @@ When REF-1 requires a word or passage to be replaced, four things survive the ed
 the **learning outcome**, the **required vocabulary** (the word must appear somewhere, any
 position), the **Bloom's cognitive level**, and the **reading-difficulty level**.
 
-Source: `canon/islamic-curation/REF-1_Curation_Policy.md` §4.2–§4.4. ⚠️ In force for **Class 1
-Bangla and English only** until REF-1 v2.0 — see PENDING-P-001.
+Source: `canon/islamic-curation/REF-1_Curation_Policy.md` §4.2–§4.4. In force **school-wide**
+(CD-015) — all current classes, extending one class per year; the class list is read from
+`canon/school-facts/SCHOOL_FACTS.md`.
 
 ## 6. Bengali-language machinery the papers assume
 
@@ -81,7 +82,29 @@ Three tiers. **RED** = the artifact is rejected. **GREY** = reported, not reject
 | 2 | **Arrows, emoji, symbol glyphs** | RED | GREY |
 | 3 | **Em-dash `—` and ellipsis `…`** | ALLOWED (WATCH counter) | ALLOWED |
 
-**Tier 1 is absolute** — Arabic script is red *anywhere, in any string*, rendered or metadata.
+### Tier 1 — a capability rule, not a doctrinal one
+
+Arabic script is RED anywhere, in any string, for **every current workstream**.
+
+The ground is **render capability**, not a judgement about Arabic. An unshaped Arabic string
+tofus or breaks its joining in the Hub's PDF renderer, and that failure surfaces *after* gold
+promotion — in a child's hand. The rule exists to stop that, and it lifts when the capability is
+proven, not when someone argues it should.
+
+A workstream may carry Arabic script in rendered fields only when **both** hold:
+
+1. **Proven shaping.** Its full render path has passed an **executed** smoke test — real ayah
+   text rendered and eyeball-verified: RTL correct, joining correct, no tofu — logged the way
+   `tools/hub-export/SMOKE.md` is. Proven **per render path**, not once per repo: a new
+   renderer, font or export route re-proves it.
+2. **Verbatim quoted source only.** Every Arabic string is quoted source text carrying its
+   provenance — mushaf or hadith reference in `source_note` — and is reviewed in the **আলিম
+   lane**. Never model-composed. Never transliteration-round-tripped.
+
+Until both hold, drafts use **Bangla + transliteration** with an **`ARABIC-SLOT`** placeholder
+marking where the ayah will be inserted. This is the position for `islamic-studies` today.
+
+Ruling: CD-014.
 
 **Tier 2's split exists for a reason:** metadata fields (notes, compliance_note,
 scene_description, style_profile, version_log) legitimately carry →, ⚠ and 🔒, so failing them

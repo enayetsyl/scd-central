@@ -102,3 +102,32 @@ One block per agent session, appended at "save state and sync". Format:
   islamic-studies yet. Also carried: **UP-001** (upstream), and the **WATCH counter review** at
   one term's end. Next: `tools/render/` (item 2), where the smoke test must be a real .docx
   render, not a `--help`.
+
+## 2026-08-09 · canon (scope + Arabic rulings) · Principal · cowork
+- Did: Wrote two rulings into canon and swept every file that contradicted them. **CD-014**
+  (Arabic) restated `LANGUAGE_RULES.md` §7 tier 1 as a capability rule with its two lift
+  conditions, and recorded the binding position in `workstreams/islamic-studies/LOCAL.md`
+  (cited, not restated). **CD-015** (scope) corrected four files still asserting Class-1 scope —
+  `canon/islamic-curation/README.md`, `canon/README.md`, `IMAGE_RULES.md` §7,
+  `LANGUAGE_RULES.md` §5 — and marked the class-list line in `SCHOOL_FACTS.md` as load-bearing.
+  Froze `canon/_wip/STATE.md` with a banner: it narrates PENDING-P items as open and would
+  otherwise be read as current.
+- Decisions logged: **CD-014** — tier 1 stands for every current workstream (Arabic RED
+  anywhere); ground is renderer capability, not doctrine; it lifts **per render path** on
+  (1) an executed Arabic-shaping smoke test — real ayah, eyeball-verified, RTL + joining
+  correct, no tofu — and (2) verbatim quoted source with `source_note` provenance reviewed in
+  the **আলিম lane**, never model-composed, never transliteration-round-tripped; until both hold,
+  drafts use Bangla + transliteration with an **`ARABIC-SLOT`** placeholder. **CD-015** — REF-1
+  governs the **whole school**, all current classes, extending automatically by one class each
+  year (C6 in 2027, through C10); the class list is read from `SCHOOL_FACTS.md` and restated
+  nowhere; this **overrides REF-1 v1.2 §1.2**, which is LOCKED and deliberately not edited;
+  and above Class 1, a category not yet written is **not** a permission — unclear cases escalate
+  via REF-1 §4.5.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 3 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 5 warn)**. Both sets are the unvendored render/images/assets slots.
+- Open items / PENDING-P raised: none. **The PENDING-P queue is empty — 0 OPEN.** Carried,
+  non-blocking: **UP-001** (scd-hub's missing charset check, upstream's to fix); the **WATCH
+  counter review** at one term's end; **F-2** (MarkLogic Rules §6 does not list
+  `C5_Bangla_Source_13-23.md`). `SCHOOL_FACTS.md` is now load-bearing for two of these.
+  Next: `tools/render/` — real .docx render as the smoke test, and the CD-014 Arabic-shaping
+  proof can be run in the same session while the fonts are in hand.

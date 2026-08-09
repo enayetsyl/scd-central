@@ -59,9 +59,12 @@ REF-1 §2 step 2.
 
 ## 7. Scope
 
-REF-1 v1.2 governs **Class 1 Bangla and English only**; other subjects and Classes 2–5 expand
-at REF-1 v2.0. Sections 1–6 are canon within that scope. Applying them beyond it is not yet
-authorised — see **PENDING-P-001** in root `PENDING_PRINCIPAL.md`.
+**School-wide (CD-015).** Sections 1–6 are canon for all current classes, extending
+automatically by one class each year as the school adds one. The current-classes list is read
+from `canon/school-facts/SCHOOL_FACTS.md` — it is not restated here.
+
+Above Class 1, note that REF-1's categories were developed against C1 content: a category that
+has not been written yet is **not** a permission. Unclear cases escalate via REF-1 §4.5.
 
 ## 8. What this file deliberately does not cover
 
