@@ -1,0 +1,43 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "ভাষণের শেষে মহানবি হজরত মুহাম্মদ (স) উপস্থিত মানুষের কাছে কী অনুরোধ করেছিলেন? দুটি বাক্যে লেখ।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "marks": 2,
+    "answer_key": {
+      "accepted": [
+        "যারা সেদিন উপস্থিত ছিল না তাদের কাছে তাঁর উপদেশ পৌঁছে দিতে বলেছিলেন"
+      ],
+      "model_note": "অনুপস্থিতদের কাছে উপদেশ পৌঁছে দেওয়ার কথা এলে পূর্ণ নম্বর।"
+    },
+    "qid": "QP-BAN-C5-U21-Q40",
+    "tier": "tier1"
+  }
+}

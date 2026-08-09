@@ -472,3 +472,79 @@ One block per agent session, appended at "save state and sync". Format:
   **No divergence existed**, so nothing was synthesised. Precedent recorded in the errata:
   `D-PROJ00-064` carries its own restoration note, so P00 hit this failure before and fixed it
   the same way. Step 5 now needs only a **question-bank artifact**.
+
+## 2026-08-09 · canon/sources + question-banks + scholarship (three policies adopted, পাঠ ২১ pilot) · Principal · cowork
+- Did: Imported the three `_inbox/` v0.1 drafts to v1.0 with the Principal's ⚑ answers applied.
+  **SOURCE_POLICY** → `canon/sources/SOURCE_POLICY.md` (+ canon MANIFEST row). **question-banks**
+  created per AGENTS.md §10 (LOCAL.md, DECISIONS.md, CORRECTIONS.md, `_wip/STATE.md`,
+  `audits/gates.py`, QUESTION_BANK_POLICY.md v1.0). **scholarship** created with
+  MODEL_PAPERS_POLICY.md v1.0; its `DECISIONS.md` is a **pointer**, since its REGISTRY row assigns
+  it `CD-###` via canon. REGISTRY updated: question-banks PLANNED → **LIVE**.
+- Decisions logged: **CD-037** (SOURCE_POLICY adopted; `_inbox` scan intake with its two stated
+  consequences; REL deferred to islamic-studies), **CD-038** (MODEL_PAPERS_POLICY; C5 → C1 order;
+  model CTs per subject only), **CD-039** (question-banks LIVE; policy adopted; pilot result; two
+  UNPROVEN rows flipped), **CD-040** (tools_check SYNTAX compiles to a temp dir), and workstream
+  rows **QB-D-001…QB-D-006**.
+- Gates run + result: `gates.py` → **CLEAN (0 failures)** after a **14-error seeded selftest, all
+  firing**; **57/57 envelopes PASS** `validate_import.py` L1–L4, 0 warn / 0 advisory;
+  `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` → **CLEAN (0 fail, 2 warn)**.
+  Full verbatim output: `workstreams/question-banks/reports/BAN_U21_GATES_2026-08-09.txt`.
+- Open items / PENDING-P raised: **PENDING-P-005** (S03 topic tag `TOP-BAN-C5-02` used on a stated
+  default — পাঠ ২১'s attested tags are `-07`/`-01`/`-11` and the revision chart is not in this repo)
+  and **PENDING-P-006** (the accepted Ch21 CT uses **আসিফ**, not in REF-2; the accepted artifact was
+  **not edited**, cross-logged to class-tests CR-004). **UP-002** raised: the LOCKED question payload
+  has no `pool` field and `paper_role` is a closed enum already meaning the REF-09 paper-section
+  family — verified at source, so the v0.1 draft's §3 proposal was **corrected, not implemented**;
+  pool membership lives authoring-side in `pool_index` and the Hub-side usage-lock and AS-rotation
+  features are blocked on it. **Two corrections to the drafts' own claims:** there were **three**
+  VENDORED-UNPROVEN rows, not two — the pilot closes `build_question_envelopes.py` and
+  `LOCKED_QuestionPayload_Schema_v1.json`, while `tools/images/pick_placements.py` stays open
+  because it is an interactive GUI (CD-022). **Pilot wave 1 = 57 items against a 180 ceiling**
+  (QB-D-005): a KEEP-AS-IS / PROTECTED সিরাত chapter yields about that many distinct items, and the
+  CEILING gate reports **70 · 35 · 18 owed** rather than manufacturing variants the ZERO-OVERLAP
+  gate would then catch.
+- **Audit round, same session.** An independent audit was run over this session's own work before
+  closing. It **proved the gate suite could not fail on a factually wrong bank** — a probe bank with
+  a flipped answer key, a fabricated fact, an MCQ with two correct options, a cross-pool paraphrase
+  and a missing (স) returned **CLEAN**. Fixed under **QB-D-008** / **CD-041**: SOURCE-TRACE was
+  vacuous, ZERO-OVERLAP skipped same-pool pairs and exempted every descriptive item, HONORIFIC
+  matched only four name forms, nothing checked the answer carrier, and all eight rubrics were
+  identical with 4 bands on a 5-mark item. Gates 11 → **13**, selftest 14 → **23 seeded errors**,
+  and hardening SOURCE-TRACE rewrote **16 of the bank's own anchors** that had been passing on
+  strings like "তিনি তখন". Content corrections: one MCQ whose marked-correct option stated a norm
+  the extraction never states, and **দশম হিজরি** — the first line of the পাঠ and অনুশীলনী ৩(ক) —
+  which no item had covered (**QB-D-007** also corrects QB-D-005's "~20 distinct facts" to 32–34).
+  `SMOKE.md` cited the wrong item id for the L4 proof (Q49 for Q52) — corrected. The gate report
+  was regenerated **unelided**: the first version showed 2 envelope results and summarised 55 as
+  "identical", which asserts rather than shows. Final: **13/13 gates CLEAN · 57/57 envelopes PASS ·
+  canon_check CLEAN · tools_check CLEAN**.
+
+## 2026-08-09 · question-banks wave-1 PROMOTED · Principal · cowork
+- Did: Acted on the Principal's rulings and promoted wave 1. **`_inbox/` drafts DELETED** — the
+  three v0.1 policy files, superseded by the imported v1.0 policies; `_inbox/` is staging, not
+  archive (reason stated in chat first, AGENTS.md §9; the sandbox could not unlink until file
+  deletion was granted for the folder). **Wave 1 promoted out of `_wip/`**: bank →
+  `banks/C5_BAN_U21_QuestionBank_v1.json`, envelopes → `banks/envelopes/`, authoring script →
+  `authoring/author_U21_wave1.py`, plus a new `authoring/split_envelopes.py` recording the join
+  between the builder's array output and the harness's one-envelope-per-file input. `_wip/` now
+  holds STATE.md only.
+- Decisions logged: **CD-042** (queue gains a third status; both queue rows ruled) and
+  **QB-D-009** (wave-1 promotion).
+- Gates run + result: full chain re-run **post-promotion, against the promoted paths** —
+  **15 gates CLEAN** after a **25-error seeded selftest**, all firing; **57/57 envelopes PASS**
+  `validate_import.py` L1–L4, 0 warn / 0 advisory; `canon_check.py` **CLEAN (0 fail, 1 warn)`;
+  `tools_check.py` **CLEAN (0 fail, 2 warn)**. Verbatim, unelided:
+  `workstreams/question-banks/reports/BAN_U21_GATES_2026-08-09-promoted.txt` (310 lines,
+  58 `RESULT: PASS`, zero `RESULT: FAIL`, zero non-zero exits).
+- Open items / PENDING-P raised: none raised. **PENDING-P-006 CLOSED** — the accepted Ch21 CT
+  stays untouched and **আসিফ is grandfathered in that one historical paper only**; deliberately
+  narrower than a carve-out, so every new item uses a REF-2 C5-pool name and **সাবিত** is
+  confirmed. **PENDING-P-005 reclassified OPEN → FLAGGED** (file-owed): `TOP-BAN-C5-02` stays a
+  stated default until the revision chart is staged in `_inbox/`, must not be changed by any
+  agent, and blocks nothing. **That reclassification is what made promotion legitimate**, so it is
+  written into the queue as a status taxonomy rather than applied as a one-off: OPEN =
+  Principal-owed and blocks promotion · FLAGGED = file-owed and does not · RULED/CLOSED = settled.
+  The flag now **travels inside the promoted bank** in its own `flags` block, enforced by a new
+  **FLAG-TRACE** gate that requires every flag to resolve to a real, non-OPEN queue row — a flag
+  pointing at nothing is worse than no flag, because it looks handled. **Wave 2 not started, by
+  instruction;** HW 70 · AS 35 · CT 18 remain owed, with named starting targets in `_wip/STATE.md`.

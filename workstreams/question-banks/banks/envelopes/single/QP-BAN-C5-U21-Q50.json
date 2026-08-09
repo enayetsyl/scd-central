@@ -1,0 +1,62 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "‘আল্লাহ তোমাদের কাছে তার হিসাব চাইবেন’ — কীসের হিসাব?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "marks": 1,
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "পৃথিবীতে করা কাজের",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "শুধু হজের খরচের",
+        "is_correct": false,
+        "why_wrong": "পাঠে খরচের কথা নেই"
+      },
+      {
+        "option_id": "গ",
+        "text": "শুধু সম্পত্তির",
+        "is_correct": false,
+        "why_wrong": "হিসাব সব কাজের, শুধু সম্পত্তির নয়"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "শুধু ভাষণ শোনার",
+        "is_correct": false,
+        "why_wrong": "পাঠে এই কথা নেই"
+      }
+    ],
+    "qid": "QP-BAN-C5-U21-Q50",
+    "tier": "tier1"
+  }
+}

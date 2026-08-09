@@ -15,4 +15,5 @@ On slotting a file, flip its row to REQUIRED.
 | canon/image-rules/IMAGE_RULES.md | REQUIRED |
 | canon/language/LANGUAGE_RULES.md | REQUIRED |
 | canon/school-facts/SCHOOL_FACTS.md | REQUIRED |
+| canon/sources/SOURCE_POLICY.md | REQUIRED |
 | canon/DECISIONS.md | REQUIRED |

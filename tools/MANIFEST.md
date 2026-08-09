@@ -32,10 +32,10 @@ trigger the "promote me" warn on a VENDORED-UNPROVEN row.
 | tools/hub-export/validate_import.py | REQUIRED |
 | tools/hub-export/import-contract.schema.json | REQUIRED |
 | tools/hub-export/LOCKED_C5_PlanSchema_v1.json | REQUIRED |
-| tools/hub-export/LOCKED_QuestionPayload_Schema_v1.json | VENDORED-UNPROVEN |
+| tools/hub-export/LOCKED_QuestionPayload_Schema_v1.json | REQUIRED |
 | tools/hub-export/LOCKED_StimulusPayload_Schema_v1.json | REQUIRED |
 | tools/hub-export/build_envelope.py | REQUIRED |
-| tools/hub-export/build_question_envelopes.py | VENDORED-UNPROVEN |
+| tools/hub-export/build_question_envelopes.py | REQUIRED |
 | tools/render/ct_docx.py | REQUIRED |
 | tools/render/glyph_probe.py | REQUIRED |
 | tools/render/render_plan.py | REQUIRED |

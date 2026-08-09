@@ -1,0 +1,62 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "hard",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "‘অন্য ধর্মের মানুষের উপর নিজের ধর্ম চাপিয়ে দেবে না’ — এই নির্দেশ থেকে কী বোঝা যায়?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "hard",
+    "marks": 1,
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "নিজের ধর্ম পালন করতে হবে, তবে অন্যকে জোর করা যাবে না",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "নিজের ধর্ম পালন না করলেও চলবে",
+        "is_correct": false,
+        "why_wrong": "ভাষণে নিজ নিজ ধর্ম পালনের কথা আছে"
+      },
+      {
+        "option_id": "গ",
+        "text": "অন্য ধর্মের মানুষের সঙ্গে কথা বলা যাবে না",
+        "is_correct": false,
+        "why_wrong": "পাঠে এই কথা নেই"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "সব ধর্ম এক",
+        "is_correct": false,
+        "why_wrong": "ভাষণে এমন কথা নেই"
+      }
+    ],
+    "qid": "QP-BAN-C5-U21-Q49",
+    "tier": "tier1"
+  }
+}

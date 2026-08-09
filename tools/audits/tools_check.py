@@ -31,6 +31,7 @@ Run from repo root:  python tools/audits/tools_check.py
 Exit 0 = CLEAN (warnings allowed) · exit 1 = FAIL. Paste output verbatim per AGENTS.md §5.
 """
 import py_compile
+import tempfile
 import re
 import shutil
 import subprocess
@@ -130,12 +131,17 @@ def check_placeholders():
 
 
 def check_syntax():
-    for p in sorted(TOOLS.rglob("*.py")):
-        try:
-            py_compile.compile(str(p), doraise=True, cfile=str(p) + "c")
-            Path(str(p) + "c").unlink(missing_ok=True)
-        except py_compile.PyCompileError as e:
-            fails.append(f"SYNTAX: {p.relative_to(ROOT)} does not compile — {e.msg.strip()}")
+    # Compile into a throwaway temp dir rather than beside the source. The old form wrote
+    # <file>.pyc into the repo and then unlinked it, which fails outright in the Cowork sandbox
+    # (PermissionError on the mounted folder) and left the gate unable to run at all. Nothing
+    # about what is checked changes — only where the byte-code lands. CD-040.
+    with tempfile.TemporaryDirectory() as tmp:
+        for i, p in enumerate(sorted(TOOLS.rglob("*.py"))):
+            try:
+                py_compile.compile(str(p), doraise=True,
+                                   cfile=str(Path(tmp) / f"{i}_{p.name}c"))
+            except py_compile.PyCompileError as e:
+                fails.append(f"SYNTAX: {p.relative_to(ROOT)} does not compile — {e.msg.strip()}")
 
     js = sorted(list(TOOLS.rglob("*.js")) + list(TOOLS.rglob("*.mjs")))
     js = [p for p in js if "node_modules" not in p.parts]

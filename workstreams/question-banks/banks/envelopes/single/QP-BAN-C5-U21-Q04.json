@@ -1,0 +1,62 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "মহানবি হজরত মুহাম্মদ (স)-এর জন্মস্থান কোনটি?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "marks": 1,
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "মক্কা",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "মদিনা",
+        "is_correct": false,
+        "why_wrong": "মদিনায় তিনি বসবাস করতেন"
+      },
+      {
+        "option_id": "গ",
+        "text": "আরাফাত",
+        "is_correct": false,
+        "why_wrong": "আরাফাত ভাষণের জায়গা"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "বাগেরহাট",
+        "is_correct": false,
+        "why_wrong": "এটি বাংলাদেশের জায়গা"
+      }
+    ],
+    "qid": "QP-BAN-C5-U21-Q04",
+    "tier": "tier1"
+  }
+}

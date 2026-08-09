@@ -1,0 +1,43 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-02",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-02",
+    "ref19_topic_id": "BAN-SENTENCE",
+    "question_text": "‘ভাষণ’ ও ‘বাসন’ — প্রায় একই উচ্চারণের এই দুটি শব্দ দিয়ে আলাদা আলাদা বাক্য তৈরি কর।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "marks": 1,
+    "answer_key": {
+      "accepted": [
+        "ভাষণ ও বাসন শব্দ দুটি আলাদা অর্থে আলাদা বাক্যে সঠিকভাবে ব্যবহৃত হয়েছে"
+      ],
+      "model_note": "দুটি বাক্যেই শব্দের অর্থ আলাদা হতে হবে; বানান ঠিক থাকতে হবে।"
+    },
+    "qid": "QP-BAN-C5-U21-Q20",
+    "tier": "tier1"
+  }
+}

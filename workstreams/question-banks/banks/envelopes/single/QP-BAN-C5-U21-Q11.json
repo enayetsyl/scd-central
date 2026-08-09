@@ -1,0 +1,62 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Apply",
+    "difficulty": "hard",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "একজন লোক প্রতিবেশীর জমির কিছু অংশ নিজের বলে দাবি করলেন। বিদায় হজের ভাষণের কোন নির্দেশ তিনি ভাঙলেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Apply",
+    "difficulty": "hard",
+    "marks": 1,
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "কেউ অন্যের সম্পত্তি দখল করবে না",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "ধর্ম নিয়ে বাড়াবাড়ি করবে না",
+        "is_correct": false,
+        "why_wrong": "এটি ধর্ম পালনের নির্দেশ, সম্পত্তির নয়"
+      },
+      {
+        "option_id": "গ",
+        "text": "গোলামের প্রতি নিষ্ঠুর হবে না",
+        "is_correct": false,
+        "why_wrong": "এটি গোলামের অধিকারের নির্দেশ"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "মেয়েদের অধিকারকে সম্মান করবে",
+        "is_correct": false,
+        "why_wrong": "এটি অন্য একটি নির্দেশ"
+      }
+    ],
+    "qid": "QP-BAN-C5-U21-Q11",
+    "tier": "tier1"
+  }
+}

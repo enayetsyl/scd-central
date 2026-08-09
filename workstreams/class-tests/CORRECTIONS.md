@@ -29,3 +29,32 @@ header on any new CT comes from `--ct-number`, never from them.
 
 `ct_docx.py` **ACCEPTED** by the Principal 2026-08-09 on the regenerated Ch21 PDF (CD-023).
 All three corrections above are closed.
+
+## Cross-logged from question-banks, 2026-08-09 (AGENTS.md §6)
+
+**CR-004 — a non-REF-2 personal name is in the accepted Ch21 class test.**
+`_wip/C5_Bangla_ClassTest_Ch21.md` question ৪ uses **আসিফ**, carried from the NCTB অনুশীলনী ৪.
+আসিফ is **not** in `canon/names/REF-2_Content_Register.md`, and `MarkLogic_QuestionPolicy.md` §৯
+requires every name in student-facing text to come from the class pool.
+
+Found while authoring the পাঠ ২১ question bank; the sibling check was run same-session across
+Ch19 and Ch20, which carry no personal names and are clean.
+
+**The accepted CT is NOT edited.** It is a Principal-accepted artifact and the call is his —
+the same handling as the reference CTs at CD-023. Bank items use **সাবিত** (REF-2 C5 male #3).
+
+Status: **CLOSED 2026-08-09** — see CR-005 below.
+Origin ledger: `workstreams/question-banks/CORRECTIONS.md` QB-CR-002.
+
+**CR-005 — Principal ruling on CR-004 / PENDING-P-006.**
+The accepted Ch21 class test **stays untouched**, and **আসিফ is grandfathered in that one
+historical paper only**. It is **not** a carve-out for NCTB-quoted names in general: every new
+item, in this workstream and in question-banks, uses a **REF-2 C5-pool** name. **সাবিত** in the
+পাঠ ২১ bank is confirmed correct.
+
+Consequence for this workstream: a future Ch21 class test built from the question bank will carry
+**সাবিত**, not আসিফ, and will therefore differ from the accepted paper on that one word. That is
+intended, and it is not a supersede of the accepted paper — the accepted paper remains valid as
+given. Printing the accepted Ch21 CT again as-is is permitted; the grandfather covers it.
+
+Status: **CLOSED — PROMOTED to an authoring rule.** Ruling recorded at CD-042.

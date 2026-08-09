@@ -1,0 +1,70 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "বিদায় হজের ভাষণে গোলামদের অধিকার সম্পর্কে মহানবি হজরত মুহাম্মদ (স) যা বলেছেন, তা নিজের ভাষায় পাঁচটি বাক্যে লেখ।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Understand",
+    "difficulty": "hard",
+    "marks": 5,
+    "rubric": {
+      "bands": [
+        "৫",
+        "৪",
+        "৩",
+        "২",
+        "১"
+      ],
+      "criteria": [
+        {
+          "role": "content",
+          "criterion": "পাঠ থেকে তথ্য — গোলামদের অধিকার",
+          "band_descriptors": {
+            "৫": "পাঠ থেকে গোলামদের অধিকার সম্পর্কে পাঁচটি আলাদা কথা সঠিকভাবে এসেছে",
+            "৪": "চারটি আলাদা কথা এসেছে",
+            "৩": "তিনটি আলাদা কথা এসেছে",
+            "২": "দুটি আলাদা কথা এসেছে",
+            "১": "একটি কথা এসেছে, বা তথ্যে ভুল আছে"
+          }
+        },
+        {
+          "role": "islamic_alignment",
+          "criterion": "ইসলামি দৃষ্টিভঙ্গির সঙ্গে সংগতি — গোলামদের অধিকার",
+          "band_descriptors": {
+            "৫": "ভাষণের শিক্ষা (গোলামদের অধিকার: তোমাদের গোলামও আল্লাহর বান্দা) ঠিকভাবে বোঝা গেছে; নবিজির (স) নামের সঙ্গে সর্বত্র (স) লেখা হয়েছে",
+            "৪": "শিক্ষা ঠিকভাবে বোঝা গেছে; (স) দু-এক জায়গায় বাদ পড়েছে",
+            "৩": "শিক্ষা মোটামুটি বোঝা গেছে; (স) প্রায়ই বাদ পড়েছে",
+            "২": "শিক্ষার সঙ্গে মিল কম",
+            "১": "ভাষণের শিক্ষার বিপরীত কথা এসেছে"
+          }
+        }
+      ]
+    },
+    "qid": "QP-BAN-C5-U21-Q42",
+    "tier": "tier1"
+  }
+}

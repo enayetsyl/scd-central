@@ -1,0 +1,45 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "বিদায় হজের ভাষণে ন্যায়বিচার সম্পর্কে কী বলা হয়েছে? দুটি কথা লেখ।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "marks": 2,
+    "answer_key": {
+      "accepted": [
+        "কখনো অন্যায় ও অবিচার করা যাবে না",
+        "সামান্য পাপ থেকেও নিজেকে দূরে রাখতে হবে",
+        "অন্যের সম্পত্তি দখল করা যাবে না"
+      ],
+      "model_note": "দুটি আলাদা কথা এলে পূর্ণ নম্বর।"
+    },
+    "qid": "QP-BAN-C5-U21-Q26",
+    "tier": "tier1"
+  }
+}

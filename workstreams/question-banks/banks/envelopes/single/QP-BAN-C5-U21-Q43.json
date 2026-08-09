@@ -1,0 +1,70 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "‘তোমরা ধর্ম নিয়ে বাড়াবাড়ি করবে না।’ — বিদায় হজের ভাষণের এই কথাটির অর্থ নিজের ভাষায় পাঁচটি বাক্যে ব্যাখ্যা কর।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Understand",
+    "difficulty": "hard",
+    "marks": 5,
+    "rubric": {
+      "bands": [
+        "৫",
+        "৪",
+        "৩",
+        "২",
+        "১"
+      ],
+      "criteria": [
+        {
+          "role": "content",
+          "criterion": "নিজের ভাষায় ব্যাখ্যা — ধর্ম নিয়ে বাড়াবাড়ি নয়",
+          "band_descriptors": {
+            "৫": "ধর্ম নিয়ে বাড়াবাড়ি নয় — কথাটির অর্থ নিজের ভাষায় সম্পূর্ণ বুঝিয়ে বলা হয়েছে, উদাহরণসহ",
+            "৪": "অর্থ বোঝানো হয়েছে, উদাহরণ দুর্বল",
+            "৩": "অর্থ আংশিক বোঝানো হয়েছে",
+            "২": "পাঠের কথা হুবহু তুলে দেওয়া হয়েছে, ব্যাখ্যা নেই",
+            "১": "অর্থ ভুল বোঝা হয়েছে"
+          }
+        },
+        {
+          "role": "islamic_alignment",
+          "criterion": "ইসলামি দৃষ্টিভঙ্গির সঙ্গে সংগতি — ধর্ম নিয়ে বাড়াবাড়ি নয়",
+          "band_descriptors": {
+            "৫": "ভাষণের শিক্ষা (ধর্মে বাড়াবাড়ি নয়: তোমরা ধর্ম নিয়ে বাড়াবাড়ি করবে না) ঠিকভাবে বোঝা গেছে; নবিজির (স) নামের সঙ্গে সর্বত্র (স) লেখা হয়েছে",
+            "৪": "শিক্ষা ঠিকভাবে বোঝা গেছে; (স) দু-এক জায়গায় বাদ পড়েছে",
+            "৩": "শিক্ষা মোটামুটি বোঝা গেছে; (স) প্রায়ই বাদ পড়েছে",
+            "২": "শিক্ষার সঙ্গে মিল কম",
+            "১": "ভাষণের শিক্ষার বিপরীত কথা এসেছে"
+          }
+        }
+      ]
+    },
+    "qid": "QP-BAN-C5-U21-Q43",
+    "tier": "tier1"
+  }
+}

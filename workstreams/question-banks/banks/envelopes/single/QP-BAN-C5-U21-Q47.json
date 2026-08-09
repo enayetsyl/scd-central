@@ -1,0 +1,62 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "বিদায় হজের ভাষণ অনুযায়ী কাউকে কী দিয়ে আলাদা করা যাবে না?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "marks": 1,
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "জাতি বা ধর্ম",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "বয়স",
+        "is_correct": false,
+        "why_wrong": "পাঠে বয়সের কথা নেই"
+      },
+      {
+        "option_id": "গ",
+        "text": "শ্রেণির ফল",
+        "is_correct": false,
+        "why_wrong": "পাঠে এই কথা নেই"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "এলাকা",
+        "is_correct": false,
+        "why_wrong": "পাঠে এলাকার কথা নেই"
+      }
+    ],
+    "qid": "QP-BAN-C5-U21-Q47",
+    "tier": "tier1"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Apply",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "তোমাদের এলাকায় একজন মানুষ অন্যের জমি দখল করেছেন। বিদায় হজের ভাষণের কোন শিক্ষা এখানে প্রযোজ্য? শিক্ষাটি ব্যাখ্যা করে পাঁচটি বাক্যে লেখ।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Apply",
+    "difficulty": "hard",
+    "marks": 5,
+    "rubric": {
+      "bands": [
+        "৫",
+        "৪",
+        "৩",
+        "২",
+        "১"
+      ],
+      "criteria": [
+        {
+          "role": "content",
+          "criterion": "নিজের মত ও তার যুক্তি — অন্যের সম্পত্তি দখল নয়",
+          "band_descriptors": {
+            "৫": "নিজের পাঁচটি আলাদা মত, প্রতিটি অন্যের সম্পত্তি দখল নয় সম্পর্কে ভাষণের শিক্ষার সঙ্গে যুক্ত করে লেখা",
+            "৪": "চারটি মত, বেশির ভাগ যুক্তিসহ",
+            "৩": "তিনটি মত, যুক্তি দুর্বল",
+            "২": "দুটি মত, যুক্তি নেই",
+            "১": "মত নেই — শুধু পাঠের কথা লেখা হয়েছে"
+          }
+        },
+        {
+          "role": "islamic_alignment",
+          "criterion": "ইসলামি দৃষ্টিভঙ্গির সঙ্গে সংগতি — অন্যের সম্পত্তি দখল নয়",
+          "band_descriptors": {
+            "৫": "ভাষণের শিক্ষা (কখনো একজন আরেক জনের সম্পত্তি দখল করবে না) ঠিকভাবে বোঝা গেছে; নবিজির (স) নামের সঙ্গে সর্বত্র (স) লেখা হয়েছে",
+            "৪": "শিক্ষা ঠিকভাবে বোঝা গেছে; (স) দু-এক জায়গায় বাদ পড়েছে",
+            "৩": "শিক্ষা মোটামুটি বোঝা গেছে; (স) প্রায়ই বাদ পড়েছে",
+            "২": "শিক্ষার সঙ্গে মিল কম",
+            "১": "ভাষণের শিক্ষার বিপরীত কথা এসেছে"
+          }
+        }
+      ]
+    },
+    "qid": "QP-BAN-C5-U21-Q44",
+    "tier": "tier1"
+  }
+}

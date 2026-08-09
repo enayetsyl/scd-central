@@ -1,0 +1,62 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Apply",
+    "difficulty": "hard",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "একজন মালিক নিজে নতুন কাপড় পরেন, কিন্তু কাজের লোককে ছেঁড়া কাপড় দেন। বিদায় হজের ভাষণ অনুযায়ী এটি কেমন কাজ?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Apply",
+    "difficulty": "hard",
+    "marks": 1,
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "ভাষণের নির্দেশের বিরুদ্ধে",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "একেবারে ঠিক কাজ",
+        "is_correct": false,
+        "why_wrong": "ভাষণে নিজেরা যা পরে তা-ই পরতে দিতে বলা হয়েছে"
+      },
+      {
+        "option_id": "গ",
+        "text": "মালিকের ইচ্ছার ব্যাপার",
+        "is_correct": false,
+        "why_wrong": "ভাষণ এটিকে ইচ্ছার ব্যাপার রাখেনি"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "শুধু ঈদের সময় ভুল",
+        "is_correct": false,
+        "why_wrong": "নির্দেশটি সবসময়ের জন্য"
+      }
+    ],
+    "qid": "QP-BAN-C5-U21-Q10",
+    "tier": "tier1"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "‘তোমাদের গোলামও আল্লাহর বান্দা’ — এই কথা থেকে কী বোঝা যায়?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "marks": 1,
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "গোলাম ও মালিক দুজনেই আল্লাহর বান্দা, তাই নিষ্ঠুর ব্যবহার করা যাবে না",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "গোলামের আলাদা কোনো মর্যাদা নেই",
+        "is_correct": false,
+        "why_wrong": "ভাষণে ঠিক এর উল্টো কথা আছে"
+      },
+      {
+        "option_id": "গ",
+        "text": "গোলাম শুধু মালিকের কথা মানবে",
+        "is_correct": false,
+        "why_wrong": "ভাষণ গোলামের অধিকারের কথা বলছে, বাধ্যতার নয়"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "গোলামকে আলাদা রাখতে হবে",
+        "is_correct": false,
+        "why_wrong": "পাঠে এই কথা নেই"
+      }
+    ],
+    "qid": "QP-BAN-C5-U21-Q07",
+    "tier": "tier1"
+  }
+}

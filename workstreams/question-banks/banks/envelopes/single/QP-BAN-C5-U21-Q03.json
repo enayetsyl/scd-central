@@ -1,0 +1,62 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 21,
+    "title": "পাঠ ২১ — বিদায় হজের ভাষণ"
+  },
+  "curation_tag": "KEEP_AS_IS",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U21_QuestionBank_v1.json"
+  },
+  "payload": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "জিলকদ আরবি বছরের কততম মাস?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "marks": 1,
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "একাদশ",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "নবম",
+        "is_correct": false,
+        "why_wrong": "পাঠে নবম মাস বলা হয়নি"
+      },
+      {
+        "option_id": "গ",
+        "text": "দশম",
+        "is_correct": false,
+        "why_wrong": "দশম হলো হিজরি সনের সংখ্যা, মাসের নয়"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "দ্বাদশ",
+        "is_correct": false,
+        "why_wrong": "পাঠে দ্বাদশ মাস বলা হয়নি"
+      }
+    ],
+    "qid": "QP-BAN-C5-U21-Q03",
+    "tier": "tier1"
+  }
+}
