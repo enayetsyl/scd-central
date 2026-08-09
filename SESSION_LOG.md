@@ -371,3 +371,19 @@ One block per agent session, appended at "save state and sync". Format:
   missing its terminal newline, so artifact-side not renderer-side; stopped, not normalised.
   **Only three of the five VENDORED-UNPROVEN rows could flip** — Step 4 supplied **no question
   artifact**, so `build_question_envelopes.py` and the question payload schema stay unproven.
+
+## 2026-08-09 · lesson-plans (register + supersede) · Principal · cowork
+- Did: Reconstructed **D-PROJ03-043/044/045** from their application citations and minted
+  **046** for the U20 supersede. Produced **U20 ChapterPlan v4** (identical content + terminal
+  newline), archived v3, and re-ran its full chain — it now joins the proven set. Wrote the
+  Plans-only scope line into LOCAL.md.
+- Decisions logged: **CD-031** — register reconstruction, the U20 supersede, and the scope line.
+- Gates run + result: v4 chain — `validate_plan` **PASS (0 warn)** → **byte-identical re-render**
+  → `build_envelope` EXIT=0 → `validate_import` **PASS (0 warn, 0 advisory)**. `canon_check.py` →
+  **CLEAN (0 fail, 1 warn)**; `tools_check.py` → **CLEAN (0 fail, 4 warn)**.
+- Open items / PENDING-P raised: two briefs given to the Principal, awaiting ruling — the
+  **no-version-bump OVERRIDE** and the **B-LP.1c contradiction**. One finding worth recording:
+  **of the six independent 045 claims, exactly one had actually been applied** — the C1 MATH U13
+  5-period re-cut that supersedes D-044's 8-period v2 and retires its S07–S08 locks. It takes 045
+  on its own row rather than being folded into 044; the other five mint nothing. All four plan
+  artifacts are now proven end-to-end.

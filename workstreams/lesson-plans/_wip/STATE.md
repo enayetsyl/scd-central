@@ -47,7 +47,22 @@ gate is byte-identical, and a gate that quietly tolerates a byte is not that gat
 `LOCKED_QuestionPayload_Schema_v1.json`. **Step 4 supplied no question artifact of any kind.**
 They close at Step 4b / question-banks, not here.
 
+## Rulings applied 2026-08-09 (CD-031)
+
+| Item | Outcome |
+|---|---|
+| Register | **Reconstructed to D-046.** 043/044/045 written from applied citations; 045 held by the one applied claim of six, surfaced not folded. New work continues at **047** |
+| U20 newline | **Superseded to v4**, v3 archived, v4 clears the full chain (D-PROJ03-046) |
+| D-038 sweep | Deferred — stays a LOCAL.md debt row; neither standalone is in this repo |
+| Packs/handoffs | **Reference imports.** JSON-source-of-record governs **Plans only**; scope line written into LOCAL.md |
+| OVERRIDE · B-LP.1c | Briefs given to the Principal; awaiting ruling |
+
+All four plan artifacts are now proven end-to-end.
+
 ## Questions — batched per §6
+
+~~**Q-1 — register**~~ · ~~**Q-4 — U20 newline**~~ · ~~**Q-5 — D-038 sweep**~~ ·
+~~**Q-6 — companion JSON**~~ → all ruled 2026-08-09, **CD-031**. Original text kept below.
 
 **[Principal] Q-1 — the decision register cannot safely be continued.** The body ends at
 **D-PROJ03-042**. **043 and 044 are cited as applied** in README v1.47, TODO v1.46 and MANIFEST

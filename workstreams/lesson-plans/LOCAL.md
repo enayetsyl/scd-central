@@ -19,11 +19,12 @@ three handoffs, `validate_plan.py`.
 
 **D-PROJ03-###**, log at `governance/PROJECT03_DECISIONS.md`.
 
-⚠️ **The next free number is NOT obvious — verify before minting.** The register body ends at
-**D-PROJ03-042**. **043 and 044 are cited as applied** in README/TODO/MANIFEST but **were never
-written into the register**, and 045 is contended by six independent handoff claims. The file
-says so itself (v1.27 changelog). See `_wip/STATE.md` Q-1/Q-2 — **do not mint a number until the
-Principal allocates.**
+**Register reconstructed and continuous to D-PROJ03-046** (CD-031). The body had ended at 042
+while 043/044 were cited as applied but never written, and 045 was claimed by six handoffs.
+043, 044 and 045 are now written from their application citations, marked *reconstructed from
+applied citations — Principal re-approved*; **only one of the six 045 claims had actually been
+applied**, and it holds 045 on its own row rather than being folded into 044. The other five
+minted nothing. New work continues at **047**.
 
 ## Canon citations used
 
@@ -70,13 +71,23 @@ so the two can never silently diverge — the divergence that would otherwise be
   single-period branch was fixed to emit all 7 Spine fields — must be re-rendered from their
   companion JSON, surface-purity checked and re-locked v1 → v2. **Neither artifact is in this
   repo**, so the sweep cannot start here yet.
-- **`LOCKED_C5_BAN_U20_ChapterPlan_v3.md` fails the re-render gate by one byte** (missing
-  terminal newline). Content is identical. See `_wip/STATE.md`.
+- ~~U20 Chapter Plan newline~~ — **CLOSED**: superseded to **v4** (D-PROJ03-046), v3 archived,
+  v4 clears the full chain. Never normalised in place.
 - **`D-PROJ03-OVERRIDE-2026-07-26`** — C2 MATH U05 Chapter Plan corrected in place with no
   version bump, so that v2 byte-set is non-unique, disambiguated only by a `footer.version_log`
   row.
 - **B-LP.1c contradiction** — one handoff records it resolved project-wide; every other treats
   it as open. Escalated on the TODO watch-list; the P00 patch is not applied.
+
+## Scope line — what the JSON-source-of-record rule governs (CD-031)
+
+**Plans only.** A Chapter Plan or Session Plan is JSON-first: the JSON is the source of record,
+the Markdown is rendered from it, and the byte-identical re-render gate applies.
+
+**Production Packs and handoffs are reference imports, not plan artifacts.** They arrive as
+Markdown with no companion JSON and that is correct — they are prose specs and build records,
+never rendered from JSON. **Do not over-apply the companion-JSON provenance rule to them**: a
+missing `.json` beside a Pack or a handoff is not a gap.
 
 ## Operator workflow
 
