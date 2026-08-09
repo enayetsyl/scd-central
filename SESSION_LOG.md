@@ -634,3 +634,49 @@ One block per agent session, appended at "save state and sync". Format:
   stays *quiet* on a FLAGGED row, so a negative case was added. **Two contested numbers carried
   forward, recorded not resolved:** the register's own unruled U14 Drama→Story re-home, where REF-03
   maps U14 to `-09` and D-PROJ04-003 tagged it `-06`.
+
+## 2026-08-09 · Cowork · Production step ① — C5 English source extraction (CD-046, CD-047)
+
+**Started:** `git pull` clean at `d6ed8fd`. Read AGENTS.md, REGISTRY.md, SOURCE_POLICY.md,
+PENDING_PRINCIPAL.md.
+
+**Classification (SOURCE_POLICY §2.1).** `_inbox/Class 5 English.pdf` is **not** the scan the
+policy describes — it is a born-digital NCTB publisher PDF (Illustrator, AcroForm, 118pp,
+md5 `09a9b96f…`) carrying a text layer that is wrong three ways: Bengali mojibake, a +29-shifted
+Latin subset, and a −29 display subset. Offset **printed + 6 = PDF**, verified at six points
+across the whole book. Five other `_inbox/` items classified and reported, none assumed.
+
+**Unit 1 as the proof piece.** Built by raster-read, held in `_wip/` unpromoted, evidence and
+gate output shown to the Principal, three questions batched (PENDING-P-009/010/011). He ruled
+all three, spot-checked and signed. Promoted to `canon/sources/c5/english/`, gate GREEN.
+
+**Two gates written.** `source_check.py` executes SOURCE_POLICY §5, closing the §6 gap that said
+the gate "has no executing script yet"; SIGNOFF reports PENDING, never PASS-by-agent.
+`source_textcheck.py` executes §7.3 — it decodes the text layer independently and diffs it
+against the transcription, so the one unchecked step in the pipeline is no longer unchecked.
+It scores against a neutral system word list, never the extraction's own words.
+
+**Both gates went red on their own author, and both times the defect was real.** source_check's
+first run caught unresolvable slot codes in the extraction *and* a phantom offset from its own
+parser. source_textcheck's ligature table had been written from guesses — two of three rows
+wrong; it stripped the control range as noise, which deleted every digit in the shifted font;
+and it broke ties on length, so `Suddenly,` decoded to `puddenlyI` and reported itself missing.
+All found by running it over 20 real units.
+
+**Units 2–20.** Extracted, gated, evidenced. Every boundary read off the printed folio: the
+contents page was right at Units 6 and 19 where a detection pass disagreed, and **the book runs
+to printed 111, not 106**. Full sweep: 20/20 PASS on RANGE/SLOTS/PAGES; textcheck AGREE on 7 of
+20, the rest amounting to 24 single words, every one proved present in the raw text layer.
+Section B — dropped or invented passages — clean throughout.
+
+**Housekeeping (Principal-ruled):** `.gitignore` widened to `**/_wip/**/*.png`; the byte-identical
+stale PlanSchema copy deleted from `_inbox/` with the vendored original verified intact after;
+Ch19/Ch20 class tests moved to `workstreams/class-tests/accepted/` unedited; Naskh weights left
+in `_inbox/` as new weights needing their own SMOKE run.
+
+**Gates before sync:** `canon_check.py` CLEAN (0 fail) · `tools_check.py` CLEAN (0 fail) ·
+`source_check.py --selftest` PASS · `source_textcheck.py --selftest` PASS.
+
+**Queue:** PENDING-P-009/010/011 CLOSED. New: **PENDING-P-012** (OPEN, canon/sources — where
+artwork-borne labels live; ~75 map names have no second channel at all) and **PENDING-P-013**
+(OPEN, scholarship — six curation facts the units record that step ② must rule on).

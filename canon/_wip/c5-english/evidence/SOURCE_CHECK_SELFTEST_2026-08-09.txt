@@ -1,0 +1,11 @@
+fixture : canon/_wip/c5-english/C5_ENG_Source_02.md
+SELFTEST — every seeded error must turn the gate RED
+------------------------------------------------------------------------------
+[RED    ] RANGE  · the stated unit has no section
+[RED    ] SLOTS  · one spine slot dropped from the cross-reference
+[RED    ] PAGES  · offset broken on one row
+[RED    ] PAGES  · in-body page reference outside the stated range
+[RED    ] PAGES  · in-body page references out of order
+[CLEAN  ] control · unmutated file must not be red
+------------------------------------------------------------------------------
+SELFTEST: PASS

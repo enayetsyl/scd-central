@@ -1,0 +1,35 @@
+=== source_check.py  ·  Unit 17  ·  2026-08-09 ===
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_17.md
+subject : class 5 · ENG
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 17-17: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 6 in-body refs monotonic within 91-96
+[PENDING] SIGNOFF  3 of 3 spot-check row(s) unsigned — only the Principal or the teacher can close this
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+exit=1
+
+=== source_textcheck.py  ·  Unit 17  ·  --pages 97-102 (PDF pages)  ·  2026-08-09 ===
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-english/C5_ENG_Source_17.md  (180 distinct words >= 4 letters)
+text layer : Class 5 English.pdf pp.97-102  (2810 letters, decoded)
+------------------------------------------------------------------------------
+A. extraction words not found anywhere in the decoded text layer: 9
+     affect
+     affected
+     daily
+     difference
+     effort
+     lifestyle
+     opinion
+     sports
+     weather
+B. stretches of the text layer no extraction word explains (>= 8 letters): 2
+     at    137: tplmfkflkpmloqpt
+     at   1136: glhuhqfh
+------------------------------------------------------------------------------
+VERDICT : DISAGREE — each line above needs a human eye on the printed page.
+          The raster is the authority; the text layer never overrules it.
+exit=1

@@ -1,0 +1,27 @@
+# gate run · C5_ENG_Source_12.md · 2026-08-09 (verbatim)
+
+$ python3 tools/audits/source_check.py canon/_wip/c5-english/C5_ENG_Source_12.md
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_12.md
+subject : class 5 · ENG
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 12-12: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 14 in-body refs monotonic within 61-68
+[PENDING] SIGNOFF  3 of 3 spot-check row(s) unsigned — only the Principal or the teacher can close this
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+exit=1
+
+$ python3 tools/audits/source_textcheck.py canon/_wip/c5-english/C5_ENG_Source_12.md "_inbox/Class 5 English.pdf" --pages 67-74
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-english/C5_ENG_Source_12.md  (282 distinct words >= 4 letters)
+text layer : Class 5 English.pdf pp.67-74  (4709 letters, decoded)
+------------------------------------------------------------------------------
+A. extraction words not found anywhere in the decoded text layer: 1
+     tiffin
+B. stretches of the text layer no extraction word explains (>= 8 letters): 0
+------------------------------------------------------------------------------
+VERDICT : DISAGREE — each line above needs a human eye on the printed page.
+          The raster is the authority; the text layer never overrules it.
+exit=1

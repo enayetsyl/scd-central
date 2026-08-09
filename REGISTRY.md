@@ -18,6 +18,9 @@ One row per workstream. Adding a workstream = copy `workstreams/_template/` + ad
 ## Production sequence (Principal directive, CD-045)
 
 **① NCTB sources to per-chapter markdown** (`canon/sources/SOURCE_POLICY.md`) →
+*In flight: C5 English 20/20 units extracted — Unit 1 signed and in `canon/sources/c5/english/`,
+Units 2–20 built in `canon/_wip/c5-english/` awaiting the Principal's spot-check (CD-046, CD-047).
+Order within C5 is now English → Bangla remainder → other subjects (SOURCE_POLICY §7.1).* →
 **② C5 model papers and CTs, remaining subjects** (`workstreams/scholarship/`) →
 **③ C1–C4** → **④ question pools** (`workstreams/question-banks/`).
 

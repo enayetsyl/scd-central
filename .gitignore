@@ -13,5 +13,8 @@ _inbox/
 # Render artifact retention (CD-024): evidence stays, scratch goes.
 # Anything a SMOKE.md cites as proof lives under an evidence/ folder and IS committed.
 # Page rasters produced while verifying are regenerable and are not evidence.
-**/_wip/*.png
+# Widened CD-046: `**/_wip/*.png` matched only PNGs sitting directly in a _wip/, so a
+# scratch raster one folder deeper (canon/_wip/c5-eng-raster/) would have been committed
+# as if it were evidence — the exact outcome CD-024 exists to prevent.
+**/_wip/**/*.png
 !**/evidence/*.png

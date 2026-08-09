@@ -1,0 +1,19 @@
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/sources/c5/english/C5_ENG_Source_01.md
+subject : class 5 · ENG
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 1-1: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for
+[PASS   ] PAGES    offset constant (+6) over 6 verified rows; 10 in-body refs monotonic within 1-6
+[PASS   ] SIGNOFF  all 3 spot-check row(s) signed
+------------------------------------------------------------------------------
+VERDICT : GREEN
+EXIT=0
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/sources/c5/english/C5_ENG_Source_01.md  (179 distinct words >= 4 letters)
+text layer : Class 5 English.pdf pp.7-12  (3391 letters, decoded)
+------------------------------------------------------------------------------
+A. extraction words not found anywhere in the decoded text layer: 0
+B. stretches of the text layer no extraction word explains (>= 8 letters): 0
+------------------------------------------------------------------------------
+VERDICT : AGREE — the channels account for each other completely

@@ -1,0 +1,23 @@
+$ python3 tools/audits/source_check.py canon/_wip/c5-english/C5_ENG_Source_15.md
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_15.md
+subject : class 5 · ENG
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 15-15: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for
+[PASS   ] PAGES    offset constant (+6) over 3 verified rows; 7 in-body refs monotonic within 79-81
+[PENDING] SIGNOFF  3 of 3 spot-check row(s) unsigned — only the Principal or the teacher can close this
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+exit=1
+
+$ python3 tools/audits/source_textcheck.py canon/_wip/c5-english/C5_ENG_Source_15.md "_inbox/Class 5 English.pdf" --pages 85-87
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-english/C5_ENG_Source_15.md  (82 distinct words >= 4 letters)
+text layer : Class 5 English.pdf pp.85-87  (1214 letters, decoded)
+------------------------------------------------------------------------------
+A. extraction words not found anywhere in the decoded text layer: 0
+B. stretches of the text layer no extraction word explains (>= 8 letters): 0
+------------------------------------------------------------------------------
+VERDICT : AGREE — the channels account for each other completely
+exit=0
