@@ -71,3 +71,25 @@ EXIT=0
 envelope schema carries zero `pattern` constraints, and the seven patterns across the three
 payload schemas are all ID/slug formats. Recorded as **PENDING-P-002** under CD-011; it is not
 merged with the SB validator's list.
+
+## Step 4 proof — `build_envelope.py` + `LOCKED_C5_PlanSchema_v1.json` (CD-030)
+
+Three real P03 Session Plans wrapped and validated end-to-end, 2026-08-09:
+
+```
+build_envelope.py  -> wrote envelope   EXIT=0   (x3)
+validate_import.py -> RESULT: PASS (0 warn, 0 advisory) — importable   EXIT=0   (x3)
+   LOCKED_C4_MATH_U05_S01_SessionPlan_v1 · U05_S06 · LOCKED_C5_BAN_U17_S01
+```
+
+`doc_type=session_plan` on all three, so L2 dispatched to the plan payload schema — that schema
+is now exercised, not merely present.
+
+**Still unexercised, and deliberately not flipped:** the question-bank fan-out script and the
+question payload schema. Step 4 supplied **no question artifact of any kind**, so neither has
+been run; both stay VENDORED-UNPROVEN until a question bank exists.
+
+Also confirmed: the `_inbox` copy of the plan schema is **byte-identical** to the vendored copy
+(sha256 `6a15d89d…31b9c`) — no divergence in the LOCKED contract, no escalation.
+
+Full evidence: `workstreams/lesson-plans/reports/PROOF_CHAIN_2026-08-09.txt`.

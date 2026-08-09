@@ -349,3 +349,25 @@ One block per agent session, appended at "save state and sync". Format:
   and refused to write until it was reconciled; recorded in the amendments, in the frozen entries
   and as **CR-005**. Nothing silently overwritten. Next: **Step 4 — lesson-plans**, which also
   closes five of the six VENDORED-UNPROVEN rows.
+
+## 2026-08-09 · lesson-plans (Step 4) · Principal · cowork
+- Did: Imported the P03 quartet, four plan artifacts, three C3 Packs, three handoffs and
+  `validate_plan.py`. Ran the **full proof chain** on every plan JSON. Filled `LOCAL.md`, added
+  canon-precedence banners to all four quartet files, flipped REGISTRY to **LIVE**.
+- Decisions logged: **CD-030** — import, schema diff, proof chain, and the three row flips.
+- Gates run + result: `validate_plan.py` **4/4 PASS**; byte-identical re-render **3/4**;
+  `build_envelope.py` **3/3 EXIT=0**; `validate_import.py` **3/3 PASS (0 warn, 0 advisory)**.
+  `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` → **CLEAN (0 fail, 4 warn)**.
+  Both repo gates went **red once each, correctly**: `tools_check` caught me flipping two rows to
+  REQUIRED while the SMOKE.md section had silently failed to land (a bad anchor), and
+  `canon_check` caught CD-030 as a phantom citation before its row was written.
+- Open items / PENDING-P raised: **six questions batched** in the workstream STATE. The
+  load-bearing one: **the D-PROJ03 register cannot safely be continued** — the body ends at
+  **042**, while **043 and 044 are cited as applied** in three quartet files but were never
+  written; six handoffs independently claimed 045. Nothing was minted. Also: the **schema diff is
+  byte-identical**, so no escalation, and `audits/` uses **symlinks** rather than copies so a
+  LOCKED contract cannot diverge. **`LOCKED_C5_BAN_U20_ChapterPlan_v3.md` is red at the
+  re-render gate by exactly one byte** — `re-render == locked + b"\n"`, the only one of four
+  missing its terminal newline, so artifact-side not renderer-side; stopped, not normalised.
+  **Only three of the five VENDORED-UNPROVEN rows could flip** — Step 4 supplied **no question
+  artifact**, so `build_question_envelopes.py` and the question payload schema stay unproven.

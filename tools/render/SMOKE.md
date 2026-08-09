@@ -87,11 +87,23 @@ Exactly the configured fonts, plus OpenSymbol for list bullets. No unexpected fa
 **আলিম lane** — is a human gate and is **NOT** satisfied by this test. `islamic-studies`
 remains on `ARABIC-SLOT` until (2) is met (CD-014).
 
-## Not proven here
+## `render_plan.py` — PROVEN 2026-08-09 (CD-030)
 
-**`render_plan.py` is vendored but UNPROVEN.** It renders P03 plan artifacts and no plan JSON
-was supplied, so it has not been executed. Do not treat its presence as a pass. See
-`tools/_wip/STATE.md`.
+Exercised against four real P03 plan artifacts in Step 4. The load-bearing check is P03's own
+gate: **re-render the locked JSON and compare byte-for-byte with the locked Markdown.**
+
+```
+LOCKED_C4_MATH_U05_S01_SessionPlan_v1   BYTE-IDENTICAL
+LOCKED_C4_MATH_U05_S06_SessionPlan_v1   BYTE-IDENTICAL
+LOCKED_C5_BAN_U17_S01_SessionPlan_v1    BYTE-IDENTICAL
+LOCKED_C5_BAN_U20_ChapterPlan_v3        RED — differs by exactly 1 byte
+```
+
+The Chapter Plan difference is **artifact-side, not renderer-side**: `re-render == locked + b"\n"`,
+and the locked `.md` is the only one of the four missing its terminal newline. The renderer is
+self-consistent; three of four round-trip exactly. Recorded, not normalised away.
+
+Full evidence: `workstreams/lesson-plans/reports/PROOF_CHAIN_2026-08-09.txt`.
 
 ## Header config (CD-021)
 

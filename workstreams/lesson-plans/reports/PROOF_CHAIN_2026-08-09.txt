@@ -1,0 +1,36 @@
+P03 PROOF CHAIN — 2026-08-09
+Path: validate_plan.py (L1 jsonschema + L2 semantic) -> render_plan.py -> byte-identical
+re-render -> build_envelope.py -> validate_import.py (L1-L4)
+
+STAGE 1 — validate_plan.py
+  LOCKED_C4_MATH_U05_S01_SessionPlan_v1.json   RESULT: PASS (1 warn)  EXIT=0
+  LOCKED_C4_MATH_U05_S06_SessionPlan_v1.json   RESULT: PASS (1 warn)  EXIT=0
+  LOCKED_C5_BAN_U17_S01_SessionPlan_v1.json    RESULT: PASS (1 warn)  EXIT=0
+  LOCKED_C5_BAN_U20_ChapterPlan_v3.json        RESULT: PASS (0 warn)  EXIT=0
+  (the warn is [XP] multi-period session validated without its Chapter Plan)
+
+STAGE 2 — byte-identical re-render (P03's own gate)
+  LOCKED_C4_MATH_U05_S01_SessionPlan_v1   BYTE-IDENTICAL
+  LOCKED_C4_MATH_U05_S06_SessionPlan_v1   BYTE-IDENTICAL
+  LOCKED_C5_BAN_U17_S01_SessionPlan_v1    BYTE-IDENTICAL
+  LOCKED_C5_BAN_U20_ChapterPlan_v3        RED - differs by exactly 1 byte
+     locked 20926 B | re-render 20927 B
+     re-render == locked + b'\n'  -> True
+     content identical ignoring trailing newline -> True
+     The locked .md is the ONLY one of the four missing its terminal newline.
+     Artifact-side defect, not a renderer defect: the renderer is consistent and the
+     other three round-trip exactly. Artifact stopped here per the stage rule.
+
+STAGE 3 — build_envelope.py (3 session plans)
+  all three: "wrote envelope to ..."  EXIT=0
+
+STAGE 4 — validate_import.py (L1-L4), LOCKED contract v1.0
+  LOCKED_C4_MATH_U05_S01_SessionPlan_v1.envelope.json  PASS (0 warn, 0 advisory) EXIT=0
+  LOCKED_C4_MATH_U05_S06_SessionPlan_v1.envelope.json  PASS (0 warn, 0 advisory) EXIT=0
+  LOCKED_C5_BAN_U17_S01_SessionPlan_v1.envelope.json   PASS (0 warn, 0 advisory) EXIT=0
+  doc_type=session_plan for all three, so the PLAN payload schema was exercised.
+
+SCHEMA DIFF (Step 4 item 2)
+  _inbox/LOCKED_C5_PlanSchema_v1.json  vs  tools/hub-export/LOCKED_C5_PlanSchema_v1.json
+  sha256 6a15d89d7d621d7035404e3d32e2be4e88fcbc25edc71d963c3a4b08c8831b9c  (both)
+  BYTE-IDENTICAL - no divergence, no escalation.
