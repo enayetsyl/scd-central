@@ -19,12 +19,12 @@ three handoffs, `validate_plan.py`.
 
 **D-PROJ03-###**, log at `governance/PROJECT03_DECISIONS.md`.
 
-**Register reconstructed and continuous to D-PROJ03-047** (CD-031, CD-032). The body had ended at 042
+**Register reconstructed and continuous to D-PROJ03-049** (CD-031…CD-034). The body had ended at 042
 while 043/044 were cited as applied but never written, and 045 was claimed by six handoffs.
 043, 044 and 045 are now written from their application citations, marked *reconstructed from
 applied citations — Principal re-approved*; **only one of the six 045 claims had actually been
 applied**, and it holds 045 on its own row rather than being folded into 044. The other five
-minted nothing. New work continues at **048**.
+minted nothing. New work continues at **050**.
 
 ## Canon citations used
 
@@ -48,6 +48,7 @@ canon-precedence banner (CD-027 pattern, applied CD-030).
 | `governance/` | the quartet — §D of TODO is the authoritative lock register |
 | `audits/` | `validate_plan.py`; **symlinks** to the vendored schema and `render_plan.py` |
 | `handoffs/` · `reports/` · `_wip/` | build record · gate evidence · scratch |
+| `references/` | **read-only reference imports** — cited, never continued from here |
 
 ## Gates
 
@@ -63,6 +64,23 @@ canon-precedence banner (CD-027 pattern, applied CD-030).
 **Why symlinks in `audits/`:** `validate_plan.py` resolves its schema from its own directory and
 imports `render_plan`. Symlinks mean there is exactly one copy of the LOCKED schema in the repo,
 so the two can never silently diverge — the divergence that would otherwise be an escalation.
+
+## Openings — bismillah is canonical (D-PROJ03-048)
+
+Lesson-plan openings carry **bismillah, then the objective cue**. The two compose; they are not
+alternatives. **Forward-only:** new and re-locked plans carry it, existing locked plans stay valid
+until the D-038 sweep — whose scope now also **normalises openings**.
+
+## ⚠️ Master-series citations do not resolve in this repo
+
+`references/PROJECT00_DECISIONS.md` is Project 00's **local** register (`D-PROJ00-###`). All 17
+P00-local rows the quartet cites resolve against it. But the **master D-series (D-001…D-053) lives
+in `PROJECT00_README.md` §3**, which is not here — so **D-038, D-045, D-046, D-049, D-051** and
+every other master citation is **unresolvable**. Treat them as cited-unverified.
+
+**And bare `D-0NN` is ambiguous.** `D-049` appears bare 65 times with no local counterpart, so it
+is master-series; `D-038` appears bare 33 times *and* as `D-PROJ03-038` 10 times. The same bare
+string means different rows in different places — never assume which without checking.
 
 ## Known debts
 

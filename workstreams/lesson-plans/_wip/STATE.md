@@ -1,11 +1,43 @@
 # lesson-plans/_wip/STATE.md — Step 4 (P03 fold-in)
 
-## Phase
+# ✅ STEP 4 CLOSED — 2026-08-09
 
-# ✅ STEP 4 IMPORTED · PROOF CHAIN RUN · WORKSTREAM LIVE — 2026-08-09
+**Proven artifacts (4/4).** All four plan artifacts clear the full chain:
+`validate_plan` → byte-identical re-render → `build_envelope` → `validate_import`.
 
-Three of four artifacts cleared the full chain. One stopped at the re-render gate. Three of the
-five VENDORED-UNPROVEN rows flipped; two could not be, for want of a question artifact.
+| Artifact | Status |
+|---|---|
+| C4 MATH U05 S01 SessionPlan v1 | proven |
+| C4 MATH U05 S06 SessionPlan v1 | proven |
+| C5 BAN U17 S01 SessionPlan v1 | proven |
+| C5 BAN U20 ChapterPlan **v4** | proven (v3 archived — 1-byte newline supersede, D-046) |
+
+**Register: reconstructed and continuous to D-PROJ03-049.** 043/044/045 reconstructed from
+applied citations; 046 = U20 supersede; 047 = C2 MATH override (parked); 048 = B-LP.1c resolved;
+049 = P00 reference import. **New work continues at 050.**
+
+**Parked / carried:**
+
+| Item | State |
+|---|---|
+| D-047 C2 MATH U05 | **PARKED** — surviving copy is pre-override, archived; post-override bytes **lost**; no v3 |
+| D-038 re-render sweep | **owed** — neither C1 BAN standalone is in this repo; scope now also normalises openings (D-048) |
+| B-LP.1c P00 patch | **pending-P00-fold-in** — approved in substance, applied at P00's migration |
+| Master D-series | **unresolvable here** — D-001…D-053 live in `PROJECT00_README.md` §3, not supplied |
+| Question-bank rows | 2 VENDORED-UNPROVEN rows await a question artifact |
+
+## What Step 5 needs from the Principal
+
+1. **`PROJECT00_README.md`** — the only file that resolves D-038/D-045/D-046/D-049/D-051 and
+   every other master citation the quartet leans on.
+2. **The two C1 BAN standalones** (`U21`, `U28`) — to run the D-038 sweep, now widened to openings.
+3. **A question-bank artifact** — closes the last two VENDORED-UNPROVEN rows.
+4. Step 5 proper: **english-programme** (recovered instructions), **islamic-studies** (greenfield),
+   **accounting** (recovery package, open: Check-5 423,533; +28,592 residual).
+
+---
+
+## Detail — Step 4 record
 
 ## Schema diff (item 2) — no escalation
 

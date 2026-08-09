@@ -419,3 +419,19 @@ One block per agent session, appended at "save state and sync". Format:
   2026-06-21, zero occurrences of the override date), and **the record nowhere states what the
   override changed** — so the post-override bytes are **recorded lost**, no v3 cut, nothing
   fabricated. **B-LP.1c** remains the last open brief.
+
+## 2026-08-09 · lesson-plans (Step 4 close) · Principal · cowork
+- Did: Resolved **B-LP.1c** (D-PROJ03-048) and imported `PROJECT00_DECISIONS.md` as a read-only
+  reference (D-PROJ03-049). Updated LOCAL.md, STATE.md and REGISTRY provenance. **Step 4 CLOSED.**
+- Decisions logged: **CD-034** — both rulings, the register state, and the import's real scope.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 4 warn)**. `canon_check` went red once, correctly, catching CD-034 as a phantom
+  citation before its row was written — the third time this session that check caught its author.
+- Open items / PENDING-P raised: ⚠️ **The imported register is not the one the citations need.**
+  `PROJECT00_DECISIONS.md` is Project 00's **local** log (`D-PROJ00-###`, 72 rows); its own
+  §"Relationship to the master decision log" states the initiative-wide **D-001…D-053 live in
+  `PROJECT00_README.md` §3**, which was not supplied. All **17** `D-PROJ00-###` citations in the
+  P03 files resolve cleanly; the **master citations remain unresolvable**. Also surfaced: **bare
+  `D-0NN` is ambiguous** — `D-049` appears bare 65× with no local row (master-series), while
+  `D-038` appears bare 33× *and* as `D-PROJ03-038` 10×. Step 5 needs: `PROJECT00_README.md`, the
+  two C1 BAN standalones for the D-038 sweep, and a question-bank artifact.
