@@ -248,3 +248,24 @@ One block per agent session, appended at "save state and sync". Format:
   on correct geometry. `pick_placements.py` is VENDORED-UNPROVEN and **cannot** be proven
   headlessly (interactive tkinter GUI, no display) — that closes only in a human session.
   Six VENDORED-UNPROVEN rows now stand; five close together at **Step 4**.
+
+## 2026-08-09 · acceptance + retention · Principal · cowork
+- Did: Closed R-2 on the Principal's confirmation of the Ch21 PDF. Marked the two reference CTs
+  **FORMAT reference only** without editing them — in `tools/render/README.md`, `SMOKE.md` and a
+  new `tools/render/reference/README.md`. Applied the render-artifact retention rule: committed
+  `tools/images/evidence/` (fixture before/after + `placements.json`) and untracked the three
+  Ch21 verification rasters.
+- Decisions logged: **CD-023** — `ct_docx.py` ACCEPTED, R-2 closed; reference CTs are the
+  historical record of tests actually given, an imported corpus and not live templates, so they
+  are **never edited** — their `৪৫ মিনিট` is superseded by CD-021 and must never be copied.
+  *The references teach structure, not time.* Same principle covers their `৩ক`/`৩খ` headers.
+  **CD-024** — evidence stays, scratch goes: anything a `SMOKE.md` cites as proof is committed
+  permanently under an `evidence/` folder; regenerable rasters under `_wip/` are gitignored.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 7 warn)**. The single canon warn is the deferred `assets/` placeholder.
+- Open items / PENDING-P raised: none. Applying CD-024 surfaced that **the strip proof existed
+  only in sandbox scratch** and would have been lost at session end — `tools/images/SMOKE.md`
+  described a visual check with nothing durable behind it. Now committed and cited. One judgement
+  recorded in the row: **teacher-facing deliverables are not scratch** — the Ch21 `.md`, `.docx`
+  and `.pdf` stay committed, because teachers are zero-Git operators (AGENTS.md §2) and cannot
+  regenerate them. Next: **Step 3 — support-books**, files already in `_inbox/`.

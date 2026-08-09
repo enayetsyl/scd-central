@@ -104,9 +104,10 @@ ERROR: --duration-min 45 is outside the canon range 30-35 minutes for a 25-mark 
 EXIT=1
 ```
 
-⚑ The two reference CTs in `reference/` still read `৪৫ মিনিট` and predate CD-021. They are
-authoring references, not issued papers — correct or mark them superseded before reusing them
-as a pattern.
+**Reference CTs — RULED (CD-023).** The two papers in `reference/` read `৪৫ মিনিট` and are
+**deliberately not edited**: they are the historical record of tests actually given, an imported
+reference corpus rather than live templates. They are marked **FORMAT reference only**; their
+time line is superseded by CD-021 and **must never be copied**. See `reference/README.md`.
 
 ## Commands
 

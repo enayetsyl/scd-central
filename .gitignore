@@ -9,3 +9,9 @@ Thumbs.db
 
 # canon slotting staging (AGENTS.md §3 _wip; not authority)
 _inbox/
+
+# Render artifact retention (CD-024): evidence stays, scratch goes.
+# Anything a SMOKE.md cites as proof lives under an evidence/ folder and IS committed.
+# Page rasters produced while verifying are regenerable and are not evidence.
+**/_wip/*.png
+!**/evidence/*.png

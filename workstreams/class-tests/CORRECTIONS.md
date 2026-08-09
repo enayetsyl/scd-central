@@ -11,15 +11,21 @@ same session.
 | CR-002 | 2026-08-09 | `C5_Bangla_ClassTest_Ch21` | Duration wrong: `৪৫ মিনিট`. Rule of record — 35 min standard for a 25-mark CT, 30 permitted, 35 maximum. Duration is config, not free text. | Verified at source first: **QuestionPolicy §৬ states no duration, and no MarkLogic file mentions one** — so the 45 had no canon backing. New canon **CD-021** + application note in QuestionPolicy §৬. `ct_docx.py --duration-min` added, default 35, **rejects anything outside 30–35**. Regenerated at ৩৫. | FIXED |
 | CR-003 | 2026-08-09 | `C5_Bangla_ClassTest_Ch21` | Answer key item ১গ (প্রায় দুই লাখ) checked by the Principal against the source file. | No change needed — confirmed accurate against `canon/marklogic/C5_Bangla_Source_13-23.md` পাঠ ২১. Logged as verified. | VERIFIED |
 
-## Sibling check (AGENTS.md §6)
+## Sibling check (AGENTS.md §6) — RULED 2026-08-09, CD-023
 
-CR-002 was checked across siblings the same session. **The two reference CTs at
-`tools/render/reference/` (Ch19, Ch20) both read `৪৫ মিনিট` and are now non-conformant.** They
-are authoring references, not canon and not issued papers. They need correcting or marking
-superseded before they are used as a pattern again — raised in the CD-021 row and in
-`tools/_wip/STATE.md`. **Not corrected unilaterally:** they are the reference set the generator
-was authored against, so changing them is the Principal's call.
+CR-002 was checked across siblings the same session. The two reference CTs at
+`tools/render/reference/` (Ch19, Ch20) both read `৪৫ মিনিট`.
 
-CR-001 does not affect the references — both use section letters (`৩ক`, `৩খ`) under the old
-convention. If the no-section-letter rule is retrospective, they need the same fix; if it applies
-only to new CTs, they stand as historical. Awaiting a word either way.
+**Ruling: do not edit them.** They are the historical record of class tests actually given — an
+imported reference corpus, not live templates. They are marked **"FORMAT reference only"** in
+`tools/render/README.md`, `tools/render/SMOKE.md` and `tools/render/reference/README.md`: the
+time line is superseded by CD-021 and **must never be copied**. The generator's 35-minute config
+default is the living rule; **the references teach structure, not time.**
+
+CR-001 resolves the same way: the references' `৩ক`/`৩খ` headers stand as historical, and the
+header on any new CT comes from `--ct-number`, never from them.
+
+## Acceptance
+
+`ct_docx.py` **ACCEPTED** by the Principal 2026-08-09 on the regenerated Ch21 PDF (CD-023).
+All three corrections above are closed.

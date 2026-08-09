@@ -69,6 +69,9 @@ degrade artwork on every pipeline run.
 
 ## Test 5 — eyeball on the raster
 
+Evidence committed permanently (CD-024): `evidence/fixture-before.png`,
+`evidence/fixture-after.png`, `evidence/placements.json`.
+
 Before/after compared visually. The band runs vertically **through the being only**, head-top
 to feet, with irregular torn edges, and does **not** cross the whole page. The non-living object
 beside the figure is untouched.

@@ -210,7 +210,8 @@ artifact finally exists to run through them.
    run only exercised the *stimulus* path. Closing these needs a plan envelope and a question
    envelope run through `validate_import.py`, plus one `build_*` fan-out. Cheap to do once a
    real plan/question artifact exists — again Step 4.
-3. **Nikosh absent (R-2, accepted).** Printed CTs will not match the NCTB face. If that matters
+3. ~~R-2~~ — **CLOSED 2026-08-09 (CD-023)**: generator accepted on the confirmed Ch21 PDF.
+   **Nikosh absent (accepted).** Printed CTs will not match the NCTB face. If that matters
    for parent- or board-facing print, Nikosh has to be sourced and the path re-proven —
    CD-018 proves per render path, and a font change is a new path.
 

@@ -8,7 +8,7 @@
 | `glyph_probe.py` | Establishes a render path's proven glyph set (CD-018) — cmap coverage, LibreOffice substitution, and raster for eyeball verification |
 | `render_plan.py` | P03 plan renderer. **Vendored but UNPROVEN** — no plan JSON supplied yet |
 | `fonts/` | Noto Serif Bengali (R/B), Noto Serif (R/B), Noto Naskh Arabic (R/B) |
-| `reference/` | The two reference class tests `ct_docx.py` was authored against |
+| `reference/` | The two class tests `ct_docx.py` was authored against. **FORMAT reference only** — historical record, never edited; `৪৫ মিনিট` superseded by the 35-minute rule (CD-021), never copy the time line (CD-023) |
 | `SMOKE.md` | The proven glyph set, the runs that established it, and the font-install prerequisite |
 
 ```
