@@ -226,3 +226,25 @@ One block per agent session, appended at "save state and sync". Format:
   despite that smoke run exercising only the *stimulus* path. Together with `render_plan.py`,
   five rows now warn accurately instead of passing silently. All five close at **Step 4
   (lesson-plans)**, when a real plan/question artifact exists to run through them.
+
+## 2026-08-09 · tools/images (Step 2 close) · Principal · cowork
+- Did: Vendored `tools/images/` — `apply_strips.py`, `make_strips.py`, `crop_edges.py`,
+  `pick_placements.py` — as neutral tooling. **Wrote `verify_strip.py`**, because the expected
+  pdftoppm verification helpers did not arrive and do not exist: none of the four scripts touches
+  pdftoppm. Smoke-tested the whole pipeline on a synthetic fixture with a **known** being region.
+  **Step 2 is CLOSED.**
+- Decisions logged: **CD-022** — images vendored and proven; `verify_strip.py` authored here
+  because without a checker `apply_strips.py` could only be shown to run, not to place the band
+  correctly, which is not proof. Boundary restated: CD-007 keeps the stripe *doctrine* out of
+  school canon — this folder is mechanism only. `tools/assets/` stays DEFERRED.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 1 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 7 warn)**. The single canon warn is the deferred `assets/` placeholder; six of
+  the seven tools warns are VENDORED-UNPROVEN rows warning correctly.
+- Open items / PENDING-P raised: none for the Principal. Measurements: band centre **0.460 against
+  0.460 requested**, inside the being region; no-living-being images copied through
+  **byte-identical** (silent re-encoding would degrade artwork every run); three negative tests
+  fire red. **Calibration recorded rather than tuned away** — feathered strip ends make the
+  measured span read ~2% inside the requested one, so tolerance 0.03 works and below ~0.025 fails
+  on correct geometry. `pick_placements.py` is VENDORED-UNPROVEN and **cannot** be proven
+  headlessly (interactive tkinter GUI, no display) — that closes only in a human session.
+  Six VENDORED-UNPROVEN rows now stand; five close together at **Step 4**.

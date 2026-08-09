@@ -28,6 +28,7 @@ Template substitutions (Principal ruling 2026-08-09, finding R-1):
 Usage:
     python3 ct_docx.py <input.md> [-o out.docx] [--body-font ...] [--symbol-font ...]
                        [--arabic-font ...] [--fonts-dir ...] [--strict]
+                       [--ct-number N] [--duration-min 30..35]
 Exit 0 = written. Exit 1 = unresolved glyphs (with --strict) or input error.
 """
 import argparse
@@ -49,6 +50,34 @@ DEFAULT_ARABIC = "Noto Naskh Arabic"
 
 # R-1 ruling: applied to source text before any layout decision.
 SUBSTITUTIONS = [("\u2705", "\u2713"), ("\u26a0\ufe0f", "দ্রষ্টব্য:"), ("\u26a0", "দ্রষ্টব্য:")]
+
+# CD-021 — class-test duration is canon, not free text in the markdown.
+DURATION_DEFAULT = 35
+DURATION_MIN = 30
+DURATION_MAX = 35
+
+BN_DIGITS = str.maketrans("0123456789", "০১২৩৪৫৬৭৮৯")
+
+
+def bn(n):
+    """Bengali numerals — LANGUAGE_RULES §2: student-facing text carries no ASCII digits."""
+    return str(n).translate(BN_DIGITS)
+
+
+def apply_header_config(md_text, ct_number, duration_min):
+    """Force CT number and duration from config rather than trusting the source (CD-021).
+
+    Duration is always enforced. The CT number is applied only when supplied, so an existing
+    source line stays authoritative unless the caller overrides it.
+    """
+    if ct_number is not None:
+        md_text = re.sub(r"^##[ \t]*শ্রেণি পরীক্ষা[ \t]*—.*$",
+                         "## শ্রেণি পরীক্ষা — " + bn(ct_number),
+                         md_text, count=1, flags=re.M)
+    md_text = re.sub(r"(\*\*সময়:\*\*[ \t]*)[০-৯0-9]+([ \t]*মিনিট)",
+                     lambda m: m.group(1) + bn(duration_min) + m.group(2), md_text)
+    return md_text
+
 
 ARABIC_RANGES = [(0x0600, 0x06FF), (0x0750, 0x077F), (0xFB50, 0xFDFF), (0xFE70, 0xFEFF)]
 
@@ -245,7 +274,16 @@ def main():
     ap.add_argument("--arabic-font", default=DEFAULT_ARABIC)
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any character has no covering font")
+    ap.add_argument("--ct-number", type=int, default=None,
+                    help="class-test number; rewrites the header line (CD-021)")
+    ap.add_argument("--duration-min", type=int, default=DURATION_DEFAULT,
+                    help=f"minutes; canon default {DURATION_DEFAULT}, "
+                         f"permitted {DURATION_MIN}-{DURATION_MAX} (CD-021)")
     args = ap.parse_args()
+
+    if not (DURATION_MIN <= args.duration_min <= DURATION_MAX):
+        sys.exit(f"ERROR: --duration-min {args.duration_min} is outside the canon range "
+                 f"{DURATION_MIN}-{DURATION_MAX} minutes for a 25-mark class test (CD-021)")
 
     src = Path(args.input)
     if not src.exists():
@@ -258,12 +296,14 @@ def main():
             sys.exit(f"ERROR: {label} font '{name}' not found in {args.fonts_dir} or on the system")
 
     raw = src.read_text(encoding="utf-8")
-    text = apply_substitutions(raw)
+    text = apply_header_config(apply_substitutions(raw), args.ct_number, args.duration_min)
     router = Router(cov, args.body_font, args.symbol_font, args.arabic_font)
     convert(text, router, out)
 
     print(f"ct_docx: {src.name} -> {out}")
     print(f"  fonts: body={args.body_font} · symbol={args.symbol_font} · arabic={args.arabic_font}")
+    print(f"  header: CT number={bn(args.ct_number) if args.ct_number is not None else '(from source)'}"
+          f" · duration={bn(args.duration_min)} মিনিট (CD-021)")
     applied = [f"{a}->{b}" for a, b in SUBSTITUTIONS if a in raw]
     if applied:
         print("  substitutions applied (R-1): " + " · ".join(applied))

@@ -93,9 +93,24 @@ remains on `ARABIC-SLOT` until (2) is met (CD-014).
 was supplied, so it has not been executed. Do not treat its presence as a pass. See
 `tools/_wip/STATE.md`.
 
+## Header config (CD-021)
+
+CT number and duration are **configuration, not free text in the source markdown**.
+`--duration-min` defaults to 35 and **exits 1 outside 30–35**:
+
+```
+$ ct_docx.py ... --duration-min 45
+ERROR: --duration-min 45 is outside the canon range 30-35 minutes for a 25-mark class test (CD-021)
+EXIT=1
+```
+
+⚑ The two reference CTs in `reference/` still read `৪৫ মিনিট` and predate CD-021. They are
+authoring references, not issued papers — correct or mark them superseded before reusing them
+as a pattern.
+
 ## Commands
 
 ```
-python3 tools/render/ct_docx.py <ct.md> -o out.docx --strict
+python3 tools/render/ct_docx.py <ct.md> -o out.docx --ct-number 3 --strict
 python3 tools/render/glyph_probe.py --fonts-dir tools/render/fonts --set all --corpus <ct.md>
 ```

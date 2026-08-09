@@ -5,9 +5,9 @@ This file is the live state for **Step 2 — tools**.
 
 ## Phase
 
-**Step 2 — tools.** Phase 2a (gate) and item 1 (hub-export) are DONE. The gate is proven and
-`tools/hub-export/` is vendored, smoke-tested and documented. Remaining: `render/`, then
-`images/`; `assets/` is DEFERRED. Waiting on Principal-supplied files into `_inbox/`.
+**Step 2 — tools. CLOSED 2026-08-09.** All three items vendored and proven: `hub-export`
+(CD-019 lineage), `render` (CD-019), `images` (CD-022). `assets/` DEFERRED (CD-009).
+Next is **Step 3 — support-books**; its five files are already waiting in `_inbox/`.
 
 ## Done this session (2026-08-09)
 
@@ -40,14 +40,12 @@ a `SMOKE.md` beside it recording the command and its verbatim output. The gate f
 | # | Target | Source expected | Status |
 |---|---|---|---|
 | 1 | `tools/hub-export/` — `validate_import.py` + L1–L4 harness + `VENDOR.md` | `scd-hub` (LOCKED contract v1.0) | ✅ vendored + smoke-tested 2026-08-09 · 8 files · V-1, V-2 recorded |
-| 2 | `tools/render/` — Nikosh + Noto Sans Bengali fonts, Node docx class-test generator, `render_plan.py` | EnglishDrive / class-test project / P03 | ⬜ awaiting files |
-| 3 | `tools/images/` — `apply_strips.py` + pdftoppm verification helpers | storybook pipeline (neutral tool only) | ⬜ awaiting files |
+| 2 | `tools/render/` — fonts, `ct_docx.py` (authored here), `glyph_probe.py`, `render_plan.py` | class-test project / P03 | ✅ vendored + proven 2026-08-09 · CD-019 · no Nikosh (R-2) |
+| 3 | `tools/images/` — strip pipeline + a verification checker | storybook pipeline (neutral tool only) | ✅ vendored + proven 2026-08-09 · CD-022 · `verify_strip.py` written here |
 | 4 | `tools/assets/` — rclone `sync.py` + assets_manifest convention | none | ⏸ DEFERRED (CD-009) |
 
-**Recommended order: 1 → 2 → 3.** hub-export first because it is the only item that unblocks
-something already deferred — the Hub renderer script guard held open by CD-008 — and because
-CD-003 makes it the sole integration path. It is also self-testing: feed it one conformant and
-one deliberately malformed envelope.
+Order used: 1 → 2 → 3, hub-export first because it was the only item unblocking something
+already deferred (the CD-008 script guard).
 
 ## Per-tool slot procedure
 
@@ -190,7 +188,19 @@ unless a `SMOKE.md` run names the file, so the status finally means what it says
 all six new paths fire. Applying it honestly reclassified **four `tools/hub-export` rows** that
 claimed REQUIRED without ever being exercised.
 
-## Open items
+## Open items — six VENDORED-UNPROVEN rows, all warning correctly
+
+| Row | Why unproven | Closes at |
+|---|---|---|
+| `render/render_plan.py` | no P03 plan JSON | Step 4 (lesson-plans) |
+| `hub-export/build_envelope.py` | needs a real plan artifact to wrap | Step 4 |
+| `hub-export/build_question_envelopes.py` | needs a real question bank to fan out | Step 4 |
+| `hub-export/LOCKED_C5_PlanSchema_v1.json` | smoke run covered the stimulus path only | Step 4 |
+| `hub-export/LOCKED_QuestionPayload_Schema_v1.json` | same | Step 4 |
+| `images/pick_placements.py` | interactive tkinter GUI; **cannot** be proven headlessly | a human session on a workstation |
+
+Do not silence these. Five of the six close together at Step 4, when a real plan or question
+artifact finally exists to run through them.
 
 1. **`render_plan.py` — VENDORED-UNPROVEN, and correctly warning.** Its proof needs a real P03
    plan JSON, which arrives with **Step 4 (lesson-plans fold-in)**. The warn is expected until
@@ -204,9 +214,18 @@ claimed REQUIRED without ever being exercised.
    for parent- or board-facing print, Nikosh has to be sourced and the path re-proven —
    CD-018 proves per render path, and a font change is a new path.
 
+# ✅ STEP 2 CLOSED — 2026-08-09
+
+`hub-export` · `render` · `images` all vendored and proven. `assets/` DEFERRED (CD-009) —
+nothing needs it, and the checklist itself says write it fresh when first needed.
+
+Gate state at close: `canon_check` CLEAN (0 fail, 1 warn) · `tools_check` CLEAN (0 fail, 7 warn).
+Every remaining warn is either the deferred `assets/` placeholder or a VENDORED-UNPROVEN row
+that is *correctly* warning — see below.
+
 ## Blockers
 
-None. Step 2 remaining: `tools/images/`; `tools/assets/` DEFERRED.
+None.
 
 Earlier input list (now satisfied except as noted):
 
@@ -260,7 +279,7 @@ The gate is protocol, not just practice.
   render path; **extends to the docx path automatically once `tools/render/` is vendored**;
   human-read markdown is out of scope. **The PENDING-P queue is empty again.**
 
-## Next step — `tools/render/` (item 2)
+## Superseded — was: next step `tools/render/` (item 2)
 
 Principal drops into `_inbox/`: Nikosh + Noto Sans Bengali font files, the Node docx generation
 scripts (class-test generator), and `render_plan.py` (P03). Then the standard per-tool procedure

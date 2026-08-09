@@ -39,5 +39,9 @@ trigger the "promote me" warn on a VENDORED-UNPROVEN row.
 | tools/render/ct_docx.py | REQUIRED |
 | tools/render/glyph_probe.py | REQUIRED |
 | tools/render/render_plan.py | VENDORED-UNPROVEN |
-| tools/images/apply_strips.py | PENDING |
+| tools/images/apply_strips.py | REQUIRED |
+| tools/images/make_strips.py | REQUIRED |
+| tools/images/verify_strip.py | REQUIRED |
+| tools/images/crop_edges.py | REQUIRED |
+| tools/images/pick_placements.py | VENDORED-UNPROVEN |
 | tools/assets/sync.py | DEFERRED |
