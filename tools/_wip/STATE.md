@@ -126,7 +126,13 @@ The gate is protocol, not just practice.
 - **F-2** — MarkLogic Rules §6 does not list `C5_Bangla_Source_13-23.md`, now canon.
 - **UP-001** — the Hub harness has no charset check; upstream's to fix, not ours (CD-013).
 - **WATCH counter review** — em-dash/ellipsis counter runs for one term, then is retired or
-  promoted (CD-012). Term-end date comes from `SCHOOL_FACTS.md` once completed.
+  promoted (CD-012). **Date now fixed: mid-December 2026**, at annual-exam close
+  (`SCHOOL_FACTS.md` v1.0, CD-017).
+- **PENDING-P-004 (OPEN)** — does the script guard apply to markdown canon/reader files, or only
+  to Hub-bound JSON payload strings? Field-typed tiers have no meaning in a .md file, and canon
+  already carries tier-2 legend glyphs deliberately. Default meanwhile: JSON payload strings only.
+  **Bears directly on the render smoke test** — do not assert §7 conformance on .docx output
+  until this is ruled.
 
 ## Next step — `tools/render/` (item 2)
 

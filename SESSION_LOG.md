@@ -131,3 +131,25 @@ One block per agent session, appended at "save state and sync". Format:
   `C5_Bangla_Source_13-23.md`). `SCHOOL_FACTS.md` is now load-bearing for two of these.
   Next: `tools/render/` — real .docx render as the smoke test, and the CD-014 Arabic-shaping
   proof can be run in the same session while the fonts are in hand.
+
+## 2026-08-09 · canon (F-2 + SCHOOL_FACTS v1.0) · Principal · cowork
+- Did: Added `C5_Bangla_Source_13-23.md` to `MarkLogic_Rules.md` §6, closing F-2. Replaced the
+  `SCHOOL_FACTS.md` v0.1 stub with the Principal-completed **v1.0**. Verified the flagged
+  class-test line at source before writing it.
+- Decisions logged: **CD-016** (F-2 closed; the Principal's English description was rendered into
+  plain Bengali to match the file's register per LANGUAGE_RULES §1 — and because the "→" in the
+  supplied wording is a tier-2 arrow, RED in rendered text under CD-012) · **CD-017**
+  (SCHOOL_FACTS v1.0: curation scope fixed at C1–C5 with Nursery/KG permanently outside; academic
+  year 2026; weekly pattern; C6 opens January 2027. **Class-test marks verified at source: 25**,
+  stated three times in `MarkLogic_QuestionPolicy.md`. The v0.1 stub's "20–30 band" has **no canon
+  source at all** and is superseded, not reconciled).
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 3 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 5 warn)**.
+- Open items / PENDING-P raised: **PENDING-P-004** — self-checking my own edit against CD-012
+  surfaced that the guard's tiers are field-typed (`text_bn`/`text_en`/titles vs metadata), which
+  are support-book **JSON** fields with no meaning in a .md file. Under the strict reading canon
+  violates canon: `MarkLogic_Rules.md` carries 🔴 🟦 ★ ↑ ↓ as teacher-facing legend notation and
+  `C5_Bangla_Source_13-23.md` tags lessons 🟦★. Default meanwhile, noted in LANGUAGE_RULES §7:
+  the guard applies to **Hub-bound JSON payload strings only**. **This bears on the render smoke
+  test** — §7 conformance must not be asserted on .docx output until it is ruled. Both
+  SCHOOL_FACTS load-bearing lines are now live: WATCH review dated **mid-December 2026**.

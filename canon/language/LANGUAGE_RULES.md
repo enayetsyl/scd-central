@@ -115,6 +115,12 @@ reader-facing text. The WATCH counter stays on **for one term** as a monitor, th
 reviewed and the counter either retired or promoted. (Term-end date comes from
 `canon/school-facts/SCHOOL_FACTS.md` once the Principal completes it.)
 
+⚠️ **Domain of this section is under ruling — PENDING-P-004.** The tiers are field-typed
+(`text_bn` / `text_en` / titles vs metadata), which are support-book **JSON** fields; that
+taxonomy has no meaning in a markdown file. Until ruled, the guard is applied to **Hub-bound
+JSON payload strings only**. Markdown canon and reader files are unaffected — which is why
+`MarkLogic_Rules.md`'s teacher-facing legend glyphs (🔴 🟦 ★ ↑ ↓) stand.
+
 Codepoint ranges, taken from the validator rather than restated from memory:
 
 ```
