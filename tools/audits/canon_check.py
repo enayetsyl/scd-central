@@ -48,7 +48,11 @@ def check_manifest():
 
 def check_placeholders():
     for p in repo_files():
-        if p.suffix in TEXT_EXT and p.name != "canon_check.py":
+        # Gate scripts carry the marker as a string literal by necessity — skip tools/audits/*.py.
+        rel = p.relative_to(ROOT).as_posix()
+        if rel.startswith("tools/audits/") and p.suffix == ".py":
+            continue
+        if p.suffix in TEXT_EXT:
             try:
                 if PLACEHOLDER in p.read_text(encoding="utf-8"):
                     warns.append(f"PLACEHOLDER: {p.relative_to(ROOT)} still unslotted")

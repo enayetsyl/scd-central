@@ -1,4 +1,4 @@
-# AGENTS.md — scd-central canonical protocol · v1.0
+# AGENTS.md — scd-central canonical protocol · v1.1
 
 Every agent session (Claude Cowork, Claude Code, Codex, or any other tool) in this repository
 follows this file. `CLAUDE.md` is a pointer here. Per-workstream rules live in
@@ -55,7 +55,10 @@ from files alone. Phase-gated builds: no phase advances past its gate. Promotion
 - A red gate returns the artifact to its build phase. No exceptions survive contact; a needed
   exception becomes a decision row + a gate-code change, not a waiver in chat.
 - Repo-wide: `python tools/audits/canon_check.py` must pass before any push that touches
-  canon/ or adds canon citations.
+  canon/ or adds canon citations; `python tools/audits/tools_check.py` must pass before any
+  push that touches tools/.
+- A tool is done when it has been **run**, not when it has been placed: every REQUIRED row in
+  `tools/MANIFEST.md` carries a `SMOKE.md` recording the command and its verbatim output.
 
 ## 6. Corrections ledger + question routing
 

@@ -152,8 +152,8 @@ Carried forward, not blocking: **PENDING-P-001** (REF-1's C1-only scope) and ope
 + L1–L4 harness — this one also unblocks the deferred script-guard CD row), `tools/assets/`
 (rclone `sync.py`). Then Step 2b (english-drive + class-tests fold-in).
 
-When Step 2 begins, this file should be superseded by a Step 2 state file or rewritten in place;
-its Step 1 content is history and lives in Git + CD-004…CD-008.
+**Step 2 state now lives at `tools/_wip/STATE.md`** (created 2026-08-09). This file is closed
+Step 1 history and is not updated further; its content also lives in Git + CD-004…CD-008.
 
 ## Open PENDING-P rows
 

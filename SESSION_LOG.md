@@ -53,3 +53,26 @@ One block per agent session, appended at "save state and sync". Format:
   `C5_Bangla_Source_13-23.md`). `canon/school-facts/SCHOOL_FACTS.md` remains a Principal-completed
   stub by design — it already passes REQUIRED. Next: **Step 2 — tools**, where `tools/hub-export/`
   also unblocks the deferred script-guard CD row.
+
+## 2026-08-09 · tools (Step 2 opened) · Principal · cowork
+- Did: Built Step 2's gate before vendoring anything. Created `tools/MANIFEST.md` and
+  `tools/audits/tools_check.py`, and **negative-tested it** — all five FAIL paths fire and exit 1.
+  Fixed a false positive in `canon_check.py` (its PLACEHOLDER scan now skips `tools/audits/*.py`,
+  since gate scripts must carry the marker as a string literal); regression-checked that it still
+  catches a genuine placeholder. Amended `AGENTS.md` to **v1.1** on the Principal's approval.
+  Opened `tools/_wip/STATE.md` as Step 2's state file; `canon/_wip/STATE.md` is now closed Step 1
+  history and points to it.
+- Decisions logged: **CD-009** (tools_check.py + tools/MANIFEST.md; standing rule — *a tool is
+  done when it has been run, not when it has been placed*; `tools/assets/sync.py` marked DEFERRED;
+  canon_check scanner fix recorded) · **CD-010** (AGENTS.md v1.0→v1.1: §5 now requires tools_check
+  before any push touching `tools/`, and states the run-not-placed rule with its SMOKE.md
+  evidence requirement — protocol tightened, nothing loosened) · **CD-011** (standing instruction
+  for the next session: the deferred CD-008 script guard is written **from the actual harness
+  code**, cross-checked against the SB validator's list, and **any disagreement comes to the
+  Principal as a PENDING-P item — never silently merged**).
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 4 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 7 warn)**. All warns are unvendored Step 2 slots, i.e. the work itself.
+- Open items / PENDING-P raised: none new. ⚠️ The **SB validator's list named in CD-011 is not in
+  this repo** and must be supplied with the harness — flag it if it does not arrive. Carried
+  forward: PENDING-P-001, F-2. Next session: **hub-export first**, then the CD-008 script-guard
+  row under the CD-011 rule.
