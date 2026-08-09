@@ -183,15 +183,23 @@ config. `glyph_probe.py` promoted out of `_wip` to `tools/render/`. Both smoke t
 end-to-end; proven glyph set and the font-install prerequisite recorded in
 `tools/render/SMOKE.md`. **CD-014 condition (1) satisfied for the docx path.**
 
-## Open items from this session
+## Gate blind spot CLOSED 2026-08-09 → CD-020
 
-1. **`render_plan.py` is vendored but UNPROVEN** — no P03 plan JSON was supplied, so it has
-   never been executed. Its MANIFEST row stays PENDING. Needs a plan JSON to smoke-test.
-2. **⚑ Gate blind spot found.** `tools_check.py` warns when a PENDING row's file is *missing*,
-   but goes silent once the file is *present yet unproven* — exactly `render_plan.py`'s state.
-   A vendored-but-unrun tool currently produces no signal at all. Proposed fix: a third status
-   (e.g. `VENDORED`) that warns until the folder's `SMOKE.md` names the file. Not implemented —
-   changing gate semantics is a decision row, not a quiet edit.
+Third status added: `VENDORED-UNPROVEN` (present but never executed). `REQUIRED` now also FAILs
+unless a `SMOKE.md` run names the file, so the status finally means what it says. Negative-tested;
+all six new paths fire. Applying it honestly reclassified **four `tools/hub-export` rows** that
+claimed REQUIRED without ever being exercised.
+
+## Open items
+
+1. **`render_plan.py` — VENDORED-UNPROVEN, and correctly warning.** Its proof needs a real P03
+   plan JSON, which arrives with **Step 4 (lesson-plans fold-in)**. The warn is expected until
+   then; do not silence it.
+2. **Four hub-export rows now VENDORED-UNPROVEN** — `build_envelope.py`,
+   `build_question_envelopes.py`, and the plan + question payload schemas. The hub-export smoke
+   run only exercised the *stimulus* path. Closing these needs a plan envelope and a question
+   envelope run through `validate_import.py`, plus one `build_*` fan-out. Cheap to do once a
+   real plan/question artifact exists — again Step 4.
 3. **Nikosh absent (R-2, accepted).** Printed CTs will not match the NCTB face. If that matters
    for parent- or board-facing print, Nikosh has to be sourced and the path re-proven —
    CD-018 proves per render path, and a font change is a new path.

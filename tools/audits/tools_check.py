@@ -6,8 +6,17 @@ Tools are executable, so existing proves nothing — this gate asks "does it par
 actually been run".
 
 Checks, in order:
-  1. MANIFEST  — every tools/MANIFEST.md row: REQUIRED file must exist (FAIL if missing);
-                 PENDING missing -> WARN (Step 2, not yet vendored); DEFERRED -> silent.
+  1. MANIFEST  — three live statuses, meaning three different states of proof (CD-020):
+                   PENDING           = not vendored. Missing -> WARN. PRESENT -> WARN, because
+                                       the row is now lying; reclassify it.
+                   VENDORED-UNPROVEN = present but never executed. Missing -> FAIL (the row
+                                       claims otherwise). Not named in its folder's SMOKE.md
+                                       -> WARN, and that warn is correct until it is run.
+                                       Named -> WARN to promote it to REQUIRED.
+                   REQUIRED          = proven. Missing -> FAIL. Not named in its folder's
+                                       SMOKE.md -> FAIL: REQUIRED asserts proof, and a tool no
+                                       smoke run mentions has none.
+                   DEFERRED          = deliberately not vendored -> silent.
   2. PLACEHOLDER— any tools/ README still carrying the unslotted marker -> WARN.
   3. SYNTAX    — every .py under tools/ must compile -> FAIL. Every .js/.mjs must pass
                  `node --check` -> FAIL (WARN once and skip if node is unavailable).
@@ -43,21 +52,72 @@ def rows():
     if not manifest.exists():
         fails.append("MANIFEST: tools/MANIFEST.md is missing")
         return []
-    found = re.findall(r"^\|\s*(tools/[^|]+?)\s*\|\s*(REQUIRED|PENDING|DEFERRED)\s*\|",
-                       manifest.read_text(encoding="utf-8"), re.M)
+    found = re.findall(
+        r"^\|\s*(tools/[^|]+?)\s*\|\s*(REQUIRED|VENDORED-UNPROVEN|PENDING|DEFERRED)\s*\|",
+        manifest.read_text(encoding="utf-8"), re.M)
     if not found:
         fails.append("MANIFEST: no parseable rows found")
     return found
 
 
+def smoke_names(path):
+    """How the folder's SMOKE.md mentions this file (CD-020).
+
+    Returns "proven" | "declared-unproven" | "absent".
+
+    A line that names the file AND contains "UNPROVEN" is an explicit statement that the tool
+    has not been run. Treating that as proof would invert the meaning of the sentence — which
+    is exactly what a naive substring search does.
+    """
+    smoke = (ROOT / path).parent / "SMOKE.md"
+    if not smoke.exists():
+        return "absent"
+    try:
+        lines = smoke.read_text(encoding="utf-8").splitlines()
+    except OSError:
+        return "absent"
+    name = Path(path).name
+    hits = [ln for ln in lines if name in ln]
+    if not hits:
+        return "absent"
+    if all("UNPROVEN" in ln.upper() for ln in hits):
+        return "declared-unproven"
+    return "proven"
+
+
 def check_manifest(manifest_rows):
     for path, status in manifest_rows:
-        if status == "DEFERRED" or (ROOT / path).exists():
+        if status == "DEFERRED":
             continue
-        if status == "REQUIRED":
+        exists = (ROOT / path).exists()
+        folder = str(Path(path).parent).replace("\\", "/")
+
+        if status == "PENDING":
+            if not exists:
+                warns.append(f"MANIFEST: {path} [PENDING] missing (not yet vendored)")
+            else:
+                warns.append(f"MANIFEST: {path} [PENDING] but the file is PRESENT — the row is "
+                             "stale; reclassify VENDORED-UNPROVEN (or REQUIRED once proven)")
+            continue
+
+        if status == "VENDORED-UNPROVEN":
+            if not exists:
+                fails.append(f"MANIFEST: {path} [VENDORED-UNPROVEN] missing — the row claims it "
+                             "is vendored")
+            elif smoke_names(path) == "proven":
+                warns.append(f"MANIFEST: {path} [VENDORED-UNPROVEN] has a run recorded in "
+                             f"{folder}/SMOKE.md — promote it to REQUIRED")
+            else:
+                warns.append(f"MANIFEST: {path} [VENDORED-UNPROVEN] vendored but never executed "
+                             f"— no run recorded in {folder}/SMOKE.md")
+            continue
+
+        # REQUIRED
+        if not exists:
             fails.append(f"MANIFEST: {path} [REQUIRED] missing")
-        else:
-            warns.append(f"MANIFEST: {path} [PENDING] missing (not yet vendored)")
+        elif folder not in SMOKE_EXEMPT and smoke_names(path) != "proven":
+            fails.append(f"MANIFEST: {path} [REQUIRED] has no run recorded in "
+                         f"{folder}/SMOKE.md — REQUIRED asserts the tool is proven")
 
 
 def check_placeholders():

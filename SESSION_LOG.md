@@ -204,3 +204,25 @@ One block per agent session, appended at "save state and sync". Format:
   print matters, sourcing it means re-proving the path, since CD-018 proves per render path.
   Also recorded: **fonts must be installed via `fc-cache`, not merely vendored** — LibreOffice
   substituted silently on the first run and would have passed a careless reading.
+
+## 2026-08-09 · tools/audits (manifest taxonomy) · Principal · cowork
+- Did: Added the third manifest status `VENDORED-UNPROVEN` to `tools_check.py` and rewrote the
+  `tools/MANIFEST.md` header to define all four states. Negative-tested every new path in a
+  scratch repo before touching the real manifest.
+- Decisions logged: **CD-020** — `PENDING` = not vendored · `VENDORED-UNPROVEN` = present but
+  never executed · `REQUIRED` = proven · `DEFERRED` = deliberately absent. VENDORED-UNPROVEN
+  warns until a `SMOKE.md` run names the file and FAILs if the file is missing; PENDING now also
+  warns when the file is *present* (stale row); and **REQUIRED now FAILs unless a `SMOKE.md` run
+  names the file**. A `SMOKE.md` line naming a file that also contains "UNPROVEN" is read as an
+  explicit non-proof declaration — without that rule the naive substring match reported
+  `render_plan.py` as proven by the very sentence saying it was not.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 2 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 8 warn)**. `canon_check` went **red once, correctly** — it caught CD-020 as a
+  phantom citation because the gate code cited the row before the row existed. Row written, then
+  green. The CD-CITE check earning its keep on its author.
+- Open items / PENDING-P raised: none for the Principal. Applying the new status honestly
+  **reclassified four `tools/hub-export` rows** — `build_envelope.py`,
+  `build_question_envelopes.py`, and the plan + question payload schemas — which held REQUIRED
+  despite that smoke run exercising only the *stimulus* path. Together with `render_plan.py`,
+  five rows now warn accurately instead of passing silently. All five close at **Step 4
+  (lesson-plans)**, when a real plan/question artifact exists to run through them.
