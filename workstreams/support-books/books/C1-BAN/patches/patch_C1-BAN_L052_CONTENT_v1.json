@@ -1,0 +1,246 @@
+{
+ "patch_id": "patch_C1-BAN_L052_CONTENT_v1",
+ "book_id": "C1-BAN",
+ "schema_version": "1.0",
+ "target_lesson_no": 52,
+ "merge_rule": "wholesale-by-lesson",
+ "lesson": {
+  "lesson_no": 52,
+  "nctb_title_bn": "আমাদের মুক্তিযুদ্ধ",
+  "nctb_pages": [
+   77,
+   78
+  ],
+  "genre": "তথ্যমূলক/ঐতিহাসিক পাঠ (C-18 প্রধান উদাহরণ); যুক্তবর্ণ স্ত ক্ত দ্ধ ম্ব ষ্ট",
+  "competency_codes": [
+   "১.২",
+   "২.১",
+   "৩.১",
+   "৫.২",
+   "৮.১",
+   "১২.১",
+   "১৬.২"
+  ],
+  "outcome_codes": [
+   "৩.১.৩",
+   "৮.১.৫",
+   "৯.২.২",
+   "১২.১.৩",
+   "১২.১.৫"
+  ],
+  "action": "retain-curated",
+  "c_codes": [
+   "C-05",
+   "C-18"
+  ],
+  "severity": "S2",
+  "status": "built",
+  "blocks": [
+   {
+    "id": "L052-b01",
+    "type": "heading",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "পাঠ ৫২\nআমাদের মুক্তিযুদ্ধ",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "heading",
+    "layout_hint": "chapter-head"
+   },
+   {
+    "id": "L052-b02",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "শুনি ও পড়ি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "section header"
+   },
+   {
+    "id": "L052-b03",
+    "type": "story",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "১৯৭১ সালে আমাদের দেশে একটা যুদ্ধ হয়েছিল। অনেক বড়ো যুদ্ধ। সেই যুদ্ধকে আমরা মুক্তিযুদ্ধ বলি।",
+    "text_en": null,
+    "source_note": "মুক্তিযুদ্ধ history opening, verbatim NCTB p77. C-18 factual-history carve-out  - RETAINED. Teacher-read (oral) history section (শুনি ও পড়ি) => audit-exempt.",
+    "style_profile": "story-body",
+    "layout_hint": "prose paragraph beside scene image"
+   },
+   {
+    "id": "L052-b04",
+    "type": "story",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "তখন আমাদের দেশ পাকিস্তানের অংশ ছিল। পাকিস্তানি মিলিটারি ২৫শে মার্চ আমাদের ওপর হামলা করে। অনেক মানুষ মেরে ফেলে। অনেক ঘর-বাড়ি পুড়িয়ে দেয়। ২৬শে মার্চ এদেশের মানুষ যুদ্ধ শুরু করে। দেশের জন্য যাঁরা যুদ্ধ করেন তাঁরা মুক্তিযোদ্ধা।",
+    "text_en": null,
+    "source_note": "মুক্তিযুদ্ধ history, verbatim NCTB p77. C-18 factual history RETAINED (dates, events, মুক্তিযোদ্ধা definition). Oral history section => audit-exempt (contains র্চ, ন্য etc. not in this পাঠ's যুক্তবর্ণ box, which is fine  - box is the decoding target, not the oral body).",
+    "style_profile": "story-body",
+    "layout_hint": "prose paragraph"
+   },
+   {
+    "id": "L052-b05",
+    "type": "story",
+    "source": "school",
+    "edited": true,
+    "oral": true,
+    "text_bn": "মুক্তিযোদ্ধারা অনেক কষ্ট করেছেন। ৯ মাস ধরে যুদ্ধ করেছেন। যুদ্ধ করতে করতে অনেকে মারা গেছেন।",
+    "text_en": null,
+    "source_note": "EDITED (Principal directive): NCTB original ended this paragraph with 'দেশের জন্য যুদ্ধ করে যাঁরা মারা যান তাঁরা শহিদ।'  - that শহিদ-definition sentence REMOVED per Principal ruling. Remaining sentences (মুক্তিযোদ্ধা hardship, 9 months, some died) kept verbatim. Oral history section => audit-exempt.",
+    "style_profile": "story-body",
+    "layout_hint": "prose paragraph"
+   },
+   {
+    "id": "L052-b06",
+    "type": "story",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "১৯৭১ সালের ১৬ই ডিসেম্বর পাকিস্তানিরা হেরে যায়। মুক্তিযোদ্ধারা জয়ী হন। বাংলাদেশ স্বাধীন হয়।\n২৬শে মার্চ আমাদের স্বাধীনতা দিবস। ১৬ই ডিসেম্বর আমাদের বিজয় দিবস।",
+    "text_en": null,
+    "source_note": "Victory + national days, verbatim NCTB p77. C-18 factual history RETAINED (স্বাধীনতা দিবস, বিজয় দিবস are factual civic identifiers, not veneration). Oral history section => audit-exempt.",
+    "style_profile": "story-body",
+    "layout_hint": "prose paragraph"
+   },
+   {
+    "id": "L052-b07",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "শব্দ শিখি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "glossary header"
+   },
+   {
+    "id": "L052-b08",
+    "type": "word_list",
+    "source": "school",
+    "edited": true,
+    "oral": false,
+    "text_bn": "যুদ্ধ - লড়াই।\nমুক্তিযোদ্ধা - যাঁরা দেশকে মুক্ত করতে যুদ্ধ করেন।",
+    "text_en": null,
+    "source_note": "EDITED (Principal directive): NCTB শব্দ শিখি glossary had three entries; the 'শহিদ - যাঁরা দেশ বা ধর্মের জন্য কাজ করতে গিয়ে মারা যান।' entry REMOVED per Principal ruling. যুদ্ধ and মুক্তিযোদ্ধা definitions kept verbatim. Glossary is decodable but uses the পাঠ's own whitelisted conjuncts (যুদ্ধ->দ্ধ, মুক্তি->ক্ত) + লড়াই; NCTB-evidenced whitelist স্ত/ক্ত/দ্ধ/ম্ব/ষ্ট applies (see DATA FLAG). ন্য (জন্য) and other body conjuncts were only in the removed line.",
+    "style_profile": "glossary",
+    "layout_hint": "word - definition pairs"
+   },
+   {
+    "id": "L052-b09",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "জেনে রাখি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "info-box header"
+   },
+   {
+    "id": "L052-b10",
+    "type": "info_box",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "২৬শে মার্চ - বাংলাদেশের স্বাধীনতা দিবস।\n১৬ই ডিসেম্বর - বাংলাদেশের বিজয় দিবস।",
+    "text_en": null,
+    "source_note": "National-days info box, verbatim NCTB p78. C-18 factual civic identifiers RETAINED. Decodable box uses ম্ব (ডিসেম্বর) + স্ব(স্বাধীনতা)  - ম্ব is whitelisted @52; স্ব appears in NCTB-original text (this info box is NCTB-original => audit-exempt regardless).",
+    "style_profile": "info-box",
+    "layout_hint": "date - meaning pairs"
+   },
+   {
+    "id": "L052-b11",
+    "type": "exercise",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "বলি\nমুক্তিযোদ্ধারা কয় মাস ধরে যুদ্ধ করেছেন?\nআমাদের স্বাধীনতা দিবস কোনটি?\nআমাদের বিজয় দিবস কোনটি?",
+    "text_en": null,
+    "source_note": "Oral comprehension questions, verbatim NCTB p78. Audit-exempt (oral).",
+    "style_profile": "question-list",
+    "layout_hint": "three oral questions"
+   },
+   {
+    "id": "L052-b12",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "যুক্তবর্ণ শিখি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L052-b13",
+    "type": "conjunct_box",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "পাকিস্তানি\tস্ত\tস\tত\nমুক্তি\tক্ত\tক\tত\nযুদ্ধ\tদ্ধ\tদ\tধ\nডিসেম্বর\tম্ব\tম\tব\nকষ্ট\tষ্ট\tষ\tট",
+    "text_en": null,
+    "source_note": "যুক্তবর্ণ শিখি box, verbatim NCTB p78: enumerates this পাঠ's five whole-unit conjuncts স্ত(পাকিস্তানি), ক্ত(মুক্তি), দ্ধ(যুদ্ধ), ম্ব(ডিসেম্বর), ষ্ট(কষ্ট). nctb source => audit-exempt. RESOLVES INVENTORY OPEN ITEM: letter_inventory conjunct_whitelist@52 was null/needs_review; NCTB p78 evidences glyphs [স্ত,ক্ত,দ্ধ,ম্ব,ষ্ট]. Per the inventory's own resolution rule (resolve from NCTB পাঠ pages), this is the B-1 whitelist for পাঠ ৫২. NOT silently written to the locked inventory  - flagged to Principal/data-owner for enumeration (see notes).",
+    "style_profile": "conjunct-box",
+    "layout_hint": "5 rows: word | conjunct | two components"
+   }
+  ],
+  "image_slots": [
+   {
+    "id": "L052-img-01",
+    "scene_description": "মুক্তিযুদ্ধ-স্মরণ দৃশ্য: শান্ত সবুজ প্রকৃতি, একটি বড়ো গাছ ও দূরে গ্রাম  - objects/scenery only, কোনো যোদ্ধা, অস্ত্র বা মানুষ নেই।",
+    "image_class": "scenery",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only memorial/nature scene replacing the NCTB battle illustration. Per Principal ruling: NO fighters, NO weapons, no people  - the armed মুক্তিযোদ্ধা figures, the jeep, and the rifles are all removed and replaced with a calm landscape (big tree, green fields, distant village).",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A calm, respectful children's-textbook illustration of a peaceful Bangladeshi countryside: a large old tree beside a green field with a winding path and a small village in the distance under a soft sky. Quiet and dignified in mood. No people, no animals, no vehicles, no weapons. Loose watercolour-style with clear outlines, high contrast for black-and-white photocopy.",
+    "aspect": "16:9",
+    "status": "draft"
+   },
+   {
+    "id": "L052-img-02",
+    "scene_description": "দ্বিতীয় স্মরণ দৃশ্য: সূর্যালোকিত সবুজ বন ও গাছপালা  - objects/scenery only, কোনো যোদ্ধা, অস্ত্র বা মানুষ নেই।",
+    "image_class": "scenery",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only nature scene replacing the second NCTB battle illustration (armed fighters with a machine gun on a tripod). Per Principal ruling: NO fighters, NO weapons, no people  - replaced with a sunlit green forest/grove.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A gentle children's-textbook illustration of a sunlit green grove: leafy trees, tall grass and a bright sun in a clear sky, calm and peaceful. No people, no animals, no vehicles, no weapons. Loose watercolour-style with clear outlines, high contrast for black-and-white photocopy.",
+    "aspect": "3:4",
+    "status": "draft"
+   }
+  ],
+  "nctb_omitted": [
+   {
+    "item": "body sentence 'দেশের জন্য যুদ্ধ করে যাঁরা মারা যান তাঁরা শহিদ।'",
+    "reason": "Principal directive: remove শহিদ-definition line"
+   },
+   {
+    "item": "শব্দ শিখি glossary entry 'শহিদ - যাঁরা দেশ বা ধর্মের জন্য কাজ করতে গিয়ে মারা যান।'",
+    "reason": "Principal directive: remove শহিদ definition"
+   },
+   {
+    "item": "two battle illustrations (armed মুক্তিযোদ্ধা figures, jeep/truck, rifles, machine gun)",
+    "reason": "C-05 + Principal ruling: objects/scenery only, no fighters, no weapons"
+   }
+  ],
+  "bw_treatment": "native_safe",
+  "reviewer_signoff": {
+   "by": null,
+   "date": null,
+   "checklist_passed": false
+  },
+  "notes": "C-18 flagship (মুক্তিযুদ্ধ). Factual history + national days RETAINED (C-18 carve-out). Principal directives applied: (1) removed শহিদ-definition body line (b05), (2) removed শহিদ glossary entry (b08); যুদ্ধ + মুক্তিযোদ্ধা definitions kept. Images: both battle scenes -> objects/scenery, no fighters/weapons/people (Principal ruling). INVENTORY RESOLUTION FLAG (not silently written): letter_inventory conjunct_whitelist@52 was null/needs_review; the NCTB p78 যুক্তবর্ণ box enumerates [স্ত,ক্ত,দ্ধ,ম্ব,ষ্ট]  - per the inventory's own resolution rule these are পাঠ ৫২'s B-1 whitelist. Principal/data-owner should enumerate them in the inventory file. Body is oral (শুনি ও পড়ি) so audit-exempt; the যুক্তবর্ণ box is the decoding target and its five conjuncts are the whitelist. REVIEWER: confirm শহিদ removals read cleanly; history framing intact."
+ }
+}

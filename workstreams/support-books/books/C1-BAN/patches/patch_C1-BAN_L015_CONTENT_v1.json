@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L015_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 15,
+      "nctb_title_bn": "বর্ণ শিখি : ও ঔ",
+      "nctb_pages": [21],
+      "genre": "বর্ণ শিক্ষা",
+      "competency_codes": ["১.১", "৫.১", "৯.১", "১৩.১"],
+      "outcome_codes": ["১.১.১", "৫.১.১", "৯.১.১", "১৩.১.১"],
+      "action": "retain-curated",
+      "c_codes": ["C-05", "C-02", "C-06"],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L015-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ১৫\nবর্ণ শিখি : ও ঔ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L015-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L015-b03",
+          "type": "word_list",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "ওলকপি\tও\nঔষধ\tঔ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "letter-spotlight-pairs"
+        },
+        {
+          "id": "L015-b04",
+          "type": "oral_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "ওলকপি খাও।\nঔষধ দাও।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-sentences"
+        },
+        {
+          "id": "L015-b05",
+          "type": "oral_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "ওলকপি খেতে মজা।\nঅসুখ হলে ঔষধ খেতে হয়।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "definition-lines"
+        },
+        {
+          "id": "L015-b06",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আরও শব্দ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L015-b07",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "ও — ওলকপি, ওড়না, ওজন\nঔ — ঔষধ, ঔষধি, ঔষধালয়",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "extra-words-by-letter"
+        },
+        {
+          "id": "L015-b08",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L015-b09",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ও  ঔ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "read-large-letters"
+        },
+        {
+          "id": "L015-b10",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "লিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L015-b11",
+          "type": "tracing_ref",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ও  ঔ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "tracing-grid-stroke-arrows"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L015-img-01",
+          "scene_description": "ও-এর ছবি: একটি ওলকপি (সবজি) — object-only (NCTB p21 composition অনুসরণ), কোনো প্রাণী/মানুষ নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only slot; single kohlrabi (ওলকপি) with leaves (matches NCTB p21); no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a single kohlrabi vegetable with its green leaves, centred, on a plain white background. Bold clean outlines, soft flat colour, no other objects, no people. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L015-img-02",
+          "scene_description": "ঔ-এর ছবি: ঔষধ — object-only: একটি ঔষধের বোতল ও পাতাযুক্ত ট্যাবলেট (NCTB p21 এর মতো), কোনো মানুষ নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only slot; a medicine bottle and a tablet strip (matches NCTB p21 objects); no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a medicine bottle and a strip of tablets, arranged together, centred, on a plain white background. Bold clean outlines, soft flat colour, no people, no other objects. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L015-img-03",
+          "scene_description": "NCTB p21 এর ছোট ছেলে-ছবি (ঔষধ হাতে) reframe: একজন ছাত্র (উমর) শান্তভাবে দাঁড়িয়ে, হাতে ঔষধের চামচ/বোতল — একক ছেলে, পূর্ণ পোশাক+টুপি। কোনো মেয়ে/প্রাপ্তবয়স্ক নেই।",
+          "image_class": "narrative_figure",
+          "action": "generate_stripe",
+          "contains_living_being": true,
+          "compliance_note": "NCTB p21 shows a boy in short-sleeve shirt holding medicine (C-02 dress). REFRAMED: single boy উমর from cast ref (C-06), modest full-length dress + cap (C-02), redrawn (C-05); same-gender/solo (C-01 n/a but kept boys-only); stripe lands on plain area clear of face/hands and the medicine; high-contrast line-art for B/W.",
+          "photocopy_safe": true,
+          "refs": ["refs/school/c1/umar.png"],
+          "prompt": "A gentle children's-textbook illustration of a single young Muslim schoolboy standing calmly, holding a small medicine bottle and spoon, looking healthy and content. He wears neat modest full-length clothing with a small cap. Plain white background, soft watercolour style, clean bold outlines. No girls, no adults, no other objects. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L015-img-04",
+          "scene_description": "বর্ণ-লিখন ট্রেসিং অ্যাসেট — ও ও ঔ, স্ট্রোক-তীরসহ (NCTB মূল)। AI-জেনারেটেড নয়; ভেক্টর অ্যাসেট থেকে অ্যাসেম্বলিতে বসবে।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "letter-tracing grid for ও and ঔ with stroke-order arrows; vector asset, never AI-generated.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "4:3",
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ১৫ বর্ণ-শিখি: ও ঔ (🔒 স্থির). CLOSES the 11-vowel block (পাঠ ১৬ = vowel review, page 22, separate). User: KEEP EVERYTHING + add 3 extras/letter. All NCTB text retained verbatim (ওলকপি খাও / ঔষধ দাও / ওলকপি খেতে মজা / অসুখ হলে ঔষধ খেতে হয়) → action=retain-curated is image/addition-only. আরও শব্দ: ও — ওলকপি, ওড়না, ওজন; ঔ — ঔষধ, ঔষধি, ঔষধালয়. All words oral:true named examples → letter-audit EXEMPT; only decodable content = letters ও/ঔ (b09/b11), NCTB-original → exempt. WORD PROVENANCE (map-first, then dict): map has only ওলকপি(ও)/ঔষধ(ঔ). ও extras: ওড়না (scarf, concrete, picture-able, fits modest-dress world), ওজন (weight, abstract WORD-ONLY, common). ঔ — confirmed vs Bangla Academy dict (baabo.jothartho.com/list/ঔ): ঔষধ is the ONLY concrete/child-appropriate ঔ-initial word in the whole language; entire rest is abstract adjectives (ঔচিত্য/ঔদার্য/ঔপনিবেশিক…) or creed-linked (ঔপনিষদ/ঔপনিষদিক = Upanishad → C-09, avoided). Per Principal, forced 3 from the ঔষধ family: ঔষধি (medicinal herb, mildly picture-able) + ঔষধালয় (pharmacy, abstract WORD-ONLY). Reviewer note: ওজন/ঔষধালয় abstract for age 5-6. Images: ওলকপি + ঔষধ object-only (match NCTB p21); NCTB p21 boy-with-medicine figure reframed → single cast boy উমর, modest full dress+cap (C-02/C-05/C-06); tracing = vector_asset, prompt='' permanently. c_codes C-05/C-02/C-06. Ready to merge in order after পাঠ ১৪. NOTE: page 22 (পাঠ ১৬ স্বরবর্ণ review) is a SEPARATE পাঠ, not built here."
+    }
+  ]
+}

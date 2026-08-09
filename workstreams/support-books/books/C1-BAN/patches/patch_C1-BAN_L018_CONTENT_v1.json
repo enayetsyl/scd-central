@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L018_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 18,
+      "nctb_title_bn": "কারচিহ্ন দেখি",
+      "nctb_pages": [25],
+      "genre": "বর্ণ শিক্ষা",
+      "competency_codes": ["১.১", "৫.১", "১৩.১"],
+      "outcome_codes": ["১.১.১", "৫.১.১", "১৩.১.১"],
+      "action": "retain",
+      "c_codes": [],
+      "severity": "S0",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L018-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ১৮\nকারচিহ্ন দেখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L018-b02",
+          "type": "table",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "আ\tা\nই\tি\nঈ\tী\nউ\tু\nঊ\tূ\nঋ\tৃ\nএ\tে\nঐ\tৈ\nও\tো\nঔ\tৌ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "vowel-to-kar-pairs"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L018-img-01",
+          "scene_description": "কার-চিহ্ন পরিচিতি — রঙিন ঘরে প্রতিটি স্বরবর্ণ ও তার কারচিহ্ন (আ→া, ই→ি, ঈ→ী, উ→ু, ঊ→ূ, ঋ→ৃ, এ→ে, ঐ→ৈ, ও→ো, ঔ→ৌ); বর্ণ/টাইপ ভেক্টর অ্যাসেট, ছবি নয়। কোনো প্রাণী/মানুষ নেই।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "coloured vowel→kar pairing tiles; rendered from vector/type assets at assembly, never AI-generated; no living being.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "4:3",
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ১৮ কারচিহ্ন দেখি (🔒 স্থির, কার-concept intro per skeleton §2.2). action=RETAIN (user: keep as-is) — pure structural page pairing each স্বরবর্ণ with its কারচিহ্ন (আ→া, ই→ি, ঈ→ী, উ→ু, ঊ→ূ, ঋ→ৃ, এ→ে, ঐ→ৈ, ও→ো, ঔ→ৌ). No characters, no story, no illustration, no vocabulary → nothing triggers any C-code; c_codes=[] , severity S0. All content NCTB-original (source=nctb, edited=false) → letter-audit exempt (and it's the teaching content itself — the কারচিহ্ন are introduced HERE at পাঠ ১৮ per D-009/inventory kar_concept_intro). Colour tiles = vector_asset, prompt='' permanently. No cast → refs empty. Ran through all nine steps per README §3.2 (trivial retain still validated). Ready to merge after পাঠ ১৭. NOTE: this is the last upload page (25); book vowel+kar-intro block (পাঠ ১০–১৮) now complete; পাঠ ১৯+ begins consonants where কারচিহ্ন start interleaving (পাঠ ২১ = আ-কার, etc.)."
+    }
+  ]
+}

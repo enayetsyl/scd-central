@@ -1,0 +1,145 @@
+{
+  "patch_id": "patch_C1-BAN_L041_CONTENT_v1",
+  "book_id": "C1-BAN",
+  "lesson_no": 41,
+  "task": "CONTENT",
+  "op": "merge_lesson",
+  "lesson": {
+    "lesson_no": 41,
+    "nctb_title_bn": "তুলির ঘর",
+    "nctb_pages": [
+      58,
+      59
+    ],
+    "genre": "ছবি-ভিত্তিক রচনা (সংশোধিত v2)",
+    "competency_codes": [
+      "১.২",
+      "২.১",
+      "৫.২",
+      "১৬.২"
+    ],
+    "outcome_codes": [
+      "১.২.৩",
+      "২.১.১"
+    ],
+    "action": "retain-curated",
+    "c_codes": [
+      "C-03",
+      "C-05"
+    ],
+    "severity": "S2",
+    "status": "built",
+    "blocks": [
+      {
+        "id": "L041-b01",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "ফুলে ইচ্ছামতো রং করি",
+        "text_en": null,
+        "source_note": "p58 colouring-page heading, verbatim. Free-expression activity (child colours as they wish; যোগ্যতা ১৬.২ posture, README §4.5).",
+        "style_profile": "section-head",
+        "layout_hint": "section-head"
+      },
+      {
+        "id": "L041-b02",
+        "type": "colouring_ref",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "",
+        "text_en": null,
+        "source_note": "p58: three dotted flower outlines for the child to colour freely. Plant line-art (no living being, no stripe). Retained unchanged.",
+        "style_profile": "colouring-outline",
+        "layout_hint": "three dotted flower line-drawings"
+      },
+      {
+        "id": "L041-b03",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "পাঠ ৪১\nতুলির ঘর",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "heading",
+        "layout_hint": "chapter-head"
+      },
+      {
+        "id": "L041-b04",
+        "type": "prose_prompt",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "তুলির ঘর। ঘরে অনেক কিছু আছে। দেখি তো ঘরে কী কী আছে।",
+        "text_en": null,
+        "source_note": "p59 picture-composition lead-in, verbatim. 'তুলি' is a child's name (from Name Bank framing) whose room the child observes.",
+        "style_profile": "prose-lead",
+        "layout_hint": "single-line prompt"
+      },
+      {
+        "id": "L041-b05",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "ছবি দেখি। দেখে শব্দ লিখি।",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "section-head",
+        "layout_hint": "section-head"
+      },
+      {
+        "id": "L041-b06",
+        "type": "write_lines",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "১।\t২।\n৩।\t৪।\n৫।\t৬।\n৭।\t৮।\n৯।\t১০।",
+        "text_en": null,
+        "source_note": "Ten numbered blank write-lines (two-column). Child writes the names of objects seen in the room image. Open-ended free-write (16.2 own-way writing); the specific objects named are the child's choice, so object substitutions in the image do not constrain the exercise.",
+        "style_profile": "numbered-blank-lines",
+        "layout_hint": "10 numbered ruled blanks in two columns"
+      }
+    ],
+    "image_slots": [
+      {
+        "id": "L041-img-01",
+        "scene_description": "p58: তিনটি ফুলের ডটেড আউটলাইন (রেখাচিত্র) -- শিশু ইচ্ছামতো রং করবে। উদ্ভিদ রেখাচিত্র, কোনো জীব-ফিগার নয়, কোনো কমপ্লায়েন্স-ব্যান্ড ট্রিটমেন্ট প্রযোজ্য নয়। অপরিবর্তিত রাখা হয়েছে।",
+        "image_class": "line_art",
+        "action": "generate_plain",
+        "contains_living_being": false,
+        "compliance_note": "RETAINED unchanged: three dotted flower outlines for free colouring (p58). Plant line-art only, no living being, no in-image text. contains_living_being=false -> no compliance-band treatment. bw: native_safe.",
+        "photocopy_safe": true,
+        "refs": [],
+        "prompt": "Three simple dotted-outline flower line drawings (a lily-like bloom, a small blossom cluster, and a layered dahlia-like flower) with leaves and stems, drawn as dotted tracing/colouring outlines on a plain white page. Clean thin dotted linework, no fill, no colour, no text. Suitable for a child to colour in. Black-and-white line art.",
+        "aspect": "3:4",
+        "filename": null,
+        "status": "draft"
+      },
+      {
+        "id": "L041-img-02",
+        "scene_description": "p59: শিশুর শোবার ঘর -- অনেক নামযোগ্য বস্তু। NCTB মূল ছবিতে ছিল একটি বিছানা, টেবিল-চেয়ার, দেয়াল-ঘড়ি, দেয়াল-বাতি, বইপত্র, বল, কাপড়ের র‍্যাক, স্যান্ডেল, জানালা -- এবং তিনটি সমস্যাযুক্ত বস্তু: তবলা ও একতারা (বাদ্যযন্ত্র, C-03) এবং একটি পুতুল (জীব-প্রতিরূপ খেলনা, C-05)। সম্পাদনা: তবলা -> কাঠের রেহালে রাখা একটি বন্ধ কুরআন (টেবিলের উপর, উঁচুতে, সম্মানজনকভাবে); একতারা -> ভাঁজ-করা জায়নামাজ; পুতুল -> একটি কাঠের টুল। ঘরের বাকি সব বস্তু অপরিবর্তিত। কোনো মানুষ/প্রাণী/জীব-ফিগার নয়।",
+        "image_class": "object_scene",
+        "action": "generate_plain",
+        "contains_living_being": false,
+        "compliance_note": "EDITED (object substitution, rest of room unchanged). Removed: তবলা + একতারা (musical instruments, C-03) and a পুতুল/doll (figurative representation of a living being, C-05). Replaced per Principal ruling with: a closed Quran resting on a wooden rehal (book-stand) placed respectfully on the table (elevated, closed, clear of the floor); a folded জায়নামাজ (prayer mat); and a plain wooden stool (টুল). All other room objects retained (bed, table, chairs, wall clock, wall lamp, books, ball, clothes rack, slippers, window). No people, no animals, no figurative dolls. contains_living_being=false -> no compliance-band treatment. reviewer/আলিম-note: confirm the Quran-on-rehal depiction is respectful and appropriate for a study-book room scene (closed, elevated, not on the floor); if the reviewer prefers the Quran not be depicted at all, swap to the rehal alone or another Islamic-household object. bw: native_safe.",
+        "photocopy_safe": true,
+        "refs": [],
+        "prompt": "A friendly children's-textbook illustration of a tidy child's bedroom seen from one corner. There is a single bed with a folded blanket, a table covered with a cloth holding a few stacked books, and two wooden chairs. On the wall: a round clock and a small wall lamp. In the corner stands a low clothes rack with a few garments hanging and a pair of sandals below, and a colourful ball on the floor. On the table, resting on a small carved wooden book-stand (rehal), is a single closed decorated religious book, placed upright and elevated. Nearby a neatly folded prayer mat rests against the wall, and a plain small wooden stool sits on the floor. A window with a grille on the back wall. No people, no animals, no dolls, no toys shaped like people or animals, no text. Warm watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+        "aspect": "4:3",
+        "filename": null,
+        "status": "draft"
+      }
+    ],
+    "nctb_omitted": [],
+    "bw_treatment": "native_safe",
+    "reviewer_signoff": {
+      "by": null,
+      "date": null,
+      "checklist_passed": false
+    },
+    "notes": "পাঠ 41 তুলির ঘর built. Genre corrected to ছবি-ভিত্তিক রচনা (was mis-filed থিমেটিক গল্প; TG v2). Protected free-expression strand (যোগ্যতা ১৬.২, README §4.5) preserved: open-ended 'দেখে শব্দ লিখি' 10-blank write exercise kept verbatim. ALL text verbatim, no edits. IMG-01 (p58 flower colouring outlines): plant line-art, RETAINED unchanged, no living being. IMG-02 (p59 bedroom): EDITED per Principal ruling -- removed তবলা+একতারা (C-03 instruments) and পুতুল/doll (C-05 figurative), substituted কুরআন-on-rehal + জায়নামাজ + কাঠের টুল; all other room objects unchanged; no living being, no stripe. reviewer/আলিম-flagged: confirm Quran-on-rehal depiction appropriateness (closed/elevated/respectful; fallback = rehal alone or other Islamic-household object if reviewer prefers no Quran depiction). NOTE: this REF-1's C-19 = role-play/অভিনয় (NOT byline/attribution); the পাঠ ৪০ byline concern was mis-coded C-19 -- it is a reviewer-posture item with no clean C-code (correction flagged, does not change পাঠ ৪০ substance). block audit + seeded self-test PASS."
+  }
+}

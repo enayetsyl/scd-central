@@ -1,0 +1,215 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L014_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 14,
+      "nctb_title_bn": "বর্ণ শিখি : এ ঐ",
+      "nctb_pages": [20],
+      "genre": "বর্ণ শিক্ষা",
+      "competency_codes": ["১.১", "৫.১", "৯.১", "১৩.১"],
+      "outcome_codes": ["১.১.১", "৫.১.১", "৯.১.১", "১৩.১.১"],
+      "action": "retain-curated",
+      "c_codes": ["C-03", "C-08", "C-05", "C-02", "C-06"],
+      "severity": "S2",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L014-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ১৪\nবর্ণ শিখি : এ ঐ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L014-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L014-b03",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "এলাচ\tএ\nঐরাবত\tঐ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "letter-spotlight-pairs"
+        },
+        {
+          "id": "L014-b04",
+          "type": "oral_text",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "এলাচ ফোটে গাছে ওই।\nঐরাবত যায় কই?",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-sentences"
+        },
+        {
+          "id": "L014-b05",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L014-b06",
+          "type": "oral_text",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "এলাচ একটি মসলার নাম।\nঐরাবত মানে হাতি।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "definition-lines"
+        },
+        {
+          "id": "L014-b07",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আরও শব্দ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L014-b08",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "এ — এলাচ, একতা, এলাকা\nঐ — ঐরাবত, ঐতিহ্য, ঐক্য",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "extra-words-by-letter"
+        },
+        {
+          "id": "L014-b09",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L014-b10",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "এ  ঐ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "read-large-letters"
+        },
+        {
+          "id": "L014-b11",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "লিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L014-b12",
+          "type": "tracing_ref",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "এ  ঐ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "tracing-grid-stroke-arrows"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L014-img-01",
+          "scene_description": "এ-এর ছবি: কয়েকটি এলাচ (মসলা) — object-only. NCTB মূলে ছিল একতারা-বাজানো বাউল (বাদ্যযন্ত্র+ব্যক্তি); সম্পূর্ণ বদলে object-only এলাচ।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "REPLACES NCTB এ-image (a baul playing a ektara — musical instrument + figure: C-03 music + C-01/C-02). New slot is object-only cardamom pods/spice; no instrument, no person, no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a few green cardamom pods and a small leaf, arranged as a spice, centred, on a plain white background. Bold clean outlines, soft flat colour, no people, no instruments, no other objects. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L014-img-02",
+          "scene_description": "ঐ-এর ছবি: একটি হাতি (ঐরাবত মানে হাতি) — single animal spotlight, সাজসজ্জা-মুক্ত সাধারণ হাতি।",
+          "image_class": "animal_story",
+          "action": "generate_stripe",
+          "contains_living_being": true,
+          "compliance_note": "single plain elephant (ঐরাবত = elephant); NCTB decorated-mythic elephant simplified to an ordinary elephant; body kept in upper two-thirds so stripe lands on plain ground clear of the animal; high-contrast line-art for B/W.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A friendly children's-textbook illustration of a single plain elephant standing, side profile, centred, on a plain white background. Simple bold outlines, soft flat colour, no decorative trappings, no people, no other objects. High contrast and clean linework so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L014-img-03",
+          "scene_description": "বর্ণ-লিখন ট্রেসিং অ্যাসেট — এ ও ঐ, স্ট্রোক-তীরসহ (NCTB মূল)। AI-জেনারেটেড নয়; ভেক্টর অ্যাসেট থেকে অ্যাসেম্বলিতে বসবে।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "letter-tracing grid for এ and ঐ with stroke-order arrows; vector asset, never AI-generated.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "4:3",
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ১৪ বর্ণ-শিখি: এ ঐ (🔒 স্থির). Title + letters + পড়ি/লিখি retained. TEXT CHANGES (user): the এ content was built on the একতারা/বাউল music cluster (C-03 music/song). (1) এ spotlight word একতারা → এলাচ (cardamom); (2) sentence 'একতারা বাজে ওই।' → 'এলাচ ফোটে গাছে ওই।'; (3) sentence 'বাউলেরা একতারা বাজায়।' → 'এলাচ একটি মসলার নাম।' — removes বাউল (Sufi-mystic musician tradition) + বাজে/বাজায় (playing music) + একতারা (instrument). ঐ content (ঐরাবত যায় কই / ঐরাবত মানে হাতি) kept verbatim. action=retain-curated / S2 (passage-level: 2 sentences + word swap); c_codes C-03 (music removal) + C-08 (word swap) + imagery C-05/C-02/C-06. All এ/ঐ words are oral:true named examples → letter-audit EXEMPT; only decodable content = letters এ/ঐ (b10/b12), NCTB-original → exempt. আরও শব্দ: এ — এলাচ, একতা, এলাকা; ঐ — ঐরাবত, ঐতিহ্য, ঐক্য (user chose 3+3). PROVENANCE: map has only একতারা(এ)/ঐরাবত(ঐ). Confirmed vs Bangla Academy dict (baabo.jothartho.com/list/এ, /ঐ): only concrete picture-able words are এলাচ (এ) and ঐরাবত (ঐ); একতা/এলাকা/ঐতিহ্য/ঐক্য are abstract WORD-ONLY (no image), reviewer-flagged as abstract for age 5-6. NOT used (C-09 creed): ঐশ/ঐশী/ঐশ্বরিক (divine), ঐন্দ্র (Indra). ঐরাবত itself is a Hindu-mythology name but retained as the established NCTB spotlight, framed only as 'means elephant' (same posture as NCTB). REVIEWER NOTE: 'এলাচ ফোটে গাছে' — এলাচ is a spice pod (fruits, not strictly 'blooms'); minor ছড়া liberty, kept for ওই rhyme. Images: এলাচ object-only REPLACES the baul+ektara image (C-03/C-01/C-02); ঐরাবত plain single elephant (mythic decoration dropped); tracing = vector_asset, prompt='' permanently. No cast figures → refs empty. Ready to merge in order after পাঠ ১৩."
+    }
+  ]
+}

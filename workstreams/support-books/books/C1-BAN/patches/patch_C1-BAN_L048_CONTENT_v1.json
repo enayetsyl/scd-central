@@ -1,0 +1,172 @@
+{
+ "patch_id": "patch_C1-BAN_L048_CONTENT_v1",
+ "book_id": "C1-BAN",
+ "schema_version": "1.0",
+ "target_lesson_no": 48,
+ "merge_rule": "wholesale-by-lesson",
+ "lesson": {
+  "lesson_no": 48,
+  "nctb_title_bn": "ছুটি",
+  "nctb_pages": [
+   70
+  ],
+  "genre": "কবিতা (রবীন্দ্রনাথ ঠাকুর  - অংশবিশেষ)",
+  "competency_codes": [
+   "৪.১",
+   "৮.১",
+   "১২.১",
+   "১৩.৩"
+  ],
+  "outcome_codes": [
+   "৪.১.২",
+   "৮.১.২",
+   "৮.১.৪",
+   "৮.১.৫",
+   "১২.১.২"
+  ],
+  "action": "retain-curated",
+  "c_codes": [
+   "C-05"
+  ],
+  "severity": "S1",
+  "status": "built",
+  "blocks": [
+   {
+    "id": "L048-b01",
+    "type": "heading",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "পাঠ ৪৮\nছুটি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "heading",
+    "layout_hint": "chapter-head"
+   },
+   {
+    "id": "L048-b02",
+    "type": "poem",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "রবীন্দ্রনাথ ঠাকুর\n\nমেঘের কোলে রোদ হেসেছে\n\tবাদল গেছে টুটি,\nআজ আমাদের ছুটি ও ভাই,\n\tআজ আমাদের ছুটি।\nকী করি আজ ভেবে না পাই,\nপথ হারিয়ে কোন বনে যাই,\nকোন মাঠে যে ছুটে বেড়াই,\n\tসকল ছেলে জুটি।\nআজ আমাদের ছুটি ও ভাই,\n\tআজ আমাদের ছুটি।\n(অংশবিশেষ)",
+    "text_en": null,
+    "source_note": "Tagore poem 'ছুটি' (excerpt), verbatim NCTB p70  - retained in full including byline per Principal instruction ('everything OK, only replace image'). Decodable-clean @48. nctb source -> audit-exempt. REVIEWER FLAG: byline 'রবীন্দ্রনাথ ঠাকুর' on a non-original retained poem  - keep-or-drop is a reviewer/Principal call (consistent with the byline-handling pattern used elsewhere in this book); text left untouched pending that call.",
+    "style_profile": "poem-verse",
+    "layout_hint": "verse block, left of illustration"
+   },
+   {
+    "id": "L048-b03",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "কবিতাটি পড়ি\nনা দেখে কবিতার চারটি চরণ লিখি\nশব্দগুলো দিয়ে বাক্য বলি ও লিখি",
+    "text_en": null,
+    "source_note": "Exercise instructions, verbatim NCTB p70. Decodable-clean @48.",
+    "style_profile": "instruction",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L048-b04",
+    "type": "exercise",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "ছুটি\nবন\nপথ",
+    "text_en": null,
+    "source_note": "Word-into-sentence exercise (say and write a sentence with each), verbatim NCTB p70. Decodable-clean @48.",
+    "style_profile": "word-list",
+    "layout_hint": "three words with writing lines"
+   },
+   {
+    "id": "L048-b05",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "খালি জায়গায় শব্দ লিখি",
+    "text_en": null,
+    "source_note": "Fill-in-the-word instruction, verbatim NCTB p70.",
+    "style_profile": "instruction",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L048-b06",
+    "type": "fill_blank",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "মেঘের কোলে ______ হেসেছে।\nপথ হারিয়ে কোন ______ যাই।",
+    "text_en": null,
+    "source_note": "Fill-the-blank from the poem (answers: রোদ; বনে), verbatim NCTB p70. Decodable-clean @48.",
+    "style_profile": "fill-blank",
+    "layout_hint": "two gapped sentences"
+   },
+   {
+    "id": "L048-b07",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "ফাঁকা জায়গায় চরণটি লিখি",
+    "text_en": null,
+    "source_note": "Write-the-preceding-line instruction, verbatim NCTB p70.",
+    "style_profile": "instruction",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L048-b08",
+    "type": "fill_blank",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "______\nবাদল গেছে টুটি।\n\n______\nসকল ছেলে জুটি।",
+    "text_en": null,
+    "source_note": "Write the line that precedes each given line (answers: 'মেঘের কোলে রোদ হেসেছে'; 'কোন মাঠে যে ছুটে বেড়াই'), verbatim NCTB p70. Decodable-clean @48.",
+    "style_profile": "fill-blank",
+    "layout_hint": "two preceding-line blanks"
+   },
+   {
+    "id": "L048-b09",
+    "type": "exercise",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "ছুটির দিনে আমি কী কী করি তা নিয়ে তিনটি বাক্য লিখি",
+    "text_en": null,
+    "source_note": "Free-writing exercise (three sentences on what I do on a holiday)  - free-expression strand যোগ্যতা ১৬.২/own-expression, protected (REF-1 retain list). Verbatim NCTB p70.",
+    "style_profile": "instruction",
+    "layout_hint": "three writing lines"
+   }
+  ],
+  "image_slots": [
+   {
+    "id": "L048-img-01",
+    "scene_description": "ছুটির আনন্দময় দিন: মেঘ ফুঁড়ে উজ্জ্বল সূর্য, খোলা সবুজ মাঠ ও দূরে গাছপালা  - objects/scenery only, কোনো পাখি বা মানুষ নেই।",
+    "image_class": "scenery",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only holiday scene (sun breaking through clouds over an open green field). Per Principal ruling ALL living beings removed  - the NCTB flying doves and the mixed-gender children group are removed and replaced with a joyful open-field scenery matching the poem's mood.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A bright, joyful children's-textbook illustration of a sunny holiday sky: a golden sun breaking through soft white clouds, its rays spreading over a wide open green field with a few distant trees and gentle hills. No people, no animals, no birds. Loose watercolour-style with clear outlines, high contrast and clear linework for black-and-white photocopy.",
+    "aspect": "3:4",
+    "status": "draft"
+   }
+  ],
+  "nctb_omitted": [
+   {
+    "item": "flying doves and mixed-gender children group in the illustration",
+    "reason": "C-05 objects-first + C-01 (mixed-gender group); Principal ruling: objects/scenery only, no living beings"
+   }
+  ],
+  "bw_treatment": "native_safe",
+  "reviewer_signoff": {
+   "by": null,
+   "date": null,
+   "checklist_passed": false
+  },
+  "notes": "কবিতা (Tagore excerpt). Image-only curation per Principal ('everything OK, only replace image'): single illustration recomposed to objects/scenery (doves + children group removed), no living beings. Poem + all four exercises retained verbatim; all decodable text NCTB-original and verified decodable-clean @48. REVIEWER FLAG: byline handling on the retained Tagore poem (keep/drop) left for reviewer/Principal  - not resolved in-chat."
+ }
+}

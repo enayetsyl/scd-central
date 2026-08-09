@@ -1,0 +1,89 @@
+{
+  "patch_id": "patch_C1-BAN_L039_CONTENT_v1",
+  "book_id": "C1-BAN",
+  "lesson_no": 39,
+  "task": "CONTENT",
+  "op": "merge_lesson",
+  "lesson": {
+    "lesson_no": 39,
+    "nctb_title_bn": "ব্যঞ্জনবর্ণ",
+    "nctb_pages": [
+      55,
+      56
+    ],
+    "genre": "পুনরালোচনা / স্ব-মূল্যায়ন",
+    "competency_codes": [
+      "১.১",
+      "৯.১",
+      "১৩.১"
+    ],
+    "outcome_codes": [
+      "১.১.২",
+      "৯.১.২",
+      "১৩.১.২"
+    ],
+    "action": "retain",
+    "c_codes": [],
+    "severity": "S0",
+    "status": "built",
+    "blocks": [
+      {
+        "id": "L039-b01",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "পাঠ ৩৯\nব্যঞ্জনবর্ণ",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "heading",
+        "layout_hint": "chapter-head"
+      },
+      {
+        "id": "L039-b02",
+        "type": "borno_chart",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "ক খ গ ঘ ঙ\nচ ছ জ ঝ ঞ\nট ঠ ড ঢ ণ\nত থ দ ধ ন\nপ ফ ব ভ ম\nয র ল\nশ ষ স হ\nড় ঢ় য় ৎ\nং ঃ ঁ",
+        "text_en": null,
+        "source_note": "Full ব্যঞ্জনবর্ণ review chart, verbatim from NCTB p55 (5-column grid; trailing partial rows and special signs ং ঃ ঁ as printed).",
+        "style_profile": "letter-grid",
+        "layout_hint": "5-column bordered grid"
+      },
+      {
+        "id": "L039-b03",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "বর্ণ সাজিয়ে লিখি",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "section-head",
+        "layout_hint": "section-head"
+      },
+      {
+        "id": "L039-b04",
+        "type": "ordering_exercise",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "গ ঙ খ ক ঘ\nঞ জ ছ ঝ চ\nঠ ঢ ট ণ ড\nত দ ন থ ধ\nফ ব প ম ভ",
+        "text_en": null,
+        "source_note": "বর্ণ সাজিয়ে লিখি (p56): 25 coloured prompt tiles (shuffled within each কণ্ঠ্য/তালব্য/মূর্ধন্য/দন্ত্য/ওষ্ঠ্য group), each followed by a blank box for the child to rewrite the letter in correct serial order. Tiles captured verbatim as printed (shuffled order); blank write-boxes below each.",
+        "style_profile": "letter-tiles-with-blanks",
+        "layout_hint": "5x5 coloured tiles, dotted blank box under each"
+      }
+    ],
+    "image_slots": [],
+    "nctb_omitted": [],
+    "bw_treatment": "native_safe",
+    "reviewer_signoff": {
+      "by": null,
+      "date": null,
+      "checklist_passed": false
+    },
+    "notes": "পাঠ 39 ব্যঞ্জনবর্ণ built. TRIVIAL RETAIN (পুনরালোচনা/স্ব-মূল্যায়ন): full 39-consonant review chart (p55) + বর্ণ সাজিয়ে লিখি ordering exercise (p56, 25 shuffled coloured tiles + blank write-boxes). ALL content verbatim, no edits. NO living beings, NO image slot, no C-code (S0). Chart/tiles are protected decoding-spine (README 4.5). All glyphs taught @39 (cumulative 50 consonants); grid/tiles are vector-native, not decodable prose (letter-chart type). block audit trivially clean + seeded self-test PASS."
+  }
+}

@@ -1,0 +1,183 @@
+{
+ "schema_version": "1.0",
+ "book_id": "C1-BAN",
+ "patch_id": "patch_C1-BAN_L037_CONTENT_v1",
+ "task": "CONTENT",
+ "lessons": [
+  {
+   "lesson_no": 37,
+   "nctb_title_bn": "এসো পড়ি ও লিখি",
+   "nctb_pages": [
+    53
+   ],
+   "genre": "পঠন ও লিখন (ছোট বাক্য)",
+   "competency_codes": [
+    "১.২",
+    "৫.১",
+    "৯.১",
+    "১৩.৩"
+   ],
+   "outcome_codes": [
+    "১.২.২",
+    "৫.২.২",
+    "৯.২.৪",
+    "১৩.৩.১"
+   ],
+   "action": "retain-curated",
+   "c_codes": [
+    "C-05",
+    "C-06"
+   ],
+   "severity": "S2",
+   "status": "content-draft",
+   "blocks": [
+    {
+     "id": "L037-b01",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "পাঠ ৩৭\nএসো পড়ি ও লিখি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "title"
+    },
+    {
+     "id": "L037-b02",
+     "type": "decodable_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ফুল\tহলুদ ফুল",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫৩ শব্দ→বাক্য জোড়া হুবহু রক্ষিত। inventory-clean @37।",
+     "style_profile": null,
+     "layout_hint": "word-sentence-pair"
+    },
+    {
+     "id": "L037-b03",
+     "type": "decodable_text",
+     "source": "school",
+     "edited": true,
+     "oral": true,
+     "text_bn": "ময়ূর\tময়ূর পাখি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": "EDIT of NCTB 'ময়ূর নাচে' -> 'ময়ূর পাখি' (Principal-directed 2026-07-25); নাচ/dance association removed, replaced with a neutral noun-phrase describing the ময়ূর (peacock = a bird), parallel to NCTB pattern 'নীল আকাশ'. key word ময়ূর retained. READ-ALOUD পড়ি pair (oral:true, audit-exempt like every other য়/ড়/ঢ় word in the book which all ride nctb/oral blocks). Decodability still holds under placeholder-correct audit: inventory-clean @37 (ম/য়/ূ/র/প/া/খ/ি all taught; no untaught বর্ণ/কার/conjunct). FLAGGED FOR REVIEWER: NCTB predicate changed.",
+     "layout_hint": "word-sentence-pair"
+    },
+    {
+     "id": "L037-b04",
+     "type": "decodable_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "তৃণ\tসবুজ তৃণ",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫৩ শব্দ→বাক্য জোড়া হুবহু রক্ষিত। inventory-clean @37।",
+     "style_profile": null,
+     "layout_hint": "word-sentence-pair"
+    },
+    {
+     "id": "L037-b05",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "পড়ি ও লিখি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L037-b06",
+     "type": "tracing_ref",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ফুল\tময়ূর\tতৃণ",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫৩ পড়ি-ও-লিখি: ফুল, ময়ূর, তৃণ — মডেল শব্দ + দুই সারি ট্রেসিং। inventory-clean।",
+     "style_profile": null,
+     "layout_hint": "trace-and-write-boxes"
+    },
+    {
+     "id": "L037-b07",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "লিখি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L037-b08",
+     "type": "decodable_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "আমি ফুল তুলি।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫৩ লিখি মডেল-বাক্য হুবহু রক্ষিত। inventory-clean @37। শিশু নিচের খালি রেখায় নিজে বাক্য লেখে (নতুন-বাক্য চেষ্টা পুরস্কৃত — skeleton row 37)।",
+     "style_profile": null,
+     "layout_hint": "model-sentence"
+    },
+    {
+     "id": "L037-b09",
+     "type": "write_lines",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫৩ নিচের খালি রুলড লাইন — শিশুর নিজের বাক্য লেখার জন্য। print edition-এ খালি রাখতে হবে (pre-fill নয়)।",
+     "style_profile": null,
+     "layout_hint": "blank-ruled-lines"
+    }
+   ],
+   "image_slots": [
+    {
+     "id": "L037-img-01",
+     "scene_description": "'ময়ূর' — একটি ময়ূর (peacock; key-word subject; ব্যবহারকারীর পূর্ব-প্যাটার্ন অনুযায়ী জীব-ফিগার রক্ষিত)। living_being=true → স্ট্রাইপ ট্রিটমেন্ট প্রযোজ্য। NCTB ছবিতে ময়ূরের সাথে হলুদ ফুল ও সবুজ তৃণ আছে (তিন কি-শব্দই এক দৃশ্যে) — object উপাদান (ফুল/তৃণ) রাখা যায়, তবে নাচের ভঙ্গি নয় (পেখম মেলা স্থির/হাঁটা ভঙ্গি)।",
+     "image_class": "living_being",
+     "action": "generate_stripe",
+     "contains_living_being": true,
+     "compliance_note": "KEPT as living being (ময়ূর IS the key word — peacock), consistent with the standing bird pattern (ময়না/পায়রা/ফড়িং/হাঁস/বক/কাক). single bird, no human, no dress/cast. Depict standing/walking calmly (NOT a dancing/display-nach pose, matching the edited text 'ময়ূর পাখি'). contains_living_being=true -> programmatic stripe applied OUTSIDE chat at image-ref step; keep the whole peacock body + tail clear of the stripe band. The yellow flower (ফুল) and green grass (তৃণ) object elements may stay in-frame (all three key words). bw: native_safe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A friendly children's-textbook illustration of a single peacock standing calmly on green grass beside a yellow flower, its long tail feathers gently trailing behind (a calm standing pose, not a spread display). Just the one bird. No people, no other animals, no text. Plain pale-sky background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L037-img-02",
+     "scene_description": "পড়ি-ও-লিখি ট্রেসিং বাক্স + লিখি খালি রুলড লাইন — ভেক্টর অ্যাসেট থেকে রেন্ডার (মডেল শব্দ ফুল/ময়ূর/তৃণ, ট্রেসিং সারি, খালি লেখার রেখা)।",
+     "image_class": "tracing_asset",
+     "action": "vector_asset",
+     "contains_living_being": false,
+     "compliance_note": "trace-and-write boxes + blank ruled writing lines rendered from vector assets at assembly; never AI-generated. Keep blank lines empty in print edition.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "",
+     "aspect": "wide",
+     "filename": null,
+     "status": "draft"
+    }
+   ],
+   "nctb_omitted": [],
+   "bw_treatment": "native_safe",
+   "reviewer_signoff": {
+    "by": null,
+    "date": null,
+    "checklist_passed": false
+   },
+   "notes": "পাঠ ৩৭ এসো পড়ি ও লিখি (skeleton row 250, 2 periods, inh. পাঠ 36). Short-sentence lesson; 'নতুন-বাক্য চেষ্টা পুরস্কৃত' (child rewarded for attempting own new sentences). CODES inherit পাঠ 36: যোগ্যতা ১.২/৫.১/৯.১/১৩.৩, শিখনফল ১.২.২/৫.২.২/৯.২.৪/১৩.৩.১. action=retain-curated, severity=S2 (kept living-being ময়ূর with stripe). C-05 (image living-being), C-06 (key words). CONTENT: 3 word->sentence pairs (হলুদ ফুল / ময়ূর পাখি[EDITED] / সবুজ তৃণ); trace boxes (ফুল/ময়ূর/তৃণ); লিখি model 'আমি ফুল তুলি।' + blank lines. USER DECISION: (1) EDIT 'ময়ূর নাচে' -> 'ময়ূর পাখি' (b03, school/edited, oral:true; নাচ/dance association removed; decodable & inventory-clean @37 under placeholder-correct audit (য় taught@33); marked oral:true for parity with all other য়/ড়/ঢ় words in the book (which ride nctb/oral blocks, validator-exempt for the bare-nukta multi-codepoint quirk); FLAGGED FOR REVIEWER); (2) peacock KEPT as living being with stripe (img-01) per standing bird pattern. Object elements ফুল/তৃণ may share the frame. Trace/write = vector (img-02). LETTER-AUDIT: all word->sentence pairs + model + EDITED replacement inventory-clean @37 (edited 'ময়ূর পাখি' audited: PASS). Peacock image directed to a calm standing pose (not a dance/display) to match edited text. Nothing omitted. FLAGGED FOR REVIEWER: (a) NCTB predicate 'নাচে' changed to 'পাখি'; (b) stripe placement on ময়ূর must keep whole body+tail clear of band; (c) keep লিখি blank lines empty in print edition. bw_treatment=native_safe."
+  }
+ ]
+}

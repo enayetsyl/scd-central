@@ -1,0 +1,48 @@
+========================================================================
+VALIDATOR REPORT — validator_v2_rebuilt · book C1-BAN · 54 lessons
+========================================================================
+
+CHECK 1 — JSON valid · schema_version · book_id
+  [PASS] book parses as valid JSON
+  [PASS] schema_version == "1.0"
+  [PASS] book_id 'C1-BAN' well-formed
+
+CHECK 2 — Lesson inventory & action flags
+  [PASS] lesson_no 1..54 complete, ordered, no gaps
+  [PASS] every lesson carries exactly one valid action flag
+
+CHECK 3 — যোগ্যতা/শিখনফল codes present per lesson
+  [RED]  L53: empty competency/outcome codes
+
+CHECK 4 — Letter audit (C1–2 BAN school decodable text; v2 fixes active)
+  [PASS] letter audit clean on all school decodable text
+
+CHECK 5 — Genre tag on every replace lesson
+  [PASS] genre present on all replace lessons
+
+CHECK 6 — Image-slot booleans
+  [PASS] contains_living_being + photocopy_safe boolean on every slot
+
+CHECK 7 — source_note on Islamic-narrative blocks (grey; heuristic)
+  [PASS] no school block with Islamic-narrative markers lacks a source_note
+
+CHECK 8 — Script guard (RED on rendered text; Arabic RED anywhere; CD-008 watch)
+  [PASS] no red script-guard hit in rendered text; no Arabic script anywhere
+  [INFO] CD-008 WATCH — zero em-dash/ellipsis in rendered text
+
+CHECK 9 — No stripe language in image prompts
+  [PASS] no stripe-instruction strings in any prompt
+
+CHECK 10 — Compliance map derivable
+  [RED]  L53: missing codes/action/nctb_pages
+
+GREY-AT-MERGE — prompts · refs · bw_treatment
+  [GREY] L11/L011-img-05: narrative_figure with no refs (red before Images)
+  [GREY] L19/L019-img-05: narrative_figure with no refs (red before Images)
+  [GREY] L20/L020-img-10: narrative_figure with no refs (red before Images)
+  [GREY] L21/L021-img-05: narrative_figure with no refs (red before Images)
+
+========================================================================
+RESULT:  RED=2   GREY=4   PASS=11
+VERDICT: FAIL — red failures must resolve before merge (step 8 → step 3)
+========================================================================

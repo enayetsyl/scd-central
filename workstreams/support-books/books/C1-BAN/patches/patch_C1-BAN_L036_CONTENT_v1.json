@@ -1,0 +1,197 @@
+{
+ "schema_version": "1.0",
+ "book_id": "C1-BAN",
+ "patch_id": "patch_C1-BAN_L036_CONTENT_v1",
+ "task": "CONTENT",
+ "lessons": [
+  {
+   "lesson_no": 36,
+   "nctb_title_bn": "এসো পড়ি ও লিখি",
+   "nctb_pages": [
+    52
+   ],
+   "genre": "পঠন ও লিখন (ছোট বাক্য)",
+   "competency_codes": [
+    "১.২",
+    "৫.১",
+    "৯.১",
+    "১৩.৩"
+   ],
+   "outcome_codes": [
+    "১.২.২",
+    "৫.২.২",
+    "৯.২.৪",
+    "১৩.৩.১"
+   ],
+   "action": "retain-curated",
+   "c_codes": [
+    "C-05",
+    "C-06"
+   ],
+   "severity": "S2",
+   "status": "content-draft",
+   "blocks": [
+    {
+     "id": "L036-b01",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "পাঠ ৩৬\nএসো পড়ি ও লিখি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "title"
+    },
+    {
+     "id": "L036-b02",
+     "type": "decodable_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "কাক\tকাক ডাকে।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫২ শব্দ→বাক্য জোড়া হুবহু রক্ষিত। inventory-clean @36।",
+     "style_profile": null,
+     "layout_hint": "word-sentence-pair"
+    },
+    {
+     "id": "L036-b03",
+     "type": "decodable_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ঘি\tঘি কিনি।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫২ শব্দ→বাক্য জোড়া হুবহু রক্ষিত। inventory-clean @36।",
+     "style_profile": null,
+     "layout_hint": "word-sentence-pair"
+    },
+    {
+     "id": "L036-b04",
+     "type": "decodable_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "নীল\tনীল আকাশ।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫২ শব্দ→বাক্য জোড়া হুবহু রক্ষিত। inventory-clean @36।",
+     "style_profile": null,
+     "layout_hint": "word-sentence-pair"
+    },
+    {
+     "id": "L036-b05",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "পড়ি ও লিখি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L036-b06",
+     "type": "tracing_ref",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "কাক\tঘি\tনীল",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫২ পড়ি-ও-লিখি: কাক, ঘি, নীল — মডেল শব্দ + দুই সারি ট্রেসিং। inventory-clean।",
+     "style_profile": null,
+     "layout_hint": "trace-and-write-boxes"
+    },
+    {
+     "id": "L036-b07",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "লিখি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L036-b08",
+     "type": "decodable_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "আমি নদী দেখি।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫২ লিখি মডেল-বাক্য হুবহু রক্ষিত। inventory-clean @36 (আ/ম/ি/ন/দ/ী/দ/ে/খ/ি — সব taught)। শিশু নিচের খালি রেখায় নিজে বাক্য লেখে।",
+     "style_profile": null,
+     "layout_hint": "model-sentence"
+    },
+    {
+     "id": "L036-b09",
+     "type": "write_lines",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫২ নিচের খালি রুলড লাইন — শিশুর নিজের বাক্য লেখার জন্য। print edition-এ খালি রাখতে হবে (pre-fill নয়)।",
+     "style_profile": null,
+     "layout_hint": "blank-ruled-lines"
+    }
+   ],
+   "image_slots": [
+    {
+     "id": "L036-img-01",
+     "scene_description": "'কাক' — একটি কাক (crow; key-word subject; ব্যবহারকারীর নির্দেশে জীব-ফিগার রক্ষিত)। living_being=true → স্ট্রাইপ ট্রিটমেন্ট প্রযোজ্য।",
+     "image_class": "living_being",
+     "action": "generate_stripe",
+     "contains_living_being": true,
+     "compliance_note": "KEPT as living being per user instruction (কাক IS the key word — a crow; sentence 'কাক ডাকে।'). single bird, no human, no dress/cast. contains_living_being=true -> programmatic stripe applied OUTSIDE chat at image-ref step; keep the whole crow body (head, beak, legs) clear of the stripe band so it stays recognizable. bw: native_safe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A friendly children's-textbook illustration of a single black crow standing in profile on plain ground, its beak and legs clearly shown, perhaps with its beak slightly open as if calling. Just the one bird. No people, no other animals, no text. Plain white/pale background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L036-img-02",
+     "scene_description": "'ঘি' — objects-only: একটি ঘি-এর কৌটা/বয়াম (NCTB-অনুরূপ; কোনো জীব নেই)।",
+     "image_class": "object",
+     "action": "keep_nctb_style",
+     "contains_living_being": false,
+     "compliance_note": "object-only — a jar of ghee, no living being. No stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a single small labelled jar of ghee (clarified butter) with a lid, resting on a plain surface. No people, no animals, no living beings. Plain light background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L036-img-03",
+     "scene_description": "পড়ি-ও-লিখি ট্রেসিং বাক্স + লিখি খালি রুলড লাইন — ভেক্টর অ্যাসেট থেকে রেন্ডার (মডেল শব্দ কাক/ঘি/নীল, ট্রেসিং সারি, খালি লেখার রেখা)।",
+     "image_class": "tracing_asset",
+     "action": "vector_asset",
+     "contains_living_being": false,
+     "compliance_note": "trace-and-write boxes + blank ruled writing lines rendered from vector assets at assembly; never AI-generated. Keep blank lines empty in print edition.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "",
+     "aspect": "wide",
+     "filename": null,
+     "status": "draft"
+    }
+   ],
+   "nctb_omitted": [],
+   "bw_treatment": "native_safe",
+   "reviewer_signoff": {
+    "by": null,
+    "date": null,
+    "checklist_passed": false
+   },
+   "notes": "পাঠ ৩৬ এসো পড়ি ও লিখি (skeleton row 249, 2 periods). FIRST SHORT-SENTENCE lesson (ছোট বাক্য) — outcome ১৩.৩.১ (বাক্য গঠন), first decodable full sentences in the book. CODES: যোগ্যতা ১.২/৫.১/৯.১/১৩.৩, শিখনফল ১.২.২/৫.২.২/৯.২.৪/১৩.৩.১ (per TG row 36). action=retain-curated, severity=S2 (kept living-being কাক with stripe). C-05 (image living-being doctrine), C-06 (key words). CONTENT: 3 word->sentence pairs (কাক ডাকে / ঘি কিনি / নীল আকাশ); পড়ি-ও-লিখি trace boxes (কাক/ঘি/নীল); লিখি model sentence 'আমি নদী দেখি।' + blank ruled lines. USER DECISION: KEEP the crow কাক as living being with stripe (img-01) per user instruction ('keep crow with stripe'), consistent with বক/ময়না/পায়রা/ফড়িং/হাঁস@পাঠ33-35. Only object image = ঘি jar (img-02). Trace/write assets = vector (img-03). LETTER-AUDIT: ALL sentences + words inventory-clean @36 (first sentence lesson — every decodable sentence audited, all pass: কাক ডাকে/ঘি কিনি/নীল আকাশ/আমি নদী দেখি). Nothing omitted. FLAGGED FOR REVIEWER: (a) stripe placement on কাক must keep the whole crow body clear of the band; (b) keep the লিখি blank ruled lines empty in the print edition (child's own-sentence practice — do not pre-fill). bw_treatment=native_safe."
+  }
+ ]
+}

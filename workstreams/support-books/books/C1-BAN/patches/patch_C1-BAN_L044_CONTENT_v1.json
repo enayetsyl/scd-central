@@ -1,0 +1,198 @@
+{
+  "patch_id": "patch_C1-BAN_L044_CONTENT_v1",
+  "book_id": "C1-BAN",
+  "lesson_no": 44,
+  "task": "CONTENT",
+  "op": "merge_lesson",
+  "lesson": {
+    "lesson_no": 44,
+    "nctb_title_bn": "যেতে যেতে পড়ি",
+    "nctb_pages": [
+      63,
+      64
+    ],
+    "genre": "পঠন-লিখন (কার্যকরী পঠন / environmental print)",
+    "competency_codes": [
+      "১০.১"
+    ],
+    "outcome_codes": [
+      "১০.১.১",
+      "১০.১.২",
+      "১০.১.৪",
+      "১০.১.৫"
+    ],
+    "action": "retain-curated",
+    "c_codes": [
+      "C-01",
+      "C-02",
+      "C-05",
+      "C-18"
+    ],
+    "severity": "S2",
+    "status": "built",
+    "blocks": [
+      {
+        "id": "L044-b01",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "পাঠ ৪৪\nযেতে যেতে পড়ি",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "heading",
+        "layout_hint": "chapter-head"
+      },
+      {
+        "id": "L044-b02",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "পড়ি",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "section-head",
+        "layout_hint": "section-head"
+      },
+      {
+        "id": "L044-b03",
+        "type": "decodable_text",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "তুলি পথে যেতে যেতে পড়ে। তুলি দেয়ালের লেখা পড়ে। তুলি সাইনবোর্ডের লেখা পড়ে। তুলি হাতের লেখা পড়ে। চলো দেখি, তুলি কী কী পড়ছে।",
+        "text_en": null,
+        "source_note": "Environmental-print reading lead-in, verbatim NCTB p63. No C-issue in text (তুলি = child from Name Bank framing reads signs around her). nctb source -> audit-exempt; content unchanged.",
+        "style_profile": "reading-passage",
+        "layout_hint": "prose paragraph"
+      },
+      {
+        "id": "L044-b04",
+        "type": "print_specimen",
+        "source": "school",
+        "edited": true,
+        "oral": false,
+        "text_bn": "এই শহর আমার, আপনার এবং সবার।",
+        "text_en": null,
+        "source_note": "Wall-writing specimen RETAINED verbatim (civic slogan, no C-issue; good functional-reading text). Rendered as readable wall lettering in the image.",
+        "style_profile": "print-specimen",
+        "layout_hint": "wall-writing label"
+      },
+      {
+        "id": "L044-b05",
+        "type": "print_specimen",
+        "source": "school",
+        "edited": true,
+        "oral": false,
+        "text_bn": "ফুল ছেঁড়া নিষেধ",
+        "text_en": null,
+        "source_note": "Signboard specimen RETAINED verbatim (civic 'do not pick flowers' sign, no C-issue). Good environmental-print item.",
+        "style_profile": "print-specimen",
+        "layout_hint": "signboard label"
+      },
+      {
+        "id": "L044-b06",
+        "type": "print_specimen",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "বইঘর",
+        "text_en": null,
+        "source_note": "Shop-sign specimen RETAINED verbatim (bookshop name board). Readable environmental print.",
+        "style_profile": "print-specimen",
+        "layout_hint": "shop signboard"
+      },
+      {
+        "id": "L044-b07",
+        "type": "print_specimen",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "এখানে বই, কাগজ, কলম ও খাতা পাওয়া যায়।",
+        "text_en": null,
+        "source_note": "Bookshop sub-line RETAINED verbatim. Readable functional-print item.",
+        "style_profile": "print-specimen",
+        "layout_hint": "shop signboard sub-line"
+      },
+      {
+        "id": "L044-b08",
+        "type": "print_specimen",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "এখানে ময়লা ফেলুন\nপৌরসভা",
+        "text_en": null,
+        "source_note": "Dustbin civic sign RETAINED verbatim (municipal 'dispose waste here'). Human pictogram on the bin simplified to a trash/arrow icon in the image (minor C-05).",
+        "style_profile": "print-specimen",
+        "layout_hint": "dustbin label"
+      },
+      {
+        "id": "L044-b09",
+        "type": "print_specimen",
+        "source": "school",
+        "edited": true,
+        "oral": false,
+        "text_bn": "মদিনা মসজিদ",
+        "text_en": null,
+        "source_note": "REPLACEMENT readable sign (name board) substituted for a removed item (flag banner), preserving the ১০.১ read-the-environment purpose with an Islamic-context sign. All words decodable-clean @44.",
+        "style_profile": "print-specimen",
+        "layout_hint": "name board"
+      },
+      {
+        "id": "L044-b10",
+        "type": "print_specimen",
+        "source": "school",
+        "edited": true,
+        "oral": false,
+        "text_bn": "পানি অপচয় করবেন না।",
+        "text_en": null,
+        "source_note": "REPLACEMENT readable civic sign substituted for a removed item (শহিদ মিনার panel), preserving the environmental-print purpose. All words decodable-clean @44.",
+        "style_profile": "print-specimen",
+        "layout_hint": "civic signboard"
+      }
+    ],
+    "image_slots": [
+      {
+        "id": "L044-img-01",
+        "scene_description": "p63 উপরের মন্টাজ। NCTB-তে ছিল: জাতীয় পতাকা + উড়ন্ত পায়রা + 'মহান বিজয় দিবস' ব্যানার (C-18 পতাকা-কেন্দ্রিক + C-05 পাখি); পিঠে-ব্যাগ পরা পিছন-ফিরে দাঁড়ানো একটি মেয়ে তুলি (C-05 জীব, C-01 একক-মেয়ে, C-02 পোশাক); দেয়াল-লেখা 'এই শহর আমার...'; 'ফুল ছেঁড়া নিষেধ' সাইন; শিশু একাডেমি লোগো (পায়রা-সহ)। কিউরেশন: পতাকা সম্পূর্ণ বাদ (D-012); পায়রা বাদ (C-05); বিজয়-দিবস ব্যানার বাদ, বদলে 'মদিনা মসজিদ' নাম-বোর্ড; মেয়ে-ফিগার বাদ (objects-first); লোগো-পায়রা বাদ, লোগো টেক্সট-only; দেয়াল-লেখা ও 'ফুল ছেঁড়া নিষেধ' সাইন readable রাখা। কোনো মানুষ/প্রাণী/পতাকা নয়।",
+        "image_class": "object_scene",
+        "action": "generate_plain",
+        "contains_living_being": false,
+        "compliance_note": "CURATED montage (retain-curated, item-by-item). REMOVED: national flag entirely (C-18 flag-focused, D-012/RESOLVED-A omit); all doves/birds (C-05); the মহান বিজয় দিবস veneration banner (C-18 composite); the girl figure তুলি (C-05 living being + C-01 solo-girl + C-02 dress) per objects-first; the dove inside the শিশু একাডেমি logo (logo shown as text/mark only, no bird). REPLACED the removed banner with a readable 'মদিনা মসজিদ' name board (Islamic-context environmental print). RETAINED as readable wall/sign text: 'এই শহর আমার, আপনার এবং সবার।' and 'ফুল ছেঁড়া নিষেধ'. All readable text rendered crisply (this is a read-the-signs lesson; in-image text is intentional and specified from JSON specimens, not AI-hallucinated). No people, no animals, no flag. contains_living_being=false -> no compliance-band treatment. bw: native_safe.",
+        "photocopy_safe": true,
+        "refs": [],
+        "prompt": "A friendly children's-textbook street scene showing several readable signs a child might pass, arranged as a montage on a plain background. Include: a shop-style name board reading 'মদিনা মসজিদ'; a wall with painted lettering reading 'এই শহর আমার, আপনার এবং সবার।'; a small upright signboard reading 'ফুল ছেঁড়া নিষেধ'; and a simple circular institutional logo mark with the label 'শিশু একাডেমি' in text only (no bird, no emblem creature). No people, no birds, no animals, no national flag. Clean flat illustration style with clear, legible Bangla lettering on the signs. High contrast for black-and-white photocopy legibility.",
+        "aspect": "3:4",
+        "filename": null,
+        "status": "draft"
+      },
+      {
+        "id": "L044-img-02",
+        "scene_description": "p64 নিচের মন্টাজ। NCTB-তে ছিল: শহিদ মিনার-এর ছবি + 'আমরি বাংলা ভাষা' প্যানেল (C-18 ভাষা-আন্দোলন সিভিক ইতিহাস -- carve-out অনুযায়ী সাধারণত রক্ষিত, কিন্তু Principal A2 override: প্রতিস্থাপন); 'বইঘর' বইয়ের দোকানের ছবি + সাইন; একটি নীল ডাস্টবিন 'এখানে ময়লা ফেলুন / পৌরসভা' (মানব-পিক্টোগ্রাম-সহ, C-05 minor)। কিউরেশন: শহিদ মিনার প্যানেল বাদ (Principal override), বদলে 'পানি অপচয় করবেন না।' সিভিক সাইন; বইঘর দোকান-সাইন readable রাখা (object photo->illustration, বই-তাক, কোনো মানুষ নয়); ডাস্টবিন সাইন রাখা, পিক্টোগ্রাম সরল ট্র্যাশ/তীর আইকনে। কোনো মানুষ/প্রাণী নয়।",
+        "image_class": "object_scene",
+        "action": "generate_plain",
+        "contains_living_being": false,
+        "compliance_note": "CURATED montage (retain-curated, item-by-item). REMOVED: the শহিদ মিনার photo + 'আমরি বাংলা ভাষা' panel. NOTE: শহিদ মিনার / ভাষা-আন্দোলন is civic/language-movement history and under the C-18 factual carve-out (D-012) would normally be RETAINED; removed here per explicit Principal ruling A2 (override of the carve-out) -- reviewer-flagged. REPLACED with a readable 'পানি অপচয় করবেন না।' civic sign. RETAINED: the বইঘর bookshop sign + shelves of books, redrawn as an object illustration (photo replaced per C-05 photo rule; no people). RETAINED the municipal dustbin sign 'এখানে ময়লা ফেলুন / পৌরসভা' with its human pictogram simplified to a plain trash/arrow icon (removes the minor C-05 figure). All readable sign text specified from JSON specimens. No people, no animals. contains_living_being=false -> no compliance-band treatment. bw: native_safe.",
+        "photocopy_safe": true,
+        "refs": [],
+        "prompt": "A friendly children's-textbook montage of readable everyday objects and signs on a plain background. Include: a green bookshop sign board reading 'বইঘর' above an illustrated shelf full of colourful books; a small upright civic signboard reading 'পানি অপচয় করবেন না।'; and a blue wheeled municipal dustbin with a clear label reading 'এখানে ময়লা ফেলুন' and below it 'পৌরসভা', marked with a simple plain trash-can icon (no human figure). No people, no animals, no monuments, no national flag. Clean flat illustration style with clear, legible Bangla lettering. High contrast for black-and-white photocopy legibility.",
+        "aspect": "3:4",
+        "filename": null,
+        "status": "draft"
+      }
+    ],
+    "nctb_omitted": [
+      "জাতীয় পতাকা (flag) -- omitted entirely per D-012/RESOLVED-A",
+      "মহান বিজয় দিবস veneration banner -- removed (C-18 composite)",
+      "শহিদ মিনার + আমরি বাংলা ভাষা panel -- removed per Principal ruling A2 (override of C-18 factual carve-out; reviewer-flagged)"
+    ],
+    "bw_treatment": "native_safe",
+    "reviewer_signoff": {
+      "by": null,
+      "date": null,
+      "checklist_passed": false
+    },
+    "notes": "পাঠ 44 যেতে যেতে পড়ি built (FUNCWRITE / environmental-print reading, যোগ্যতা ১০.১). Text (তুলি reads signs) verbatim, no C-issue. Two curated image montages (retain-curated, item-by-item). REMOVED: national flag entirely (C-18/D-012 omit); all doves/birds (C-05); মহান বিজয় দিবস banner (C-18); girl figure তুলি (C-05/C-01/C-02, objects-first); শিশু একাডেমি logo dove (logo text-only); শহিদ মিনার + আমরি বাংলা ভাষা panel (per Principal A2 override of the C-18 factual carve-out -- REVIEWER-FLAGED, since শহিদ মিনার/ভাষা-আন্দোলন would normally be retained civic history); dustbin human pictogram (simplified to trash icon). REPLACED removed items with readable Islamic-context/neutral signs to preserve ১০.১ purpose: 'মদিনা মসজিদ' name board, 'পানি অপচয় করবেন না।' civic sign. RETAINED readable environmental print: 'এই শহর আমার, আপনার এবং সবার।', 'ফুল ছেঁড়া নিষেধ', 'বইঘর' + 'এখানে বই, কাগজ, কলম ও খাতা পাওয়া যায়।', dustbin sign. All in-image sign text is INTENTIONAL (read-the-signs lesson) and specified from JSON specimens, not AI-hallucinated. All school/edited specimen words decodable-clean @44. block audit + seeded self-test PASS (validator v2)."
+  }
+}

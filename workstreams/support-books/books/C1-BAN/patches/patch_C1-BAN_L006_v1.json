@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L006_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 6,
+      "nctb_title_bn": "আমরা কী কী করি",
+      "nctb_pages": [
+        8
+      ],
+      "genre": "দৈনন্দিন কাজ",
+      "competency_codes": [
+        "২.১",
+        "৩.১",
+        "৫.২",
+        "৭.১"
+      ],
+      "outcome_codes": [
+        "২.১.১",
+        "৩.১.১",
+        "৫.২.২",
+        "৭.১.১"
+      ],
+      "action": "retain-curated",
+      "c_codes": [
+        "C-06",
+        "C-01",
+        "C-02",
+        "C-05"
+      ],
+      "severity": "S2",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L006-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "আমরা কী কী করি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L006-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L006-b03",
+          "type": "dialogue",
+          "source": "nctb",
+          "edited": true,
+          "oral": true,
+          "text_bn": "ওযু করি\nহাত-মুখ ধুই\nদাঁত মাজি\nখেলনা গোছাই\nখাবার খাই\nচুল আঁচড়াই\nবই গোছাই\nসালাত পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "speech-bubbles"
+        },
+        {
+          "id": "L006-b04",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L006-b05",
+          "type": "exercise",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "সকালে উঠে আমরা কী কী করি?\nআমরা কেন হাত মুখ ধুই?\nআমরা কখন পড়তে বসি?\nআমরা কখন খেলা করি?\nআমরা কখন ঘুমাতে যাই?",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "open-questions"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L006-img-01",
+          "scene_description": "দৈনন্দিন কাজ — দুই ছাত্র (উমর, আনাস) পাশাপাশি দাঁড়িয়ে, চারপাশে খালি স্পিচ-বাবল (টেক্সট JSON থেকে বসবে, ছবিতে লেখা নেই)। সবাই ছেলে, পূর্ণ পোশাক (কুর্তা-পায়জামা+টুপি)। কোনো মেয়ে/প্রাপ্তবয়স্ক নেই, পতাকা নেই।",
+          "image_class": "narrative_figure",
+          "action": "substitute_objects",
+          "contains_living_being": true,
+          "compliance_note": "same-gender (boys-only) cast scene per C-01/D-013; modest full-length dress + caps (C-02); figures redrawn from cast reference sheets (C-05); speech bubbles left BLANK — bubble text set from JSON blocks, no AI-rendered in-image text (script guard); no flag, no adults, no living-being wall art. No stripe.",
+          "photocopy_safe": true,
+          "refs": [
+            "refs/school/c1/umar.png",
+            "refs/school/c1/anas.png"
+          ],
+          "prompt": "A friendly children's-textbook illustration for a daily-routines activity. Two young Muslim schoolboys stand side by side, smiling, each with several empty rounded speech bubbles arranged around them. Both boys wear neat modest full-length kurta-pyjama with small caps. One boy raises a hand as if greeting; the other stands calmly. Plain white background. The speech bubbles are completely blank and empty — leave all bubbles without any text or letters. Soft watercolour style, warm daylight, clean clear linework. No girls, no adults, no flag, no music instruments, no images of living beings on any wall. High contrast and clean linework so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "filename": "L006-img-01_boys-routine.png",
+          "status": "approved"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ 6 daily-routines (আমরা কী কী করি). All text oral (শুনি ও বলি) + পাঠ 6 teaches zero বর্ণ → letter-audit exempt both ways. action=retain-curated; codes stack C-06/C-01/C-02/C-05 (S2). C-03/C-19 ASSESSED AND NOT ACTIVE: the গান গেয়ে শোনানো / অভিনয় flags are Teacher's-Guide recommended METHODS (already out of pupil-book scope per D-019 import-clean), not content on the student page — the page is picture-cued oral Q&A, nothing to convert (Principal-confirmed). Reframed ALL-BOYS (C-01/D-013): NCTB boy+girl pair → উমর, আনাস (from refs) + তালহা incidental; mobility-aid child not on this page (aid maps to ফাতিমা/girls; retain-list carry is across-book via পাঠ 4, not per-page — conscious choice). Activity bubbles leaned to Islamic daily-life per Principal (c): গোসল করি→ওযু করি, +সালাত পড়ি, everyday self-care items kept so দৈনন্দিন-কাজ শিখনফল intact. ৭.১ নিজের-মতো free-thinking strand (retain list): all five NCTB open questions kept verbatim, NOT narrowed; no steering question added. Image: blank speech bubbles, text from JSON (script-guard, no baked-in Bengali). Pre-puberty mixed-class governance question remains OPEN/unapplied."
+    }
+  ]
+}

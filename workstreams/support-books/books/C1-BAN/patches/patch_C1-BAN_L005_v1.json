@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L005_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 5,
+      "nctb_title_bn": "আঁকাআঁকি",
+      "nctb_pages": [
+        6,
+        7
+      ],
+      "genre": "অঙ্কন/রং",
+      "competency_codes": [
+        "MOTOR"
+      ],
+      "outcome_codes": [
+        "MOTOR"
+      ],
+      "action": "retain-curated",
+      "c_codes": [],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L005-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "আঁকাআঁকি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L005-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "দাগ দিই ও রং করি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L005-img-01",
+          "scene_description": "দাগ দিই ও রং করি (পৃষ্ঠা ১) — বেলুন, জ্যামিতিক আকৃতি (বৃত্ত, ত্রিভুজ, কর্ণসহ বর্গ), ফুল-পাপড়ি, পাতা, টিউলিপ, ঘাস; কিছু ডট-আউটলাইন ট্রেসিং, কিছু সলিড রং করার জন্য। কোনো জীবন্ত প্রাণী নেই, কোনো আকৃতিতে মুখ নেই, লেখা নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only trace/colour page; shapes + plants only, no living being, no face on any shape, no flag, no in-image text (script guard). Generated fresh (regenerate-all-art preference). No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A black-and-white line-art trace-and-colour activity page for a young child (age 5-6). Clean bold outlines only, no shading, no fill, no colour, on a white background; high contrast, thick clear lines legible when photocopied. A mix of simple shapes and objects to trace and colour: a large balloon on a string drawn in a light dashed dotted outline; a few basic geometric shapes (circles, triangles, a square with diagonal lines) some in solid outline and some in dashed trace outline; and a simple flower made of teardrop petals with small leaf and bud shapes, part solid outline and part dashed trace outline, with a little grass and a couple of small tulips along the bottom. Arrange them tidily across one portrait page with generous spacing so a small child can trace the dotted ones and colour inside all of them. Simple, friendly children's-textbook style. No text, no letters, no numbers, no faces on any shape, no people or animals anywhere on the page.",
+          "aspect": "3:4",
+          "filename": "L005-img-01_shapes-flower.png",
+          "status": "approved"
+        },
+        {
+          "id": "L005-img-02",
+          "scene_description": "দাগ দিই ও রং করি (পৃষ্ঠা ২) — ডট-আউটলাইনে একটি বড় সূর্য (বৃত্ত + ত্রিভুজাকার রশ্মি) ট্রেস ও রং করার জন্য; মুখ নেই। কোনো জীবন্ত প্রাণী নেই, লেখা নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only trace/colour page; plain geometric sun with NO face (C-05-adjacent caution held), no living being, no flag, no in-image text. Generated fresh. No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A black-and-white line-art trace-and-colour activity page for a young child (age 5-6). Clean bold outlines only, no shading, no fill, no colour, white background; high contrast, thick clear lines legible when photocopied. A single large friendly sun drawn in a light dashed dotted outline for the child to trace over then colour: a round central circle with a ring of pointed triangular rays around it, all as a trace-the-dots outline. Centre the sun on one portrait page with room to trace and colour. Plain geometric sun with no face — no eyes, no mouth. No text, no letters, no numbers, no people or animals anywhere on the page.",
+          "aspect": "3:4",
+          "filename": "L005-img-02_sun.png",
+          "status": "approved"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ 5 pre-writing motor activity (আঁকাআঁকি; দাগ দিই ও রং করি). No শিখনফল per TG → MOTOR sentinel (option (i), Principal-ruled; covers পাঠ 2/5/7/18/53). No active C-codes: no flag (so no C-18, unlike পাঠ 2), no living beings (C-05 latent/no-action). action=retain-curated because both images regenerated fresh (Principal preference: regenerate all art) — content otherwise untouched. Two object-only trace/colour pages generated fresh (shapes+flower; plain sun with NO face); no living beings, no text, no flag. No decodable/edited text → letter audit trivially exempt."
+    }
+  ]
+}

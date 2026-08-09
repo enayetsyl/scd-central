@@ -1,0 +1,172 @@
+{
+ "patch_id": "patch_C1-BAN_L046_CONTENT_v1",
+ "book_id": "C1-BAN",
+ "schema_version": "1.0",
+ "target_lesson_no": 46,
+ "merge_rule": "wholesale-by-lesson",
+ "lesson": {
+  "lesson_no": 46,
+  "nctb_title_bn": "পিঁপড়া ও পায়রার গল্প",
+  "nctb_pages": [
+   67
+  ],
+  "genre": "প্রকৃত গল্প (STORY)",
+  "competency_codes": [
+   "৮.১",
+   "১২.১",
+   "১৬.২"
+  ],
+  "outcome_codes": [
+   "৮.১.৫",
+   "১২.১.৩",
+   "১২.১.৫",
+   "১৬.২.১"
+  ],
+  "action": "retain-curated",
+  "c_codes": [
+   "C-05",
+   "C-09"
+  ],
+  "severity": "S2",
+  "status": "built",
+  "blocks": [
+   {
+    "id": "L046-b01",
+    "type": "heading",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "পাঠ ৪৬\nপিঁপড়া ও পায়রার গল্প",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "heading",
+    "layout_hint": "chapter-head"
+   },
+   {
+    "id": "L046-b02",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "শুনি ও পড়ি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "section header"
+   },
+   {
+    "id": "L046-b03",
+    "type": "story",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "এক নদীর ধারে একটা ছোটো পিঁপড়া বাস করত। একদিন তার খুব পানির পিপাসা পেল। সে পানি খেতে নদীর ধারে গেল। নদীতে অনেক ঢেউ ছিল। পিঁপড়াটি নদীর ঢেউয়ে ভেসে গেল।",
+    "text_en": null,
+    "source_note": "Ant-and-dove folk fable (traditional wisdom-tale, akhlaq theme: mutual help / gratitude). Opening paragraph verbatim NCTB p67. Teacher-read (oral)  - audit-exempt.",
+    "style_profile": "story-body",
+    "layout_hint": "prose paragraph beside dove image"
+   },
+   {
+    "id": "L046-b04",
+    "type": "story",
+    "source": "school",
+    "edited": true,
+    "oral": true,
+    "text_bn": "নদীর পাড়ে একটা বড়ো গাছ ছিল। সেই গাছে একটা বড়ো পায়রা বাস করত। পায়রাটি দেখতে পেল, পিঁপড়াটি পানিতে ভেসে যাচ্ছে। সে তখন গাছ থেকে একটি পাতা ফেলে দিল। পিঁপড়াটি পাতার উপর উঠে বসল। এরপর ঢেউয়ে ভাসতে ভাসতে ডাঙার কাছে চলে এল। এভাবে পায়রা পিঁপড়াটিকে সাহায্য করলো। তখন পায়রা আর পিঁপড়া ভালো বন্ধু হয়ে গেল।",
+    "text_en": null,
+    "source_note": "EDITED (C-09, Principal directive): NCTB 'এভাবে পিঁপড়াটি বেঁচে গেল' (thus the ant survived) reframed to 'এভাবে পায়রা পিঁপড়াটিকে সাহায্য করলো' (thus the dove helped the ant)  - জীবন-বাঁচা/survival framing replaced with help/উপকার framing per Principal ruling (সাহায্য করলো in all places). Oral block  - 'সাহায্য' (conjunct য্য) NOT on পাঠ ৪৬ B-1 whitelist, so this phrasing is valid only in oral (audit-exempt) text, never decodable. Rest verbatim NCTB.",
+    "style_profile": "story-body",
+    "layout_hint": "prose paragraph beside dove image"
+   },
+   {
+    "id": "L046-b05",
+    "type": "story",
+    "source": "school",
+    "edited": true,
+    "oral": true,
+    "text_bn": "একদিন পিঁপড়াটি দেখল, গাছের নিচে একটা তীর-ধনুক পড়ে আছে। তীরটি পায়রার দিকে তাক করা। পিঁপড়াটি তখন তীরের কাছে গিয়ে একটা পাতা টেনে ধনুকের ছিলায় ফেলে দিল। ছিলা নড়ে উঠল, আর তীরটি পায়রার গায়ে লাগল না। তীরটি গিয়ে গাছের ডালে লাগল। পায়রাটি সাথে সাথে উড়ে গেল। এভাবে একটা ছোটো পিঁপড়া একটা বড়ো পায়রাকে সাহায্য করলো।",
+    "text_en": null,
+    "source_note": "EDITED (C-05 human-figure removal + C-09 kill-framing softened, Principal ruling 'remove human, keep bow-arrow as object, soften to aiming'): NCTB original had 'একজন লোক ... পায়রাটিকে মারার জন্য তীর ছুড়তে গেল' (a man tried to shoot the dove to kill it) and the ant biting the man's foot. Human figure removed entirely; bow-and-arrow is now an unattended object already aimed; ant nudges the bowstring with a leaf so the arrow misses. Closing 'জীবন বাঁচাল' -> 'সাহায্য করলো' (C-09, Principal directive). Oral block (audit-exempt); 'সাহায্য' য্য not whitelisted @46.",
+    "style_profile": "story-body",
+    "layout_hint": "prose paragraph full width"
+   },
+   {
+    "id": "L046-b06",
+    "type": "decodable_text",
+    "source": "school",
+    "edited": true,
+    "oral": false,
+    "text_bn": "পিঁপড়া ও পায়রা একে অপরের পাশে দাঁড়াল।",
+    "text_en": null,
+    "source_note": "School-written decodable পড়ি line carrying the mutual-help moral. Decodable-clean @46: no conjunct outside the (empty) B-1 whitelist ('পাশে দাঁড়াল' avoids সাহায্য/য্য and বন্ধু/ন্ধ, both non-whitelisted). ড়/য় taught by পাঠ ৩৩.",
+    "style_profile": "reading-line",
+    "layout_hint": "single decodable sentence"
+   },
+   {
+    "id": "L046-b07",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "বলি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "section header"
+   },
+   {
+    "id": "L046-b08",
+    "type": "exercise",
+    "source": "school",
+    "edited": true,
+    "oral": true,
+    "text_bn": "কে ছোটো, পিঁপড়া না পায়রা?\nপায়রা কেমন করে পিঁপড়াকে সাহায্য করলো?\nপিঁপড়া কেমন করে পায়রাকে সাহায্য করলো?",
+    "text_en": null,
+    "source_note": "EDITED (C-09, Principal directive): NCTB oral questions used 'বাঁচতে পারল' (managed to survive); reframed to 'সাহায্য করলো' to match the help-framing throughout. Oral comprehension questions (audit-exempt).",
+    "style_profile": "question-list",
+    "layout_hint": "three oral questions"
+   }
+  ],
+  "image_slots": [
+   {
+    "id": "L046-img-01",
+    "scene_description": "বড়ো পায়রা গাছের ডালে বসে আছে, নিচে নদীর ঢেউয়ে একটা পাতার উপর ছোটো পিঁপড়া ভাসছে  - animal-first, কোনো মানুষ নেই।",
+    "image_class": "animal_story",
+    "action": "generate_stripe",
+    "contains_living_being": true,
+    "compliance_note": "two story-critical animals (dove on branch, ant on floating leaf) kept in the upper/centre frame, clear of the lower third where the programmatic stripe lands; high-contrast line-art for B/W. No stripe language in prompt.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A gentle children's-textbook illustration: a large white dove perched on the branch of a big leafy tree beside a river, looking down at a small ant riding on a green leaf floating on the rippling water below. Warm daylight, plain simple background, bold clean outlines and soft flat colour. No people. High contrast and clear linework so it stays legible in black-and-white photocopy.",
+    "aspect": "4:3",
+    "status": "draft"
+   },
+   {
+    "id": "L046-img-02",
+    "scene_description": "একটা পাতার উপর একটা ছোটো পিঁপড়া  - single animal, no human.",
+    "image_class": "animal_story",
+    "action": "generate_stripe",
+    "contains_living_being": true,
+    "compliance_note": "single ant on a leaf centre-frame, clear of lower third where the programmatic stripe lands; high-contrast line-art for B/W. No stripe language in prompt.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A simple, friendly children's-textbook illustration of a single small red ant sitting on one green leaf, centred, on a plain white background. Bold outlines, soft flat colour, no other objects. High contrast, clear linework for black-and-white photocopy.",
+    "aspect": "1:1",
+    "status": "draft"
+   }
+  ],
+  "nctb_omitted": [
+   {
+    "item": "hunter human figure (একজন লোক with তীর-ধনুক)",
+    "reason": "C-05 + Principal ruling: human removed; bow-arrow retained as unattended aimed object"
+   }
+  ],
+  "bw_treatment": "native_safe",
+  "reviewer_signoff": {
+   "by": null,
+   "date": null,
+   "checklist_passed": false
+  },
+  "notes": "STORY (one of two true stories). C-09 directive: 'জীবন বাঁচাল/বাঁচালো' -> 'সাহায্য করলো' in all occurrences (b04, b05, b08). C-05: hunter human removed per Principal ruling, animals retained with programmatic stripe. Story body oral (শুনি)  - houses সাহায্য (য্য not whitelisted @46). One clean decodable পড়ি line (b06). Reviewer: confirm help-framing reads naturally; fable is folk wisdom-tale, no আলিম source gate needed."
+ }
+}

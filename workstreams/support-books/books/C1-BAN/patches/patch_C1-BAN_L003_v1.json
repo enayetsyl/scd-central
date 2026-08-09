@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L003_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 3,
+      "nctb_title_bn": "আমি ও আমার বিদ্যালয়",
+      "nctb_pages": [
+        3
+      ],
+      "genre": "পরিচয়/পরিচিতি",
+      "competency_codes": [
+        "২.১",
+        "৬.১",
+        "৬.২"
+      ],
+      "outcome_codes": [
+        "২.১.৫",
+        "২.১.৩",
+        "৬.১.২",
+        "৬.১.৩",
+        "৬.২.১"
+      ],
+      "action": "retain-curated",
+      "c_codes": [
+        "C-06",
+        "C-01",
+        "C-02",
+        "C-05"
+      ],
+      "severity": "S2",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L003-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "আমি ও আমার বিদ্যালয়",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L003-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L003-b03",
+          "type": "dialogue",
+          "source": "nctb",
+          "edited": true,
+          "oral": true,
+          "text_bn": "খুশি উস্তাজা : কেমন আছ সবাই?\nসবাই : ভালো আছি।\nখুশি উস্তাজা : বিদ্যালয় কেমন লাগছে তোমাদের?\nউমর ও আনাস : খুব ভালো লাগছে, উস্তাজা।\nখুশি উস্তাজা : কত নতুন নতুন বন্ধু, তাই না? অনেক ভালো লাগবে। তোমার নাম কী?\nতালহা : আমার নাম তালহা।\nখুশি উস্তাজা : তোমার নাম বলো।\nউমর : উস্তাজা, আমার নাম উমর।\nখুশি উস্তাজা : এবার তোমরা একজন একজন করে নিজের নাম বলো।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "dialogue-two-column"
+        },
+        {
+          "id": "L003-b04",
+          "type": "instruction",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "সহপাঠীদের সাথে পরিচিত হই। নিজের নাম বলি। নাম জানতে চাই।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "caption-highlight"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L003-img-01",
+          "scene_description": "মাদ্রাসার শ্রেণিকক্ষে পরিচয়-দিবস — খুশি উস্তাজা (পূর্ণ পর্দা, শুধু মুখ-হাত দৃশ্যমান) সামনে দাঁড়িয়ে; ডেস্কে কেবল ছেলে শিক্ষার্থীরা (উমর ও আনাস cast ref থেকে, তালহা সহ)। কোনো মেয়ে নেই (C-01 same-gender), দেয়ালে জীবন্ত প্রাণীর ছবি নেই, পতাকা নেই।",
+          "image_class": "narrative_figure",
+          "action": "substitute_objects",
+          "contains_living_being": true,
+          "compliance_note": "same-gender (boys-only) cast scene per C-01/D-013; teacher full-coverage face+hands only (C-02); figures redrawn from cast reference sheets, not photo (C-05); no wall-images of living beings, no flag; বোর্ডে শুধু জ্যামিতিক আকৃতি। No stripe (redraw path).",
+          "photocopy_safe": true,
+          "refs": [
+            "refs/school/c1/umar.png",
+            "refs/school/c1/anas.png"
+          ],
+          "prompt": "A warm, friendly children's-textbook illustration of a madrasa classroom on an introduction day. A female teacher in full modest Islamic dress — a loose full-length garment and a headscarf covering her hair, neck and shoulders, with only her face and hands visible — stands at the front beside a low table, gesturing warmly as she greets the class. In front of her, a small group of young boys only (about six boys, no girls) sit at simple wooden desks, dressed in neat kurta-pyjama with small caps, listening and smiling, some raising a hand to speak. A plain classroom: a bookshelf with books and a couple of pots on the right, a framed board on the wall showing simple geometric shapes only, a window with soft daylight and greenery outside, potted plants. Soft watercolour style, warm daylight, clean clear linework. No girls, no music instruments, no wall images of any living being, no flag. Modest, calm, orderly classroom. High contrast and clean linework so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "filename": "L003-img-01_classroom-boys.png",
+          "status": "approved"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ 3 শুনি ও বলি self-introduction dialogue (oral; letter-audit exempt). action=retain-curated, codes stack C-06/C-01/C-02/C-05 (S2). Names curated per REF-2 §2.1: রাফি→উমর, তুলি→(dropped this scene), তপু→তালহা (incidental, C1 male pool); teacher খুশি আপা→খুশি উস্তাজা (madrasa register). Same-gender reframe → ALL-BOYS scene (C-01/D-013): girls' self-introduction carried to পাঠ 4 (all-girls). Cast debut (উমর, আনাস) in oral text + image, allowed pre-decodability per REF-2 §2.1; likeness matches existing cast reference sheets (Principal-confirmed). Image redrawn (narrative_figure) with compliant dress; no flag, no living-being wall art. Note: user (Principal) raised a pre-puberty free-mixing position for mixed cast scenes; NOT applied here — flagged as S4 governance/আলিম question, পাঠ 3 kept compliant all-boys pending any recorded DECISIONS.md amendment."
+    }
+  ]
+}

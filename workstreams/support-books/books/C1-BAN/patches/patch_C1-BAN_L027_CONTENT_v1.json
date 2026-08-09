@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L027_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 27,
+      "nctb_title_bn": "উ-কার ঊ-কার শিখি",
+      "nctb_pages": [39],
+      "genre": "কারচিহ্ন শিক্ষা",
+      "competency_codes": ["১.১", "১.২", "৫.১", "৯.১", "১৩.১", "১৩.২"],
+      "outcome_codes": ["১.১.১", "১.২.২", "৫.১.৩", "৯.১.৩", "১৩.১.৩", "১৩.২.১"],
+      "action": "retain-curated",
+      "c_codes": ["C-05", "C-08", "C-06"],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L027-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ২৭\nউ-কার ঊ-কার শিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L027-b02",
+          "type": "table",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "উ-কার\tু\nঊ-কার\tূ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "kar-table"
+        },
+        {
+          "id": "L027-b03",
+          "type": "word_list",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ঘুম\nকূপ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-word-pair"
+        },
+        {
+          "id": "L027-b04",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আরও শব্দ পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L027-b05",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": false,
+          "text_bn": "ু — ঘুম, দুধ, টুপি\nূ — কূপ, দূত, ভূমি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "kar-word-columns"
+        },
+        {
+          "id": "L027-b06",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L027-b07",
+          "type": "oral_text",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "ঘুমানোর আগে আমরা দোয়া পড়ি।\nখাবার খাওয়ার আগে ওযু করি, হাত ধুই।\nখেজুর মিষ্টি ফল, রোজায় খেজুর দিয়ে ইফতার করি।\nআল্লাহর নূর মানে আলো।",
+          "text_en": null,
+          "source_note": "দোয়া/ওযু/খেজুর/নূর — দৈনন্দিন ইসলামি জীবন থেকে পরিচিত শব্দ; কোনো বর্ণনামূলক ঘটনা নয়। দূত শব্দের মৌখিক ব্যাখ্যায় রাসূল/ফেরেশতা প্রসঙ্গ এলে বানানো বিবরণ নয় — রিভিউয়ার/আলিম যাচাই করুন (README §4.3).",
+          "style_profile": null,
+          "layout_hint": "teacher-read"
+        },
+        {
+          "id": "L027-b08",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L027-b09",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ঘুম\tকূপ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "read-words"
+        },
+        {
+          "id": "L027-b10",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "লিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L027-b11",
+          "type": "tracing_ref",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ু\nূ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "tracing-rows"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L027-img-01",
+          "scene_description": "উ-কার উদাহরণ 'ঘুম' — objects-only: একটি বালিশ ও পাতা-বিছানা/কাঁথা, পাশে বন্ধ বই ও জ্বলন্ত নয় এমন হারিকেন। কোনো ব্যক্তি/জীব নেই (NCTB-র ঘুমন্ত শিশুর বদলে বস্তু-দৃশ্য, objects-first ডিফল্ট)।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "objects-only slot — NCTB sleeping-child figure replaced by pillow/bedding still-life per objects-first default (C-05); no living being, so no stripe, no cast ref, no dress question. Concept 'ঘুম' conveyed by bedding scene.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple, warm children's-textbook still-life illustration representing bedtime: a soft pillow on a woven mat or light quilt, a closed book resting beside it, and an unlit lantern nearby. No people, no animals, no living beings of any kind. Plain white background. Soft watercolour style with clean, clear linework. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "filename": null,
+          "status": "draft"
+        },
+        {
+          "id": "L027-img-02",
+          "scene_description": "ঊ-কার উদাহরণ 'কূপ' — objects-only: গ্রামীণ পাকা কূপ, পাশে দড়ি-বাঁধা বালতি (NCTB-র মূল দৃশ্যের মতোই, কোনো জীব নেই)।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only slot — well + bucket, no living being (matches NCTB original which is already object-only). No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A friendly children's-textbook illustration of a traditional village well: a round brick-and-plaster well with a rope and a small bucket hanging at the side, resting on the ground. No people, no animals, no living beings. Plain white background. Soft watercolour style, clean clear linework. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "filename": null,
+          "status": "draft"
+        },
+        {
+          "id": "L027-img-03",
+          "scene_description": "লিখি — উ-কার (ু) ও ঊ-কার (ূ) ট্রেসিং রো, ভেক্টর অ্যাসেট থেকে রেন্ডার।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "letter-tracing rows rendered from vector assets at assembly; never AI-generated.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "wide",
+          "filename": null,
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ২৭ উ-কার ঊ-কার শিখি (স্থির/locked, skeleton flag). Title + কারচিহ্ন table + পড়ি/লিখি + NCTB spotlight words ঘুম/কূপ RETAINED verbatim (both pass পাঠ-27 letter audit). action=retain-curated, severity=S1 (dropped from provisional S2: both illustrations resolved objects-only per Principal, so no C-01/C-02 figure redraw, no stripe). CODES: যোগ্যতা/শিখনফল = পাঠ 21 (TG row 27, '= পাঠ 21'). C-05 (image living-being doctrine, resolved objects-first), C-08/C-06 (example-word framing). LETTER-AUDIT NOTE: at পাঠ 27 only 36 বর্ণ + কার া/ি/ী/ু/ূ are taught; র,ল,শ,ষ,স,হ,য,এ-কার all come later (30/32/29). Principal-requested Islamic words ওযু/খেজুর/নূর FAIL as decodable (need য/এ-কার/র) → placed in oral শুনি-ও-বলি block (b07, oral:true, audit-exempt) where they are legal. Extra DECODABLE example words chosen to pass audit + meet Principal's '+3, one উ-কার two ঊ-কার': উ-কার দুধ, টুপি (daily-life/dress); ঊ-কার দূত, ভূমি. b05 is the decodable extra-words block (edited, non-oral → audited, passes). SOURCE-SENSITIVITY: দূত (messenger) may invite রাসূল/ফেরেশতা association in oral gloss — source_note on b07 flags reviewer/আলিম to avoid invented narration (README §4.3); word itself neutral. IMAGE: both illustrations objects-only (pillow/bedding for ঘুম, well+bucket for কূপ) per Principal — living-being figure avoided, objects-first default; tracing rows = vector asset. bw_treatment=native_safe (no colour-dependent pedagogy)."
+    }
+  ]
+}

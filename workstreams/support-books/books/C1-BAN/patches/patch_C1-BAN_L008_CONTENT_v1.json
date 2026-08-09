@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L008_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 8,
+      "nctb_title_bn": "ছড়া",
+      "nctb_pages": [
+        11
+      ],
+      "genre": "ছড়া",
+      "competency_codes": [
+        "4.1",
+        "8.1"
+      ],
+      "outcome_codes": [
+        "4.1.1",
+        "8.1.1",
+        "8.1.4"
+      ],
+      "action": "replace",
+      "c_codes": [
+        "C-01",
+        "C-05"
+      ],
+      "severity": "S2",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L008-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L008-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ছড়া",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L008-b03",
+          "type": "rhyme",
+          "source": "school",
+          "edited": false,
+          "oral": true,
+          "text_bn": "ফুল ফুটেছে গাছে গাছে,\nপাখি বসে শাখে।\nমিষ্টি ফল ধরে আছে\nসবুজ পাতার ফাঁকে।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": "স্বরবৃত্ত, ৪-মাত্রা feet, foot-initial stress; 8/6/8/6; rhyme lines 2 & 4 (শাখে/ফাঁকে); শিশুতোষ nature register; replaces NCTB 'আতা গাছে তোতা পাখি...' within ±20% budget (4 lines vs 4). oral (শুনি ও বলি) → letter-audit exempt.",
+          "layout_hint": "rhyme-verse"
+        },
+        {
+          "id": "L008-b04",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ছবি দেখি ও নাম বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L008-b05",
+          "type": "word-list",
+          "source": "school",
+          "edited": false,
+          "oral": true,
+          "text_bn": "কাঁঠাল · আম · শাপলা · জবা · দোয়েল",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": "picture-naming labels (ছবি দেখি ও নাম বলি). oral naming task — child says the name aloud, not decoded. NCTB set (আতা ফল/টগর ফুল/দোয়েল পাখি) replaced under C-01/C-05 curation with halal fruit + flowers + দোয়েল; দোয়েল retained (kept-and-striped image).",
+          "layout_hint": "naming-row"
+        },
+        {
+          "id": "L008-b06",
+          "type": "instruction",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "নিজের জানা একটি ছড়া বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": "protected own-expression space (REF-1 retain list; README §4.5 free-thinking strand). Retained verbatim, no replacement.",
+          "layout_hint": "prompt"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L008-img-01",
+          "scene_description": "ছড়া মূল দৃশ্য — পাতাভরা একটি গাছ, ডালে কয়েকটি গোল ফল, নিচের ডালে দুটি ফুল, স্পষ্ট পাতা, নিচে ঘাস। কোনো পাখি নেই, কোনো মানুষ নেই, কোনো মুখ নেই।",
+          "image_class": "scene",
+          "action": "substitute_scenery",
+          "contains_living_being": false,
+          "compliance_note": "decorative ছড়া scene; tree + fruit + flowers + leaves + grass only. Human figures dropped (resolves C-01 free-mixing); birds/bee dropped (C-05 objects-first). No living being, no face, no in-image text. No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A gentle black-and-white line-art illustration for a young child's Bangla rhyme page (age 5-6). Clean bold outlines, light and airy, minimal shading, white background, high contrast so it stays clear when photocopied. A single friendly leafy tree with a sturdy trunk and rounded canopy, a few round ripe fruits hanging among the branches, a couple of simple flowers blooming on a low branch, and clear leaves. Soft grass along the bottom. Calm, tidy children's-textbook style with open space. No text, no letters, no numbers, no people, no animals, no birds, no insects, no faces anywhere on the page.",
+          "aspect": "4:3",
+          "filename": "L008-img-01_tree-fruit-flowers.png",
+          "status": "approved"
+        },
+        {
+          "id": "L008-img-02",
+          "scene_description": "কাঁঠাল — একটি গোটা কাঁঠাল, কাঁটাযুক্ত খোসা, ছোট বোঁটা ও একটি পাতা। জীবন্ত কিছু নেই, লেখা নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "naming-exercise object (কাঁঠাল). No living being, no text. No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A single black-and-white line-art picture of one whole jackfruit with its bumpy spiky skin texture and a short stem with one leaf, drawn as a clean bold outline for a young child's picture-naming exercise. White background, high contrast, no shading, legible when photocopied. Simple friendly children's-textbook style. No text, no letters, no numbers, no people, no animals, no faces.",
+          "aspect": "1:1",
+          "filename": "L008-img-02_kathal.png",
+          "status": "approved"
+        },
+        {
+          "id": "L008-img-03",
+          "scene_description": "আম — একটি পাকা আম, ছোট বোঁটা ও একটি পাতা। জীবন্ত কিছু নেই, লেখা নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "naming-exercise object (আম). No living being, no text. No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A single black-and-white line-art picture of one ripe mango with a short stem and one leaf, drawn as a clean bold rounded outline for a young child's picture-naming exercise. White background, high contrast, no shading, legible when photocopied. Simple friendly children's-textbook style. No text, no letters, no numbers, no people, no animals, no faces.",
+          "aspect": "1:1",
+          "filename": "L008-img-03_aam.png",
+          "status": "approved"
+        },
+        {
+          "id": "L008-img-04",
+          "scene_description": "শাপলা — একটি ফোটা শাপলা ফুল, পাশে গোল পাতা, শান্ত জলে। জীবন্ত প্রাণী নেই, লেখা নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "naming-exercise plant (শাপলা water lily). Flower — no C-18 issue (not a national-symbol veneration context; plain naming image). No living being, no text. No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A single black-and-white line-art picture of one open water lily flower with layered pointed petals and a broad round lily pad leaf beside it on calm water, drawn as a clean bold outline for a young child's picture-naming exercise. White background, high contrast, no shading, legible when photocopied. Simple friendly children's-textbook style. No text, no letters, no numbers, no people, no animals, no faces.",
+          "aspect": "1:1",
+          "filename": "L008-img-04_shapla.png",
+          "status": "approved"
+        },
+        {
+          "id": "L008-img-05",
+          "scene_description": "জবা — একটি ফোটা জবা ফুল, লম্বা কেশর, বোঁটা ও দুটি পাতা। জীবন্ত প্রাণী নেই, লেখা নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "naming-exercise plant (জবা hibiscus). No living being, no text. No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A single black-and-white line-art picture of one open hibiscus flower with five broad petals and a long central stamen, with a stem and two leaves, drawn as a clean bold outline for a young child's picture-naming exercise. White background, high contrast, no shading, legible when photocopied. Simple friendly children's-textbook style. No text, no letters, no numbers, no people, no animals, no faces.",
+          "aspect": "1:1",
+          "filename": "L008-img-05_joba.png",
+          "status": "approved"
+        },
+        {
+          "id": "L008-img-06",
+          "scene_description": "দোয়েল — একটি দোয়েল পাখি, পাশ থেকে, ছোট ডালে বসা, লেজ উঁচু করা, সাদা-কালো শরীর স্পষ্ট। naming exercise-এর জন্য। জীবন্ত প্রাণী (পাখি) — stripe প্রযোজ্য।",
+          "image_class": "animal",
+          "action": "keep_and_stripe",
+          "contains_living_being": true,
+          "compliance_note": "naming-exercise bird (দোয়েল) required identifiable by the task → kept-and-striped (image doctrine: animal a task requires). Programmatic stripe applied outside chat at Step 6. STRIPE-PLACEMENT NOTE for Step 6: the black-and-white wing bar is a story-critical identifying detail sitting mid-frame; position the stripe band just above or below the wing bar so the bird stays identifiable — do not center it on the wing bar. No human, no face on non-bird, no in-image text.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A single black-and-white line-art picture of one oriental magpie-robin (doyel) bird perched on a short twig, side profile, with its distinctive long tail cocked upward and its black-and-white body clearly shown, drawn as a clean bold outline for a young child's picture-naming exercise. White background, high contrast, no shading, legible when photocopied. Keep the bird's body and head in the upper portion of the frame with open space, and the twig low. Simple friendly children's-textbook style. No text, no letters, no numbers, no people, no other animals, no human faces.",
+          "aspect": "1:1",
+          "filename": "L008-img-06_doyel.png",
+          "status": "approved"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ 8 ছড়া (মুক্ত/replace). যোগ্যতা 4.1,8.1 → শিখনফল 4.1.1,8.1.1,8.1.4; strand নিজস্ব-অনুভূতি. NCTB traditional rhyme ('আতা গাছে তোতা পাখি...') replaced with an original স্বরবৃত্ত nature ছড়া (Principal-approved replace 2026-07-18); text is oral (শুনি ও বলি) → letter-audit exempt, which is what makes replacement writable at পাঠ 8 (0 letters taught; spine starts পাঠ 10). C-01 (illustration had mixed-gender human figures) → figures dropped, object/scenery scene. C-05 (তোতা/মউ/দোয়েল) → objects-first: birds/bee dropped from the main scene; দোয়েল retained ONLY in the naming exercise where the task needs it identifiable → kept-and-striped (contains_living_being:true, stripe at Step 6, wing-bar clearance flagged). Naming set replaced: কাঁঠাল/আম/শাপলা/জবা/দোয়েল (halal fruit + flowers + দোয়েল). 'নিজের জানা একটি ছড়া বলি' retained verbatim (protected own-expression space). No Islamic narrative → no source_note obligation; no Arabic script. S2 (text replace + image substitution)."
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L021_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 21,
+      "nctb_title_bn": "আ-কার শিখি",
+      "nctb_pages": [30],
+      "genre": "বর্ণ শিক্ষা",
+      "competency_codes": ["১.১", "৫.১", "৯.১", "১৩.১", "১৩.২"],
+      "outcome_codes": ["১.১.১", "৫.১.১", "৯.১.১", "১৩.১.১"],
+      "action": "retain-curated",
+      "c_codes": ["C-05", "C-02", "C-06", "C-01", "C-08"],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L021-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ২১\nআ-কার শিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L021-b02",
+          "type": "table",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "আ-কার\tা",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "kar-intro-cell"
+        },
+        {
+          "id": "L021-b03",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "কাক",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-word-large"
+        },
+        {
+          "id": "L021-b04",
+          "type": "tracing_ref",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "া",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "kar-tracing-row"
+        },
+        {
+          "id": "L021-b05",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "কাক",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-word"
+        },
+        {
+          "id": "L021-b06",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "কাগজ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-word"
+        },
+        {
+          "id": "L021-b07",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আরও আ-কার শব্দ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L021-b08",
+          "type": "decodable_text",
+          "source": "school",
+          "edited": true,
+          "oral": false,
+          "text_bn": "গাছ  চাকা  কাকা",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-words-row"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L021-img-01",
+          "scene_description": "কাক — কয়েকটি কাক (কাক শব্দের ছবি); single-species animal spotlight (NCTB p30 এর মতো কাক), কোনো মানুষ নেই।",
+          "image_class": "animal_story",
+          "action": "generate_stripe",
+          "contains_living_being": true,
+          "compliance_note": "crows (কাক) — one or two, matching NCTB p30; birds kept in upper two-thirds so stripe lands on plain ground clear of them; no people; high-contrast line-art for B/W.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A clean children's-textbook illustration of one or two crows standing on the ground, side profile, on a plain white background. Simple bold outlines, soft flat colour, no people, no other objects. High contrast for black-and-white photocopy.",
+          "aspect": "4:3",
+          "status": "draft"
+        },
+        {
+          "id": "L021-img-02",
+          "scene_description": "কাগজ — NCTB p30 তে দুই শিশু একসাথে বই/কাগজ পড়ছে (C-01 pair + C-02 dress)। object-first: একগুচ্ছ কাগজ ও একটি খোলা বই, মানুষ ছাড়া। (বিকল্প: same-gender cast pair — নিচে refs দেওয়া হলো, রিভিউয়ার বাছবেন।)",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "NCTB p30 shows two children reading together (C-01 pairing + C-02 dress + AI-baked text on the page). OBJECT-FIRST replacement: a stack of paper (কাগজ) and one open blank book, no figures, no in-image text (script guard). No living being, no stripe. If reviewer prefers figures, downgrade to same-gender cast pair (উমর+আনাস) modest dress, blank book.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a neat stack of paper sheets beside one open book with blank pages, centred, on a plain white background. Bold clean outlines, soft flat colour, no people, no text or letters anywhere on the pages, no other objects. High contrast for black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L021-img-03",
+          "scene_description": "গাছ — object-only: একটি গাছ (আ-কার শব্দ 'গাছ')।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only tree; no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a single leafy tree, centred, on a plain white background. Bold clean outlines, soft flat colour, no other objects, no people. High contrast for black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L021-img-04",
+          "scene_description": "চাকা — object-only: একটি চাকা (আ-কার শব্দ 'চাকা')।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only wheel; no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a single cart wheel, centred, on a plain white background. Bold clean outlines, soft flat colour, no other objects, no people. High contrast for black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L021-img-05",
+          "scene_description": "কাকা — 'কাকা' (uncle) শব্দের ছবি: এক প্রাপ্তবয়স্ক পুরুষ (কাকা) মৃদু হেসে দাঁড়িয়ে; পূর্ণ দাড়ি ও শালীন পূর্ণ পোশাক। একক পুরুষ।",
+          "image_class": "narrative_figure",
+          "action": "generate_stripe",
+          "contains_living_being": true,
+          "compliance_note": "কাকা = uncle, an adult male figure (C-05 + C-02). Single adult male with FULL BEARD, modest full-length clothing (full-sleeve, hem below ankle) + cap, standing/smiling gently; incidental adult (not cast child); no other people. Stripe lands on plain area clear of face/hands; high-contrast line-art for B/W. (If reviewer prefers object-only, this word alone can be dropped to word-only — but কাকা is a person by meaning.)",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A gentle children's-textbook illustration of a single adult man with a full beard, wearing modest full-length clothing and a cap, standing and smiling kindly. Plain white background, soft watercolour style, clean bold outlines. No bare skin beyond face and hands, no other people. High contrast for black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L021-img-06",
+          "scene_description": "আ-কার লিখন ট্রেসিং অ্যাসেট — 'া' স্ট্রোক-তীরসহ (NCTB মূল)। AI-জেনারেটেড নয়; ভেক্টর অ্যাসেট।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "kar-tracing row for আ-কার (া) with stroke-order arrows; vector asset, never AI-generated.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "4:3",
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ২১ আ-কার শিখি (🔒 স্থির; FIRST কারচিহ্ন lesson — আ-কার া introduced here; যোগ্যতা ১৩.২ বর্ণ-যোজনা). User: keep কাক+কাগজ, add more আ-কার words, replace images. LETTER AUDIT NOW LIVE (first decodable school-written content). পাঠ ২১ decodable inventory = vowels অ–ঔ + consonants ক খ গ ঘ ঙ চ ছ জ ঝ ঞ ONLY + া; conjunct_whitelist=null → B-1 default NONE (no যুক্তবর্ণ). Added words chosen decodable-safe (user chose decodable, not oral): গাছ, চাকা, কাকা — ALL audit-pass (only ক-ঞ consonants + া, no conjuncts). Rejected common আ-কার words that FAIL audit at পাঠ ২১ (untaught consonants): কলা/জাল/ঝাল/খাল(ল), ছাতা(ত), জামা/কামান(ম), চাঁদ(দ), খাবার(ব,র), আকাশ(শ), ছানা/কাঁকন(ন) — proves the audit is doing real work. b08 = decodable_text source=school edited=true oral=FALSE → AUDITED (passes). কাক/কাগজ kept (NCTB-original). IMAGES (replace): কাক = crows single-species stripe; কাগজ — NCTB two-children-reading (C-01 pair + C-02 dress + AI-baked page text) → OBJECT-FIRST stack-of-paper+blank-book (no figures, no in-image text/script-guard); reviewer may swap to same-gender cast pair. New-word images: গাছ/চাকা object-only; কাকা(uncle)=adult male, reframed FULL BEARD + modest full dress + cap (C-02/C-05), stripe. আ-কার tracing = vector_asset, prompt='' permanently. c_codes C-05/C-02/C-06/C-01/C-08. Ready to merge after পাঠ ২০. NOTE: conjunct_whitelist for পাঠ ২১ REMAINS null/needs_review in inventory (D-009) — not resolved here because no replacement text needed a conjunct; flagged as still-open for any future পাঠ-২১ conjunct use."
+    }
+  ]
+}

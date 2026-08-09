@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L025_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 25,
+      "nctb_title_bn": "ট্রেন",
+      "nctb_pages": [36],
+      "genre": "ছড়া (সংশোধিত v2)",
+      "competency_codes": ["৪.১", "৮.১"],
+      "outcome_codes": ["৪.১.১", "৮.১.১", "৮.১.৪"],
+      "action": "replace",
+      "c_codes": ["C-03"],
+      "severity": "S3",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L025-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ২৫",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L025-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L025-b03",
+          "type": "rhyme",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "ট্রেন\n\nঝক ঝকাঝক ট্রেন চলেছে\nরাত দুপুরে ভাই,\nট্রেন ছুটে যায় মাঠের পাশে\nথামার সময় নাই।\nনদীর ওপর সেতু পেরোয়\nঝন ঝনাঝন ঝন,\nসকাল হলে বাড়ি ফিরি\nখুশি সবার মন।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": "chhora-swarabritta",
+          "layout_hint": "verse-center"
+        },
+        {
+          "id": "L025-b04",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "মুখে মুখে উত্তর বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L025-b05",
+          "type": "exercise",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "ট্রেন কেমন শব্দ করে?\nসেতু পেরোবার সময় কী শোনা যায়?",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "oral-questions"
+        },
+        {
+          "id": "L025-b06",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "এসো রং করি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L025-b07",
+          "type": "instruction",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "ছবিটি রং করি।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "colour-activity"
+        },
+        {
+          "id": "L025-b08",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "নিজের জানা একটি ছড়া বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L025-b09",
+          "type": "exercise",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "তুমি জানো এমন একটি ছড়া বলো।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "free-expression-prompt"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L025-img-01",
+          "scene_description": "ছড়ার সঙ্গী ছবি: রাতের বেলা একটি ট্রেন মাঠ ও নদীর সেতু পেরিয়ে ছুটছে — object/scenery-only। ট্রেন, রেললাইন, সেতু, নদী, মাঠ, তারা-ভরা আকাশ, পাশে কয়েকটি ফুল। কোনো জীবন্ত প্রাণী বা আরোহী দৃশ্যমান নয়।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object/scenery-only night-train scene; no visible passengers, no living being. pass-through untouched in image chain (no stripe).",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A gentle children's-textbook illustration of a train at night speeding along a railway track, crossing a bridge over a calm river with open fields beside it, a star-filled deep-blue sky above, and a few simple flowers in the foreground. Soft watercolour style with warm lit train windows glowing (no people visible inside). No people, no birds, no animals — train, track, bridge, river, field, sky and flowers only. Flat composition for a young child's reading book. High contrast and clean linework so it stays legible in black-and-white photocopy.",
+          "aspect": "3:4",
+          "filename": "",
+          "status": "draft"
+        },
+        {
+          "id": "L025-img-02",
+          "scene_description": "এসো রং করি: একটি গাড়ির (car) আউটলাইন — রং করার জন্য line-art, NCTB মূল (retained; vehicle-neutral, জীবন্ত প্রাণী নয়)। AI-জেনারেটেড নয়; ভেক্টর অ্যাসেট থেকে অ্যাসেম্বলিতে বসবে।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "NCTB-native car colouring outline (line-art); object/vehicle, no living being; vector asset, not AI-generated; placed at assembly.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "wide",
+          "filename": "",
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [
+        {
+          "item": "poem 'ট্রেন' by শামসুর রাহমান (অংশবিশেষ) including line 'পুলের ওপর বাজনা বাজে'",
+          "reason": "C-03 (বাজনা বাজে / music-playing framing); attributed copyrighted poem replaced with an original school-written ছড়া under genre-matched replacement (README §4.1)"
+        }
+      ],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ২৫ ট্রেন (মুক্ত / STORY-to-RHYME per TG; genre ছড়া সংশোধিত v2). action=replace / S3, c_codes C-03. REPLACEMENT: the NCTB page carries শামসুর রাহমান's poem 'ট্রেন' (অংশবিশেষ) whose line 'পুলের ওপর বাজনা বাজে / ঝন ঝনাঝন ঝন।' triggers C-03 (বাজনা বাজে = music playing). Per README §4.1 genre-matched replacement, a NEW ORIGINAL 8-line train ছড়া (school-written) replaces it in স্বরবৃত্ত meter (chhora-swarabritta), keeping the train theme, the ঝক-ঝকাঝক motion sound, night journey, field, bridge-over-river, and the 'ঝন ঝনাঝন ঝন' sound-line -- but the bridge line is now the TRAIN rattling over the সেতু ('নদীর ওপর সেতু পেরোয় / ঝন ঝনাঝন ঝন') rather than বাজনা/music. Because the text is now original, the 'শামসুর রাহমান' byline and the '(অংশবিশেষ)' note are dropped (cannot attribute new words to the poet); this also resolves the copyright exposure of embedding the attributed poem. Text locked by user verbatim as embedded in b03. LETTER AUDIT: b03 rhyme is শুনি-ও-বলি oral:true -> EXEMPT (still simple/শিশুতোষ); b05/b07/b09 oral:true -> exempt; no decodable school text in this পাঠ. মুখে-মুখে-উত্তর Qs (b05) re-pointed to the new ছড়া (both answerable from it: ঝক-ঝকাঝক; সেতু পেরোবার সময় ঝন-ঝনাঝন). এসো-রং-করি (b07/img-02) = NCTB-native CAR outline KEPT per Principal ruling 2 (vehicle-neutral, object, not a living being); vector_asset, prompt empty. FREE-EXPRESSION 'নিজের জানা একটি ছড়া বলি' (b09) RETAINED verbatim -- protected free-thinking strand (যোগ্যতা ১৬.২ / README §4.5); child's own-expression space preserved. IMAGE img-01 = object/scenery night-train (no visible passengers, no living being) replacing the NCTB train illustration. No cast figures, refs empty. Ready to merge in order after পাঠ ২৪. FLAGGED FOR REVIEWER: read the new ছড়া aloud for স্বরবৃত্ত foot-initial stress + refrain; confirm register side-by-side vs the NCTB original; confirm ভাই/নাই/ঝন/মন rhyme scheme scans for age 5-6."
+    }
+  ]
+}

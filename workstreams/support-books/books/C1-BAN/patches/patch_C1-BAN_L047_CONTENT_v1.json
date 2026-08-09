@@ -1,0 +1,263 @@
+{
+ "patch_id": "patch_C1-BAN_L047_CONTENT_v1",
+ "book_id": "C1-BAN",
+ "schema_version": "1.0",
+ "target_lesson_no": 47,
+ "merge_rule": "wholesale-by-lesson",
+ "lesson": {
+  "lesson_no": 47,
+  "nctb_title_bn": "আজকের দিন",
+  "nctb_pages": [
+   68,
+   69
+  ],
+  "genre": "তথ্যমূলক পাঠ (বর্ণনামূলক)",
+  "competency_codes": [
+   "১.২",
+   "৩.১",
+   "৫.২",
+   "৭.১",
+   "৯.২",
+   "১৫.১"
+  ],
+  "outcome_codes": [
+   "৩.১.২",
+   "৭.১.৩",
+   "১৫.১.৩"
+  ],
+  "action": "retain-curated",
+  "c_codes": [
+   "C-05",
+   "C-01"
+  ],
+  "severity": "S1",
+  "status": "built",
+  "blocks": [
+   {
+    "id": "L047-b01",
+    "type": "heading",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "পাঠ ৪৭\nআজকের দিন",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "heading",
+    "layout_hint": "chapter-head"
+   },
+   {
+    "id": "L047-b02",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "শুনি ও পড়ি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "section header"
+   },
+   {
+    "id": "L047-b03",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "আজ অনেক রোদ। খুব গরম লাগছে।",
+    "text_en": null,
+    "source_note": "Weather caption (sunny), verbatim NCTB p68. Decodable-clean @47. nctb source -> audit-exempt.",
+    "style_profile": "caption",
+    "layout_hint": "caption beside sunny-scene image"
+   },
+   {
+    "id": "L047-b04",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "অনেক মেঘ করেছে। আজ মেঘলা দিন।",
+    "text_en": null,
+    "source_note": "Weather caption (cloudy), verbatim NCTB p68. Decodable-clean @47. nctb source.",
+    "style_profile": "caption",
+    "layout_hint": "caption beside rain-scene image"
+   },
+   {
+    "id": "L047-b05",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "এখন অনেক বাতাস। ঝড় আসছে।",
+    "text_en": null,
+    "source_note": "Weather caption (windy/storm), verbatim NCTB p68. Decodable-clean @47. nctb source.",
+    "style_profile": "caption",
+    "layout_hint": "caption beside storm-scene image"
+   },
+   {
+    "id": "L047-b06",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "শীতকালে শীত লাগে। গরম কাপড় গায়ে দিই।",
+    "text_en": null,
+    "source_note": "Weather caption (winter), verbatim NCTB p68. Decodable-clean @47. nctb source.",
+    "style_profile": "caption",
+    "layout_hint": "caption beside winter-scene image"
+   },
+   {
+    "id": "L047-b07",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "খুব চমৎকার দিন। চলো, বেড়াতে যাই।",
+    "text_en": null,
+    "source_note": "Weather caption (fine day / outing), verbatim NCTB p68. Decodable-clean @47. nctb source.",
+    "style_profile": "caption",
+    "layout_hint": "caption beside outing-scene image"
+   },
+   {
+    "id": "L047-b08",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "বলি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "section header"
+   },
+   {
+    "id": "L047-b09",
+    "type": "exercise",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "আজকের দিনটি কেমন?\nঝড়ের দিনে কী হয়?\nশীতে গরম কাপড় পরতে হয় কেন?\nকেমন দিন তোমার ভালো লাগে?",
+    "text_en": null,
+    "source_note": "Oral comprehension questions, verbatim NCTB p69. Audit-exempt (oral). No C-issue.",
+    "style_profile": "question-list",
+    "layout_hint": "four oral questions"
+   },
+   {
+    "id": "L047-b10",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "নিচের বামপাশের শব্দগুলোর সাথে ডানপাশের শব্দগুলোর মিল করো",
+    "text_en": null,
+    "source_note": "Matching-exercise instruction, verbatim NCTB p69. Decodable-clean @47.",
+    "style_profile": "instruction",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L047-b11",
+    "type": "matching",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "নদী\tপাখি\tসবুজ\tঝড়\tঘুম\nগান\tনৌকা\tবাতাস\tবিছানা\tপাতা",
+    "text_en": null,
+    "source_note": "Match-the-words exercise, verbatim NCTB p69. Left column then right column. All ten words decodable-clean @47 (নদী/ঝড় use ড়/য়-family taught by পাঠ ৩৩). nctb source -> audit-exempt.",
+    "style_profile": "matching-pairs",
+    "layout_hint": "two columns, draw-a-line matching"
+   }
+  ],
+  "image_slots": [
+   {
+    "id": "L047-img-01",
+    "scene_description": "রোদেলা দিন: উজ্জ্বল সূর্য ও একটি পাতাহীন গাছ  - objects/scenery only, কোনো প্রাণী বা মানুষ নেই।",
+    "image_class": "weather_scene",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only weather vignette (sun + bare tree); living birds from NCTB removed.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A simple children's-textbook weather illustration of a bright sun with rays over a bare leafless tree and a strip of grass, on a light sky background. No people, no animals, no birds. Bold clean outlines, soft flat colour, high contrast and clear linework for black-and-white photocopy.",
+    "aspect": "4:3",
+    "status": "draft"
+   },
+   {
+    "id": "L047-img-02",
+    "scene_description": "মেঘলা/বৃষ্টির দিন: বৃষ্টির মেঘ, ঝরে পড়া বৃষ্টি ও একটি খালি নৌকা পাড়ে  - objects only, কোনো মানুষ নেই।",
+    "image_class": "weather_scene",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only rain vignette (rain clouds + empty boat at the bank); the NCTB human boatman removed.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A simple children's-textbook weather illustration of grey rain clouds with falling rain over an empty wooden boat resting at a riverbank. No people, no animals. Bold clean outlines, soft flat colour, high contrast and clear linework for black-and-white photocopy.",
+    "aspect": "4:3",
+    "status": "draft"
+   },
+   {
+    "id": "L047-img-03",
+    "scene_description": "ঝড়ের দিন: বাতাসে হেলে পড়া গাছ ও উড়ন্ত পাতা  - objects/scenery only, কোনো প্রাণী নেই।",
+    "image_class": "weather_scene",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only storm vignette (wind-bent tree + flying leaves); the NCTB dog removed.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A simple children's-textbook weather illustration of a tree bending in strong wind with a few leaves blowing through the air over reeds and grass. No people, no animals. Bold clean outlines, soft flat colour, high contrast and clear linework for black-and-white photocopy.",
+    "aspect": "4:3",
+    "status": "draft"
+   },
+   {
+    "id": "L047-img-04",
+    "scene_description": "শীতের দিন: একটি খুঁটিতে ঝোলানো গরম জামা-কাপড় ও একটি মাফলার  - objects only, কোনো মানুষ নেই।",
+    "image_class": "weather_scene",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only winter vignette (warm clothes and a scarf on a peg); the NCTB human figures removed.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A simple children's-textbook illustration of warm winter clothes and a scarf hanging on a wooden peg, with a bare tree in the background. No people, no animals. Bold clean outlines, soft flat colour, high contrast and clear linework for black-and-white photocopy.",
+    "aspect": "4:3",
+    "status": "draft"
+   },
+   {
+    "id": "L047-img-05",
+    "scene_description": "চমৎকার দিন / বেড়ানোর দিন: গ্রামের পথ, কয়েকটি বাড়ি ও ফুলগাছ  - objects/scenery only, কোনো মানুষ নেই (C-01 mixed-gender pair সরানো হয়েছে)।",
+    "image_class": "scenery",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only village-outing scene (path, houses, flowering plants); the NCTB mixed-gender girl+boy pair removed (C-01) and replaced with scenery.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A simple children's-textbook illustration of a pleasant village path leading past a few small houses with flowering plants and a clear sky. No people, no animals. Bold clean outlines, soft flat colour, high contrast and clear linework for black-and-white photocopy.",
+    "aspect": "4:3",
+    "status": "draft"
+   },
+   {
+    "id": "L047-img-06",
+    "scene_description": "বড় নদী-দৃশ্য: পালতোলা খালি নৌকা, নদী, সবুজ পাড় ও নলখাগড়া  - objects/scenery only, কোনো পাখি বা মানুষ নেই।",
+    "image_class": "scenery",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only river panorama (empty sailboats, reeds, green banks); per Principal ruling ALL living beings removed  - the NCTB egrets/herons, the perched bird, and the people on the boats are removed.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A wide, calm children's-textbook illustration of a river landscape: two empty wooden sailboats on the water, tall green reeds along the bank, distant green fields and a few small huts on the far shore. No people, no animals, no birds. Loose watercolour-style but with clear outlines, high contrast for black-and-white photocopy.",
+    "aspect": "16:9",
+    "status": "draft"
+   }
+  ],
+  "nctb_omitted": [
+   {
+    "item": "living beings in all illustrations (boatman, dog, human figures, mixed-gender child pair, egrets/herons, perched bird, people on boats)",
+    "reason": "C-05 objects-first + C-01 (mixed-gender pair); Principal ruling: objects/scenery only, no living beings on the page"
+   }
+  ],
+  "bw_treatment": "native_safe",
+  "reviewer_signoff": {
+   "by": null,
+   "date": null,
+   "checklist_passed": false
+  },
+  "notes": "Image-only curation (text confirmed OK, retained verbatim). Principal ruling: objects/scenery only, zero living beings. Six weather/nature illustrations recomposed to objects (bird/dog/human figures removed); C-01 mixed-gender outing pair replaced with scenery; bottom river panel stripped of birds+people. All decodable text NCTB-original and audit-exempt; verified decodable-clean @47 regardless."
+ }
+}

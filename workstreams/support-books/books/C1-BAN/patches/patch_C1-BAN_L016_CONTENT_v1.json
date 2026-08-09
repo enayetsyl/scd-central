@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L016_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 16,
+      "nctb_title_bn": "স্বরবর্ণ",
+      "nctb_pages": [22, 23],
+      "genre": "পুনরালোচনা",
+      "competency_codes": ["১.১", "৫.১", "৯.১", "১৩.১"],
+      "outcome_codes": ["১.১.১", "৫.১.১", "৯.১.১", "১৩.১.১"],
+      "action": "retain-curated",
+      "c_codes": ["C-06"],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L016-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ১৬\nস্বরবর্ণ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L016-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L016-b03",
+          "type": "table",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "অ আ ই ঈ\nউ ঊ ঋ\nএ ঐ ও ঔ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "vowel-review-grid"
+        },
+        {
+          "id": "L016-b04",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পড়ি আর রং করি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L016-b05",
+          "type": "exercise",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "আ ঈ ঋ উ ঐ ও উ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "colour-the-vowels-row"
+        },
+        {
+          "id": "L016-b06",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শব্দগুলো শুনি। ঐ, ঋ, অ, উ, ও খুঁজে বের করি। গোল দাগ দিই।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "exercise-instruction"
+        },
+        {
+          "id": "L016-b07",
+          "type": "exercise",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "অজু ঐরাবত ঋতু উট ঔষধ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "circle-the-vowel-in-words"
+        },
+        {
+          "id": "L016-b08",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "সাজিয়ে লিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L016-b09",
+          "type": "writing_line",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "আ ঋ উ ই ঊ ঐ ঈ ঔ অ এ ও",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "arrange-and-write-boxes"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L016-img-01",
+          "scene_description": "স্বরবর্ণ পুনরালোচনা — রঙিন বর্ণ ও আউটলাইন-বর্ণ (রং করার জন্য); বর্ণ-শিক্ষার ভেক্টর/টাইপ অ্যাসেট, ছবি নয়। কোনো প্রাণী/মানুষ নেই।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "colour-the-vowel outline letters + tracing/write grid; rendered from vector/type assets at assembly, never AI-generated; no living being.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "4:3",
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ১৬ স্বরবর্ণ (পুনরালোচনা/review, 🔒 স্থির). Spans pages 22–23: p22 = vowel-review table (অ–ঔ) + 'পড়ি আর রং করি' colour-the-vowels; p23 = 'শব্দগুলো শুনি… খুঁজে বের করি' circle-the-vowel-in-words + 'সাজিয়ে লিখি' arrange-and-write. No new spotlight words; a review পাঠ. TEXT CHANGE (user): the p23 word-row অরুণ ঐরাবত ঋতু উট ঔষধ → অরুণ replaced with অজু. অরুণ = a proper name (Aruṇa, Hindu-mythology dawn charioteer / common Hindu given name), NOT in the REF-2 Name Bank → C-06 (non-approved name) + mild C-09 (creed); replaced with অজু, the book's own অ spotlight word from পাঠ ১০ (keeps review internally consistent; অজু starts with অ, serving the 'find অ' target). Other 4 words (ঐরাবত/ঋতু/উট/ঔষধ) are the পাঠ ১১–১৫ spotlights, kept. b07 marked source=school edited=true oral=true (word-list read aloud; oral → letter-audit exempt; also all-in-inventory at পাঠ ১৬ anyway). NCTB LOOSENESS FLAG (reviewer): p23 instruction lists 'ও' but the matching word is ঔষধ (ঔ, not ও) — NCTB conflates ও/ঔ here; kept as NCTB-original review target, not silently 'corrected'. All other blocks NCTB-original (table/colour/সাজিয়ে-লিখি) retained verbatim. Images: colour/trace letters = vector_asset, prompt='' permanently (no illustration on this review spread; no living being). c_codes C-06 (the অরুণ→অজু name swap). Ready to merge in order after পাঠ ১৫. NOTE: page 24 (পাঠ ১৭ 'ইতল বিতল', সুফিয়া কামাল ছড়া) is a SEPARATE পাঠ, not built here."
+    }
+  ]
+}

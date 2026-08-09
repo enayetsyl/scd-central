@@ -1,0 +1,237 @@
+{
+ "schema_version": "1.0",
+ "book_id": "C1-BAN",
+ "patch_id": "patch_C1-BAN_L035_CONTENT_v1",
+ "task": "CONTENT",
+ "lessons": [
+  {
+   "lesson_no": 35,
+   "nctb_title_bn": "ছবি দেখি শব্দ বানাই",
+   "nctb_pages": [
+    51
+   ],
+   "genre": "মুক্ত-লিখন / শব্দ-গঠন",
+   "competency_codes": [
+    "১.২",
+    "৭.১",
+    "১৬.২"
+   ],
+   "outcome_codes": [
+    "১.২.১",
+    "৭.১.১",
+    "১৬.২.১"
+   ],
+   "action": "retain-curated",
+   "c_codes": [
+    "C-05",
+    "C-06"
+   ],
+   "severity": "S2",
+   "status": "content-draft",
+   "blocks": [
+    {
+     "id": "L035-b01",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "পাঠ ৩৫\nছবি দেখি শব্দ বানাই",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "title"
+    },
+    {
+     "id": "L035-b02",
+     "type": "instruction",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ছবি দেখি, অক্ষর দিয়ে শব্দ বানাই ও লিখি।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫১ পাঠ-নির্দেশ (ছবি দেখে অক্ষর-টালি সাজিয়ে শব্দ গঠন)। MUKTO-LIKHON/FREEWRITE seed — outcome ১৬.২.১ ('একাকী চিন্তা'), স্কেলিটনে বিশেষভাবে সুরক্ষিত মুক্ত-চিন্তা যোগ্যতা।",
+     "style_profile": null,
+     "layout_hint": "activity-instruction"
+    },
+    {
+     "id": "L035-b03",
+     "type": "word_build",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ব\tল\tই\tক",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫১ বাম অক্ষর-টালি গুচ্ছ (ব, ল, ই, ক) — এই টালি দিয়ে তিনটি শব্দ গঠিত হয়: বই, বক, বল। সব অক্ষর পাঠ-৩৫ পর্যন্ত taught (ব@২৬, ল@৩০, ই@৪, ক@১৯)।",
+     "style_profile": null,
+     "layout_hint": "letter-tiles"
+    },
+    {
+     "id": "L035-b04",
+     "type": "word_build",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "বই",
+     "text_en": null,
+     "source_note": "ছবি: গল্পের বই (object)। ব+ই = বই। শিশু বাক্সে শব্দটি লেখে। inventory-clean।",
+     "style_profile": null,
+     "layout_hint": "picture-word-box"
+    },
+    {
+     "id": "L035-b05",
+     "type": "word_build",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "বক",
+     "text_en": null,
+     "source_note": "ছবি: একটি বক (egret/heron — জীব, key word)। ব+ক = বক। শিশু বাক্সে শব্দটি লেখে। inventory-clean।",
+     "style_profile": null,
+     "layout_hint": "picture-word-box"
+    },
+    {
+     "id": "L035-b06",
+     "type": "word_build",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "বল",
+     "text_en": null,
+     "source_note": "ছবি: একটি রঙিন বল (object)। ব+ল = বল। শিশু বাক্সে শব্দটি লেখে। inventory-clean (বল★ পাঠ-৩৫-এ anchored)।",
+     "style_profile": null,
+     "layout_hint": "picture-word-box"
+    },
+    {
+     "id": "L035-b07",
+     "type": "word_build",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ম\tই\tগ",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫১ ডান অক্ষর-টালি গুচ্ছ (ম, ই, গ) — এই টালি দিয়ে দুটি শব্দ গঠিত হয়: মই, মগ। সব অক্ষর taught (ম@২৬, ই@৪, গ@১৯)।",
+     "style_profile": null,
+     "layout_hint": "letter-tiles"
+    },
+    {
+     "id": "L035-b08",
+     "type": "word_build",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "মই",
+     "text_en": null,
+     "source_note": "ছবি: একটি মই (ladder — object)। ম+ই = মই। শিশু বাক্সে শব্দটি লেখে। inventory-clean।",
+     "style_profile": null,
+     "layout_hint": "picture-word-box"
+    },
+    {
+     "id": "L035-b09",
+     "type": "word_build",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "মগ",
+     "text_en": null,
+     "source_note": "ছবি: একটি মগ (jug/mug — object)। ম+গ = মগ। শিশু বাক্সে শব্দটি লেখে। inventory-clean।",
+     "style_profile": null,
+     "layout_hint": "picture-word-box"
+    }
+   ],
+   "image_slots": [
+    {
+     "id": "L035-img-01",
+     "scene_description": "'বই' — objects-only: একটি গল্পের বই, মলাটে ফুল-লতা আঁকা (NCTB-অনুরূপ; কোনো জীব নেই)।",
+     "image_class": "object",
+     "action": "keep_nctb_style",
+     "contains_living_being": false,
+     "compliance_note": "object-only — a storybook, no living being. No stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a single closed storybook standing slightly open, its cover decorated with a simple painted flower-and-vine design. No people, no animals, no living beings. Plain light background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "1:1",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L035-img-02",
+     "scene_description": "'বক' — একটি বক (egret/heron; key-word subject; ব্যবহারকারীর নির্দেশে জীব-ফিগার রক্ষিত)। living_being=true → স্ট্রাইপ ট্রিটমেন্ট প্রযোজ্য।",
+     "image_class": "living_being",
+     "action": "generate_stripe",
+     "contains_living_being": true,
+     "compliance_note": "KEPT as living being per user instruction (বক IS the target word — an egret/heron; no clean object substitute exists for a bird word). single bird, no human, no dress/cast. contains_living_being=true -> programmatic stripe applied OUTSIDE chat at image-ref step; keep the whole bird body (long neck, legs, beak) clear of the stripe band so the egret stays recognizable. bw: native_safe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A friendly children's-textbook illustration of a single white egret (heron) standing in profile on plain ground near shallow water, its long neck, long legs and pointed beak clearly shown. Just the one bird. No people, no other animals, no text. Plain dark or pale background panel. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "1:1",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L035-img-03",
+     "scene_description": "'বল' — objects-only: একটি রঙিন খেলার বল, বিভিন্ন রঙের ফালিতে ভাগ করা (NCTB-অনুরূপ; কোনো জীব নেই)।",
+     "image_class": "object",
+     "action": "keep_nctb_style",
+     "contains_living_being": false,
+     "compliance_note": "object-only — a colourful play ball, no living being. No stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a single round play ball divided into bright coloured segments (red, yellow, blue, green). No people, no animals, no living beings. Plain white background inside a thin square frame. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "1:1",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L035-img-04",
+     "scene_description": "'মই' — objects-only: একটি কাঠের মই (ladder) (NCTB-অনুরূপ; কোনো জীব নেই)।",
+     "image_class": "object",
+     "action": "keep_nctb_style",
+     "contains_living_being": false,
+     "compliance_note": "object-only — a wooden ladder, no living being. No stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a single wooden ladder lying at a gentle diagonal, its rungs clearly shown. No people, no animals, no living beings. Plain light background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L035-img-05",
+     "scene_description": "'মগ' — objects-only: একটি মগ/জग (jug with handle and spout) (NCTB-অনুরূপ; কোনো জীব নেই)।",
+     "image_class": "object",
+     "action": "keep_nctb_style",
+     "contains_living_being": false,
+     "compliance_note": "object-only — a jug/mug, no living being. No stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a single terracotta or plastic jug with a handle and a small pouring spout. No people, no animals, no living beings. Plain light background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "1:1",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L035-img-06",
+     "scene_description": "শব্দ-বানাই লেখার বাক্স ও অক্ষর-টালি — ভেক্টর অ্যাসেট থেকে রেন্ডার (টালি: ব/ল/ই/ক ও ম/ই/গ, খালি লেখার বাক্স)।",
+     "image_class": "tracing_asset",
+     "action": "vector_asset",
+     "contains_living_being": false,
+     "compliance_note": "letter tiles + empty write-boxes rendered from vector assets at assembly; never AI-generated.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "",
+     "aspect": "wide",
+     "filename": null,
+     "status": "draft"
+    }
+   ],
+   "nctb_omitted": [],
+   "bw_treatment": "native_safe",
+   "reviewer_signoff": {
+    "by": null,
+    "date": null,
+    "checklist_passed": false
+   },
+   "notes": "পাঠ ৩৫ ছবি দেখি শব্দ বানাই (skeleton row 248, 1 period). NOT a বর্ণ lesson — this is the MUKTO-LIKHON/FREEWRITE seed ('একাকী চিন্তা'), outcome ১৬.২.১, a specially-protected free-thinking foundational competency (skeleton §মুক্ত-চিন্তার উৎস). No new letters; child looks at 5 pictures, uses letter tiles to build & write each word. CODES: যোগ্যতা ১.২/৭.১/১৬.২, শিখনফল ১.২.১/৭.১.১/১৬.২.১ (per TG row 35: 1.2, 7.1, 16.2 FREEWRITE seed). action=retain-curated, severity=S2 (kept living-being বক with stripe). C-05 (image living-being doctrine), C-06 (target words). WORD-BUILD MAP: left tiles ব/ল/ই/ক -> বই(book), বক(egret), বল(ball); right tiles ম/ই/গ -> মই(ladder), মগ(jug). All 5 target words + all tiles inventory-clean @35 (ব@26, ল@30, ই@4, ক@19, ম@26, গ@19; বল★ anchored@35). USER DECISION: only ONE living being on the page = বক (egret); it IS the target word of its cell, so KEPT as living being with stripe (img-02) per user instruction ('keep to keep the egret with stripe'), consistent with ময়না/পায়রা/ফড়িং/হাঁস@পাঠ33-34. No object substitute possible for a bird word without changing the target. All other cells are objects by design: বই(img01), বল(img03), মই(img04), মগ(img05). Tiles+write-boxes = vector(img06). Nothing omitted. LETTER-AUDIT: all decodable word-build blocks inventory-clean (source:nctb, also protected). FLAGGED FOR REVIEWER: (a) stripe placement on বক must keep the whole bird (neck/legs/beak) clear of the band; (b) this is a protected free-write/self-expression lesson — keep the open-ended write-boxes intact, do not pre-fill answers in the print edition. bw_treatment=native_safe."
+  }
+ ]
+}

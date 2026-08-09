@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L012_CONTENT_v2",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 12,
+      "nctb_title_bn": "বর্ণ শিখি : উ ঊ",
+      "nctb_pages": [
+        17
+      ],
+      "genre": "বর্ণ শিক্ষা",
+      "competency_codes": [
+        "১.১",
+        "৫.১",
+        "৯.১",
+        "১৩.১"
+      ],
+      "outcome_codes": [
+        "১.১.১",
+        "৫.১.১",
+        "৯.১.১",
+        "১৩.১.১"
+      ],
+      "action": "retain-curated",
+      "c_codes": [
+        "C-05",
+        "C-02",
+        "C-06"
+      ],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L012-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ১২\nবর্ণ শিখি : উ ঊ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L012-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L012-b03",
+          "type": "word_list",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "উট\tউ\nঊর্মি\tঊ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "letter-spotlight-pairs"
+        },
+        {
+          "id": "L012-b04",
+          "type": "oral_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "উট চলেছে দলে দলে।\nঊর্মি দেখি সাগর জলে।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-sentences"
+        },
+        {
+          "id": "L012-b05",
+          "type": "oral_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "উট একটা পশুর নাম।\nঊর্মি মানে ঢেউ।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "definition-lines"
+        },
+        {
+          "id": "L012-b06",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আরও শব্দ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L012-b07",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "উ — উট, উৎসব, উপহার\nঊ — ঊর্মি, ঊষা, ঊর্ধ্ব",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "extra-words-by-letter"
+        },
+        {
+          "id": "L012-b08",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L012-b09",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "উ  ঊ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "read-large-letters"
+        },
+        {
+          "id": "L012-b10",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "লিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L012-b11",
+          "type": "tracing_ref",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "উ  ঊ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "tracing-grid-stroke-arrows"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L012-img-01",
+          "scene_description": "উ-এর ছবি: মরুভূমিতে দল বেঁধে চলা কয়েকটি উট — animal spotlight (NCTB p17 composition অনুসরণ), কোনো মানুষ নেই।",
+          "image_class": "animal_story",
+          "action": "generate_stripe",
+          "contains_living_being": true,
+          "compliance_note": "a small group of camels walking in desert (matches NCTB p17); camels kept in upper two-thirds so stripe lands on sand below, clear of the animals; no people; high-contrast line-art for B/W.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A clean children's-textbook illustration of a few camels walking in a line across desert sand, side profile, on a plain white background with a soft dune line. Simple bold outlines, soft flat colour, no people, no other objects. High contrast and clear linework so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L012-img-02",
+          "scene_description": "ঊ-এর ছবি: সাগরজলে ঊর্মি (ঢেউ) — object/scenery only, কোনো প্রাণী/মানুষ নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "scenery-only slot; sea waves (matches NCTB p17); no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of blue sea waves rolling in water, centred, on a plain white background. Bold clean outlines, soft flat colour, no boats, no people, no other objects. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L012-img-03",
+          "scene_description": "উৎসব — object/scenery only: উৎসবের সাজ (বাঁকা চাঁদ-তারা লণ্ঠন/আলোকসজ্জা), মানুষ ছাড়া; ঈদ/আনন্দ-উৎসবের প্রতীক।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only slot; festive decoration (hanging lanterns/lights, crescent-and-star bunting) symbolising উৎসব; no people, no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of festive hanging lanterns and a string of crescent-and-star decorations, centred, on a plain white background. Cheerful, bold clean outlines, soft flat colour, no people. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L012-img-04",
+          "scene_description": "উপহার — object only: রিবন-বাঁধা একটি উপহারের বাক্স।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only slot; a wrapped gift box with a ribbon; no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a single wrapped gift box tied with a ribbon and bow, centred, on a plain white background. Bold clean outlines, soft flat colour, no other objects, no people. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L012-img-05",
+          "scene_description": "ঊষা — scenery only: ভোরের ঊষা (সূর্যোদয়), দিগন্তে উঠতে থাকা সূর্য; কোনো প্রাণী/মানুষ নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "scenery-only slot; dawn sunrise over a horizon; no living being, no stripe. ঊষা used strictly as common noun 'dawn'.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a sunrise at dawn, a soft sun rising over a plain horizon line with a few gentle rays, centred, on a plain white background. Bold clean outlines, soft flat colour, no people, no birds. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L012-img-06",
+          "scene_description": "বর্ণ-লিখন ট্রেসিং অ্যাসেট — উ ও ঊ, স্ট্রোক-তীরসহ (NCTB মূল)। AI-জেনারেটেড নয়; ভেক্টর অ্যাসেট থেকে অ্যাসেম্বলিতে বসবে।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "letter-tracing grid for উ and ঊ with stroke-order arrows; vector asset, never AI-generated.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "4:3",
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ১২ বর্ণ-শিখি: উ ঊ (🔒 স্থির). Same treatment as পাঠ ১০/১১. Title + letters + পড়ি/লিখি + all NCTB spotlight sentences RETAINED verbatim (উট চলেছে দলে দলে / ঊর্মি দেখি সাগর জলে / উট একটা পশুর নাম / ঊর্মি মানে ঢেউ). No vocab swap needed → action=retain-curated is image/addition-only. Added 'আরও শব্দ' oral strip: উ gets 3 extras (উট, উৎসব, উপহার), ঊ gets 2 (ঊর্মি, ঊষা). Taught inventory at পাঠ ১২ = অ,আ,ই,ঈ,উ,ঊ only (no consonants, no কার): all spotlight/extra words are oral:true named picture-examples → letter-audit EXEMPT; only decodable content = the letters উ/ঊ themselves (b09/b11), NCTB-original → exempt. WORD PROVENANCE (map-first, then web): উ — উট,উৎসব from C1-BAN_word_map_by_letter (উপজেলা skipped: abstract admin term); উপহার memory-sourced. ঊ — map has ONLY ঊর্মি. Confirmed against Bangla Academy আধুনিক অভিধান (baabo.jothartho.com/list/ঊ) + reporting (risingbd): concrete/picture-able ঊ-initial words are near-nonexistent (~50 ঊ words total, overwhelmingly number-words + ঊর্ধ্ব-family + abstracts). Web (sikshalay/jugerpata) surfaced ঊষা (dawn) as the one extra concrete option; added. ঊষা NOTE for reviewer: also a Hindu-mythology proper name (Usha), used here strictly as common noun 'ভোর/dawn' — flag if reviewer wants it dropped. Only TWO clean ঊ words exist (ঊর্মি, ঊষা); no forced third (avoided ঊরু/thigh, ঊর্ণনাভ/spider as obscure/awkward for age 5-6). SPELLING FLAG: NCTB p17 prints 'উর্মি' (উ-initial) but standard/dictionary spelling is 'ঊর্মি' (ঊ-initial); on the ঊ page it MUST be ঊ-initial → used ঊর্মি. Reviewer to confirm (same class of note as অজু/ওযু at পাঠ ১০). Images: উট animal generate_stripe (kept clear of stripe zone, matches NCTB); ঊর্মি sea-waves scenery-only; উৎসব festive-decoration object-only; উপহার gift-box object-only; ঊষা sunrise scenery-only; tracing = vector_asset, prompt='' permanently. No cast figures → refs empty. c_codes C-05/C-02/C-06 (imagery only). Ready to merge in order after পাঠ ১১. [UPDATE] ঊর্ধ্ব added to ঊ row per Principal (word-only, no image slot): FLAG — abstract ('upward', not picture-able, unlike all other spotlight words) and carries যুক্তবর্ণ র্ধ (visually complex for a first-vowel page). oral:true → letter-audit exempt; kept image-less by design. Reviewer to confirm suitability."
+    }
+  ]
+}

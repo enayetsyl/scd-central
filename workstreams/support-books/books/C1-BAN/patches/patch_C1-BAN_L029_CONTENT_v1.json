@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L029_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 29,
+      "nctb_title_bn": "এ-কার ঐ-কার শিখি",
+      "nctb_pages": [41],
+      "genre": "কারচিহ্ন শিক্ষা",
+      "competency_codes": ["১.১", "১.২", "৫.১", "৯.১", "১৩.১", "১৩.২"],
+      "outcome_codes": ["১.১.১", "১.২.২", "৫.১.৩", "৯.১.৩", "১৩.১.৩", "১৩.২.১"],
+      "action": "retain-curated",
+      "c_codes": ["C-05", "C-08", "C-06", "C-02"],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L029-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ২৯\nএ-কার ঐ-কার শিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L029-b02",
+          "type": "table",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "এ-কার\tে\nঐ-কার\tৈ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "kar-table"
+        },
+        {
+          "id": "L029-b03",
+          "type": "word_list",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "মেঘ\nবৈঠা",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-word-pair"
+        },
+        {
+          "id": "L029-b04",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আরও শব্দ পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L029-b05",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": false,
+          "text_bn": "ে — মেঘ, খেত, দেখি\nৈ — বৈঠা, কৈ, দৈনিক",
+          "text_en": null,
+          "source_note": "প্রতিটি কারের জন্য NCTB শব্দ + ২টি অতিরিক্ত শব্দ (ব্যবহারকারীর নির্দেশ)। সব শব্দ পাঠ-২৯ ইনভেন্টরি-clean এবং শ্রেণি-১ উপযোগী মূর্ত/পরিচিত শব্দ। খেত = ফসলের মাঠ; কৈ = কৈ মাছ; দৈনিক = প্রতিদিনের।",
+          "style_profile": null,
+          "layout_hint": "kar-word-columns"
+        },
+        {
+          "id": "L029-b06",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L029-b07",
+          "type": "oral_text",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আকাশে মেঘ দেখি, বৃষ্টির অপেক্ষা করি।\nচাষি খেতে ফসল ফলায়।\nদৈনিক পাঁচ ওয়াক্ত নামাজ পড়া ভালো অভ্যাস।\nআল্লাহ আমাদের অনেক কিছু দিয়েছেন — আমরা শোকর করি।",
+          "text_en": null,
+          "source_note": "দৈনিক নামাজ/শোকর — দৈনন্দিন ইসলামি মূল্যবোধ ও পরিচিত ধারণা; কোনো নির্দিষ্ট বর্ণনামূলক ঘটনা নয়, বানানো বিবরণের ঝুঁকি নেই। রিভিউয়ার সাধারণ যাচাই করুন (README §4.3)। খেত/দৈনিক মৌখিক বাক্যেও শ্রেণি-১ উপযোগী মূর্ত শব্দ।",
+          "style_profile": null,
+          "layout_hint": "teacher-read"
+        },
+        {
+          "id": "L029-b08",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L029-b09",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "মেঘ\tবৈঠা",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "read-words"
+        },
+        {
+          "id": "L029-b10",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "লিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L029-b11",
+          "type": "tracing_ref",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ে\nৈ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "tracing-rows"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L029-img-01",
+          "scene_description": "এ-কার উদাহরণ 'মেঘ' — objects-only: আকাশে গাঢ় নীল বর্ষার মেঘ (NCTB-র মূল দৃশ্যই object-only; কোনো জীব নেই)।",
+          "image_class": "object",
+          "action": "keep_nctb_style",
+          "contains_living_being": false,
+          "compliance_note": "object/scene-only — rain cloud, no living being (matches NCTB original). No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A soft children's-textbook watercolour of a dark blue-grey monsoon rain cloud in a pale sky. No people, no animals, no living beings. Plain white/pale background. Clean edges, high contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "filename": null,
+          "status": "draft"
+        },
+        {
+          "id": "L029-img-02",
+          "scene_description": "ঐ-কার উদাহরণ 'বৈঠা' — objects-only: একটি কাঠের বৈঠা (নৌকার দাঁড়)। NCTB পৃষ্ঠায় বৈঠার পাশে একটি নৌকায় মানুষজন আছে; জীব-সংবলিত নৌকা-দৃশ্য বাদ দিয়ে শুধু বৈঠা বস্তুটি রাখা হলো (objects-first ডিফল্ট) — striping ও পোশাক/কাস্ট প্রশ্ন এড়ানো যায়।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "objects-only — NCTB page also shows a boat with several people (mixed figures, C-01/C-02 dress risk); those figures are dropped and only the single wooden oar (বৈঠা) is kept per objects-first default (C-05). No living being, so no stripe, no cast, no dress question. Concept 'বৈঠা' fully conveyed by the oar alone.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a single wooden boat oar (paddle) lying on a plain surface, its broad blade and handle clearly shown. No people, no animals, no boat, no living beings. Plain white background. Soft watercolour style, clean clear linework. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "filename": null,
+          "status": "draft"
+        },
+        {
+          "id": "L029-img-03",
+          "scene_description": "লিখি — এ-কার (ে) ও ঐ-কার (ৈ) ট্রেসিং রো, ভেক্টর অ্যাসেট থেকে রেন্ডার।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "letter-tracing rows rendered from vector assets at assembly; never AI-generated.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "wide",
+          "filename": null,
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ২৯ এ-কার ঐ-কার শিখি (স্থির/locked, skeleton flag). Title + কারচিহ্ন table + পড়ি/লিখি + NCTB spotlight words মেঘ/বৈঠা RETAINED verbatim (both pass পাঠ-29 letter audit). action=retain-curated, severity=S1 (both illustrations objects-only → no figure redraw, no stripe). CODES: যোগ্যতা/শিখনফল = পাঠ 21 (TG row 29). C-05 (image doctrine, objects-first), C-08/C-06 (word framing), C-02 (dress — flagged because NCTB বৈঠা page shows a boat with people; resolved by dropping figures, objects-only oar). LETTER-AUDIT: পাঠ 29 teaches 36 বর্ণ + কার া/ি/ী/ু/ূ/ৃ/ে/ৈ; র,ল,শ,ষ,স,হ,য,ো + conjuncts still later. USER REQUEST: keep existing words + 2 extra per vowel. USER REV: replace কেতাব/বৈধ with concrete Class-1-level words. b05 decodable extras (all audit-clean, Class-1 concrete): এ-কার (ে) → মেঘ[NCTB] + খেত + দেখি; ঐ-কার (ৈ) → বৈঠা[NCTB] + কৈ + দৈনিক. খেত=field, কৈ=koi fish, দৈনিক=daily. Oral b07 updated to drop কেতাব/বৈধ. IMAGE: মেঘ = rain cloud (already object-only in NCTB); বৈঠা = NCTB shows boat+people → figures dropped, single oar kept (objects-first, avoids C-01/C-02 dress + C-05 stripe). Tracing = vector asset. bw_treatment=native_safe."
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L001_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 1,
+      "nctb_title_bn": "আমার পরিচয়",
+      "nctb_pages": [
+        1
+      ],
+      "genre": "পরিচয়/পরিচিতি",
+      "competency_codes": [
+        "২.১",
+        "৬.১"
+      ],
+      "outcome_codes": [
+        "২.১.২",
+        "২.১.৩",
+        "৬.১.২",
+        "৬.১.৩"
+      ],
+      "action": "retain-curated",
+      "c_codes": [],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L001-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "আমার পরিচয়",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L001-b02",
+          "type": "fill_blank",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "আমার নাম ____________\nআমি প্রথম শ্রেণিতে পড়ি।\nআমার রোল নম্বর ____________\nআমার বিদ্যালয়ের নাম ____________",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "form-lines"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L001-img-01",
+          "scene_description": "একটি প্রাথমিক বিদ্যালয় — দোতলা ভবন, ফুলের বাগান ও খোলা মাঠ; কোনো জীবন্ত প্রাণী নেই, পতাকা নেই। objects-first: ভবন, বাগান, গাছ, টবের গাছ, মাঠ, আকাশ।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only slot; no living being, no flag (D-012); pass-through untouched in image chain (no stripe).",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A bright, friendly children's-textbook illustration of a village primary school on a sunny day. A two-storey school building with a red-and-white facade and rows of windows, a small pillared entrance porch with a blue door, set behind a tidy garden of flowering plants and green shrubs bordered with bricks. Potted flowering plants along a paved path; an open grassy field in the foreground; leafy trees on both sides. Soft watercolour style, warm daylight, clear blue sky with light clouds. No people, no birds, no animals — buildings, garden, field, sky and plants only. Flat front-facing composition suitable for a young child's reading book. High contrast and clean linework so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "filename": "L001-img-01_school.png",
+          "status": "approved"
+        }
+      ],
+      "nctb_omitted": [
+        {
+          "item": "Bangladesh flag on school building",
+          "reason": "D-012"
+        },
+        {
+          "item": "family group figures (two adults, two children) and birds",
+          "reason": "C-05 / D-010 (no living beings)"
+        }
+      ],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ 1 opener. Text retained verbatim (NCTB self-introduction fill-in; oral/form-fill, letter-audit exempt). Only the image is replaced: object-only school scene, flag omitted (D-012), no living beings. No active C-codes after curation. First পাঠ; cast does not debut here (refs empty)."
+    }
+  ]
+}

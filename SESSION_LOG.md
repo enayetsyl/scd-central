@@ -269,3 +269,25 @@ One block per agent session, appended at "save state and sync". Format:
   recorded in the row: **teacher-facing deliverables are not scratch** — the Ch21 `.md`, `.docx`
   and `.pdf` stay committed, because teachers are zero-Git operators (AGENTS.md §2) and cannot
   regenerate them. Next: **Step 3 — support-books**, files already in `_inbox/`.
+
+## 2026-08-09 · support-books (Step 3) · Principal · cowork
+- Did: Imported the whole SB corpus into `workstreams/support-books/` — 54-পাঠ book, 55 patches,
+  5 governance files, letter inventory, 2 whitelist candidates, skeleton/TG/word-map references,
+  the compliant image set, the validator report, 3 validators. Wrote `audits/gates.py`, filled
+  `LOCAL.md`, created `REVIEW_QUEUE.md` (আলিম lane) and `CORRECTIONS.md`, flipped REGISTRY to
+  **LIVE**. Ran L53 through steps 7–8; **step 9 merge withheld on a red gate.**
+- Decisions logged: **CD-025** — import + LIVE, book unmerged, findings recorded.
+- Gates run + result: `audits/gates.py` — selftest **16/16 PASS**, then book validation
+  **RED=5 GREY=4 PASS=12, VERDICT FAIL**. L53's own two reds (CHECK 3, CHECK 10) are **fixed**;
+  the five remaining are L52's and pre-date this work. Repo gates: `canon_check.py` →
+  **CLEAN (0 fail, 1 warn)**; `tools_check.py` → **CLEAN (0 fail, 7 warn)**.
+- Open items / PENDING-P raised: **six batched questions** in the workstream STATE. The load-bearing
+  one: **the supplied validation report's "letter audit clean" cannot be reproduced against the
+  master inventory** — পাঠ 52's whitelist is `glyphs: null`, and null means no conjunct is legal
+  (B-1), so L52 red-fails. Of the four enumerated whitelist entries only **পাঠ 45 is
+  Principal-approved**; 49, 51 and 52 are still `needs_review: true` — and 52 is exactly what the
+  L53 merge waits behind, so freezing would approve three unreviewed entries. Not done without a
+  ruling. Also: L017 v2 is dated *newer* than v3 (version and date disagree); DECISIONS imported
+  at D-019 against a registry claim of D-021+; L009/L024/L026 have no patch file though the
+  lessons exist; and the L002 MOTOR note claims a reach it does not have — **L18 was built with
+  real codes, not the sentinel**.

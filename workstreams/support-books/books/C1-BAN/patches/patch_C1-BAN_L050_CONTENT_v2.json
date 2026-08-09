@@ -1,0 +1,101 @@
+{
+ "patch_id": "patch_C1-BAN_L050_CONTENT_v2",
+ "book_id": "C1-BAN",
+ "schema_version": "1.0",
+ "target_lesson_no": 50,
+ "merge_rule": "wholesale-by-lesson",
+ "lesson": {
+  "lesson_no": 50,
+  "nctb_title_bn": "মাছের রাজা",
+  "nctb_pages": [
+   73
+  ],
+  "genre": "তথ্যমূলক পাঠ (ইলিশ)",
+  "competency_codes": [
+   "৩.১",
+   "১৬.২"
+  ],
+  "outcome_codes": [
+   "৩.১.১",
+   "৩.১.২",
+   "১৬.২"
+  ],
+  "action": "retain",
+  "c_codes": [],
+  "severity": null,
+  "status": "built",
+  "blocks": [
+   {
+    "id": "L050-b01",
+    "type": "heading",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "পাঠ ৫০\nমাছের রাজা",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "heading",
+    "layout_hint": "chapter-head"
+   },
+   {
+    "id": "L050-b02",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "ইলিশ আমাদের জাতীয় মাছ। ইলিশ মাছের রং রুপালি। ইলিশ মাছ সাগরে থাকে। ডিম দেওয়ার সময়ে নদীতে আসে। ইলিশ হলো মাছের রাজা। ইলিশ ভাজা খেতে মজা। আমি ইলিশ মাছ খাই। মা ইলিশ মাছ খান। বাবা ইলিশ মাছ খান। আমরা সবাই ইলিশ মাছ খাই।",
+    "text_en": null,
+    "source_note": "INFOTEXT about ইলিশ (hilsa), verbatim NCTB p73  - retained per Principal instruction (keep image and text). 'জাতীয় মাছ' factual national identifier retained under C-18 carve-out. Decodable-clean @50. nctb source -> audit-exempt.",
+    "style_profile": "reading-passage",
+    "layout_hint": "prose paragraph below fish photo"
+   },
+   {
+    "id": "L050-b03",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "বলি ও লিখি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "section header"
+   },
+   {
+    "id": "L050-b04",
+    "type": "exercise",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "রুই/ইলিশ/বোয়াল ______।\n\nইলিশ কোথায় থাকে?\nসাগরে/পুকুরে/বিলে ______।\n\nইলিশকে কী বলা হয়?\nমাছের রাজা/মাছের রানি/মাছের উজির ______।",
+    "text_en": null,
+    "source_note": "Choose-the-answer exercises (circle/write the correct option), verbatim NCTB p73. '/' is NCTB's own option-separator (standard ASCII punctuation, not a script-guard glyph). Decodable-clean @50. nctb source -> audit-exempt.",
+    "style_profile": "multiple-choice",
+    "layout_hint": "three choose-and-write items"
+   }
+  ],
+  "image_slots": [
+   {
+    "id": "L050-img-01",
+    "scene_description": "একটি ইলিশ মাছের ছবি  - পাঠের মূল বিষয়; generated illustration (subject animal), faithful to the NCTB hilsa.",
+    "image_class": "photograph_subject",
+    "action": "generate_stripe",
+    "contains_living_being": true,
+    "compliance_note": "hilsa-fish illustration generated to match the NCTB subject; the fish IS the pedagogical subject of the পাঠ (retained as subject, generated not lifted). Living-being => programmatic stripe applied post-generation (never written into the prompt). Single fish centre-frame, clear of the lower third where the stripe lands; high-contrast line-art so it stays legible in B/W photocopy.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A clean, friendly children's-textbook illustration of a single hilsa fish (ilish) shown in side profile, centred on a plain white background. Silvery body with a slightly deeper belly, forked tail, natural proportions, facing left. Bold clean outlines, soft flat colour, no other objects, no water, no people. High contrast and clear linework so it stays legible in black-and-white photocopy.",
+    "aspect": "16:9",
+    "status": "draft"
+   }
+  ],
+  "nctb_omitted": [],
+  "bw_treatment": "native_safe",
+  "reviewer_signoff": {
+   "by": null,
+   "date": null,
+   "checklist_passed": false
+  },
+  "notes": "RETAIN-as-subject chapter: ইলিশ image kept as-is content-wise but GENERATED (Principal ruling: \"image should be as it is but we will generate the image\"), not lifted from the NCTB photo. Fish is the pedagogical subject -> generate_stripe (living-being programmatic stripe post-generation, not in prompt). Text kept verbatim (keep image and text). All text NCTB-original, decodable-clean @50. Earlier photocopy_safe=false photo concern is resolved by generating line-art (photocopy_safe=true)."
+ }
+}

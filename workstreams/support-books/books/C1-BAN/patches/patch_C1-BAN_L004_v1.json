@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L004_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 4,
+      "nctb_title_bn": "আমি ও আমার সহপাঠীরা",
+      "nctb_pages": [
+        4,
+        5
+      ],
+      "genre": "পরিচয়/পরিচিতি",
+      "competency_codes": [
+        "২.১",
+        "৬.১"
+      ],
+      "outcome_codes": [
+        "২.১.২",
+        "২.১.৫",
+        "৬.১.২",
+        "৬.২.১"
+      ],
+      "action": "retain-curated",
+      "c_codes": [
+        "C-06",
+        "C-01",
+        "C-02",
+        "C-05"
+      ],
+      "severity": "S2",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L004-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "আমি ও আমার সহপাঠীরা",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L004-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "চলো পরিচিত হই",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L004-b03",
+          "type": "dialogue",
+          "source": "nctb",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আমার নাম খাদিজা।\nআমার নাম ফাতিমা।\nআমার নাম আয়েশা।\nআমার নাম হাফসা।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "speech-bubbles"
+        },
+        {
+          "id": "L004-b04",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "কথা বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L004-b05",
+          "type": "dialogue",
+          "source": "nctb",
+          "edited": true,
+          "oral": true,
+          "text_bn": "তোমার নাম কী?\nআমার নাম খাদিজা।\nতোমার নাম কী?\nআমার নাম ফাতিমা।\nতোমার হাতে কী বই?\nআমার বাংলা বই।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "qa-pairs"
+        },
+        {
+          "id": "L004-b06",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L004-b07",
+          "type": "dialogue",
+          "source": "nctb",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আয়েশা : তোমার নাম কী?\nহাফসা : আমার নাম হাফসা।\nআয়েশা : আমরা একসাথে পড়ি।\nহাফসা : ওরাও আমাদের সাথে পড়ে?\nআয়েশা : হ্যাঁ। ওরা হলো খাদিজা আর ফাতিমা।\nসবাই : আমরা একসাথে পড়ব আর একসাথে খেলব।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "dialogue-two-column"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L004-img-01",
+          "scene_description": "পরিচয়-দিবস portraits — চার ছাত্রী নিজের নাম বলছে (খাদিজা সবুজ, ফাতিমা ফুলেল হিজাব+ক্রাচ, আয়েশা, হাফসা)। সবাই মেয়ে, পূর্ণ পর্দা, শুধু মুখ-হাত। কোনো ছেলে/প্রাপ্তবয়স্ক নেই, পতাকা নেই।",
+          "image_class": "narrative_figure",
+          "action": "substitute_objects",
+          "contains_living_being": true,
+          "compliance_note": "same-gender (girls-only) cast scene per C-01/D-013; full coverage face+hands only (C-02); ফাতিমা mobility aid retained (REF-1 retain list); figures redrawn from cast reference sheets, not photo (C-05); no flag, no adults. No stripe (redraw path).",
+          "photocopy_safe": true,
+          "refs": [
+            "refs/school/c1/khadija.png",
+            "refs/school/c1/fatima.png"
+          ],
+          "prompt": "A children's-textbook page with four separate full-length portraits of young Muslim schoolgirls, each smiling, for a self-introduction activity. Each girl wears a modest full-length dress and a headscarf covering hair, neck and shoulders, only face and hands visible. First girl in a green headscarf; second girl in a floral pink headscarf standing with a forearm crutch (mobility aid); third girl in a cream headscarf; fourth girl in a blue headscarf. Simple standing poses, plain white background, soft watercolour style, clean clear linework. No boys, no adults, no flag. No text, no letters anywhere. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "3:4",
+          "filename": "L004-img-01_girls-intro.png",
+          "status": "approved"
+        },
+        {
+          "id": "L004-img-02",
+          "scene_description": "চার ছাত্রী ঘাসে বসে সহপাঠী হিসেবে কথা বলছে; একজনের পাশে ক্রাচ (ফাতিমা), একজনের হাতে বই (মলাটে লেখা নেই, শুধু ফুল-মোটিফ)। সবাই মেয়ে, পূর্ণ পর্দা। কোনো ছেলে/প্রাপ্তবয়স্ক নেই, পতাকা নেই, ছবিতে কোনো লেখা নেই।",
+          "image_class": "narrative_figure",
+          "action": "substitute_objects",
+          "contains_living_being": true,
+          "compliance_note": "same-gender (girls-only) group per C-01/D-013; full coverage face+hands only (C-02); ফাতিমা crutch retained (retain list); book cover text-free (script guard — no AI-rendered in-image text); redrawn from cast refs (C-05); no flag, no adults. No stripe.",
+          "photocopy_safe": true,
+          "refs": [
+            "refs/school/c1/khadija.png",
+            "refs/school/c1/fatima.png"
+          ],
+          "prompt": "A warm children's-textbook illustration of four young Muslim schoolgirls sitting together on the grass, talking happily about being classmates. All wear modest full-length dresses and headscarves covering hair, neck and shoulders, only faces and hands visible. First girl in a floral pink headscarf with a forearm crutch resting on the grass beside her; the others in green, cream, and blue headscarves. One girl holds a closed schoolbook with a plain blank cover decorated only with a small flower motif — no text of any kind. Friendly gestures, a few flowers and greenery around them. Soft watercolour style, clean linework, warm daylight. No boys, no adults, no flag, no music instruments. No text, no letters, no writing anywhere in the image, including on the book cover. High contrast for black-and-white photocopy.",
+          "aspect": "4:3",
+          "filename": "L004-img-02_girls-group.png",
+          "status": "approved"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ 4 self-introduction of classmates (চলো পরিচিত হই / কথা বলি / শুনি ও বলি). All text oral (teacher-read / self-intro) and পাঠ 4 teaches zero বর্ণ (letter teaching starts পাঠ 10), so letter-audit exempt on both counts. action=retain-curated; codes stack C-06/C-01/C-02/C-05 (S2). Names curated per REF-2 §2.1; this পাঠ reframed ALL-GIRLS (C-01/D-013), NCTB four-child mixed set → four girls. Cast: তুলি→খাদিজা, মিলি(mobility aid)→ফাতিমা (holds the D-013 mobility-aid slot); incidental fillers আয়েশা (pool #2), হাফসা (pool #7) for the two boy roles রাফি/অভি, keeping the four-speaker structure and within-lesson distinctness. Completes the boys(পাঠ3)/girls(পাঠ4) same-gender split. ফাতিমা mobility aid retained in both images (retain list). Two narrative_figure slots redrawn from cast refs; slot-2 book cover regenerated text-free after step-5 script-guard catch. Cast girl likeness (খাদিজা, ফাতিমা) Principal-confirmed. Pre-puberty mixed-class governance question remains OPEN/unapplied (S4)."
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L031_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 31,
+      "nctb_title_bn": "ও-কার ঔ-কার শিখি",
+      "nctb_pages": [44],
+      "genre": "কারচিহ্ন শিক্ষা",
+      "competency_codes": ["১.১", "১.২", "৫.১", "৯.১", "১৩.১", "১৩.২"],
+      "outcome_codes": ["১.১.১", "১.২.২", "৫.১.৩", "৯.১.৩", "১৩.১.৩", "১৩.২.১"],
+      "action": "retain-curated",
+      "c_codes": ["C-05", "C-08", "C-06", "C-02"],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L031-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ৩১\nও-কার ঔ-কার শিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L031-b02",
+          "type": "table",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ও-কার\tো\nঔ-কার\tৌ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "kar-table"
+        },
+        {
+          "id": "L031-b03",
+          "type": "word_list",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "চোখ\nনৌকা",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-word-pair"
+        },
+        {
+          "id": "L031-b04",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আরও শব্দ পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L031-b05",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": false,
+          "text_bn": "ো — চোখ, বোন, রোদ, রোজা\nৌ — নৌকা, চৌকি, মৌমাছি, মৌচাক",
+          "text_en": null,
+          "source_note": "প্রতিটি কারের জন্য NCTB শব্দ + ৩টি অতিরিক্ত শব্দ (ব্যবহারকারী-নির্বাচিত)। সব শব্দ পাঠ-৩১ ইনভেন্টরি-clean, শ্রেণি-১ উপযোগী মূর্ত/পরিচিত। রোজা = সিয়াম (ইসলামি); বোন=পরিবার; রোদ=সূর্যালোক; চৌকি=কাঠের খাট/বসার আসন; মৌমাছি/মৌচাক=honeybee/honeycomb।",
+          "style_profile": null,
+          "layout_hint": "kar-word-columns"
+        },
+        {
+          "id": "L031-b06",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L031-b07",
+          "type": "oral_text",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আমার দুই চোখ দিয়ে আমি দেখি।\nআমার বোন আমার সাথে খেলে।\nরমজান মাসে বড়রা রোজা রাখে।\nমৌমাছি মৌচাক থেকে মধু জমায়।",
+          "text_en": null,
+          "source_note": "রোজা/রমজান — দৈনন্দিন ইসলামি পরিচিত ধারণা; কোনো নির্দিষ্ট বর্ণনামূলক ঘটনা নয়, বানানো বিবরণের ঝুঁকি নেই। রিভিউয়ার সাধারণ যাচাই করুন (README §4.3)।",
+          "style_profile": null,
+          "layout_hint": "teacher-read"
+        },
+        {
+          "id": "L031-b08",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L031-b09",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "চোখ\tনৌকা",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "read-words"
+        },
+        {
+          "id": "L031-b10",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "লিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L031-b11",
+          "type": "tracing_ref",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ো\nৌ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "tracing-rows"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L031-img-01",
+          "scene_description": "ও-কার উদাহরণ 'চোখ' — objects-only: একটি সরল চোখের ডায়াগ্রাম/আইকন (চোখের আকৃতি, পাতা ও মণি)। NCTB ছবিতে একটি মেয়ের মুখ নিজের চোখ দেখাচ্ছে; মানব-ফিগার বাদ দিয়ে শুধু চোখের প্রতীকী ছবি রাখা হলো (objects-first ডিফল্ট) — পোশাক/কাস্ট/striping প্রশ্ন এড়ানো যায়।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "objects-only — NCTB shows a girl's face pointing to her eye (living-being figure, C-01/C-02 dress); the human figure is dropped and only a simple stylized eye icon is kept per objects-first default (C-05). No living being, no stripe, no cast, no dress question. Concept 'চোখ' conveyed by the eye symbol.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple, friendly children's-textbook illustration of a single stylized human eye shown on its own as a symbol — almond outline, eyelashes, iris and pupil — like a clean icon. No face, no person, no animal, no other body parts, no living beings. Plain white background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+          "aspect": "4:3",
+          "filename": null,
+          "status": "draft"
+        },
+        {
+          "id": "L031-img-02",
+          "scene_description": "ঔ-কার উদাহরণ 'নৌকা' — objects-only: পালতোলা একটি কাঠের নৌকা পানিতে (NCTB-অনুরূপ; কোনো মানুষ/জীব ছাড়া)।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "objects-only — a wooden boat with a sail on water, no people, no living being (NCTB shows boats; any figures dropped). No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A children's-textbook illustration of a traditional wooden sailing boat floating on calm water, its cloth sail up and a curved bamboo canopy on deck. No people, no animals, no living beings. Plain white/pale background with simple water ripples. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+          "aspect": "4:3",
+          "filename": null,
+          "status": "draft"
+        },
+        {
+          "id": "L031-img-03",
+          "scene_description": "লিখি — ও-কার (ো) ও ঔ-কার (ৌ) ট্রেসিং রো, ভেক্টর অ্যাসেট থেকে রেন্ডার।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "letter-tracing rows rendered from vector assets at assembly; never AI-generated.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "wide",
+          "filename": null,
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ৩১ ও-কার ঔ-কার শিখি (স্থির/locked, skeleton flag). কারচিহ্ন lesson — introduces ও-কার (ো) + ঔ-কার (ৌ) (cum_kar → 10 marks). Title + কারচিহ্ন table + পড়ি/লিখি + NCTB spotlight words চোখ/নৌকা RETAINED verbatim (both pass পাঠ-31 audit). action=retain-curated, severity=S1 (both illustrations objects-only → no figure redraw, no stripe). CODES: যোগ্যতা/শিখনফল = পাঠ 21 (TG row 31 '= পাঠ 21'). C-05 (image doctrine, objects-first), C-08/C-06 (word framing), C-02 (dress — flagged because NCTB চোখ image is a girl's face; resolved objects-only via eye icon). LETTER-AUDIT: পাঠ 31 teaches 39 বর্ণ + কার া/ি/ী/ু/ূ/ৃ/ে/ৈ/ো/ৌ; স,হ,শ,ষ + conjuncts still later (পাঠ 32). USER REQUEST: keep চোখ/নৌকা + user-selected extras — 3 per vowel (user chose 6 total, confirmed all 6). b05 decodable extras (all audit-clean): ও-কার (ো) → চোখ[NCTB] + বোন + রোদ + রোজা; ঔ-কার (ৌ) → নৌকা[NCTB] + চৌকি + মৌমাছি + মৌচাক. রোজা=সিয়াম (Islamic framing per স্থির flag). IMAGES: চোখ = stylized eye icon (girl's face dropped, objects-first, avoids C-01/C-02 dress + C-05 stripe); নৌকা = sailing boat, no figures. Tracing = vector asset. bw_treatment=native_safe."
+    }
+  ]
+}

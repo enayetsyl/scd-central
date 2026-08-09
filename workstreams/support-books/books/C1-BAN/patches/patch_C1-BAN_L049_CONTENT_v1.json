@@ -1,0 +1,245 @@
+{
+ "patch_id": "patch_C1-BAN_L049_CONTENT_v1",
+ "book_id": "C1-BAN",
+ "schema_version": "1.0",
+ "target_lesson_no": 49,
+ "merge_rule": "wholesale-by-lesson",
+ "lesson": {
+  "lesson_no": 49,
+  "nctb_title_bn": "আমাদের দেশ",
+  "nctb_pages": [
+   71,
+   72
+  ],
+  "genre": "পরিচয় + তথ্যমূলক পাঠ (INFOTEXT); যুক্তবর্ণ ন্দ",
+  "competency_codes": [
+   "৮.১",
+   "১২.১",
+   "১৫.১"
+  ],
+  "outcome_codes": [
+   "৮.১.৫",
+   "১২.১.৩",
+   "১২.১.৫",
+   "১৫.১.৩"
+  ],
+  "action": "retain-curated",
+  "c_codes": [
+   "C-05",
+   "C-18"
+  ],
+  "severity": "S1",
+  "status": "built",
+  "blocks": [
+   {
+    "id": "L049-b01",
+    "type": "heading",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "পাঠ ৪৯\nআমাদের দেশ",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "heading",
+    "layout_hint": "chapter-head"
+   },
+   {
+    "id": "L049-b02",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "আমাদের দেশের নাম বাংলাদেশ। এ দেশে অনেক নদী আছে। নদীতে নৌকা চলে। পাখিরা গান গায়। গাছে গাছে ফুল ফোটে।",
+    "text_en": null,
+    "source_note": "INFOTEXT about Bangladesh, verbatim NCTB p71. Decodable-clean @49. nctb source -> audit-exempt.",
+    "style_profile": "reading-passage",
+    "layout_hint": "prose paragraph"
+   },
+   {
+    "id": "L049-b03",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "এ দেশের আকাশ নীল। আকাশে সাদা মেঘ উড়ে বেড়ায়। রাতে চাঁদ ওঠে। খুব ভালো লাগে।",
+    "text_en": null,
+    "source_note": "INFOTEXT, verbatim NCTB p71. Decodable-clean @49. nctb source.",
+    "style_profile": "reading-passage",
+    "layout_hint": "prose paragraph"
+   },
+   {
+    "id": "L049-b04",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "এ দেশের পাহাড় সবুজ। ফসলের মাঠ সবুজ।\nমাঠে মাঠে ফসল ফলে। খালবিলে অনেক মাছ পাওয়া যায়।",
+    "text_en": null,
+    "source_note": "INFOTEXT, verbatim NCTB p71. Decodable-clean @49. nctb source.",
+    "style_profile": "reading-passage",
+    "layout_hint": "prose paragraph"
+   },
+   {
+    "id": "L049-b05",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "ভোর বেলায় দোয়েল ডাকে। দোয়েল আমাদের জাতীয় পাখি।\nআমাদের দেশ খুব সুন্দর।",
+    "text_en": null,
+    "source_note": "INFOTEXT, verbatim NCTB p71. RETAINED under C-18 factual carve-out: 'দোয়েল আমাদের জাতীয় পাখি' is a factual national identifier (not anthem/flag veneration)  - kept per C-18/D-012, Principal ruling. Contains যুক্তবর্ণ ন্দ (সুন্দর)  - NCTB-original so audit-exempt; see notes on inventory whitelist gap. Decodable-clean @49 apart from the exempt ন্দ.",
+    "style_profile": "reading-passage",
+    "layout_hint": "prose paragraph"
+   },
+   {
+    "id": "L049-b06",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "আমাদের দেশ সম্পর্কে বলি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "oral prompt"
+   },
+   {
+    "id": "L049-b07",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "যুক্তবর্ণ শিখি",
+    "text_en": null,
+    "source_note": "যুক্তবর্ণ-learning box header, verbatim NCTB p72.",
+    "style_profile": "section-label",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L049-b08",
+    "type": "decodable_text",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "আনন্দ\tন্দ\tন\tদ",
+    "text_en": null,
+    "source_note": "যুক্তবর্ণ শিখি box: introduces the whole-unit conjunct ন্দ via আনন্দ (ন+দ), verbatim NCTB p72. This is পাঠ ৪৯'s B-1 conjunct. nctb source -> audit-exempt. DATA FLAG: letter_inventory conjunct_whitelist for পাঠ ৪৯ is empty ([]) but NCTB introduces ন্দ here; whitelist under-enumerated  - see lesson notes (Principal/data-owner to enumerate before any SCHOOL decodable text uses ন্দ).",
+    "style_profile": "conjunct-box",
+    "layout_hint": "যুক্তবর্ণ cell (ন | দ)"
+   },
+   {
+    "id": "L049-b09",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "খালি ঘরে লিখি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "instruction",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L049-b10",
+    "type": "fill_blank",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "আমাদের দেশের নাম ______।\nএ দেশের আকাশ ______।\nখালবিলে পাওয়া যায় ______।\nআমাদের জাতীয় পাখির নাম ______।",
+    "text_en": null,
+    "source_note": "Fill-blanks from the passage (answers: বাংলাদেশ; নীল; মাছ; দোয়েল), verbatim NCTB p72. Decodable-clean @49. জাতীয়-পাখি blank retained under C-18 (factual).",
+    "style_profile": "fill-blank",
+    "layout_hint": "four gapped sentences"
+   },
+   {
+    "id": "L049-b11",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "আরও লিখি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "instruction",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L049-b12",
+    "type": "exercise",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "লাল ______। (যেমন: লাল জামা, লাল কলম)\nসবুজ ______।\nহলুদ ______।\nনীল ______।\nসাদা ______।\nকালো ______।",
+    "text_en": null,
+    "source_note": "Colour-word exercise (write a thing of each colour), verbatim NCTB p72. Colour cue is TEXTUAL (colour name in Bangla)  - the swatch image is decorative, not colour-dependent pedagogy; renders native_safe in B/W. Decodable-clean @49.",
+    "style_profile": "word-build",
+    "layout_hint": "six colour prompts beside a 6-colour swatch"
+   },
+   {
+    "id": "L049-b13",
+    "type": "exercise",
+    "source": "nctb",
+    "edited": false,
+    "oral": true,
+    "text_bn": "বলি\nআমার দেশকে কেন ভালো লাগে?",
+    "text_en": null,
+    "source_note": "Oral question, verbatim NCTB p72. Audit-exempt.",
+    "style_profile": "question",
+    "layout_hint": "oral question"
+   },
+   {
+    "id": "L049-b14",
+    "type": "exercise",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "লিখি\nআমাদের দেশ নিয়ে তিনটি বাক্য লিখি\n১।\n২।\n৩।",
+    "text_en": null,
+    "source_note": "Free-writing (three sentences about our country)  - free-expression strand, protected (REF-1 retain list). Verbatim NCTB p72.",
+    "style_profile": "writing-lines",
+    "layout_hint": "three numbered writing lines"
+   }
+  ],
+  "image_slots": [
+   {
+    "id": "L049-img-01",
+    "scene_description": "বাংলাদেশের নদী-দৃশ্য: নদী, সবুজ পাহাড়, ফসলের মাঠ, খালি নৌকা ও দূরে খুঁটির উপর কুঁড়েঘর  - objects/scenery only, কোনো পাখি বা মানুষ নেই।",
+    "image_class": "scenery",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only country landscape (river, green hills, crop field, empty boats, stilt hut). Per Principal ruling ALL living beings removed  - the NCTB two magpie/দোয়েল birds and the people in the boats are removed.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A wide, peaceful children's-textbook illustration of a Bangladeshi river landscape: a calm river winding between soft green hills, a green crop field in the foreground, two empty wooden boats on the water, and a small hut on stilts on the far bank under a blue sky with white clouds. No people, no animals, no birds. Loose watercolour-style with clear outlines, high contrast for black-and-white photocopy.",
+    "aspect": "16:9",
+    "status": "draft"
+   },
+   {
+    "id": "L049-img-02",
+    "scene_description": "ছয়টি রঙের বর্গ: লাল, সবুজ, হলুদ, নীল, সাদা, কালো  - শুধু রঙের নমুনা, কোনো জীব নেই।",
+    "image_class": "diagram",
+    "action": "retain_schematic",
+    "contains_living_being": false,
+    "compliance_note": "six plain colour swatches (red/green/yellow/blue/white/black) supporting the আরও লিখি exercise; decorative colour cue, no living being. Note: colour-labelled  - B/W edition should add small Bangla colour labels so the swatches stay meaningful in greyscale (see bw note).",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "Six simple flat colour squares arranged in a 2x3 grid: red, green, yellow, blue, white (with a thin outline), and black. Plain, clean, no other objects, no text. Suitable as a colour reference beside a writing exercise.",
+    "aspect": "3:4",
+    "status": "draft"
+   }
+  ],
+  "nctb_omitted": [
+   {
+    "item": "two birds (magpie/দোয়েল) and people in the boats in the landscape illustration",
+    "reason": "C-05 objects-first; Principal ruling: objects/scenery only, no living beings"
+   }
+  ],
+  "bw_treatment": "native_safe",
+  "reviewer_signoff": {
+   "by": null,
+   "date": null,
+   "checklist_passed": false
+  },
+  "notes": "INFOTEXT + যুক্তবর্ণ ন্দ. Image-only curation per Principal ('everything OK, only replace image'): landscape recomposed to objects/scenery (birds + boat-people removed). C-18: 'দোয়েল জাতীয় পাখি' factual national identifier RETAINED (Principal ruling). DATA FLAG (not resolved in-chat): letter_inventory conjunct_whitelist for পাঠ ৪৯ is empty but the NCTB page introduces ন্দ (আনন্দ) as this পাঠ's whole-unit conjunct; whitelist is under-enumerated  - Principal/data-owner should add 'ন্দ' with tg_evidence before any SCHOOL decodable text uses it. All ন্দ occurrences here (সুন্দর, আনন্দ) are NCTB-original and audit-exempt, so no merge blocker. bw note: আরও লিখি colour swatches are decorative (textual colour cue) => native_safe; if reviewer deems swatches essential, add Bangla labels (redesigned)."
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "patch_id": "patch_C1-BAN_L054_CONTENT_v1",
+ "book_id": "C1-BAN",
+ "schema_version": "1.0",
+ "target_lesson_no": 54,
+ "merge_rule": "wholesale-by-lesson",
+ "lesson": {
+  "lesson_no": 54,
+  "nctb_title_bn": "আমার ঠিকানা",
+  "nctb_pages": [
+   80
+  ],
+  "genre": "FUNCWRITE  - ফরম পূরণ (ঠিকানা)",
+  "competency_codes": [
+   "১৪.৩"
+  ],
+  "outcome_codes": [
+   "১৪.৩.১",
+   "১৪.৩.২"
+  ],
+  "action": "retain",
+  "c_codes": [],
+  "severity": null,
+  "status": "built",
+  "blocks": [
+   {
+    "id": "L054-b01",
+    "type": "heading",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "পাঠ ৫৪\nআমার ঠিকানা",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "heading",
+    "layout_hint": "chapter-head"
+   },
+   {
+    "id": "L054-b02",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "বলি ও লিখি\nশিক্ষকের সহযোগিতা নিয়ে নিচের ছক পূরণ করো",
+    "text_en": null,
+    "source_note": "Form-fill instruction, verbatim NCTB p80. Contains ক্ষ (শিক্ষকের)  - NCTB-original, audit-exempt. Retained as-is (Principal ruling).",
+    "style_profile": "instruction",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L054-b03",
+    "type": "table",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "নাম\t\nমায়ের নাম\t\nবাবার নাম\t\nগ্রামের নাম/বাসা নম্বর\t\nডাকঘর\t\nথানা/উপজেলা\t\nজেলা\t",
+    "text_en": null,
+    "source_note": "Address form (7 label rows, blank fill cells), verbatim NCTB p80. FUNCWRITE ফরম পূরণ (যোগ্যতা ১৪.৩). Labels are NCTB-original (contain গ্র/ম্ব/ক্ষ and '/' option-separator) => audit-exempt. No living beings, no C-issue. Retained as-is (Principal ruling: keep as is).",
+    "style_profile": "form-table",
+    "layout_hint": "7-row label + blank-cell form"
+   },
+   {
+    "id": "L054-b04",
+    "type": "decorative",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "সমাপ্ত",
+    "text_en": null,
+    "source_note": "Book-end mark ('সমাপ্ত' = The End), verbatim NCTB p80. Contains প্ত  - NCTB-original, audit-exempt. Retained as-is.",
+    "style_profile": "end-mark",
+    "layout_hint": "centred end badge below the form"
+   }
+  ],
+  "image_slots": [],
+  "nctb_omitted": [],
+  "bw_treatment": "native_safe",
+  "reviewer_signoff": {
+   "by": null,
+   "date": null,
+   "checklist_passed": false
+  },
+  "notes": "FINAL পাঠ (54/54). FUNCWRITE address form. RETAIN chapter (Principal ruling: keep as is). No curation action, no images. All text NCTB-original and audit-exempt; verified no school-written decodable text. SCOPE NOTE (Principal ruling): the NCTB BACK COVER (mural photo of people + NCTB logo/branding, uploaded with this পাঠ) is OUT OF SCOPE for this lesson object  - to be handled separately later (not built into our book here). It carries a C-05 photo-of-people element and NCTB branding that will need its own handling."
+ }
+}

@@ -1,0 +1,208 @@
+{
+  "patch_id": "patch_C1-BAN_L042_CONTENT_v1",
+  "book_id": "C1-BAN",
+  "lesson_no": 42,
+  "task": "CONTENT",
+  "op": "merge_lesson",
+  "lesson": {
+    "lesson_no": 42,
+    "nctb_title_bn": "ভোর হলো",
+    "nctb_pages": [
+      60
+    ],
+    "genre": "কবিতা (সংশোধিত v2; শুনি ও বলি / কবিতাটি বলি)",
+    "competency_codes": [
+      "৪.১",
+      "৮.১",
+      "১২.১",
+      "১৩.৩"
+    ],
+    "outcome_codes": [
+      "৪.১.২",
+      "৮.১.২",
+      "৮.১.৫",
+      "১২.১.২",
+      "১৩.৩.২"
+    ],
+    "action": "retain-curated",
+    "c_codes": [
+      "C-01",
+      "C-02",
+      "C-05"
+    ],
+    "severity": "S2",
+    "status": "built",
+    "blocks": [
+      {
+        "id": "L042-b01",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "পাঠ ৪২",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "heading",
+        "layout_hint": "chapter-head"
+      },
+      {
+        "id": "L042-b02",
+        "type": "poem_title",
+        "source": "nctb",
+        "edited": false,
+        "oral": true,
+        "text_bn": "ভোর হলো",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "poem-title",
+        "layout_hint": "centered-title"
+      },
+      {
+        "id": "L042-b03",
+        "type": "byline",
+        "source": "nctb",
+        "edited": false,
+        "oral": true,
+        "text_bn": "কাজী নজরুল ইসলাম",
+        "text_en": null,
+        "source_note": "Byline RETAINED per Principal ruling (keep everything). Consistent with পাঠ ৪০ keep-byline. reviewer-note: byline posture across the book still pending single policy (জসীমউদ্‌দীন kept @40, নজরুল kept @42, সুফিয়া কামাল dropped @17).",
+        "style_profile": "byline",
+        "layout_hint": "centered-byline"
+      },
+      {
+        "id": "L042-b04",
+        "type": "poem_stanza",
+        "source": "nctb",
+        "edited": false,
+        "oral": true,
+        "text_bn": "ভোর হলো\nদোর খোলো\n\tখুকুমণি ওঠো রে!\nঐ ডাকে\nজুঁই-শাখে\n\tফুল-খুকি ছোটো রে!",
+        "text_en": null,
+        "source_note": "কবিতা 'ভোর হলো', verbatim NCTB (অংশবিশেষ), কাজী নজরুল ইসলাম. Recited (কবিতাটি বলি). oral:true -> letter-audit exempt.",
+        "style_profile": "poem-stanza",
+        "layout_hint": "indented-refrains"
+      },
+      {
+        "id": "L042-b05",
+        "type": "poem_stanza",
+        "source": "nctb",
+        "edited": false,
+        "oral": true,
+        "text_bn": "খুলি হাল\nতুলি পাল\n\tঐ তরি চলল,\nএইবার\nএইবার\n\tখুকু চোখ খুলল!",
+        "text_en": null,
+        "source_note": "কবিতা, verbatim NCTB (অংশবিশেষ). oral:true -> letter-audit exempt.",
+        "style_profile": "poem-stanza",
+        "layout_hint": "indented-refrains"
+      },
+      {
+        "id": "L042-b06",
+        "type": "poem_stanza",
+        "source": "nctb",
+        "edited": false,
+        "oral": true,
+        "text_bn": "আলসে\nনয় সে\n\tওঠে রোজ সকালে,\nরোজ তাই\nচাঁদা ভাই\n\tটিপ দেয় কপালে।",
+        "text_en": null,
+        "source_note": "কবিতা, verbatim NCTB (অংশবিশেষ). oral:true -> letter-audit exempt.",
+        "style_profile": "poem-stanza",
+        "layout_hint": "indented-refrains"
+      },
+      {
+        "id": "L042-b07",
+        "type": "poem_note",
+        "source": "nctb",
+        "edited": false,
+        "oral": true,
+        "text_bn": "(অংশবিশেষ)",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "poem-note",
+        "layout_hint": "right-aligned-note"
+      },
+      {
+        "id": "L042-b08",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "কবিতাটি বলি",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "section-head",
+        "layout_hint": "section-head"
+      },
+      {
+        "id": "L042-b09",
+        "type": "instruction",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "দেখে দেখে কবিতার চরণ লিখি।",
+        "text_en": null,
+        "source_note": "Copy-the-line writing instruction, verbatim.",
+        "style_profile": "instruction",
+        "layout_hint": "instruction-line"
+      },
+      {
+        "id": "L042-b10",
+        "type": "instruction",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "দাগ টেনে শব্দের সাথে শব্দ মেলাই।",
+        "text_en": null,
+        "source_note": "Draw-a-line matching instruction, verbatim.",
+        "style_profile": "instruction",
+        "layout_hint": "instruction-line"
+      },
+      {
+        "id": "L042-b11",
+        "type": "matching_exercise",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "চাঁদ\tখুলল\nখুলি\tকপালে\nচোখ\tমামা\nটিপ\tহাল",
+        "text_en": null,
+        "source_note": "Match-the-words exercise (left column to right column via drawn line), verbatim NCTB. All words decodable-clean @42 (চাঁদ/খুলি/চোখ/টিপ | খুলল/কপালে/মামা/হাল). Left and right printed as two columns; child draws connecting lines.",
+        "style_profile": "two-column-match",
+        "layout_hint": "left words | right words, draw-line"
+      }
+    ],
+    "image_slots": [
+      {
+        "id": "L042-img-01",
+        "scene_description": "বাম ছবি: NCTB-তে নদীতে পাল-তোলা নৌকা (একজন মাঝিসহ), জুঁই-ডালে দুটি পাখি, এবং উদীয়মান সূর্য (C-05 মাঝি ও পাখি; মাঝি-ফিগারে C-01/C-02 ঝুঁকি)। object-first প্রতিস্থাপন: মাঝি ও পাখি বাদ; শুধু একটি খালি পাল-তোলা নৌকা নদীতে, ভোরের সূর্য, এবং ফুলে-ভরা একটি জুঁই-ডাল (কবিতার 'জুঁই-শাখে ফুল' উপাদান)। কোনো মানুষ/প্রাণী নয়।",
+        "image_class": "object_scene",
+        "action": "generate_plain",
+        "contains_living_being": false,
+        "compliance_note": "SUBSTITUTED (object-first): NCTB left image showed a sailing boat with a boatman, two birds on a jasmine branch, and a sunrise (C-05 boatman+birds; C-01/C-02 figure risk on the boatman). Per Principal ruling, boatman and birds are dropped; scene is object-only: an empty sail-up country boat on a calm river at sunrise, with a flowering jasmine (জুঁই) branch in the foreground. Keeps the poem's দোর/পাল/তরি/ভোর/জুঁই-ফুল imagery. No people, no animals. contains_living_being=false -> no compliance-band treatment. bw: native_safe.",
+        "photocopy_safe": true,
+        "refs": [],
+        "prompt": "A friendly children's-textbook illustration of a calm river at sunrise. A single empty country boat with its sail raised drifts on the water, no person aboard. The early sun rises low on the horizon with soft warm rays. In the foreground, a leafy jasmine branch covered in small white flowers. No people, no animals, no text. Soft watercolour style, clean clear linework, warm dawn palette. High contrast for black-and-white photocopy legibility.",
+        "aspect": "3:4",
+        "filename": null,
+        "status": "draft"
+      },
+      {
+        "id": "L042-img-02",
+        "scene_description": "নিম্ন-বাম ছবি: NCTB-তে বালিশে ঘুমন্ত একটি মেয়ে (খুকুমণি) কাঁথা গায়ে (C-05 জীব-ফিগার; C-02 আবরণ)। object-first প্রতিস্থাপন: শিশু-ফিগার বাদ; শুধু একটি পরিপাটি বিছানা -- বালিশ ও ভাঁজ করা হলুদ কাঁথা, ভোরের নরম আলো জানালা দিয়ে পড়ছে (কবিতার 'ভোর/ওঠা/সকাল' জাগরণ-থিম, ফিগার ছাড়া)। কোনো মানুষ/প্রাণী নয়।",
+        "image_class": "object_scene",
+        "action": "generate_plain",
+        "contains_living_being": false,
+        "compliance_note": "SUBSTITUTED (object-first): NCTB image showed a sleeping girl (খুকুমণি) on a pillow under a quilt (C-05 living-being child figure; C-02 coverage). Per Principal ruling, the figure is dropped; scene is object-only: a tidy bed with a pillow and a folded yellow quilt in soft morning light from a window. Keeps the poem's waking/morning theme without any figure. No people, no animals. contains_living_being=false -> no compliance-band treatment. bw: native_safe.",
+        "photocopy_safe": true,
+        "refs": [],
+        "prompt": "A friendly children's-textbook illustration of a neatly made small bed with a soft white pillow and a folded yellow quilt, in gentle early-morning light coming through a nearby window. Just the bed and bedding. No people, no animals, no text. Plain soft background. Soft watercolour style, clean clear linework, warm morning palette. High contrast for black-and-white photocopy legibility.",
+        "aspect": "3:4",
+        "filename": null,
+        "status": "draft"
+      }
+    ],
+    "nctb_omitted": [],
+    "bw_treatment": "native_safe",
+    "reviewer_signoff": {
+      "by": null,
+      "date": null,
+      "checklist_passed": false
+    },
+    "notes": "পাঠ 42 ভোর হলো (কাজী নজরুল ইসলাম) built. Genre corrected to কবিতা (was mis-filed থিমেটিক গল্প; TG v2). Skeleton flag was মুক্ত/replace; Principal OVERRODE to KEEP everything (retain-curated). ALL text verbatim, no edits. Byline 'কাজী নজরুল ইসলাম' RETAINED per Principal ruling (consistent w/ পাঠ ৪০; byline posture across book still pending single policy vs পাঠ ১৭ drop -- reviewer-flagged). Poem body recited (কবিতাটি বলি), oral:true -> letter-audit exempt. Matching-exercise words all decodable-clean @42. TWO images, both living beings -> object-first SUBSTITUTION per Principal ruling: img01 empty sail-boat + জুঁই branch at sunrise (boatman+birds dropped; cf পাঠ ৩৩/৩৮ empty-boat precedent), img02 empty bed + pillow/quilt in dawn light (sleeping girl dropped); both contains_living_being=false, no compliance-band. block audit + seeded self-test PASS."
+  }
+}

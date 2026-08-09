@@ -1,0 +1,217 @@
+{
+ "patch_id": "patch_C1-BAN_L051_CONTENT_v2",
+ "book_id": "C1-BAN",
+ "schema_version": "1.0",
+ "target_lesson_no": 51,
+ "merge_rule": "wholesale-by-lesson",
+ "lesson": {
+  "lesson_no": 51,
+  "nctb_title_bn": "সংখ্যা শিখি",
+  "nctb_pages": [
+   74,
+   75,
+   76
+  ],
+  "genre": "আন্তঃবিষয়ক (সংখ্যা ১-২০); যুক্তবর্ণ দ্দ",
+  "competency_codes": [
+   "১১.১",
+   "১৬.২"
+  ],
+  "outcome_codes": [
+   "১১.১.১",
+   "১১.১.২",
+   "১৬.২.১"
+  ],
+  "action": "retain-curated",
+  "c_codes": [
+   "C-05",
+   "C-06",
+   "C-18"
+  ],
+  "severity": "S2",
+  "status": "built",
+  "blocks": [
+   {
+    "id": "L051-b01",
+    "type": "heading",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "পাঠ ৫১\nসংখ্যা শিখি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "heading",
+    "layout_hint": "chapter-head"
+   },
+   {
+    "id": "L051-b02",
+    "type": "count_list",
+    "source": "school",
+    "edited": true,
+    "oral": false,
+    "text_bn": "১\tএকটি বই\n২\tদুইটি আম\n৫\tপাঁচটি লাটিম\n৭\tসাতটি তারা\n৮\tআটটি বল\n১০\tদশটি লেবু\n১১\tএগারোটি কাঠি\n১২\tবারোটি পাতা\n১৩\tতেরোটি ফুল",
+    "text_en": null,
+    "source_note": "EDITED count-labels (C-05/C-06/C-18 objects-first substitution), listed in numeral order: ১ পাখি(bird)->বই; ২ চোখ(deer-eyes)->আম; ৫ পুতুল(dolls,C-06)->লাটিম; ৭ সাতজন বীরশ্রেষ্ঠ(seven martyr PHOTOS,C-05+C-18)->সাতটি তারা (Principal ruling: drop বীরশ্রেষ্ঠ; resolves শ্র/ষ্ঠ too); ৮ গ্রহ(গ্র non-decodable)->বল; ১০ ফড়িং(dragonfly)->লেবু; ১১ ফুটবল দল(team PHOTO,C-05)->কাঠি; ১৩ পাখি(birds)->ফুল. All decodable-clean @51. Displayed interleaved with the kept NCTB labels (b03) in numeral sequence 1-20. ADDED ১২: NCTB 'বারো মাসে এক বছর' (months-name table) -> 'বারোটি পাতা' (12 leaves) per Principal ruling  - the image generator could not spell the twelve conjunct-heavy month names reliably; replaced with a countable-object set. Decodable-clean @51.",
+    "style_profile": "count-column",
+    "layout_hint": "numeral + object picture + label (EDITED entries: 1,2,5,7,8,10,11,13)"
+   },
+   {
+    "id": "L051-b03",
+    "type": "count_list",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "৩\tতিনটি কলম\n৪\tচারটিতে এক হালি\n৬\tছয় ঋতুর বাংলাদেশ\n৯\tনয়টা বাজে\n১৪\tচৌদ্দটি বই\n১৫\tপনেরোটি লেবু\n১৬\tষোলোটি কাঠি\n১৭\tসতেরোটি কমলা\n১৮\tআঠারোটি বল\n১৯\tউনিশটি আম\n২০\tবিশটি ফুল",
+    "text_en": null,
+    "source_note": "KEPT verbatim NCTB count-labels (object/neutral, no living-being image issue), numeral order: ৩ কলম, ৪ হালি(egg set), ৬ 'ছয় ঋতুর বাংলাদেশ'(image->objects-only seasons montage), ৯ 'নয়টা বাজে'(clock), ১৪ 'চৌদ্দটি বই'(দ্দ = this পাঠ's own introduced conjunct, NCTB-original so audit-exempt), ১৫ লেবু, ১৬ কাঠি, ১৭ কমলা, ১৮ বল, ১৯ আম, ২০ ফুল. nctb source -> audit-exempt. Displayed interleaved with EDITED labels (b02) in sequence 1-20.",
+    "style_profile": "count-column",
+    "layout_hint": "numeral + object picture + label (KEPT NCTB entries: 3,4,6,9,12,14,15,16,17,18,19,20)"
+   },
+   {
+    "id": "L051-b04",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "যুক্তবর্ণ শিখি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "section-label",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L051-b05",
+    "type": "conjunct_box",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "চৌদ্দ\tদ্দ\tদ\tদ",
+    "text_en": null,
+    "source_note": "যুক্তবর্ণ শিখি box: introduces whole-unit conjunct দ্দ via চৌদ্দ (দ+দ), verbatim NCTB p76. This is পাঠ ৫১'s B-1 conjunct. nctb source -> audit-exempt. DATA FLAG: letter_inventory conjunct_whitelist for পাঠ ৫১ is empty ([]) but NCTB introduces দ্দ here; whitelist under-enumerated (same pattern as ন্দ@49)  - Principal/data-owner to add 'দ্দ' with tg_evidence before any SCHOOL decodable text uses it.",
+    "style_profile": "conjunct-box",
+    "layout_hint": "যুক্তবর্ণ cell (দ | দ)"
+   },
+   {
+    "id": "L051-b06",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "বানান করে লিখি",
+    "text_en": null,
+    "source_note": null,
+    "style_profile": "instruction",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L051-b07",
+    "type": "exercise",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "৮ ______\t১৩ ______\t২০ ______",
+    "text_en": null,
+    "source_note": "Spell-the-number exercise (answers: আট; তেরো; বিশ), verbatim NCTB p76. Decodable-clean @51.",
+    "style_profile": "fill-line",
+    "layout_hint": "three numerals with spell-out lines"
+   },
+   {
+    "id": "L051-b08",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "সংখ্যায় লিখি",
+    "text_en": null,
+    "source_note": "Instruction header, verbatim NCTB p76. Contains খ্য (সংখ্যায়)  - NCTB-original, audit-exempt.",
+    "style_profile": "instruction",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L051-b09",
+    "type": "exercise",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "পাঁচ ______\tদশ ______\tআঠারো ______",
+    "text_en": null,
+    "source_note": "Write-in-numerals exercise (answers: ৫; ১০; ১৮), verbatim NCTB p76. Decodable-clean @51.",
+    "style_profile": "fill-line",
+    "layout_hint": "three words with numeral lines"
+   },
+   {
+    "id": "L051-b10",
+    "type": "instruction",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "ফাঁকা ঘরে সঠিক সংখ্যাটি বানান করে লিখি",
+    "text_en": null,
+    "source_note": "Table-fill instruction, verbatim NCTB p76. Contains খ্য (সংখ্যাটি)  - NCTB-original, audit-exempt.",
+    "style_profile": "instruction",
+    "layout_hint": "exercise header"
+   },
+   {
+    "id": "L051-b11",
+    "type": "table",
+    "source": "nctb",
+    "edited": false,
+    "oral": false,
+    "text_bn": "তিন\t______\tপাঁচ\t______\tসাত\nনয়\t______\tএগারো\t______\tতেরো\nষোলো\tসতেরো\t______\tউনিশ\t______",
+    "text_en": null,
+    "source_note": "Odd-number / sequence table to complete by spelling, verbatim NCTB p76. Decodable-clean @51.",
+    "style_profile": "grid-table",
+    "layout_hint": "3-row fill-the-blank number-word grid"
+   }
+  ],
+  "image_slots": [
+   {
+    "id": "L051-img-01",
+    "scene_description": "সংখ্যা ১-১০ গণনার ছবি: প্রতিটি সংখ্যার পাশে গণনাযোগ্য বস্তু-দল (বই, আম, কলম, ডিম, লাটিম, ঋতুর দৃশ্য, তারা, বল, ঘড়ি, লেবু)  - objects only, কোনো জীব বা মানুষের ছবি নেই।",
+    "image_class": "counting_objects",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only counting sets for 1-10. NCTB living/photo sets replaced: bird->books, deer-eyes->mangoes, dolls->spinning tops, seven martyr photos->seven stars, planets->balls, dragonflies->lemons. ৬ seasons is an objects-only nature montage (any human silhouette removed); ৯ is a clock (object). No living beings, no people-photos.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A clean children's-textbook counting page for numbers 1 to 10, each numeral beside a clearly countable set of simple objects: 1 book, 2 mangoes, 3 pens, 4 eggs (one 'hali'), 5 spinning tops, a small six-panel montage of the six seasons (landscapes only), 7 stars, 8 balls, a wall clock showing nine o'clock, 10 lemons. Bold flat colour, clear outlines, plain white background, each set easy to count. No people, no animals, no birds, no photographs. High contrast for black-and-white photocopy.",
+    "aspect": "3:4",
+    "status": "draft"
+   },
+   {
+    "id": "L051-img-02",
+    "scene_description": "সংখ্যা ১১-২০ গণনার ছবি: প্রতিটি সংখ্যার পাশে গণনাযোগ্য বস্তু-দল (কাঠি, বারোটি পাতা, ফুল, বই, লেবু, কাঠি, কমলা, বল, আম, ফুল)  - objects only, কোনো জীব বা মানুষের ছবি নেই।",
+    "image_class": "counting_objects",
+    "action": "substitute_objects",
+    "contains_living_being": false,
+    "compliance_note": "object-only counting sets for 11-20. NCTB living/photo sets replaced: football team photo->11 sticks; birds->13 flowers. ১২ months-name table replaced with 12 leaves (Principal ruling: generator could not render the twelve month names correctly; month names are not image-safe text). No living beings, no people-photos, no text in the image.",
+    "photocopy_safe": true,
+    "refs": [],
+    "prompt": "A clean children's-textbook counting page for numbers 11 to 20, each numeral beside a clearly countable set of simple objects: 11 sticks, 12 leaves, 13 flowers, 14 books, 15 lemons, 16 sticks, 17 oranges, 18 balls, 19 mangoes, 20 flowers. Bold flat colour, clear outlines, plain white background, each set easy to count. No people, no animals, no birds, no photographs, and no text or lettering anywhere in the image. High contrast for black-and-white photocopy.",
+    "aspect": "3:4",
+    "status": "draft"
+   }
+  ],
+  "nctb_omitted": [
+   {
+    "item": "seven বীরশ্রেষ্ঠ portrait photographs (real people) at numeral 7",
+    "reason": "C-05 photos-of-people + Principal ruling: swapped to countable object (সাতটি তারা), বীরশ্রেষ্ঠ label dropped"
+   },
+   {
+    "item": "football team photograph (real people) at numeral 11",
+    "reason": "C-05 photos-of-people; swapped to countable object (এগারোটি কাঠি)"
+   },
+   {
+    "item": "living-being count-sets (bird, deer's eyes, dragonflies, birds) and human-figure dolls",
+    "reason": "C-05/C-06 objects-first substitution to countable objects"
+   }
+  ],
+  "bw_treatment": "native_safe",
+  "reviewer_signoff": {
+   "by": null,
+   "date": null,
+   "checklist_passed": false
+  },
+  "notes": "Counting 1-20 (আন্তঃবিষয়ক) + যুক্তবর্ণ দ্দ. Objects-first substitution across the whole spread (Principal ruling: replace living-being images and text). Every living/photo count-set swapped to a countable object; text labels swapped to decodable-clean object nouns where changed (8 EDITED labels, all clean @51), NCTB object labels kept verbatim (12 labels). ৭ বীরশ্রেষ্ঠ portrait photos -> সাতটি তারা, label dropped (Principal ruling); ১১ football team photo -> এগারোটি কাঠি. DATA FLAG (not resolved in-chat): letter_inventory conjunct_whitelist@51 is empty but NCTB introduces দ্দ (চৌদ্দ) here; under-enumerated  - Principal/data-owner to add 'দ্দ'. দ্দ appears only in the NCTB-kept ১৪ label (exempt). REVIEWER: confirm object choices read naturally as countable sets."
+ }
+}

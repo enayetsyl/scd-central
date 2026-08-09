@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L013_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 13,
+      "nctb_title_bn": "বর্ণ শিখি : ঋ",
+      "nctb_pages": [18],
+      "genre": "বর্ণ শিক্ষা",
+      "competency_codes": ["১.১", "৫.১", "৯.১", "১৩.১"],
+      "outcome_codes": ["১.১.১", "৫.১.১", "৯.১.১", "১৩.১.১"],
+      "action": "retain-curated",
+      "c_codes": ["C-05", "C-02", "C-06", "C-08"],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L013-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ১৩\nবর্ণ শিখি : ঋ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L013-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L013-b03",
+          "type": "word_list",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "ঋতু\tঋ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "letter-spotlight-pairs"
+        },
+        {
+          "id": "L013-b04",
+          "type": "rhyme",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "ঋতু আসে ঋতু যায়।\nফুল ফোটে মন ভোলায়।\nবাংলাদেশে ছয়টি ঋতু।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": "chhora-swarabritta",
+          "layout_hint": "picture-sentences"
+        },
+        {
+          "id": "L013-b05",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আরও শব্দ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L013-b06",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "ঋ — ঋতু, ঋণ, ঋজু",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "extra-words-by-letter"
+        },
+        {
+          "id": "L013-b07",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L013-b08",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ঋ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "read-large-letters"
+        },
+        {
+          "id": "L013-b09",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "লিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L013-b10",
+          "type": "tracing_ref",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ঋ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "tracing-grid-stroke-arrows"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L013-img-01",
+          "scene_description": "ঋতু-এর ছবি: ছয় ঋতুর প্রতীক ফুল/প্রকৃতি — object/scenery only, ফুলে ভরা মাঠ ও গাছ, কোনো প্রাণী/মানুষ নেই (NCTB p18 এর পাখি বাদ — 'পাখি গায়' লাইন পরিবর্তিত)।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "scenery-only slot; flowering field/tree conveying the six seasons; NO birds (the NCTB 'পাখি গায়' line was changed → bird removed from art too); no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A gentle children's-textbook illustration of a flowering field with a leafy tree and blooming marigolds and small blossoms under a soft sky, no animals, no people. Centred, plain white background, bold clean outlines, soft flat colour. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "status": "draft"
+        },
+        {
+          "id": "L013-img-02",
+          "scene_description": "বর্ণ-লিখন ট্রেসিং অ্যাসেট — ঋ, স্ট্রোক-তীরসহ (NCTB মূল)। AI-জেনারেটেড নয়; ভেক্টর অ্যাসেট থেকে অ্যাসেম্বলিতে বসবে।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "letter-tracing grid for ঋ with stroke-order arrows; vector asset, never AI-generated.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "4:3",
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ১৩ বর্ণ-শিখি: ঋ (🔒 স্থির, single vowel). Title + letter + পড়ি/লিখি retained. TEXT CHANGE (user): NCTB rhyme 'ঋতু আসে ঋতু যায় / ফুল ফোটে পাখি গায় / বাংলাদেশে ছয়টি ঋতু' → line 2 changed 'ফুল ফোটে পাখি গায়' to 'ফুল ফোটে মন ভোলায়' (removes the singing-bird / পাখি গায়); lines 1 & 3 kept verbatim. Rhyme preserved (‑ায়, যায়/ভোলায়), ছড়া meter intact, clean meaning ('flowers bloom, delight the heart'). This makes b04 edited=true but oral=true (শুনি-ও-বলি rhyme) → letter-audit EXEMPT; still curated. c_codes add C-08 for the line word-swap. Because 'পাখি গায়' removed, the illustration also drops the bird → scenery-only flowering field (no living being). Taught inventory at পাঠ ১৩ = অ,আ,ই,ঈ,উ,ঊ,ঋ only (no consonants/কার): all words oral named examples; only decodable content = the letter ঋ (b08/b10), NCTB-original → exempt. WORD PROVENANCE: map has ONLY ঋতু (single ঋ-initial book word). Confirmed vs Bangla Academy আধুনিক অভিধান (baabo.jothartho.com/list/ঋ): ঋ is the most word-poor vowel — the ONLY clean concrete child-appropriate word is ঋতু. Entire rest of ঋ-inventory is Hindu-religious (ঋষি/ঋক্/ঋগ্বেদ family — C-09 creed, REFUSED), debt-concept (ঋণ family), or abstract/archaic (ঋজু/ঋদ্ধ/ঋত/ঋভু/ঋষভ). ⚠ PER PRINCIPAL (chat): keep ঋতু + ঋণ + ঋজু. FLAGS for reviewer: ঋণ = 'debt/loan', abstract + off-register for age 5-6; ঋজু = 'straight/upright', abstract + literary (not in a first-grader's speech). Both retained on instruction, WORD-ONLY (no image, not picture-able), reviewer to confirm suitability. NOT used: ঋষি/ঋক্ষ etc (C-09). Images: ঋতু scenery-only flowering field (bird removed per line change); tracing = vector_asset, prompt='' permanently. No cast figures → refs empty. Ready to merge in order after পাঠ ১২."
+    }
+  ]
+}

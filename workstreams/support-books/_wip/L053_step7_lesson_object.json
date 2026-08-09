@@ -1,0 +1,86 @@
+{
+  "patch_id": "patch_C1-BAN_L053_CONTENT_v1",
+  "book_id": "C1-BAN",
+  "schema_version": "1.0",
+  "target_lesson_no": 53,
+  "merge_rule": "wholesale-by-lesson",
+  "lesson": {
+    "lesson_no": 53,
+    "nctb_title_bn": "শব্দ নিয়ে খেলা",
+    "nctb_pages": [
+      79
+    ],
+    "genre": "সৃজনশীলতা / মুক্ত-চিন্তা (শব্দ-খেলা; শিখনফল-নেই strand)",
+    "competency_codes": [
+      "MOTOR"
+    ],
+    "outcome_codes": [
+      "MOTOR"
+    ],
+    "action": "retain-curated",
+    "c_codes": [
+      "C-06",
+      "C-05"
+    ],
+    "severity": "S1",
+    "status": "built",
+    "blocks": [
+      {
+        "id": "L053-b01",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "পাঠ ৫৩\nশব্দ নিয়ে খেলা",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "heading",
+        "layout_hint": "chapter-head"
+      },
+      {
+        "id": "L053-b02",
+        "type": "story",
+        "source": "school",
+        "edited": true,
+        "oral": true,
+        "text_bn": "আনাস ক বর্ণ দিয়ে একটি শব্দ বলল। শব্দটি হলো কলম। কলমের শেষ বর্ণ ম। খাদিজা ম দিয়ে একটি শব্দ বলল। সেটি হলো ময়ূর। ময়ূরের শেষ বর্ণ র। উমর র দিয়ে একটি শব্দ বলল। সেটি হলো রাত। ফাতিমা বলল ত দিয়ে বানানো শব্দ। সেটি হলো তাল। এখন তুমি ল দিয়ে একটি শব্দ বলো। এভাবে তোমরা খেলাটি চালিয়ে যেতে পারো।",
+        "text_en": null,
+        "source_note": "EDITED (C-06 name mapping): NCTB default cast অভি/তুলি/রাফি/মিলি -> approved C1 cast per REF-2 §2.1: অভি->আনাস, তুলি->খাদিজা, রাফি->উমর, মিলি->ফাতিমা. Marked oral:true per Principal ruling  - this is a spoken word-chain game (বলল/বলো/খেলা); its subject-words বর্ণ (র্ণ) and শব্দ (ব্দ) are never decodable through পাঠ ৫৩, so oral classification (audit-exempt) is the doctrine-clean home for the name-swapped text and matches how the game runs in class. Word-game mechanics kept verbatim (কলম->ম->ময়ূর->র->রাত->ত->তাল->ল...). C-01 within-lesson anti-repetition respected (four distinct cast names, one each).",
+        "style_profile": "story-body",
+        "layout_hint": "game-instruction paragraph above illustration"
+      }
+    ],
+    "image_slots": [
+      {
+        "id": "L053-img-01",
+        "scene_description": "শব্দ-খেলার প্রতীকী দৃশ্য: সবুজ মাঠে গোল করে সাজানো কয়েকটি বস্তু (কলম, বই, পাতা) ও ফুলগাছ  - objects/scenery only, কোনো শিশু বা মানুষ নেই।",
+        "image_class": "scenery",
+        "action": "substitute_objects",
+        "contains_living_being": false,
+        "compliance_note": "object-only scene replacing the NCTB illustration of four children in a circle. Per Principal ruling: no children, no crutch  - the mixed-gender children group (C-01) and the crutch are removed and replaced with a simple objects/scenery vignette. NOTE (reviewer): NCTB's inclusive mobility-aid element (crutch) is consciously dropped FOR THIS পাঠ per Principal ruling; inclusive representation remains preserved elsewhere via the ফাতিমা cast canon (REF-2 §2.1 mobility-aid child).",
+        "photocopy_safe": true,
+        "refs": [],
+        "prompt": "A simple, cheerful children's-textbook illustration of a few everyday school objects arranged in a loose circle on green grass, with small flowering plants around them and a clear sky. For example a pen, a book and a leaf. No people, no animals, no birds. Bold clean outlines, soft flat colour, high contrast and clear linework for black-and-white photocopy.",
+        "aspect": "4:3",
+        "status": "draft"
+      }
+    ],
+    "nctb_omitted": [
+      {
+        "item": "illustration of four mixed-gender children in a circle",
+        "reason": "C-05 + C-01; Principal ruling: objects/scenery only, no children"
+      },
+      {
+        "item": "crutch / mobility-aid element in the illustration",
+        "reason": "Principal ruling: objects-only, no crutch. Inclusive representation (REF-1 retain-list) consciously dropped for this পাঠ; preserved elsewhere via ফাতিমা cast canon. Flagged for reviewer."
+      }
+    ],
+    "bw_treatment": "native_safe",
+    "reviewer_signoff": {
+      "by": null,
+      "date": null,
+      "checklist_passed": false
+    },
+    "notes": "Creativity/free-thinking strand পাঠ (শিখনফল-নেই, protected own-expression). C-06: NCTB cast oval swapped to approved C1 cast (আনাস/খাদিজা/উমর/ফাতিমা). Text marked oral (Principal ruling): spoken word-chain game whose subject-words বর্ণ/শব্দ (র্ণ/ব্দ) are never decodable through ৫৩, so oral is the correct audit-exempt home; game mechanics kept verbatim. Image -> objects/scenery, no children, no crutch (Principal ruling). REVIEWER FLAG: inclusive mobility-aid (crutch) dropped for this পাঠ per ruling  - note it's preserved via ফাতিমা cast elsewhere. C-01 anti-repetition: four distinct cast names."
+  }
+}

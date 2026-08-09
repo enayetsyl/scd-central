@@ -1,0 +1,163 @@
+{
+  "patch_id": "patch_C1-BAN_L045_CONTENT_v1",
+  "book_id": "C1-BAN",
+  "lesson_no": 45,
+  "task": "CONTENT",
+  "op": "merge_lesson",
+  "lesson": {
+    "lesson_no": 45,
+    "nctb_title_bn": "সাত দিনের কথা",
+    "nctb_pages": [65, 66],
+    "genre": "তথ্যমূলক পাঠ (সংশোধিত v2; যুক্তবর্ণ শিখি)",
+    "competency_codes": ["১.১", "১.২", "৩.১", "৫.১", "৯.২", "১২.১", "১৩.৩", "১৬.২"],
+    "outcome_codes": ["১.১.৪", "৩.১.১"],
+    "action": "replace",
+    "c_codes": ["C-01", "C-02", "C-03", "C-05"],
+    "severity": "S2",
+    "status": "built",
+    "blocks": [
+      {
+        "id": "L045-b01",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "পাঠ ৪৫\nসাত দিনের কথা",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "heading",
+        "layout_hint": "chapter-head"
+      },
+      {
+        "id": "L045-b02",
+        "type": "decodable_text",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "সাত দিনে এক সপ্তাহ। সাত দিনের সাতটি নাম। রাফি একটা ট্রেনের সামনে বসে আছে। তার কাছে দিনগুলোর নাম শুনি।",
+        "text_en": null,
+        "source_note": "Days-of-week info lead-in, verbatim NCTB p65. Uses taught conjuncts প্ত (সপ্তাহ), ট্র (ট্রেন) -> on পাঠ ৪৫ whitelist. nctb source -> audit-exempt; kept verbatim.",
+        "style_profile": "reading-passage",
+        "layout_hint": "prose paragraph"
+      },
+      {
+        "id": "L045-b03",
+        "type": "day_name_train",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "রবিবার\tসোমবার\tমঙ্গলবার\tবুধবার\tবৃহস্পতিবার\tশুক্রবার\tশনিবার",
+        "text_en": null,
+        "source_note": "Seven day-names on a train (engine + seven labelled carriages), verbatim NCTB. Vector graphic + readable labels; no living being. Conjuncts ঙ্গ/স্প/ক্র are whitelisted @45.",
+        "style_profile": "labelled-train",
+        "layout_hint": "engine + 7 day-name carriages"
+      },
+      {
+        "id": "L045-b04",
+        "type": "decodable_text",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "আমরা সাত দিনে অনেক কাজ করি। কখনো পড়ি, কখনো খেলি। কোনোদিন একেবারে ছুটি।",
+        "text_en": null,
+        "source_note": "General days-activity info, verbatim NCTB p65. No C-issue. nctb source.",
+        "style_profile": "reading-passage",
+        "layout_hint": "prose paragraph"
+      },
+      {
+        "id": "L045-b05",
+        "type": "decodable_text",
+        "source": "school",
+        "edited": true,
+        "oral": false,
+        "text_bn": "রাফি সাত দিনে অনেক কাজ করে। কুরআন তিলাওয়াত শোনে, কুরআন মনে রাখে। ছবি আঁকে। সাইকেল চালায়। মাঠে খেলতে যায়। ছড়ার বই পড়ে। কাগজ কেটে ফুল বানায়। ছুটির দিনে বেড়াতে যায়।",
+        "text_en": null,
+        "source_note": "EDITED (C-03): NCTB original 'গান শোনে, গান শেখে।' (listen to song / learn singing) replaced with 'কুরআন তিলাওয়াত শোনে, কুরআন মনে রাখে।' (listen to Quran recitation / memorize Quran) per Principal ruling. NOTE: intended 'মুখস্থ করে' avoided -- স্থ conjunct is NOT on পাঠ ৪৫ whitelist (B-1); 'মনে রাখে' carries the same memorize meaning and is decodable-clean. All other activities kept verbatim. All words decodable-clean @45 (with approved whitelist প্ত/ট্র/ঙ্গ/স্প/ক্র). reviewer/আলিম-note: confirm 'কুরআন মনে রাখে' as the memorize-Quran phrasing (or prefer 'সুরা শেখে').",
+        "style_profile": "reading-passage",
+        "layout_hint": "prose paragraph"
+      },
+      {
+        "id": "L045-b06",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "যুক্তবর্ণ শিখি",
+        "text_en": null,
+        "source_note": null,
+        "style_profile": "section-head",
+        "layout_hint": "section-head"
+      },
+      {
+        "id": "L045-b07",
+        "type": "conjunct_box",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "সপ্তাহ\tপ্ত\tপ\tত\nট্রেন\tট্র\tট\tর\nমঙ্গলবার\tঙ্গ\tঙ\tগ\nবৃহস্পতিবার\tস্প\tস\tপ\nশুক্রবার\tক্র\tক\tর",
+        "text_en": null,
+        "source_note": "যুক্তবর্ণ শিখি box, verbatim NCTB p65: word | whole-unit conjunct | two component বর্ণ cells. Five taught conjuncts প্ত/ট্র/ঙ্গ/স্প/ক্র -- this IS the পাঠ ৪৫ whitelist source (rule B-1). Whole-unit teaching, not construction.",
+        "style_profile": "conjunct-table",
+        "layout_hint": "word | conjunct | letter | letter (5 rows)"
+      },
+      {
+        "id": "L045-b08",
+        "type": "heading",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "বারের নাম বলি ও লিখি। কোন দিনে কী কাজ করি তা লিখি।",
+        "text_en": null,
+        "source_note": "p66 free-write chart instruction, verbatim.",
+        "style_profile": "section-head",
+        "layout_hint": "instruction-line"
+      },
+      {
+        "id": "L045-b09",
+        "type": "freewrite_chart",
+        "source": "nctb",
+        "edited": false,
+        "oral": false,
+        "text_bn": "রবিবার\t...\n...\t...\nমঙ্গলবার\t...\n...\t...\nবৃহস্পতিবার\t...\n...\t...\nশনিবার\t...",
+        "text_en": null,
+        "source_note": "Own-way chart (p66): seven day rows (some day-labels pre-filled, some blank for the child), each with a blank box to write what they do that day. Protected free-write (যোগ্যতা ১৬.২, README §4.5). Colours/arrows are vector decoration.",
+        "style_profile": "two-column-chart",
+        "layout_hint": "7 day-label pills -> blank write-boxes"
+      }
+    ],
+    "image_slots": [
+      {
+        "id": "L045-img-01",
+        "scene_description": "p65 ডান পাশের ছবি: NCTB-তে বেলুনের গোছা হাতে একটি ছেলে (C-05 জীব, C-01/C-02)। object-first প্রতিস্থাপন: ছেলে-ফিগার বাদ; শুধু একগোছা রঙিন বেলুন (লাল/হলুদ/সবুজ/নীল) সুতোয় বাঁধা। কোনো মানুষ/প্রাণী নয়।",
+        "image_class": "object_scene",
+        "action": "generate_plain",
+        "contains_living_being": false,
+        "compliance_note": "SUBSTITUTED (object-first, per Principal ruling): NCTB p65 showed a boy holding a bunch of balloons (C-05 living being + C-01/C-02). The figure is dropped; only a cheerful bunch of colourful balloons tied with string remains. No people, no animals. contains_living_being=false -> no compliance-band treatment. bw: native_safe.",
+        "photocopy_safe": true,
+        "refs": [],
+        "prompt": "A friendly children's-textbook illustration of a cheerful bunch of colourful balloons (red, yellow, green, blue) tied together with a string, floating on a plain background. Just the balloons. No people, no animals, no text. Soft watercolour style, clean clear linework, bright palette. High contrast for black-and-white photocopy legibility.",
+        "aspect": "1:1",
+        "filename": null,
+        "status": "draft"
+      },
+      {
+        "id": "L045-img-02",
+        "scene_description": "p66 উপরের ছবি: NCTB-তে একটি ছেলে ও একটি মেয়ের মুখ (মিশ্র-লিঙ্গ, C-05 জীব + C-01)। object-first প্রতিস্থাপন: মুখ-ফিগার বাদ; সপ্তাহ/দিনের থিমের সাথে মানানসই একটি সরল object আইকন -- একটি দেয়াল-ক্যালেন্ডার (সাত দিনের ঘর সহ)। কোনো মানুষ/প্রাণী নয়।",
+        "image_class": "object_scene",
+        "action": "generate_plain",
+        "contains_living_being": false,
+        "compliance_note": "SUBSTITUTED (object-first, per Principal ruling): NCTB p66 showed a boy's and a girl's face (mixed-gender, C-05 + C-01). The figures are dropped and replaced with a simple wall-calendar icon (a week grid), matching the days-of-the-week theme. No people, no animals. contains_living_being=false -> no compliance-band treatment. bw: native_safe.",
+        "photocopy_safe": true,
+        "refs": [],
+        "prompt": "A friendly children's-textbook illustration of a simple wall calendar showing a week grid of seven day cells, hanging on a plain background. Just the calendar. No people, no animals, no text inside the cells. Clean flat illustration style, clear linework. High contrast for black-and-white photocopy legibility.",
+        "aspect": "1:1",
+        "filename": null,
+        "status": "draft"
+      }
+    ],
+    "nctb_omitted": [],
+    "bw_treatment": "native_safe",
+    "reviewer_signoff": {"by": null, "date": null, "checklist_passed": false},
+    "notes": "পাঠ 45 সাত দিনের কথা built (INFOTEXT + যুক্তবর্ণ intro; genre corrected from থিমেটিক গল্প). CONJUNCT WHITELIST @45 enumerated from the NCTB যুক্তবর্ণ শিখি box and Principal-approved: {প্ত, ট্র, ঙ্গ, স্প, ক্র} (delivered as standalone inventory-amendment letter_inventory_C1-BAN_L045_conjunct_whitelist_v1.json for freeze; NOT silently edited into the locked inventory). Note সপ্তাহ's real conjunct is প্ত (NCTB tile labelling notwithstanding); স্প is বৃহস্পতিবার's. ACTION replace: (C-03) NCTB 'গান শোনে, গান শেখে' -> 'কুরআন তিলাওয়াত শোনে, কুরআন মনে রাখে' per Principal ruling (positive Islamic substitution); 'মুখস্থ' avoided (স্থ not on whitelist, B-1) -> 'মনে রাখে' (clean, same meaning), reviewer/আলিম-flagged. All other text (days info, যুক্তবর্ণ box, free-write chart p66) verbatim; free-write ১৬.২ preserved. Day-name train = vector labels, no living being, retained. IMAGES (C-05/C-01/C-02): p65 boy+balloons -> object-only balloons; p66 boy+girl faces -> wall-calendar icon; both object-first, no living being, no band. All edited/decodable words inventory-clean @45 WITH approved whitelist; block audit + seeded self-test PASS (validator v2)."
+  }
+}

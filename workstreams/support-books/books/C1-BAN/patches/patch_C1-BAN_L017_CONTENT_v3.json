@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L017_CONTENT_v3",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 17,
+      "nctb_title_bn": "ইতল বিতল",
+      "nctb_pages": [
+        24
+      ],
+      "genre": "ছড়া (ধ্বনিগত)",
+      "competency_codes": [
+        "৪.১",
+        "৮.১"
+      ],
+      "outcome_codes": [
+        "৪.১.১",
+        "৮.১.১",
+        "৮.১.৪"
+      ],
+      "action": "replace",
+      "c_codes": [
+        "C-05",
+        "C-06"
+      ],
+      "severity": "S3",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L017-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ১৭",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L017-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L017-b03",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "বৃষ্টির ছড়া",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "rhyme-title"
+        },
+        {
+          "id": "L017-b04",
+          "type": "rhyme",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "ঝমঝমিয়ে বৃষ্টি পড়ে,\nছাতা মাথায় ঘরে ফিরি।\nআকাশ জুড়ে মেঘ যে ওড়ে,\nমাঠে সবুজ ফসল ভরি।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": "chhora-swarabritta",
+          "layout_hint": "verse-center"
+        },
+        {
+          "id": "L017-b05",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ছবি দেখি ও শব্দ বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L017-b06",
+          "type": "word_list",
+          "source": "nctb",
+          "edited": false,
+          "oral": true,
+          "text_bn": "পাতা · মাশরুম · ব্যাঙ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-naming"
+        },
+        {
+          "id": "L017-b07",
+          "type": "instruction",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "নিজের জানা একটি বৃষ্টির ছড়া বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "own-expression-prompt"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L017-img-01",
+          "scene_description": "ছড়ার প্রধান ছবি: বৃষ্টির দৃশ্য — মেঘলা আকাশ, গাছ, বৃষ্টির ধারা, নিচে একটি ডোবা/জলাশয়; মূল NCTB আর্টের মতো ব্যাঙ থাকতে পারে (প্রাণী গল্পের অংশ)। কোনো মানুষ নেই।",
+          "image_class": "animal_story",
+          "action": "generate_stripe",
+          "contains_living_being": true,
+          "compliance_note": "rain scene: cloudy sky, tree, rain, a small pond with one or two frogs (frogs are the naming-task subject and a scene detail, kept). No people. Frogs/scene-critical detail kept clear of the lower third where the stripe lands; high-contrast line-art for B/W.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A gentle children's-textbook watercolour illustration of a rainy day: a leafy tree, grey rain clouds, falling rain, and a small pond below with one or two little frogs. Soft, cheerful, no people. Plain light background, clean bold outlines. High contrast and clear linework so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "status": "draft"
+        },
+        {
+          "id": "L017-img-02",
+          "scene_description": "ছবি-দেখি নামকরণ ছবি ১: গাছের পাতা (একগুচ্ছ সবুজ পাতা) — object-only।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only; a sprig of green leaves (পাতা); no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a sprig of green leaves, centred, on a plain white background. Bold clean outlines, soft flat colour, no other objects. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L017-img-03",
+          "scene_description": "ছবি-দেখি নামকরণ ছবি ২: একটি মাশরুম (ছত্রাক) — object-only।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only; a single mushroom (মাশরুম); no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a single mushroom, centred, on a plain white background. Bold clean outlines, soft flat colour, no other objects. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L017-img-04",
+          "scene_description": "ছবি-দেখি নামকরণ ছবি ৩: একটি ব্যাঙ — single animal spotlight, নিরীহ ভঙ্গি।",
+          "image_class": "animal_story",
+          "action": "generate_stripe",
+          "contains_living_being": true,
+          "compliance_note": "single frog (ব্যাঙ), calm friendly posture; body kept clear of lower third where stripe lands; high-contrast line-art for B/W.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A friendly children's-textbook illustration of a single small frog sitting calmly, centred, on a plain white background. Simple bold outlines, soft flat colour, no other objects. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ১৭ ইতল বিতল — action=REPLACE (S3), user-directed full rhyme replacement. Genre (TG): ছড়া (ধ্বনিগত), যোগ্যতা ৪.১/৮.১, শিখনফল ৪.১.১/৮.১.১/৮.১.৪ (own-feelings). Skeleton §3 explicitly permits replace here ('ঐতিহ্যবাহী ছড়াটি রাখা যায়… অথবা সমার্থক ইসলামি ছড়া রচনা'). ORIGINAL is 'ইতল বিতল' by সুফিয়া কামাল (real named poet) — copyrighted text NOT reproduced; because we REPLACE with an original school-written ছড়া, the byline 'সুফিয়া কামাল' is DROPPED (not attributing original verse to her). Kept NCTB পাঠ title 'ইতল বিতল' as the পাঠ header per 🔒-স্থির title rule; the rhyme's own title set to 'বৃষ্টির ছড়া'. FLAG for reviewer: confirm dropping the সুফিয়া কামাল attribution + retitling is the desired handling (alt: keep original per skeleton's 'রাখা যায়' option — but user chose replace). REPLACEMENT rhyme (স্বরবৃত্ত, README §4.1): 4 lines (matches original 4-line budget, ±20%), 4|4 matra feet foot-initial stress, rhyme 1&3 (পড়ে/'পরে) + 2&4 (ফিরি/ভরি), ধ্বনিগত sound-play retained (ঝমঝমিয়ে/টাপুর টুপুর) honouring the (ধ্বনিগত) tag; theme = rain + Muslim child coming home under umbrella + nature close (fields fill green: মাঠে সবুজ ফসল ভরি) per user; NO singing/music (C-03 avoided). Read aloud for meter before merge. oral:true (শুনি-ও-বলি rhyme) → letter-audit exempt (contains untaught consonants/কার — fine, oral). ৮.১.৪ own-feelings PROTECTED: 'নিজের জানা একটি বৃষ্টির ছড়া বলি' kept VERBATIM (README §4.5 free-thinking strand), NOT narrowed. ছবি-দেখি naming set পাতা/মাশরুম/ব্যাঙ KEPT per user (curate imagery only): পাতা/মাশরুম object-only; ব্যাঙ single-animal generate_stripe. Main rhyme image = rain scene with frogs (animal scene detail, kept, striped). No people anywhere → no C-01/C-02; refs empty. c_codes C-05 (frog/rain-scene imagery) + C-06 (byline/authorship change). Ready to merge in order after পাঠ ১৬. [UPDATE] line 4 আল্লাহ দিলেন পানি ভরি → মাঠে সবুজ ফসল ভরি (user); rhyme ফিরি/ভরি + স্বরবৃত্ত 4|4 intact; মাটে→মাঠে spelling corrected, শস্য→ফসল for age-register. [UPDATE2] line 3 টাপুর টুপুর ছাদের 'পরে → আকাশ জুড়ে মেঘ যে ওড়ে (user); rhyme পড়ে/ওড়ে (1&3) + ফিরি/ভরি (2&4) intact, স্বরবৃত্ত 4|4. Note: the টাপুর-টুপুর ধ্বনি sound-play now sits only in line1 (ঝমঝমিয়ে); ধ্বনিগত tag still honoured via ঝমঝমিয়ে."
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L010_CONTENT_v2",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 10,
+      "nctb_title_bn": "বর্ণ শিখি : অ আ",
+      "nctb_pages": [
+        15
+      ],
+      "genre": "বর্ণ শিক্ষা",
+      "competency_codes": [
+        "১.১",
+        "৫.১",
+        "৯.১",
+        "১৩.১"
+      ],
+      "outcome_codes": [
+        "১.১.১",
+        "৫.১.১",
+        "৯.১.১",
+        "১৩.১.১"
+      ],
+      "action": "retain-curated",
+      "c_codes": [
+        "C-08",
+        "C-05",
+        "C-02",
+        "C-06"
+      ],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L010-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ১০\nবর্ণ শিখি : অ আ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L010-b02",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L010-b03",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "অজু\tঅ\nআম\tআ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "letter-spotlight-pairs"
+        },
+        {
+          "id": "L010-b04",
+          "type": "oral_text",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "অজু করি। হাত-মুখ ধুই।\nআম খেয়েছি। আম মিষ্টি।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-sentences"
+        },
+        {
+          "id": "L010-b05",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L010-b06",
+          "type": "oral_text",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "অজু একটি কাজের নাম।\nআম একটি ফলের নাম।",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "definition-lines"
+        },
+        {
+          "id": "L010-b07",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আরও শব্দ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L010-b08",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "অ — অজু, অলি, অজগর\nআ — আম, আতা, আকাশ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "extra-words-by-letter"
+        },
+        {
+          "id": "L010-b09",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L010-b10",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "অ  আ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "read-large-letters"
+        },
+        {
+          "id": "L010-b11",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "লিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L010-b12",
+          "type": "tracing_ref",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "অ  আ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "tracing-grid-stroke-arrows"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L010-img-01",
+          "scene_description": "অ-এর ছবি: অলি (মৌমাছি) একটি ফুলের উপর — objects/animal-first, একক প্রাণী, কোনো মানুষ নেই। পরিষ্কার সাদা ব্যাকগ্রাউন্ড, বর্ণ-শিখি স্পটলাইট।",
+          "image_class": "animal_story",
+          "action": "generate_stripe",
+          "contains_living_being": true,
+          "compliance_note": "single bee on a flower; story-critical detail (the bee) kept centre-frame, clear of lower third where the programmatic stripe lands; high-contrast line-art for B/W. No stripe language in prompt.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A clean, friendly children's-textbook illustration of a single honeybee resting on one open flower, centred, on a plain white background. Simple bold outlines, soft flat colour, no other objects. High contrast and clear linework so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L010-img-02",
+          "scene_description": "অজগর — একটি অজগর সাপ কুণ্ডলী পাকিয়ে আছে, একক প্রাণী, নিরীহ ভঙ্গি। বর্ণ-শিখি স্পটলাইট।",
+          "image_class": "animal_story",
+          "action": "generate_stripe",
+          "contains_living_being": true,
+          "compliance_note": "single coiled python, calm posture; body kept in upper two-thirds so the stripe lands on plain ground, not on the animal's head; high-contrast line-art for B/W.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A gentle children's-textbook illustration of a single coiled python resting calmly on plain ground, centred, on a plain white background. Friendly, non-threatening expression, simple bold outlines, soft flat colour, no other objects. High contrast and clear linework so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L010-img-03",
+          "scene_description": "আম — দুই-তিনটি আম একটি ডালে ঝুলছে, object-only, কোনো প্রাণী/মানুষ নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only slot; ripe mangoes on a branch; no stripe needed (no living being).",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of two or three ripe mangoes hanging from a leafy branch, centred, on a plain white background. Bold clean outlines, soft flat colour, no other objects. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L010-img-04",
+          "scene_description": "আতা — একটি আতা ফল (custard-apple), object-only।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only slot; single custard-apple; no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a single custard-apple (আতা) fruit with a small leaf, centred, on a plain white background. Bold clean outlines, soft flat colour, no other objects. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L010-img-05",
+          "scene_description": "আকাশ — খোলা আকাশে কয়েকটি মেঘ ও একটি সূর্য, scenery-only, কোনো প্রাণী/মানুষ নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "scenery-only slot; open sky with clouds and sun; no living being, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of an open sky with a few soft clouds and a friendly sun, on a plain white background. Bold clean outlines, soft flat colour, no other objects, no birds. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L010-img-06",
+          "scene_description": "অজু — object-only: একটি বদনা/লোটা ও পানির ধারা, ওযুর প্রতীক, কোনো মানুষ নেই।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only slot; water jug (বদনা) with a stream of water symbolising অজু; no figure, no stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a traditional water jug (badna) pouring a small stream of water over an open hand-basin, centred, on a plain white background. Object-focused, no people. Bold clean outlines, soft flat colour. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "1:1",
+          "status": "draft"
+        },
+        {
+          "id": "L010-img-07",
+          "scene_description": "বর্ণ-লিখন ট্রেসিং অ্যাসেট — অ ও আ, স্ট্রোক-তীরসহ (NCTB মূল)। AI-জেনারেটেড নয়; ভেক্টর অ্যাসেট থেকে অ্যাসেম্বলিতে বসবে।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "letter-tracing grid for অ and আ with stroke-order arrows; vector asset, never AI-generated.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "4:3",
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ১০ বর্ণ-শিখি: অ আ (🔒 স্থির). Title + letters + পড়ি/লিখি structure untouched. action=retain-curated / S1: single vocab swap অশোক→অজু (C-08) — Principal-APPROVED 2026-07-18; plus two extra named picture-examples per letter added as an 'আরও শব্দ' oral strip. Word provenance (map-first): আ set (আম/আতা/আকাশ) all from C1-BAN_word_map_by_letter. অ set — map yields only অলি after dropping অশোক, so অজু + অজগর are memory-sourced fillers (no other অ-initial word exists in the map); flag for reviewer that these two are outside the book's own word inventory. Taught inventory at পাঠ ১০ = অ, আ only (no consonants, no কার): ALL spotlight/sentence words (অজু, আম, অলি, অজগর, আতা, আকাশ) are named picture-examples marked oral:true → letter-audit EXEMPT by design (this is how NCTB বর্ণ-শিখি pages work; the named example need not be decodable). Only decodable/NCTB blocks are the two letters অ/আ themselves (b10/b12), NCTB-original → exempt + trivially in-inventory. অজু spelling chosen over in-book ওযু specifically because অ-initial is required for the অ-page; FLAG for reviewer: in-book spelling inconsistency vs পাঠ ৬ 'ওযু করি' — অজু spelling Principal-APPROVED 2026-07-18 (use অজু). In-book note: differs from পাঠ ৬ 'ওযু করি'; reviewer/আলিম may reconcile at book-level QA, but অজু stands for this page. Skeleton hint 'আম→আম্মা' NOT usable (আম্মা needs ম+্ম conjunct+কার, untaught at পাঠ ১০) — treated as loose illustration only. Images: অ→অলি(bee)/অজগর(python) as single-animal generate_stripe (story-critical animal kept clear of stripe zone); আ→আম/আতা/আকাশ object/scenery-only; অজু→object-only বদনা (no human figure, avoids C-01/C-05 entirely); tracing = vector_asset, prompt='' permanently. No cast figures on this page → refs empty, same-gender rule n/a. MERGE HELD: পাঠ ১০ is ahead of unbuilt ৭–৯; per user, updated JSON with ৭–৯ to be uploaded before this merges in NCTB order."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "amendment_id": "letter_inventory_C1-BAN_L045_conjunct_whitelist_v1",
+  "target_file": "letter_inventory_C1-BAN.json",
+  "kind": "conjunct_whitelist_enumeration",
+  "status": "Principal-approved; apply-on-freeze (standalone, not a silent edit)",
+  "date": "2026-07-25",
+  "lesson_no": 45,
+  "path": "lessons.45.conjunct_whitelist",
+  "before": {
+    "tg_evidence": "শিখনফল ১.১.৪ (যুক্তবর্ণ) at পাঠ ৪৫",
+    "glyphs": null,
+    "needs_review": true
+  },
+  "after": {
+    "tg_evidence": "শিখনফল ১.১.৪ (যুক্তবর্ণ) at পাঠ ৪৫; enumerated from the NCTB পাঠ ৪৫ 'যুক্তবর্ণ শিখি' box",
+    "glyphs": ["প্ত", "ট্র", "ঙ্গ", "স্প", "ক্র"],
+    "source": "NCTB Class 1 Bangla পাঠ ৪৫ (p65) যুক্তবর্ণ শিখি box, decomposed from the five taught words",
+    "derivation": {
+      "সপ্তাহ": "প্ত (প + ্ + ত)",
+      "ট্রেন": "ট্র (ট + ্ + র)",
+      "মঙ্গলবার": "ঙ্গ (ঙ + ্ + গ)",
+      "বৃহস্পতিবার": "স্প (স + ্ + প)",
+      "শুক্রবার": "ক্র (ক + ্ + র)"
+    },
+    "note": "NCTB box visually tiles সপ্তাহ next to 'প | ত' component cells; the whole-unit conjunct in সপ্তাহ is প্ত (not স্প). স্প is the বৃহস্পতিবার conjunct. Whitelist enumerates the actual whole-unit conjuncts of the five words. Rule B-1: these are the ONLY conjuncts legal in decodable text at পাঠ ৪৫; no systematic conjunct construction (Class-2 deferral).",
+    "needs_review": false
+  },
+  "reviewer_note": "Was a needs_review=null whitelist. Enumerated + Principal-approved during পাঠ ৪৫ build. Apply to the master letter_inventory_C1-BAN.json at freeze so future chats load it. Does not affect any earlier পাঠ (all <45 default to 'none'). The two remaining null whitelists (পাঠ ২১, ৫২) are still needs_review and unaffected."
+}

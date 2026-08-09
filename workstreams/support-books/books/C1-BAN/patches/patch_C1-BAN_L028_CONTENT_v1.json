@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L028_CONTENT_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 28,
+      "nctb_title_bn": "ঋ-কার শিখি",
+      "nctb_pages": [40],
+      "genre": "কারচিহ্ন শিক্ষা",
+      "competency_codes": ["১.১", "১.২", "৫.১", "৯.১", "১৩.১", "১৩.২"],
+      "outcome_codes": ["১.১.১", "১.২.২", "৫.১.৩", "৯.১.৩", "১৩.১.৩", "১৩.২.১"],
+      "action": "retain-curated",
+      "c_codes": ["C-05", "C-08", "C-06"],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L028-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পাঠ ২৮\nঋ-কার শিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        },
+        {
+          "id": "L028-b02",
+          "type": "table",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ঋ-কার\tৃ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "kar-table"
+        },
+        {
+          "id": "L028-b03",
+          "type": "word_list",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ঘৃত\nতৃণ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "picture-word-pair"
+        },
+        {
+          "id": "L028-b04",
+          "type": "heading",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "আরও শব্দ পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L028-b05",
+          "type": "word_list",
+          "source": "school",
+          "edited": true,
+          "oral": false,
+          "text_bn": "ৃ — ঘৃত, তৃণ, পৃথিবী, কৃপা, ঋতু, ঋণ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "kar-word-columns"
+        },
+        {
+          "id": "L028-b06",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "শুনি ও বলি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L028-b07",
+          "type": "oral_text",
+          "source": "school",
+          "edited": true,
+          "oral": true,
+          "text_bn": "এই পৃথিবী অনেক সুন্দর, সব আল্লাহ বানিয়েছেন।\nআল্লাহ পানি দেন, তৃণ সবুজ হয়, কৃষি ভালো হয়।\nকৃষক মাঠে কৃষি কাজ করেন।\nআল্লাহ আমাদের উপর অনেক কৃপা করেন।\nকারও কাছে ঋণ থাকলে তা শোধ করা উচিত।",
+          "text_en": null,
+          "source_note": "কৃপা/কৃষি/ঋণ — দৈনন্দিন ইসলামি মূল্যবোধ ও পরিচিত ধারণা; কোনো নির্দিষ্ট বর্ণনামূলক ঘটনা নয়, তাই বানানো বিবরণের ঝুঁকি নেই। রিভিউয়ার সাধারণ যাচাই করুন (README §4.3)। নোট: কৃষি এখানে মৌখিক (oral) শব্দ — এতে ষ আছে যা পাঠ ২৮-এ এখনো শেখানো হয়নি (ষ = পাঠ ৩২), তাই পড়ি/decodable স্তরে নয়, শুধু শুনি-ও-বলি স্তরে। যুক্তবর্ণযুক্ত শব্দ (সৃষ্টি/বৃষ্টি) ব্যবহারকারীর নির্দেশে সরিয়ে নন-যুক্তবর্ণ ভাষায় লেখা হয়েছে।",
+          "style_profile": null,
+          "layout_hint": "teacher-read"
+        },
+        {
+          "id": "L028-b08",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "পড়ি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L028-b09",
+          "type": "decodable_text",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ঘৃত\tতৃণ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "read-words"
+        },
+        {
+          "id": "L028-b10",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "লিখি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "section-label"
+        },
+        {
+          "id": "L028-b11",
+          "type": "tracing_ref",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "ৃ",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "tracing-rows"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L028-img-01",
+          "scene_description": "ঋ-কার উদাহরণ 'ঘৃত' — objects-only: একটি ঘি-র কাচের বয়াম (লেবেল ব্লার/লেখাহীন) ও পাশে ছোট বাটি। NCTB-র মূল দৃশ্যই object-only; কোনো জীব নেই। বয়ামের গায়ে কোনো টেক্সট রেন্ডার করা হবে না (স্ক্রিপ্ট-গার্ড)।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only slot — ghee jar + bowl, no living being (matches NCTB original which is already object-only). Jar label left blank/unlettered (no AI-rendered in-image text, script guard). No stripe.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A friendly children's-textbook still-life illustration of a glass jar of ghee with its lid, and a small empty bowl beside it, resting on a plain surface. The jar label is completely blank with no text or letters. No people, no animals, no living beings. Plain white background. Soft watercolour style, clean clear linework. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "filename": null,
+          "status": "draft"
+        },
+        {
+          "id": "L028-img-02",
+          "scene_description": "ঋ-কার উদাহরণ 'তৃণ' — objects-only: এক গোছা সবুজ ঘাস/তৃণভূমি, ছোট ঢিবি। NCTB-র মূল ছবিতে একটি পাখি ঘাসে ঠোকর দিচ্ছে; জীব বাদ দিয়ে শুধু ঘাস/তৃণভূমি রাখা হলো (objects-first ডিফল্ট) — striping এড়ানো যায়।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "objects-only — NCTB original shows a bird pecking in grass; the bird (living being) is dropped and only the grass/turf tuft is kept per objects-first default (C-05). No living being, so no stripe. Concept 'তৃণ' (grass) fully conveyed by the turf.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A simple children's-textbook illustration of a lush tuft of green grass on a small mound of earth, a few slender blades catching the light. No people, no animals, no birds, no living beings of any kind. Plain white background. Soft watercolour style, clean clear linework. High contrast so it stays legible in black-and-white photocopy.",
+          "aspect": "4:3",
+          "filename": null,
+          "status": "draft"
+        },
+        {
+          "id": "L028-img-03",
+          "scene_description": "লিখি — ঋ-কার (ৃ) ট্রেসিং রো, ভেক্টর অ্যাসেট থেকে রেন্ডার।",
+          "image_class": "tracing_asset",
+          "action": "vector_asset",
+          "contains_living_being": false,
+          "compliance_note": "letter-tracing rows rendered from vector assets at assembly; never AI-generated.",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "",
+          "aspect": "wide",
+          "filename": null,
+          "status": "draft"
+        }
+      ],
+      "nctb_omitted": [],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ ২৮ ঋ-কার শিখি (স্থির/locked, skeleton flag). Title + কারচিহ্ন table + পড়ি/লিখি + NCTB spotlight words ঘৃত/তৃণ RETAINED verbatim (both pass পাঠ-28 letter audit). action=retain-curated, severity=S1 (both illustrations objects-only → no figure redraw, no stripe). CODES: যোগ্যতা/শিখনফল = পাঠ 21 (TG row 28, '= পাঠ 21'). C-05 (image doctrine, resolved objects-first), C-08/C-06 (example-word framing). LETTER-AUDIT NOTE: পাঠ 28 teaches 36 বর্ণ + কার া/ি/ী/ু/ূ/ৃ; র,ল,শ,ষ,স,হ,য,এ-কার + all conjuncts come later → most rich ঋ-কার words (কৃষি, বৃষ্টি, সৃষ্টি, হৃদয়, বৃক্ষ) FAIL as decodable. USER REQUEST (rev): user asked for পৃথিবী, কৃষি, বৃষ্টি, সৃষ্টি. Only পৃথিবী is audit-clean at পাঠ 28; কৃষি needs ষ (পাঠ 32), বৃষ্টি needs ষ+যুক্তবর্ণ (ষ্ট), সৃষ্টি needs স+ষ+ষ্ট — all fail the decodable letter audit. RESOLUTION: পৃথিবী placed in decodable block b05; কৃষি/বৃষ্টি/সৃষ্টি placed in oral শুনি-ও-বলি block b07 (oral:true, audit-exempt). USER REV 2: replace conjunct words সৃষ্টি (স্+ট? actually সৃষ্টি has ষ্ট) and বৃষ্টি (ষ্ট) in b07 with non-conjunct wording — সৃষ্টি → 'সব আল্লাহ বানিয়েছেন' (same meaning, no যুক্তবর্ণ); বৃষ্টি → 'পানি' (no যুক্তবর্ণ). কৃষি retained in b07 (non-conjunct; only ষ, oral-legal). No conjunct-bearing word now appears anywhere in the lesson. To keep 4 decodable extras alongside NCTB ঘৃত/তৃণ, b05 = পৃথিবী + কৃপা + ঋতু + ঋণ (all audit-clean), 6 words total (2 NCTB + 4 extra). IMAGE: ঘৃত = ghee jar+bowl (already object-only in NCTB); তৃণ = NCTB shows a bird pecking grass → bird dropped, grass-only kept (objects-first, avoids C-05 stripe). Tracing = vector asset. bw_treatment=native_safe."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "book_id": "C1-BAN",
+  "patch_id": "patch_C1-BAN_L002_v1",
+  "task": "CONTENT",
+  "lessons": [
+    {
+      "lesson_no": 2,
+      "nctb_title_bn": "এসো রং করি ও আঁকি",
+      "nctb_pages": [
+        2
+      ],
+      "genre": "অঙ্কন/রং",
+      "competency_codes": [
+        "MOTOR"
+      ],
+      "outcome_codes": [
+        "MOTOR"
+      ],
+      "action": "retain-curated",
+      "c_codes": [
+        "C-18"
+      ],
+      "severity": "S1",
+      "status": "content-draft",
+      "blocks": [
+        {
+          "id": "L002-b01",
+          "type": "heading",
+          "source": "nctb",
+          "edited": false,
+          "oral": false,
+          "text_bn": "এসো রং করি ও আঁকি",
+          "text_en": null,
+          "source_note": null,
+          "style_profile": null,
+          "layout_hint": "title"
+        }
+      ],
+      "image_slots": [
+        {
+          "id": "L002-img-01",
+          "scene_description": "রং-করা ও ট্রেসিং কার্যক্রমের একটি পৃষ্ঠা — উপরে একটি প্রাথমিক বিদ্যালয় ভবন (রং করার জন্য), নিচে ডট-আউটলাইনে একটি শাপলা (ট্রেস করার জন্য) ঢেউখেলানো মাটির রেখার উপরে; কোনো জীবন্ত প্রাণী নেই, পতাকা নেই। পতাকা-রং বাদ (D-012); শাপলা-ট্রেসিং রক্ষিত।",
+          "image_class": "object",
+          "action": "substitute_objects",
+          "contains_living_being": false,
+          "compliance_note": "object-only line-art colouring/tracing page; no living being, no flag/flagpole (flag-colouring omitted per D-012); শাপলা tracing retained as the pre-writing motor element; pass-through untouched in image chain (no stripe).",
+          "photocopy_safe": true,
+          "refs": [],
+          "prompt": "A black-and-white line-art activity page for a young child (age 5-6) pre-writing and colouring book. Clean bold outlines only, no shading, no fill, no colour, on a white background; high contrast, thick clear lines that stay legible when photocopied. The page has two parts on one portrait sheet. Upper two-thirds: a simple friendly two-storey primary school building to colour in, with a pitched roof, rows of windows, a central door and a small entrance porch, a short garden path with a few potted flowering plants beside it; large open areas a small child can colour inside; no flag, no flagpole, no people, no animals, no birds, buildings and plants only. Lower third: a lotus flower drawn in a light dashed dotted outline for the child to trace over then colour, with layered petals and a couple of leaves on a short stem, sitting just above a gentle wavy ground line, clearly reading as a trace-the-dots outline. A few small solid-outline flowers or leaves along the bottom border as decoration. Simple warm children's-textbook style. No text, no letters, no writing anywhere on the page.",
+          "aspect": "3:4",
+          "filename": "L002-img-01_school-lotus.png",
+          "status": "approved"
+        }
+      ],
+      "nctb_omitted": [
+        {
+          "item": "flag drawing (national flag colouring — flagpole + circle to colour)",
+          "reason": "D-012"
+        }
+      ],
+      "bw_treatment": "native_safe",
+      "reviewer_signoff": {
+        "by": null,
+        "date": null,
+        "checklist_passed": false
+      },
+      "notes": "পাঠ 2 pre-writing motor activity (অঙ্কন/রং; no শিখনফল per TG reconciliation — MOTOR sentinel per option (i), Principal-ruled, applies to all six no-outcome পাঠ 2/5/7/18/53). action=retain-curated, C-18 active: NCTB flag-colouring omitted (D-012), শাপলা tracing retained. Single object-only line-art page (school to colour + lotus to trace) generated fresh (ChatGPT, all-dashed variant accepted); no living beings, no flag. No decodable/edited text, so letter audit trivially exempt. Mirrors schema §2 L2 example (flag drawing omitted, শাপলা tracing stays)."
+    }
+  ]
+}

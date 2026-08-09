@@ -1,0 +1,319 @@
+{
+ "schema_version": "1.0",
+ "book_id": "C1-BAN",
+ "patch_id": "patch_C1-BAN_L034_CONTENT_v1",
+ "task": "CONTENT",
+ "lessons": [
+  {
+   "lesson_no": 34,
+   "nctb_title_bn": "বর্ণ শিখি : ং ঃ ঁ",
+   "nctb_pages": [
+    49,
+    50
+   ],
+   "genre": "বর্ণ শিক্ষা",
+   "competency_codes": [
+    "১.১",
+    "১.২",
+    "৫.১",
+    "৯.১",
+    "১৩.১"
+   ],
+   "outcome_codes": [
+    "১.১.২",
+    "৫.১.১",
+    "৫.১.৪",
+    "১৩.১.১"
+   ],
+   "action": "retain-curated",
+   "c_codes": [
+    "C-05",
+    "C-01",
+    "C-06"
+   ],
+   "severity": "S2",
+   "status": "content-draft",
+   "blocks": [
+    {
+     "id": "L034-b01",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "পাঠ ৩৪\nবর্ণ শিখি : ং ঃ ঁ",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "title"
+    },
+    {
+     "id": "L034-b02",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "শুনি ও বলি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L034-b03",
+     "type": "word_list",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "রং\nদুঃখ\nচাঁদ",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৪৯ কি-শব্দ হুবহু রক্ষিত (রং=ং, দুঃখ=ঃ, চাঁদ=ঁ)। তিনটিই পাঠ-৩৪ ইনভেন্টরি-clean (ং/ঃ/ঁ এই পাঠেই শেখানো হয়)।",
+     "style_profile": null,
+     "layout_hint": "letter-keyword-showcase"
+    },
+    {
+     "id": "L034-b04",
+     "type": "oral_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": true,
+     "text_bn": "রং দিয়ে ছবি আঁকি,\nফুল ফল গাছ পাখি।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৪৯ শুনি-ও-বলি বাক্য হুবহু রক্ষিত (ং)।",
+     "style_profile": null,
+     "layout_hint": "teacher-read"
+    },
+    {
+     "id": "L034-b05",
+     "type": "oral_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": true,
+     "text_bn": "দুঃখ ভুলে সুখী হও,\nজেনো তুমি একা নও।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৪৯ শুনি-ও-বলি বাক্য হুবহু রক্ষিত (ঃ)।",
+     "style_profile": null,
+     "layout_hint": "teacher-read"
+    },
+    {
+     "id": "L034-b06",
+     "type": "oral_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": true,
+     "text_bn": "চাঁদ উঠেছে ওই আকাশে,\nচাঁদের সাথে খোকা হাসে।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৪৯ শুনি-ও-বলি বাক্য হুবহু রক্ষিত (ঁ)।",
+     "style_profile": null,
+     "layout_hint": "teacher-read"
+    },
+    {
+     "id": "L034-b07",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ছবি দেখি শব্দ বলি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L034-b08",
+     "type": "word_list",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ফড়িং\nদুঃখ\nহাঁস",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫০ ছবি-শব্দ হুবহু রক্ষিত (ফড়িং=ং, দুঃখ=ঃ, হাঁস=ঁ)। তিনটিই পাঠ-৩৪ ইনভেন্টরি-clean (ফড়িং-এর ড় পাঠ ৩৩-এ শেখানো)।",
+     "style_profile": null,
+     "layout_hint": "letter-keyword-showcase"
+    },
+    {
+     "id": "L034-b09",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "শুনি ও বলি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L034-b10",
+     "type": "oral_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": true,
+     "text_bn": "ফুলের বনে ফড়িং উড়ে বেড়ায়।\nসুখ ও দুঃখ মিলেই জীবন।\nহাঁস প্যাক প্যাক করে ডাকে।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৫০ শুনি-ও-বলি তিন লাইন হুবহু রক্ষিত (verbatim retain)। NOTE: 'সুখ ও দুঃখ মিলেই জীবন' — mild worldview line; NCTB-original, retained per user directive (সব টেক্সট রাখা), no action. রিভিউয়ার অবগতির জন্য (C-09 borderline, retained).",
+     "style_profile": null,
+     "layout_hint": "teacher-read"
+    },
+    {
+     "id": "L034-b11",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "পড়ি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L034-b12",
+     "type": "decodable_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ং\tঃ\tঁ",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "read-letters"
+    },
+    {
+     "id": "L034-b13",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "লিখি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L034-b14",
+     "type": "tracing_ref",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ং\nঃ\nঁ",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "tracing-rows"
+    }
+   ],
+   "image_slots": [
+    {
+     "id": "L034-img-01",
+     "scene_description": "ং-বর্ণ 'রং' (পৃষ্ঠা ৪৯) — objects-only: রঙের কৌটা/প্যালেট, তুলি ও একটি আঁকা ফুল-ফল ছবি। NCTB ছবিতে রঙিন ফুলের সাথে একটি পাখি আছে যা 'রং' শব্দের সাথে অপরিহার্য নয়; ব্যবহারকারীর নির্দেশে সেই আনুষঙ্গিক পাখি বাদ, শুধু রং-তুলি-ফুল object রাখা হলো।",
+     "image_class": "object",
+     "action": "substitute_objects",
+     "contains_living_being": false,
+     "compliance_note": "INCIDENTAL living being removed per user instruction — NCTB রং image includes a bird beside colourful flowers; the bird is dropped, keeping only paint pots, a brush, and a painted flower-and-fruit picture (colour = the key concept). No living being remains -> no stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a small open box of colourful paint pots with a paintbrush, beside a freshly painted picture of flowers and fruit on paper. No people, no animals, no birds, no living beings. Plain light background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L034-img-02",
+     "scene_description": "ঃ-বর্ণ 'দুঃখ' (পৃষ্ঠা ৪৯) — objects-only emotion cue: একটি নেতিয়ে-পড়া/শুকনো ফুল ও ঝিরিঝিরি বৃষ্টির মেঘ (বিষণ্ণতার প্রতীক)। NCTB ছবিতে একটি দুঃখী বালকের মুখ আছে; দুঃখ একটি বিমূর্ত অনুভূতি (ব্যক্তি নয়), তাই ব্যবহারকারীর নির্দেশে মানব-মুখ বাদ দিয়ে object-symbol রাখা হলো।",
+     "image_class": "object",
+     "action": "substitute_objects",
+     "contains_living_being": false,
+     "compliance_note": "HUMAN FIGURE replaced per user instruction — দুঃখ (sorrow) is an abstract feeling, not a person; the NCTB sad-boy face is incidental. Substituted with an object emotion cue (a single wilting/drooping flower under a small grey rain-cloud) that reads as 'sadness' without any figure. No living being -> no stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A gentle children's-textbook illustration symbolising sadness with objects only: a single drooping, wilting flower with a couple of falling petals, under a small grey rain-cloud with a few raindrops. No people, no animals, no faces, no living beings. Plain pale background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L034-img-03",
+     "scene_description": "ঁ-বর্ণ 'চাঁদ' (পৃষ্ঠা ৪৯) — objects-only: রাতের আকাশে একফালি বাঁকা চাঁদ ও কয়েকটি তারা। NCTB ছবিতে চাঁদের পাশে একটি শিশুর মুখ আছে যা 'চাঁদ' শব্দের সাথে অপরিহার্য নয়; ব্যবহারকারীর নির্দেশে মানব-মুখ বাদ, শুধু চাঁদ-তারা রাখা হলো।",
+     "image_class": "object",
+     "action": "substitute_objects",
+     "contains_living_being": false,
+     "compliance_note": "INCIDENTAL human face removed per user instruction — NCTB চাঁদ image pairs the crescent with a child's smiling face; the face is dropped, keeping only the crescent moon and a few stars in a night sky (চাঁদ = the key word). No living being -> no stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a slim crescent moon in a deep night sky with a few small twinkling stars around it. No people, no animals, no faces, no living beings. Dark night-sky background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L034-img-04",
+     "scene_description": "ং-দৃশ্য 'ফড়িং' (পৃষ্ঠা ৫০) — একটি ফড়িং (key-word subject; ব্যবহারকারীর নির্দেশে জীব-ফিগার রক্ষিত)। living_being=true → স্ট্রাইপ ট্রিটমেন্ট প্রযোজ্য।",
+     "image_class": "living_being",
+     "action": "generate_stripe",
+     "contains_living_being": true,
+     "compliance_note": "KEPT as living being per user instruction (ফড়িং IS the key word — a dragonfly). single insect, no human, no dress/cast. contains_living_being=true -> programmatic stripe applied OUTSIDE chat at image-ref step; keep the whole dragonfly body and wings clear of the stripe band so it stays recognizable. bw: native_safe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A friendly children's-textbook illustration of a single dragonfly with long slender body and four clear delicate wings, resting on a plain reed or shown in gentle flight. Just the one insect. No people, no other animals, no text. Plain white/pale background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L034-img-05",
+     "scene_description": "ঃ-দৃশ্য 'দুঃখ' (পৃষ্ঠা ৫০ পুনরাবৃত্তি) — img-02 এর অনুরূপ object emotion cue (শুকনো ফুল + বৃষ্টি-মেঘ); দুঃখী বালকের মুখ বাদ।",
+     "image_class": "object",
+     "action": "substitute_objects",
+     "contains_living_being": false,
+     "compliance_note": "Repeat of the দুঃখ key image on p.50; same object-emotion-cue treatment as img-02 (sad-boy face dropped, abstract feeling shown with a wilting flower + rain-cloud). No living being -> no stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A gentle children's-textbook illustration symbolising sadness with objects only: a single drooping, wilting flower with a couple of falling petals, under a small grey rain-cloud with a few raindrops. No people, no animals, no faces, no living beings. Plain pale background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L034-img-06",
+     "scene_description": "ঁ-দৃশ্য 'হাঁস' (পৃষ্ঠা ৫০) — একটি হাঁস (key-word subject; ব্যবহারকারীর নির্দেশে single duck রক্ষিত)। living_being=true → স্ট্রাইপ ট্রিটমেন্ট প্রযোজ্য।",
+     "image_class": "living_being",
+     "action": "generate_stripe",
+     "contains_living_being": true,
+     "compliance_note": "KEPT as living being per user instruction (হাঁস IS the key word — a duck; user specified SINGLE duck). one duck only, no human, no dress/cast. contains_living_being=true -> programmatic stripe applied OUTSIDE chat; keep the whole duck body clear of the stripe band. Separate NCTB duck-flock decorative scene is NOT this slot (dropped, see nctb_omitted). bw: native_safe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A friendly children's-textbook illustration of a single white duck standing in profile on plain ground beside a little water, its orange bill and webbed feet clearly shown. Just the one duck. No people, no other animals, no text. Plain pale background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L034-img-07",
+     "scene_description": "লিখি — ং, ঃ, ঁ ট্রেসিং রো, ভেক্টর অ্যাসেট থেকে রেন্ডার।",
+     "image_class": "tracing_asset",
+     "action": "vector_asset",
+     "contains_living_being": false,
+     "compliance_note": "letter-tracing rows rendered from vector assets at assembly; never AI-generated.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "",
+     "aspect": "wide",
+     "filename": null,
+     "status": "draft"
+    }
+   ],
+   "nctb_omitted": [
+    "পৃষ্ঠা ৪৯ নিচের আলংকারিক দৃশ্য: দুই শিশু মাটিতে বসে ছবি আঁকছে (children painting) — কোনো কি-বর্ণ/কি-শব্দের সাথে যুক্ত নয় (আনুষঙ্গিক decorative), এবং mixed/multi-figure। ব্যবহারকারীর নির্দেশে টেক্সট-অসংশ্লিষ্ট জীব-ফিগার সরানো হলো; কি-স্লট হিসেবে রাখা হয়নি। প্রয়োজনে render-tail-এ object-only আঁকার সরঞ্জাম (still life) হিসেবে রাখা যায় — রিভিউয়ারের সিদ্ধান্তের জন্য ফ্ল্যাগড।",
+    "পৃষ্ঠা ৫০ নিচের আলংকারিক দৃশ্য: একঝাঁক হাঁস (a flock of ducks) — আনুষঙ্গিক decorative crowd; ব্যবহারকারী শুধু SINGLE হাঁস রাখতে বলেছেন (img-06)। এই ঝাঁক-দৃশ্যটি বাদ দেওয়া হলো।"
+   ],
+   "bw_treatment": "native_safe",
+   "reviewer_signoff": {
+    "by": null,
+    "date": null,
+    "checklist_passed": false
+   },
+   "notes": "পাঠ ৩৪ বর্ণ শিখি ং ঃ ঁ (skeleton-locked). BORNO lesson — introduces ং (অনুস্বার), ঃ (বিসর্গ), ঁ (চন্দ্রবিন্দু) as special বর্ণ-level signs (cum_borno 47→50, per inventory). action=retain-curated, severity=S2 (raised to S2 because user chose to KEEP key-word living-being figures ফড়িং/হাঁস -> those slots contains_living_being=true -> stripe treatment). CODES inherit পাঠ 19 pattern: যোগ্যতা ১.১/১.২/৫.১/৯.১/১৩.১, শিখনফল ১.১.২/৫.১.১/৫.১.৪/১৩.১.১. C-05 (image living-being doctrine), C-01 (incidental/mixed figures dropped), C-06 (key words). USER DECISIONS: (1) ALL TEXT OK -> every couplet/sentence retained verbatim, no edits; (2) KEEP ফড়িং(img04) + SINGLE হাঁস(img06) as living beings (stripe); REPLACE every other living being with objects. IMAGE CLASSIFICATION: KEEP-as-living-being (stripe): ফড়িং(img04), হাঁস single(img06). SUBSTITUTE-to-object: রং bird->paint+flower(img01); দুঃখ sad-boy-face->wilting-flower+rain-cloud emotion cue(img02 & repeat img05); চাঁদ child-face->crescent+stars(img03). OMITTED decorative crowd scenes: children-painting p.49, duck-flock p.50 (nctb_omitted). Tracing=vector(img07). দুঃখ is abstract (feeling, not a person) -> face treated as incidental, replaced with object symbol per directive. LETTER-AUDIT: পাঠ 34 teaches ং/ঃ/ঁ; all key words (রং/দুঃখ/চাঁদ/ফড়িং/হাঁস) inventory-clean (ফড়িং-এর ড় taught পাঠ 33); all decodable blocks source:nctb (protected) or oral (exempt); block-level audit CLEAN. FLAGGED FOR REVIEWER: (a) 'সুখ ও দুঃখ মিলেই জীবন' mild worldview line retained verbatim per directive (C-09 borderline); (b) stripe placement on ফড়িং/হাঁস must keep the whole body clear of the band; (c) confirm দুঃখ object-emotion-cue substitution + dropped crowd scenes acceptable (done per directive). bw_treatment=native_safe."
+  }
+ ]
+}

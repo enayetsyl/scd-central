@@ -1,0 +1,359 @@
+{
+ "schema_version": "1.0",
+ "book_id": "C1-BAN",
+ "patch_id": "patch_C1-BAN_L033_CONTENT_v1",
+ "task": "CONTENT",
+ "lessons": [
+  {
+   "lesson_no": 33,
+   "nctb_title_bn": "বর্ণ শিখি : ড় ঢ় য় ৎ",
+   "nctb_pages": [
+    47,
+    48
+   ],
+   "genre": "বর্ণ শিক্ষা",
+   "competency_codes": [
+    "১.১",
+    "১.২",
+    "৫.১",
+    "৯.১",
+    "১৩.১"
+   ],
+   "outcome_codes": [
+    "১.১.২",
+    "৫.১.১",
+    "৫.১.৪",
+    "১৩.১.১"
+   ],
+   "action": "retain-curated",
+   "c_codes": [
+    "C-05",
+    "C-01",
+    "C-06"
+   ],
+   "severity": "S2",
+   "status": "content-draft",
+   "blocks": [
+    {
+     "id": "L033-b01",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "পাঠ ৩৩\nবর্ণ শিখি : ড় ঢ় য় ৎ",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "title"
+    },
+    {
+     "id": "L033-b02",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "শুনি ও বলি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L033-b03",
+     "type": "word_list",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ঝড়\nআষাঢ়\nময়না\nউৎসব",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৪৭ কি-শব্দ হুবহু রক্ষিত (ঝড়=ড়, আষাঢ়=ঢ়, ময়না=য়, উৎসব=ৎ)। চারটিই পাঠ-৩৩ ইনভেন্টরি-clean (ড়/ঢ়/য়/ৎ এই পাঠেই শেখানো হয়)।",
+     "style_profile": null,
+     "layout_hint": "letter-keyword-showcase"
+    },
+    {
+     "id": "L033-b04",
+     "type": "oral_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": true,
+     "text_bn": "ঝড় হলে লাগে ভয়।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৪৭ শুনি-ও-বলি বাক্য হুবহু রক্ষিত (ড়)।",
+     "style_profile": null,
+     "layout_hint": "teacher-read"
+    },
+    {
+     "id": "L033-b05",
+     "type": "oral_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": true,
+     "text_bn": "আষাঢ় মাসে বৃষ্টি হয়।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৪৭ শুনি-ও-বলি বাক্য হুবহু রক্ষিত (ঢ়)।",
+     "style_profile": null,
+     "layout_hint": "teacher-read"
+    },
+    {
+     "id": "L033-b06",
+     "type": "oral_text",
+     "source": "school",
+     "edited": true,
+     "oral": true,
+     "text_bn": "ময়না পাখি কথা বলে।",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": "EDIT of NCTB 'ময়না পাখি গান গায়।' — গান/music association removed (Principal-directed 2026-07-25); replaced with 'কথা বলে', which is the ময়না-র প্রকৃত বৈশিষ্ট্য (mynah mimics speech) and keeps the য়-বর্ণ key word 'ময়না' intact. oral → letter-audit exempt. FLAGGED FOR REVIEWER: NCTB wording changed, byline n/a (single line).",
+     "layout_hint": "teacher-read"
+    },
+    {
+     "id": "L033-b07",
+     "type": "oral_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": true,
+     "text_bn": "উৎসবে ঘর সাজায়।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৪৭ শুনি-ও-বলি বাক্য হুবহু রক্ষিত (ৎ)।",
+     "style_profile": null,
+     "layout_hint": "teacher-read"
+    },
+    {
+     "id": "L033-b08",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ছবি দেখি শব্দ বলি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L033-b09",
+     "type": "word_list",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ঘুড়ি\nআষাঢ়\nপায়রা\nশরৎ",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৪৮ ছবি-শব্দ হুবহু রক্ষিত (ঘুড়ি=ড়, আষাঢ়=ঢ়, পায়রা=য়, শরৎ=ৎ)। চারটিই পাঠ-৩৩ ইনভেন্টরি-clean।",
+     "style_profile": null,
+     "layout_hint": "letter-keyword-showcase"
+    },
+    {
+     "id": "L033-b10",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "শুনি ও বলি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L033-b11",
+     "type": "oral_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": true,
+     "text_bn": "আমার ঘুড়ির রং লাল।\nআষাঢ় মাসে বৃষ্টি হয়।\nপায়রা ডাকে বাক বাকুম।\nশরৎকালে কাশফুল ফোটে।",
+     "text_en": null,
+     "source_note": "NCTB পৃষ্ঠা ৪৮ শুনি-ও-বলি চার লাইন হুবহু রক্ষিত (verbatim retain)।",
+     "style_profile": null,
+     "layout_hint": "teacher-read"
+    },
+    {
+     "id": "L033-b12",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "পড়ি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L033-b13",
+     "type": "decodable_text",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ড়\tঢ়\tয়\tৎ",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "read-letters"
+    },
+    {
+     "id": "L033-b14",
+     "type": "heading",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "লিখি",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "section-label"
+    },
+    {
+     "id": "L033-b15",
+     "type": "tracing_ref",
+     "source": "nctb",
+     "edited": false,
+     "oral": false,
+     "text_bn": "ড়\nঢ়\nয়\nৎ",
+     "text_en": null,
+     "source_note": null,
+     "style_profile": null,
+     "layout_hint": "tracing-rows"
+    }
+   ],
+   "image_slots": [
+    {
+     "id": "L033-img-01",
+     "scene_description": "ড়-বর্ণ 'ঝড়' — objects-only: ঝোড়ো হাওয়ায় বেঁকে যাওয়া গাছপালা, কালো মেঘ (NCTB-অনুরূপ; কোনো জীব নেই)।",
+     "image_class": "object",
+     "action": "substitute_objects",
+     "contains_living_being": false,
+     "compliance_note": "object-only — storm scene: wind-bent trees and dark clouds, no living being. No stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a storm scene: trees and bushes bending in strong wind under heavy dark clouds, a few leaves blowing. No people, no animals, no living beings. Muted stormy background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L033-img-02",
+     "scene_description": "ঢ়-বর্ণ 'আষাঢ়' — objects-only: বর্ষার আকাশে ঘন কালো মেঘ ও বৃষ্টি, জলের উপর একটি খালি নৌকা। NCTB ছবিতে নৌকায় একজন মাঝি আছে যা 'আষাঢ়' (মাস) শব্দের সাথে সম্পর্কিত নয়; ব্যবহারকারীর নির্দেশে সেই আনুষঙ্গিক মানুষ বাদ, শুধু বর্ষা-নৌকা দৃশ্য রাখা হলো।",
+     "image_class": "object",
+     "action": "substitute_objects",
+     "contains_living_being": false,
+     "compliance_note": "INCIDENTAL living being removed per user instruction — NCTB আষাঢ় image shows a boatman not required by the word 'আষাঢ়' (the month/monsoon); the person is dropped, keeping only the rain-clouds-and-empty-boat scene. No living being remains → no stripe. C-01 (lone figure moot once dropped).",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a monsoon scene: heavy dark rain clouds pouring rain over calm water, with a single empty small wooden boat floating on the water. No people, no animals, no living beings. Rainy grey background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L033-img-03",
+     "scene_description": "য়-বর্ণ 'ময়না' — একটি ময়না পাখি (key-word subject; ব্যবহারকারীর নির্দেশে জীব-ফিগার রক্ষিত)। living_being=true → স্ট্রাইপ ট্রিটমেন্ট প্রযোজ্য।",
+     "image_class": "living_being",
+     "action": "generate_stripe",
+     "contains_living_being": true,
+     "compliance_note": "KEPT as living being per user instruction (ময়না IS the key word — a mynah bird). single bird, no human, no dress/cast. contains_living_being=true → programmatic stripe applied OUTSIDE chat at image-ref step; keep the whole bird body clear of the stripe band so the mynah stays recognizable. bw: native_safe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A friendly children's-textbook illustration of a single mynah bird (dark plumage with a small yellow patch around the eye and yellow legs) standing in profile on a plain branch. Just the one bird. No people, no other animals, no text. Plain white/pale background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L033-img-04",
+     "scene_description": "ৎ-বর্ণ 'উৎসব' — objects-only: রঙিন কাগজের নিশান ও পতাকায় সাজানো একটি উৎসব-ঘর/মণ্ডপ (NCTB-অনুরূপ; কোনো জীব নেই)।",
+     "image_class": "object",
+     "action": "keep_nctb_style",
+     "contains_living_being": false,
+     "compliance_note": "object-only — a festively decorated house/pavilion with paper flags and bunting, no living being. No stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a small festively decorated pavilion or house strung with rows of colourful paper flags and bunting, ready for a celebration. No people, no animals, no living beings. Plain light background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L033-img-05",
+     "scene_description": "ড়-দৃশ্য 'ঘুড়ি' (পৃষ্ঠা ৪৮) — objects-only: একটি রঙিন ঘুড়ি ও তার লেজ (NCTB-অনুরূপ; কোনো জীব নেই)।",
+     "image_class": "object",
+     "action": "keep_nctb_style",
+     "contains_living_being": false,
+     "compliance_note": "object-only — a single kite with a tail, no living being. No stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a single colourful diamond-shaped kite with a curling tail, seen against a plain sky. No people, no animals, no living beings. Plain pale-sky background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L033-img-06",
+     "scene_description": "ঢ়-দৃশ্য 'আষাঢ়' (পৃষ্ঠা ৪৮ পুনরাবৃত্তি) — img-02 এর অনুরূপ বর্ষা-নৌকা দৃশ্য (আনুষঙ্গিক মাঝি বাদ)।",
+     "image_class": "object",
+     "action": "substitute_objects",
+     "contains_living_being": false,
+     "compliance_note": "Repeat of the আষাঢ় monsoon key image on p.48; same objects-only rain-boat treatment as img-02 (incidental boatman dropped). No living being → no stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of a monsoon scene: heavy dark rain clouds pouring rain over calm water, with a single empty small wooden boat floating on the water. No people, no animals, no living beings. Rainy grey background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L033-img-07",
+     "scene_description": "য়-দৃশ্য 'পায়রা' (পৃষ্ঠা ৪৮) — পায়রা/কবুতর (key-word subject; ব্যবহারকারীর নির্দেশে জীব-ফিগার রক্ষিত)। living_being=true → স্ট্রাইপ ট্রিটমেন্ট প্রযোজ্য।",
+     "image_class": "living_being",
+     "action": "generate_stripe",
+     "contains_living_being": true,
+     "compliance_note": "KEPT as living being per user instruction (পায়রা IS the key word — pigeon/dove). one or two pigeons, no human, no dress/cast. contains_living_being=true → programmatic stripe applied OUTSIDE chat; keep the birds' bodies clear of the stripe band. bw: native_safe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A friendly children's-textbook illustration of one or two white pigeons standing on plain ground, wings folded, shown clearly in profile. Just the bird(s). No people, no other animals, no text. Plain pale background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L033-img-08",
+     "scene_description": "ৎ-দৃশ্য 'শরৎ' (পৃষ্ঠা ৪৮) — objects-only: শরৎকালের কাশফুল ও নীল আকাশ। NCTB ছবিতে কাশবনের সাথে বক/সাদা পাখি আছে যা 'শরৎ' (ঋতু) শব্দের সাথে অপরিহার্য নয়; ব্যবহারকারীর নির্দেশে সেই আনুষঙ্গিক পাখি বাদ, শুধু কাশফুল রাখা হলো।",
+     "image_class": "object",
+     "action": "substitute_objects",
+     "contains_living_being": false,
+     "compliance_note": "INCIDENTAL living beings removed per user instruction — NCTB শরৎ image includes egrets/white birds not required by the word 'শরৎ' (autumn); the birds are dropped, keeping only the white kaash-flower (কাশফুল) field under a blue autumn sky. No living being remains → no stripe.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "A children's-textbook illustration of an autumn (sharat) scene: a field of white feathery kaash flowers swaying under a clear blue sky with soft white clouds. No people, no animals, no birds, no living beings. Plain sky background. Soft watercolour style, clean clear linework. High contrast for black-and-white photocopy legibility.",
+     "aspect": "4:3",
+     "filename": null,
+     "status": "draft"
+    },
+    {
+     "id": "L033-img-09",
+     "scene_description": "লিখি — ড়, ঢ়, য়, ৎ ট্রেসিং রো, ভেক্টর অ্যাসেট থেকে রেন্ডার।",
+     "image_class": "tracing_asset",
+     "action": "vector_asset",
+     "contains_living_being": false,
+     "compliance_note": "letter-tracing rows rendered from vector assets at assembly; never AI-generated.",
+     "photocopy_safe": true,
+     "refs": [],
+     "prompt": "",
+     "aspect": "wide",
+     "filename": null,
+     "status": "draft"
+    }
+   ],
+   "nctb_omitted": [
+    "পৃষ্ঠা ৪৭ নিচের বড়ো আলংকারিক দৃশ্য: নিশান-পতাকায় সাজানো উৎসব-মণ্ডপ — উৎসব কি-দৃশ্যের সাথে সমার্থক, তাই img-04 হিসেবেই ধরা হয়েছে (আলাদা করে বাদ নয়; object-only)।",
+    "পৃষ্ঠা ৪৭/৪৮ আষাঢ় নৌকার মাঝি এবং পৃষ্ঠা ৪৮ শরৎ কাশবনের বক — টেক্সট-অসংশ্লিষ্ট আনুষঙ্গিক জীব-ফিগার; ব্যবহারকারীর নির্দেশে object-only দৃশ্যে (img-02/06 নৌকা, img-08 কাশফুল) প্রতিস্থাপিত।"
+   ],
+   "bw_treatment": "native_safe",
+   "reviewer_signoff": {
+    "by": null,
+    "date": null,
+    "checklist_passed": false
+   },
+   "notes": "পাঠ ৩৩ বর্ণ শিখি ড় ঢ় য় ৎ (skeleton-locked). BORNO lesson — introduces ড়, ঢ়, য়, ৎ (cum_borno 43→47). action=retain-curated, severity=S2 (raised to S2 because user chose to KEEP key-word living-being figures ময়না/পায়রা → those slots contains_living_being=true → stripe treatment). CODES inherit পাঠ 19 pattern: যোগ্যতা ১.১/১.২/৫.১/৯.১/১৩.১, শিখনফল ১.১.২/৫.১.১/৫.১.৪/১৩.১.১. C-05 (image living-being doctrine), C-01 (incidental lone boatman dropped), C-06 (key words). USER DECISIONS: (1) EDIT ময়না oral line 'গান গায়'→'কথা বলে' (music association removed, mynah's real speech-mimicry trait kept) — b06 source:school edited:true oral:true, FLAGGED FOR REVIEWER; (2) replace living-being images NOT tied to the text (incidental) → object, KEEP living beings that ARE the key word. IMAGE CLASSIFICATION: KEEP-as-living-being (key-word subjects, stripe): ময়না(img03), পায়রা(img07). SUBSTITUTE-to-object (incidental beings dropped): আষাঢ় boatman→rain+empty-boat(img02/06), শরৎ egrets→kaash-flowers-only(img08). Objects unchanged: ঝড় storm(img01), উৎসব pavilion(img04), ঘুড়ি kite(img05). Tracing=vector(img09). LETTER-AUDIT: পাঠ 33 teaches 47 বর্ণ (adds ড়/ঢ়/য়/ৎ) + same 10 kar; all key words (ঝড়/আষাঢ়/ময়না/উৎসব/ঘুড়ি/পায়রা/শরৎ) now inventory-clean, all decodable blocks source:nctb (protected) or oral (exempt). NOTE: bare nukta ় (U+09BC) in ড়/ঢ়/য় triggers a naive per-char audit false-positive; block-level audit (nctb/oral gates) returns CLEAN — the real merge path. FLAGGED FOR REVIEWER: (a) ময়না wording change from NCTB; (b) স্ট্রাইপ placement on ময়না/পায়রা must keep the whole bird body clear of the band; (c) confirm dropping আষাঢ় boatman + শরৎ birds is acceptable (done per directive). bw_treatment=native_safe."
+  }
+ ]
+}
