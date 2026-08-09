@@ -115,11 +115,20 @@ reader-facing text. The WATCH counter stays on **for one term** as a monitor, th
 reviewed and the counter either retired or promoted. (Term-end date comes from
 `canon/school-facts/SCHOOL_FACTS.md` once the Principal completes it.)
 
-⚠️ **Domain of this section is under ruling — PENDING-P-004.** The tiers are field-typed
-(`text_bn` / `text_en` / titles vs metadata), which are support-book **JSON** fields; that
-taxonomy has no meaning in a markdown file. Until ruled, the guard is applied to **Hub-bound
-JSON payload strings only**. Markdown canon and reader files are unaffected — which is why
-`MarkLogic_Rules.md`'s teacher-facing legend glyphs (🔴 🟦 ★ ↑ ↓) stand.
+### What the guard governs (CD-018)
+
+**Strings that enter a mechanical render path.** Today that means Hub-bound JSON payloads and
+support-book JSONs. It **extends automatically to any new path — a docx generator, a print
+pipeline — the moment that path is vendored.**
+
+**Human-read markdown is out of scope.** Canon files, teacher-facing tables and legend notation
+(🔴 🟦 ★ ↑ ↓) are unaffected: editors and GitHub display them correctly, and there is no tofu
+risk where no renderer runs.
+
+**Each render path proves its own glyph set empirically.** A path's smoke test establishes what
+actually survives it, and that result is recorded in that path's `SMOKE.md` — not assumed here.
+If a glyph does not survive a path, the finding constrains the templates that feed that path;
+it is **not** a change to this section.
 
 Codepoint ranges, taken from the validator rather than restated from memory:
 

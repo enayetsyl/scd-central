@@ -128,11 +128,9 @@ The gate is protocol, not just practice.
 - **WATCH counter review** — em-dash/ellipsis counter runs for one term, then is retired or
   promoted (CD-012). **Date now fixed: mid-December 2026**, at annual-exam close
   (`SCHOOL_FACTS.md` v1.0, CD-017).
-- **PENDING-P-004 (OPEN)** — does the script guard apply to markdown canon/reader files, or only
-  to Hub-bound JSON payload strings? Field-typed tiers have no meaning in a .md file, and canon
-  already carries tier-2 legend glyphs deliberately. Default meanwhile: JSON payload strings only.
-  **Bears directly on the render smoke test** — do not assert §7 conformance on .docx output
-  until this is ruled.
+- ~~PENDING-P-004~~ — RULED 2026-08-09 → **CD-018**. Guard governs strings entering a mechanical
+  render path; **extends to the docx path automatically once `tools/render/` is vendored**;
+  human-read markdown is out of scope. **The PENDING-P queue is empty again.**
 
 ## Next step — `tools/render/` (item 2)
 
@@ -145,9 +143,21 @@ Two things to get right for `render/`:
 1. **Fonts are binary.** Keep them in Git (small, stable) but they are already excluded from
    agent auto-read by `.claudeignore` (`tools/render/fonts/`). Add MANIFEST rows once filenames
    are known.
-2. **The smoke test is a real render**, not a `--help`. Render an actual class test to .docx and
-   confirm Bengali numerals per `LANGUAGE_RULES` §2 and the script guard per §7. A renderer that
-   loads but produces tofu is exactly the failure UP-001 warns about.
+2. **The smoke test is a real render**, not a `--help`, and under **CD-018** it is also how this
+   path's proven glyph set is established. The smoke document must carry, in one render:
+
+   - Bengali numerals (০–৯) per `LANGUAGE_RULES` §2
+   - the legend glyphs **🔴 🟦 ★ ↑ ↓**
+   - an **em-dash** (—) and an ellipsis (…), the tier-3 WATCH characters
+   - Bengali conjuncts (যুক্তবর্ণ) and কারচিহ্ন, which are the real Nikosh/Noto shaping risk
+
+   Record in `render/SMOKE.md` **what survives the full docx → LibreOffice → pdftoppm chain**,
+   verified on the rasterised page, not in the .docx XML. A renderer that loads but produces
+   tofu is exactly the failure UP-001 warns about.
+
+   **If the legend glyphs tofu in that chain, CT templates must not carry them. That is a
+   finding to report — not a canon change** (CD-018). `LANGUAGE_RULES` §7 stays as written; the
+   constraint lands on the templates feeding this path.
 3. **Optional but valuable while the fonts are in hand:** CD-014 lifts tier 1 per render path on
    an executed Arabic-shaping proof. If Noto/Nikosh shape Arabic correctly through this docx
    path, that test can be run now and logged in `render/SMOKE.md` — it is the only thing standing

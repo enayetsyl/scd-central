@@ -153,3 +153,25 @@ One block per agent session, appended at "save state and sync". Format:
   the guard applies to **Hub-bound JSON payload strings only**. **This bears on the render smoke
   test** — §7 conformance must not be asserted on .docx output until it is ruled. Both
   SCHOOL_FACTS load-bearing lines are now live: WATCH review dated **mid-December 2026**.
+
+## 2026-08-09 · canon/language (guard scope) · Principal · cowork
+- Did: Rewrote `LANGUAGE_RULES.md` §7's domain note from an open question into a settled scope
+  principle, and wrote the render smoke-test spec into `tools/_wip/STATE.md`.
+- Decisions logged: **CD-018** — the script guard governs **strings that enter a mechanical
+  render path** (today Hub-bound JSON payloads and support-book JSONs), and **extends
+  automatically to any new path when that path is vendored** — so vendoring `tools/render/`
+  pulls the docx path under it with no further ruling. **Human-read markdown is out of scope**:
+  canon files, teacher-facing tables and legend notation (🔴 🟦 ★ ↑ ↓) stand, since editors and
+  GitHub display them and no tofu risk exists where no renderer runs. **Each render path proves
+  its own glyph set empirically**, recorded in that path's `SMOKE.md`. If the legend glyphs tofu
+  in the docx chain, **CT templates must not carry them — a finding to report, not a canon
+  change.** PENDING-P-004 closed.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 3 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 5 warn)**.
+- Open items / PENDING-P raised: none. **Queue empty — 0 OPEN.** The `tools/render/` smoke
+  document is now specified: Bengali numerals, the legend glyphs, em-dash and ellipsis, plus
+  **যুক্তবর্ণ and কারচিহ্ন** — added because conjuncts and combining vowel signs are the real
+  Nikosh/Noto shaping risk and a font can pass every named glyph while breaking হ্ম or ৌ.
+  Evidence must come from the **rasterised pdftoppm page, not the .docx XML**: a correct
+  codepoint in the XML can still render as a box, which is precisely what this test exists to
+  catch. Carried: **UP-001** (upstream), **WATCH review** mid-December 2026.
