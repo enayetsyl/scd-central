@@ -548,3 +548,23 @@ One block per agent session, appended at "save state and sync". Format:
   **FLAG-TRACE** gate that requires every flag to resolve to a real, non-OPEN queue row — a flag
   pointing at nothing is worse than no flag, because it looks handled. **Wave 2 not started, by
   instruction;** HW 70 · AS 35 · CT 18 remain owed, with named starting targets in `_wip/STATE.md`.
+
+## 2026-08-09 · question-banks (PENDING-P-005 close attempt — BLOCKED on a missing file) · Principal · cowork
+- Did: Received the instruction to close PENDING-P-005 on REF-19 v1.10 and commit REF-19 into
+  `canon/`. **Checked at source first and did not execute it.** Logged **QB-CR-007**; annotated the
+  P-005 queue row with the failed attempt so the next session does not repeat it.
+- Decisions logged: none — no ruling can be recorded on citations that do not resolve.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 1 warn)**.
+- Open items: **PENDING-P-005 stays FLAGGED — still blocking nothing.** Two of the ruling's three
+  citations do not resolve here. **(a) REF-19 v1.10 is absent** from `_inbox/` and from the whole
+  repo under any REF-19/topic/registry/slug filename; the only files touched in the preceding two
+  hours are ones this session wrote — **CD-026 recurring, and the exact failure SOURCE_POLICY §2.1
+  warns about, since `_inbox/` is gitignored and therefore per-machine.** **(b) `D-PROJ04-003` and
+  `D-PROJ04-011` are cited nowhere in this repo** — the P04 register was never imported; only
+  D-PROJ04-001/002/005/014/015 appear anywhere, all as citations inside the vendored schemas.
+  **(c) The slugs-only half DOES corroborate** from a derived copy — `validate_import.py`'s inlined
+  `REF19_SLUGS_DEFAULT` (auto-extracted from LOCKED_REF-19 v1.10) holds 121 slugs, 24 BAN, **none
+  with a numeric suffix**, and the LOCKED question schema confirms `topic_tag` is pattern-only with
+  numbers coming from the revision chart + REF-19 — **but CD-011 forbids writing such a registry
+  from a summary or derived copy**, so canon was not synthesised from a harness constant.
+  **Nothing closed, nothing committed to `canon/`, `TOP-BAN-C5-02` unchanged.**
