@@ -1,0 +1,36 @@
+D-PROJ03-047 — C2 MATH U05 Chapter Plan: classification and outcome
+2026-08-09
+
+CLASSIFICATION: PRE-OVERRIDE
+  footer keys present: tg_baseline, session_count, objective_source, curation_source,
+      flagged_elements, homework_pool, session_plan_family, textbook, chapter_bloom_band
+  footer.version_log .................. ABSENT
+  occurrences of "2026-07-26" in JSON . 0
+  occurrences of "override"/"OVERRIDE"  0
+  file date ........................... 2026-06-21 (five weeks before the override)
+  The OVERRIDE record states the post-override set is "disambiguated only by a
+  footer.version_log row". No such row -> these are the PRE-override bytes.
+
+RECONSTRUCTION TEST: FAILED — the record does not specify the change
+  Every mention of D-PROJ03-OVERRIDE-2026-07-26 across the quartet and the three
+  handoffs states only THAT the plan was corrected in place with no version bump, and
+  HOW the two byte-sets are distinguished. NONE states WHAT content changed.
+  There is no delta to apply, so the post-override content cannot be reconstructed.
+
+OUTCOME (Principal's PRE-override branch, second horn)
+  - These bytes archived as the pre-override v2 -> plans/chapter/archive/
+  - Post-override bytes: RECORDED AS LOST (no archive claimed that does not exist)
+  - No v3 cut; nothing new entered the proof chain
+  - D-047 parked with what survives
+
+ARCHIVE INTEGRITY (the surviving artifact is sound)
+  validate_plan.py .................... RESULT: PASS (0 warn)
+  re-render vs archived .md ........... differs on exactly 1 line of 168
+     L166 archived: "... render_plan.py (D-PROJ03-034-patched; build-from-JSON; ...)"
+     L166 current : "... render_plan.py (build-from-JSON; ...)"
+     Identical on all 167 other lines.
+  This is a RENDERER-GENERATION difference, not content drift: the archived .md was
+  produced by an older render_plan.py that stamped "D-PROJ03-034-patched" into its own
+  provenance line; the current vendored renderer no longer emits it. The archive is
+  faithful. It also dates the artifact to a renderer generation, which is useful
+  provenance in its own right.

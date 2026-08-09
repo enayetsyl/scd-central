@@ -402,3 +402,20 @@ One block per agent session, appended at "save state and sync". Format:
   exist** — the ruling itself warned against exactly that. On import the sequence is: cut v3 →
   archive-or-declare-lost the pre-override set → run v3 through the full chain. **B-LP.1c**
   remains the one open brief awaiting a ruling.
+
+## 2026-08-09 · lesson-plans (D-047 executed) · Principal · cowork
+- Did: Classified the surviving C2 MATH U05 copy, archived it, recorded the counterpart lost, and
+  parked D-PROJ03-047. Verified archive integrity. Wrote
+  `reports/D047_CLASSIFICATION_2026-08-09.txt`.
+- Decisions logged: **CD-033** — classification, the failed reconstruction test, and the outcome.
+- Gates run + result: archive integrity — `validate_plan` **PASS (0 warn)**; re-render differs on
+  **exactly one line of 168**, the renderer's own provenance stamp. `canon_check.py` →
+  **CLEAN (0 fail, 1 warn)**; `tools_check.py` → **CLEAN (0 fail, 4 warn)**. No chain run for a v3
+  — no v3 was cut.
+- Open items / PENDING-P raised: **Q-7** — **D-049 is cited throughout P03 but belongs to the
+  master D-series (D-001–D-051), and that register is not in this repo**, so no master citation is
+  resolvable here. Not a P03 reconstruction candidate; a missing-register gap one level up.
+  Outcome of D-047: the surviving bytes are **pre-override** (`footer.version_log` absent, dated
+  2026-06-21, zero occurrences of the override date), and **the record nowhere states what the
+  override changed** — so the post-override bytes are **recorded lost**, no v3 cut, nothing
+  fabricated. **B-LP.1c** remains the last open brief.

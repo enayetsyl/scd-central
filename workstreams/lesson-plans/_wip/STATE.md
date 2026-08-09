@@ -58,7 +58,24 @@ They close at Step 4b / question-banks, not here.
 | OVERRIDE | **Ruled → D-PROJ03-047 / CD-032. Execution OWED — neither byte-set is in this repo** |
 | B-LP.1c | Brief given; awaiting ruling |
 
-### ⛔ D-PROJ03-047 cannot be executed here
+### ✅ D-PROJ03-047 EXECUTED 2026-08-09 — parked, post-override bytes lost
+
+The surviving copy arrived and was **classified, not assumed**: `footer.version_log` **absent**,
+dated 2026-06-21, zero occurrences of the override date → **pre-override bytes**. Archived to
+`plans/chapter/archive/`.
+
+**Reconstruction test failed.** Every mention of the override across the quartet and the three
+handoffs states only *that* it happened in place with no version bump, and *how* the byte-sets are
+distinguished — **none states what content changed.** No delta to apply, so the **post-override
+bytes are recorded as LOST**. No v3 cut; nothing entered the proof chain.
+
+Archive integrity verified: `validate_plan` PASS (0 warn); re-render differs on **exactly one line
+of 168** — the renderer's own provenance stamp — a renderer-generation difference, not content
+drift. Evidence: `reports/D047_CLASSIFICATION_2026-08-09.txt`.
+
+⚑ **New batched question Q-7 (D-049 / master D-series)** — see below.
+
+### Superseded — the earlier blocked note
 
 The ruling is binding and recorded: re-issue the post-override bytes as **v3**, retire the name
 **v2** as ambiguous, archive the pre-override bytes **if they survive** or record them **lost**
@@ -79,6 +96,17 @@ All four plan artifacts are now proven end-to-end.
 
 ~~**Q-1 — register**~~ · ~~**Q-4 — U20 newline**~~ · ~~**Q-5 — D-038 sweep**~~ ·
 ~~**Q-6 — companion JSON**~~ → all ruled 2026-08-09, **CD-031**. Original text kept below.
+
+**[Principal] Q-7 — D-049 is cited everywhere but its register is not in this repo.**
+The C2 MATH U05 footer cites **D-049** (ব্ল্যাকবোর্ড p110 → whiteboard), and the quartet cites it
+repeatedly — "never slate/chalk → positive D-049 §1.7", a "D-049 prep-item fix" at C1 BAN U25, a
+"D-049-vs-geometry-instrument ruling owed". **It is NOT a D-PROJ03 row** (0 matches in the local
+register) and correctly so: the quartet's own range statements — *"range unchanged (D-001–D-050)"*,
+*"(D-001–D-051)"* — place D-049 in the **master D-series**. **But the master register is not in
+`scd-central` at all**, so no citation to D-001…D-051 can be resolved here, and D-049's body cannot
+be verified. This is not a P03 reconstruction candidate; it is a **missing-register provenance
+gap** one level up. Import the master D-series, or rule that P03 may cite it unresolvable?
+*Default:* cited as-is, unverifiable, flagged here.
 
 **[Principal] Q-1 — the decision register cannot safely be continued.** The body ends at
 **D-PROJ03-042**. **043 and 044 are cited as applied** in README v1.47, TODO v1.46 and MANIFEST
