@@ -15,10 +15,15 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-OUT = ROOT / "workstreams/question-banks/_wip/C5_BAN_U21_QuestionBank_v1.json"
+OUT = ROOT / "workstreams/question-banks/banks/C5_BAN_U21_QuestionBank_v1.json"
 
 TOP_INFO, TOP_VOCAB, TOP_SENT, TOP_PUNCT = (
-    "TOP-BAN-C5-07", "TOP-BAN-C5-01", "TOP-BAN-C5-02", "TOP-BAN-C5-11")
+    "TOP-BAN-C5-07", "TOP-BAN-C5-01", "TOP-BAN-C5-02", "TOP-BAN-C5-13")
+# TOP_PUNCT was TOP-BAN-C5-11 until 2026-08-09. That was wrong: D-PROJ04-011 attests -11 as
+# মূল্যবোধ/মুক্ত-চিন্তা. The number had been read off MarkLogic spine slot S11 = বিরামচিহ্ন — a
+# different scheme that collides at 11. TOP-BAN-C5-13 was minted for বিরামচিহ্ন/যতিচিহ্ন at CD-044
+# and is charted in canon/topics/TOPIC_NUMBERS.md. ref19_topic_id stays BAN-SENTENCE: REF-19 v1.10
+# carries no Bangla punctuation slug, and the harness hard-validates that field against REF-19.
 
 Q, POOLS, SLOTS, SRCS = [], {"HW": [], "AS": [], "CT": []}, {}, {}
 _n = 0
@@ -392,16 +397,18 @@ bank = {
     # The ⚑ flag travels WITH the artifact, not merely near it — a downstream reader sees the
     # unverified topic tag without having to open the corrections ledger (QB-D-009, CD-042).
     "flags": [{
-        "tag": "PENDING-P-007",
-        "status": "OPEN",
-        "scope": "QP-BAN-C5-U21-Q52 — the বিরামচিহ্ন fill_blank item, tagged TOP-BAN-C5-11",
-        "what": "PROJECT04_DECISIONS.md D-PROJ04-011 attests TOP-BAN-C5-11 = মূল্যবোধ/মুক্ত-চিন্তা, "
-                "not punctuation. The tag was inferred from MarkLogic spine slot S11 = বিরামচিহ্ন; "
-                "the S-slot and TOP- schemes are unrelated and collide at 11 by coincidence. "
-                "No number is attested for বিরামচিহ্ন anywhere in the register.",
-        "closes_on": "a Principal ruling on which TOP- number a punctuation item carries "
-                     "(agent recommendation: mint TOP-BAN-C5-13)",
-        "do_not": "export this bank to the Hub, or substitute a guessed tag, while this stands",
+        "tag": "PENDING-P-008",
+        "status": "FLAGGED",
+        "scope": f"the {len([q for q in Q if q['topic_tag'] == TOP_PUNCT])} item on TOP-BAN-C5-13, "
+                 f"and every topic number in this bank",
+        "what": "canon/topics/TOPIC_NUMBERS.md is a SEED covering C5 Bangla only. The authoritative "
+                "TOP-<SUBJ>-C<n>-## chart owed to REF-07 §3.5 does not exist yet, and REF-19 v1.10 "
+                "carries no Bangla punctuation slug — so TOP-BAN-C5-13 has a number and no slug of "
+                "its own, and its item keeps ref19_topic_id BAN-SENTENCE.",
+        "closes_on": "the chart complete for all subjects in canon/topics/TOPIC_NUMBERS.md, plus a "
+                     "REF-19 supersede authored at Project 00 adding a punctuation slug",
+        "do_not": "add a topic number that is not a row in canon/topics/TOPIC_NUMBERS.md, and do "
+                  "not edit REF-19 — it is LOCKED and supersede-only",
     }],
     "pool_index": POOLS,
     "slot_index": SLOTS,

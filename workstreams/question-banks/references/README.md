@@ -25,10 +25,16 @@ number *means*. Attestations verified at source on import (CD-043):
 | `TOP-BAN-C5-02` | বাক্য-রচনা | D-PROJ04-011; also carried for U14 at D-PROJ04-003 |
 | `TOP-BAN-C5-05` | Poem / মূলভাব | D-PROJ04-003, -011, -012 |
 | `TOP-BAN-C5-06` | Story | D-PROJ04-003 |
-| `TOP-BAN-C5-07` | `BAN-INFOTEXT` | D-PROJ04-013 |
+| `TOP-BAN-C5-07` | `BAN-INFOTEXT` | D-PROJ04-010 |
 | `TOP-BAN-C5-09` | Drama | D-PROJ04-003 |
 | `TOP-BAN-C5-11` | **মূল্যবোধ / মুক্ত-চিন্তা** | D-PROJ04-011 |
 | `TOP-BAN-C5-12` | PROTECTED strand (rubric-only) | D-PROJ04-003 |
 
-**No number is attested for বিরামচিহ্ন / punctuation anywhere in this register.** That gap is
-`PENDING-P-007`.
+**No number is attested for বিরামচিহ্ন / punctuation anywhere in this register.** PENDING-P-007 is
+now **RULED** — `TOP-BAN-C5-13` was minted for it at **CD-044**, and the chart lives at
+`canon/topics/TOPIC_NUMBERS.md`, which is canon and gate-enforced. Read the chart, not this table:
+this one is a reading aid for the register, the chart is the authority.
+
+⚠️ This register also carries its own **unresolved flag**: the U14 (কুপোকাত) **Drama→Story re-home**
+is pending a Principal ruling — REF-03 maps U14 to Drama `-09`, D-PROJ04-003 tagged it Story `-06`.
+Both numbers are attested; which one U14 carries is not settled.

@@ -19,7 +19,7 @@ workstream starts from the policy and the pilot, not from a legacy file set.
 
 ## Decision series
 
-**`QB-D-###`** · log: `DECISIONS.md` in this folder · current highest: **QB-D-010**.
+**`QB-D-###`** · log: `DECISIONS.md` in this folder · current highest: **QB-D-012**.
 The agent assigns the next free number itself, verified at source (AGENTS.md §4).
 
 ## Canon citations used
@@ -46,7 +46,7 @@ Cite, never copy (AGENTS.md §8).
 
 | Artifact | Path | Naming |
 |---|---|---|
-| Bank (source of record) | `_wip/` while building → `banks/` on "done" (currently **back in `_wip/`**, QB-D-010) | `C<n>_<SUBJ>_U<unit>_QuestionBank_v<v>.json` |
+| Bank (source of record) | `_wip/` while building → **`banks/`** on "done" | `C<n>_<SUBJ>_U<unit>_QuestionBank_v<v>.json` |
 | Authoring script | **`authoring/`** | `author_U<unit>_wave<n>.py` |
 | Built envelopes | **`banks/envelopes/`** (+ `single/` per item) | `<bank stem>.envelopes.json` |
 | Gate reports | `reports/` | `<subject>_U<unit>_GATES_<date>.txt` |
@@ -97,7 +97,9 @@ not the pool (POLICY §3, UP-002). `build_question_envelopes.py` ignores `pool_i
    `why_wrong` on every distractor; non-empty answer keys; rubric bands one-to-one with marks.
 8. **RUBRIC-SPECIFICITY** — no two S08 items share a content rubric.
 9. **QUOTE-VERBATIM** — every quoted span exists verbatim in the extraction (KEEP-AS-IS).
-9a. **FLAG-TRACE** — every ⚑ flag in the bank resolves in `PENDING_PRINCIPAL.md` and is not OPEN.
+9a. **TOPIC-NUMBER** — every `topic_tag` is a row in `canon/topics/TOPIC_NUMBERS.md`; an
+    unattested number is queued, not used (CD-044).
+9b. **FLAG-TRACE** — every ⚑ flag in the bank resolves in `PENDING_PRINCIPAL.md` and is not OPEN.
 10. **HONORIFIC** — the Prophet's name always carries (স), across eight name forms.
 11. **AS-MIX** — the AS pool is roughly half HW-level, half above (QB-D-004).
 12. **SCRIPT-GUARD** — LANGUAGE_RULES §7 tiers over rendered strings.

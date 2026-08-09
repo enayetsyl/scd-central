@@ -605,3 +605,32 @@ One block per agent session, appended at "save state and sync". Format:
   contradicts is not. Re-promotion is one ruling and one regenerate away; the 57 items are untouched.
   Recommendation on P-007: **mint `TOP-BAN-C5-13`** for বিরামচিহ্ন rather than folding it into `-02`,
   since the C5 spine keeps S03 and S11 as separate mark slots.
+
+## 2026-08-09 · PENDING-P-007 ruled; TOPIC_NUMBERS chart seeded as canon; wave 1 RE-PROMOTED final · Principal · cowork
+- Did: Minted **`TOP-BAN-C5-13` = বিরামচিহ্ন / যতিচিহ্ন** and recorded it **in canon, not only in the
+  bank** — `canon/topics/TOPIC_NUMBERS.md` created as the seed of the chart PENDING-P-008 owes,
+  carrying the full attested C5 Bangla set imported from the P04 register with **per-row citations**
+  (`-01` `-02` `-05` `-06` `-07` `-09` `-11` `-12`) plus `-13` citing CD-044. `-10` deliberately left
+  out: a P03 usage note is not a P04 attestation, and not-yet-listed is the correct state for an
+  unattested number. Retagged `QP-BAN-C5-U21-Q52`, regenerated, re-promoted to `banks/`.
+  **Production sequence recorded as CD-045 and in REGISTRY.md** — ① NCTB sources → ② C5 model papers
+  and CTs → ③ C1–C4 → ④ question pools; **পাঠ ২১ wave 2 waits for step ④**, and STATE.md says so.
+- Decisions logged: **CD-044** (mint, chart, gate, P-008 close condition revised, REF-19 slug gap),
+  **CD-045** (production sequence), **QB-D-011** (retag + re-promote), **QB-D-012** (fixtures).
+- Gates run + result: **15 gates CLEAN**, EXIT=0, after a **27-error seeded selftest + 1 negative
+  case**; **57/57 envelopes PASS** L1–L4, 0 warn / 0 advisory; `canon_check.py` **CLEAN (0 fail,
+  1 warn)**; `tools_check.py` **CLEAN (0 fail, 2 warn)**. Verbatim, unelided, 314 lines:
+  `reports/BAN_U21_GATES_2026-08-09-final.txt`.
+- Open items / PENDING-P raised: **P-007 CLOSED**; **P-008 stays FLAGGED** with its close condition
+  now *chart complete for all subjects*, completion happening in `TOPIC_NUMBERS.md` itself, plus a
+  **sub-item: REF-19 v1.10 carries no Bangla punctuation slug**, owed as a REF-19 supersede authored
+  at Project 00 — **REF-19 was not touched**, it is LOCKED and read-only here. Q52 keeps
+  `ref19_topic_id: BAN-SENTENCE` because the harness hard-validates that field against the REF-19
+  registry and would reject a minted slug; only `topic_tag` changed. **New gate TOPIC-NUMBER** makes
+  "a number not in the chart is not used" executable — the check whose absence let a wrong number
+  survive a chain and a promotion. **Two gate failures of my own, both fixed and logged:** the
+  QB-D-010 OPEN-path selftest case named the live row P-007, so ruling it turned the selftest red
+  the same day — the fixture was the live world (QB-D-012); and nothing had been proving FLAG-TRACE
+  stays *quiet* on a FLAGGED row, so a negative case was added. **Two contested numbers carried
+  forward, recorded not resolved:** the register's own unruled U14 Drama→Story re-home, where REF-03
+  maps U14 to `-09` and D-PROJ04-003 tagged it `-06`.

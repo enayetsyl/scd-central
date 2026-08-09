@@ -17,4 +17,5 @@ On slotting a file, flip its row to REQUIRED.
 | canon/school-facts/SCHOOL_FACTS.md | REQUIRED |
 | canon/sources/SOURCE_POLICY.md | REQUIRED |
 | canon/topics/LOCKED_REF-19_Vertical_Topic_Progression_Map_v1_10.md | REQUIRED |
+| canon/topics/TOPIC_NUMBERS.md | REQUIRED |
 | canon/DECISIONS.md | REQUIRED |

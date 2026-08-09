@@ -22,6 +22,7 @@ Gates (QUESTION_BANK_POLICY.md v1.0 §5, LOCAL.md):
   NUMERALS        no ASCII digits in student-facing strings                    (LANGUAGE_RULES §2)
   ANSWER-SHAPE    exactly-one-correct MCQ, non-empty keys, rubric bands == marks
   RUBRIC-SPECIFICITY  no two S08 items share a content rubric
+  TOPIC-NUMBER    every topic_tag is a row in canon/topics/TOPIC_NUMBERS.md  (CD-044)
   FLAG-TRACE      every ⚑ flag in the bank resolves in PENDING_PRINCIPAL.md and is not OPEN
   CEILING         balance owed against per-chapter ceilings — REPORT ONLY      (QB-D-002)
 
@@ -395,6 +396,30 @@ def g_rubric_specificity(bank, ctx):
     return errs
 
 
+def g_topic_number(bank, ctx):
+    """canon/topics/TOPIC_NUMBERS.md — a number not in the chart is not used, it is queued.
+
+    This gate exists because a wrong topic_tag survived a full gate chain AND a promotion: nothing
+    checked the number against anything, because until CD-043 there was nothing to check it against
+    (QB-CR-008, PENDING-P-007). The chart is now canon, so the check is now possible.
+    """
+    errs = []
+    chart = ROOT / "canon" / "topics" / "TOPIC_NUMBERS.md"
+    if not chart.exists():
+        return ["canon/topics/TOPIC_NUMBERS.md is missing — no topic number can be validated"]
+    text = chart.read_text(encoding="utf-8")
+    # A tag counts as charted only where it heads a table row: "| `TOP-…` | meaning | slug | attestation |"
+    charted = set(re.findall(r"^\|\s*\*{0,2}`(TOP-[A-Z]+-C[1-5]-\d{2})`", text, re.M))
+    if not charted:
+        return ["canon/topics/TOPIC_NUMBERS.md has no parseable rows"]
+    for q in bank.get("questions", []):
+        tag = q.get("topic_tag")
+        if tag and tag not in charted:
+            errs.append(f"{q.get('qid')}: topic_tag '{tag}' is not a row in "
+                        f"canon/topics/TOPIC_NUMBERS.md — an unattested number is queued, not used")
+    return errs
+
+
 def g_flag_trace(bank, ctx):
     """QB-D-009 / CD-042 — a bank may be promoted carrying a FLAGGED tag, but only if the flag is
     real: it must name a tag that resolves in PENDING_PRINCIPAL.md, and that row must not be OPEN
@@ -403,8 +428,14 @@ def g_flag_trace(bank, ctx):
     """
     errs = []
     flags = bank.get("flags") or []
-    queue = ROOT / "PENDING_PRINCIPAL.md"
-    text = queue.read_text(encoding="utf-8") if queue.exists() else ""
+    # The selftest injects a synthetic queue. Reading the live file in a seeded case made the
+    # instrument depend on repo state that changes every session: the OPEN-path case named a real
+    # OPEN row, the Principal ruled it, and the selftest went red on the next run — not because
+    # the gate broke, but because the fixture was the live world. A test fixture must be a fixture.
+    text = bank.get("_selftest_queue")
+    if text is None:
+        queue = ROOT / "PENDING_PRINCIPAL.md"
+        text = queue.read_text(encoding="utf-8") if queue.exists() else ""
     for f in flags:
         tag = f.get("tag")
         if not tag:
@@ -517,6 +548,7 @@ GATES = [
     ("SOURCE-TRACE", g_source_trace),
     ("ANSWER-SHAPE", g_answer_shape),
     ("RUBRIC-SPECIFICITY", g_rubric_specificity),
+    ("TOPIC-NUMBER", g_topic_number),
     ("FLAG-TRACE", g_flag_trace),
     ("QUOTE-VERBATIM", g_quote_verbatim),
     ("HONORIFIC", g_honorific),
@@ -663,12 +695,17 @@ def selftest():
     add("HONORIFIC", "হজরত with no (স)",
         lambda b: b["questions"][0].update({"question_text": "হজরত মুহাম্মদ কোথায় ভাষণ দেন"}))
     add("RUBRIC-SPECIFICITY", "two S08 items sharing one rubric", _twin_rubrics)
+    add("TOPIC-NUMBER", "a topic_tag that is in no chart row",
+        lambda b: b["questions"][0].update({"topic_tag": "TOP-BAN-C5-99"}))
     add("FLAG-TRACE", "a flag pointing at a tag that does not exist",
         lambda b: b.update({"flags": [{"tag": "PENDING-P-999", "status": "FLAGGED",
                                        "scope": "x", "what": "y", "closes_on": "z"}]}))
     add("FLAG-TRACE", "a flag naming a row that is OPEN (Principal-owed)",
-        lambda b: b.update({"flags": [{"tag": "PENDING-P-007", "status": "OPEN",
-                                       "scope": "x", "what": "y", "closes_on": "z"}]}))
+        lambda b: b.update({
+            "flags": [{"tag": "PENDING-P-XXX", "status": "OPEN",
+                       "scope": "x", "what": "y", "closes_on": "z"}],
+            "_selftest_queue": "| PENDING-P-XXX | d | w | q | def | by | **OPEN** — synthetic |"}))
+
     add("FLAG-TRACE", "a flag with no closes_on",
         lambda b: b.update({"flags": [{"tag": "PENDING-P-005", "status": "FLAGGED",
                                        "scope": "x", "what": "y", "closes_on": ""}]}))
@@ -701,6 +738,18 @@ def selftest():
 
     print("SELFTEST — the instrument is proven before any bank verdict (CD-025)")
     ok = True
+
+    # Negative case: a FLAGGED row is promotable (CD-042) and must NOT trip FLAG-TRACE.
+    # A gate that fires on everything is as useless as one that fires on nothing.
+    neg = _mutate(lambda b: b.update({
+        "flags": [{"tag": "PENDING-P-XXX", "status": "FLAGGED",
+                   "scope": "x", "what": "y", "closes_on": "z"}],
+        "_selftest_queue": "| PENDING-P-XXX | d | w | q | def | by | **FLAGGED** — synthetic |"}))
+    if any(g == "FLAG-TRACE" for g, _ in run(neg, quiet=True)[0]):
+        print("  FAIL  FLAG-TRACE fires on a FLAGGED row — it must not; FLAGGED is promotable")
+        ok = False
+    else:
+        print("  PASS  FLAG-TRACE stays quiet on a FLAGGED row (CD-042: FLAGGED is promotable)")
 
     clean, _ = run(_good_bank(), quiet=True)
     if clean:

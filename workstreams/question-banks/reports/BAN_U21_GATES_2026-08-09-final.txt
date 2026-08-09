@@ -1,0 +1,314 @@
+=== GATE CHAIN — C5 BAN পাঠ ২১ wave 1, RE-PROMOTED after CD-044 — 2026-08-09 ===
+Repo: scd-central · run from repo root · python3 3.10 · jsonschema 4.26.0
+Q52 retagged TOP-BAN-C5-11 -> TOP-BAN-C5-13 (minted, CD-044). Verbatim, unelided.
+
+--- STEP 1: build_question_envelopes.py ---
+wrote 57 envelopes to workstreams/question-banks/banks/envelopes/C5_BAN_U21_QuestionBank_v1.envelopes.json
+EXIT=0
+
+--- STEP 2: split_envelopes.py ---
+split 57 envelopes into workstreams/question-banks/banks/envelopes/single
+EXIT=0
+
+--- STEP 3: validate_import.py L1-L4 — ALL 57 envelopes, every line ---
+
+=== QP-BAN-C5-U21-Q01.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q02.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q03.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q04.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q05.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q06.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q07.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q08.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q09.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q10.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q11.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q12.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q13.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q14.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q15.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q16.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q17.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q18.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q19.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q20.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q21.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q22.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q23.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q24.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q25.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q26.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q27.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q28.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q29.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q30.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q31.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q32.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q33.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q34.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q35.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q36.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q37.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q38.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q39.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q40.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q41.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q42.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q43.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q44.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q45.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q46.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q47.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q48.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q49.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q50.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q51.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q52.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q53.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q54.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q55.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q56.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+=== QP-BAN-C5-U21-Q57.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+
+--- STEP 4: workstreams/question-banks/audits/gates.py ---
+SELFTEST — the instrument is proven before any bank verdict (CD-025)
+  PASS  FLAG-TRACE stays quiet on a FLAGGED row (CD-042: FLAGGED is promotable)
+  PASS  baseline: an unbroken bank is CLEAN
+  PASS  POOL-MEMBERSHIP  fires on: question in two pools
+  PASS  POOL-MEMBERSHIP  fires on: a CW pool reappears
+  PASS  ZERO-OVERLAP     fires on: same stem in HW and CT
+  PASS  ZERO-OVERLAP     fires on: exact duplicate INSIDE the HW pool
+  PASS  ANSWER-SHAPE     fires on: an MCQ with two correct options
+  PASS  ANSWER-SHAPE     fires on: an MCQ with no correct option
+  PASS  ANSWER-SHAPE     fires on: a distractor with no why_wrong
+  PASS  SOURCE-TRACE     fires on: a one-word anchor that matches anything
+  PASS  SOURCE-TRACE     fires on: a real span that has nothing to do with the item
+  PASS  HONORIFIC        fires on: bare নবি with no (স)
+  PASS  HONORIFIC        fires on: হজরত with no (স)
+  PASS  RUBRIC-SPECIFICITY fires on: two S08 items sharing one rubric
+  PASS  TOPIC-NUMBER     fires on: a topic_tag that is in no chart row
+  PASS  FLAG-TRACE       fires on: a flag pointing at a tag that does not exist
+  PASS  FLAG-TRACE       fires on: a flag naming a row that is OPEN (Principal-owed)
+  PASS  FLAG-TRACE       fires on: a flag with no closes_on
+  PASS  DOMAIN-RATIO     fires on: every HW item becomes জ্ঞান
+  PASS  DOMAIN-RATIO     fires on: chapter total goes all-উচ্চতর
+  PASS  MARK-VALUE       fires on: MCQ carries 5 marks
+  PASS  SOURCE-TRACE     fires on: an item with no extraction anchor
+  PASS  QUOTE-VERBATIM   fires on: an invented quotation
+  PASS  HONORIFIC        fires on: the Prophet's name without (স)
+  PASS  AS-MIX           fires on: AS is entirely recall
+  PASS  SCRIPT-GUARD     fires on: Arabic script in a stem
+  PASS  SCRIPT-GUARD     fires on: an arrow in a stem
+  PASS  NUMERALS         fires on: an ASCII digit in a stem
+  PASS  CEILING          fires on: HW above its ceiling
+SELFTEST RESULT: PASS (27 seeded errors + 1 baseline)
+
+BANK: workstreams/question-banks/banks/C5_BAN_U21_QuestionBank_v1.json
+  PASS  POOL-MEMBERSHIP
+  PASS  ZERO-OVERLAP
+  PASS  DOMAIN-RATIO
+  PASS  MARK-VALUE
+  PASS  SOURCE-TRACE
+  PASS  ANSWER-SHAPE
+  PASS  RUBRIC-SPECIFICITY
+  PASS  TOPIC-NUMBER
+  PASS  FLAG-TRACE
+  PASS  QUOTE-VERBATIM
+  PASS  HONORIFIC
+  PASS  AS-MIX
+  PASS  SCRIPT-GUARD
+  PASS  NUMERALS
+  PASS  CEILING
+  REPORT  DOMAIN-RATIO   CT জ্ঞান 26.7% vs band 30%
+  REPORT  DOMAIN-RATIO   CT অনুধাবন 36.7% vs band 35%
+  REPORT  DOMAIN-RATIO   CT প্রয়োগ 20.0% vs band 25%
+  REPORT  DOMAIN-RATIO   CT উচ্চতর 16.7% vs band 10%  <-- outside band, reported not enforced
+  REPORT  CEILING        HW: 30/100 authored, 70 owed to ceiling
+  REPORT  CEILING        AS: 15/50 authored, 35 owed to ceiling
+  REPORT  CEILING        CT: 12/30 authored, 18 owed to ceiling
+  REPORT  SCRIPT-GUARD   tier-3 WATCH counter (em-dash/ellipsis): 37
+RESULT: CLEAN (0 failures)
+EXIT=0
+
+--- STEP 5: tools/audits/canon_check.py ---
+canon_check.py — root: /sessions/lucid-happy-hypatia/mnt/scd-central
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn)
+EXIT=0
+
+--- STEP 6: tools/audits/tools_check.py ---
+tools_check.py — root: /sessions/lucid-happy-hypatia/mnt/scd-central
+  WARN  MANIFEST: tools/images/pick_placements.py [VENDORED-UNPROVEN] vendored but never executed — no run recorded in tools/images/SMOKE.md
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)
+EXIT=0
