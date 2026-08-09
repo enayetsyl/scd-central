@@ -5,8 +5,9 @@ This file is the live state for **Step 2 — tools**.
 
 ## Phase
 
-**Step 2 — tools.** Phase 2a = gate first, then intake. The gate exists and is proven;
-nothing is vendored yet. Waiting on Principal-supplied files into `_inbox/`.
+**Step 2 — tools.** Phase 2a (gate) and item 1 (hub-export) are DONE. The gate is proven and
+`tools/hub-export/` is vendored, smoke-tested and documented. Remaining: `render/`, then
+`images/`; `assets/` is DEFERRED. Waiting on Principal-supplied files into `_inbox/`.
 
 ## Done this session (2026-08-09)
 
@@ -38,7 +39,7 @@ a `SMOKE.md` beside it recording the command and its verbatim output. The gate f
 
 | # | Target | Source expected | Status |
 |---|---|---|---|
-| 1 | `tools/hub-export/` — `validate_import.py` + L1–L4 harness + `VENDOR.md` | `scd-hub` (LOCKED contract v1.0) | ⬜ awaiting files |
+| 1 | `tools/hub-export/` — `validate_import.py` + L1–L4 harness + `VENDOR.md` | `scd-hub` (LOCKED contract v1.0) | ✅ vendored + smoke-tested 2026-08-09 · 8 files · V-1, V-2 recorded |
 | 2 | `tools/render/` — Nikosh + Noto Sans Bengali fonts, Node docx class-test generator, `render_plan.py` | EnglishDrive / class-test project / P03 | ⬜ awaiting files |
 | 3 | `tools/images/` — `apply_strips.py` + pdftoppm verification helpers | storybook pipeline (neutral tool only) | ⬜ awaiting files |
 | 4 | `tools/assets/` — rclone `sync.py` + assets_manifest convention | none | ⏸ DEFERRED (CD-009) |
@@ -60,9 +61,53 @@ one deliberately malformed envelope.
 6. Flip the `tools/MANIFEST.md` row PENDING → REQUIRED; replace the folder's SLOT README with a real index.
 7. Run **both** gates; paste verbatim.
 
+## CD-011 cross-check — DONE 2026-08-09, result: DISAGREEMENT → PENDING-P-002
+
+Both sources arrived and were compared. They do not agree, so under CD-011 nothing was merged.
+
+- **Hub harness — no script guard at all.** Not a gap in reading: L1–L4 contain no charset
+  check, `import-contract.schema.json` has **zero** `pattern` constraints, and the 7 patterns
+  across the payload schemas are all ID/slug formats. Proven empirically — an envelope carrying
+  `→ 🔒 — بسم` in `title` and `content` returns `RESULT: PASS … importable`, exit 0.
+- **SB validator check 8 — has a guard, narrower than the old canon summary.** Arrows/emoji are
+  RED **only in rendered text fields** (`text_bn`/`text_en`/titles) and GREY in metadata, because
+  metadata legitimately carries →/⚠/🔒. Em-dash and ellipsis are **counted and reported, not
+  red-failed** — its docstring says explicitly that they await this very CD-008 ruling. Arabic
+  script is RED anywhere (D-011, absolute).
+
+The old `canon/language/` SLOT summary ("no Arabic script / emoji / em-dash / arrows in JSON
+strings") is wrong in detail on three of its four items against **both** sources.
+
+Ruled the same day — see the next section.
+
+## PENDING-P-002 RULED 2026-08-09 → CD-012 · CD-008 deferral CLOSED
+
+Script guard is canon at `canon/language/LANGUAGE_RULES.md` §7: Arabic RED anywhere · arrows /
+emoji RED in rendered text, GREY in metadata · em-dash and ellipsis ALLOWED with a WATCH counter
+for one term. Old SLOT summary corrected on three of its four items in the CD-012 row.
+Harness gap logged as **UP-001** (`tools/hub-export/UPSTREAM_ISSUES.md`) for `scd-hub`'s own
+D-series — **not patched locally**, the harness is supersede-only (CD-013).
+
 ## Blockers
 
-**Waiting on the Principal to drop tool files into `_inbox/`.** Nothing in Step 2 can proceed.
+None in Step 2.
+
+New, non-blocking: **PENDING-P-003** — CD-012 makes Arabic script RED everywhere, but
+islamic-studies and the Arabic subject will need it. Nothing is authored there yet.
+
+## Held for Step 3 — 5 files stay in `_inbox/` (Principal ruling 2026-08-09)
+
+Support-books material from the same drop. **Stays in `_inbox/` until Step 3**; do not slot,
+do not delete. `validator_v2_rebuilt.py` was read read-only for the CD-011 cross-check and is
+the source of the CD-012 script-guard ranges.
+
+| File | What it is |
+|---|---|
+| `validator_v2_rebuilt.py` | SB validator, rebuild of the lost v2 (checks 1–10, letter audit, script guard check 8) — read read-only for the CD-011 cross-check |
+| `validator_letter_audit.py` | The subject-specific letter-audit check, C1–C2 বাংলা |
+| `validate_admin_pass.py` | C1-BAN admin/governance merge pass (2026-07-17) |
+| `letter_inventory_C1BAN_CANDIDATE_conjunctwhitelist.json` | C1-BAN letter inventory + conjunct whitelist (data, not a tool) |
+| `VALIDATION_REPORT_C1BAN_54path.txt` | A validation report (output artifact) |
 
 ## Protocol status — RESOLVED 2026-08-09
 
@@ -73,23 +118,25 @@ The gate is protocol, not just practice.
 ## Carried forward from Step 1 (not blocking)
 
 - **PENDING-P-001** — REF-1 v1.2 governs Class 1 Bangla/English only.
+- **PENDING-P-003** — Arabic is RED everywhere under CD-012, but islamic-studies will need it.
 - **F-2** — MarkLogic Rules §6 does not list `C5_Bangla_Source_13-23.md`, now canon.
-- **CD-008 deferral** — Hub renderer script guard enters canon as its own CD row when
-  `tools/hub-export/` is vendored. Closing Step 2 item 1 closes this too.
+- **UP-001** — the Hub harness has no charset check; upstream's to fix, not ours (CD-013).
+- **WATCH counter review** — em-dash/ellipsis counter runs for one term, then is retired or
+  promoted (CD-012). Term-end date comes from `SCHOOL_FACTS.md` once completed.
 
-## Next step — hub-export first (Principal instruction 2026-08-09)
+## Next step — `tools/render/` (item 2)
 
-Principal drops hub-export files into `_inbox/` → vendor, smoke-test against one conformant and
-one deliberately malformed envelope, write `VENDOR.md`, flip the row, run both gates.
+Principal drops into `_inbox/`: Nikosh + Noto Sans Bengali font files, the Node docx generation
+scripts (class-test generator), and `render_plan.py` (P03). Then the standard per-tool procedure
+above: report → move → run → `SMOKE.md` → flip MANIFEST → replace SLOT README → both gates.
 
-**Then the deferred CD-008 script-guard row, under the CD-011 rule — read this before writing it:**
+Two things to get right for `render/`:
 
-1. Derive the guard **from the actual harness code**. Not from memory, not from the
-   `canon/language/` SLOT README summary, not from this file.
-2. **Cross-check it against the SB validator's list.** ⚠️ That list is **not in this repo** and
-   must be supplied alongside the harness — flag it if it does not arrive.
-3. **Any disagreement between the two sources goes to the Principal as a PENDING-P item.**
-   It is never silently merged, reconciled, or averaged. Two sources that disagree about what
-   the renderer accepts is a finding, not a formatting problem.
+1. **Fonts are binary.** Keep them in Git (small, stable) but they are already excluded from
+   agent auto-read by `.claudeignore` (`tools/render/fonts/`). Add MANIFEST rows once filenames
+   are known.
+2. **The smoke test is a real render**, not a `--help`. Render an actual class test to .docx and
+   confirm Bengali numerals per `LANGUAGE_RULES` §2 and the script guard per §7. A renderer that
+   loads but produces tofu is exactly the failure UP-001 warns about.
 
-Only once that row is written does CD-008's deferral close.
+CD-008 is closed by CD-012 (2026-08-09). Remaining Step 2 order: render/ then images/; assets/ DEFERRED.

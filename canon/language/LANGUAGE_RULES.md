@@ -70,11 +70,46 @@ terms, not chapter-bound items.
 
 Pointer only; the authority is `canon/marklogic/MarkLogic_QuestionPolicy.md`.
 
-## 7. Not covered here
+## 7. Script guard — what characters may appear in a string
 
-- **Hub renderer script guard** (constraints on JSON strings). This is a machine constraint on
-  export, not a rule a teacher reads. It is **deferred to Step 2** and enters canon as its own
-  CD row when the LOCKED import contract v1.0 is slotted at `tools/hub-export/`. Until then no
-  script guard may be asserted as canon (CD-008).
+Three tiers. **RED** = the artifact is rejected. **GREY** = reported, not rejected.
+**WATCH** = counted and reported as a monitor only, never a failure.
+
+| Tier | Characters | Rendered text fields (`text_bn`, `text_en`, titles) | Metadata fields |
+|---|---|---|---|
+| 1 | **Arabic script** | RED | RED |
+| 2 | **Arrows, emoji, symbol glyphs** | RED | GREY |
+| 3 | **Em-dash `—` and ellipsis `…`** | ALLOWED (WATCH counter) | ALLOWED |
+
+**Tier 1 is absolute** — Arabic script is red *anywhere, in any string*, rendered or metadata.
+
+**Tier 2's split exists for a reason:** metadata fields (notes, compliance_note,
+scene_description, style_profile, version_log) legitimately carry →, ⚠ and 🔒, so failing them
+there would be a false positive. Rendered text is what a child sees; metadata is not.
+
+**Tier 3 is a reversal of the earlier assumption.** Em-dash and ellipsis are permitted in
+reader-facing text. The WATCH counter stays on **for one term** as a monitor, then the count is
+reviewed and the counter either retired or promoted. (Term-end date comes from
+`canon/school-facts/SCHOOL_FACTS.md` once the Principal completes it.)
+
+Codepoint ranges, taken from the validator rather than restated from memory:
+
+```
+ARABIC  U+0600–06FF · U+0750–077F · U+FB50–FDFF · U+FE70–FEFF
+ARROWS  U+2190–21FF · U+27F0–27FF · U+2900–297F
+EMOJI   U+1F000–1FAFF · U+2600–27BF · U+2B00–2BFF · U+FE00–FE0F
+```
+
+⚠️ **Enforcement is authoring-side only.** The Hub import harness performs **no** charset check
+— proven, not assumed (`tools/hub-export/SMOKE.md` test 3: an envelope carrying arrows, emoji,
+em-dash and Arabic returns PASS). Nothing downstream will catch a violation, so the guard has to
+hold where the content is written. Logged upstream at
+`tools/hub-export/UPSTREAM_ISSUES.md` (UP-001).
+
+Source: `validator_v2_rebuilt.py` check 8, verified scope; harness behaviour per
+`tools/hub-export/SMOKE.md`. Ruling: CD-012.
+
+## 8. Not covered here
+
 - **Bengali swarabritta rhyme spec.** Out of scope — no workstream writes verse. If one does,
   it enters through a new CD row (CD-008).

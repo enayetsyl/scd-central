@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://school.local/swapp/ImportEnvelope_v1.json",
+  "title": "School Software — Unified Typed Import Envelope v1 (LOCKED v1.0)",
+  "description": "The single ingestion contract (REQ §4, R-IMP1). A stable OUTER contract plus a free-form PAYLOAD selected by doc_type. STATUS: LOCKED v1.0 (2026-06-09, D-PROJ04-005) — plan doc-types stable (wrap the locked Project-03 artifact); the QUESTION payload is now RATIFIED (R-IMP5, Project 04) and a STIMULUS doc-type is added. envelope_version stays '1.0' because both changes are ADDITIVE (a new doc_type enum value + branch + $defs marker; a new tags.paper_role) per the outer-contract stability rule. DESIGN NOTES unchanged: (1) two-layer validation — THIS schema is the outer contract + a LIGHT payload marker-gate; the harness runs a SECOND pass dispatching payload to its FULL schema by doc_type (plans -> C5_PlanSchema_v1.json; question -> QuestionPayload_v1.json; stimulus -> StimulusPayload_v1.json). The canonical, CLOSED (additionalProperties:false) question/stimulus contracts live in those external files, NOT inlined here — the markers below stay additionalProperties:true. (2) ASYMMETRY: plan payload = the whole Project-03 artifact verbatim; question/stimulus payload = envelope-native. (3) outer subject/class_level/curation_tag + the tags block are the app's authoritative INDEXED copies; for questions, tags.{bloom_level,difficulty,topic_tag,paper_role} are lifted from the payload and a harness L3 pass asserts equality. (4) import_batch_id/imported_at/importer_user are app-stamped post-validation. (5) review_status defaults to 'draft' on import. (6) To EXTEND: add a doc_type value + an allOf branch + a $defs marker; the outer contract never changes.",
+  "$comment": "Draft 2020-12 to match validate_plan.py / validate_import.py. v0.2 diff vs v0.1: doc_type += 'stimulus'; tags += 'paper_role'; $defs.questionPayload converted from the fat provisional shape to a LIGHT marker (closure now in QuestionPayload_v1.json); $defs.stimulusPayload added (light marker; closure in StimulusPayload_v1.json); question allOf branch now requires tags with the four indexed copies; stimulus allOf branch added. ref19_topic_id is payload-only (NOT lifted into tags) — the app filters on topic_tag.",
+
+  "type": "object",
+  "required": ["envelope_version", "doc_type", "subject", "class_level", "provenance", "review_status", "payload"],
+  "additionalProperties": false,
+
+  "properties": {
+    "envelope_version": { "const": "1.0", "description": "Version of THIS outer contract, independent of any payload schema_version." },
+    "doc_type": {
+      "enum": ["chapter_plan", "session_plan", "question", "question_set", "stimulus"],
+      "description": "Selects the payload sub-schema. 'question_set' is app-generated (REQ-ASSEMBLE), reserved for possible bulk import (no branch). 'stimulus' is a shared passage/poem/audio-script/image-set referenced by questions (QDN-09)."
+    },
+    "subject": { "enum": ["BAN", "ENG", "MATH", "SCI", "BGS"], "description": "Authoritative indexed copy. Harness asserts equality with payload.subject for plan types; question/stimulus payloads do not duplicate it." },
+    "class_level": { "type": "integer", "minimum": 1, "maximum": 5, "description": "Authoritative indexed copy (C1–C5)." },
+    "address": { "$ref": "#/$defs/addressBlock", "description": "Book-hierarchy address. Required for plan doc-types; optional otherwise." },
+    "curation_tag": { "enum": ["KEEP_AS_IS", "NEEDS_REPLACEMENT", "FLEXIBLE"], "description": "Required for plan doc-types." },
+    "pinned_to": {
+      "type": "object",
+      "description": "Layout/core versions the artifact was built against (plan types).",
+      "properties": { "chapter_layout": { "type": "string" }, "session_layout": { "type": "string" }, "production_core": { "type": "string" } },
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Author-supplied lineage (R-X2). App stamps import_batch_id/imported_at/importer_user separately.",
+      "required": ["source_project", "author", "content_version"],
+      "additionalProperties": false,
+      "properties": {
+        "source_project": { "enum": ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "other"] },
+        "author": { "type": "string", "minLength": 1 },
+        "content_version": { "type": "string", "minLength": 1 },
+        "authored_at": { "type": "string", "format": "date-time" },
+        "source_filename": { "type": "string" }
+      }
+    },
+    "tags": {
+      "type": "object",
+      "description": "Cross-cutting, app-indexed filter tags (controlled vocabulary, R-X6). Lifted from payload for questions or set directly.",
+      "additionalProperties": false,
+      "properties": {
+        "bloom_level": { "$ref": "#/$defs/bloomLevelEN" },
+        "difficulty": { "enum": ["easy", "medium", "hard"] },
+        "topic_tag": { "type": "string" },
+        "paper_role": { "enum": ["mcq", "short", "structured", "creative"], "description": "REF-09 §4/§5.3 paper-section family; the app filter for set assembly. MIRROR of payload.paper_role / vocab.ts PAPER_ROLES." },
+        "chapter_ref": { "type": "string" },
+        "lesson_ref": { "type": "string" }
+      }
+    },
+    "review_status": { "enum": ["draft", "reviewed", "gold"], "description": "Quality gate (D-#3). draft=authored; reviewed=passed substance REVIEW; gold=Principal-locked. Defaults to draft on import." },
+    "rendered_markdown": { "type": "string", "minLength": 1, "description": "Co-generated teacher-facing Markdown (Option B). Required for plan doc-types; the app displays/PDFs this and never re-renders. NOT used for question/stimulus (the app renders those itself)." },
+    "payload": { "type": "object", "description": "Doc-type-specific body. Plan = whole Project-03 artifact; question/stimulus = envelope-native (see $defs)." }
+  },
+
+  "allOf": [
+    {
+      "$comment": "Chapter Plan.",
+      "if": { "properties": { "doc_type": { "const": "chapter_plan" } }, "required": ["doc_type"] },
+      "then": {
+        "required": ["rendered_markdown", "address", "curation_tag"],
+        "properties": { "payload": { "type": "object", "required": ["schema_version", "plan_type", "subject", "class_level", "division", "curation_tag"], "properties": { "plan_type": { "const": "chapter_plan" } } } }
+      }
+    },
+    {
+      "$comment": "Session Plan.",
+      "if": { "properties": { "doc_type": { "const": "session_plan" } }, "required": ["doc_type"] },
+      "then": {
+        "required": ["rendered_markdown", "address", "curation_tag"],
+        "properties": { "payload": { "type": "object", "required": ["schema_version", "plan_type", "subject", "class_level", "division", "curation_tag"], "properties": { "plan_type": { "const": "session_plan" } } } }
+      }
+    },
+    {
+      "$comment": "Question: RATIFIED. Light-gated here; full closed validation (QuestionPayload_v1.json) + L3 consistency run in the harness. tags carries the indexed copies the app filters on.",
+      "if": { "properties": { "doc_type": { "const": "question" } }, "required": ["doc_type"] },
+      "then": {
+        "required": ["tags"],
+        "properties": {
+          "payload": { "$ref": "#/$defs/questionPayload" },
+          "tags": { "required": ["bloom_level", "difficulty", "topic_tag", "paper_role"] }
+        }
+      }
+    },
+    {
+      "$comment": "Stimulus: light-gated here; full closed validation (StimulusPayload_v1.json) runs in the harness.",
+      "if": { "properties": { "doc_type": { "const": "stimulus" } }, "required": ["doc_type"] },
+      "then": { "properties": { "payload": { "$ref": "#/$defs/stimulusPayload" } } }
+    }
+  ],
+
+  "$defs": {
+    "addressBlock": {
+      "type": "object",
+      "required": ["anchor_word", "number", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "anchor_word": { "enum": ["পাঠ", "অধ্যায়", "Unit", "Lesson"] },
+        "number": { "type": "integer", "minimum": 1 },
+        "title": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "bloomLevelEN": { "enum": ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"], "description": "Canonical English Bloom levels for app indexing." },
+
+    "questionPayload": {
+      "type": "object",
+      "$comment": "LIGHT marker-gate ONLY. The canonical CLOSED question contract is QuestionPayload_v1.json (additionalProperties:false, full if/then), enforced by the harness L2-for-questions pass. additionalProperties stays true here so the full payload clears the marker; closure lives in the external schema.",
+      "required": ["question_text", "question_type", "paper_role", "bloom_level", "difficulty", "topic_tag", "marks"],
+      "additionalProperties": true,
+      "properties": {
+        "question_text": { "type": "string", "minLength": 1 },
+        "question_type": { "enum": ["mcq", "short_answer", "true_false", "fill_blank", "matching", "descriptive"] },
+        "paper_role": { "enum": ["mcq", "short", "structured", "creative"] },
+        "bloom_level": { "$ref": "#/$defs/bloomLevelEN" },
+        "difficulty": { "enum": ["easy", "medium", "hard"] },
+        "topic_tag": { "type": "string" },
+        "marks": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+
+    "stimulusPayload": {
+      "type": "object",
+      "$comment": "LIGHT marker-gate ONLY. Canonical CLOSED contract = StimulusPayload_v1.json, enforced by the harness L2-for-stimulus pass.",
+      "required": ["stimulus_id", "stimulus_type", "content"],
+      "additionalProperties": true,
+      "properties": {
+        "stimulus_id": { "type": "string", "minLength": 1 },
+        "stimulus_type": { "enum": ["passage", "poem", "audio_script", "image_set"] },
+        "content": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

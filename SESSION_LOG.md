@@ -76,3 +76,29 @@ One block per agent session, appended at "save state and sync". Format:
   this repo** and must be supplied with the harness — flag it if it does not arrive. Carried
   forward: PENDING-P-001, F-2. Next session: **hub-export first**, then the CD-008 script-guard
   row under the CD-011 rule.
+
+## 2026-08-09 · tools/hub-export + canon/language · Principal · cowork
+- Did: Vendored `tools/hub-export/` — 8 files from `scd-hub` under import contract LOCKED v1.0
+  (2026-06-09) — with `VENDOR.md`, `SMOKE.md` and a real index README. **Smoke-tested, not just
+  placed:** conformant envelope → PASS exit 0; seeded-error envelope → FAIL exit 1 (3 fails).
+  Ran the CD-011 cross-check and wrote `canon/language/LANGUAGE_RULES.md` §7 (script guard) from
+  the ruling. The 5 support-books files from the same drop stay in `_inbox/` for Step 3, unmoved.
+- Decisions logged: **CD-012** — script guard is canon in three tiers: Arabic RED anywhere in any
+  string · arrows/emoji/symbol glyphs RED in rendered text fields, GREY in metadata · em-dash and
+  ellipsis ALLOWED, WATCH counter retained one term. The old SLOT summary was **wrong on three of
+  its four items** and each is corrected in the row; only the Arabic item survives, strengthened.
+  **CD-013** — the harness's missing charset check is logged as **UP-001** in
+  `tools/hub-export/UPSTREAM_ISSUES.md` for `scd-hub`'s own D-series, **not patched locally**
+  (supersede-only, CD-003). PENDING-P-002 ruled and closed.
+- Gates run + result: `canon_check.py` → **CLEAN (0 fail, 3 warn)**; `tools_check.py` →
+  **CLEAN (0 fail, 5 warn)**. Both remaining sets are the unvendored render/images/assets slots.
+  The gate's SMOKE.md and VENDOR.md requirements were live — hub-export would have failed without
+  them, which is the point of CD-009.
+- Open items / PENDING-P raised: **PENDING-P-003** — CD-012 makes Arabic script RED everywhere,
+  but this is an Islamic school: `workstreams/islamic-studies/` (C1–C5) and the Arabic subject
+  named in REF-1 §1.2 will need Qur'anic ayat, hadith and du'a in Arabic script. Per CD-013 the
+  cause is renderer glyph support, not doctrine, so the fix is likely fonts in the Hub renderer
+  rather than banning Arabic from Islamic content. Non-blocking today — nothing is authored in
+  islamic-studies yet. Also carried: **UP-001** (upstream), and the **WATCH counter review** at
+  one term's end. Next: `tools/render/` (item 2), where the smoke test must be a real .docx
+  render, not a `--help`.

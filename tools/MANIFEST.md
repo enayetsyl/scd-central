@@ -11,7 +11,13 @@ Add a row when a tool is vendored. Node scripts get rows once their filenames ar
 
 | tools/audits/canon_check.py | REQUIRED |
 | tools/audits/tools_check.py | REQUIRED |
-| tools/hub-export/validate_import.py | PENDING |
+| tools/hub-export/validate_import.py | REQUIRED |
+| tools/hub-export/import-contract.schema.json | REQUIRED |
+| tools/hub-export/LOCKED_C5_PlanSchema_v1.json | REQUIRED |
+| tools/hub-export/LOCKED_QuestionPayload_Schema_v1.json | REQUIRED |
+| tools/hub-export/LOCKED_StimulusPayload_Schema_v1.json | REQUIRED |
+| tools/hub-export/build_envelope.py | REQUIRED |
+| tools/hub-export/build_question_envelopes.py | REQUIRED |
 | tools/render/render_plan.py | PENDING |
 | tools/images/apply_strips.py | PENDING |
 | tools/assets/sync.py | DEFERRED |
