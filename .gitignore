@@ -6,3 +6,6 @@ node_modules/
 Thumbs.db
 ~$*
 *.tmp
+
+# canon slotting staging (AGENTS.md §3 _wip; not authority)
+_inbox/

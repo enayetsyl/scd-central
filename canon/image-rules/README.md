@@ -1,8 +1,14 @@
-# canon/image-rules — SLOT
+# canon/image-rules — index
 
-⬜ NOT YET SLOTTED
+✅ SLOTTED 2026-08-09 (Step 1 canon extract).
 
-Place here: the living-being image doctrine (objects-first substitution; programmatic white
-stripe — never in prompts; largest-being-per-frame; family-scene carve-out; photocopy-safe
-fields; faceless/silhouette rules for historical figures). Sources: SB-Governance REF-1
-image sections + storybook venture rulings (school-applicable parts only — no commercial IP).
+| File | What it settles |
+|---|---|
+| `IMAGE_RULES.md` | The school's image doctrine — living-being depictions, faceless rule, frame grouping, nationalist-veneration imagery |
+
+**REF-1-derived only** (CD-007). Every rule traces to `canon/islamic-curation/REF-1_Curation_Policy.md`
+v1.2 LOCKED. The storybook venture's stripe / largest-being / photocopy-safe / silhouette rules
+are explicitly out of scope — see `IMAGE_RULES.md` §8.
+
+Consumed by: support-books, lesson-plans, question-banks, islamic-studies, storybook conventions.
+Cite the path or the C-code; never copy (AGENTS.md §8).
