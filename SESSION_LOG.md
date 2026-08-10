@@ -1502,3 +1502,30 @@ will state **পূর্ণ (§৭.১২)** in the depth column.
 two are closed; অধ্যায় ৩ is eighteen pages and sixteen remain. Continuing now would mean reading
 the back of a dense chapter with attention already spent, which is exactly what the near-miss
 record argues against. **The ceiling is not a target.**
+
+## 2026-08-10 (continued) · অধ্যায় ৩ — ছাপা ৩৩–৩৪
+
+**Transcribed ছাপা ৩৩ and ৩৪** — লসাগু defined, then extended to three numbers, plus the tile
+problem and the two-bells exercise.
+
+**Two layout facts worth recording rather than smoothing.** ছাপা ৩৪'s ৬/৮/১২ multiples grid
+carries **two diagonal ellipses**, and they are diagonal for a reason: ২৪ and ৪৮ fall in
+*different columns* in each of the three rows (২৪ is 4th, 3rd and 2nd respectively). A reader who
+expects vertical grouping would mis-describe what the book shows. And the tile table marks four
+cells with circles joined by arrows — ১৮↔১৮ and ৩৬↔৩৬ across the দৈর্ঘ্য and প্রস্থ rows.
+
+**Every table checked against its own rule by hand** —
+`evidence/MANUAL_NUMERALS_ch3_p31-34_2026-08-10.txt`, all consistent: ছাপা ৩১'s two tables against
+×৪ and ×৩, the Venn intersections on ৩২ and ৩৩ against the actual common multiples, ছাপা ৩৪'s
+three multiple-rows, and the tile table against ৯×n and ৬×n. **This is the substitute for a second
+channel on these pages** — `math_arith_check.py` REFUSEs here because there are no worked
+equations to read, only lists, diagrams and rate tables. The gate saying "nothing verified" is
+correct, so the verification had to be done and written down elsewhere.
+
+**CD-066 still unused.** ছাপা ৩৩ and ৩৪ are teaching-dense like their predecessors — definitions,
+worked grids, diagrams. The convention's test is content, not heading, and no exercise-only
+section has appeared yet.
+
+**Stopping at ছাপা ৩৫ (PDF 42).** Four pages this stretch, fourteen remain in the chapter. Two
+chapters are closed and the third is a third done; the near-miss record argues against pushing a
+dense chapter on spent attention, and **the ceiling is not a target**.
