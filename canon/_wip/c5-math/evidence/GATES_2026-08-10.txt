@@ -1,4 +1,4 @@
-### source_check.py · 2026-08-10 (printed ১–৯)
+### source_check.py · 2026-08-10 (printed ১–১০)
 source_check.py — SOURCE_POLICY.md §5
 file    : canon/_wip/c5-math/C5_MATH_Source_01.md
 subject : class 5 · MATH
@@ -7,9 +7,9 @@ channel : single (§7.4 sampling unavailable)
 ------------------------------------------------------------------------------
 [PASS   ] RANGE    stated range অধ্যায় 1-1: all 1 section(s) present
 [FAIL   ] SLOTS    11 spine slot(s) neither cross-referenced nor marked absent: MATH-S01, MATH-S02, MATH-S03, MATH-S04, MATH-S05, MATH-S06, MATH-S07, MATH-S08, MATH-S09, MATH-S10, MATH-S11
-[PASS   ] PAGES    offset constant (+7) over 18 verified rows; 9 body refs monotonic within 1-16, 0 commentary/cross-ref refs in range
-[PENDING] SIGNOFF  20 of 20 spot-check row(s) unsigned — only the Principal or the teacher can close this
-[PASS   ] DEPTH    single-channel source; all 20 sign-off row(s) marked 'পূর্ণ'
+[PASS   ] PAGES    offset constant (+7) over 18 verified rows; 10 body refs monotonic within 1-16, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  23 of 23 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 23 sign-off row(s) marked 'পূর্ণ'
 ------------------------------------------------------------------------------
 VERDICT : RED — returns to build phase (AGENTS.md §5)
 EXIT=2
@@ -17,33 +17,34 @@ EXIT=2
 ### math_arith_check.py · same
 math_arith_check.py — the extraction's arithmetic against itself
 file   : canon/_wip/c5-math/C5_MATH_Source_01.md
-found  : 7 worked block(s), 6 step-table row(s), 7 equality chain(s), 2 division block(s)
+found  : 7 worked block(s), 6 step-table row(s), 7 equality chain(s), 3 division block(s)
 ------------------------------------------------------------------------------
-[CLEAN    ] line 422   ৪২৭৫ ÷ ৪৫ = ৯৫ ভাগশেষ ০  (2 subtraction row(s) check out; ভাগশেষ < ভাজক)
-[CLEAN    ] line 473   ৬৬৭৪ ÷ ২১৪ = ৩১ ভাগশেষ ৪০  (2 subtraction row(s) check out; ভাগশেষ < ভাজক)
-[CLEAN    ] line 128   ৪৬১৪ × ৩৬৫ = ১৬৮৪১১০  (fully printed)
-[CLEAN    ] line 159   ৮৫৩৬ × ৯৭২ = ৮২৯৬৯৯২  (fully printed)
-[CLEAN    ] line 174   ৪৭৬৫ × ২৩৫৪ = ১১২১৬৮১০  (fully printed)
-[WIDTH    ] line 196   ৮৩৪৬ × ১৫৪৫: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
-[WIDTH    ] line 208   ৬২৫৮ × ৬০৯৭: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
-[CLEAN    ] line 220   ৫৫৭৯ × ৪৬৭৭ = ২৬০৯২৯৮৩  (pinned uniquely from the printed cells)
-[CLEAN    ] line 232   ৭৭৭২৩ × ৪৫৬৭ = ৩৫৪৯৬০৯৪১  (pinned uniquely from the printed cells)
-[CLEAN    ] line 124   ৪৬১৪ × ৫ = ২৩০৭০
-[CLEAN    ] line 125   ৪৬১৪ × ৬০ = ২৭৬৮৪০
-[CLEAN    ] line 126   ৪৬১৪ × ৩০০ = ১৩৮৪২০০
-[CLEAN    ] line 296   ৭৪ × ২৯ = ২১৪৬
-[CLEAN    ] line 298   ৭৪০০ × ২৯ = ২১৪৬০০
-[CLEAN    ] line 300   ৭৪০০ × ২৯০০ = ২১৪৬০০০০
-[CLEAN    ] line 258   চেইন: ৬০৪২ × **১৫১৪** = ৬০৪২ × **(১০০০ + ৫০০ + ১০ + ৪)**  → ৯১৪৭৫৮৮
-[CLEAN    ] line 311   চেইন: ৭৪০০ × ২৯০০ = ৭৪ × ১০০ × ২৯ × ১০০  → ২১৪৬০০০০
-[CLEAN    ] line 312   চেইন: ৭৪ × ১০০ × ২৯ × ১০০ = ৭৪ × ২৯ × ১০০ × ১০০  → ২১৪৬০০০০
-[CLEAN    ] line 313   চেইন: ৭৪ × ২৯ × ১০০ × ১০০ = ২১৪৬ × ১০০০০  → ২১৪৬০০০০
-[CLEAN    ] line 314   চেইন: ২১৪৬ × ১০০০০ = ২১৪৬০০০০  → ২১৪৬০০০০
-[CLEAN    ] line 349   চেইন: ৯৯ × ২৪ = ( ১০০ − ১ ) × ২৪  → ২৩৭৬
-[CLEAN    ] line 357   চেইন: ৯৯৯ × ৩২ = ( ১০০০ − ১ ) × ৩২  → ৩১৯৬৮
+[CLEAN    ] line 425   ৪২৭৫ ÷ ৪৫ = ৯৫ ভাগশেষ ০  (2 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 476   ৬৬৭৪ ÷ ২১৪ = ৩১ ভাগশেষ ৪০  (2 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 549   ৬৯৭৩৮ ÷ ২৪৫ = ২৮৪ ভাগশেষ ১৫৮  (3 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 131   ৪৬১৪ × ৩৬৫ = ১৬৮৪১১০  (fully printed)
+[CLEAN    ] line 162   ৮৫৩৬ × ৯৭২ = ৮২৯৬৯৯২  (fully printed)
+[CLEAN    ] line 177   ৪৭৬৫ × ২৩৫৪ = ১১২১৬৮১০  (fully printed)
+[WIDTH    ] line 199   ৮৩৪৬ × ১৫৪৫: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
+[WIDTH    ] line 211   ৬২৫৮ × ৬০৯৭: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
+[CLEAN    ] line 223   ৫৫৭৯ × ৪৬৭৭ = ২৬০৯২৯৮৩  (pinned uniquely from the printed cells)
+[CLEAN    ] line 235   ৭৭৭২৩ × ৪৫৬৭ = ৩৫৪৯৬০৯৪১  (pinned uniquely from the printed cells)
+[CLEAN    ] line 127   ৪৬১৪ × ৫ = ২৩০৭০
+[CLEAN    ] line 128   ৪৬১৪ × ৬০ = ২৭৬৮৪০
+[CLEAN    ] line 129   ৪৬১৪ × ৩০০ = ১৩৮৪২০০
+[CLEAN    ] line 299   ৭৪ × ২৯ = ২১৪৬
+[CLEAN    ] line 301   ৭৪০০ × ২৯ = ২১৪৬০০
+[CLEAN    ] line 303   ৭৪০০ × ২৯০০ = ২১৪৬০০০০
+[CLEAN    ] line 261   চেইন: ৬০৪২ × **১৫১৪** = ৬০৪২ × **(১০০০ + ৫০০ + ১০ + ৪)**  → ৯১৪৭৫৮৮
+[CLEAN    ] line 314   চেইন: ৭৪০০ × ২৯০০ = ৭৪ × ১০০ × ২৯ × ১০০  → ২১৪৬০০০০
+[CLEAN    ] line 315   চেইন: ৭৪ × ১০০ × ২৯ × ১০০ = ৭৪ × ২৯ × ১০০ × ১০০  → ২১৪৬০০০০
+[CLEAN    ] line 316   চেইন: ৭৪ × ২৯ × ১০০ × ১০০ = ২১৪৬ × ১০০০০  → ২১৪৬০০০০
+[CLEAN    ] line 317   চেইন: ২১৪৬ × ১০০০০ = ২১৪৬০০০০  → ২১৪৬০০০০
+[CLEAN    ] line 352   চেইন: ৯৯ × ২৪ = ( ১০০ − ১ ) × ২৪  → ২৩৭৬
+[CLEAN    ] line 360   চেইন: ৯৯৯ × ৩২ = ( ১০০০ − ১ ) × ৩২  → ৩১৯৬৮
 ------------------------------------------------------------------------------
 LIMITS : computed working only · words/names/instructions out of scope ·
          problem-statement figures unchecked where the book prints no working
-NOT LOOKED AT: prose carrying numbers (limit 3) ×88, bare exercise (no printed answer to check) ×23, ARITHMETIC LINE NOT PARSED ×8, ÷ long division ×1
-VERDICT: CLEAN — 20 verified · 2 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×88, bare exercise (no printed answer to check) ×23, ARITHMETIC LINE NOT PARSED ×8, ÷ long division ×1
+NOT LOOKED AT: prose carrying numbers (limit 3) ×115, bare exercise (no printed answer to check) ×23, ARITHMETIC LINE NOT PARSED ×8, ÷ long division ×3
+VERDICT: CLEAN — 21 verified · 2 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×115, bare exercise (no printed answer to check) ×23, ARITHMETIC LINE NOT PARSED ×8, ÷ long division ×3
 EXIT=0

@@ -1142,3 +1142,35 @@ row first.
 **অধ্যায় ১ is NOT complete.** ছাপা ১০–১৬ remain — seven printed pages. The long-division
 extension took the session's first stretch as ruled, and the chapter did not close. **Resume at
 ছাপা ১০ (PDF 17);** SLOTS mapping and the নির্মাণাধীন marker removal still wait on the full read.
+
+## 2026-08-10 (fresh sitting) · CD-061 fence convention; ছাপা ১০ transcribed
+
+**CD-061 recorded as ruled: no parser extension — the fence convention is the rule.** A
+pedagogical partial working stays **outside** the ``` fence with its reason written in the
+extraction, keeps full manual depth, and is corroborated by the complete working of the same
+division fenced on the same page. The revisit condition is written down: a partial with **no**
+complete working anywhere becomes a PENDING-P row, not an improvisation.
+
+**The convention earned itself immediately.** Printed ১০ prints **three boxes for one division**
+(৬৯৭৩৮ ÷ ২৪৫) — two partial stages and the complete working — where printed ৯ had two. Two
+unfenced, one fenced and machine-verified: **৬৯৭৩৮ ÷ ২৪৫ = ২৮৪ ভাগশেষ ১৫৮, three subtraction rows,
+ভাগশেষ < ভাজক.** This is a recurring layout in the book, not a one-off, so the rule will be used
+on most division pages.
+
+**কাজ ৩'s three blank-bearing division frames solved by hand and each solution matched every
+printed cell** — **(১) ৯৯৫৩ ÷ ১৩৯ = ৭১ ভাগশেষ ৮৪ · (২) ২০৪৭৫ ÷ ৩২৫ = ৬৩ ভাগশেষ ০ ·
+(৩) ৪৭০ ÷ ২৩ = ২০ ভাগশেষ ১০**. Twenty-one checks in
+`evidence/MANUAL_ARITH_p10_2026-08-10.txt`, all consistent. These frames carry `☐`, so the
+division parser REFUSEs them by design; they stay at full manual depth.
+
+**One content difference worth a question author's attention:** printed ৯'s যাচাই পদ্ধতি box has
+its four plates **filled** (২১৪ × ৩১ + ৪০ = ৬৬৭৪); printed ১০'s সঠিকতা যাচাই box has the same
+four plates **empty** for the student. Recorded as printed.
+
+**Gates:** `source_check.py` RANGE/PAGES/DEPTH **PASS** (23/23 sign-off rows পূর্ণ), SIGNOFF
+**PENDING**, **SLOTS FAIL still deliberate** · `math_arith_check.py` **CLEAN — 21 verified,
+2 uncovered**, three division blocks now checked.
+
+**অধ্যায় ১ is still NOT complete — ছাপা ১১–১৬ remain, six printed pages.** SLOTS mapping, the
+নির্মাণাধীন marker removal and the chapter-complete sync all wait on the full read. Resume at
+**ছাপা ১১ (PDF 18)**.
