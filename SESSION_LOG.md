@@ -1317,3 +1317,46 @@ RED. The census names `÷ long division ×13` and `ARITHMETIC LINE NOT PARSED ×
 honest picture of a chapter built on `÷` and brackets.
 
 **Chapter NOT complete — ছাপা ২১–৩০ remain, ten printed pages.** Resume at **ছাপা ২১ (PDF 28)**.
+
+## 2026-08-10 (fresh sitting) · CD-064 — ÷, marked comparisons and CD-063 inversion built; ছাপা ২১
+
+**Built inside the timebox, as re-sequenced.** CD-063 had put inversion behind the operator
+extension on the assumption the hazard waited on `÷`; ছাপা ১৯ disproved that, so the Principal
+re-sequenced and this sitting built both together.
+
+**`÷` evaluates exactly, as `Fraction`.** Not floor — `৫০ ÷ ২৪` floors to ২, the same as the
+correct `৫০ ÷ ২৫`, so floor division would make a mis-read *look* right. Not float either, which
+would import a tolerance the book never asked for.
+
+**The mark is read as data.** `✗ ✘ মিথ্যা` set the expectation to *does not hold*; `✓ ✔ সত্য` to
+*holds*. One implementation detail turned out to matter: **the mark must be stripped before the
+line is split**, or the segment carrying it evaluates to nothing and the chain silently vanishes —
+handing the mark's whole purpose back to luck. **An unmarked comparison is not assumed true**:
+ছাপা ১৮ prints `২৫ + ৪ > ৩০` with its verdict two speech-bubbles away, so assuming would redden a
+correct transcription. No mark, no claim — uncovered, never RED.
+
+**Selftest 53 cases, all PASS**, seeded all four ways plus the boundaries, including the verdict
+**word** মিথ্যা as the mark, an unmarked comparison REFUSEing, and a table-held marked block still
+REFUSEing — so **CD-061's layout protection is now itself under test**.
+
+**A seed had to be re-cut, and that is the more useful finding.** CD-062's fixture
+(`ক = ৪৮ ÷ ৮`) stopped exercising the carry guard the moment `÷` became readable — the chain now
+legitimately joins. The guard is unchanged and still needed; the fixture was replaced with a
+genuinely unreadable prose line. **A seed that silently stops biting is worse than a missing one**,
+and it only surfaced because the selftest was re-run rather than assumed.
+
+**Yield:** অধ্যায় ২ **3 → 8 verified**, ছাপা ২০'s `÷` chains now machine-checked; অধ্যায় ১
+**unchanged at 24**. **Stated limit:** the ✗ blocks on ছাপা ১৭ and ১৯ are table-held and stay at
+full manual depth — inversion reaches prose-form lines only.
+
+**ছাপা ২১ transcribed** — কাজ ৩'s arrow diagram (৬৪৩২ · ২৩১ · ১৫৩) and কাজ ৪–৫'s bracket
+skeletons, where **every computed cell is blank**: the book prints the bracket structure and the
+student fills it, so there is no printed digit to machine-check and the statement figures went
+through at full manual depth.
+
+**The extraction's warning block was rewritten, not left standing.** It had said the false lines
+"do not reach the machine" — true yesterday, false after CD-064. **A file may not tell an old
+story about its own guard.** It now carries the four-way expectation table and the explicit note
+that table-held blocks remain uncovered.
+
+**Chapter NOT complete — ছাপা ২২–৩০ remain, nine pages.** Resume at **ছাপা ২২ (PDF 29)**.
