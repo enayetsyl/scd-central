@@ -1,4 +1,4 @@
-# AGENTS.md — scd-central canonical protocol · v1.1
+# AGENTS.md — scd-central canonical protocol · v1.2
 
 Every agent session (Claude Cowork, Claude Code, Codex, or any other tool) in this repository
 follows this file. `CLAUDE.md` is a pointer here. Per-workstream rules live in
@@ -94,6 +94,16 @@ and logged as CD-### rows. `archive/old-account/` is never cited as current auth
 
 - "Run new tasks in the cloud" toggle OFF.
 - Sandbox cannot unlink inside `.git/` → rename lock files aside (approved standing practice).
+- **An aside goes to `.git/lock-debris/`, never to wherever it happened to be (CD-056).** git
+  parses every entry under `refs/` as a ref, so a `main.lock.aside-…` left *inside*
+  `refs/remotes/origin/` is read as a ref named that, and the next pull dies with
+  **`fatal: bad object refs/remotes/origin/main.lock.aside-…`** followed by
+  `did not send all necessary objects` — a failure that looks like a corrupt remote and is not
+  one. Recorded because the aside practice itself created it. **Move aside files out of every
+  git-parsed path in one step**; `.git/lock-debris/` exists for this and is the only destination.
+- **Each git write re-creates the lock it cannot remove.** `git add` finishing successfully still
+  leaves `index.lock` behind, so the *next* command fails. Move the lock aside immediately before
+  each git write, not once at the start of the session.
 - Workspace-boot stalls → fully quit Claude Desktop and retry.
 - Any deletion outside `.git/` requires the agent to state the reason in chat FIRST. Teacher's
   standing rule: Allow at task start; Deny+ask on unexpected deletes.

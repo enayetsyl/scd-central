@@ -1,7 +1,7 @@
-# SOURCE_POLICY — v1.3
+# SOURCE_POLICY — v1.4
 
 *Canon. Adopted v1.0 by Principal ruling 2026-08-09 (CD-037), superseding the v0.1 draft staged in `_inbox/`.*
-*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
+*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
 *Consumed by: question-banks · scholarship · class-tests · support-books.*
 *Cited, never copied (AGENTS.md §8).*
 
@@ -261,3 +261,52 @@ trivially clean when the stream is empty.** An absent channel is not a passing o
 
 The extraction header records which class the source was, so a later reader knows which
 hazards applied — and, here, which one did not exist.
+
+## 7.8 Extraction cadence for single-channel books — adds to §2.2, §7.4 and §7.7 (Principal ruling 2026-08-10, CD-054, closing PENDING-P-014)
+
+§7.7 sets full human check, book-wide, for a source with no text layer. It did not say what that
+costs, and the first Math book made the cost measurable: delivering a page at a true 400 dpi needs
+it split into **four** tiles — a larger tile is downscaled in transit, so the resolution rule is
+broken by the delivery rather than by the render — which is **roughly 720 reads for 181 printed
+pages**. One session cannot hold that.
+
+**The resolution is not negotiable, and the schedule is what gives way.**
+
+- **No relaxation for math body text.** The 400–700 dpi rule (CR-001) applies to all number-dense
+  content **before** transcription, not on suspicion. The reason is on the record: **five
+  near-misses on the Bangla book all lived exactly where dpi had been thinned** — `ঝকঝক` read as
+  `ঝকঝাক`, পাঠ ৪'s letter date, পাঠ ৬'s chandrabindu, `শাঁখ` read as `শীঁখ`, and `প্রচণ্ড`
+  transcribed `প্রচন্ড`, which reached a commit. In গণিত the exposure is worse in kind, not only
+  in degree: **a mis-read numeral becomes a wrong answer key, and a book with no second channel has
+  nothing downstream that will catch it.**
+- **Cadence: one or more complete অধ্যায় per session, at full care.** A chapter is the unit of
+  work because it is the unit a question author uses and the unit the gate names.
+- **Checkpoint-commit per chapter**, a **stated resume point in the workstream's `STATE.md`**, and
+  a **fresh session each sitting**. A session that finds its care degrading stops at the resume
+  point; it does not finish the chapter badly.
+- **A ten-chapter book is about a week of sittings. That is the accepted cost of a source with no
+  second channel**, and no agent trades it back for speed. An agent that thinks the trade is worth
+  making raises a PENDING row; it does not make it.
+
+## 7.9 An unfinished extraction declares itself — adds to §5 (Principal ruling 2026-08-10, CD-055, closing PENDING-P-015)
+
+§7.8's cadence guarantees that a half-built extraction sits on disk between sittings, and AGENTS.md
+§3 requires exactly that — work in progress lives in files so a killed session is resumable. But
+`source_check.py --selftest` draws its controls from every extraction on disk and asserts that an
+unmutated one is not red, which assumes each is finished. Both rules are right; together they turned
+the whole repository's tool gate red the first time a chapter was interrupted mid-transcription.
+
+**An extraction that is not finished says so, in one machine-read line in its header:**
+
+```
+**অবস্থা:** নির্মাণাধীন — <what is transcribed, what is not, where to resume>
+```
+
+- A file carrying that line is **excluded from the selftest's controls**, and the selftest
+  **prints every file it skipped and why**. An extraction can be held out of the pool; it cannot be
+  held out quietly, and it cannot be held out by accident.
+- **The marker buys nothing else.** `source_check.py` still runs on such a file and still reports
+  it red. It is not a waiver, and it does not touch SIGNOFF, DEPTH or any other check.
+- **Removing the line is part of finishing the chapter** and belongs in the resume instructions.
+  A marker nobody takes out would keep a finished extraction outside the selftest forever, which
+  is the same silent-exclusion failure in the opposite direction.
