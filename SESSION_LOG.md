@@ -1469,3 +1469,36 @@ complete rather than three half-done.
 
 **Owed to the Principal: 68 sign-off rows** (35 for অধ্যায় ১, 33 for অধ্যায় ২). No agent writes
 in the সই column.
+
+## 2026-08-10 (multi-chapter sitting, continued) · অধ্যায় ৩ opened — ছাপা ৩১–৩২
+
+**Rasters and offset first, as instructed.** 400 dpi rendered for PDF 38–55, then the offset
+**re-derived at twelve points, all inside ছাপা ৩১–৪৮**: 38→৩১, 39→৩২, 41→৩৪, 43→৩৬, 45→৩৮,
+47→৪০, 49→৪২, 50→৪৩, 51→৪৪, 53→৪৬, 54→৪৭, 55→৪৮. Constant at **+৭**. **Ten of the twelve are
+fresh; two (PDF 38 and 50) also appear in অধ্যায় ১'s table** — 38 because it is this chapter's
+opening page. **The overlap is written into the file rather than quietly presented as twelve new
+points**; the values were read fresh from this chapter's raster either way.
+
+**ছাপা ৩১ and ৩২ transcribed** — গুণিতক, সাধারণ গুণিতক, two Venn diagrams and two ১–২৫ strips.
+
+**Two findings, both properties of the book.** ছাপা ৩১'s first table skips **৭, ৮, ৯** (১–৬ then
+১০ then ২০) and its second skips **৯** (৮ then ১০): the tables are samples, not runs, and were
+not "corrected". And ছাপা ৩২'s two ১–২৫ strips are **identical with no cell pre-marked** — the
+student circles them. **Both strips were read separately at 400 dpi rather than assumed identical
+from appearance**, which is the same discipline CR-002 was written about.
+
+**Machine coverage here is essentially nil, and that is the honest result.**
+`math_arith_check.py` returns **REFUSE** on the file: these two pages carry multiple-lists and
+Venn diagrams, not worked equations. REFUSE means *nothing was verified*, and reporting CLEAN
+would have been a lie. The numerals were carried by targeted 400 dpi crops of every table, strip
+and Venn region instead.
+
+**CD-066 has not been used yet, and the reason is worth recording:** ছাপা ৩১ and ৩২ are both
+teaching-dense — definitions, tables, diagrams — not pure-exercise sections. **The convention's
+test is content, not heading**, so it waits for a genuine exercise-only section. Its first use
+will state **পূর্ণ (§৭.১২)** in the depth column.
+
+**Stopping here at a stated resume point — ছাপা ৩৩ (PDF 40).** CD-067 allows three chapters, and
+two are closed; অধ্যায় ৩ is eighteen pages and sixteen remain. Continuing now would mean reading
+the back of a dense chapter with attention already spent, which is exactly what the near-miss
+record argues against. **The ceiling is not a target.**
