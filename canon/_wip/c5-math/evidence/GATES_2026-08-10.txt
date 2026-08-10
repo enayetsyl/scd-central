@@ -1,4 +1,4 @@
-### source_check.py · 2026-08-10 (printed ১–৭)
+### source_check.py · 2026-08-10 (printed ১–৮)
 source_check.py — SOURCE_POLICY.md §5
 file    : canon/_wip/c5-math/C5_MATH_Source_01.md
 subject : class 5 · MATH
@@ -7,9 +7,9 @@ channel : single (§7.4 sampling unavailable)
 ------------------------------------------------------------------------------
 [PASS   ] RANGE    stated range অধ্যায় 1-1: all 1 section(s) present
 [FAIL   ] SLOTS    11 spine slot(s) neither cross-referenced nor marked absent: MATH-S01, MATH-S02, MATH-S03, MATH-S04, MATH-S05, MATH-S06, MATH-S07, MATH-S08, MATH-S09, MATH-S10, MATH-S11
-[PASS   ] PAGES    offset constant (+7) over 18 verified rows; 7 body refs monotonic within 1-16, 0 commentary/cross-ref refs in range
-[PENDING] SIGNOFF  15 of 15 spot-check row(s) unsigned — only the Principal or the teacher can close this
-[PASS   ] DEPTH    single-channel source; all 15 sign-off row(s) marked 'পূর্ণ'
+[PASS   ] PAGES    offset constant (+7) over 18 verified rows; 8 body refs monotonic within 1-16, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  17 of 17 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 17 sign-off row(s) marked 'পূর্ণ'
 ------------------------------------------------------------------------------
 VERDICT : RED — returns to build phase (AGENTS.md §5)
 EXIT=2
@@ -17,20 +17,31 @@ EXIT=2
 ### math_arith_check.py · same
 math_arith_check.py — the extraction's arithmetic against itself
 file   : canon/_wip/c5-math/C5_MATH_Source_01.md
-found  : 7 worked block(s), 3 step-table row(s)
+found  : 7 worked block(s), 6 step-table row(s), 7 equality chain(s)
 ------------------------------------------------------------------------------
-[CLEAN    ] line 123   ৪৬১৪ × ৩৬৫ = ১৬৮৪১১০  (fully printed)
-[CLEAN    ] line 154   ৮৫৩৬ × ৯৭২ = ৮২৯৬৯৯২  (fully printed)
-[CLEAN    ] line 169   ৪৭৬৫ × ২৩৫৪ = ১১২১৬৮১০  (fully printed)
-[WIDTH    ] line 191   ৮৩৪৬ × ১৫৪৫: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
-[WIDTH    ] line 203   ৬২৫৮ × ৬০৯৭: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
-[CLEAN    ] line 215   ৫৫৭৯ × ৪৬৭৭ = ২৬০৯২৯৮৩  (pinned uniquely from the printed cells)
-[CLEAN    ] line 227   ৭৭৭২৩ × ৪৫৬৭ = ৩৫৪৯৬০৯৪১  (pinned uniquely from the printed cells)
-[CLEAN    ] line 119   ৪৬১৪ × ৫ = ২৩০৭০
-[CLEAN    ] line 120   ৪৬১৪ × ৬০ = ২৭৬৮৪০
-[CLEAN    ] line 121   ৪৬১৪ × ৩০০ = ১৩৮৪২০০
+[CLEAN    ] line 125   ৪৬১৪ × ৩৬৫ = ১৬৮৪১১০  (fully printed)
+[CLEAN    ] line 156   ৮৫৩৬ × ৯৭২ = ৮২৯৬৯৯২  (fully printed)
+[CLEAN    ] line 171   ৪৭৬৫ × ২৩৫৪ = ১১২১৬৮১০  (fully printed)
+[WIDTH    ] line 193   ৮৩৪৬ × ১৫৪৫: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
+[WIDTH    ] line 205   ৬২৫৮ × ৬০৯৭: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
+[CLEAN    ] line 217   ৫৫৭৯ × ৪৬৭৭ = ২৬০৯২৯৮৩  (pinned uniquely from the printed cells)
+[CLEAN    ] line 229   ৭৭৭২৩ × ৪৫৬৭ = ৩৫৪৯৬০৯৪১  (pinned uniquely from the printed cells)
+[CLEAN    ] line 121   ৪৬১৪ × ৫ = ২৩০৭০
+[CLEAN    ] line 122   ৪৬১৪ × ৬০ = ২৭৬৮৪০
+[CLEAN    ] line 123   ৪৬১৪ × ৩০০ = ১৩৮৪২০০
+[CLEAN    ] line 293   ৭৪ × ২৯ = ২১৪৬
+[CLEAN    ] line 295   ৭৪০০ × ২৯ = ২১৪৬০০
+[CLEAN    ] line 297   ৭৪০০ × ২৯০০ = ২১৪৬০০০০
+[CLEAN    ] line 255   চেইন: ৬০৪২ × **১৫১৪** = ৬০৪২ × **(১০০০ + ৫০০ + ১০ + ৪)**  → ৯১৪৭৫৮৮
+[CLEAN    ] line 308   চেইন: ৭৪০০ × ২৯০০ = ৭৪ × ১০০ × ২৯ × ১০০  → ২১৪৬০০০০
+[CLEAN    ] line 309   চেইন: ৭৪ × ১০০ × ২৯ × ১০০ = ৭৪ × ২৯ × ১০০ × ১০০  → ২১৪৬০০০০
+[CLEAN    ] line 310   চেইন: ৭৪ × ২৯ × ১০০ × ১০০ = ২১৪৬ × ১০০০০  → ২১৪৬০০০০
+[CLEAN    ] line 311   চেইন: ২১৪৬ × ১০০০০ = ২১৪৬০০০০  → ২১৪৬০০০০
+[CLEAN    ] line 346   চেইন: ৯৯ × ২৪ = ( ১০০ − ১ ) × ২৪  → ২৩৭৬
+[CLEAN    ] line 354   চেইন: ৯৯৯ × ৩২ = ( ১০০০ − ১ ) × ৩২  → ৩১৯৬৮
 ------------------------------------------------------------------------------
 LIMITS : computed working only · words/names/instructions out of scope ·
          problem-statement figures unchecked where the book prints no working
-VERDICT: CLEAN — 8 item(s) verified; 2 uncovered (full manual depth, §7.10)
+NOT LOOKED AT: prose carrying numbers (limit 3) ×76, bare exercise (no printed answer to check) ×22, ARITHMETIC LINE NOT PARSED ×8, ÷ long division ×3
+VERDICT: CLEAN — 18 verified · 2 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×76, bare exercise (no printed answer to check) ×22, ARITHMETIC LINE NOT PARSED ×8, ÷ long division ×3
 EXIT=0

@@ -1,0 +1,14 @@
+### Manual-depth arithmetic check · ছাপা ৪–৮ · 2026-08-10
+### ছাপা ৮'s long division is OUTSIDE math_arith_check.py's parser — it appears in the
+### summary as '÷ long division'. This is the human channel for it, written down.
+[OK ] ছাপা৮ ৪২৭৫ ÷ ৪৫ = ৯৫: 95 vs 95
+[OK ] ছাপা৮ ভাগশেষ ০: 0 vs 0
+[OK ] ছাপা৮ ধাপ১ ৪৫ × ৯ = ৪০৫: 405 vs 405
+[OK ] ছাপা৮ ধাপ১ ৪২৭ − ৪০৫ = ২২: 22 vs 22
+[OK ] ছাপা৮ ধাপ২ ২২ ও নামানো ৫ → ২২৫: 225 vs 225
+[OK ] ছাপা৮ ধাপ২ ৪৫ × ৫ = ২২৫: 225 vs 225
+[OK ] ছাপা৮ ধাপ২ ২২৫ − ২২৫ = ০: 0 vs 0
+[OK ] ছাপা৮ যাচাই ৯৫ × ৪৫ + ০ = ৪২৭৫: 4275 vs 4275
+[OK ] ছাপা৮ ৪২ < ৪৫ — তাই তিন অঙ্ক: True vs True
+
+ALL CONSISTENT

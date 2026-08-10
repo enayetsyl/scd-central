@@ -1092,3 +1092,26 @@ SMOKE-exempt.
 **Transcription resumes next at ছাপা ৮ (PDF 15)**, unchanged. Long division is a new shape and
 will show up in the summary as `÷ long division` the moment it appears; its extension is a named
 task, never a loosening.
+
+### 2026-08-10 (same sitting, after the extension) · ছাপা ৮ — ভাগ begins
+
+**Transcribed printed ৮**, which opens the chapter's second half: a `## ভাগ` heading, the ৪২৭৫ ÷
+৪৫ word problem, the full long-division working, and অনুশীলন ১'s six divisions. কাজ/অনুশীলন
+numbering restarts again, as it has at every মূল প্রশ্ন.
+
+**CD-059 earned its keep on the first page after it was written.** Long division arrived and the
+summary named it without being asked: **`NOT LOOKED AT: … ÷ long division ×3`**. Under the old
+output this page would have been absorbed into an unchanged count. Per the ruling the gate was
+**not** extended for `÷`; printed ৮ was checked at full manual depth instead, and the nine hand
+checks are in `evidence/MANUAL_ARITH_p04-08_2026-08-10.txt` — ভাগফল ৯৫, ভাগশেষ ০, every
+subtraction row, and ৯৫ × ৪৫ = ৪২৭৫ as the closing check. All consistent.
+
+**Long division is checkable, just not parsed yet** — quotient × divisor + remainder = dividend,
+and each subtraction row is divisor × that quotient digit. Recorded in `STATE.md` as the next
+extension candidate; seeded tests and a CD row first, never a loosening.
+
+**Gates:** `source_check.py` RANGE/PAGES/DEPTH **PASS** (17/17 sign-off rows পূর্ণ), SIGNOFF
+**PENDING**, **SLOTS FAIL still deliberate** · `math_arith_check.py` **CLEAN — 18 verified, 2
+uncovered**, with four unparsed shapes named on the verdict line.
+
+**Resume at ছাপা ৯ (PDF 16).** Eight printed pages remain and they are mostly division.
