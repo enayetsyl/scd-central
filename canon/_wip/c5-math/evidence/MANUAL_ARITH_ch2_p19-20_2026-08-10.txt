@@ -1,0 +1,19 @@
+### Manual-depth arithmetic check · অধ্যায় ২ · ছাপা ১৯–২০ · 2026-08-10
+### The evaluator reads neither ÷ nor { } [ ], so every chain on ছাপা ২০ is outside it.
+### ছাপা ১৯'s worked block is DELIBERATELY FALSE in the book and is checked as such.
+[OK ] ছাপা১৯ ১ × ২৪ + ১৫০ = ১৭৪ (বইয়ের ধাপ): 174 vs 174
+[OK ] ছাপা১৯ বইয়ের রায় 'মিথ্যা' সঠিক: ১৭৪ != ২৪৬ -> True
+[OK ] সঠিক মান ক = (২৪৬-১৫০)/২৪ = 4 (বই এখানে দেয় না, ছাত্র বের করবে)
+[OK ] ছাপা২০ ১৪ − ১০: 4 vs 4
+[OK ] ছাপা২০ ২০ − ১৫: 5 vs 5
+[OK ] ছাপা২০ ৪ × ৫: 20 vs 20
+[OK ] ছাপা২০ ২০ + ৩০: 50 vs 50
+[OK ] ছাপা২০ ৫০ ÷ ২৫: 2 vs 2
+[OK ] ছাপা২০ ৩ + ২ − ৪: 1 vs 1
+[OK ] ছাপা২০ পুরো চেইন: 1 vs 1
+[OK ] ছাপা২০ ১২÷২×৩ ধাপ ৬×৩: 6 vs 6
+[OK ] ছাপা২০ ১২÷২×৩: 18 vs 18
+[OK ] ছাপা২০ ১২÷(২×৩) ধাপ ২×৩: 6 vs 6
+[OK ] ছাপা২০ ১২÷(২×৩): 2 vs 2
+
+ALL CONSISTENT

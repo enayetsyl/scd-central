@@ -1286,3 +1286,34 @@ extraction's warning block is the guard, and it says so.
 অধ্যায় ১ re-run unchanged at **24 verified**, `canon_check.py` and `tools_check.py` **CLEAN**.
 
 **Transcription unchanged: resume at ছাপা ১৯ (PDF 26)**, twelve printed pages of অধ্যায় ২ left.
+
+## 2026-08-10 (fresh sitting) · অধ্যায় ২ — ছাপা ১৯–২০
+
+**Transcribed ছাপা ১৯ and ২০.** ছাপা ২০ opens a new sub-section, **হিসাবের ধারাবাহিকতা**
+(order of operations), with the three printed rules and the bracket order ( ) → { } → [ ].
+
+**The CD-063 hazard arrived early, and not by the route we expected.** The warning written
+yesterday said the false-by-design lines do not reach the evaluator because it reads neither `÷`
+nor `>`. **ছাপা ১৯ broke that:** the book's own worked trial is
+`১ × ২৪ + ১৫০ = ২৪৬` → `২৪ + ১৫০ = ২৪৬` → `১৭৪ = ২৪৬`, with the book's verdict **মিথ্যা**
+printed beside it. That chain uses only `+` and `×` — **operators the evaluator already reads.**
+The hazard did not wait for `÷`.
+
+**Handled without contorting the transcription.** The book prints this as a **table** — worked
+steps on the left, its own verdict on the right — so the transcription is a table too, and a
+table cell's `|` means `evaluate()` reads nothing. **The book's own layout is the guard.** Written
+into `STATE.md` with the rule for what comes next: if a later false-worked block is printed as a
+table, transcribe it as one; **if it is not, stop and ask — do not invent a layout to please the
+parser.** That is the CD-061 discipline applied to a new shape, not a new convention.
+
+**Manual-depth arithmetic recorded** for both pages in
+`evidence/MANUAL_ARITH_ch2_p19-20_2026-08-10.txt` — including the confirmation that the book's
+মিথ্যা verdict is itself correct (১৭৪ ≠ ২৪৬), and every step of ছাপা ২০'s six-step chain and its
+bracket contrast (১২÷২×৩ = ১৮ against ১২÷(২×৩) = ২). All consistent.
+
+**Gates:** `source_check.py` RANGE/PAGES/DEPTH **PASS** (14/14 sign-off rows পূর্ণ), SIGNOFF
+**PENDING**, **SLOTS FAIL — deliberate**. `math_arith_check.py` **CLEAN — 3 verified**, no false
+RED. The census names `÷ long division ×13` and `ARITHMETIC LINE NOT PARSED ×2`, which is the
+honest picture of a chapter built on `÷` and brackets.
+
+**Chapter NOT complete — ছাপা ২১–৩০ remain, ten printed pages.** Resume at **ছাপা ২১ (PDF 28)**.
