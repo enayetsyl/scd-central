@@ -1,7 +1,7 @@
-# SOURCE_POLICY — v1.5
+# SOURCE_POLICY — v1.6
 
 *Canon. Adopted v1.0 by Principal ruling 2026-08-09 (CD-037), superseding the v0.1 draft staged in `_inbox/`.*
-*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration; v1.5 (CD-057) adds §7.10 the depth rule's math extension. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
+*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration; v1.5 (CD-057) adds §7.10 the depth rule's math extension; v1.6 (CD-065) adds §7.11 the rendering-choice rule. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
 *Consumed by: question-banks · scholarship · class-tests · support-books.*
 *Cited, never copied (AGENTS.md §8).*
 
@@ -345,3 +345,31 @@ the empty boxes in a scaffold — the digits were legible, the count was wrong, 
 never going to help. **High resolution protects reading; only a second channel protects
 counting.** §7.8's no-relaxation ruling is unaffected: the dpi floor and this check answer
 different failures, and neither substitutes for the other.
+
+## 7.11 Rendering choice — prefer the form the checker reads (Principal ruling 2026-08-10, CD-065)
+
+A printed page can often be transcribed two ways that are **equally faithful to its content** and
+differ only in markdown form — a bordered two-column box as a table, or as two labelled blocks; a
+worked chain as blockquote lines, or as table rows. The forms are not equivalent to the gates:
+**a `|` inside a cell stops `math_arith_check.py` reading anything on that line.**
+
+**Where two renderings are equally faithful, take the one that is checked.** Faithfulness is the
+constraint and is never traded; among renderings that satisfy it, the more-verified one wins. A
+transcription that is correct and unchecked is weaker than the same transcription checked, and on
+a single-channel source (§7.7) that difference is the whole margin.
+
+**One exception, and it points the other way.** For a block the book itself marks **false** —
+`✗`, or a verdict cell reading মিথ্যা — **protection comes first: it stays table-held.** CD-063's
+inversion covers prose-form marked lines, but a marked block the layout already holds is left
+held; making it machine-readable to gain coverage would trade a working guard for a check that
+CD-064 only partly provides.
+
+**And the boundary is a stop, not a judgement call.** A **false-worked block the book does NOT
+print as a table** is **stop-and-ask** — a PENDING-P row, not an agent decision. Inventing a
+layout to keep a gate quiet is the failure CD-061 rejected; inventing one to make a false block
+checkable is the same failure wearing the opposite coat.
+
+**Recorded because it was decided in a workstream and belongs above it.** The rule was written
+into `canon/_wip/c5-math/STATE.md` when ছাপা ২২ forced the choice; a rule that lives only in a
+workstream's state file dies with the workstream. Every subject that meets a bordered box will
+meet this, and C5 গণিত will not be the last.

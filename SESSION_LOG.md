@@ -1392,3 +1392,29 @@ worse than a short one** — the next session reads it first and cannot tell whi
 **Chapter NOT complete — ছাপা ২৪–৩০ remain, seven pages.** Seven were done this sitting (১৭–২৩
 cumulative). Resume at **ছাপা ২৪ (PDF 31)**; SLOTS, the নির্মাণাধীন removal and the full sweep all
 still wait on the complete read.
+
+### 2026-08-10 (same day) · CD-065 — rendering-choice rule ratified and promoted to canon
+
+**Ratified as ruled, and moved out of the workstream.** Where two renderings are equally faithful
+to the book's content, the one the checker reads wins. **Faithfulness stays the constraint and is
+never traded** — the rule only chooses *among* renderings that already satisfy it. On a
+single-channel source (§7.7) the difference is the whole margin: a correct-but-unchecked
+transcription is weaker than the same transcription checked.
+
+**The exception is kept sharp because it points the other way.** For a block the book itself
+marks false — `✗`, or a verdict cell reading মিথ্যা — **protection comes first and it stays
+table-held.** CD-064's inversion reaches prose-form marked lines, so making an already-held block
+machine-readable would trade a working guard for a partial check. And the boundary is a **stop,
+not a judgement call**: a false-worked block the book does *not* print as a table is a PENDING-P
+row. Inventing a layout to keep a gate quiet is the failure CD-061 rejected; inventing one to make
+a false block checkable is that same failure in reverse.
+
+**Promoted deliberately.** The rule was written into `canon/_wip/c5-math/STATE.md` when ছাপা ২২
+forced the choice — and **a rule that lives only in a workstream's state file dies with the
+workstream.** Recorded as **SOURCE_POLICY §7.11** (v1.6) with **CD-065**; `STATE.md` now **cites**
+it rather than holding a second copy, per AGENTS.md §8 (canon is cited, never copied). The resume
+checklist was updated in the same pass so the next session is pointed at all three conventions —
+the fence rule, the ✗/✓ inversion, and now §7.11.
+
+`canon_check.py` **CLEAN**. No transcription this pass; **resume unchanged at ছাপা ২৪ (PDF 31)**,
+seven pages of অধ্যায় ২ remaining.
