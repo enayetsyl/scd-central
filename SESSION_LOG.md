@@ -1217,3 +1217,42 @@ On signature the file promotes to `canon/sources/c5/math/` and the gate re-runs 
 
 **Next: অধ্যায় ২ — গাণিতিক বাক্য, ছাপা ১৭–৩০ = PDF 24–37.** 400 dpi rasters exist only to
 PDF 23, and **the offset must be re-derived, never carried.**
+
+## 2026-08-10 (fresh sitting) · অধ্যায় ২ opened — offset re-derived, ছাপা ১৭–১৮, CD-062
+
+**Rasters and offset first, as ruled.** 400 dpi rendered for PDF 24–37, then the offset
+**re-derived at twelve points, every one inside ছাপা ১৭–৩০** and none of them reused from
+অধ্যায় ১: 24→১৭, 25→১৮, 26→১৯, 28→২১, 29→২২, 30→২৩, 31→২৪, 33→২৬, 34→২৭, 35→২৮, 36→২৯,
+37→৩০. Constant at **+৭**. It matches অধ্যায় ১'s value, which is the expected result and not
+the reason it is recorded — it was derived, not carried.
+
+**ছাপা ১৭ and ১৮ transcribed.** The chapter introduces the unknown as a Bengali letter
+(**ক, খ, গ**), খোলা/বদ্ধ sentences, and সত্য/মিথ্যা.
+
+**The chapter's central hazard, found on its first page and written into the file's header.**
+**গাণিতিক বাক্য is taught by printing deliberately false statements.** ছাপা ১৭ prints
+`৪৮ ÷ ৩ = ৮` ✗, `৪৮ ÷ ৪ = ৮` ✗, `৪৮ ÷ ৫ = ৮` ✗ before `৪৮ ÷ ৬ = ৮` ✓; ছাপা ১৮ prints
+`২৫ + ৪ > ৩০` as its worked example of a **false** sentence, and "১২ একটি বিজোড় সংখ্যা" the
+same way. **None of these may ever be "corrected", and none may be fed to the arithmetic check.**
+They reach no check today only because the evaluator reads neither `÷` nor `>` — **luck, not
+design** — and the file says so, so that whoever extends the evaluator excludes the ✗-marked
+lines first, with seeds and a decision row.
+
+**CD-062 — a false RED, fixed the session it appeared.** অধ্যায় ২'s first worked equation
+reddened a **correct** transcription: `৮ × ক = ৪৮` set the equality chain's carry, the next line
+`ক = ৪৮ ÷ ৮` yielded nothing evaluable, and `= ৬` then chained ৬ back to the stale ৪৮ —
+`equality chain does not hold: ৪৮ ≠ ৬`. **The skipped line had changed the subject entirely**,
+which is what an unreadable line may always have done, so the carry is now cleared whenever a
+line yields nothing: **silence is not continuity.** Seeded both ways; selftest **40 cases PASS**;
+**অধ্যায় ১ re-run unchanged at 24 verified**, so a false positive was removed without losing
+reach. This is a bug fix, not the coverage extension the sitting's ruling barred — a gate that
+reddens correct work cannot be left standing, and contorting the transcription to please the
+parser would have hidden the flaw while it recurred on every worked equation in the chapter.
+
+**Gates:** `source_check.py` RANGE/PAGES/DEPTH **PASS** (8/8 sign-off rows পূর্ণ), SIGNOFF
+**PENDING**, **SLOTS FAIL — deliberate until the chapter is read**. `math_arith_check.py`
+**CLEAN — 1 verified** (`৬ × ৪ = ২৪`), which is the honest yield of two pages whose content is
+mostly equations with unknowns.
+
+**Chapter NOT complete — ছাপা ১৯–৩০ remain, twelve printed pages.** Resume at **ছাপা ১৯ (PDF 26)**;
+rasters and tiles for the whole chapter are already on disk.
