@@ -282,7 +282,9 @@ def pdf_stream(pdf: Path, first: int, last: int) -> str:
 
 
 COMMENTARY = ("## যেভাবে ছাপা আছে", "## এই ইউনিটে যা নেই", "## এই পাঠে যা নেই",
+              "## এই অধ্যায়ে যা নেই",
               "## এই ইউনিটে যে নামগুলো আছে", "## এই পাঠে যে নামগুলো আছে",
+              "## এই অধ্যায়ে যে নামগুলো আছে",
               "## MarkLogic স্লট মিলকরণ", "## প্রমাণ", "## সংশ্লিষ্ট নথি")
 
 # `*(...)*` is the extractions' settled way of writing a note about the page — which picture
@@ -301,7 +303,13 @@ def extraction_body(md: Path) -> str:
     stopped: those notes are written in Bengali in the English extractions too.
     """
     text = md.read_text(encoding="utf-8")
-    m = re.search(rf"^#\s+(?:Unit|পাঠ)\s+[\d{BENGALI}]+", text, re.M)
+    # `অধ্যায়` joins the anchor for the same reason `পাঠ` did (CD-051): a Math extraction the
+    # anchor does not recognise falls through unsliced, and the provenance header — md5,
+    # producer, page counts — enters the comparison as words of the book. On a book with no
+    # text layer that cannot produce a false AGREE any more (the REFUSE guard below catches
+    # it), but it would silently corrupt the comparison on the first Math book that *does*
+    # carry one, which is exactly the shape of failure CD-051 was written about.
+    m = re.search(rf"^#\s+(?:Unit|পাঠ|অধ্যায়)\s+[\d{BENGALI}]+", text, re.M)
     text = text[m.start():] if m else text
     for heading in COMMENTARY:
         text = re.split(rf"^{re.escape(heading)}", text, maxsplit=1, flags=re.M)[0]

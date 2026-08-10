@@ -860,3 +860,75 @@ other ten · **77 sign-off rows, 0 signed.** Verbatim:
 `EXCLUDED_paath_12.md` to `canon/sources/c5/bangla/` and re-run the gate there. Noted, not
 acted on: **`_inbox/` now also holds `Class 5 Math.pdf`** — the next subject under §7.1's order,
 but a new extraction is a new session's work.
+
+---
+
+## 2026-08-10 · Cowork · production step ① — C5 গণিত opened (classification, offset, gates); transcription begun
+
+**Repo state at start:** `acb3421`, clean, `main` up to date. `git pull` first returned
+`fatal: bad object refs/remotes/origin/main.lock.aside-…` — a stale aside file left *inside*
+`refs/remotes/origin/`, where git parses every entry as a ref. Not a conflict; residue of the
+AGENTS §9 rename-aside practice. Moved into the existing `.git/lock-debris/` (the convention two
+earlier sessions already used), along with a stale `index.lock` and `objects/maintenance.lock`.
+Pull then clean: **Already up to date.** Nothing was deleted — the sandbox cannot unlink inside
+`.git/` anyway (CD-040's limitation).
+
+**1. `Class 5 Math.pdf` classified — §7.7, measured rather than inherited (CD-052).** Same
+publisher pipeline as the Bangla book, so §7.7 was *expected*; it was measured anyway, and the
+result is more extreme. `pdftotext` over 190 pages returns **190 characters — one form-feed per
+page, not one real character**; **all 190 pages register zero fonts**; thirteen sampled pages hold
+**zero `BT`/`Tj`** against 5,208–76,887 curve operators each. Bangla had a text layer on its back
+imprint; this book has none anywhere. `source_textcheck.py` **REFUSE (exit 3)**, naming the reason
+— *"0 letters over 16 page(s), under the 640-letter floor"* — which corroborates the classification
+from a second direction. **Single channel, full human check book-wide; §7.4 sampling unavailable.**
+
+**2. Offset re-derived from scratch: +৭, at 18 points.** Bangla's is +৯; carrying it would have
+been wrong by two on every page reference. Verified across all 190 pages — ten chapter-opening
+folios plus eight interior folios read off the raster — constant throughout. Folio circles were
+cropped and montaged in grids, so twenty folios could be read from one image.
+
+**3. Structure read against the book at both ends.** সূচিপত্র (PDF 6) gives **ten অধ্যায় and
+stops**; all ten openings confirmed on the printed page with banner and number, and **every
+chapter's final page confirmed too** — each carries the preceding chapter's content, no gap, no
+divider, no unlisted section. **Printed ১৮১ (PDF 188) is the last numbered page; PDF 189 carries
+সমাপ্ত in place of a folio; PDF 190 is the back cover. No glossary, answer key or appendix.**
+This is CD-050's lesson applied *before* extraction instead of after.
+
+**4. Both gates were subject-shaped again (CD-053) — the red is on the record.** Against a correct
+first Math extraction, `source_check.py` printed `grammar : —` and
+`[FAIL] RANGE cannot read the '**এই ফাইলের অংশ:**' scope line`, with PAGES `skipped — scope
+unreadable`: `UNIT_WORDS` held `("Unit", "পাঠ")` and a Math book divides itself into **অধ্যায়**,
+so two of five checks died before reading a word of the book. Fixed in both gates (scope line, body
+heading, `COMMENTARY`, and `source_textcheck.py`'s body anchor). After: `grammar : chapter word
+'অধ্যায়'`, RANGE PASS, PAGES PASS at a constant +7 over 18 rows. **The list has now been wrong
+once per subject** — that, not the fix, is the finding.
+
+**5. A collision between two standing rules, found by running the gate.** CD-051 made the selftest
+fixture pool *every extraction on disk*; its controls assume every such file is finished. AGENTS §3
+requires unfinished work to live on disk so a killed session is resumable. On a book too big for
+one session those cannot both hold, and the half-built Math chapter produced
+`[FALSE+ ] control · C5_MATH_Source_01.md` and **`SELFTEST: FAIL`** — a red tool gate for the whole
+repo, from a file correctly reporting it was not done. Resolved in code, not waived: a file may
+declare `**অবস্থা:** নির্মাণাধীন` and is excluded as a control, **with every skipped file printed
+by name**. Removing the marker is written into the resume instructions. Raised as **PENDING-P-015
+(FLAGGED)**.
+
+**6. Transcription begun, and deliberately stopped.** Printed page ১ transcribed and arithmetic
+cross-checked (৪৬১৪ × ৩৬৫: partials ২৩০৭০ · ২৭৬৮৪০ · ১৩৮৪২০০, গুণফল ১৬৮৪১১০). True 400 dpi needs
+four tiles per page — **≈720+ reads for 181 printed pages** — so the book cannot be transcribed in
+one session at the depth the math-critical rule demands. Stopped at a stated resume point rather
+than lowering care, per the Principal's instruction. Raised as **PENDING-P-014 (OPEN)**, which
+blocks promotion and print for c5-math but not continued transcription on the stated default.
+
+**Gates, verbatim runs committed under `canon/_wip/c5-math/evidence/`:**
+`source_check.py` on the file — RANGE **PASS** · PAGES **PASS** · DEPTH **PASS** · SIGNOFF
+**PENDING** · **SLOTS FAIL, deliberately** (the slot cross-reference is not written, because
+writing it without reading the chapter would be writing a guess). **The file is red, and red is
+the correct state.** `source_check.py --selftest` **8 seeds RED, 32 controls CLEAN, PASS** ·
+`source_textcheck.py --selftest` **10/10 PASS** · `tools_check.py` **CLEAN** (2 pre-existing warns)
+· `canon_check.py` **CLEAN** (1 pre-existing warn).
+
+**Not done, and named:** অধ্যায় ১ printed ২–১৬; অধ্যায় ২–১০; the MarkLogic slot cross-reference;
+any sign-off (**no agent writes in the সই column**). Whether this book contains an excluded chapter
+of the পাঠ ১২ kind is **not yet knowable** and is recorded as verified-chapter-by-chapter rather
+than declared in advance.

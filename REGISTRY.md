@@ -18,8 +18,14 @@ One row per workstream. Adding a workstream = copy `workstreams/_template/` + ad
 ## Production sequence (Principal directive, CD-045)
 
 **① NCTB sources to per-chapter markdown** (`canon/sources/SOURCE_POLICY.md`) →
-*In flight: C5 English 20/20 units extracted — Unit 1 signed and in `canon/sources/c5/english/`,
+*In flight. **C5 English** 20/20 units extracted — Unit 1 signed and in `canon/sources/c5/english/`,
 Units 2–20 built in `canon/_wip/c5-english/` awaiting the Principal's spot-check (CD-046, CD-047).
+**C5 Bangla** পাঠ ১–১১ built in `canon/_wip/c5-bangla/`, extraction complete, 77 sign-off rows all
+unsigned; পাঠ ১২ excluded by ruling, পাঠ ১৩–২৩ already canon (CD-050, CD-051).
+**C5 গণিত** opened 2026-08-10 in `canon/_wip/c5-math/`: book classified §7.7, offset +৭ verified at
+18 points, all ten অধ্যায় boundaries confirmed at both ends, both gates fitted for `অধ্যায়`
+(CD-052, CD-053) — **transcription in progress, printed page ১ of ১৮১; resume point in that
+folder's `STATE.md`. This book takes several sessions by design (PENDING-P-014, OPEN).**
 Order within C5 is now English → Bangla remainder → other subjects (SOURCE_POLICY §7.1).* →
 **② C5 model papers and CTs, remaining subjects** (`workstreams/scholarship/`) →
 **③ C1–C4** → **④ question pools** (`workstreams/question-banks/`).

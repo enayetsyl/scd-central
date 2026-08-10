@@ -50,9 +50,18 @@ SPINE = {
 
 BN_DIGITS = str.maketrans("০১২৩৪৫৬৭৮৯", "0123456789")
 
-# The words a book divides itself into. English units, Bangla পাঠ. Order matters only
-# for the message; a file uses one or the other, never both.
-UNIT_WORDS = ("Unit", "পাঠ")
+# The words a book divides itself into. English units, Bangla পাঠ, Math অধ্যায়. Order
+# matters only for the message; a file uses one of them, never two.
+#
+# **This list has now been wrong twice, once per subject.** CD-051 added `পাঠ` after the
+# English-shaped gate failed a correct Bangla extraction on grammar alone; `অধ্যায়` is
+# added here after the same thing happened to the first Math extraction — `parse_scope`
+# returned None, so RANGE and PAGES both died before reading a word of the book, and the
+# header line printed `grammar : —`. The pattern is the point: a gate that hard-codes the
+# vocabulary of the subject it was written for reports red on correct work in every subject
+# it was not. A new subject whose books divide themselves by some other word belongs here,
+# and the failure will look exactly like this one.
+UNIT_WORDS = ("Unit", "পাঠ", "অধ্যায়")
 UNIT_RE = "(?:" + "|".join(UNIT_WORDS) + ")"
 
 
@@ -165,7 +174,9 @@ RASTER_ROW = ("ছবির", "মানচিত্র", "লেবেল")
 # Everything from the first of these headings on is the extraction talking about the book,
 # not transcribing it. Kept in step with `source_textcheck.py`'s list of the same name.
 COMMENTARY = ("## যেভাবে ছাপা আছে", "## এই ইউনিটে যা নেই", "## এই পাঠে যা নেই",
+              "## এই অধ্যায়ে যা নেই",
               "## এই ইউনিটে যে নামগুলো আছে", "## এই পাঠে যে নামগুলো আছে",
+              "## এই অধ্যায়ে যে নামগুলো আছে",
               "## MarkLogic স্লট মিলকরণ", "## প্রমাণ", "## সংশ্লিষ্ট নথি")
 
 
@@ -315,20 +326,40 @@ def run(path: Path):
 
 # ------------------------------------------------------------------------ selftest
 
+UNDER_CONSTRUCTION = "**অবস্থা:** নির্মাণাধীন"
+
+
 def fixture_pool():
-    """Every extraction on disk, in either half of the pipeline, in any subject.
+    """Every *finished* extraction on disk, in either half of the pipeline, in any subject.
 
     Was: the C5 English folders only. That was correct when English was the only extraction
     and wrong the moment Bangla existed — the Bangla-grammar and single-channel seeds have
     nothing to bite on in an English fixture, and a selftest that cannot exercise half the
     gate reports green for checks it never ran.
+
+    **And then "every extraction on disk" met a book too big for one session.** The controls
+    assert that an unmutated fixture is not red, which silently assumes every extraction on
+    disk is complete. AGENTS.md §3 requires the opposite — work in progress lives in files
+    under `_wip/` so a killed session is resumable — so a half-built chapter on disk is the
+    normal state, not an anomaly, and it turned the selftest FALSE+ the first time a Math
+    chapter was interrupted mid-transcription. A red tool gate for the whole repo, caused by
+    a file correctly reporting that it is not finished.
+
+    So a file may **declare itself unfinished**, and a declared-unfinished file is not a
+    control: it is not yet a claim about the book. The declaration is explicit, machine-read
+    and one string, and `selftest()` prints every file it skipped for it — an extraction can
+    be held out of the pool, but it cannot be held out quietly, and it cannot be held out by
+    accident. Nothing else changes: `run()` still checks such a file, and still reports it
+    red until it is finished and the marker comes out.
     """
     roots = list((REPO / "canon/sources").glob("*/*")) + list((REPO / "canon/_wip").glob("*"))
-    out = []
+    out, skipped = [], []
     for r in roots:
-        if r.is_dir():
-            out += sorted(r.glob("C*_*_Source_*.md"))
-    return sorted(set(out))
+        if not r.is_dir():
+            continue
+        for f in sorted(r.glob("C*_*_Source_*.md")):
+            (skipped if UNDER_CONSTRUCTION in f.read_text(encoding="utf-8") else out).append(f)
+    return sorted(set(out)), sorted(set(skipped))
 
 
 def selftest():
@@ -342,9 +373,9 @@ def selftest():
     written about.
     """
     import tempfile
-    pool = fixture_pool()
+    pool, skipped = fixture_pool()
     if not pool:
-        print("SELFTEST: no extraction on disk to mutate — nothing to prove against")
+        print("SELFTEST: no finished extraction on disk to mutate — nothing to prove against")
         return 2
 
     # The seeds are derived from the fixture, not hard-coded against one unit's wording.
@@ -426,6 +457,8 @@ def selftest():
     print("fixtures:")
     for p in pool:
         print(f"          {p.relative_to(REPO)}")
+    for p in skipped:
+        print(f"  SKIPPED {p.relative_to(REPO)}  — declares itself নির্মাণাধীন; not a control")
     print("SELFTEST — every seeded error must turn the gate RED")
     print("-" * 78)
     ok = True

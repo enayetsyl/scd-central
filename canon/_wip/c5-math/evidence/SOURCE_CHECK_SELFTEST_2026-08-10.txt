@@ -1,0 +1,78 @@
+### source_check.py --selftest · 2026-08-10 (after MATH grammar + নির্মাণাধীন pool rule)
+fixtures:
+          canon/_wip/c5-bangla/C5_BAN_Source_01.md
+          canon/_wip/c5-bangla/C5_BAN_Source_02.md
+          canon/_wip/c5-bangla/C5_BAN_Source_03.md
+          canon/_wip/c5-bangla/C5_BAN_Source_04.md
+          canon/_wip/c5-bangla/C5_BAN_Source_05.md
+          canon/_wip/c5-bangla/C5_BAN_Source_06.md
+          canon/_wip/c5-bangla/C5_BAN_Source_07.md
+          canon/_wip/c5-bangla/C5_BAN_Source_08.md
+          canon/_wip/c5-bangla/C5_BAN_Source_09.md
+          canon/_wip/c5-bangla/C5_BAN_Source_10.md
+          canon/_wip/c5-bangla/C5_BAN_Source_11.md
+          canon/_wip/c5-english/C5_ENG_Source_02.md
+          canon/_wip/c5-english/C5_ENG_Source_03.md
+          canon/_wip/c5-english/C5_ENG_Source_04.md
+          canon/_wip/c5-english/C5_ENG_Source_05.md
+          canon/_wip/c5-english/C5_ENG_Source_06.md
+          canon/_wip/c5-english/C5_ENG_Source_07.md
+          canon/_wip/c5-english/C5_ENG_Source_08.md
+          canon/_wip/c5-english/C5_ENG_Source_09.md
+          canon/_wip/c5-english/C5_ENG_Source_10.md
+          canon/_wip/c5-english/C5_ENG_Source_11.md
+          canon/_wip/c5-english/C5_ENG_Source_12.md
+          canon/_wip/c5-english/C5_ENG_Source_13.md
+          canon/_wip/c5-english/C5_ENG_Source_14.md
+          canon/_wip/c5-english/C5_ENG_Source_15.md
+          canon/_wip/c5-english/C5_ENG_Source_16.md
+          canon/_wip/c5-english/C5_ENG_Source_17.md
+          canon/_wip/c5-english/C5_ENG_Source_18.md
+          canon/_wip/c5-english/C5_ENG_Source_19.md
+          canon/_wip/c5-english/C5_ENG_Source_20.md
+          canon/sources/c5/english/C5_ENG_Source_01.md
+  SKIPPED canon/_wip/c5-math/C5_MATH_Source_01.md  — declares itself নির্মাণাধীন; not a control
+SELFTEST — every seeded error must turn the gate RED
+------------------------------------------------------------------------------
+[RED    ] RANGE  · the stated unit has no section   (C5_BAN_Source_01.md)
+[RED    ] SIGNOFF· raster-only content with no full-check row   (C5_BAN_Source_02.md)
+[RED    ] DEPTH  · a single-channel source claims sampled depth   (C5_BAN_Source_01.md)
+[RED    ] DEPTH  · a single-channel source drops the depth column   (C5_BAN_Source_01.md)
+[RED    ] SLOTS  · one spine slot dropped from the cross-reference   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · offset broken on one row   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · in-body page reference outside the stated range   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · in-body page references out of order   (C5_BAN_Source_01.md)
+[CLEAN  ] control · C5_BAN_Source_01.md must not be red
+[CLEAN  ] control · C5_BAN_Source_02.md must not be red
+[CLEAN  ] control · C5_BAN_Source_03.md must not be red
+[CLEAN  ] control · C5_BAN_Source_04.md must not be red
+[CLEAN  ] control · C5_BAN_Source_05.md must not be red
+[CLEAN  ] control · C5_BAN_Source_06.md must not be red
+[CLEAN  ] control · C5_BAN_Source_07.md must not be red
+[CLEAN  ] control · C5_BAN_Source_08.md must not be red
+[CLEAN  ] control · C5_BAN_Source_09.md must not be red
+[CLEAN  ] control · C5_BAN_Source_10.md must not be red
+[CLEAN  ] control · C5_BAN_Source_11.md must not be red
+[CLEAN  ] control · C5_ENG_Source_02.md must not be red
+[CLEAN  ] control · C5_ENG_Source_03.md must not be red
+[CLEAN  ] control · C5_ENG_Source_04.md must not be red
+[CLEAN  ] control · C5_ENG_Source_05.md must not be red
+[CLEAN  ] control · C5_ENG_Source_06.md must not be red
+[CLEAN  ] control · C5_ENG_Source_07.md must not be red
+[CLEAN  ] control · C5_ENG_Source_08.md must not be red
+[CLEAN  ] control · C5_ENG_Source_09.md must not be red
+[CLEAN  ] control · C5_ENG_Source_10.md must not be red
+[CLEAN  ] control · C5_ENG_Source_11.md must not be red
+[CLEAN  ] control · C5_ENG_Source_12.md must not be red
+[CLEAN  ] control · C5_ENG_Source_13.md must not be red
+[CLEAN  ] control · C5_ENG_Source_14.md must not be red
+[CLEAN  ] control · C5_ENG_Source_15.md must not be red
+[CLEAN  ] control · C5_ENG_Source_16.md must not be red
+[CLEAN  ] control · C5_ENG_Source_17.md must not be red
+[CLEAN  ] control · C5_ENG_Source_18.md must not be red
+[CLEAN  ] control · C5_ENG_Source_19.md must not be red
+[CLEAN  ] control · C5_ENG_Source_20.md must not be red
+[CLEAN  ] control · C5_ENG_Source_01.md must not be red
+------------------------------------------------------------------------------
+SELFTEST: PASS
+EXIT=0
