@@ -780,3 +780,39 @@ textcheck **REFUSE** (expected on this book). Verbatim:
 `canon/_wip/c5-bangla/evidence/GATE_SWEEP_2026-08-09.txt`.
 
 **Queue: 0 OPEN.** Next: পাঠ ৭ (সাইক্লোন), printed ৩৮–৪১ = pdf 47–50.
+
+---
+
+## 2026-08-09 · C5 Bangla — পাঠ ৭–৮ added (checkpoint 2) · `scd-agent-cowork`
+
+**পাঠ ১–৮ built, sign-off owed. পাঠ ৯–১১ remain.** Same standing: extraction in progress,
+promotion pending, **all SIGNOFF PENDING — only the Principal signs.**
+
+**Resolution is this book's recurring hazard, and it has now bitten four times.** Read at the
+150 dpi working render and corrected only by a 400–700 dpi crop: `ঝকঝক` (first read `ঝকঝাক`,
+পাঠ ৩) · পাঠ ৪'s sample-letter date · পাঠ ৬'s chandrabindu placement · `শাঁখ` (first read
+`শীঁখ`, পাঠ ৭). **Three of the four would have entered canon.** Standing rule now in STATE.md:
+poem pages, handwriting-font pages and any page with stacked diacritics get the high-resolution
+crop **before** transcription, not after — on a book with no second channel, the working render
+is the only thing between a mis-read and a printed question.
+
+**Findings kept as printed, not fixed (SOURCE_POLICY §3).** পাঠ ৭ prints **সরষে** in the poem
+and **শর্ষে** in its own word list on the facing page, and asks for a sentence with **“ধোয়া
+জামা”** where the poem says **“ফরসা জামা”**. পাঠ ৮ writes **“৩-4টি করে বাচ্চা দেয়”** — **the ৩ is
+a Bengali digit and the 4 is a Latin one**, in a paragraph where all nine other numbers are
+Bengali; its exercise ছক asks for **রাজকীয়**, **ক্ষিপ্র** and **স্মরণশক্তি**, none of which the
+chapter contains (it has রাজসিক, and দৃষ্টি/শ্রবণ/ঘ্রাণশক্তি). পাঠ ৮'s sign-off carries a
+dedicated row for its numbers, because a wrong figure travels straight into a question paper.
+
+**DEPTH gate corrected (CD-051 amended in place).** Its first version matched `নমুনা` anywhere
+in a sign-off row and went red on পাঠ ৪, whose first entry reads “আবেদনপত্রের **নমুনা** —
+পুরোটা” — the book's word for its sample letter, not a claim about depth. It now reads the
+**গভীরতা column**, with an eighth seed covering a file that omits the column entirely.
+**Selftest 8 seeds RED, all controls CLEAN.** A gate that reddens correct files stops being read.
+
+**Gates at commit:** eight-file sweep RANGE/SLOTS/PAGES/DEPTH **PASS**, SIGNOFF **PENDING**,
+textcheck **REFUSE** ×8 (expected) · both selftests PASS · `canon_check.py` and `tools_check.py`
+CLEAN (0 fail) · every `প্রমাণ` citation checked to resolve to a file on disk. Verbatim:
+`canon/_wip/c5-bangla/evidence/GATE_SWEEP_2026-08-09.txt`.
+
+**Queue: 0 OPEN.** Next: পাঠ ৯ (টুকটুক ও চিকু), printed ৪৭–৫২ = pdf 56–61.

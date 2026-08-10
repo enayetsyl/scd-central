@@ -1,4 +1,4 @@
-# GATE SWEEP — C5 Bangla পাঠ ১–৬ · 2026-08-09
+# GATE SWEEP — C5 Bangla পাঠ ১–৮ · 2026-08-09
 
 =============== C5_BAN_Source_01.md ===============
 source_check.py — SOURCE_POLICY.md §5
@@ -169,6 +169,62 @@ VERDICT : REFUSE — this check has nothing to compare and will not report agree
           human check (SOURCE_POLICY §7.4, §7.5).
 EXIT=3
 
+=============== C5_BAN_Source_07.md ===============
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_07.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 7-7: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 9 body refs monotonic within 38-41, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  6 of 6 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 6 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-bangla/C5_BAN_Source_07.md  (128 distinct words >= 4 letters)
+text layer : Class 5 Bangla.pdf pp.47-50  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 4 page(s), under the 160-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
+=============== C5_BAN_Source_08.md ===============
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_08.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 8-8: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 9 body refs monotonic within 42-46, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  7 of 7 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 7 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-bangla/C5_BAN_Source_08.md  (242 distinct words >= 4 letters)
+text layer : Class 5 Bangla.pdf pp.51-55  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 5 page(s), under the 200-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
 =============== selftests ===============
 fixtures:
           canon/_wip/c5-bangla/C5_BAN_Source_01.md
@@ -177,6 +233,8 @@ fixtures:
           canon/_wip/c5-bangla/C5_BAN_Source_04.md
           canon/_wip/c5-bangla/C5_BAN_Source_05.md
           canon/_wip/c5-bangla/C5_BAN_Source_06.md
+          canon/_wip/c5-bangla/C5_BAN_Source_07.md
+          canon/_wip/c5-bangla/C5_BAN_Source_08.md
           canon/_wip/c5-english/C5_ENG_Source_02.md
           canon/_wip/c5-english/C5_ENG_Source_03.md
           canon/_wip/c5-english/C5_ENG_Source_04.md
@@ -213,6 +271,8 @@ SELFTEST — every seeded error must turn the gate RED
 [CLEAN  ] control · C5_BAN_Source_04.md must not be red
 [CLEAN  ] control · C5_BAN_Source_05.md must not be red
 [CLEAN  ] control · C5_BAN_Source_06.md must not be red
+[CLEAN  ] control · C5_BAN_Source_07.md must not be red
+[CLEAN  ] control · C5_BAN_Source_08.md must not be red
 [CLEAN  ] control · C5_ENG_Source_02.md must not be red
 [CLEAN  ] control · C5_ENG_Source_03.md must not be red
 [CLEAN  ] control · C5_ENG_Source_04.md must not be red

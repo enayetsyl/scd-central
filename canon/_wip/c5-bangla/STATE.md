@@ -8,11 +8,11 @@ A killed session must be resumable from this file alone (AGENTS.md §3).
 Book: **আমার বাংলা বই, পঞ্চম শ্রেণি**, NCTB, প্রথম মুদ্রণ সেপ্টেম্বর ২০২৫, শিক্ষাবর্ষ ২০২৬.
 **23 পাঠ, printed pages ১–১৩২.**
 
-- **পাঠ ১–৬ — BUILT, sign-off owed.** All six: `source_check.py`
+- **পাঠ ১–৮ — BUILT, sign-off owed.** All eight: `source_check.py`
   RANGE/SLOTS/PAGES/DEPTH **PASS**, SIGNOFF **PENDING**; `source_textcheck.py` **REFUSE**
   (see below — the correct outcome on this book, not a failure).
   Gate sweep: `evidence/GATE_SWEEP_2026-08-09.txt`.
-- **পাঠ ৭–১১ — NOT STARTED.** Five files owed. See *Open / next* for the exact resume point.
+- **পাঠ ৯–১১ — NOT STARTED.** Three files owed. See *Open / next* for the exact resume point.
 - **পাঠ ১২ — NOT EXTRACTED by ruling.** See `EXCLUDED_paath_12.md`.
 - **পাঠ ১৩–২৩ — already canon**, `canon/marklogic/C5_Bangla_Source_13-23.md` (CD-004,
   grandfathered range-file form). **Do not re-extract.**
@@ -27,8 +27,8 @@ Book: **আমার বাংলা বই, পঞ্চম শ্রেণি*
 | ৪ | পত্র লিখি | ২৪–২৭ | 33–36 | ✅ BUILT · sign-off owed |
 | ৫ | ঠিক আছে | ২৮–৩১ | 37–40 | ✅ BUILT · sign-off owed |
 | ৬ | সুখু আর দুখু | ৩২–৩৭ | 41–46 | ✅ BUILT · sign-off owed |
-| ৭ | সাইক্লোন | ৩৮–৪১ | 47–50 | ⬜ |
-| ৮ | রয়েল বেঙ্গল টাইগার | ৪২–৪৬ | 51–55 | ⬜ |
+| ৭ | সাইক্লোন | ৩৮–৪১ | 47–50 | ✅ BUILT · sign-off owed |
+| ৮ | রয়েল বেঙ্গল টাইগার | ৪২–৪৬ | 51–55 | ✅ BUILT · sign-off owed |
 | ৯ | টুকটুক ও চিকু | ৪৭–৫২ | 56–61 | ⬜ |
 | ১০ | রাখাল ছেলে | ৫৩–৫৬ | 62–65 | ⬜ |
 | ১১ | কুটির শিল্প | ৫৭–৬২ | 66–71 | ⬜ |
@@ -43,6 +43,11 @@ only text **painted into the illustration** (“বুম! বুম!!”, ছ�
 own full-check sign-off row. §7.5's stated reason for moving such text outside the body — that
 the cross-channel check would report correct words as missing — does not apply on this book,
 because there is no cross-channel check. The §7.5 sign-off obligation still does.
+
+**Resolution is the recurring hazard, and it has now bitten four times.** `ঝকঝক` read as
+`ঝকঝাক` (পাঠ ৩) · পাঠ ৪'s letter date · পাঠ ৬'s chandrabindu placement · `শাঁখ` read as `শীঁখ`
+(পাঠ ৭). **Poem pages, handwriting-font pages and any page with stacked diacritics get a
+400–700 dpi crop BEFORE transcription.** Three of the four errors would have entered canon.
 
 **পাঠ ৩ is a poem carrying pronunciation hasants** (ছিপ্‌খান্‌ · তিনজন্‌ · জাগ্‌ছে · পান্‌কৌটি ·
 বক্‌বক্‌ · উন্মন্‌). It is S01 material — students write the first eight lines from memory — so
@@ -158,8 +163,8 @@ message names it as the missing capability so the next book that needs it says s
    column** (SOURCE_POLICY §7.4, AGENTS.md §2) — an agent signature here would make the
    extraction single-channel *and* self-approved, which is the one combination this book's
    whole depth ruling exists to prevent.
-2. **Resume at পাঠ ৭ (সাইক্লোন), printed ৩৮–৪১ = pdf 47–50.** Then ৮ (৪২–৪৬), ৯ (৪৭–৫২),
-   ১০ (৫৩–৫৬), ১১ (৫৭–৬২). Rasters for pdf 10–71 are already rendered in
+2. **Resume at পাঠ ৯ (টুকটুক ও চিকু), printed ৪৭–৫২ = pdf 56–61.** Then ১০ (৫৩–৫৬),
+   ১১ (৫৭–৬২). Rasters for pdf 10–71 are already rendered in
    `canon/_wip/c5-ban-raster/`. Build one file per পাঠ on the `C5_BAN_Source_01.md` pattern.
    **পাঠ ১০ (রাখাল ছেলে) is a poem — render it at 400+ dpi before transcribing, not after.**
    `BAN-S14` is **bound only in পাঠ ৪**; every other পাঠ marks it absent.
