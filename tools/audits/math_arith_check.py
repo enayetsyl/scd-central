@@ -406,6 +406,141 @@ def solve(b: Block):
     return "CLEAN", f"{render(a)} × {render(m)} = {render(tot)}  ({how})", sols
 
 
+# ------------------------------------------------------------------- long division
+#
+# Division's invariants are as forced as multiplication's, and the book prints all of them:
+#
+#   * ভাগফল × ভাজক + ভাগশেষ = ভাজ্য
+#   * every subtraction row = ভাজক × that ভাগফল digit, in order
+#   * the remainder is smaller than the divisor at every step — that is *why* the next digit
+#     is brought down, and a mis-read digit routinely breaks it before it breaks anything else
+#
+# The check simulates the division from the printed ভাজ্য and ভাজক and compares its own rows
+# against the printed ones, rather than trying to read the layout by column position. Column
+# reading would make the gate depend on how an agent happened to space a code block; simulating
+# depends only on the two numbers the book states.
+
+DIV_LINE = re.compile(r"^\s*([০-৯\s]+)\)\s*([০-৯\s]+)$")
+
+
+class Div:
+    def __init__(self, label, quotient, divisor, dividend, subs, inters, final, lines=()):
+        self.label, self.q, self.d, self.n = label, quotient, divisor, dividend
+        self.subs, self.inters, self.final = subs, inters, final
+        self.lines = tuple(lines)
+
+
+def _num(s):
+    s = "".join(ch for ch in s if ch in BN)
+    return int(s.translate(TO_ASCII)) if s else None
+
+
+def parse_divisions(text: str):
+    """Long-division blocks written inside a fenced code block.
+
+            ৯ ৫
+        ─────────
+    ৪ ৫ ) ৪ ২ ৭ ৫
+        − ৪ ০ ৫
+        ─────────
+          ২ ২ ৫
+        − ২ ২ ৫
+        ─────────
+              ০
+    """
+    out = []
+    lines = text.splitlines()
+    i = 0
+    while i < len(lines):
+        if not lines[i].strip().startswith("```"):
+            i += 1
+            continue
+        j = i + 1
+        blk = []
+        while j < len(lines) and not lines[j].strip().startswith("```"):
+            blk.append((j + 1, lines[j]))
+            j += 1
+        hit = next((k for k, (_, l) in enumerate(blk) if DIV_LINE.match(l)), None)
+        if hit is not None and not any(BLANK in l for _, l in blk):
+            ln, dline = blk[hit]
+            m = DIV_LINE.match(dline)
+            divisor, dividend = _num(m.group(1)), _num(m.group(2))
+            quotient = next((_num(l) for _, l in blk[:hit][::-1]
+                             if any(c in BN for c in l)), None)
+            subs, inters = [], []
+            for _, l in blk[hit + 1:]:
+                s = l.strip()
+                if not any(c in BN for c in s):
+                    continue
+                (subs if s.startswith(("−", "-")) else inters).append(_num(s))
+            final = inters[-1] if inters else None
+            if None not in (divisor, dividend, quotient) and subs:
+                out.append(Div(f"line {ln}", quotient, divisor, dividend, subs, inters, final,
+                               [k for k, _ in blk]))
+        elif hit is not None:
+            out.append(Div(f"line {blk[hit][0]}", None, None, None, [], [], None,
+                           [k for k, _ in blk]))
+        i = j + 1
+    return out
+
+
+def simulate(n: int, d: int):
+    """The rows the book would print: (subtrahends, values after each subtraction).
+
+    Standard long division: take digits of the ভাজ্য left to right; once the running value
+    reaches the ভাজক, each step contributes one ভাগফল digit, one subtraction row, and one
+    remainder row with the next digit brought down.
+    """
+    subs, inters, cur, started = [], [], 0, False
+    ds = str(n)
+    for idx, ch in enumerate(ds):
+        cur = cur * 10 + int(ch)
+        q = cur // d
+        if q == 0 and not started:
+            continue
+        started = True
+        subs.append(q * d)
+        cur -= q * d
+        # The row printed under a subtraction is the remainder with the next digit brought
+        # down — which is exactly what the next iteration's `cur` becomes. Bringing it down
+        # *here* as well double-counted it, and the bug was invisible on a one-step division.
+        inters.append(cur * 10 + int(ds[idx + 1]) if idx + 1 < len(ds) else cur)
+    return subs, inters
+
+
+def check_division(b: Div):
+    if b.q is None:
+        return "REFUSE", "division block carries blanks or an unreadable ভাজক/ভাজ্য — not checked", 0
+    q, d, n = b.q, b.d, b.n
+    if d == 0:
+        return "RED", "ভাজক is zero", 0
+    subs, inters = simulate(n, d)
+    quo, rem = divmod(n, d)
+    notes = []
+    if quo != q:
+        return "RED", (f"ভাগফল does not follow: {render(n)} ÷ {render(d)} = {render(quo)}, "
+                       f"printed {render(q)}"), 0
+    if b.final is not None and b.final != rem:
+        return "RED", (f"ভাগশেষ does not follow: expected {render(rem)}, printed "
+                       f"{render(b.final)}"), 0
+    if rem >= d:
+        return "RED", f"ভাগশেষ {render(rem)} is not smaller than ভাজক {render(d)}", 0
+    if b.subs != subs:
+        return "RED", ("a subtraction row is not ভাজক × the matching ভাগফল digit: expected "
+                       + " · ".join(render(x) for x in subs) + " · printed "
+                       + " · ".join(render(x) for x in b.subs)), 0
+    # Intermediates are matched as an ordered subsequence: a book may or may not print the
+    # bring-down row, and a layout difference must not redden a correct transcription — but a
+    # mis-read value matches nothing and still goes RED.
+    it = iter(inters)
+    for v in b.inters:
+        if not any(v == e for e in it):
+            return "RED", (f"intermediate value {render(v)} appears nowhere in the working: "
+                           + " · ".join(render(x) for x in inters)), 0
+    return "CLEAN", (f"{render(n)} ÷ {render(d)} = {render(q)} ভাগশেষ {render(rem)}  "
+                     f"({len(b.subs)} subtraction row(s) check out; ভাগশেষ < ভাজক)"), 1
+
+
 def census(text: str, seen: set):
     """What the gate did NOT look at, named rather than left to a flat number.
 
@@ -426,7 +561,10 @@ def census(text: str, seen: set):
         line = raw.strip().lstrip(">").strip()
         if sum(c in BN for c in line) < 2:
             continue
-        if "÷" in line:
+        if "÷" in line and "=" in line:
+            # `÷` with an `=` is working the gate could not read. `÷` without one is a bare
+            # exercise — the অনুশীলন lists are full of them, and filing those under "long
+            # division not parsed" would report a gap that no extension can ever close.
             k = "÷ long division"
         elif "ǀ" in line or "│" in line:
             k = "vertical-bar trailing-zero layout"
@@ -448,8 +586,17 @@ def census(text: str, seen: set):
 def run(path: Path, quiet=False):
     text = body(path.read_text(encoding="utf-8"))
     blocks, steps, chains = parse_blocks(text), parse_steps(text), parse_chains(text)
+    divs = parse_divisions(text)
     rows, red, covered, uncovered = [], False, 0, 0
     seen = set()
+    for dv in divs:
+        for k in dv.lines:
+            seen.add(k)
+        st, detail, got = check_division(dv)
+        rows.append((st, dv.label, detail))
+        red = red or st == "RED"
+        covered += got
+        uncovered += st == "REFUSE"
     for b in blocks:
         st, detail, _ = solve(b)
         rows.append((st, b.label, detail))
@@ -485,12 +632,12 @@ def run(path: Path, quiet=False):
     print("math_arith_check.py — the extraction's arithmetic against itself")
     print(f"file   : {path.relative_to(REPO) if str(path).startswith(str(REPO)) else path}")
     print(f"found  : {len(blocks)} worked block(s), {len(steps)} step-table row(s), "
-          f"{len(chains)} equality chain(s)")
+          f"{len(chains)} equality chain(s), {len(divs)} division block(s)")
     print("-" * 78)
     for st, label, detail in rows:
         print(f"[{st:9}] {label:10} {detail}")
     if not rows:
-        print("  ! no worked multiplication, step table or equality chain in the transcribed body")
+        print("  ! no worked multiplication, step table, equality chain or division in the body")
     print("-" * 78)
     print("LIMITS : computed working only · words/names/instructions out of scope ·")
     print("         problem-statement figures unchecked where the book prints no working")
@@ -584,6 +731,41 @@ SYNTH_LADDER = """
 > = ২১৪৬০০০০
 """
 
+
+# ছাপা ৮ · the first long division in the book: ৪২৭৫ ÷ ৪৫ = ৯৫, ভাগশেষ ০.
+SYNTH_DIV = """
+# অধ্যায় ১
+
+```
+              ৯ ৫
+        ─────────────
+  ৪ ৫ ) ৪ ২ ৭  ৫
+      − ৪ ০ ৫
+        ─────────
+          ২ ২ ৫
+        − ২ ২ ৫
+        ─────────
+              ০
+```
+"""
+
+# A division that leaves a remainder — the ভাগশেষ < ভাজক invariant has something to bite on.
+SYNTH_DIV_REM = """
+# অধ্যায় ১
+
+```
+              ৯ ৫
+        ─────────────
+  ৪ ৫ ) ৪ ২ ৭  ৭
+      − ৪ ০ ৫
+        ─────────
+          ২ ২ ৭
+        − ২ ২ ৫
+        ─────────
+              ২
+```
+"""
+
 # কাজ ৩(২): ৬২৫৮ × ৬০৯৭. The third partial is ৬২৫৮ × ০ × ১০০ = 0 — one digit — and the book
 # still prints SIX boxes for it. The scaffold is not sized by arithmetic where the multiplier
 # digit is zero, so that row is excused; the rest of the block is not.
@@ -657,7 +839,24 @@ def selftest():
     case("a chain segment containing ☐ is not evaluated",
          "# অধ্যায় ১\n\n> ৯৯ × ২৪ = ☐ × ২৪ − ☐ × ২৪\n", 3)
 
-    # --- coverage honesty (CD-058): the summary must name what it did not read
+    # --- long division (CD-060): the invariants are as forced as multiplication's
+    case("control · long division balances", SYNTH_DIV, 0)
+    case("control · long division with a remainder balances", SYNTH_DIV_REM, 0)
+    case("seed · ভাগফল mutated", SYNTH_DIV.replace("৯ ৫", "৯ ৬"), 2)
+    case("seed · a subtraction row is not ভাজক × its ভাগফল digit",
+         SYNTH_DIV.replace("− ৪ ০ ৫", "− ৪ ০ ৬"), 2)
+    case("seed · the ভাগশেষ does not follow",
+         SYNTH_DIV.replace("              ০", "              ১"), 2)
+    case("seed · an intermediate bring-down row is mutated",
+         SYNTH_DIV.replace("          ২ ২ ৫", "          ২ ৩ ৫"), 2)
+    case("seed · ভাজ্য mutated against its own working",
+         SYNTH_DIV.replace("৪ ২ ৭  ৫", "৪ ২ ৭  ৬"), 2)
+    case("seed · ভাজক mutated against its own working",
+         SYNTH_DIV.replace("  ৪ ৫ )", "  ৪ ৬ )"), 2)
+    case("a division block carrying ☐ is REFUSED, not guessed",
+         SYNTH_DIV.replace("− ৪ ০ ৫", "− ☐ ০ ৫"), 3)
+
+    # --- coverage honesty (CD-059): the summary must name what it did not read
     import io, contextlib
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf):
