@@ -48,6 +48,7 @@ from __future__ import annotations
 
 import re
 import sys
+from fractions import Fraction
 from itertools import product
 from pathlib import Path
 
@@ -216,11 +217,12 @@ def parse_steps(text: str):
 # because the operators do not exist yet, and inversion without them would be untested
 # machinery — until then the extraction's own warning block is the guard.
 
-EXPR_OK = re.compile(r"^[০-৯\s+\-−×xX*()]+$")
+EXPR_OK = re.compile(r"^[০-৯\s+\-−×xX*÷/()]+$")
 
 
 def _tokens(s: str):
     s = s.replace("−", "-").replace("×", "*").replace("x", "*").replace("X", "*")
+    s = s.replace("÷", "/")
     i, out = 0, []
     while i < len(s):
         c = s[i]
@@ -232,7 +234,7 @@ def _tokens(s: str):
                 j += 1
             out.append(int(s[i:j].translate(TO_ASCII)))
             i = j
-        elif c in "+-*()":
+        elif c in "+-*/()":
             out.append(c)
             i += 1
         else:
@@ -262,12 +264,21 @@ def _parse(tok):
         v = atom()
         if v is None:
             return None
-        while pos < len(tok) and isinstance(tok[pos], str) and tok[pos] == "*":
-            pos += 1
+        while pos < len(tok) and isinstance(tok[pos], str) and tok[pos] in "*/":
+            op = tok[pos]; pos += 1
             r = atom()
             if r is None:
                 return None
-            v *= r
+            if op == "*":
+                v *= r
+            else:
+                # Fraction, so ৫০ ÷ ২৫ is exactly ২ and a mis-read ৫০ ÷ ২৪ is exactly 25/12 —
+                # never equal to anything else in the chain. Floor division would quietly make
+                # a mis-read *look* right; float would introduce a tolerance this book never
+                # asked for. Division by zero is not an error here, it is an unreadable segment.
+                if r == 0:
+                    return None
+                v = Fraction(v) / r
         return v
 
     def atom():
@@ -301,6 +312,62 @@ def evaluate(seg: str):
     return _parse(tok) if tok else None
 
 
+
+# ------------------------------------------------------------------- the printed mark
+#
+# CD-063. This book teaches by printing statements that are **false on purpose**, each carrying
+# the book's own verdict — a red ✗ beside a trial, or the word মিথ্যা in a verdict cell. The
+# naive handling is to skip them. **Skipping leaves the hole exactly where a mis-read hides:**
+# print `৪৮ ÷ ৩ = ৮` ✗, mis-read the divisor as ৬, and the line becomes *true* — a skipped line
+# is checked by nothing, so that error walks through. So the mark is read as data and the
+# expectation is inverted against it.
+#
+# An UNMARKED comparison is **not** assumed true. ছাপা ১৮ prints `২৫ + ৪ > ৩০` with its verdict
+# two speech-bubbles away; assuming a bare printed comparison holds would redden that correct
+# transcription. No mark means no claim this check can test — it is reported uncovered.
+
+FALSE_MARKS = ("✗", "✘", "মিথ্যা")
+TRUE_MARKS = ("✓", "✔", "সত্য")
+
+
+def mark_of(line: str):
+    """-> False if the book marks the line false, True if it marks it true, None if unmarked."""
+    if any(m in line for m in FALSE_MARKS):
+        return False
+    if any(m in line for m in TRUE_MARKS):
+        return True
+    return None
+
+
+CMP_RE = re.compile(r"^(?P<a>[^<>=]+?)\s*(?P<op>[<>])\s*(?P<b>[^<>=]+)$")
+
+
+def parse_comparisons(text: str):
+    """Marked `A > B` / `A < B` lines — checked with the expectation the book's mark states."""
+    out = []
+    for i, raw in enumerate(text.splitlines(), 1):
+        line = raw.strip()
+        if line.startswith(">"):
+            line = line[1:].strip()
+        if "|" in line or BLANK in line:
+            continue
+        mk = mark_of(line)
+        if mk is None:
+            continue
+        body_ = re.sub(r"^\*{0,2}\(\s*[০-৯ক-হ]+\s*\)\*{0,2}\s*", "", line)
+        for m in FALSE_MARKS + TRUE_MARKS:
+            body_ = body_.replace(m, " ")
+        body_ = body_.strip(" —-–·|")
+        m = CMP_RE.match(body_)
+        if not m:
+            continue
+        a, b = evaluate(m.group("a")), evaluate(m.group("b"))
+        if a is None or b is None:
+            continue
+        out.append((f"line {i}", m.group("op"), a, b, mk, i))
+    return out
+
+
 def parse_chains(text: str):
     """-> [(label, [(segment_text, value)], lineno)] — every line whose `=`-separated parts
     are each fully numeric. Within a blockquote run, a line starting with `=` continues the
@@ -322,6 +389,14 @@ def parse_chains(text: str):
         # and the whole segment fails to parse — which is exactly why every distributive line on
         # printed ৪ and ৬ was invisible while the ×১০০ box, which carries no item label, was read.
         line = re.sub(r"^\*{0,2}\(\s*[০-৯ক-হ]+\s*\)\*{0,2}\s*", "", line)
+        # The mark has already been read off the raw line (CD-063); strip it before splitting,
+        # or the segment carrying it evaluates to nothing and the chain silently disappears —
+        # which would hand the mark's whole purpose back to luck.
+        mk_here = mark_of(raw)
+        if mk_here is not None:
+            for _m in FALSE_MARKS + TRUE_MARKS:
+                line = line.replace(_m, " ")
+            line = line.strip(" —-–·")
         parts = [p for p in line.split("=")]
         vals = []
         for p in parts:
@@ -331,7 +406,7 @@ def parse_chains(text: str):
         if line.startswith("=") and carry is not None and vals:
             vals = [carry] + vals
         if len(vals) >= 2:
-            out.append((f"line {i}", vals, i))
+            out.append((f"line {i}", vals, i, mk_here))
         if vals:
             carry, carry_lbl = vals[-1], f"line {i}"
         else:
@@ -345,8 +420,10 @@ def parse_chains(text: str):
     return out
 
 
-def render(v: int) -> str:
-    return str(v).translate(TO_BN)
+def render(v) -> str:
+    if isinstance(v, Fraction) and v.denominator != 1:
+        return f"{v.numerator}/{v.denominator}".translate(TO_BN)
+    return str(int(v)).translate(TO_BN)
 
 
 def fits(printed, computed_bn: str) -> bool:
@@ -609,7 +686,7 @@ def census(text: str, seen: set):
 def run(path: Path, quiet=False):
     text = body(path.read_text(encoding="utf-8"))
     blocks, steps, chains = parse_blocks(text), parse_steps(text), parse_chains(text)
-    divs = parse_divisions(text)
+    divs, comps = parse_divisions(text), parse_comparisons(text)
     rows, red, covered, uncovered = [], False, 0, 0
     seen = set()
     for dv in divs:
@@ -634,17 +711,38 @@ def run(path: Path, quiet=False):
                      else f"step table does not balance: {render(a)} × {render(m)} = {render(a*m)}, printed {render(c)}"))
         red = red or not good
         covered += good
-    for label, vals, ln in chains:
+    for label, vals, ln, mk in chains:
         seen.add(ln)
-        distinct = {v for _, v in vals}
-        if len(distinct) == 1:
-            rows.append(("CLEAN", label,
-                         "চেইন: " + " = ".join(s for s, _ in vals) + f"  → {render(vals[0][1])}"))
+        holds = len({v for _, v in vals}) == 1
+        shown = " = ".join(s for s, _ in vals)
+        # CD-063: the book's own mark sets the expectation. Unmarked -> must hold, as before.
+        expect = True if mk is None else mk
+        if holds == expect:
+            note = "" if mk is None else (" — বইয়ের ✓ অনুযায়ী মেলে" if mk
+                                          else " — বইয়ের ✗/মিথ্যা অনুযায়ী মেলে না, যা সঠিক")
+            rows.append(("CLEAN", label, f"চেইন: {shown}{note}"))
             covered += 1
         else:
             red = True
-            rows.append(("RED", label, "equality chain does not hold: " +
+            why = ("the book marks this line FALSE, but it balances — a mis-read has made a "
+                   "deliberately wrong line come out true" if mk is False else
+                   "the book marks this line TRUE, but it does not balance" if mk is True else
+                   "equality chain does not hold")
+            rows.append(("RED", label, why + ": " +
                          " ≠ ".join(f"{s} ({render(v)})" for s, v in vals)))
+    for label, op, a, b, mk, ln in comps:
+        seen.add(ln)
+        holds = (a > b) if op == ">" else (a < b)
+        if holds == mk:
+            rows.append(("CLEAN", label,
+                         f"তুলনা: {render(a)} {op} {render(b)} — বইয়ের চিহ্ন অনুযায়ী "
+                         f"{'সত্য' if mk else 'মিথ্যা'}, মিলেছে"))
+            covered += 1
+        else:
+            red = True
+            rows.append(("RED", label,
+                         f"comparison contradicts the book's own mark: {render(a)} {op} "
+                         f"{render(b)} is {holds}, but the book marks it {mk}"))
     if quiet:
         # `covered == 0` is REFUSE, never 0. A file whose only blocks are ambiguous or pure
         # scaffold has had nothing verified, and returning CLEAN there would hand a depth
@@ -655,7 +753,8 @@ def run(path: Path, quiet=False):
     print("math_arith_check.py — the extraction's arithmetic against itself")
     print(f"file   : {path.relative_to(REPO) if str(path).startswith(str(REPO)) else path}")
     print(f"found  : {len(blocks)} worked block(s), {len(steps)} step-table row(s), "
-          f"{len(chains)} equality chain(s), {len(divs)} division block(s)")
+          f"{len(chains)} equality chain(s), {len(divs)} division block(s), "
+          f"{len(comps)} marked comparison(s)")
     print("-" * 78)
     for st, label, detail in rows:
         print(f"[{st:9}] {label:10} {detail}")
@@ -879,8 +978,37 @@ def selftest():
     case("a division block carrying ☐ is REFUSED, not guessed",
          SYNTH_DIV.replace("− ৪ ০ ৫", "− ☐ ০ ৫"), 3)
 
+    # CD-062 still guards, but its original fixture stopped exercising it the moment ÷ became
+    # readable: `ক = ৪৮ ÷ ৮` now evaluates, so that chain legitimately joins. The guard is
+    # re-seeded with a middle line that is genuinely unreadable — prose, no evaluable segment.
     case("control · a chain does not jump over an unreadable line",
-         "# অধ্যায় ২\n\n> ৮ × ক = ৪৮\n> ক = ৪৮ ÷ ৮\n> = ৬\n> ক = ৬\n", 3)
+         "# অধ্যায় ২\n\n> ৮ × ক = ৪৮\n> এবার ক এর মান বসাই\n> = ৬\n", 3)
+    case("control · ÷ now evaluates, so a real ÷ chain joins",
+         "# অধ্যায় ২\n\n> ক = ৪৮ ÷ ৮\n> = ৬\n", 0)
+
+    # --- CD-063: the printed mark is data, and the expectation inverts against it
+    case("control · a ✗-marked chain that does NOT balance is correct",
+         "# অধ্যায় ২\n\n> ১ × ২৪ + ১৫০ = ১৭৪ = ২৪৬ ✗\n", 0)
+    case("seed · a ✗-marked chain that BALANCES is a mis-read",
+         "# অধ্যায় ২\n\n> ৪ × ২৪ + ১৫০ = ২৪৬ ✗\n", 2)
+    case("control · a ✓-marked chain that balances is correct",
+         "# অধ্যায় ২\n\n> ৪৮ ÷ ৬ = ৮ ✓\n", 0)
+    case("seed · a ✓-marked chain that does NOT balance is a mis-read",
+         "# অধ্যায় ২\n\n> ৪৮ ÷ ৫ = ৮ ✓\n", 2)
+    case("control · the verdict WORD মিথ্যা is read as the mark",
+         "# অধ্যায় ২\n\n> ১ × ২৪ + ১৫০ = ১৭৪ = ২৪৬ — মিথ্যা\n", 0)
+    case("seed · a মিথ্যা-marked chain that balances is a mis-read",
+         "# অধ্যায় ২\n\n> ৪ × ২৪ + ১৫০ = ২৪৬ — মিথ্যা\n", 2)
+    case("control · a মিথ্যা-marked comparison that is false is correct",
+         "# অধ্যায় ২\n\n> ২৫ + ৪ > ৩০ — মিথ্যা\n", 0)
+    case("seed · a মিথ্যা-marked comparison that is TRUE is a mis-read",
+         "# অধ্যায় ২\n\n> ২৫ + ৪ > ২০ — মিথ্যা\n", 2)
+    case("control · a সত্য-marked comparison that is true is correct",
+         "# অধ্যায় ২\n\n> ২৫ + ৪ < ৩০ — সত্য\n", 0)
+    case("an UNMARKED comparison is not assumed true — it is uncovered, not RED",
+         "# অধ্যায় ২\n\n> ২৫ + ৪ > ৩০\n", 3)
+    case("control · table-held marked blocks stay out of the checker (CD-061 layout guard)",
+         "# অধ্যায় ২\n\n| ১ × ২৪ + ১৫০ = ২৪৬ | মিথ্যা |\n", 3)
     case("control · a genuine two-line chain still joins",
          "# অধ্যায় ২\n\n> ৭৪ × ২৯\n> = ২১৪৬\n", 0)
 
