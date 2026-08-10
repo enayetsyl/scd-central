@@ -1,4 +1,4 @@
-### source_check.py · C5_MATH_Source_01.md · 2026-08-10
+### source_check.py · C5_MATH_Source_01.md · 2026-08-10 (printed ১–৩ transcribed)
 source_check.py — SOURCE_POLICY.md §5
 file    : canon/_wip/c5-math/C5_MATH_Source_01.md
 subject : class 5 · MATH
@@ -7,22 +7,9 @@ channel : single (§7.4 sampling unavailable)
 ------------------------------------------------------------------------------
 [PASS   ] RANGE    stated range অধ্যায় 1-1: all 1 section(s) present
 [FAIL   ] SLOTS    11 spine slot(s) neither cross-referenced nor marked absent: MATH-S01, MATH-S02, MATH-S03, MATH-S04, MATH-S05, MATH-S06, MATH-S07, MATH-S08, MATH-S09, MATH-S10, MATH-S11
-[PASS   ] PAGES    offset constant (+7) over 18 verified rows; 1 body refs monotonic within 1-16, 0 commentary/cross-ref refs in range
-[PENDING] SIGNOFF  1 of 1 spot-check row(s) unsigned — only the Principal or the teacher can close this
-[PASS   ] DEPTH    single-channel source; all 1 sign-off row(s) marked 'পূর্ণ'
+[PASS   ] PAGES    offset constant (+7) over 18 verified rows; 3 body refs monotonic within 1-16, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  5 of 5 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 5 sign-off row(s) marked 'পূর্ণ'
 ------------------------------------------------------------------------------
 VERDICT : RED — returns to build phase (AGENTS.md §5)
 EXIT=2
-
-### source_textcheck.py · same file · pp.8-23
-source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
-extraction : canon/_wip/c5-math/C5_MATH_Source_01.md  (4 distinct words >= 4 letters)
-text layer : Class 5 Math.pdf pp.8-23  (0 letters, decoded)
-------------------------------------------------------------------------------
-  ! the decoded text layer holds 0 letters over 16 page(s), under the 640-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
-------------------------------------------------------------------------------
-VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
-          A clean Section B is what §7.4 buys reduced spot-check depth with, and
-          Section B is trivially clean on an empty stream. Depth stays at full
-          human check (SOURCE_POLICY §7.4, §7.5).
-EXIT=3

@@ -1,0 +1,20 @@
+### অধ্যায় ১ · ছাপা ১–৩ — arithmetic self-consistency of the transcribed digits
+### NOT a gate. A one-off check, run 2026-08-10, recorded because it passed and because
+### it is the first second-channel this book has been shown to have (see STATE.md).
+
+[OK ] ৪৬১৪ × ৫: 23070 vs 23070
+[OK ] ৪৬১৪ × ৬০: 276840 vs 276840
+[OK ] ৪৬১৪ × ৩০০: 1384200 vs 1384200
+[OK ] ৪৬১৪ × ৩৬৫: 1684110 vs 1684110
+[OK ] আংশিকের যোগফল: 1684110 vs 1684110
+[OK ] ৮৫৩৬ × ৯৭২: 8296992 vs 8296992
+[OK ] ৪৭৬৫ × ২৩৫৪: 11216810 vs 11216810
+[OK ] কাজ৩(৩) ৫৫৭৯ × ৪৬৭৭: 26092983 vs 26092983
+[OK ] কাজ৩(৩) ৫৫৭৯×৭: 39053 vs 39053
+[OK ] কাজ৩(৩) ৫৫৭৯×৬০০: 3347400 vs 3347400
+[OK ] কাজ৩(৪) ৭৭৭২৩ × ৪৫৬৭: 354960941 vs 354960941
+[OK ] কাজ৩(৪) ৭৭৭২৩×৭: 544061 vs 544061
+[OK ] কাজ৩(৪) ৭৭৭২৩×৬০: 4663380 vs 4663380
+[OK ] কাজ৩(৪) ৭৭৭২৩×৫০০: 38861500 vs 38861500
+
+ALL CONSISTENT

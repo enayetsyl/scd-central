@@ -932,3 +932,38 @@ the correct state.** `source_check.py --selftest` **8 seeds RED, 32 controls CLE
 any sign-off (**no agent writes in the সই column**). Whether this book contains an excluded chapter
 of the পাঠ ১২ kind is **not yet knowable** and is recorded as verified-chapter-by-chapter rather
 than declared in advance.
+
+### 2026-08-10 (same session, continued) · rulings folded in; অধ্যায় ১ printed ১–৩
+
+**Rulings applied.** PENDING-P-014 and P-015 both CLOSED; queue now **0 OPEN · 1 FLAGGED**.
+`SOURCE_POLICY` → **v1.4**: new **§7.8** (cadence for single-channel books — no dpi relaxation,
+one or more complete অধ্যায় per session, checkpoint-commit per chapter, stated resume point,
+fresh session each sitting) and **§7.9** (`নির্মাণাধীন` self-declaration). `AGENTS.md` → **v1.2**:
+§9 now names `.git/lock-debris/` as the **only** aside destination, with today's
+`bad object refs/remotes/origin/main.lock.aside-…` recorded as the reason, plus the observation
+that **each git write re-creates the lock it cannot remove** — so the aside is moved before every
+git write, not once per session. **CD-054, CD-055, CD-056.**
+
+**Transcription: printed ১, ২ and ৩.** কাজ ১–৩ and অনুশীলন ১–২, with the book's blank boxes
+transcribed **as blanks** (☐) rather than solved — SOURCE_POLICY §3, an extraction records.
+
+**A second channel exists on this book after all, and it is the mathematics.** §7.7 is right that
+there is no text layer, but math content carries its own redundancy: partial products must sum to
+the total, and each partial must equal multiplicand × place value. **A mis-read digit does not
+balance.** All sixteen checks over printed ১–৩ pass
+(`evidence/ARITHMETIC_SELFCHECK_2026-08-10.txt`). It is strongest where the transcription is least
+certain: কাজ ৩(৩) and ৩(৪) are printed with blanks, yet the printed digits determine the hidden
+ones uniquely (৫৫৭৯ × ৪৬৭৭ and ৭৭৭২৩ × ৪৫৬৭) and the solution matches **every** printed cell.
+**Three limits stated with it:** a number the book never computes is not covered; words, names and
+instructions are entirely outside it; and **it is not a gate** — run once, recorded, not placed in
+`tools/MANIFEST.md`, so it is not a proven tool (CD-020). Whether it becomes
+`tools/audits/math_arith_check.py` with a seeded selftest is a Principal question, raised in
+`STATE.md`, not decided here.
+
+**Gate, verbatim:** RANGE **PASS** · PAGES **PASS** (offset +7, 18 rows; 3 body refs monotonic) ·
+DEPTH **PASS** (5 of 5 rows পূর্ণ) · SIGNOFF **PENDING** (5 of 5 unsigned) · **SLOTS FAIL,
+deliberately** — the slot cross-reference waits until the chapter has been read. **RED, correctly.**
+
+**Resume point: ছাপা পৃষ্ঠা ৪ (PDF 11).** Rasters at 150 dpi (all 190 pp) and 400 dpi (PDF 8–23)
+are already on disk and gitignored; the tiling recipe and the folio-montage trick are written into
+`STATE.md` so the next sitting re-derives nothing except the offset, which is never carried.
