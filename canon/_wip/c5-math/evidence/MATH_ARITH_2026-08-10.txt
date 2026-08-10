@@ -1,25 +1,4 @@
-### math_arith_check.py · C5_MATH_Source_01.md · 2026-08-10 (printed ১–৩)
-math_arith_check.py — the extraction's arithmetic against itself
-file   : canon/_wip/c5-math/C5_MATH_Source_01.md
-found  : 7 worked block(s), 3 step-table row(s)
-------------------------------------------------------------------------------
-[CLEAN    ] line 113   ৪৬১৪ × ৩৬৫ = ১৬৮৪১১০  (fully printed)
-[CLEAN    ] line 144   ৮৫৩৬ × ৯৭২ = ৮২৯৬৯৯২  (fully printed)
-[CLEAN    ] line 159   ৪৭৬৫ × ২৩৫৪ = ১১২১৬৮১০  (fully printed)
-[WIDTH    ] line 181   ৮৩৪৬ × ১৫৪৫: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
-[WIDTH    ] line 193   ৬২৫৮ × ৬০৯৭: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
-[CLEAN    ] line 205   ৫৫৭৯ × ৪৬৭৭ = ২৬০৯২৯৮৩  (pinned uniquely from the printed cells)
-[CLEAN    ] line 217   ৭৭৭২৩ × ৪৫৬৭ = ৩৫৪৯৬০৯৪১  (pinned uniquely from the printed cells)
-[CLEAN    ] line 109   ৪৬১৪ × ৫ = ২৩০৭০
-[CLEAN    ] line 110   ৪৬১৪ × ৬০ = ২৭৬৮৪০
-[CLEAN    ] line 111   ৪৬১৪ × ৩০০ = ১৩৮৪২০০
-------------------------------------------------------------------------------
-LIMITS : computed working only · words/names/instructions out of scope ·
-         problem-statement figures unchecked where the book prints no working
-VERDICT: CLEAN — 8 item(s) verified; 2 uncovered (full manual depth, §7.10)
-EXIT=0
-
-### math_arith_check.py --selftest
+### math_arith_check.py --selftest · 2026-08-10 (after CD-058 chains + CD-059 census)
 SELFTEST — a mutated digit must turn the gate RED
 ------------------------------------------------------------------------------
 [PASS] control · a fully printed block balances -> CLEAN (wanted CLEAN)
@@ -32,6 +11,18 @@ SELFTEST — a mutated digit must turn the gate RED
 [PASS] seed · a partial row dropped (shape) -> RED (wanted RED)
 [PASS] seed · step table does not balance -> RED (wanted RED)
 [PASS] control · step table balances -> CLEAN (wanted CLEAN)
+[PASS] control · distributive terms sum to the multiplier -> CLEAN (wanted CLEAN)
+[PASS] seed · a distributive term is mutated -> RED (wanted RED)
+[PASS] seed · the multiplier is mutated against its own expansion -> RED (wanted RED)
+[PASS] control · (X − ১) matches the left-hand number -> CLEAN (wanted CLEAN)
+[PASS] seed · (X − ১) does not match the left-hand number -> RED (wanted RED)
+[PASS] seed · the left-hand number is mutated against (X − ১) -> RED (wanted RED)
+[PASS] control · the ×১০০ rearrangement chain holds -> CLEAN (wanted CLEAN)
+[PASS] seed · one line of the rearrangement chain is mutated -> RED (wanted RED)
+[PASS] control · the split-cell ladder table row is read -> CLEAN (wanted CLEAN)
+[PASS] seed · the split-cell ladder table row does not balance -> RED (wanted RED)
+[PASS] a chain segment containing ☐ is not evaluated -> REFUSE (wanted REFUSE)
+[PASS] the summary names unparsed shapes, not just a count
 [PASS] an under-determined block is AMBIGUOUS, not CLEAN -> REFUSE (wanted REFUSE)
 [PASS] a file with no working REFUSEs rather than passing -> REFUSE (wanted REFUSE)
 [PASS] a pure scaffold is WIDTH-only, so the file REFUSEs rather than passing -> REFUSE (wanted REFUSE)
@@ -42,4 +33,36 @@ SELFTEST — a mutated digit must turn the gate RED
 [n/a ] fixture seed · first digit of C5_MATH_Source_01.md flipped (landed outside a worked block — not a failure of the gate)
 ------------------------------------------------------------------------------
 SELFTEST: PASS
+EXIT=0
+
+### math_arith_check.py · C5_MATH_Source_01.md
+math_arith_check.py — the extraction's arithmetic against itself
+file   : canon/_wip/c5-math/C5_MATH_Source_01.md
+found  : 7 worked block(s), 6 step-table row(s), 7 equality chain(s)
+------------------------------------------------------------------------------
+[CLEAN    ] line 123   ৪৬১৪ × ৩৬৫ = ১৬৮৪১১০  (fully printed)
+[CLEAN    ] line 154   ৮৫৩৬ × ৯৭২ = ৮২৯৬৯৯২  (fully printed)
+[CLEAN    ] line 169   ৪৭৬৫ × ২৩৫৪ = ১১২১৬৮১০  (fully printed)
+[WIDTH    ] line 191   ৮৩৪৬ × ১৫৪৫: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
+[WIDTH    ] line 203   ৬২৫৮ × ৬০৯৭: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
+[CLEAN    ] line 215   ৫৫৭৯ × ৪৬৭৭ = ২৬০৯২৯৮৩  (pinned uniquely from the printed cells)
+[CLEAN    ] line 227   ৭৭৭২৩ × ৪৫৬৭ = ৩৫৪৯৬০৯৪১  (pinned uniquely from the printed cells)
+[CLEAN    ] line 119   ৪৬১৪ × ৫ = ২৩০৭০
+[CLEAN    ] line 120   ৪৬১৪ × ৬০ = ২৭৬৮৪০
+[CLEAN    ] line 121   ৪৬১৪ × ৩০০ = ১৩৮৪২০০
+[CLEAN    ] line 291   ৭৪ × ২৯ = ২১৪৬
+[CLEAN    ] line 293   ৭৪০০ × ২৯ = ২১৪৬০০
+[CLEAN    ] line 295   ৭৪০০ × ২৯০০ = ২১৪৬০০০০
+[CLEAN    ] line 253   চেইন: ৬০৪২ × **১৫১৪** = ৬০৪২ × **(১০০০ + ৫০০ + ১০ + ৪)**  → ৯১৪৭৫৮৮
+[CLEAN    ] line 306   চেইন: ৭৪০০ × ২৯০০ = ৭৪ × ১০০ × ২৯ × ১০০  → ২১৪৬০০০০
+[CLEAN    ] line 307   চেইন: ৭৪ × ১০০ × ২৯ × ১০০ = ৭৪ × ২৯ × ১০০ × ১০০  → ২১৪৬০০০০
+[CLEAN    ] line 308   চেইন: ৭৪ × ২৯ × ১০০ × ১০০ = ২১৪৬ × ১০০০০  → ২১৪৬০০০০
+[CLEAN    ] line 309   চেইন: ২১৪৬ × ১০০০০ = ২১৪৬০০০০  → ২১৪৬০০০০
+[CLEAN    ] line 344   চেইন: ৯৯ × ২৪ = ( ১০০ − ১ ) × ২৪  → ২৩৭৬
+[CLEAN    ] line 352   চেইন: ৯৯৯ × ৩২ = ( ১০০০ − ১ ) × ৩২  → ৩১৯৬৮
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×65, bare exercise (no printed answer to check) ×20, ARITHMETIC LINE NOT PARSED ×8
+VERDICT: CLEAN — 18 verified · 2 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×65, bare exercise (no printed answer to check) ×20, ARITHMETIC LINE NOT PARSED ×8
 EXIT=0

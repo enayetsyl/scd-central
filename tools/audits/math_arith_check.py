@@ -169,15 +169,156 @@ def parse_run(run, lineno):
 
 
 STEP_RE = re.compile(r"\|\s*([০-৯]+)\s*[×xX*]\s*([০-৯]+)\s*\|\s*[→>-]*\s*\|\s*([০-৯]+)\s*\|")
+LADDER_RE = re.compile(r"\|\s*([০-৯]+)\s*\|\s*[×xX*]\s*([০-৯]+)\s*\|\s*=\s*\|\s*([০-৯]+)\s*\|")
 
 
 def parse_steps(text: str):
-    """Step tables: `| ৪৬১৪ × ৫ | → | ২৩০৭০ |`."""
+    """Step tables in either printed layout.
+
+    `| ৪৬১৪ × ৫ | → | ২৩০৭০ |`   — the ধাপ box on printed ১
+    `| ৭৪ | × ২৯ | = | ২১৪৬ |`   — the ×১০০ ladder on printed ৫, which splits the operands
+                                   across cells and was invisible to the first version.
+    """
     out = []
     for i, line in enumerate(text.splitlines(), 1):
-        m = STEP_RE.search(line)
-        if m:
-            out.append((f"line {i}", *(int(g.translate(TO_ASCII)) for g in m.groups())))
+        for rx in (STEP_RE, LADDER_RE):
+            m = rx.search(line)
+            if m:
+                out.append((f"line {i}", *(int(g.translate(TO_ASCII)) for g in m.groups()), i))
+                break
+    return out
+
+
+# --------------------------------------------------------------- equality chains
+#
+# The book states the same quantity several ways in a row — distributive expansion
+# (`A × B = A × (b₁ + b₂ + …)`), the (X − ১) trick, and the ×১০০ rearrangement box. All three
+# are the same claim in different clothes: **every fully-numeric way of writing the line must
+# come to the same number.** One evaluator covers all of them, and will cover shapes not yet
+# met, which is why it is written as an evaluator rather than three pattern-matchers.
+#
+# A segment containing ☐ is not evaluated — it is an exercise blank, not a claim.
+
+EXPR_OK = re.compile(r"^[০-৯\s+\-−×xX*()]+$")
+
+
+def _tokens(s: str):
+    s = s.replace("−", "-").replace("×", "*").replace("x", "*").replace("X", "*")
+    i, out = 0, []
+    while i < len(s):
+        c = s[i]
+        if c.isspace():
+            i += 1
+        elif c in BN:
+            j = i
+            while j < len(s) and s[j] in BN:
+                j += 1
+            out.append(int(s[i:j].translate(TO_ASCII)))
+            i = j
+        elif c in "+-*()":
+            out.append(c)
+            i += 1
+        else:
+            return None
+    return out
+
+
+def _parse(tok):
+    """Recursive descent over + - * and parentheses. No `eval`: an extraction is input."""
+    pos = 0
+
+    def expr():
+        nonlocal pos
+        v = term()
+        if v is None:
+            return None
+        while pos < len(tok) and isinstance(tok[pos], str) and tok[pos] in "+-":
+            op = tok[pos]; pos += 1
+            r = term()
+            if r is None:
+                return None
+            v = v + r if op == "+" else v - r
+        return v
+
+    def term():
+        nonlocal pos
+        v = atom()
+        if v is None:
+            return None
+        while pos < len(tok) and isinstance(tok[pos], str) and tok[pos] == "*":
+            pos += 1
+            r = atom()
+            if r is None:
+                return None
+            v *= r
+        return v
+
+    def atom():
+        nonlocal pos
+        if pos >= len(tok):
+            return None
+        t = tok[pos]
+        if isinstance(t, int):
+            pos += 1
+            return t
+        if t == "(":
+            pos += 1
+            v = expr()
+            if v is None or pos >= len(tok) or tok[pos] != ")":
+                return None
+            pos += 1
+            return v
+        return None
+
+    v = expr()
+    return v if v is not None and pos == len(tok) else None
+
+
+def evaluate(seg: str):
+    s = seg.replace("**", "").replace("`", "").strip()
+    if not s or BLANK in s or not EXPR_OK.match(s):
+        return None
+    if not any(c in BN for c in s):
+        return None
+    tok = _tokens(s)
+    return _parse(tok) if tok else None
+
+
+def parse_chains(text: str):
+    """-> [(label, [(segment_text, value)], lineno)] — every line whose `=`-separated parts
+    are each fully numeric. Within a blockquote run, a line starting with `=` continues the
+    previous line's chain, which is how the printed ৫ rearrangement box is written.
+    """
+    out, carry, carry_lbl = [], None, None
+    for i, raw in enumerate(text.splitlines(), 1):
+        line = raw.strip()
+        quoted = line.startswith(">")
+        if quoted:
+            line = line[1:].strip()
+        if not line:
+            carry = None
+            continue
+        if BLANK in line and "=" not in line:
+            continue
+        # The book numbers its parts `(১)`, `(২)`, `(ক)` … and the extraction keeps that. Left in
+        # place, `(১) ৬০৪২ × ১৫১৪` tokenises as a parenthesised number juxtaposed with another
+        # and the whole segment fails to parse — which is exactly why every distributive line on
+        # printed ৪ and ৬ was invisible while the ×১০০ box, which carries no item label, was read.
+        line = re.sub(r"^\*{0,2}\(\s*[০-৯ক-হ]+\s*\)\*{0,2}\s*", "", line)
+        parts = [p for p in line.split("=")]
+        vals = []
+        for p in parts:
+            v = evaluate(p)
+            if v is not None:
+                vals.append((p.strip(), v))
+        if line.startswith("=") and carry is not None and vals:
+            vals = [carry] + vals
+        if len(vals) >= 2:
+            out.append((f"line {i}", vals, i))
+        if vals:
+            carry, carry_lbl = vals[-1], f"line {i}"
+        elif not quoted:
+            carry = None
     return out
 
 
@@ -265,48 +406,106 @@ def solve(b: Block):
     return "CLEAN", f"{render(a)} × {render(m)} = {render(tot)}  ({how})", sols
 
 
+def census(text: str, seen: set):
+    """What the gate did NOT look at, named rather than left to a flat number.
+
+    **A count of what passed is not a statement of coverage.** Four printed pages were added to
+    the first Math extraction and `8 item(s) verified` did not move, because the gate does not
+    parse those working shapes — and nothing in its output said so. Silence about unparsed
+    content is only acceptable if the output names what it skipped, so this walks every
+    numeric-bearing line the checks did not consume and groups it by signature.
+    """
+    lines = text.splitlines()
+    start = next((i for i, l in enumerate(lines, 1)
+                  if re.match(r"^#\s+(?:Unit|পাঠ|অধ্যায়)\s", l)), 1)
+    ops = re.compile(r"[×÷+\-−=]")
+    sig = {}
+    for i, raw in enumerate(lines, 1):
+        if i < start or i in seen:
+            continue
+        line = raw.strip().lstrip(">").strip()
+        if sum(c in BN for c in line) < 2:
+            continue
+        if "÷" in line:
+            k = "÷ long division"
+        elif "ǀ" in line or "│" in line:
+            k = "vertical-bar trailing-zero layout"
+        elif BLANK in line and not any(c in BN for c in line.replace(BLANK, "")):
+            k = "blank-only exercise cells"
+        elif ops.search(line) and not re.search(r"[অ-হ]", line.replace("×", "")):
+            # Digits and operators, no Bengali letters. Two very different cases, and collapsing
+            # them would inflate the alarm: a line with an `=` asserts something the gate failed
+            # to read, while a bare `A × B` exercise asserts nothing at all — there is no printed
+            # answer to check it against, and no extension will ever change that.
+            k = ("ARITHMETIC LINE NOT PARSED" if "=" in line
+                 else "bare exercise (no printed answer to check)")
+        else:
+            k = "prose carrying numbers (limit 3)"
+        sig[k] = sig.get(k, 0) + 1
+    return sig
+
+
 def run(path: Path, quiet=False):
     text = body(path.read_text(encoding="utf-8"))
-    blocks, steps = parse_blocks(text), parse_steps(text)
+    blocks, steps, chains = parse_blocks(text), parse_steps(text), parse_chains(text)
     rows, red, covered, uncovered = [], False, 0, 0
+    seen = set()
     for b in blocks:
         st, detail, _ = solve(b)
         rows.append((st, b.label, detail))
         red = red or st == "RED"
         covered += st == "CLEAN"
         uncovered += st in ("WIDTH", "AMBIGUOUS", "REFUSE")
-    for label, a, m, c in steps:
+    for label, a, m, c, ln in steps:
         good = a * m == c
+        seen.add(ln)
         rows.append(("CLEAN" if good else "RED", label,
                      f"{render(a)} × {render(m)} = {render(c)}" if good
                      else f"step table does not balance: {render(a)} × {render(m)} = {render(a*m)}, printed {render(c)}"))
         red = red or not good
         covered += good
+    for label, vals, ln in chains:
+        seen.add(ln)
+        distinct = {v for _, v in vals}
+        if len(distinct) == 1:
+            rows.append(("CLEAN", label,
+                         "চেইন: " + " = ".join(s for s, _ in vals) + f"  → {render(vals[0][1])}"))
+            covered += 1
+        else:
+            red = True
+            rows.append(("RED", label, "equality chain does not hold: " +
+                         " ≠ ".join(f"{s} ({render(v)})" for s, v in vals)))
     if quiet:
         # `covered == 0` is REFUSE, never 0. A file whose only blocks are ambiguous or pure
         # scaffold has had nothing verified, and returning CLEAN there would hand a depth
         # reduction to content the check never read.
         return 2 if red else (0 if covered else 3)
 
+    unparsed = census(text, seen)
     print("math_arith_check.py — the extraction's arithmetic against itself")
     print(f"file   : {path.relative_to(REPO) if str(path).startswith(str(REPO)) else path}")
-    print(f"found  : {len(blocks)} worked block(s), {len(steps)} step-table row(s)")
+    print(f"found  : {len(blocks)} worked block(s), {len(steps)} step-table row(s), "
+          f"{len(chains)} equality chain(s)")
     print("-" * 78)
     for st, label, detail in rows:
         print(f"[{st:9}] {label:10} {detail}")
     if not rows:
-        print("  ! no worked multiplication and no step table in the transcribed body")
+        print("  ! no worked multiplication, step table or equality chain in the transcribed body")
     print("-" * 78)
     print("LIMITS : computed working only · words/names/instructions out of scope ·")
     print("         problem-statement figures unchecked where the book prints no working")
+    shapes = ", ".join(f"{k} ×{v}" for k, v in sorted(unparsed.items(), key=lambda kv: -kv[1])) or "none"
+    print(f"NOT LOOKED AT: {shapes}")
     if red:
         print("VERDICT: RED — a printed digit is mis-read (AGENTS.md §5: back to build phase)")
         return 2
     if not covered:
         print("VERDICT: REFUSE — nothing was actually verified here; this is not a pass")
         return 3
-    print(f"VERDICT: CLEAN — {covered} item(s) verified"
-          + (f"; {uncovered} uncovered (full manual depth, §7.10)" if uncovered else ""))
+    # The summary states coverage, never a bare count: a flat number read as completeness once
+    # already (CD-058), and the shapes it did not parse are named on the same line.
+    print(f"VERDICT: CLEAN — {covered} verified · {uncovered} uncovered "
+          f"(full manual depth, §7.10) · shapes not parsed: {shapes}")
     return 0
 
 
@@ -357,6 +556,32 @@ SYNTH_SCAFFOLD = """
 > ☐ ☐ ☐ ☐ ☐ ☐ ☐
 > ─────
 > ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐
+"""
+
+# ছাপা ৪ · কাজ ৪(১): the multiplier is broken up and multiplied alongside. The claim is that
+# every way of writing the line is the same number, so the terms must sum to the multiplier.
+SYNTH_DIST = """
+# অধ্যায় ১
+
+**(১)** ৬০৪২ × ১৫১৪ = ৬০৪২ × (১০০০ + ৫০০ + ১০ + ৪)
+"""
+
+# ছাপা ৬ · কাজ ১(১): the (X − ১) trick. `১০০ − ১` must actually be the printed ৯৯.
+SYNTH_MINUS = """
+# অধ্যায় ১
+
+**(১)** ৯৯ × ২৪ = ( ১০০ − ১ ) × ২৪
+"""
+
+# ছাপা ৫: the rearrangement box — four lines, one quantity.
+SYNTH_LADDER = """
+# অধ্যায় ১
+
+> ৭৪০০ × ২৯০০
+> = ৭৪ × ১০০ × ২৯ × ১০০
+> = ৭৪ × ২৯ × ১০০ × ১০০
+> = ২১৪৬ × ১০০০০
+> = ২১৪৬০০০০
 """
 
 # কাজ ৩(২): ৬২৫৮ × ৬০৯৭. The third partial is ৬২৫৮ × ০ × ১০০ = 0 — one digit — and the book
@@ -410,6 +635,41 @@ def selftest():
     case("seed · step table does not balance",
          "| ৪৬১৪ × ৫ | → | ২৩০৭১ |\n", 2)
     case("control · step table balances", "| ৪৬১৪ × ৫ | → | ২৩০৭০ |\n", 0)
+
+    # --- equality chains: distributive expansion, the (X − ১) trick, the ×১০০ box (CD-058)
+    case("control · distributive terms sum to the multiplier", SYNTH_DIST, 0)
+    case("seed · a distributive term is mutated", SYNTH_DIST.replace("৫০০", "৬০০"), 2)
+    case("seed · the multiplier is mutated against its own expansion",
+         SYNTH_DIST.replace("× ১৫১৪ =", "× ১৫২৪ ="), 2)
+    case("control · (X − ১) matches the left-hand number", SYNTH_MINUS, 0)
+    case("seed · (X − ১) does not match the left-hand number",
+         SYNTH_MINUS.replace("( ১০০ − ১ )", "( ১০০ − ২ )"), 2)
+    case("seed · the left-hand number is mutated against (X − ১)",
+         SYNTH_MINUS.replace("৯৯ × ২৪ =", "৯৮ × ২৪ ="), 2)
+    case("control · the ×১০০ rearrangement chain holds", SYNTH_LADDER, 0)
+    case("seed · one line of the rearrangement chain is mutated",
+         SYNTH_LADDER.replace("= ২১৪৬ × ১০০০০", "= ২১৪৬ × ১০০০"), 2)
+    case("control · the split-cell ladder table row is read",
+         "# অধ্যায় ১\n\n| ৭৪ | × ২৯ | = | ২১৪৬ |\n", 0)
+    case("seed · the split-cell ladder table row does not balance",
+         "# অধ্যায় ১\n\n| ৭৪ | × ২৯ | = | ২১৪৭ |\n", 2)
+    # a blank anywhere in a segment means it is an exercise, not a claim — never evaluated
+    case("a chain segment containing ☐ is not evaluated",
+         "# অধ্যায় ১\n\n> ৯৯ × ২৪ = ☐ × ২৪ − ☐ × ২৪\n", 3)
+
+    # --- coverage honesty (CD-058): the summary must name what it did not read
+    import io, contextlib
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        import tempfile as _tf
+        with _tf.TemporaryDirectory() as d:
+            f = Path(d) / "C5_MATH_Source_98.md"
+            f.write_text(SYNTH_OK + "\n# অধ্যায় ১\n\n> ১২৩ ÷ ৪ = ৩০ ভাগশেষ ৩\n", encoding="utf-8")
+            run(f)
+    out = buf.getvalue()
+    named = "NOT LOOKED AT" in out and "÷ long division" in out and "shapes not parsed" in out
+    ok = ok and named
+    print(f"[{'PASS' if named else 'FAIL'}] the summary names unparsed shapes, not just a count")
 
     # the branches that must never be mistaken for a pass
     case("an under-determined block is AMBIGUOUS, not CLEAN",

@@ -1052,3 +1052,43 @@ monotonic) · DEPTH **PASS** (15/15 রows পূর্ণ) · SIGNOFF **PENDING
 
 **Chapter not complete — resume at ছাপা ৮ (PDF 15).** Nine printed pages remain, and the ভাগ
 half has not begun. Stopped at the resume point rather than thinning the reads (§7.8).
+
+## 2026-08-10 (fresh sitting) · distributive check built and proven (CD-058, CD-059)
+
+**Timeboxed extension, delivered inside the box.** `math_arith_check.py` now reads **equality
+chains**: every fully-numeric `=`-separated segment of a line must come to the same number. One
+idea covers four printed shapes — distributive expansion, the `( X − ১ )` trick, the ×১০০
+rearrangement box, and the split-cell ladder table. Built as a small recursive-descent evaluator
+over `+ − × ( )` rather than three pattern-matchers, so shapes not yet met are covered on
+arrival. **No `eval`** — an extraction is input.
+
+**Two parser faults the real file exposed.** The ladder row `| ৭৪ | × ২৯ | = | ২১৪৬ |` splits its
+operands across cells and was invisible to the original `STEP_RE`. And **every distributive line
+on printed ৪ and ৬ was invisible because of the book's own item label**: `(১) ৬০৪২ × ১৫১৪`
+tokenises as a parenthesised number juxtaposed with another, so the segment failed to parse —
+while the ×১০০ box, which carries no label, read fine. Leading `(১)`/`(ক)` labels are now stripped.
+
+**Seeded both directions, as ruled — 30 cases, all PASS.** Distributive terms summing to the
+multiplier and a mutated term going RED; `(X − ১)` matching the left-hand number, with both sides
+mutated in turn; the chain holding and one line of it mutated; the ladder row balancing and not;
+and a `☐`-bearing segment left unevaluated.
+
+**The result is the point: 8 verified → 18.** The twelve hand checks recorded for printed ৪–৭ are
+now **machine-corroborated** instead of resting on one human reading.
+
+**Coverage honesty (CD-059).** The verdict line no longer states a bare count:
+`CLEAN — N verified · M uncovered · shapes not parsed: …`, with a `NOT LOOKED AT` line above it,
+fed by a census of every numeric-bearing line in the transcribed body that no check consumed —
+anchored at the chapter heading so the header's own offset table cannot pad the number. Today:
+**`ARITHMETIC LINE NOT PARSED ×8`**, `bare exercise ×20`, `prose carrying numbers ×65`. Only the
+first deserves an extension; the other two have nothing to check against, and keeping them apart
+is deliberate — collapsing them would inflate the alarm and get the line ignored.
+
+**Gates:** `math_arith_check.py` selftest **PASS** (30 cases) · run **CLEAN, 18 verified, 2
+uncovered** · `source_check.py` selftest **PASS** · `canon_check.py` and `tools_check.py` **CLEAN**.
+MANIFEST row unchanged and verified at source — already REQUIRED, and `tools/audits` is
+SMOKE-exempt.
+
+**Transcription resumes next at ছাপা ৮ (PDF 15)**, unchanged. Long division is a new shape and
+will show up in the summary as `÷ long division` the moment it appears; its extension is a named
+task, never a loosening.
