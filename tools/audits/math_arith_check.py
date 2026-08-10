@@ -317,7 +317,13 @@ def parse_chains(text: str):
             out.append((f"line {i}", vals, i))
         if vals:
             carry, carry_lbl = vals[-1], f"line {i}"
-        elif not quoted:
+        else:
+            # **A chain may not jump over a line the evaluator could not read.** It did once,
+            # on অধ্যায় ২'s very first worked equation, and reported RED on a correct
+            # transcription: `৮ × ক = ৪৮` set the carry, the next line `ক = ৪৮ ÷ ৮` yielded
+            # nothing (÷ is not in the operator set), and `= ৬` then chained ৬ back to ৪৮.
+            # The skipped line had changed the subject entirely — which is exactly what an
+            # unreadable line may always have done. Silence is not continuity.
             carry = None
     return out
 
@@ -855,6 +861,11 @@ def selftest():
          SYNTH_DIV.replace("  ৪ ৫ )", "  ৪ ৬ )"), 2)
     case("a division block carrying ☐ is REFUSED, not guessed",
          SYNTH_DIV.replace("− ৪ ০ ৫", "− ☐ ০ ৫"), 3)
+
+    case("control · a chain does not jump over an unreadable line",
+         "# অধ্যায় ২\n\n> ৮ × ক = ৪৮\n> ক = ৪৮ ÷ ৮\n> = ৬\n> ক = ৬\n", 3)
+    case("control · a genuine two-line chain still joins",
+         "# অধ্যায় ২\n\n> ৭৪ × ২৯\n> = ২১৪৬\n", 0)
 
     # --- coverage honesty (CD-059): the summary must name what it did not read
     import io, contextlib
