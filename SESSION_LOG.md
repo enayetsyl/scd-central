@@ -1360,3 +1360,35 @@ story about its own guard.** It now carries the four-way expectation table and t
 that table-held blocks remain uncovered.
 
 **Chapter NOT complete — ছাপা ২২–৩০ remain, nine pages.** Resume at **ছাপা ২২ (PDF 29)**.
+
+## 2026-08-10 (fresh sitting) · অধ্যায় ২ — ছাপা ২২ ও ২৩
+
+**Transcribed ছাপা ২২ and ২৩.** কাজ ৬'s two named solutions, কাজ ৭–৮ (salary and water-tank),
+কাজ ৯'s three priced furniture plates, and কাজ ১০'s bar diagram.
+
+**A layout judgement, made explicitly rather than by habit.** ছাপা ২২ prints সমাধান-১ and
+সমাধান-২ side by side in a bordered two-column box. Rendering that as a markdown table would have
+put every printed digit behind a `|` and out of the checker's reach. **Both renderings are equally
+faithful to the content, so the one that gets checked was chosen** — two labelled blocks — and
+সমাধান-২ is now machine-verified (`২০০০ − (২৪০ × ৫ + ১২০ × ৩) = ২০০০ − ১৫৬০ = ৪৪০`). The rule is
+now stated in one line in `STATE.md`: **keep the book's content intact and prefer the form that is
+checked — except for false-marked blocks, where protection comes first** (CD-061), which is why
+ছাপা ১৭ and ১৯ stay tabular. A new false-worked block *without* a table in the book still means
+stop and ask.
+
+**সমাধান-১'s rows carry Bengali labels** (`বাসমতি চাল ২৪০ × ৫ = ১২০০`), so the evaluator reads no
+chain there — correct behaviour, a labelled row is not a bare identity. Those four identities were
+hand-checked, and সমাধান-২ reaches the same ৪৪০ from the same figures, which corroborates them.
+
+**Gates:** `source_check.py` RANGE/PAGES/DEPTH **PASS** (20/20 sign-off rows পূর্ণ), SIGNOFF
+**PENDING**, **SLOTS FAIL — deliberate**. `math_arith_check.py` **CLEAN — 10 verified**, no false
+RED anywhere in the chapter.
+
+**`STATE.md` had gone self-contradictory and was repaired.** It still carried the pre-CD-064
+paragraphs saying inversion was unimplemented and `÷` unreadable, directly above the live text
+saying the opposite. Both stale blocks were removed. **A resume file that argues with itself is
+worse than a short one** — the next session reads it first and cannot tell which half is current.
+
+**Chapter NOT complete — ছাপা ২৪–৩০ remain, seven pages.** Seven were done this sitting (১৭–২৩
+cumulative). Resume at **ছাপা ২৪ (PDF 31)**; SLOTS, the নির্মাণাধীন removal and the full sweep all
+still wait on the complete read.
