@@ -816,3 +816,47 @@ CLEAN (0 fail) · every `প্রমাণ` citation checked to resolve to a fi
 `canon/_wip/c5-bangla/evidence/GATE_SWEEP_2026-08-09.txt`.
 
 **Queue: 0 OPEN.** Next: পাঠ ৯ (টুকটুক ও চিকু), printed ৪৭–৫২ = pdf 56–61.
+
+---
+
+## 2026-08-10 · C5 Bangla — পাঠ ৯–১১ built · **EXTRACTION COMPLETE** · `scd-agent-cowork`
+
+**পাঠ ১–১১ all built and gated. The book is done at the extraction layer.** পাঠ ১২ excluded by
+CD-050, পাঠ ১৩–২৩ already canon (CD-004). **Promotion pending — all 77 sign-off rows PENDING,
+only the Principal signs.** Files stay in `_wip/`, which is the correct state for unsigned work.
+
+**Session start checks, none assumed:** `git pull` clean · PDF md5 re-verified
+`a119d576b43dac57bfc385f9721ffc86` · **offset +৯ re-derived from scratch at five fresh points**
+(pdf 56→৪৭, 62→৫৩, 66→৫৭, 71→৬২, 72→৬৩), because STATE.md says it is never carried between
+sessions · PENDING_PRINCIPAL 0 OPEN.
+
+**CR-001 — a correction owed on already-pushed work, and the worst kind.** পাঠ ৭ carried a
+**false** “as printed” note claiming the book spells **প্রচন্ড** (দন্ত্য-ন). At 600 dpi the book
+reads **প্রচণ্ড** — correctly spelled. So two things were wrong at once: the transcription in the
+word-list table, and an **anomaly invented out of a misread**. Caught only because পাঠ ৯'s word
+list carries the same word and the two were compared. **A false anomaly is worse than a missing
+one** — it tells a question author the book contains an error it does not contain, and this book
+has no second channel to catch that. Both fixed, `CORRECTIONS.md` opened, and the
+high-resolution rule widened to cover **word-list tables**: ণ/ন, শ/স/ষ and ড়/র inside conjuncts
+are not separable at the 150 dpi working render.
+
+**Findings kept as printed (§3).** পাঠ ৯: the exercise ছক offers both **আনন্দের জোয়ার** and
+**আনন্দ-উচ্ছ্বাসে** for two blanks either could fill, and asks who arranged the চড়ুইভাতি when
+the text's “ওরা” never says; two of its ভাব sentences are not in the chapter. পাঠ ১০: inner and
+outer quotations use the **same single mark**, so the nested quote's end is unmarked; ছোট্ট/ছোটো
+split between poem and exercise; **সরষে** here against **শর্ষে** in পাঠ ৭. পাঠ ১১: শব্দার্থ calls
+ধামা a **বেতের ঝুড়ি** while the text makes ধামা বেত and ঝুড়ি বাঁশ; three exercise-৩ facts
+(পুঁজি কম, স্থানীয় কাঁচামাল, দামে সস্তা) appear nowhere in the chapter.
+
+**Completion checks, executed not asserted:** 11/11 files RANGE/SLOTS/PAGES/DEPTH **PASS**,
+SIGNOFF **PENDING**, **0 FAIL** · textcheck **REFUSE ×11** (expected on this book) · both
+selftests PASS · `canon_check.py` and `tools_check.py` CLEAN (0 fail) · **every প্রমাণ citation
+across all eleven files resolves to a file on disk** · **coverage verified programmatically:
+printed ১–৬২ contiguous, no gaps, no overlaps** · `BAN-S14` bound in পাঠ ৪ only, absent in the
+other ten · **77 sign-off rows, 0 signed.** Verbatim:
+`canon/_wip/c5-bangla/evidence/GATE_SWEEP_2026-08-10.txt`.
+
+**Queue: 0 OPEN.** Next when the Principal signs: promote the eleven files plus `evidence/` and
+`EXCLUDED_paath_12.md` to `canon/sources/c5/bangla/` and re-run the gate there. Noted, not
+acted on: **`_inbox/` now also holds `Class 5 Math.pdf`** — the next subject under §7.1's order,
+but a new extraction is a new session's work.

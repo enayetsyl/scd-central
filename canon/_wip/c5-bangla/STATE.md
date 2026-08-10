@@ -8,11 +8,13 @@ A killed session must be resumable from this file alone (AGENTS.md §3).
 Book: **আমার বাংলা বই, পঞ্চম শ্রেণি**, NCTB, প্রথম মুদ্রণ সেপ্টেম্বর ২০২৫, শিক্ষাবর্ষ ২০২৬.
 **23 পাঠ, printed pages ১–১৩২.**
 
-- **পাঠ ১–৮ — BUILT, sign-off owed.** All eight: `source_check.py`
-  RANGE/SLOTS/PAGES/DEPTH **PASS**, SIGNOFF **PENDING**; `source_textcheck.py` **REFUSE**
-  (see below — the correct outcome on this book, not a failure).
-  Gate sweep: `evidence/GATE_SWEEP_2026-08-09.txt`.
-- **পাঠ ৯–১১ — NOT STARTED.** Three files owed. See *Open / next* for the exact resume point.
+- **পাঠ ১–১১ — ALL BUILT. EXTRACTION COMPLETE, promotion pending.** All eleven:
+  `source_check.py` RANGE/SLOTS/PAGES/DEPTH **PASS**, SIGNOFF **PENDING**;
+  `source_textcheck.py` **REFUSE** ×11 (see below — the correct outcome on this book, not a
+  failure). Gate sweep: `evidence/GATE_SWEEP_2026-08-10.txt`.
+  **Coverage verified programmatically: printed ১–৬২ contiguous, no gaps, no overlaps**,
+  and `BAN-S14` bound in পাঠ ৪ only, absent in the other ten.
+  **77 sign-off rows, 0 signed.**
 - **পাঠ ১২ — NOT EXTRACTED by ruling.** See `EXCLUDED_paath_12.md`.
 - **পাঠ ১৩–২৩ — already canon**, `canon/marklogic/C5_Bangla_Source_13-23.md` (CD-004,
   grandfathered range-file form). **Do not re-extract.**
@@ -29,9 +31,9 @@ Book: **আমার বাংলা বই, পঞ্চম শ্রেণি*
 | ৬ | সুখু আর দুখু | ৩২–৩৭ | 41–46 | ✅ BUILT · sign-off owed |
 | ৭ | সাইক্লোন | ৩৮–৪১ | 47–50 | ✅ BUILT · sign-off owed |
 | ৮ | রয়েল বেঙ্গল টাইগার | ৪২–৪৬ | 51–55 | ✅ BUILT · sign-off owed |
-| ৯ | টুকটুক ও চিকু | ৪৭–৫২ | 56–61 | ⬜ |
-| ১০ | রাখাল ছেলে | ৫৩–৫৬ | 62–65 | ⬜ |
-| ১১ | কুটির শিল্প | ৫৭–৬২ | 66–71 | ⬜ |
+| ৯ | টুকটুক ও চিকু | ৪৭–৫২ | 56–61 | ✅ BUILT · sign-off owed |
+| ১০ | রাখাল ছেলে | ৫৩–৫৬ | 62–65 | ✅ BUILT · sign-off owed |
+| ১১ | কুটির শিল্প | ৫৭–৬২ | 66–71 | ✅ BUILT · sign-off owed |
 | ১২ | শিষ্যের সাধনা | ৬৩–৬৮ | 72–77 | ⛔ excluded by ruling |
 
 ### Two shape findings the next session should not re-derive
@@ -44,10 +46,12 @@ own full-check sign-off row. §7.5's stated reason for moving such text outside 
 the cross-channel check would report correct words as missing — does not apply on this book,
 because there is no cross-channel check. The §7.5 sign-off obligation still does.
 
-**Resolution is the recurring hazard, and it has now bitten four times.** `ঝকঝক` read as
+**Resolution is the recurring hazard, and it bit five times across the book.** `ঝকঝক` read as
 `ঝকঝাক` (পাঠ ৩) · পাঠ ৪'s letter date · পাঠ ৬'s chandrabindu placement · `শাঁখ` read as `শীঁখ`
-(পাঠ ৭). **Poem pages, handwriting-font pages and any page with stacked diacritics get a
-400–700 dpi crop BEFORE transcription.** Three of the four errors would have entered canon.
+(পাঠ ৭) · and **`প্রচণ্ড` read as `প্রচন্ড` (পাঠ ৭), which reached a commit before CR-001 caught
+it**. **Poem pages, handwriting-font pages, word-list tables, and any page with stacked
+diacritics get a 400–700 dpi crop BEFORE transcription.** Four of the five would otherwise
+have entered canon; the fifth did, briefly.
 
 **পাঠ ৩ is a poem carrying pronunciation hasants** (ছিপ্‌খান্‌ · তিনজন্‌ · জাগ্‌ছে · পান্‌কৌটি ·
 বক্‌বক্‌ · উন্মন্‌). It is S01 material — students write the first eight lines from memory — so
@@ -106,8 +110,8 @@ stream. **Principal ruling 2026-08-09: full-eye check depth for the whole book**
 | ৫ | ঠিক আছে | ২৮–৩১ | ১১ | কুটির শিল্প | ৫৭–৬২ |
 | ৬ | সুখু আর দুখু | ৩২–৩৭ | ১২ | শিষ্যের সাধনা | ৬৩–৬৮ |
 
-End pages are derived from the next পাঠ's start and must be confirmed on the raster as each
-file is built — only the start folios have been read so far.
+**All start and end folios have now been read off the raster** (not derived), and coverage was
+checked programmatically at completion: printed ১–৬২ **contiguous, no gaps, no overlaps.**
 
 ## Gates
 
@@ -163,21 +167,29 @@ message names it as the missing capability so the next book that needs it says s
    column** (SOURCE_POLICY §7.4, AGENTS.md §2) — an agent signature here would make the
    extraction single-channel *and* self-approved, which is the one combination this book's
    whole depth ruling exists to prevent.
-2. **Resume at পাঠ ৯ (টুকটুক ও চিকু), printed ৪৭–৫২ = pdf 56–61.** Then ১০ (৫৩–৫৬),
-   ১১ (৫৭–৬২). Rasters for pdf 10–71 are already rendered in
-   `canon/_wip/c5-ban-raster/`. Build one file per পাঠ on the `C5_BAN_Source_01.md` pattern.
-   **পাঠ ১০ (রাখাল ছেলে) is a poem — render it at 400+ dpi before transcribing, not after.**
-   `BAN-S14` is **bound only in পাঠ ৪**; every other পাঠ marks it absent.
+2. **Nothing further to extract.** পাঠ ১–১১ are built; পাঠ ১২ is excluded by CD-050;
+   পাঠ ১৩–২৩ were already canon. **The book is complete.**
+3. **Promotion, when the Principal signs:** move the eleven `C5_BAN_Source_NN.md` files and
+   `evidence/` to `canon/sources/c5/bangla/`, then re-run the gate there — `source_check.py`
+   runs identically in both places. `EXCLUDED_paath_12.md` travels with them so the gap stays
+   documented. Until then they stay in `_wip/`, which is the correct state for unsigned work.
 3. Rulings and tool changes from this session are recorded: **CD-050** (classification, scope
    correction, book-wide depth, edition flag) and **CD-051** (both gate changes).
    `SOURCE_POLICY` is at **v1.3** with new §7.6 and §7.7.
 
-## Not synced
+## Corrections
 
-Nothing in this session has been committed or pushed. `git status` at hand-off: modified
-`tools/audits/source_check.py`, `tools/audits/source_textcheck.py`, `canon/DECISIONS.md`,
-`canon/sources/SOURCE_POLICY.md`, `canon/_wip/c5-english/STATE.md`; new
-`canon/_wip/c5-bangla/`. Sync is on the Principal's explicit approval only.
+`CORRECTIONS.md` — **CR-001**: পাঠ ৭ carried a *false* “as printed” note claiming the book
+spells **প্রচন্ড**. At 600 dpi the book reads **প্রচণ্ড** — correct — so both the transcription
+and the invented anomaly were wrong, and both are fixed. Caught while reading the same word in
+পাঠ ৯'s word list. **A false anomaly is worse than a missing one**: it tells a question author
+the book has an error it does not have, and this book has no second channel to catch that.
+The high-resolution rule now covers **word-list tables** too, not just poems and handwriting —
+ণ/ন, শ/স/ষ and ড়/র inside conjuncts are not separable at 150 dpi.
+
+## Sync
+
+Committed and pushed as **extraction-complete, promotion-pending**. All SIGNOFF PENDING.
 
 ## Housekeeping
 
