@@ -1256,3 +1256,33 @@ mostly equations with unknowns.
 
 **Chapter NOT complete — ছাপা ১৯–৩০ remain, twelve printed pages.** Resume at **ছাপা ১৯ (PDF 26)**;
 rasters and tiles for the whole chapter are already on disk.
+
+### 2026-08-10 (same day) · CD-063 recorded — ✗-marked lines get inverted expectation, not exclusion
+
+**Ruling captured, nothing implemented — by design.** The Principal ruled how the future `÷`/`>`
+extension must treat this chapter's deliberately-false lines: **not excluded from the arithmetic
+check, but checked with inverted expectation.** A **✗**-marked line that *balances* goes **RED**;
+a **✓**-marked line that does *not* balance goes **RED**.
+
+**The reasoning is worth keeping verbatim, because it inverts the intuition.** Excluding the ✗
+lines leaves a hole precisely where a mis-read hides: the book prints `৪৮ ÷ ৩ = ৮` ✗, and a
+transcription that mis-reads the divisor as ৬ makes the line **true** — an excluded line is
+checked by nothing, so that error passes silently. Inversion catches exactly that. **The mark is
+data, and the check should read it** rather than treat it as a reason to look away. The
+consequence is that on this chapter the ✗ lines become the *most* strongly checked content in the
+file, because a mis-read that flips a false statement true is the one error no other channel sees.
+
+**Recorded in three places, deliberately.** `canon/DECISIONS.md` **CD-063** (the ruling and its
+sequencing); the extraction's warning block, now carrying the four-way expectation table, since
+that is what a transcriber reads; and a design-note comment in `math_arith_check.py` beside
+`EXPR_OK`, since that is where whoever adds the operators will actually be working.
+
+**Nothing was built.** The evaluator reads neither `÷` nor `>`, so no ✗ line reaches any check
+today, and inversion built ahead of the operators would be untested machinery (CD-020). When the
+extension comes it carries inversion with it, **seeded all four ways**. Until then the
+extraction's warning block is the guard, and it says so.
+
+**Gates unaffected, verified rather than assumed:** `math_arith_check.py --selftest` **PASS**,
+অধ্যায় ১ re-run unchanged at **24 verified**, `canon_check.py` and `tools_check.py` **CLEAN**.
+
+**Transcription unchanged: resume at ছাপা ১৯ (PDF 26)**, twelve printed pages of অধ্যায় ২ left.

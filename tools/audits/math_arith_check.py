@@ -199,6 +199,23 @@ def parse_steps(text: str):
 #
 # A segment containing ☐ is not evaluated — it is an exercise blank, not a claim.
 
+# **Design note for the ÷ / > extension, ruled ahead of it (CD-063).**
+#
+# This chapter — গাণিতিক বাক্য — teaches by printing deliberately WRONG equations, each marked
+# with a red ✗, before the right one marked ✓. The obvious handling is to exclude the ✗ lines.
+# **Exclusion is the wrong answer**, and the reason is precise: it leaves a hole exactly where a
+# mis-read hides. If the book prints `৪৮ ÷ ৩ = ৮` ✗ and a transcription mis-reads the divisor as
+# ৬, the line becomes *true* — and an excluded line is checked by nothing, so the error passes.
+#
+# So when `÷` and `>` are added here, they carry INVERTED EXPECTATION with them:
+#
+#     ✗-marked line that balances      -> RED      ✗-marked line that does not balance -> CLEAN
+#     ✓-marked line that balances      -> CLEAN    ✓-marked line that does not balance -> RED
+#
+# The mark is data; the check reads it. Seed all four directions. Nothing is implemented yet
+# because the operators do not exist yet, and inversion without them would be untested
+# machinery — until then the extraction's own warning block is the guard.
+
 EXPR_OK = re.compile(r"^[০-৯\s+\-−×xX*()]+$")
 
 
