@@ -1,0 +1,277 @@
+# GATE SWEEP — C5 Bangla পাঠ ১–৬ · 2026-08-09
+
+=============== C5_BAN_Source_01.md ===============
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_01.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 1-1: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for
+[PASS   ] PAGES    offset constant (+9) over 11 verified rows; 11 body refs monotonic within 1-5, 6 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  6 of 6 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 6 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-bangla/C5_BAN_Source_01.md  (274 distinct words >= 4 letters)
+text layer : Class 5 Bangla.pdf pp.10-14  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 5 page(s), under the 200-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
+=============== C5_BAN_Source_02.md ===============
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_02.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 2-2: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 20 body refs monotonic within 6-18, 2 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  10 of 10 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 10 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-bangla/C5_BAN_Source_02.md  (303 distinct words >= 4 letters)
+text layer : Class 5 Bangla.pdf pp.15-27  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 13 page(s), under the 520-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
+=============== C5_BAN_Source_03.md ===============
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_03.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 3-3: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 10 body refs monotonic within 19-23, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  8 of 8 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 8 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-bangla/C5_BAN_Source_03.md  (149 distinct words >= 4 letters)
+text layer : Class 5 Bangla.pdf pp.28-32  (4 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 4 letters over 5 page(s), under the 200-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+  ! the transcription is 100% Bengali and the decoded stream holds no Bengali at all — either the text layer is absent, or it is Bijoy/SutonnyMJ-encoded and needs a decoder this script does not have
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
+=============== C5_BAN_Source_04.md ===============
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_04.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 4-4: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 8 body refs monotonic within 24-27, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  7 of 7 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 7 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-bangla/C5_BAN_Source_04.md  (181 distinct words >= 4 letters)
+text layer : Class 5 Bangla.pdf pp.33-36  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 4 page(s), under the 160-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
+=============== C5_BAN_Source_05.md ===============
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_05.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 5-5: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 8 body refs monotonic within 28-31, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  6 of 6 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 6 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-bangla/C5_BAN_Source_05.md  (121 distinct words >= 4 letters)
+text layer : Class 5 Bangla.pdf pp.37-40  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 4 page(s), under the 160-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
+=============== C5_BAN_Source_06.md ===============
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_06.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 6-6: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 11 body refs monotonic within 32-37, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  7 of 7 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 7 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-bangla/C5_BAN_Source_06.md  (324 distinct words >= 4 letters)
+text layer : Class 5 Bangla.pdf pp.41-46  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 6 page(s), under the 240-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
+=============== selftests ===============
+fixtures:
+          canon/_wip/c5-bangla/C5_BAN_Source_01.md
+          canon/_wip/c5-bangla/C5_BAN_Source_02.md
+          canon/_wip/c5-bangla/C5_BAN_Source_03.md
+          canon/_wip/c5-bangla/C5_BAN_Source_04.md
+          canon/_wip/c5-bangla/C5_BAN_Source_05.md
+          canon/_wip/c5-bangla/C5_BAN_Source_06.md
+          canon/_wip/c5-english/C5_ENG_Source_02.md
+          canon/_wip/c5-english/C5_ENG_Source_03.md
+          canon/_wip/c5-english/C5_ENG_Source_04.md
+          canon/_wip/c5-english/C5_ENG_Source_05.md
+          canon/_wip/c5-english/C5_ENG_Source_06.md
+          canon/_wip/c5-english/C5_ENG_Source_07.md
+          canon/_wip/c5-english/C5_ENG_Source_08.md
+          canon/_wip/c5-english/C5_ENG_Source_09.md
+          canon/_wip/c5-english/C5_ENG_Source_10.md
+          canon/_wip/c5-english/C5_ENG_Source_11.md
+          canon/_wip/c5-english/C5_ENG_Source_12.md
+          canon/_wip/c5-english/C5_ENG_Source_13.md
+          canon/_wip/c5-english/C5_ENG_Source_14.md
+          canon/_wip/c5-english/C5_ENG_Source_15.md
+          canon/_wip/c5-english/C5_ENG_Source_16.md
+          canon/_wip/c5-english/C5_ENG_Source_17.md
+          canon/_wip/c5-english/C5_ENG_Source_18.md
+          canon/_wip/c5-english/C5_ENG_Source_19.md
+          canon/_wip/c5-english/C5_ENG_Source_20.md
+          canon/sources/c5/english/C5_ENG_Source_01.md
+SELFTEST — every seeded error must turn the gate RED
+------------------------------------------------------------------------------
+[RED    ] RANGE  · the stated unit has no section   (C5_BAN_Source_01.md)
+[RED    ] SIGNOFF· raster-only content with no full-check row   (C5_BAN_Source_02.md)
+[RED    ] DEPTH  · a single-channel source claims sampled depth   (C5_BAN_Source_01.md)
+[RED    ] DEPTH  · a single-channel source drops the depth column   (C5_BAN_Source_01.md)
+[RED    ] SLOTS  · one spine slot dropped from the cross-reference   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · offset broken on one row   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · in-body page reference outside the stated range   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · in-body page references out of order   (C5_BAN_Source_01.md)
+[CLEAN  ] control · C5_BAN_Source_01.md must not be red
+[CLEAN  ] control · C5_BAN_Source_02.md must not be red
+[CLEAN  ] control · C5_BAN_Source_03.md must not be red
+[CLEAN  ] control · C5_BAN_Source_04.md must not be red
+[CLEAN  ] control · C5_BAN_Source_05.md must not be red
+[CLEAN  ] control · C5_BAN_Source_06.md must not be red
+[CLEAN  ] control · C5_ENG_Source_02.md must not be red
+[CLEAN  ] control · C5_ENG_Source_03.md must not be red
+[CLEAN  ] control · C5_ENG_Source_04.md must not be red
+[CLEAN  ] control · C5_ENG_Source_05.md must not be red
+[CLEAN  ] control · C5_ENG_Source_06.md must not be red
+[CLEAN  ] control · C5_ENG_Source_07.md must not be red
+[CLEAN  ] control · C5_ENG_Source_08.md must not be red
+[CLEAN  ] control · C5_ENG_Source_09.md must not be red
+[CLEAN  ] control · C5_ENG_Source_10.md must not be red
+[CLEAN  ] control · C5_ENG_Source_11.md must not be red
+[CLEAN  ] control · C5_ENG_Source_12.md must not be red
+[CLEAN  ] control · C5_ENG_Source_13.md must not be red
+[CLEAN  ] control · C5_ENG_Source_14.md must not be red
+[CLEAN  ] control · C5_ENG_Source_15.md must not be red
+[CLEAN  ] control · C5_ENG_Source_16.md must not be red
+[CLEAN  ] control · C5_ENG_Source_17.md must not be red
+[CLEAN  ] control · C5_ENG_Source_18.md must not be red
+[CLEAN  ] control · C5_ENG_Source_19.md must not be red
+[CLEAN  ] control · C5_ENG_Source_20.md must not be red
+[CLEAN  ] control · C5_ENG_Source_01.md must not be red
+------------------------------------------------------------------------------
+SELFTEST: PASS
+EXIT=0
+
+SELFTEST — decoder and gap finder
+------------------------------------------------------------------------------
+[PASS] decode ':KDW\x03GR\x03\\RX\x03GR' -> 'What do you do'           (want 'What do you do')
+[PASS] decode 'QHLJKERXUKRRG'            -> 'neighbourhood'            (want 'neighbourhood')
+[PASS] decode 'ELRJUDSKLHV'              -> 'biographies'              (want 'biographies')
+[PASS] decode 'EX൵DOR'                   -> 'buffalo'                  (want 'buffalo')
+[PASS] decode '2൶FH'                     -> 'Office'                   (want 'Office')
+[PASS] decode 'µJDQM¶'                   -> "'ganj'"                   (want "'ganj'")
+[PASS] decode '¿QG'                      -> 'find'                     (want 'find')
+[PASS] decode '\x15\x13\x16\x13'         -> '2030'                     (want '2030')
+[PASS] decode 'a^fiv'                    -> 'DAILY'                    (want 'DAILY')
+[PASS] decode '(UNESCO)'                 -> '(UNESCO)'                 (want '(UNESCO)')
+[PASS] decode 'Unit'                     -> 'Unit'                     (want 'Unit')
+[PASS] decode 'reading'                  -> 'reading'                  (want 'reading')
+[PASS] a dropped word leaves an unexplained gap
+[PASS] control · complete word set leaves no gap
+[PASS] an invented word is reported absent
+[PASS] letters() keeps Bengali  'বাংলাদেশের' -> 'বাংলাদেশের'
+[PASS] the Caesar decoder leaves a Bengali token alone
+[PASS] an empty text layer is REFUSED, not called AGREE
+[PASS] an extraction yielding no words is REFUSED
+[PASS] a Bengali transcription vs a Latin-only stream is REFUSED
+[PASS] a Latin transcription with Bengali scaffolding is NOT refused
+[PASS] the book's script is read from the body, not the scaffolding
+------------------------------------------------------------------------------
+SELFTEST: PASS
+EXIT=0
+
+=============== repo-wide ===============
+canon_check.py — root: /sessions/happy-festive-dirac/mnt/scd-central
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn)
+EXIT=0
+tools_check.py — root: /sessions/happy-festive-dirac/mnt/scd-central
+  WARN  MANIFEST: tools/images/pick_placements.py [VENDORED-UNPROVEN] vendored but never executed — no run recorded in tools/images/SMOKE.md
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)
+EXIT=0

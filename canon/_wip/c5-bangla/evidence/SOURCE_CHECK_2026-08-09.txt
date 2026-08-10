@@ -1,0 +1,76 @@
+# source_check.py — C5 BAN পাঠ ১ · 2026-08-09
+
+$ python tools/audits/source_check.py canon/_wip/c5-bangla/C5_BAN_Source_01.md
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_01.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 1-1: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for
+[PASS   ] PAGES    offset constant (+9) over 11 verified rows; 11 body refs monotonic within 1-5, 6 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  6 of 6 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 6 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+$ python tools/audits/source_check.py --selftest
+
+fixtures:
+          canon/_wip/c5-bangla/C5_BAN_Source_01.md
+          canon/_wip/c5-english/C5_ENG_Source_02.md
+          canon/_wip/c5-english/C5_ENG_Source_03.md
+          canon/_wip/c5-english/C5_ENG_Source_04.md
+          canon/_wip/c5-english/C5_ENG_Source_05.md
+          canon/_wip/c5-english/C5_ENG_Source_06.md
+          canon/_wip/c5-english/C5_ENG_Source_07.md
+          canon/_wip/c5-english/C5_ENG_Source_08.md
+          canon/_wip/c5-english/C5_ENG_Source_09.md
+          canon/_wip/c5-english/C5_ENG_Source_10.md
+          canon/_wip/c5-english/C5_ENG_Source_11.md
+          canon/_wip/c5-english/C5_ENG_Source_12.md
+          canon/_wip/c5-english/C5_ENG_Source_13.md
+          canon/_wip/c5-english/C5_ENG_Source_14.md
+          canon/_wip/c5-english/C5_ENG_Source_15.md
+          canon/_wip/c5-english/C5_ENG_Source_16.md
+          canon/_wip/c5-english/C5_ENG_Source_17.md
+          canon/_wip/c5-english/C5_ENG_Source_18.md
+          canon/_wip/c5-english/C5_ENG_Source_19.md
+          canon/_wip/c5-english/C5_ENG_Source_20.md
+          canon/sources/c5/english/C5_ENG_Source_01.md
+SELFTEST — every seeded error must turn the gate RED
+------------------------------------------------------------------------------
+[RED    ] RANGE  · the stated unit has no section   (C5_BAN_Source_01.md)
+[RED    ] SIGNOFF· raster-only content with no full-check row   (C5_ENG_Source_04.md)
+[RED    ] DEPTH  · a single-channel source claims sampled depth   (C5_BAN_Source_01.md)
+[RED    ] SLOTS  · one spine slot dropped from the cross-reference   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · offset broken on one row   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · in-body page reference outside the stated range   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · in-body page references out of order   (C5_BAN_Source_01.md)
+[CLEAN  ] control · C5_BAN_Source_01.md must not be red
+[CLEAN  ] control · C5_ENG_Source_02.md must not be red
+[CLEAN  ] control · C5_ENG_Source_03.md must not be red
+[CLEAN  ] control · C5_ENG_Source_04.md must not be red
+[CLEAN  ] control · C5_ENG_Source_05.md must not be red
+[CLEAN  ] control · C5_ENG_Source_06.md must not be red
+[CLEAN  ] control · C5_ENG_Source_07.md must not be red
+[CLEAN  ] control · C5_ENG_Source_08.md must not be red
+[CLEAN  ] control · C5_ENG_Source_09.md must not be red
+[CLEAN  ] control · C5_ENG_Source_10.md must not be red
+[CLEAN  ] control · C5_ENG_Source_11.md must not be red
+[CLEAN  ] control · C5_ENG_Source_12.md must not be red
+[CLEAN  ] control · C5_ENG_Source_13.md must not be red
+[CLEAN  ] control · C5_ENG_Source_14.md must not be red
+[CLEAN  ] control · C5_ENG_Source_15.md must not be red
+[CLEAN  ] control · C5_ENG_Source_16.md must not be red
+[CLEAN  ] control · C5_ENG_Source_17.md must not be red
+[CLEAN  ] control · C5_ENG_Source_18.md must not be red
+[CLEAN  ] control · C5_ENG_Source_19.md must not be red
+[CLEAN  ] control · C5_ENG_Source_20.md must not be red
+[CLEAN  ] control · C5_ENG_Source_01.md must not be red
+------------------------------------------------------------------------------
+SELFTEST: PASS
+EXIT=0

@@ -32,6 +32,32 @@ extraction word must appear somewhere in the decoded stream, and every long stre
 decoded stream must be spoken for by extraction words. Punctuation noise leaves 1-2 character
 gaps, well under the reporting threshold; a dropped sentence leaves a long one.
 
+**What C5 Bangla added: this check must be able to refuse.** Every line above was written
+against a book whose text layer exists and lies. `Class 5 Bangla.pdf` is the other case —
+born-digital, but every glyph converted to outlines, so 142 pages yield 421 extractable
+characters and pages 10-14 yield none. Run against that book on 2026-08-09, this script
+printed **`VERDICT : AGREE — the channels account for each other completely`** and exited 0,
+having compared zero words against zero letters. Three faults stacked to produce it:
+
+  1. `extraction_body` anchored on `^# Unit \d+`, which a `# পাঠ ১` file does not have, so
+     the whole header was treated as book text and the md5, `ilovepdf` and `gitignored`
+     were scored as words of the book.
+  2. `letters()` kept `[a-z0-9]` only, so a Bengali transcription contributed **no words at
+     all** — the twenty "extraction words" in that run were the extraction's own English
+     furniture, and not one word of the book was ever compared.
+  3. Section B is trivially clean when the stream is empty, and **§7.4 buys its reduced
+     spot-check depth against a clean Section B.** A silent AGREE here would have bought
+     one-sample depth for a book on which nothing had been checked at all.
+
+So the script now **REFUSES** (exit 3) rather than returning a verdict when it has nothing
+to compare: an empty or near-empty stream, an extraction that yields no words, or a Bengali
+transcription against a stream with no Bengali in it. A refusal is not a pass and not a
+failure — it is the channel saying it is absent, which is the one thing it must never say
+by staying quiet. Fixes 1 and 2 are necessary but not sufficient: with the anchor fixed and
+the comparator still Latin-only, the run still printed AGREE.
+
+Exit codes: 0 AGREE · 1 DISAGREE · 3 REFUSE · 2 selftest failure.
+
 Usage:
     python tools/audits/source_textcheck.py <extraction.md> <book.pdf> --pages 7-12
     python tools/audits/source_textcheck.py --selftest
@@ -234,8 +260,12 @@ def decode_runs(tok: str) -> str:
     return "".join(out)
 
 
+BENGALI = r"ঀ-৿"          # includes ০-৯, so Bengali digits survive comparison
+BN_RE = re.compile(f"[{BENGALI}]")
+
+
 def letters(s: str) -> str:
-    return re.sub(r"[^a-z0-9]", "", s.lower())
+    return re.sub(f"[^a-z0-9{BENGALI}]", "", s.lower())
 
 
 def pdf_stream(pdf: Path, first: int, last: int) -> str:
@@ -251,26 +281,73 @@ def pdf_stream(pdf: Path, first: int, last: int) -> str:
     return letters(" ".join(decode_token(t) for t in toks))
 
 
-COMMENTARY = ("## যেভাবে ছাপা আছে", "## এই ইউনিটে যা নেই", "## এই ইউনিটে যে নামগুলো আছে",
-              "## MarkLogic স্লট মিলকরণ", "## প্রমাণ")
+COMMENTARY = ("## যেভাবে ছাপা আছে", "## এই ইউনিটে যা নেই", "## এই পাঠে যা নেই",
+              "## এই ইউনিটে যে নামগুলো আছে", "## এই পাঠে যে নামগুলো আছে",
+              "## MarkLogic স্লট মিলকরণ", "## প্রমাণ", "## সংশ্লিষ্ট নথি")
+
+# `*(...)*` is the extractions' settled way of writing a note about the page — which picture
+# sits where, which page a dialogue breaks on. It is the agent's voice, not the book's.
+NOTE = re.compile(r"\*\([^)]*\)\*", re.S)
 
 
 def extraction_body(md: Path) -> str:
-    """The transcribed body only — header, commentary and cross-reference are not the book."""
+    """The transcribed body only — header, commentary, cross-reference and notes are not the book.
+
+    Two things were English-shaped here. The anchor took `Unit` only, so a `# পাঠ ১` file
+    fell through to `text` unsliced and the whole provenance header — md5, producer, tool
+    names — entered the comparison as book words. And the `*(...)*` notes were being left in,
+    which was invisible while `letters()` dropped every Bengali character and would have
+    turned into mass false disagreements across all twenty English units the moment it
+    stopped: those notes are written in Bengali in the English extractions too.
+    """
     text = md.read_text(encoding="utf-8")
-    m = re.search(r"^#\s+Unit\s+\d+", text, re.M)
+    m = re.search(rf"^#\s+(?:Unit|পাঠ)\s+[\d{BENGALI}]+", text, re.M)
     text = text[m.start():] if m else text
     for heading in COMMENTARY:
         text = re.split(rf"^{re.escape(heading)}", text, maxsplit=1, flags=re.M)[0]
-    return text
+    return NOTE.sub(" ", text)
 
 
 SCAFFOLD = {"verbatim"}   # words of the extraction's own furniture, not the book's
 
 
+WORD_RE = re.compile(f"[A-Za-z0-9{BENGALI}]+$")
+
+
+def book_script(body: str) -> str:
+    """'bn' or 'latin' — whichever the transcribed body is mostly written in."""
+    bn = sum(bool(BN_RE.match(c)) for c in body)
+    latin = sum(c.isascii() and c.isalpha() for c in body)
+    return "bn" if bn > latin else "latin"
+
+
 def extraction_words(md: Path, min_len: int = MIN_WORD) -> list[str]:
-    body = re.sub(r"[^A-Za-z0-9\s]", " ", extraction_body(md))
-    words = {w.lower() for w in body.split() if len(w) >= min_len and w.isalnum()}
+    """Tokens of the transcription — shape-filtered, and limited to the book's own script.
+
+    Two fixes, both forced by the first Bengali file and both proved against all twenty
+    English units before and after.
+
+    **`str.isalnum()` is False for any string containing a Unicode Mn character**, and
+    Bengali matras, the hasant and the chandrabindu are all Mn — so `বাংলাদেশের` was rejected
+    and `পাঠ` kept. On পাঠ ১ that left **three** words standing out of a five-page chapter.
+    It never showed in English because ASCII words carry no combining marks. The body is
+    already filtered to Latin, digits and the Bengali block, so matching that same set is the
+    equivalent test for English and the correct one for Bengali.
+
+    **Scaffolding is whatever is not in the book's script.** §7.2(c) fixes the shape of these
+    files: Bengali headings and notes around a body verbatim in the book's own language. So
+    in an English extraction the Bengali tokens are the agent's voice by construction — and
+    once `letters()` stopped discarding them they turned up as `অনুশীলনী`, `ছাপা`,
+    `পাঠ্যাংশ`, `পৃষ্ঠা` in Section A of **every one of the twenty units**, four invented
+    disagreements each, on pages where nothing was wrong. A hard-coded stop-list would have
+    hidden them; it would also have deleted three of those four words from a Bangla book,
+    where they are printed on the page. The script test says the same thing without a list.
+    """
+    body = re.sub(f"[^A-Za-z0-9\\s{BENGALI}]", " ", extraction_body(md))
+    script = book_script(body)
+    words = {w.lower() for w in body.split()
+             if len(w) >= min_len and WORD_RE.match(w)
+             and (book_script(w) == script or w.isdigit())}
     return sorted(words - SCAFFOLD, key=len, reverse=True)
 
 
@@ -292,6 +369,43 @@ def unexplained(stream: str, words: list[str]) -> list[tuple[int, str]]:
     return gaps
 
 
+# A page of this book's own English text layer decodes to roughly 680 letters. Forty is
+# under a sixteenth of that: a page clearing it has real text on it, a page below it does
+# not have a text layer worth calling a channel. Measured, not picked: 80,430 letters over
+# 118 pages of `Class 5 English.pdf`.
+MIN_LETTERS_PER_PAGE = 40
+
+
+def refusals(words: list[str], stream: str, pages: int) -> list[str]:
+    """Reasons this check cannot return a verdict. Empty list means it can.
+
+    Kept separate from `run` so the selftest can exercise it directly, and so the reasons
+    read as a list rather than as an early return nobody sees.
+    """
+    out = []
+    floor = MIN_LETTERS_PER_PAGE * pages
+    if len(stream) < floor:
+        out.append(f"the decoded text layer holds {len(stream)} letters over {pages} page(s), "
+                   f"under the {floor}-letter floor — there is no second channel here to diff "
+                   f"against (a book whose glyphs are drawn as outlines looks exactly like this)")
+    if not words:
+        out.append("the extraction body yields no comparable words — the transcription is in a "
+                   "script this comparator did not read, or the body anchor missed")
+    # **Share, not presence.** Every extraction is Bengali-scaffolded by §7.2(c), so the
+    # English units carry Bengali table headers and section titles inside the transcribed
+    # body — `বাঁ ঘর`, `ডান ঘর`. Testing for *any* Bengali refused all twenty of them against
+    # a text layer that works perfectly. What matters is whether the transcription itself is
+    # Bengali, which is a majority question.
+    blob = "".join(words)
+    if blob and stream:
+        share = sum(bool(BN_RE.match(c)) for c in blob) / len(blob)
+        if share >= 0.5 and not BN_RE.search(stream):
+            out.append(f"the transcription is {share:.0%} Bengali and the decoded stream holds no "
+                       "Bengali at all — either the text layer is absent, or it is "
+                       "Bijoy/SutonnyMJ-encoded and needs a decoder this script does not have")
+    return out
+
+
 def run(md: Path, pdf: Path, first: int, last: int) -> int:
     words = extraction_words(md)
     # The gap walker gets the short words too. Without them "do you do in the" reads as a
@@ -302,6 +416,17 @@ def run(md: Path, pdf: Path, first: int, last: int) -> int:
     print(f"extraction : {md.relative_to(REPO)}  ({len(words)} distinct words >= {MIN_WORD} letters)")
     print(f"text layer : {pdf.name} pp.{first}-{last}  ({len(stream)} letters, decoded)")
     print("-" * 78)
+
+    why = refusals(words, stream, last - first + 1)
+    if why:
+        for w in why:
+            print(f"  ! {w}")
+        print("-" * 78)
+        print("VERDICT : REFUSE — this check has nothing to compare and will not report agreement.")
+        print("          A clean Section B is what §7.4 buys reduced spot-check depth with, and")
+        print("          Section B is trivially clean on an empty stream. Depth stays at full")
+        print("          human check (SOURCE_POLICY §7.4, §7.5).")
+        return 3
 
     absent = [w for w in sorted(words) if w not in stream]
     print(f"A. extraction words not found anywhere in the decoded text layer: {len(absent)}")
@@ -361,6 +486,39 @@ def selftest() -> int:
     invented = [w for w in ["crow", "spaceship"] if w not in truth]
     print(f"[{'PASS' if invented == ['spaceship'] else 'FAIL'}] an invented word is reported absent")
     ok = ok and invented == ["spaceship"]
+
+    # --- Bengali and the refusal. Every row below is a real behaviour this script got wrong
+    # --- on 2026-08-09 against `Class 5 Bangla.pdf`, not a hypothetical.
+    bn_word = "বাংলাদেশের"
+    kept = letters(bn_word) == bn_word
+    print(f"[{'PASS' if kept else 'FAIL'}] letters() keeps Bengali  {bn_word!r} -> {letters(bn_word)!r}")
+    ok = ok and kept
+
+    untouched = decode_token(bn_word) == bn_word
+    print(f"[{'PASS' if untouched else 'FAIL'}] the Caesar decoder leaves a Bengali token alone")
+    ok = ok and untouched
+
+    empty = refusals(["কথা"], "", 5)
+    print(f"[{'PASS' if empty else 'FAIL'}] an empty text layer is REFUSED, not called AGREE")
+    ok = ok and bool(empty)
+
+    nowords = refusals([], "x" * 5000, 5)
+    print(f"[{'PASS' if nowords else 'FAIL'}] an extraction yielding no words is REFUSED")
+    ok = ok and bool(nowords)
+
+    wrong_script = refusals(["বাংলাদেশের", "মানুষের"], "thequickbrownfox" * 40, 5)
+    print(f"[{'PASS' if wrong_script else 'FAIL'}] a Bengali transcription vs a Latin-only stream is REFUSED")
+    ok = ok and bool(wrong_script)
+
+    # The English case: a Latin transcription that legitimately carries Bengali scaffolding
+    # must NOT be refused. Testing 'any Bengali' instead of 'most' refused all twenty units.
+    scaffolded = refusals(["library", "books", "reading", "পৃষ্ঠা"], "libraryreadingbooks" * 30, 5)
+    print(f"[{'PASS' if not scaffolded else 'FAIL'}] a Latin transcription with Bengali scaffolding is NOT refused")
+    ok = ok and not scaffolded
+
+    script_ok = book_script("Rina and Omar পৃষ্ঠা") == "latin" and book_script("আমাদের দেশের নাম") == "bn"
+    print(f"[{'PASS' if script_ok else 'FAIL'}] the book's script is read from the body, not the scaffolding")
+    ok = ok and script_ok
     print("-" * 78)
     print(f"SELFTEST: {'PASS' if ok else 'FAIL'}")
     return 0 if ok else 2

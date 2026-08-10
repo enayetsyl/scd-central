@@ -715,3 +715,68 @@ full 20-unit sweep 20/20 PASS on RANGE/SLOTS/PAGES.
 
 **Queue: 0 OPEN.** Next session: C5 Bangla পাঠ ১–১২ and ২৪+ per §7.1, once the Principal stages
 the Bangla PDF in `_inbox/`.
+
+---
+
+## 2026-08-09 · C5 Bangla extraction opens — পাঠ ১–৬ built · `scd-agent-cowork`
+
+**Checkpoint commit: extraction in progress, promotion pending. All SIGNOFF PENDING — only the
+Principal signs.** পাঠ ৭–১১ are owed; state and the exact resume point are in
+`canon/_wip/c5-bangla/STATE.md`.
+
+**The stated scope was wrong at both ends (CD-050, SOURCE_POLICY §7.6).** §4 and §7.1 both read
+"পাঠ ১–১২ and ২৪+". **The book has 23 পাঠ** — সূচিপত্র runs ১–২৩, পাঠ ২৩ starts printed ১৩০,
+printed **১৩২ carries সমাপ্ত**. There is no পাঠ ২৪ and never was. **পাঠ ১২ is not extracted**:
+`C5_Bangla_Source_13-23.md` records it excluded on Islamic-values grounds by school authority and
+the Principal confirmed that reaches the extraction layer — a **named exception to §3, not a
+loosening of it**, written down at `canon/_wip/c5-bangla/EXCLUDED_paath_12.md` so the gap is
+visible rather than looking like an oversight. Real scope: **পাঠ ১–১১**.
+
+**A third source class (§7.7).** `Class 5 Bangla.pdf` is neither §2.1's scan nor §7.3's lying
+text layer: born-digital **with every glyph converted to outlines**. `pdftotext` returns **421
+characters over 142 pages** — 312 on the back imprint, 4 on p28, none elsewhere; pages
+1/20/70/100/141 register **no fonts**; page 70's stream holds 9,790 curve operators, 183 fills
+and **not one `BT`/`Tj`**. **Offset +৯ verified at 20 points** before anything was extracted, and
+it reconciles exactly with the existing 13–23 file (পাঠ ১৩ = printed ৬৯ = PDF 78).
+
+**Depth is full human check, book-wide.** §7.4 buys one sampled passage per unit against a clean
+Section B — and **Section B is trivially clean on an empty stream.** An absent channel is not a
+passing one, so the depth §7.5 sets for artwork text applies to the whole book.
+
+**A false green, kept on the record (CD-051).** Run against this book, `source_textcheck.py`
+printed **`VERDICT : AGREE — the channels account for each other completely`** and exited 0,
+having compared **zero words against zero letters** — the exact output §7.4 buys reduced depth
+with. Three stacked faults: the body anchor took `^# Unit \d+` only, so a `# পাঠ ১` file was
+never sliced and the md5 and `ilovepdf` scored as words of the book; `letters()` kept `[a-z0-9]`,
+so the Bengali transcription contributed nothing; and **`str.isalnum()` is False for every
+Bengali matra and hasant**, leaving **three** words standing out of a five-page chapter. Fixing
+the anchor alone still printed AGREE. The gate now **REFUSES (exit 3)** rather than reporting
+agreement when it has nothing to compare. **Scaffolding is defined by script, not a stop-list**
+(§7.2(c)) — the naive fix injected four Bengali words into Section A of **all twenty English
+units**; regression-proved old vs new across all 20: **0 of 20 differ**.
+
+**`source_check.py`** reads `পাঠ` as well as `Unit`; gains a **DEPTH** check; and **scopes PAGES
+monotonicity to the transcribed body** — the slot cross-reference cites pages per slot, and
+English Unit 1 passed the unscoped version only by luck. DEPTH's first version scanned the whole
+row and reddened পাঠ ৪, whose sign-off says "আবেদনপত্রের **নমুনা** — পুরোটা" where নমুনা is the
+book's word for its sample letter; it now reads the গভীরতা column. Selftest **8 seeds RED, all
+controls CLEAN**, fixtures drawn from every extraction on disk.
+
+**No Bijoy/SutonnyMJ decoder was written, deliberately.** The only Bangla text layer in this book
+is the back imprint, so a decoder would have nothing in scope to be proven against, and an
+unproven decoder inside a REQUIRED tool is what CD-020 exists to prevent.
+
+**Resolution matters here.** Three transcription facts were invisible at 150 dpi and only
+resolved by high-res crops: পাঠ ৩'s `ঝকঝক` (first read as `ঝকঝাক`); পাঠ ৪'s sample letter dated
+**৩ই মার্চ** while apologising for an absence on **গত ৪ঠা মার্চ** — dated before the absence, and
+contradicting the book's own তারিখবাচক table (**৩রা**) on the facing page; and পাঠ ৬'s nasalised
+dialogue, where the same word appears as plain **‘আমার'** and nasalised **‘আঁমাঁর'**, and one
+quote has **no closing quotation mark**. Standing note added: poem and handwriting-font pages get
+a high-resolution crop *before* transcription, not after.
+
+**Gates at commit:** `canon_check.py` CLEAN (0 fail) · `tools_check.py` CLEAN (0 fail) ·
+both selftests PASS · six-file sweep RANGE/SLOTS/PAGES/DEPTH **PASS**, SIGNOFF **PENDING**,
+textcheck **REFUSE** (expected on this book). Verbatim:
+`canon/_wip/c5-bangla/evidence/GATE_SWEEP_2026-08-09.txt`.
+
+**Queue: 0 OPEN.** Next: পাঠ ৭ (সাইক্লোন), printed ৩৮–৪১ = pdf 47–50.

@@ -1,7 +1,7 @@
-# SOURCE_POLICY — v1.2
+# SOURCE_POLICY — v1.3
 
 *Canon. Adopted v1.0 by Principal ruling 2026-08-09 (CD-037), superseding the v0.1 draft staged in `_inbox/`.*
-*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
+*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
 *Consumed by: question-banks · scholarship · class-tests · support-books.*
 *Cited, never copied (AGENTS.md §8).*
 
@@ -207,3 +207,57 @@ one character**.
 - **Any consumer citing those labels inherits the flag.** A question built on a map label rests
   on one human reading; that fact travels with the citation rather than being lost at the
   boundary between canon and the workstream that uses it.
+
+## 7.6 The C5 Bangla book's real structure — supersedes the range in §4 and §7.1 (Principal ruling 2026-08-09, CD-050)
+
+§4 and §7.1 both describe the remaining C5 Bangla work as **"পাঠ ১–১২ and ২৪+"**. Read against
+the book, that range is wrong at both ends. Neither section is edited; this one is in force.
+
+**আমার বাংলা বই, পঞ্চম শ্রেণি has 23 পাঠ and no more.** The সূচিপত্র runs ১–২৩ and stops;
+পাঠ ২৩ (পোস্টার লিখি, প্ল্যাকার্ড লিখি) begins on printed ১৩০; printed **১৩২ carries সমাপ্ত**
+and is the last page of the book. **There is no পাঠ ২৪ to extract, and no session should look
+for one.** The "২৪+" was carried forward from a range nobody had checked against a book.
+
+**পাঠ ১২ (শিষ্যের সাধনা) is not extracted.** `canon/marklogic/C5_Bangla_Source_13-23.md`
+records it as deliberately excluded on Islamic-values grounds by school authority, and the
+Principal confirmed that standing ruling reaches the extraction layer here (2026-08-09). This
+is a **named exception to §3's record-never-curate rule, not a loosening of it**: §3 still
+governs everything inside an extraction that exists, and the exception is recorded in
+`canon/_wip/c5-bangla/EXCLUDED_paath_12.md` so the gap is visible rather than looking like an
+oversight. A later session that finds পাঠ ১২ missing must read that note before acting.
+
+**So the remaining scope is পাঠ ১–১১**, printed ১–৬২ = PDF 10–71. With পাঠ ১৩–২৩ already canon
+and পাঠ ১২ excluded by ruling, that completes the book.
+
+**Edition, flagged and not resolved.** This PDF's imprint reads *প্রথম মুদ্রণ সেপ্টেম্বর, ২০২৫*;
+`C5_Bangla_Source_13-23.md` describes its source as *ডিসেম্বর ২০২৫ সংস্করণ* — plausibly from the
+PDF's ModDate of 20 December 2025, but that is a guess and is recorded as one. **Both statements
+are written side by side in each new file's header. The older file is not edited** (CD-004
+grandfathers it), and no agent resolves this: it closes only if the Principal compares printings.
+
+## 7.7 A third source class: outlined born-digital PDFs — adds to §2.1, §2.3 and §7.3 (Principal ruling 2026-08-09, CD-050)
+
+§2.1 describes a scan with no text layer. §7.3 adds a born-digital publisher PDF that carries
+one and lies. `Class 5 Bangla.pdf` is neither: it is **born-digital with every glyph converted
+to outlines**, so it carries no text layer at all while looking, to any tool that asks only
+whether fonts are embedded, like a file that does.
+
+Measured, not assumed: `pdftotext` over 142 pages returns **421 characters** — 312 of them on
+p142 (the back imprint), 4 on p28, none anywhere else. Pages 1, 20, 70, 100 and 141 register
+**no fonts**. Page 70's content stream holds 9,790 curve operators and 183 fills and **not one
+`BT` or `Tj`**: the text is drawn.
+
+**Consequence — §7.4's reduced depth cannot be earned on such a book.** §7.4 buys one sampled
+passage per unit against a clean Section B from `source_textcheck.py`, and **Section B is
+trivially clean when the stream is empty.** An absent channel is not a passing one. So:
+
+- **Depth is full human check, book-wide** — the depth §7.5 sets for artwork-borne text,
+  applied to the whole book, because the whole book is single-channel.
+- An extraction from such a source **declares itself** in its header (`**যাচাই-চ্যানেল:** একক`)
+  and `source_check.py`'s **DEPTH** check fails it if any sign-off row claims sampled depth.
+- `source_textcheck.py` **REFUSES** (exit 3) rather than reporting agreement when it has
+  nothing to compare. A REFUSE on such a book is the expected result and is not a red gate;
+  an AGREE would be a bug, and was one until CD-051.
+
+The extraction header records which class the source was, so a later reader knows which
+hazards applied — and, here, which one did not exist.

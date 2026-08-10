@@ -1,0 +1,45 @@
+# source_textcheck.py — C5 BAN পাঠ ১ · 2026-08-09
+
+$ python tools/audits/source_textcheck.py canon/_wip/c5-bangla/C5_BAN_Source_01.md '_inbox/Class 5 Bangla.pdf' --pages 10-14
+
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-bangla/C5_BAN_Source_01.md  (274 distinct words >= 4 letters)
+text layer : Class 5 Bangla.pdf pp.10-14  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 5 page(s), under the 200-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
+$ python tools/audits/source_textcheck.py --selftest
+
+SELFTEST — decoder and gap finder
+------------------------------------------------------------------------------
+[PASS] decode ':KDW\x03GR\x03\\RX\x03GR' -> 'What do you do'           (want 'What do you do')
+[PASS] decode 'QHLJKERXUKRRG'            -> 'neighbourhood'            (want 'neighbourhood')
+[PASS] decode 'ELRJUDSKLHV'              -> 'biographies'              (want 'biographies')
+[PASS] decode 'EX൵DOR'                   -> 'buffalo'                  (want 'buffalo')
+[PASS] decode '2൶FH'                     -> 'Office'                   (want 'Office')
+[PASS] decode 'µJDQM¶'                   -> "'ganj'"                   (want "'ganj'")
+[PASS] decode '¿QG'                      -> 'find'                     (want 'find')
+[PASS] decode '\x15\x13\x16\x13'         -> '2030'                     (want '2030')
+[PASS] decode 'a^fiv'                    -> 'DAILY'                    (want 'DAILY')
+[PASS] decode '(UNESCO)'                 -> '(UNESCO)'                 (want '(UNESCO)')
+[PASS] decode 'Unit'                     -> 'Unit'                     (want 'Unit')
+[PASS] decode 'reading'                  -> 'reading'                  (want 'reading')
+[PASS] a dropped word leaves an unexplained gap
+[PASS] control · complete word set leaves no gap
+[PASS] an invented word is reported absent
+[PASS] letters() keeps Bengali  'বাংলাদেশের' -> 'বাংলাদেশের'
+[PASS] the Caesar decoder leaves a Bengali token alone
+[PASS] an empty text layer is REFUSED, not called AGREE
+[PASS] an extraction yielding no words is REFUSED
+[PASS] a Bengali transcription vs a Latin-only stream is REFUSED
+[PASS] a Latin transcription with Bengali scaffolding is NOT refused
+[PASS] the book's script is read from the body, not the scaffolding
+------------------------------------------------------------------------------
+SELFTEST: PASS
+EXIT=0

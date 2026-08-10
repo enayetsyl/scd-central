@@ -65,9 +65,10 @@ word · dropped table row): all three caught.
    is clean and every word-level disagreement is provenance-proven. Units 4 and 11 additionally
    carry a full-check row for their artwork-borne text, which no machine can corroborate; the
    gate FAILs either of them without it.**
-2. Then **C5 Bangla পাঠ ১–১২ and ২৪+** per SOURCE_POLICY §7.1 — next session, once the Principal
-   has staged the Bangla PDF in `_inbox/`. Expect §7.5 to bite there: a Bangla book carries maps
-   and figure labels too, and CD-029 already proved that book's script needs the raster.
+2. Then **C5 Bangla** — started 2026-08-09, state at `canon/_wip/c5-bangla/STATE.md`.
+   ⚠️ The scope written here (**"পাঠ ১–১২ and ২৪+"**) was wrong at both ends and is superseded by
+   **SOURCE_POLICY §7.6 / CD-050**: the book has **23 পাঠ**, there is no পাঠ ২৪, and পাঠ ১২ is
+   excluded by standing school ruling. Real remaining scope: **পাঠ ১–১১**.
 
 **Queue is clear.** PENDING-P-009/010/011 closed at CD-046, PENDING-P-012 at CD-048,
 PENDING-P-013 at CD-049. Nothing OPEN blocks this workstream.
@@ -77,7 +78,8 @@ PENDING-P-013 at CD-049. Nothing OPEN blocks this workstream.
 - `canon/_wip/c5-eng-raster/` holds 115 regenerable page rasters, now correctly ignored by the
   widened `**/_wip/**/*.png` rule (CD-047). Kept, not deleted: they are the working set for the
   Bangla remainder and cost nothing in the repo.
-- `_inbox/` now holds `Class 5 English.pdf`, `Class 1 Bangla.pdf` (C1 is last in the order) and
+- `_inbox/` now holds `Class 5 English.pdf`, `Class 5 Bangla.pdf` (corrected 2026-08-09: this
+  line previously read `Class 1 Bangla.pdf`, which is not what is staged; C1 is last in the order) and
   the two Naskh weights, which are **new weights, not duplicates**, and are a tools change with
   its own SMOKE run rather than an inbox tidy-up.
 - `canon/_wip/c5-eng-raster/pdf-118.png` was reported truncated by one agent, which re-rendered
