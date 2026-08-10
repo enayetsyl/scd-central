@@ -1,0 +1,66 @@
+############ CHAPTER-END GATE SWEEP · অধ্যায় ২ · 2026-08-10 ############
+
+### 1. source_check.py
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-math/C5_MATH_Source_02.md
+subject : class 5 · MATH
+grammar : chapter word 'অধ্যায়'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range অধ্যায় 2-2: all 1 section(s) present
+[PASS   ] SLOTS    all 11 MATH spine slots accounted for
+[PASS   ] PAGES    offset constant (+7) over 12 verified rows; 14 body refs monotonic within 17-30, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  33 of 33 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 33 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+### 2. math_arith_check.py
+math_arith_check.py — the extraction's arithmetic against itself
+file   : canon/_wip/c5-math/C5_MATH_Source_02.md
+found  : 0 worked block(s), 0 step-table row(s), 10 equality chain(s), 0 division block(s), 0 marked comparison(s)
+------------------------------------------------------------------------------
+[CLEAN    ] line 152   চেইন: ৪৮ ÷ ৮ = ৬
+[CLEAN    ] line 173   চেইন: ৬ × ৪ = ২৪
+[CLEAN    ] line 296   চেইন: ৩ + ৫০ ÷ ২৫ − ৪ = ৩ + ২ − ৪
+[CLEAN    ] line 297   চেইন: ৩ + ২ − ৪ = ১
+[CLEAN    ] line 304   চেইন: ১২÷২×৩ = ৬×৩
+[CLEAN    ] line 305   চেইন: ৬×৩ = ১৮
+[CLEAN    ] line 310   চেইন: ১২÷(২×৩) = ১২ ÷৬
+[CLEAN    ] line 311   চেইন: ১২ ÷৬ = ২
+[CLEAN    ] line 401   চেইন: ২০০০ − (২৪০ × ৫ + ১২০ × ৩) = ২০০০ − ১৫৬০
+[CLEAN    ] line 402   চেইন: ২০০০ − ১৫৬০ = ৪৪০
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×158, bare exercise (no printed answer to check) ×15, ÷ long division ×14
+VERDICT: CLEAN — 10 verified · 0 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×158, bare exercise (no printed answer to check) ×15, ÷ long division ×14
+EXIT=0
+
+### 3. source_textcheck.py pp.24-37 (REFUSE expected)
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-math/C5_MATH_Source_02.md  (647 distinct words >= 4 letters)
+text layer : Class 5 Math.pdf pp.24-37  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 14 page(s), under the 560-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
+### 4-6. selftests
+------------------------------------------------------------------------------
+SELFTEST: PASS
+------------------------------------------------------------------------------
+SELFTEST: PASS
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+### 7-8. repo gates
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn)
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)

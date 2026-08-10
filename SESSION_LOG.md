@@ -1418,3 +1418,54 @@ the fence rule, the ✗/✓ inversion, and now §7.11.
 
 `canon_check.py` **CLEAN**. No transcription this pass; **resume unchanged at ছাপা ২৪ (PDF 31)**,
 seven pages of অধ্যায় ২ remaining.
+
+## 2026-08-10 (multi-chapter sitting) · CD-066/067 recorded · **অধ্যায় ২ COMPLETE**
+
+**Two rulings folded in first.** **CD-066** (SOURCE_POLICY §7.12): a pure-exercise section — no
+printed working, no answers, no ✗/✓ marks — is transcribed at the 150 dpi render **with the
+numerals themselves read at 400+ dpi via spot-crops**. The point is that this is not the
+relaxation CD-054 refused: it lowers the depth of the *page furniture* while the numerals, which
+are what CR-001 was written about, are read exactly as before. Exercise-only sign-off rows state
+the convention so the Principal reads the depth rather than inferring it. **CD-067** (§7.13):
+cadence is now up to three complete chapters per sitting, **chapter close atomic**, and the
+**stop-rule explicitly outranks the ceiling** — the near-miss record (`ঝকঝাক`, `প্রচন্দ`, `শীঁখ`,
+the eight-box count) is written in as the standing reason. §7.8 is left as written, forward-only.
+
+**অধ্যায় ২ closed.** ছাপা ২৪–৩০ transcribed, slot cross-reference written, `নির্মাণাধীন` marker
+removed, full sweep run:
+
+```
+[PASS   ] RANGE    stated range অধ্যায় 2-2: all 1 section(s) present
+[PASS   ] SLOTS    all 11 MATH spine slots accounted for
+[PASS   ] PAGES    offset constant (+7) over 12 verified rows; 14 body refs monotonic
+[PENDING] SIGNOFF  33 of 33 spot-check row(s) unsigned
+[PASS   ] DEPTH    single-channel source; all 33 sign-off row(s) marked 'পূর্ণ'
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+```
+
+`math_arith_check.py` **CLEAN — 10 verified**; `source_textcheck.py` **REFUSE** per §7.7; three
+selftests and both repo gates clean. Verbatim: `evidence/GATE_SWEEP_CH2_2026-08-10.txt`.
+
+**Five printed-as-is findings, two that bite question authors.** কাজ/অনুশীলন numbering **restarts
+at every sub-section** — this chapter has three separate "কাজ ১"s, so a citation without a printed
+page is ambiguous. And the chapter is **built on deliberately false statements** (ছাপা ১৭, ১৮,
+১৯), which must never be corrected. Also recorded: inconsistent comma grouping (**৬২৫,৮০০**
+against ৭০৫০০ and ৩১২৫ on the same page), and **‘মুনাফা’ appearing in অধ্যায় ২** with no
+percentage arithmetic — so `MATH-S07` does **not** draw from here.
+
+**Slot mapping scoped honestly.** S01–S04 directly bound, S04 the main source with নিজে করি ১৫
+matching the spine's own multi-part shape; S02 is unusually strong here because the whole chapter
+rests on filling blanks. **S09 recorded as partial with the limit stated** — metres, litres, kilos
+and days appear as context, but there is no unit conversion and no area. And **ছাপা ২৬'s
+day↔cloth table is explicitly *not* S11 উপাত্ত** — it is a unitary-method computation grid, not
+data collection, and that distinction is exactly the kind a question author would otherwise get
+wrong.
+
+**অধ্যায় ৩ not started, and that is the stop-rule working.** CD-067 permits three chapters;
+অধ্যায় ৩ is eighteen printed pages and needs its own offset derivation and a fresh 400 dpi render
+(PDF 38–55 do not exist yet). Beginning it here would have meant starting a chapter I could not
+close at full care. **Three is a ceiling, never a target** — the sitting stops with two chapters
+complete rather than three half-done.
+
+**Owed to the Principal: 68 sign-off rows** (35 for অধ্যায় ১, 33 for অধ্যায় ২). No agent writes
+in the সই column.
