@@ -967,3 +967,46 @@ deliberately** — the slot cross-reference waits until the chapter has been rea
 **Resume point: ছাপা পৃষ্ঠা ৪ (PDF 11).** Rasters at 150 dpi (all 190 pp) and 400 dpi (PDF 8–23)
 are already on disk and gitignored; the tiling recipe and the folio-montage trick are written into
 `STATE.md` so the next sitting re-derives nothing except the offset, which is never carried.
+
+### 2026-08-10 (same session, continued) · `math_arith_check.py` promoted to a proven gate — and it caught CR-002
+
+**Built as ruled.** `tools/audits/math_arith_check.py`, MANIFEST row **REQUIRED**
+(`tools/audits` is SMOKE-exempt by `tools_check.py`'s own `SMOKE_EXEMPT` — a gate evidences
+itself and its verbatim run is the record). The three limits sit in the docstring verbatim:
+**computed working only · words, names and instructions out of scope · problem-statement figures
+unchecked where the book prints no working.** **CD-057**; depth extension recorded as
+**SOURCE_POLICY §7.10** (v1.5).
+
+**Seeded selftest — 16 cases, all PASS.** A flipped digit in the total, a partial, the
+multiplicand, the multiplier, and inside a blanks-block each turn it RED; a dropped partial row
+is RED on shape; an unbalanced step table is RED. The branches that matter most are proven too:
+an under-determined block is **AMBIGUOUS**, a pure scaffold is **WIDTH**, and a file containing
+only those returns **REFUSE, never CLEAN** — a depth claim cannot rest on a block where no digit
+was verified.
+
+**The first real run went RED on two blocks. Both were worth having.**
+
+**(1) The gate caught my own error — CR-002.** কাজ ৩(১), ৮৩৪৬ × ১৫৪৫: I had transcribed
+**eight** empty boxes in the fourth partial row where the book prints **seven**. ৮৩৪৬ × ১০০০ =
+৮৩৪৬০০০ is seven digits, and with no zero in the multiplier the widths ৫·৬·৭·৭ are
+arithmetically forced. Re-cropped at 400 dpi and counted again: seven. **The digits were
+perfectly legible; the count was wrong.** High resolution protects *reading*; only a second
+channel protects *counting*. The two answer different failures and neither substitutes for the
+other, so **CD-054 stands untouched** — this is not an argument for lowering dpi.
+
+**(2) The second RED was the gate's own blind spot, and became a rule.** কাজ ৩(২), ৬২৫৮ × ৬০৯৭:
+the third partial is ৬২৫৮ × ০ × ১০০ = 0 — one digit — and **the book still prints six boxes**.
+It does not narrow the scaffold for a zero multiplier digit. Checking that width would redden a
+correct transcription, so zero-digit rows are now excused **in code, with the book cited as the
+reason**, and the exemption is itself seeded: a zero-digit block with a conflicting printed digit
+still goes RED. Recorded in the extraction's `যেভাবে ছাপা আছে` as a feature of the book.
+
+**Gate state after the fixes:** `math_arith_check.py` **CLEAN — 8 items verified; 2 uncovered**
+(both pure scaffolds, full manual depth per §7.10). `source_check.py` unchanged: RANGE/PAGES/DEPTH
+**PASS**, SIGNOFF **PENDING**, **SLOTS FAIL deliberately** — still RED, still correct. All five
+audit gates' selftests **PASS**; `canon_check.py` and `tools_check.py` **CLEAN**.
+
+**Transcription did not advance this session** — the tool build consumed it. Resume point is
+unchanged at **ছাপা পৃষ্ঠা ৪ (PDF 11)**, and per §7.8 the next sitting starts fresh and takes
+অধ্যায় ১ to completion, with `math_arith_check.py` now running alongside `source_check.py` from
+the first page.

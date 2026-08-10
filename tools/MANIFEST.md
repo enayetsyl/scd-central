@@ -31,6 +31,7 @@ trigger the "promote me" warn on a VENDORED-UNPROVEN row.
 | tools/audits/tools_check.py | REQUIRED |
 | tools/audits/source_check.py | REQUIRED |
 | tools/audits/source_textcheck.py | REQUIRED |
+| tools/audits/math_arith_check.py | REQUIRED |
 | tools/hub-export/validate_import.py | REQUIRED |
 | tools/hub-export/import-contract.schema.json | REQUIRED |
 | tools/hub-export/LOCKED_C5_PlanSchema_v1.json | REQUIRED |

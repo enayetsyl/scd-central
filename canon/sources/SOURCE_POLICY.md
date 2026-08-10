@@ -1,7 +1,7 @@
-# SOURCE_POLICY — v1.4
+# SOURCE_POLICY — v1.5
 
 *Canon. Adopted v1.0 by Principal ruling 2026-08-09 (CD-037), superseding the v0.1 draft staged in `_inbox/`.*
-*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
+*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration; v1.5 (CD-057) adds §7.10 the depth rule's math extension. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
 *Consumed by: question-banks · scholarship · class-tests · support-books.*
 *Cited, never copied (AGENTS.md §8).*
 
@@ -310,3 +310,38 @@ the whole repository's tool gate red the first time a chapter was interrupted mi
 - **Removing the line is part of finishing the chapter** and belongs in the resume instructions.
   A marker nobody takes out would keep a finished extraction outside the selftest forever, which
   is the same silent-exclusion failure in the opposite direction.
+
+## 7.10 The depth rule's math extension — adds to §7.4 and §7.7 (Principal ruling 2026-08-10, CD-057)
+
+§7.7 says a book with no text layer has no second channel and therefore cannot earn §7.4's
+reduced spot-check depth. That is right about the **file**. It is not right about **math
+content**, which carries its own redundancy: partial products must sum to the total, and each
+partial must equal multiplicand × multiplier digit × place value. **A mis-read digit does not
+balance** — which is precisely the failure the full-resolution ruling exists to catch.
+
+`tools/audits/math_arith_check.py` executes it. As with §7.4, the reduction is **read off an
+executed run, never assumed**, and the run's verbatim output is the evidence.
+
+**Where the check reports the working CLEAN, that working earns §7.4-style reduced depth —
+one sampled line per block rather than every digit.** Two clarifications that are part of the
+ruling, not commentary on it:
+
+- **Blanks pinned uniquely count as covered.** Where the book prints an exercise part-solved
+  and the printed cells admit exactly one assignment of the hidden digits, the block is
+  covered. It is often the *stronger* check: more constraints bear on fewer free digits.
+- **`AMBIGUOUS` and `WIDTH` do not count.** A block admitting more than one assignment, and a
+  pure scaffold whose cells are all empty, have had **no digit verified** — only, in the second
+  case, their row widths. The gate reports these as their own statuses and returns REFUSE
+  rather than CLEAN when a file contains nothing else, so a depth claim cannot rest on them.
+
+**Everything the check cannot see stays at full manual depth**, and the list is exhaustive and
+short: **words, names and instructions; problem-statement figures the book never computes; and
+any working the gate reports as uncovered.** In practice most of a chapter is still full-depth —
+the extension buys depth on the arithmetic and on nothing else.
+
+**One thing the extension does not buy, recorded because it was learned the hard way.** The
+first real run of this gate caught **CR-002**: an agent transcribing at 400 dpi mis-**counted**
+the empty boxes in a scaffold — the digits were legible, the count was wrong, and resolution was
+never going to help. **High resolution protects reading; only a second channel protects
+counting.** §7.8's no-relaxation ruling is unaffected: the dpi floor and this check answer
+different failures, and neither substitutes for the other.
