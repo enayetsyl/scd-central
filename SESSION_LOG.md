@@ -1115,3 +1115,30 @@ extension candidate; seeded tests and a CD row first, never a loosening.
 uncovered**, with four unparsed shapes named on the verdict line.
 
 **Resume at ছাপা ৯ (PDF 16).** Eight printed pages remain and they are mostly division.
+
+### 2026-08-10 (same sitting) · ছাপা ৯ — both divisions now machine-verified
+
+**Transcribed printed ৯**: কাজ ১ (৬৬৭৪ ÷ ২১৪), the যাচাই পদ্ধতি box stating
+**ভাজক × ভাগফল + ভাগশেষ = ভাজ্য** in four coloured plates, and অনুশীলন ২. The plates are
+**typeset words, not drawn symbols**, so unlike printed ৬'s সহজ পদ্ধতি box this is ordinary body
+content and not §7.5.
+
+**`math_arith_check.py` now verifies both divisions in the file** — ৪২৭৫ ÷ ৪৫ = ৯৫ ভাগশেষ ০ and
+৬৬৭৪ ÷ ২১৪ = ৩১ ভাগশেষ ৪০, each with its subtraction rows and the ভাগশেষ < ভাজক invariant.
+**20 verified, 2 uncovered.**
+
+**A limitation found on the first page that exercised it, and handled in the open.** The book
+teaches division by printing **two boxes for the same division** — the first showing only step one
+(quotient `৩`), the second complete (quotient `৩১`). The parser treats any fenced block as a
+*complete* division, so fencing the first box would have turned the gate **red on a correct
+transcription**. The partial box is therefore deliberately left outside the fence, **with the
+reason written into the extraction itself and into `STATE.md`**, and the complete box is fenced and
+checked. Teaching the parser to recognise a partial stage is a named task — seeded tests and a CD
+row first.
+
+**Gates:** `source_check.py` RANGE/PAGES/DEPTH **PASS** (20/20 sign-off rows পূর্ণ), SIGNOFF
+**PENDING**, **SLOTS FAIL still deliberate** · `math_arith_check.py` **CLEAN — 20 verified**.
+
+**অধ্যায় ১ is NOT complete.** ছাপা ১০–১৬ remain — seven printed pages. The long-division
+extension took the session's first stretch as ruled, and the chapter did not close. **Resume at
+ছাপা ১০ (PDF 17);** SLOTS mapping and the নির্মাণাধীন marker removal still wait on the full read.
