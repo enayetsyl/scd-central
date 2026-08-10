@@ -1,7 +1,7 @@
-# SOURCE_POLICY — v1.6
+# SOURCE_POLICY — v1.7
 
 *Canon. Adopted v1.0 by Principal ruling 2026-08-09 (CD-037), superseding the v0.1 draft staged in `_inbox/`.*
-*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration; v1.5 (CD-057) adds §7.10 the depth rule's math extension; v1.6 (CD-065) adds §7.11 the rendering-choice rule. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
+*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration; v1.5 (CD-057) adds §7.10 the depth rule's math extension; v1.6 (CD-065) adds §7.11 the rendering-choice rule; v1.7 (CD-066, CD-067) adds §7.12 the pure-exercise convention and §7.13 the multi-chapter cadence. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
 *Consumed by: question-banks · scholarship · class-tests · support-books.*
 *Cited, never copied (AGENTS.md §8).*
 
@@ -373,3 +373,46 @@ checkable is the same failure wearing the opposite coat.
 into `canon/_wip/c5-math/STATE.md` when ছাপা ২২ forced the choice; a rule that lives only in a
 workstream's state file dies with the workstream. Every subject that meets a bordered box will
 meet this, and C5 গণিত will not be the last.
+
+## 7.12 Pure-exercise sections — reduced page depth, undiminished numeral depth (Principal ruling 2026-08-10, CD-066)
+
+§7.8 sets 400 dpi for the whole page because in a math book almost every page is number-dense.
+**One kind of section is different in a way that can be stated exactly:** a section containing
+**only bare exercises** — no printed working, no printed answers, no `✗`/`✓` marks — carries no
+worked line to mis-read, no answer key to corrupt, and nothing for `math_arith_check.py` to read.
+What it does carry is **problem-statement numerals**, and **a mis-read numeral there still reaches
+a question paper.**
+
+**So the page and the numerals are separated:**
+
+- the section is transcribed at the **150 dpi working render**;
+- **the numerals themselves are read at 400+ dpi via spot-crops** — the CR-001 rule is not
+  relaxed, it is aimed;
+- the sign-off row for such a section **states the convention**, so the Principal sees which
+  depth each row was taken at rather than having to infer it.
+
+**Everything else keeps full treatment, unchanged:** worked examples, any answer-bearing content,
+tables, `✗`/`✓`-marked lines, word lists, and figures. **The test is the section's content, not
+its heading** — an "অনুশীলন" that prints one worked example is not a pure-exercise section, and a
+section that turns out to contain a printed answer stops being one the moment that is noticed.
+
+**Why this is not the resolution relaxation §7.8 refused.** CD-054 rejected lowering dpi *for
+number-dense content*. This lowers it only for **page furniture around numerals that are still
+read at full resolution** — the instruction line, the item numbering, the layout. The numerals,
+which are what CR-001 was written about, are read exactly as before.
+
+## 7.13 Multi-chapter cadence — supersedes §7.8's one-chapter line (Principal ruling 2026-08-10, CD-067)
+
+§7.8 set **one or more complete অধ্যায় per session**. In force now: **as many complete chapters
+as full care allows, up to three per sitting.**
+
+**Chapter close stays atomic and is not batched across chapters.** Per chapter, in order: full
+read → SLOTS cross-reference → `নির্মাণাধীন` marker removed → gate sweep → checkpoint-commit.
+A chapter is closed or it is not; three half-closed chapters are not two closed ones.
+
+**The stop-rule is unchanged and outranks the ceiling.** The moment care would thin, the sitting
+stops at a **stated resume point**, mid-chapter if that is where it lands. **Two chapters at full
+care beat three at partial**, and the reason is on the record rather than asserted: every
+near-miss this book and its sibling have produced — `ঝকঝাক` for `ঝকঝক`, `প্রচন্দ` for `প্রচণ্ড`,
+`শীঁখ` for `শাঁখ`, and the eight-box count that should have been seven — happened where attention
+or resolution had thinned. **Three is a ceiling, never a target.**
