@@ -1010,3 +1010,45 @@ audit gates' selftests **PASS**; `canon_check.py` and `tools_check.py` **CLEAN**
 unchanged at **ছাপা পৃষ্ঠা ৪ (PDF 11)**, and per §7.8 the next sitting starts fresh and takes
 অধ্যায় ১ to completion, with `math_arith_check.py` now running alongside `source_check.py` from
 the first page.
+
+## 2026-08-10 (fresh sitting) · C5 গণিত অধ্যায় ১ — ছাপা ৪–৭ transcribed
+
+**Session start per AGENTS §3.** `AGENTS.md` v1.2 read at source; `git pull` **Already up to
+date** at `1ea4045`; resume point read from `STATE.md`. The §9 lock-aside helper was rebuilt
+first and used before every git write, per **CD-056**.
+
+**Transcribed printed ৪, ৫, ৬ and ৭** at 400 dpi — কাজ ৪ (পাশাপাশি গুণ / distributive), the
+×১০০ ladder and the trailing-zero method, the ৯৯/৯৯৯/৯৯৯৯ subtraction trick, and the blanket
+word problem. Blanks recorded as blanks throughout (§3). **Two structural findings:** the book
+**restarts কাজ and অনুশীলন numbering at every new মূল প্রশ্ন**, so printed ৪, ৫ and ৬ each carry
+their own কাজ ১ / অনুশীলন ১ — recorded as printed rather than renumbered; and the **ভাগ half of
+"গুণ ও ভাগ" has not started by printed ৭**.
+
+**§7.5 raster-only content found and quarantined.** Printed ৬'s **সহজ পদ্ধতি** box states the
+distributive law **not in letters or numerals but in three drawn coloured shapes** — blue square,
+yellow triangle, magenta circle. Nothing can corroborate it; it is in a `## ছবির ভেতরের লেখা`
+section outside the transcribed body with its own full-check sign-off row, and any consumer
+citing it inherits the flag.
+
+**The gate's reach, measured rather than assumed.** `math_arith_check.py` still reports
+**8 items verified** — *the same number as before four pages were added*. It parses stacked
+multiplication and `| A × B | → | C |` step tables, and printed ৪–৭ contain **four shapes it does
+not parse**: distributive expansion, the ×১০০ ladder, the trailing-zero rule with its vertical
+bar, and `( X − ১ )` subtraction-distribution. **It does not REFUSE on these — it stays silent**,
+because it never finds the blocks; `found N blocks` is the only signal that anything went
+unexamined. Per the ruling I did **not** extend the gate: printed ৪–৭ were transcribed and checked
+at full manual depth, with the twelve hand checks recorded verbatim in
+`evidence/MANUAL_ARITH_p04-07_2026-08-10.txt` — all consistent. The cheapest high-value extension
+(a distributive check covering most of ৪, ৬ and ৭) is named in `STATE.md` for a ruling, not taken.
+
+**A gate caught a build-time slip before commit.** Writing `৪৯৭৩\|০` into a sign-off cell shifted
+the depth column — `source_check.py` went **`[FAIL] DEPTH 1 of 15 sign-off row(s) state no depth`**.
+The pipe was removed and the vertical rule described in words. Recorded in `STATE.md` as a trap:
+**no `|` in a sign-off cell, escaped or not.**
+
+**Gates:** `source_check.py` RANGE **PASS** · PAGES **PASS** (offset +7, 18 rows; 7 body refs
+monotonic) · DEPTH **PASS** (15/15 রows পূর্ণ) · SIGNOFF **PENDING** (15/15 unsigned) ·
+**SLOTS FAIL, still deliberate**. `math_arith_check.py` **CLEAN — 8 verified, 2 uncovered**.
+
+**Chapter not complete — resume at ছাপা ৮ (PDF 15).** Nine printed pages remain, and the ভাগ
+half has not begun. Stopped at the resume point rather than thinning the reads (§7.8).
