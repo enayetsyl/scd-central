@@ -1174,3 +1174,46 @@ four plates **empty** for the student. Recorded as printed.
 **অধ্যায় ১ is still NOT complete — ছাপা ১১–১৬ remain, six printed pages.** SLOTS mapping, the
 নির্মাণাধীন marker removal and the chapter-complete sync all wait on the full read. Resume at
 **ছাপা ১১ (PDF 18)**.
+
+## 2026-08-10 (fresh sitting) · **অধ্যায় ১ COMPLETE** — ছাপা ১১–১৬, SLOTS, marker, gate sweep
+
+**The chapter closed.** ছাপা ১১, ১২, ১৩, ১৪, ১৫ and ১৬ transcribed at 400 dpi, then the
+MarkLogic slot cross-reference written, the `নির্মাণাধীন` marker removed, and a full gate sweep
+run. **Six printed pages this sitting, sixteen in total.**
+
+**`source_check.py` now reports what a finished-but-unsigned extraction should:**
+
+```
+[PASS   ] RANGE    stated range অধ্যায় 1-1: all 1 section(s) present
+[PASS   ] SLOTS    all 11 MATH spine slots accounted for
+[PASS   ] PAGES    offset constant (+7) over 18 verified rows; 16 body refs monotonic
+[PENDING] SIGNOFF  35 of 35 spot-check row(s) unsigned
+[PASS   ] DEPTH    single-channel source; all 35 sign-off row(s) marked 'পূর্ণ'
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+```
+
+SLOTS went green only after the chapter had been read end to end — which is what it was held
+red for. `math_arith_check.py` **CLEAN — 24 verified · 3 uncovered**, all three `WIDTH` (pure
+scaffolds). `source_textcheck.py` **REFUSE**, expected under §7.7. All three selftests PASS;
+`canon_check.py` and `tools_check.py` CLEAN. Verbatim: `evidence/GATE_SWEEP_2026-08-10.txt`.
+
+**Five findings recorded in `যেভাবে ছাপা আছে`, two of which a question author must not miss.**
+**(a) কাজ/অনুশীলন numbering restarts at every মূল প্রশ্ন** — there are three different "কাজ ১"s
+in this chapter, so a citation without a printed page number is ambiguous. **(b) অনুশীলন ৪
+(ছাপা ১১) and নিজে করি ৭ (ছাপা ১৬) contain deliberately false statements** — they are true/false
+exercises. Those are not transcription errors, no session may "correct" them, and they were kept
+out of the arithmetic check, where failing to balance is the *expected* result. Also recorded:
+comma grouping is inconsistent within the chapter (৪৬,৮০,০০০ and ১০,০০০ against ১০০০০, ৫০০০০,
+৩৭৯৬৮০), and the zero-digit scaffold from CD-060.
+
+**Slot mapping, honestly scoped.** S01–S04 are directly bound and S04 is the chapter's main
+source, with নিজে করি ১৪ matching the spine's own "one multi-part problem, 8 marks" shape.
+S05–S08, S10 and S11 are marked **absent** with the chapter that owns each. **S09 is recorded as
+partial and the limit stated**: metres and grams appear as problem context, but there is no unit
+conversion and no area — those belong to অধ্যায় ৮.
+
+**Not done, and named:** the Principal's 35 sign-off rows. **No agent writes in the সই column.**
+On signature the file promotes to `canon/sources/c5/math/` and the gate re-runs there.
+
+**Next: অধ্যায় ২ — গাণিতিক বাক্য, ছাপা ১৭–৩০ = PDF 24–37.** 400 dpi rasters exist only to
+PDF 23, and **the offset must be re-derived, never carried.**

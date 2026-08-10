@@ -1,0 +1,237 @@
+############ CHAPTER-END GATE SWEEP · অধ্যায় ১ · 2026-08-10 ############
+
+### 1. source_check.py · C5_MATH_Source_01.md
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-math/C5_MATH_Source_01.md
+subject : class 5 · MATH
+grammar : chapter word 'অধ্যায়'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range অধ্যায় 1-1: all 1 section(s) present
+[PASS   ] SLOTS    all 11 MATH spine slots accounted for
+[PASS   ] PAGES    offset constant (+7) over 18 verified rows; 16 body refs monotonic within 1-16, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  35 of 35 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 35 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+EXIT=1
+
+### 2. math_arith_check.py · C5_MATH_Source_01.md
+math_arith_check.py — the extraction's arithmetic against itself
+file   : canon/_wip/c5-math/C5_MATH_Source_01.md
+found  : 8 worked block(s), 6 step-table row(s), 7 equality chain(s), 6 division block(s)
+------------------------------------------------------------------------------
+[CLEAN    ] line 431   ৪২৭৫ ÷ ৪৫ = ৯৫ ভাগশেষ ০  (2 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 482   ৬৬৭৪ ÷ ২১৪ = ৩১ ভাগশেষ ৪০  (2 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 555   ৬৯৭৩৮ ÷ ২৪৫ = ২৮৪ ভাগশেষ ১৫৮  (3 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 657   ২৪১২ ÷ ১০ = ২৪১ ভাগশেষ ২  (3 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 674   ৩২৬৪ ÷ ১০০ = ৩২ ভাগশেষ ৬৪  (2 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 688   ৬৩৯৭৩ ÷ ১০০ = ৬৩৯ ভাগশেষ ৭৩  (3 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 137   ৪৬১৪ × ৩৬৫ = ১৬৮৪১১০  (fully printed)
+[CLEAN    ] line 168   ৮৫৩৬ × ৯৭২ = ৮২৯৬৯৯২  (fully printed)
+[CLEAN    ] line 183   ৪৭৬৫ × ২৩৫৪ = ১১২১৬৮১০  (fully printed)
+[WIDTH    ] line 205   ৮৩৪৬ × ১৫৪৫: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
+[WIDTH    ] line 217   ৬২৫৮ × ৬০৯৭: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
+[CLEAN    ] line 229   ৫৫৭৯ × ৪৬৭৭ = ২৬০৯২৯৮৩  (pinned uniquely from the printed cells)
+[CLEAN    ] line 241   ৭৭৭২৩ × ৪৫৬৭ = ৩৫৪৯৬০৯৪১  (pinned uniquely from the printed cells)
+[WIDTH    ] line 796   ৮৩২৪ × ৩১৩৬: scaffold widths agree, but every working cell is blank — no digit checked, stays at full manual depth
+[CLEAN    ] line 133   ৪৬১৪ × ৫ = ২৩০৭০
+[CLEAN    ] line 134   ৪৬১৪ × ৬০ = ২৭৬৮৪০
+[CLEAN    ] line 135   ৪৬১৪ × ৩০০ = ১৩৮৪২০০
+[CLEAN    ] line 305   ৭৪ × ২৯ = ২১৪৬
+[CLEAN    ] line 307   ৭৪০০ × ২৯ = ২১৪৬০০
+[CLEAN    ] line 309   ৭৪০০ × ২৯০০ = ২১৪৬০০০০
+[CLEAN    ] line 267   চেইন: ৬০৪২ × **১৫১৪** = ৬০৪২ × **(১০০০ + ৫০০ + ১০ + ৪)**  → ৯১৪৭৫৮৮
+[CLEAN    ] line 320   চেইন: ৭৪০০ × ২৯০০ = ৭৪ × ১০০ × ২৯ × ১০০  → ২১৪৬০০০০
+[CLEAN    ] line 321   চেইন: ৭৪ × ১০০ × ২৯ × ১০০ = ৭৪ × ২৯ × ১০০ × ১০০  → ২১৪৬০০০০
+[CLEAN    ] line 322   চেইন: ৭৪ × ২৯ × ১০০ × ১০০ = ২১৪৬ × ১০০০০  → ২১৪৬০০০০
+[CLEAN    ] line 323   চেইন: ২১৪৬ × ১০০০০ = ২১৪৬০০০০  → ২১৪৬০০০০
+[CLEAN    ] line 358   চেইন: ৯৯ × ২৪ = ( ১০০ − ১ ) × ২৪  → ২৩৭৬
+[CLEAN    ] line 366   চেইন: ৯৯৯ × ৩২ = ( ১০০০ − ১ ) × ৩২  → ৩১৯৬৮
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×166, bare exercise (no printed answer to check) ×41, ARITHMETIC LINE NOT PARSED ×9, ÷ long division ×9
+VERDICT: CLEAN — 24 verified · 3 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×166, bare exercise (no printed answer to check) ×41, ARITHMETIC LINE NOT PARSED ×9, ÷ long division ×9
+EXIT=0
+
+### 3. source_textcheck.py · pp.8-23 (REFUSE expected — §7.7)
+source_textcheck.py — SOURCE_POLICY §7.3 cross-channel check
+extraction : canon/_wip/c5-math/C5_MATH_Source_01.md  (595 distinct words >= 4 letters)
+text layer : Class 5 Math.pdf pp.8-23  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 16 page(s), under the 640-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+EXIT=3
+
+### 4. source_check.py --selftest
+fixtures:
+          canon/_wip/c5-bangla/C5_BAN_Source_01.md
+          canon/_wip/c5-bangla/C5_BAN_Source_02.md
+          canon/_wip/c5-bangla/C5_BAN_Source_03.md
+          canon/_wip/c5-bangla/C5_BAN_Source_04.md
+          canon/_wip/c5-bangla/C5_BAN_Source_05.md
+          canon/_wip/c5-bangla/C5_BAN_Source_06.md
+          canon/_wip/c5-bangla/C5_BAN_Source_07.md
+          canon/_wip/c5-bangla/C5_BAN_Source_08.md
+          canon/_wip/c5-bangla/C5_BAN_Source_09.md
+          canon/_wip/c5-bangla/C5_BAN_Source_10.md
+          canon/_wip/c5-bangla/C5_BAN_Source_11.md
+          canon/_wip/c5-english/C5_ENG_Source_02.md
+          canon/_wip/c5-english/C5_ENG_Source_03.md
+          canon/_wip/c5-english/C5_ENG_Source_04.md
+          canon/_wip/c5-english/C5_ENG_Source_05.md
+          canon/_wip/c5-english/C5_ENG_Source_06.md
+          canon/_wip/c5-english/C5_ENG_Source_07.md
+          canon/_wip/c5-english/C5_ENG_Source_08.md
+          canon/_wip/c5-english/C5_ENG_Source_09.md
+          canon/_wip/c5-english/C5_ENG_Source_10.md
+          canon/_wip/c5-english/C5_ENG_Source_11.md
+          canon/_wip/c5-english/C5_ENG_Source_12.md
+          canon/_wip/c5-english/C5_ENG_Source_13.md
+          canon/_wip/c5-english/C5_ENG_Source_14.md
+          canon/_wip/c5-english/C5_ENG_Source_15.md
+          canon/_wip/c5-english/C5_ENG_Source_16.md
+          canon/_wip/c5-english/C5_ENG_Source_17.md
+          canon/_wip/c5-english/C5_ENG_Source_18.md
+          canon/_wip/c5-english/C5_ENG_Source_19.md
+          canon/_wip/c5-english/C5_ENG_Source_20.md
+          canon/_wip/c5-math/C5_MATH_Source_01.md
+          canon/sources/c5/english/C5_ENG_Source_01.md
+SELFTEST — every seeded error must turn the gate RED
+------------------------------------------------------------------------------
+[RED    ] RANGE  · the stated unit has no section   (C5_BAN_Source_01.md)
+[RED    ] SIGNOFF· raster-only content with no full-check row   (C5_BAN_Source_02.md)
+[RED    ] DEPTH  · a single-channel source claims sampled depth   (C5_BAN_Source_01.md)
+[RED    ] DEPTH  · a single-channel source drops the depth column   (C5_BAN_Source_01.md)
+[RED    ] SLOTS  · one spine slot dropped from the cross-reference   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · offset broken on one row   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · in-body page reference outside the stated range   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · in-body page references out of order   (C5_BAN_Source_01.md)
+[CLEAN  ] control · C5_BAN_Source_01.md must not be red
+[CLEAN  ] control · C5_BAN_Source_02.md must not be red
+[CLEAN  ] control · C5_BAN_Source_03.md must not be red
+[CLEAN  ] control · C5_BAN_Source_04.md must not be red
+[CLEAN  ] control · C5_BAN_Source_05.md must not be red
+[CLEAN  ] control · C5_BAN_Source_06.md must not be red
+[CLEAN  ] control · C5_BAN_Source_07.md must not be red
+[CLEAN  ] control · C5_BAN_Source_08.md must not be red
+[CLEAN  ] control · C5_BAN_Source_09.md must not be red
+[CLEAN  ] control · C5_BAN_Source_10.md must not be red
+[CLEAN  ] control · C5_BAN_Source_11.md must not be red
+[CLEAN  ] control · C5_ENG_Source_02.md must not be red
+[CLEAN  ] control · C5_ENG_Source_03.md must not be red
+[CLEAN  ] control · C5_ENG_Source_04.md must not be red
+[CLEAN  ] control · C5_ENG_Source_05.md must not be red
+[CLEAN  ] control · C5_ENG_Source_06.md must not be red
+[CLEAN  ] control · C5_ENG_Source_07.md must not be red
+[CLEAN  ] control · C5_ENG_Source_08.md must not be red
+[CLEAN  ] control · C5_ENG_Source_09.md must not be red
+[CLEAN  ] control · C5_ENG_Source_10.md must not be red
+[CLEAN  ] control · C5_ENG_Source_11.md must not be red
+[CLEAN  ] control · C5_ENG_Source_12.md must not be red
+[CLEAN  ] control · C5_ENG_Source_13.md must not be red
+[CLEAN  ] control · C5_ENG_Source_14.md must not be red
+[CLEAN  ] control · C5_ENG_Source_15.md must not be red
+[CLEAN  ] control · C5_ENG_Source_16.md must not be red
+[CLEAN  ] control · C5_ENG_Source_17.md must not be red
+[CLEAN  ] control · C5_ENG_Source_18.md must not be red
+[CLEAN  ] control · C5_ENG_Source_19.md must not be red
+[CLEAN  ] control · C5_ENG_Source_20.md must not be red
+[CLEAN  ] control · C5_MATH_Source_01.md must not be red
+[CLEAN  ] control · C5_ENG_Source_01.md must not be red
+------------------------------------------------------------------------------
+SELFTEST: PASS
+EXIT=0
+
+### 5. math_arith_check.py --selftest
+SELFTEST — a mutated digit must turn the gate RED
+------------------------------------------------------------------------------
+[PASS] control · a fully printed block balances -> CLEAN (wanted CLEAN)
+[PASS] control · blanks pinned uniquely balance -> CLEAN (wanted CLEAN)
+[PASS] seed · digit flipped in the total -> RED (wanted RED)
+[PASS] seed · digit flipped in a partial -> RED (wanted RED)
+[PASS] seed · digit flipped in the multiplicand -> RED (wanted RED)
+[PASS] seed · digit flipped in the multiplier -> RED (wanted RED)
+[PASS] seed · digit flipped inside a blanks block -> RED (wanted RED)
+[PASS] seed · a partial row dropped (shape) -> RED (wanted RED)
+[PASS] seed · step table does not balance -> RED (wanted RED)
+[PASS] control · step table balances -> CLEAN (wanted CLEAN)
+[PASS] control · distributive terms sum to the multiplier -> CLEAN (wanted CLEAN)
+[PASS] seed · a distributive term is mutated -> RED (wanted RED)
+[PASS] seed · the multiplier is mutated against its own expansion -> RED (wanted RED)
+[PASS] control · (X − ১) matches the left-hand number -> CLEAN (wanted CLEAN)
+[PASS] seed · (X − ১) does not match the left-hand number -> RED (wanted RED)
+[PASS] seed · the left-hand number is mutated against (X − ১) -> RED (wanted RED)
+[PASS] control · the ×১০০ rearrangement chain holds -> CLEAN (wanted CLEAN)
+[PASS] seed · one line of the rearrangement chain is mutated -> RED (wanted RED)
+[PASS] control · the split-cell ladder table row is read -> CLEAN (wanted CLEAN)
+[PASS] seed · the split-cell ladder table row does not balance -> RED (wanted RED)
+[PASS] a chain segment containing ☐ is not evaluated -> REFUSE (wanted REFUSE)
+[PASS] control · long division balances -> CLEAN (wanted CLEAN)
+[PASS] control · long division with a remainder balances -> CLEAN (wanted CLEAN)
+[PASS] seed · ভাগফল mutated -> RED (wanted RED)
+[PASS] seed · a subtraction row is not ভাজক × its ভাগফল digit -> RED (wanted RED)
+[PASS] seed · the ভাগশেষ does not follow -> RED (wanted RED)
+[PASS] seed · an intermediate bring-down row is mutated -> RED (wanted RED)
+[PASS] seed · ভাজ্য mutated against its own working -> RED (wanted RED)
+[PASS] seed · ভাজক mutated against its own working -> RED (wanted RED)
+[PASS] a division block carrying ☐ is REFUSED, not guessed -> REFUSE (wanted REFUSE)
+[PASS] the summary names unparsed shapes, not just a count
+[PASS] an under-determined block is AMBIGUOUS, not CLEAN -> REFUSE (wanted REFUSE)
+[PASS] a file with no working REFUSEs rather than passing -> REFUSE (wanted REFUSE)
+[PASS] a pure scaffold is WIDTH-only, so the file REFUSEs rather than passing -> REFUSE (wanted REFUSE)
+[PASS] a scaffold whose widths contradict the operands is RED -> RED (wanted RED)
+[PASS] control · a zero multiplier digit does not redden the scaffold -> REFUSE (wanted REFUSE)
+[PASS] seed · zero-digit block still red on a printed-digit conflict -> RED (wanted RED)
+[PASS] fixture · C5_MATH_Source_01.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_01.md flipped (landed outside a worked block — not a failure of the gate)
+------------------------------------------------------------------------------
+SELFTEST: PASS
+EXIT=0
+
+### 6. source_textcheck.py --selftest
+SELFTEST — decoder and gap finder
+------------------------------------------------------------------------------
+[PASS] decode ':KDW\x03GR\x03\\RX\x03GR' -> 'What do you do'           (want 'What do you do')
+[PASS] decode 'QHLJKERXUKRRG'            -> 'neighbourhood'            (want 'neighbourhood')
+[PASS] decode 'ELRJUDSKLHV'              -> 'biographies'              (want 'biographies')
+[PASS] decode 'EX൵DOR'                   -> 'buffalo'                  (want 'buffalo')
+[PASS] decode '2൶FH'                     -> 'Office'                   (want 'Office')
+[PASS] decode 'µJDQM¶'                   -> "'ganj'"                   (want "'ganj'")
+[PASS] decode '¿QG'                      -> 'find'                     (want 'find')
+[PASS] decode '\x15\x13\x16\x13'         -> '2030'                     (want '2030')
+[PASS] decode 'a^fiv'                    -> 'DAILY'                    (want 'DAILY')
+[PASS] decode '(UNESCO)'                 -> '(UNESCO)'                 (want '(UNESCO)')
+[PASS] decode 'Unit'                     -> 'Unit'                     (want 'Unit')
+[PASS] decode 'reading'                  -> 'reading'                  (want 'reading')
+[PASS] a dropped word leaves an unexplained gap
+[PASS] control · complete word set leaves no gap
+[PASS] an invented word is reported absent
+[PASS] letters() keeps Bengali  'বাংলাদেশের' -> 'বাংলাদেশের'
+[PASS] the Caesar decoder leaves a Bengali token alone
+[PASS] an empty text layer is REFUSED, not called AGREE
+[PASS] an extraction yielding no words is REFUSED
+[PASS] a Bengali transcription vs a Latin-only stream is REFUSED
+[PASS] a Latin transcription with Bengali scaffolding is NOT refused
+[PASS] the book's script is read from the body, not the scaffolding
+------------------------------------------------------------------------------
+SELFTEST: PASS
+EXIT=0
+
+### 7. canon_check.py
+canon_check.py — root: /sessions/brave-ecstatic-edison/mnt/scd-central
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn)
+EXIT=0
+
+### 8. tools_check.py
+tools_check.py — root: /sessions/brave-ecstatic-edison/mnt/scd-central
+  WARN  MANIFEST: tools/images/pick_placements.py [VENDORED-UNPROVEN] vendored but never executed — no run recorded in tools/images/SMOKE.md
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)
+EXIT=0
