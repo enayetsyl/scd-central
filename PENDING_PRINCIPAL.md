@@ -443,3 +443,32 @@ on such a file should be RED, not a switch.** Seed both ways: `একক` → en
 ৩·৪·৫ verbatim, and DEPTH enforces — `single-channel source; 9 row(s) 'পূর্ণ', 3 row(s)
 'OCR-corroborated' with numeral-crop evidence, 0 of those tabular and cell-order-matched; log
 present`.
+
+### Widened, 2026-08-12 — Principal. The row is not only about one bad declaration; it is about a gate that cannot say which branch it took.
+
+**CR-008 accepted.** Scope widened by one clause, append-only:
+
+**`source_check.py`'s DEPTH gate reports the same `[PASS]` whether enforcement ran and found
+nothing wrong, or whether enforcement was switched off by the file's own `যাচাই-চ্যানেল`
+declaration.** A **PASS-because-off** is indistinguishable from a **PASS-because-clean** in the
+gate's output. That is the defect underneath CR-008: the wrong declaration was the trigger, but
+what let it survive a full sweep was that the verdict looked identical either way.
+
+**Two fixes owed at the gate sitting:**
+
+- **(a)** a `দুই` declaration on a book **measured to have zero letters in its text layer** is
+  **RED, not a switch** — §7.14.1: an OCR draft has the standing of a §7.3 text layer and does
+  not make the book dual-channel.
+- **(b)** **every gate line must state which branch it took**, so a disabled check is visible in
+  the verdict rather than silent. A check that did not run must not print the word a check that
+  ran and passed prints.
+
+**Seeded test required for both** (CD-055/CD-064(f): synthetic fixtures, not drawn from the live
+file pool).
+
+**Sweep scope for that sitting, recorded now so it is not forgotten:** **every source file
+carrying a `যাচাই-চ্যানেল` declaration — English and Bangla included, not only Math.** The
+declaration is a header convention shared across subjects, so the exposure is not Math-shaped.
+**The sweep is NOT run now** (log-not-build, CD-078(c)).
+
+**Status: OPEN. Not built mid-chapter.**
