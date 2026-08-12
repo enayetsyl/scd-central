@@ -617,3 +617,20 @@ gate reports or refuses, it never omits — and a gate that hangs omits everythi
 **Consequence right now:** `CD-079` and `PENDING-P-026` are **committed locally and NOT pushed**.
 CD-079(b) pre-approves the *approval* side of a ruling-only push; **it does not override §5's
 gate**, and the gate has not passed.
+
+### Correction, 2026-08-12 — the agent's own report was wrong, append-only.
+
+**"`canon_check.py` does not terminate" was a claim stronger than the measurement.** The runs
+behind it were `timeout 25` and `timeout 90`, both exit 124. **The gate takes ~95 s: it was
+slow, not stopped.** Measured immediately afterwards: `exit=0 elapsed=95s ·
+RESULT: CLEAN (0 fail, 1 warn)`.
+
+**The stop was still right; the reason given for it was not.** §5 was genuinely unsatisfied —
+a gate that has not produced a verdict has not passed, and there is nothing to hand-verify
+around a gate verdict. But "does not terminate" asserted a property of the program that no run
+had established, and it sent the diagnosis toward *hang* rather than *cost*.
+
+**Recorded because it is the same class as the errors this session has been catching in the
+Principal's claims and in the agent's own scaffolding** — a statement carried further than the
+evidence behind it. **CD-080** fixes the underlying cost and adds the budget that turns the
+next such case into a named REFUSE instead of a silence to be interpreted.
