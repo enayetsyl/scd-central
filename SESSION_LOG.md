@@ -1529,3 +1529,33 @@ section has appeared yet.
 **Stopping at ছাপা ৩৫ (PDF 42).** Four pages this stretch, fourteen remain in the chapter. Two
 chapters are closed and the third is a third done; the near-miss record argues against pushing a
 dense chapter on spent attention, and **the ceiling is not a target**.
+
+## 2026-08-12 · Teacher content-check returned — C5 Bangla and C5 English
+
+**Both teacher checks are back.** C5 **Bangla: clean**, no findings. C5 **English: three findings,
+all in one place** — Unit 14, section 3.1 (Language Focus: *want to be…*), the three underlined
+example sentences on ছাপা ৭৭.
+
+**The findings were checked against the raster and the file is already right.** `pdf-083.png`
+(ছাপা ৭৭ = printed folio + 6) shows the yellow Language-Focus box underlining exactly:
+
+```
+• I want to be a teacher.        → underline spans "want to be"
+• He wants to be a doctor.       → underline spans "wants to be"
+• She wants to be a painter.     → underline spans "wants to be"
+```
+
+`C5_ENG_Source_14.md:113–115` carries precisely these three spans. **Closed as no-change.** The
+underline is on the finite verb *plus* the infinitive and stops before the article — it does not
+run to the profession, and it does not shrink to *want/wants* alone. Recording the shape here
+because it is the kind of detail a later pass would "tidy" in the wrong direction.
+
+**The one real gap the check exposed was evidentiary, not textual.** Unit 14's evidence folder
+held p074, p074_boundary and p078 — ছাপা ৭৭ had no committed raster, so the flagged section could
+not be adjudicated from evidence alone. **`evidence/C5_ENG_U14_p077.png` added** (copied from the
+regenerable working raster, which is itself gitignored under CD-046/CD-047; the `!**/evidence/*.png`
+negation commits this one). A section that draws a content-check should carry its own page.
+
+**Sign-off status unchanged: Units 2–20 still BUILT, sign-off owed.** Nothing was promoted. The
+teacher check is an input to the Principal's spot-check, not a substitute for it (SOURCE_POLICY
+§7.4, AGENTS.md §2) — promotion still waits on the Principal's "done".

@@ -58,6 +58,17 @@ Both gates carry seeded-error selftests, and `source_textcheck` was additionally
 the *signed* Unit 1 by seeding three real faults into it (dropped dialogue line · one mis-read
 word · dropped table row): all three caught.
 
+## Teacher content-check — returned 2026-08-12
+
+**Three findings, all Unit 14 §3.1** (the *want to be…* example sentences, ছাপা ৭৭).
+**All three closed as no-change**: checked against the raster, `C5_ENG_Source_14.md:113–115`
+already carries the printed underline spans exactly — `want to be` / `wants to be` / `wants to be`,
+stopping before the article, not running on to the profession.
+Evidence gap the check exposed has been filled: **`evidence/C5_ENG_U14_p077.png` added**.
+
+This is an **input to** the Principal's spot-check, not a substitute for it. Sign-off status below
+is unchanged. *(C5 Bangla's teacher check came back clean — see `canon/_wip/c5-bangla/STATE.md`.)*
+
 ## Open / next
 
 1. Principal spot-checks Units 2–20 and signs, then "done" → promote. **Depth per CD-048:

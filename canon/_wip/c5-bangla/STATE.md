@@ -15,6 +15,11 @@ Book: **আমার বাংলা বই, পঞ্চম শ্রেণি*
   **Coverage verified programmatically: printed ১–৬২ contiguous, no gaps, no overlaps**,
   and `BAN-S14` bound in পাঠ ৪ only, absent in the other ten.
   **77 sign-off rows, 0 signed.**
+- **শিক্ষক content-check — returned 2026-08-12, CLEAN.** No findings on পাঠ ১–১১. This is an
+  input to the Principal's spot-check, not a substitute for it (SOURCE_POLICY §7.4); the 77
+  sign-off rows above stand unsigned and promotion still waits on the Principal's "done".
+  *(C5 English's check returned three findings, all Unit 14 §3.1, all closed as no-change —
+  `canon/_wip/c5-english/STATE.md`.)*
 - **পাঠ ১২ — NOT EXTRACTED by ruling.** See `EXCLUDED_paath_12.md`.
 - **পাঠ ১৩–২৩ — already canon**, `canon/marklogic/C5_Bangla_Source_13-23.md` (CD-004,
   grandfathered range-file form). **Do not re-extract.**
