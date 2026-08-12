@@ -715,3 +715,58 @@ mechanically recoverable from the file text.
 **Known count to start from:** `C5_MATH_Source_06.md` currently declares 5 rows
 `OCR-corroborated` and carries control rows অ-১২, অ-১৮ and অ-২০ in its mismatch log. অ-২০ already
 states its third control (the numbers are printed twice); অ-১২ and অ-১৮ must be re-examined.
+
+---
+
+## ⚑ PENDING-P-028 — the book prints subtraction with an **em-dash**, so `math_arith_check.py` never sees the chain at all
+
+**Status: OPEN. Not built — logged mid-chapter per CD-078(c). Principal-ruled 2026-08-12.**
+*(Next free number verified at source: `PENDING_PRINCIPAL.md` defines through P-027; no `P-028`
+token exists anywhere in the repo.)*
+
+**The mechanism.** `C5_MATH_Source_06.md` ছাপা ৯৭ transcribes the book's own line:
+
+> লাভের পরিমাণ ৫৬ — ৫০ = ৬ টাকা।
+
+The character between `৫৬` and `৫০` is an **em-dash `—` (U+2014), not a minus sign**, because
+that is what the book prints and **§3 keeps the book's form**. The evaluator's tokenizer does not
+recognise `—` as an operator, so the line never reaches the arithmetic path. It is filed under
+**`prose carrying numbers`** — and that is the bucket **PENDING-P-025 has already declared
+untrustworthy as a residual category**: the place where lines go when the gate has no opinion,
+counted but not checked.
+
+**Measured, not inferred.** Adding ছাপা ৯৭ to the file changed the chain count **not at all**:
+19 before, 19 after. The `৫৬ — ৫০ = ৬` claim was verified **by hand**, and the source file now
+says so in those words. The earlier draft of that section claimed the gate could read the chain;
+that claim was written ahead of its measurement and was corrected before commit.
+
+**Why it is structural and not an anecdote.** Observed once so far, but the cause is not this
+page: **it applies to every subtraction the book prints.** ছাপা ৯৭'s unread half already contains
+the next one (`১৫ − ১২ = ৩` in the ক্ষতি panel), and লাভ-ক্ষতি is a subtraction-heavy topic that
+runs to the end of the chapter. **অধ্যায় ৮ পরিমাপ will be worse** — measurement differences are
+subtractions on nearly every page.
+
+**Owed at the gate sitting, exactly as ruled:**
+
+1. **Teach the evaluator the book's own dash forms as arithmetic operators.**
+2. **Enumerate those forms from the book, do not guess them** — the same requirement P-025 places
+   on equality words. The book has already been seen to use `—` (em-dash) and `−`/`-` in different
+   places; the census must establish which forms actually occur, with page citations, before any
+   are hard-coded. **A guessed list would reproduce CR-012's failure in a new place: a named list
+   that trails what the book does.**
+3. **Seeded fixtures per dash form** (CD-055 / CD-064(f) — synthetic, never drawn from the live
+   pool), including a **control** that a dash inside ordinary prose is *not* read as subtraction.
+   That control is the load-bearing one: widening the operator set is exactly how a gate starts
+   reddening correct prose, which is how CD-077's first attempt failed.
+
+**Census scope — added to P-025's re-run, not a separate sweep.** অধ্যায় ৩ · ৪ · ৫ were declared
+**GREEN by an evaluator blind to this too**. Their subtraction lines have never been machine-read
+either, and their `prose carrying numbers` counts silently include them. **The P-025 census re-run
+must count dash-form subtractions alongside `হলো`-form equalities**, so one pass establishes the
+true size of both blind spots rather than two passes each finding half of it.
+
+**Not blocking, and the reason is worth stating.** The gate's silence here is honest: it reports
+these lines as not-looked-at rather than as verified. **P-028 is a coverage gap, not a wrong
+verdict** — nothing GREEN is false because of it. What is false is any reading of "0 uncovered"
+as "everything arithmetic on this page was checked". The relevant lines are hand-verified and
+recorded as hand-verified.
