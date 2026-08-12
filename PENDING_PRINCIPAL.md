@@ -509,3 +509,47 @@ exempted-but-counted**, exactly as `ৰ`/`ৱ` are treated now — a draft's err
   three sightings of something the gate cannot see is waiting for a count nothing is keeping.
 
 **Not built.** Gate sitting, **after অধ্যায় ৬ closes** (CD-078(c); log-not-build).
+
+---
+
+## ⚑ PENDING-P-025 — the book states equality with the word `হলো`, and `math_arith_check.py` files those lines under *prose*, not under *unparsed arithmetic*
+
+**Status: OPEN.** Found at ছাপা ৯৩ (অধ্যায় ৬), 2026-08-12, **by checking the census against the
+page rather than trusting the verdict line.** Hand-verified around; extraction continues.
+
+**The measurement, at source.** `C5_MATH_Source_06.md`'s ছাপা ৯৩ body is lines 215–283.
+**Not one verified chain falls in that range.** The run's 18 verified chains are at lines
+73–81, 149–188 and 297–301 — ছাপা ৯১, ছাপা ৯২ and the অমিল log. **ছাপা ৯৩ contributed zero**,
+and the verdict still read `CLEAN — 18 verified · 0 uncovered`.
+
+**Two distinct defects, and the second is the dangerous one.**
+
+- **(a) `parse_chains` cannot read the `হলো` form.** The book writes
+  `৪২% হলো ৪২ × ১/১০০ = ৪২/১০০` — the equality verb is the Bengali word `হলো`, not `=`.
+  `parse_chains` requires every `=`-separated segment to be fully numeric; the left segment
+  `৪২% হলো ৪২ × ১/১০০` is not, so the chain is dropped. The same arithmetic written
+  `১৫% = ১৫ × ১/১০০ = ১৫/১০০` parses fine (line 180). **The blind spot is the word, not the maths.**
+- **(b) The census then hides (a).** The classifier files a line as `ARITHMETIC LINE NOT PARSED`
+  **only when it contains no Bengali letters**; anything else falls to
+  `prose carrying numbers (limit 3)`. Because `হলো` is Bengali letters, **a real equality chain
+  the gate could not read is counted among the 63 "prose" lines** — a bucket whose name asserts
+  there was nothing to read. **`0 uncovered` therefore means "no *recognised-arithmetic* shape
+  went unread", not "the census looked at this page and found nothing outstanding."**
+
+**Why this is a row and not a stop (CD-078).** The affected content is hand-verifiable and has
+been hand-verified in-file, explicitly, in ছাপা ৯৩'s sign-off rows. It does not make the page
+silently wrong.
+
+**Owed at the gate sitting, not now (log-not-build, CD-078(c)):**
+
+1. Teach `parse_chains` the Bengali equality verbs — `হলো` first, and survey for `হয়`, `সমান`
+   before fixing, so the extension is measured rather than guessed.
+2. **Fix the census independently of (1).** Even after `হলো` is taught, the next unknown verb
+   must land in a bucket that *says* it was not read. A line carrying an `=` and an operator is
+   arithmetic the gate failed to read **whether or not it also carries Bengali letters**.
+3. Seeded fixtures for both, and **a control that the two are independent** — (2) must bite even
+   with (1) reverted.
+
+**Sweep scope when built:** অধ্যায় ৩·৪·৫ are already closed and gate-GREEN on a census that
+could not see this shape. **Re-run the corrected census over all closed Math chapters** before
+the counter is trusted again. Bangla/English use no `হলো`-form arithmetic; Math only.
