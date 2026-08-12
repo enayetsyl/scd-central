@@ -17,11 +17,14 @@ prescribed from academic year 2026. **20 units, printed pages 1–111.**
   `Teacher · 2026-08-12` on the teacher content-check, moved with their evidence to
   `canon/sources/c5/english/`, gate **GREEN** on every one. Run:
   `evidence/SOURCE_CHECK_2026-08-12.txt`.
-- **Units 4 and 11 — HELD HERE, sign-off owed.** These two record **artwork-borne text**
-  (Unit 4's two maps carry ~75 drawn place names), which has no second channel, so CD-048(b)/
-  §7.5 makes it Principal-only full-check. Their prose rows are signed; the artwork row is not.
-  `source_check.py` is RANGE/SLOTS/PAGES **PASS**, SIGNOFF **PENDING** on both — the gate
-  refuses to promote them on its own, so a later session cannot move them by mistake.
+- **Units 4 and 11 — DONE, PROMOTED 2026-08-12.** The Principal verified the artwork-borne text
+  against the rasters and signed: Unit 4's **64 district names (ছাপা ১৬)** and **11 upazila names
+  (ছাপা ১৮)**, Unit 11's **8 map labels (ছাপা ৬০)**. Unit 4's sign-off row had an **empty
+  ছাপা পৃষ্ঠা cell**, filled at the same time with **`১৬ · ১৮`** — the two maps sit on two pages,
+  which is why one number never fit.
+
+**Workstream CLOSED. All 20 units are in `canon/sources/c5/english/`, gate GREEN on every one**
+(`evidence/SOURCE_CHECK_2026-08-12_final.txt`). Nothing is held here.
 
 ## Source PDF (provenance — not committed, SOURCE_POLICY §2.1)
 
@@ -79,10 +82,7 @@ scaffolding stricter than the policy it implemented. **It does not reach artwork
 
 ## Open / next
 
-1. **Principal signs the artwork rows in Units 4 and 11, then "done" → promote those two.**
-   This is the one thing left in this workstream. Depth is **full check, never sampled**
-   (CD-048(b), §7.5): Unit 4's two maps carry ~75 drawn place names of which the text layer
-   holds not one character. Everything else is promoted.
+1. **Nothing.** C5 English step ① is complete: 20 of 20 units signed, promoted and GREEN.
 2. Then **C5 Bangla** — started 2026-08-09, state at `canon/_wip/c5-bangla/STATE.md`.
    ⚠️ The scope written here (**"পাঠ ১–১২ and ২৪+"**) was wrong at both ends and is superseded by
    **SOURCE_POLICY §7.6 / CD-050**: the book has **23 পাঠ**, there is no পাঠ ২৪, and পাঠ ১২ is

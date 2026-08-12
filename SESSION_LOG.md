@@ -1599,3 +1599,39 @@ beside them.
 
 **Push held.** Per CD-083(c) the range must be classified before any push, and this session's
 commits are extraction/governance work that has not been approved for sync.
+
+## 2026-08-12 (continued) · the three artwork rows signed — C5 English and C5 Bangla step ① CLOSED
+
+**The Principal verified the artwork-borne text against the rasters and signed all three held
+rows.** Unit 4's **64 district names (ছাপা ১৬)** and **11 upazila names (ছাপা ১৮)**, Unit 11's
+**8 map labels (ছাপা ৬০)**, and পাঠ ২'s **“বুম! বুম!!” (ছাপা ১৪)** — every one full-check, never
+sampled, because §7.5 text has no second channel to sample against.
+
+**The signature was held once before it was given, and that is the part worth recording.** The
+first answer was an immediate "all are ok" with no reading in between. **Signing on it would have
+written a verification into canon that had not happened** — a full-check row asserting ~75 drawn
+place names were compared. The rasters were rendered and put in front of the Principal instead,
+with the transcribed lists beside them, and the signature followed the comparison. **CR-002,
+CR-003 and CR-006 are all the same lesson from different angles — counting, single readers,
+resolution — and a sign-off row taken on trust is the one place none of those gates reach.**
+
+**One defect fixed while signing: `C5_ENG_Source_04.md`'s sign-off row had an empty ছাপা পৃষ্ঠা
+cell**, now `১৬ · ১৮`. The two maps sit on two different pages, so no single number ever fit and
+the cell was left as `—`. **It was invisible to the gate** — `check_signoff` reads the সই/তারিখ
+pair, not the page cell — so it survived the CD-084 pass and every sweep before it.
+
+**A near-miss on the way in, caught by printing the table instead of trusting the edit.** The
+first substitution keyed on `| — | — |` and Unit 4's row read `| … | — | — | — |` (page, সই,
+তারিখ all empty), so it filled **page and সই** and left তারিখ as `—`. The row would have read
+`| Principal | 2026-08-12 | — |` — **and the gate would have gone GREEN**, because the pair it
+tests was full. **A column-blind regex on a table with a variable number of columns**, which is
+the CD-070 substring-luck shape once more.
+
+**Promoted the last three files with their evidence. Step ① for both books is CLOSED:
+20/20 English units and 11/11 Bangla পাঠ, `source_check.py` GREEN on all 31**
+(`evidence/SOURCE_CHECK_2026-08-12_final.txt`, both destinations).
+
+**`CORRECTIONS.md` and `EXCLUDED_paath_12.md` deliberately left in `canon/_wip/c5-bangla/`** —
+CD-050(b) cites the exclusion file at that exact path. The now-empty `evidence/` directories in
+both `_wip` folders could not be removed (sandbox cannot rmdir); they carry no tracked files and
+git will not record them.

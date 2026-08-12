@@ -12,10 +12,14 @@ Book: **আমার বাংলা বই, পঞ্চম শ্রেণি*
   on the teacher content-check (returned **clean**), moved with their evidence to
   `canon/sources/c5/bangla/`, gate **GREEN** on every one.
   Run: `canon/sources/c5/bangla/evidence/SOURCE_CHECK_2026-08-12.txt`.
-- **পাঠ ২ — HELD HERE, sign-off owed.** It records artwork-borne text — **ছবির ভেতরের আঁকা লেখা
-  “বুম! বুম!!”, ছাপা ১৪** — which has no second channel, so §7.5/CD-048(b) makes it
-  Principal-only full-check. Its other nine rows are signed; that one is not, and
-  `source_check.py` holds the file at SIGNOFF **PENDING** on its own.
+- **পাঠ ২ — DONE, PROMOTED 2026-08-12.** The Principal verified the artwork-borne text —
+  **ছবির ভেতরের আঁকা লেখা “বুম! বুম!!”, ছাপা ১৪** — against the raster and signed it.
+  All ten rows signed, gate GREEN.
+
+**Extraction workstream CLOSED for পাঠ ১–১১. All eleven are in `canon/sources/c5/bangla/`**
+(`evidence/SOURCE_CHECK_2026-08-12_final.txt`). `CORRECTIONS.md` and `EXCLUDED_paath_12.md`
+**stay here on purpose** — CD-050(b) cites the exclusion file at this exact path, and moving it
+would break a citation canon makes.
 - *(Superseded by the two rows above, kept for the record.)* **পাঠ ১–১১ — ALL BUILT.** All eleven:
   `source_check.py` RANGE/SLOTS/PAGES/DEPTH **PASS**, SIGNOFF **PENDING**;
   `source_textcheck.py` **REFUSE** ×11 (see below — the correct outcome on this book, not a
