@@ -1,7 +1,7 @@
-# SOURCE_POLICY — v1.13
+# SOURCE_POLICY — v1.14
 
 *Canon. Adopted v1.0 by Principal ruling 2026-08-09 (CD-037), superseding the v0.1 draft staged in `_inbox/`.*
-*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration; v1.5 (CD-057) adds §7.10 the depth rule's math extension; v1.6 (CD-065) adds §7.11 the rendering-choice rule; v1.7 (CD-066, CD-067) adds §7.12 the pure-exercise convention and §7.13 the multi-chapter cadence; v1.8 (CD-068) adds §7.14 the OCR-drafted source class and its verify-not-read inversion; v1.9 (CD-069) adds §7.15, which supersedes 7.14.2a's direction-blind trip-wire count; v1.10 (CD-070) adds §7.14.2c-i, the cell-order rule, and makes `OCR-corroborated` an enforced depth value; v1.11 (CD-071) adds §7.16, the Assamese-character gate; v1.12 (CD-072) adds §7.17 — a gate reports or refuses, never omits, and learns the page rather than the page learning the gate; v1.13 (CD-073) adds §7.18, the মই-ভাগ as a named census shape. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
+*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration; v1.5 (CD-057) adds §7.10 the depth rule's math extension; v1.6 (CD-065) adds §7.11 the rendering-choice rule; v1.7 (CD-066, CD-067) adds §7.12 the pure-exercise convention and §7.13 the multi-chapter cadence; v1.8 (CD-068) adds §7.14 the OCR-drafted source class and its verify-not-read inversion; v1.9 (CD-069) adds §7.15, which supersedes 7.14.2a's direction-blind trip-wire count; v1.10 (CD-070) adds §7.14.2c-i, the cell-order rule, and makes `OCR-corroborated` an enforced depth value; v1.11 (CD-071) adds §7.16, the Assamese-character gate; v1.12 (CD-072) adds §7.17 — a gate reports or refuses, never omits, and learns the page rather than the page learning the gate; v1.13 (CD-073) adds §7.18, the মই-ভাগ as a named census shape; v1.14 (CD-078) adds §7.13.1, which lifts §7.13's three-chapters-per-sitting ceiling from অধ্যায় ৬ onward. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
 *Consumed by: question-banks · scholarship · class-tests · support-books.*
 *Cited, never copied (AGENTS.md §8).*
 
@@ -416,6 +416,22 @@ care beat three at partial**, and the reason is on the record rather than assert
 near-miss this book and its sibling have produced — `ঝকঝাক` for `ঝকঝক`, `প্রচন্দ` for `প্রচণ্ড`,
 `শীঁখ` for `শাঁখ`, and the eight-box count that should have been seven — happened where attention
 or resolution had thinned. **Three is a ceiling, never a target.**
+
+### 7.13.1 Cadence ceiling lifted — supersedes the ceiling stated in §7.13 (Principal ruling 2026-08-12, CD-078)
+
+**The three-chapters-per-sitting ceiling stated above is superseded from অধ্যায় ৬ onward: close
+as many complete chapters per sitting as full care allows.** §7.14.4a's precondition is met —
+অধ্যায় ৩, ৪ and ৫ are three consecutive gate-GREEN §7.14 chapters, and GREEN now means
+spine-label-verified (CD-077), not presence-only.
+
+**The CD-067 stop-rule outranks this lift.** Care-thin stops the sitting at a **stated resume
+point**, mid-chapter if that is where it lands. Speed is care-bound, not count-bound.
+
+**Crop depth is NOT reduced by this lift** — full per-numeral reading, the three-clause decimal
+convention, `৪`/`৮` at ≥2000 px band-crop (CR-006), cell order and grid counts all stand
+unchanged. **Chapter close remains atomic** and is still never batched across chapters.
+
+*This section executes CD-078; it rules nothing new. §7.13's text above is left as written.*
 
 ## 7.14 A fourth source class: OCR-drafted — the agent inverts from reader to verifier (Principal ruling 2026-08-10, CD-068)
 

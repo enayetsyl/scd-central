@@ -365,3 +365,81 @@ scope):
   **Counter reaches 3 on that sweep.**
 
 **Sync held** pending the Principal's go after both sittings are scoped.
+
+---
+
+## ⚑ PENDING-P-022 — `C5_MATH_Source_03.md` cites its OCR draft by the gitignored `_inbox/` filename, not the committed evidence path
+
+**Status: OPEN.** Found at অধ্যায় ৬'s opening, while classifying and staging the ch6 draft
+under §7.14.3a. **অধ্যায় ৩ was NOT touched** — it is closed, and correcting it mid-extraction is
+the detour CD-067 forbids (Principal ruling, 2026-08-12).
+
+**The measurement.** `canon/_wip/c5-math/C5_MATH_Source_03.md` records its draft as:
+
+```
+**খসড়া:** `C5_MATH_OCRDRAFT_ch3.md` · surya-ocr · ১৫০ dpi রাস্টার · PDF ৩৮–৫৫।
+```
+
+That is the **bare `_inbox/` filename**. `_inbox/` is gitignored (`.gitignore`, §2.1), so the
+citation names a file **no other device can see** — which is precisely the unauditable
+corroboration claim **§7.14.3a** exists to prevent.
+
+**What is NOT wrong.** The evidence itself is intact: `canon/_wip/c5-math/evidence/OCRDRAFT_ch3_2026-08-10.md`
+exists and is committed. **This is a citation string only**, not a missing artefact. অধ্যায় ৪ and ৫
+cite correctly (`evidence/OCRDRAFT_ch4_2026-08-11.md`, `evidence/OCRDRAFT_ch5_2026-08-11.md`),
+so the defect is confined to the first chapter run under the pipeline — the draft was staged before
+§7.14.3a was written into the file's own citation line.
+
+**Disposition (Principal, 2026-08-12): fix as a citation-string correction at the next gate
+sitting, not mid-chapter.** Not a re-extraction, not a re-open of the chapter's content, and not
+a CR row against the transcription — nothing about অধ্যায় ৩'s reading is in question.
+
+**Worth a gate, at that sitting rather than now:** `source_check.py` could assert that any
+`**খসড়া:**` citation resolves to a path under `evidence/`, since a gitignored citation is
+machine-detectable and this one survived a chapter close. **Log-not-build applies — no tooling
+detour during an active extraction (the অধ্যায় ৩ lesson, CD-078(c)).**
+
+---
+
+## ⚑ PENDING-P-023 — a source file can declare `যাচাই-চ্যানেল: দুই` and silently switch off CD-070's DEPTH enforcement
+
+**Status: OPEN.** Found at অধ্যায় ৬'s opening, 2026-08-12, **by comparing the new file's gate
+output against অধ্যায় ৩·৪·৫ as controls** — not by the gate, which said nothing.
+
+**The measurement.** `source_check.py` reads the header's `**যাচাই-চ্যানেল:**` line to decide
+whether a source is single- or dual-channel. `C5_MATH_Source_06.md` was scaffolded with
+`দুই`, on the reasoning that the OCR draft *is* a second channel. The gate then reported:
+
+```
+channel : dual
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+```
+
+**`OCR-corroborated` rows were therefore unenforced — CD-070's entire check was off, and the
+file passed DEPTH while it was off.** The controls disagree unambiguously: অধ্যায় ৩, ৪ and ৫
+all declare `একক` and all get `single-channel source; N row(s) 'পূর্ণ', M row(s)
+'OCR-corroborated' with numeral-crop evidence…`.
+
+**The canon is not ambiguous either.** §7.14.1: the draft has *"exactly the standing a text
+layer has under §7.3"* — a disagreement-hunting input, never an authority. A §7.7 book with no
+text layer stays **single-channel for §7.4's purposes** no matter how good the OCR is.
+Corrected in-file the same sitting; logged as **CR-008**.
+
+**Why this is a queue row and not just a correction.** The defect class is exactly **CD-070's**
+— *a depth value the gate cannot enforce is a depth value the file can claim for free* — reached
+through a **different door**: not by an unrecognised depth string, but by a header field that
+turns the depth check off entirely. **A one-word scaffold choice disabled a gate and nothing
+went red.** CD-077 named this class at the semantic level (presence-not-correctness); this is
+the same class at the *configuration* level.
+
+**Proposed fix, for a gate sitting — not built mid-chapter (CD-078(c), the অধ্যায় ৩ lesson):**
+`source_check.py` should not take the channel declaration on trust for a book whose class is
+already established. A C5 MATH source is a §7.7 outlined-born-digital book with **zero letters
+in its text layer** — measured, recorded, and true for all ten chapters. **A `দুই` declaration
+on such a file should be RED, not a switch.** Seed both ways: `একক` → enforce and PASS;
+`দুই` on a known single-channel book → RED.
+
+**Hand-verified meanwhile (§7.14.5 discipline):** the ch6 header now reads `একক`, matching
+৩·৪·৫ verbatim, and DEPTH enforces — `single-channel source; 9 row(s) 'পূর্ণ', 3 row(s)
+'OCR-corroborated' with numeral-crop evidence, 0 of those tabular and cell-order-matched; log
+present`.
