@@ -472,3 +472,40 @@ declaration is a header convention shared across subjects, so the exposure is no
 **The sweep is NOT run now** (log-not-build, CD-078(c)).
 
 **Status: OPEN. Not built mid-chapter.**
+
+---
+
+## ⚑ PENDING-P-024 — `bangla_script_check.py` sees Assamese `ৰ`/`ৱ` and nothing else; every other non-Bengali script passes silently in authored text
+
+**Status: OPEN.** Principal ruling 2026-08-12, opened during অধ্যায় ৬.
+**This is a COVERAGE row, not a PATTERN row** — see the threshold note at the end.
+
+**The gap.** `bangla_script_check.py` (§7.16 / CD-071) tests for exactly two codepoints:
+Assamese `ৰ` (U+09F0) and `ৱ` (U+09F1). **Any other non-Bengali script in AUTHORED text passes
+silently** — Devanagari, Cyrillic, Arabic-Indic, or Latin digits standing in for Bengali
+numerals. The gate does not report them as unchecked; it simply has nothing to say about them,
+which under §7.17 is the one thing a gate must not do.
+
+**Known to be live, from two separate runs of the same OCR engine:**
+
+- **The surya-ocr proof run on PDF 38–39** (§7.14.5, first use) produced **Arabic-Indic `٩`**
+  for Bengali `৭`, **`¢`** for `৫`, and **Cyrillic `ЪΟ`** for a Bengali numeral pair. Recorded in
+  §7.14.2(a) as the reason the numeral channel is *read, not sampled*.
+- **The অধ্যায় ৬ draft at ছাপা ৯২** produced **Devanagari `२०२७`** for the marginal `২০২৬` —
+  wrong script *and* wrong value, on a page whose neighbour the same draft read correctly.
+
+**Owed at the gate sitting:** widen the gate to **RED on any non-Bengali digit or letter in
+authored text**, with **seeded fixtures per script class** (Devanagari, Cyrillic, Arabic-Indic,
+Latin-digit-for-Bengali-numeral, plus the existing Assamese pair). **Drafts stay
+exempted-but-counted**, exactly as `ৰ`/`ৱ` are treated now — a draft's errors are its evidence.
+
+**Two thresholds, and they are not the same one — recorded because they were nearly conflated:**
+
+- **§7.14.2c's three-occurrence rule** governs promotion of a defect to a **PATTERN row in the
+  corrections ledger**. The Devanagari occurrence **stays at one** in অধ্যায় ৬'s `## চ্যানেল-অমিল`
+  log and is promoted only if a second and a third appear. **Unaffected by this row.**
+- **This row is about gate coverage**, and coverage has no such threshold. **A gate that cannot
+  see a class of error is a gap the moment it is known, not on its third sighting.** Waiting for
+  three sightings of something the gate cannot see is waiting for a count nothing is keeping.
+
+**Not built.** Gate sitting, **after অধ্যায় ৬ closes** (CD-078(c); log-not-build).
