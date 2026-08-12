@@ -1,0 +1,210 @@
+=== GATE SWEEP ছাপা ৯১–৯৫ · 2026-08-12 ===
+Wed Aug 12 05:36:54 UTC 2026
+
+--- source_check.py C5_MATH_Source_06.md ---
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-math/C5_MATH_Source_06.md
+subject : class 5 · MATH
+grammar : chapter word 'অধ্যায়'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range অধ্যায় 6-6: all 1 section(s) present
+[FAIL   ] SLOTS    11 spine slot(s) neither cross-referenced nor marked absent: MATH-S01, MATH-S02, MATH-S03, MATH-S04, MATH-S05, MATH-S06, MATH-S07, MATH-S08, MATH-S09, MATH-S10, MATH-S11
+[PASS   ] PAGES    offset constant (+7) over 8 verified rows; 5 body refs monotonic within 91-104, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  41 of 41 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; 37 row(s) 'পূর্ণ', 4 row(s) 'OCR-corroborated' with numeral-crop evidence, 0 of those tabular and cell-order-matched; log present
+------------------------------------------------------------------------------
+VERDICT : RED — returns to build phase (AGENTS.md §5)
+exit=2
+
+--- source_check.py --selftest ---
+fixtures:
+          canon/_wip/c5-bangla/C5_BAN_Source_01.md
+          canon/_wip/c5-bangla/C5_BAN_Source_02.md
+          canon/_wip/c5-bangla/C5_BAN_Source_03.md
+          canon/_wip/c5-bangla/C5_BAN_Source_04.md
+          canon/_wip/c5-bangla/C5_BAN_Source_05.md
+          canon/_wip/c5-bangla/C5_BAN_Source_06.md
+          canon/_wip/c5-bangla/C5_BAN_Source_07.md
+          canon/_wip/c5-bangla/C5_BAN_Source_08.md
+          canon/_wip/c5-bangla/C5_BAN_Source_09.md
+          canon/_wip/c5-bangla/C5_BAN_Source_10.md
+          canon/_wip/c5-bangla/C5_BAN_Source_11.md
+          canon/_wip/c5-english/C5_ENG_Source_02.md
+          canon/_wip/c5-english/C5_ENG_Source_03.md
+          canon/_wip/c5-english/C5_ENG_Source_04.md
+          canon/_wip/c5-english/C5_ENG_Source_05.md
+          canon/_wip/c5-english/C5_ENG_Source_06.md
+          canon/_wip/c5-english/C5_ENG_Source_07.md
+          canon/_wip/c5-english/C5_ENG_Source_08.md
+          canon/_wip/c5-english/C5_ENG_Source_09.md
+          canon/_wip/c5-english/C5_ENG_Source_10.md
+          canon/_wip/c5-english/C5_ENG_Source_11.md
+          canon/_wip/c5-english/C5_ENG_Source_12.md
+          canon/_wip/c5-english/C5_ENG_Source_13.md
+          canon/_wip/c5-english/C5_ENG_Source_14.md
+          canon/_wip/c5-english/C5_ENG_Source_15.md
+          canon/_wip/c5-english/C5_ENG_Source_16.md
+          canon/_wip/c5-english/C5_ENG_Source_17.md
+          canon/_wip/c5-english/C5_ENG_Source_18.md
+          canon/_wip/c5-english/C5_ENG_Source_19.md
+          canon/_wip/c5-english/C5_ENG_Source_20.md
+          canon/_wip/c5-math/C5_MATH_Source_01.md
+          canon/_wip/c5-math/C5_MATH_Source_02.md
+          canon/_wip/c5-math/C5_MATH_Source_03.md
+          canon/_wip/c5-math/C5_MATH_Source_04.md
+          canon/_wip/c5-math/C5_MATH_Source_05.md
+          canon/sources/c5/english/C5_ENG_Source_01.md
+  SKIPPED canon/_wip/c5-math/C5_MATH_Source_06.md  — declares itself নির্মাণাধীন; not a control
+SELFTEST — every seeded error must turn the gate RED
+------------------------------------------------------------------------------
+[RED    ] RANGE  · the stated unit has no section   (C5_BAN_Source_01.md)
+[RED    ] SIGNOFF· raster-only content with no full-check row   (C5_BAN_Source_02.md)
+[RED    ] DEPTH  · a single-channel source claims sampled depth   (C5_BAN_Source_01.md)
+[RED    ] DEPTH  · a single-channel source drops the depth column   (C5_BAN_Source_01.md)
+[RED    ] SLOTS  · one spine slot dropped from the cross-reference   (C5_BAN_Source_01.md)
+[RED    ] SLOTS  · every ID present but one label SHIFTED onto the next slot   (C5_MATH_Source_01.md)
+[RED    ] SLOTS  · every ID present but one label INVENTED (a chapter topic)   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · offset broken on one row   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · in-body page reference outside the stated range   (C5_BAN_Source_01.md)
+[RED    ] PAGES  · in-body page references out of order   (C5_BAN_Source_01.md)
+[CLEAN  ] control · C5_BAN_Source_01.md must not be red
+[CLEAN  ] control · C5_BAN_Source_02.md must not be red
+[CLEAN  ] control · C5_BAN_Source_03.md must not be red
+[CLEAN  ] control · C5_BAN_Source_04.md must not be red
+[CLEAN  ] control · C5_BAN_Source_05.md must not be red
+[CLEAN  ] control · C5_BAN_Source_06.md must not be red
+[CLEAN  ] control · C5_BAN_Source_07.md must not be red
+[CLEAN  ] control · C5_BAN_Source_08.md must not be red
+[CLEAN  ] control · C5_BAN_Source_09.md must not be red
+[CLEAN  ] control · C5_BAN_Source_10.md must not be red
+[CLEAN  ] control · C5_BAN_Source_11.md must not be red
+[CLEAN  ] control · C5_ENG_Source_02.md must not be red
+[CLEAN  ] control · C5_ENG_Source_03.md must not be red
+[CLEAN  ] control · C5_ENG_Source_04.md must not be red
+[CLEAN  ] control · C5_ENG_Source_05.md must not be red
+[CLEAN  ] control · C5_ENG_Source_06.md must not be red
+[CLEAN  ] control · C5_ENG_Source_07.md must not be red
+[CLEAN  ] control · C5_ENG_Source_08.md must not be red
+[CLEAN  ] control · C5_ENG_Source_09.md must not be red
+[CLEAN  ] control · C5_ENG_Source_10.md must not be red
+[CLEAN  ] control · C5_ENG_Source_11.md must not be red
+[CLEAN  ] control · C5_ENG_Source_12.md must not be red
+[CLEAN  ] control · C5_ENG_Source_13.md must not be red
+[CLEAN  ] control · C5_ENG_Source_14.md must not be red
+[CLEAN  ] control · C5_ENG_Source_15.md must not be red
+[CLEAN  ] control · C5_ENG_Source_16.md must not be red
+[CLEAN  ] control · C5_ENG_Source_17.md must not be red
+[CLEAN  ] control · C5_ENG_Source_18.md must not be red
+[CLEAN  ] control · C5_ENG_Source_19.md must not be red
+[CLEAN  ] control · C5_ENG_Source_20.md must not be red
+[CLEAN  ] control · C5_MATH_Source_01.md must not be red
+[CLEAN  ] control · C5_MATH_Source_02.md must not be red
+[CLEAN  ] control · C5_MATH_Source_03.md must not be red
+[CLEAN  ] control · C5_MATH_Source_04.md must not be red
+[CLEAN  ] control · C5_MATH_Source_05.md must not be red
+[CLEAN  ] control · C5_ENG_Source_01.md must not be red
+------------------------------------------------------------------------------
+SELFTEST · §7.14 depth value (CD-070) — synthetic fixture, always bites
+------------------------------------------------------------------------------
+[PASS   ] control · a properly evidenced OCR-corroborated file -> PASS (wanted PASS)
+[PASS   ] seed · OCR-corroborated with no numeral-crop evidence -> FAIL (wanted FAIL)
+[PASS   ] seed · OCR-corroborated with the disagreement log removed -> FAIL (wanted FAIL)
+[PASS   ] seed · a tabular OCR-corroborated row with cell ORDER not crop-matched -> FAIL (wanted FAIL)
+[PASS   ] seed · a depth value this policy does not recognise -> FAIL (wanted FAIL)
+[PASS   ] seed · সমুনা/নমুনা sampling still refused alongside the new value -> FAIL (wanted FAIL)
+[PASS   ] control · a non-tabular OCR row needs no order token -> PASS (wanted PASS)
+[PASS   ] control · 'নিছক' must not be read as 'ছক' (prefix, not substring) -> PASS (wanted PASS)
+[PASS   ] seed · inflected 'ছকের' still demands the order token -> FAIL (wanted FAIL)
+[PASS   ] seed · inflected 'ঘরগুলো' still demands the order token -> FAIL (wanted FAIL)
+[PASS   ] control · the live C5_MATH_Source_03.md must not be RED on DEPTH -> PASS
+------------------------------------------------------------------------------
+SELFTEST: PASS
+exit=0
+
+--- math_arith_check.py C5_MATH_Source_06.md ---
+math_arith_check.py — the extraction's arithmetic against itself
+file   : canon/_wip/c5-math/C5_MATH_Source_06.md
+found  : 0 worked block(s), 0 step-table row(s), 19 equality chain(s), 0 division block(s), 0 ladder(s), 0 marked comparison(s)
+------------------------------------------------------------------------------
+[CLEAN    ] line 73    চেইন: ৪০/১০০ = ৪০ × ১/১০০
+[CLEAN    ] line 74    চেইন: ৪৮/১০০ = ৪৮ × ১/১০০
+[CLEAN    ] line 76    চেইন: ১ × ১/১০০ = ১/১০০ = ০.০১
+[CLEAN    ] line 76    চেইন: ২ × ১/১০০ = **২/১০০** = ০.০২
+[CLEAN    ] line 78    চেইন: ১/১০০ = ০.০১
+[CLEAN    ] line 79    চেইন: ১৫ × ১/১০০ = ১৫/১০০ = ০.১৫
+[CLEAN    ] line 80    চেইন: ৬৭ × ১/১০০ = ৬৭/১০০ = ০.৬৭
+[CLEAN    ] line 81    চেইন: ১০০/১০০ = ১
+[CLEAN    ] line 161   চেইন: ২০/৫০ = ৪০/১০০ = ৪০ × ১/১০০
+[CLEAN    ] line 163   চেইন: ৪৮/১০০ = ৪৮ × ১/১০০
+[CLEAN    ] line 171   চেইন: ১ × ১/১০০ = ১/১০০ = ০.০১
+[CLEAN    ] line 173   চেইন: ২ × ১/১০০ = ২/১০০ = ০.০২
+[CLEAN    ] line 188   চেইন: ১/১০০ = ০.০১
+[CLEAN    ] line 192   চেইন: ১৫ × ১/১০০ = ১৫/১০০ = ০.১৫
+[CLEAN    ] line 196   চেইন: ৬৭ × ১/১০০ = ৬৭/১০০ = ০.৬৭
+[CLEAN    ] line 200   চেইন: ১০০/১০০ = ১
+[CLEAN    ] line 361   চেইন: ১২/৩০ = ২/৫
+[CLEAN    ] line 522   চেইন: ২ × ১/১০০ = **২/১০০**
+[CLEAN    ] line 526   চেইন: ১৫ × ১/১০০ = ১৫/১০০
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×149, ARITHMETIC LINE NOT PARSED ×8, bare exercise (no printed answer to check) ×2
+VERDICT: CLEAN — 19 verified · 0 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×149, ARITHMETIC LINE NOT PARSED ×8, bare exercise (no printed answer to check) ×2
+exit=0
+
+--- math_arith_check.py --selftest ---
+[PASS] fixture · C5_MATH_Source_05.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_05.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_06.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_06.md flipped (landed outside a worked block — not a failure of the gate)
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+--- bangla_script_check.py (c5-math) ---
+bangla_script_check.py — Assamese ৰ/ৱ in Bengali extractions (§7.16, CD-071)
+  root: /sessions/exciting-awesome-carson/mnt/scd-central
+  scanned: 12 markdown file(s)
+------------------------------------------------------------------------------
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch3_2026-08-10.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch4_2026-08-11.md  — 30 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch5_2026-08-11.md  — 48 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch6_2026-08-12.md  — 41 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+------------------------------------------------------------------------------
+RESULT: CLEAN (0 in authored text; 146 in 4 declared draft(s))
+exit=0
+
+--- grid_count_check.py --selftest ---
+[PASS] seed · no lattice on the page -> REFUSE, never a silent 0 -> REFUSE
+[PASS] seed · a cell between the thresholds -> REFUSE, not rounded -> REFUSE
+[PASS] seed · no declared count given -> REFUSE -> REFUSE
+[PASS] seed · nonsensical lattice 0×10 -> REFUSE -> REFUSE
+[PASS] control · a 5×4 lattice counts too -> CLEAN -> CLEAN
+[PASS] seed · 5×4 declared one too many -> RED -> RED
+------------------------------------------------------------------------------
+SELFTEST: PASS
+exit=0
+
+--- tools_check.py ---
+tools_check.py — root: /sessions/exciting-awesome-carson/mnt/scd-central
+  WARN  MANIFEST: tools/images/pick_placements.py [VENDORED-UNPROVEN] vendored but never executed — no run recorded in tools/images/SMOKE.md
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)
+exit=0
+
+--- canon_check.py ---
+canon_check.py — root: /sessions/exciting-awesome-carson/mnt/scd-central
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn) · 3.9s elapsed, budget 300s
+exit=0
+
+--- source_textcheck.py (expected REFUSE, §7.7) ---
+text layer : Class 5 Math.pdf pp.98-102  (0 letters, decoded)
+------------------------------------------------------------------------------
+  ! the decoded text layer holds 0 letters over 5 page(s), under the 200-letter floor — there is no second channel here to diff against (a book whose glyphs are drawn as outlines looks exactly like this)
+------------------------------------------------------------------------------
+VERDICT : REFUSE — this check has nothing to compare and will not report agreement.
+          A clean Section B is what §7.4 buys reduced spot-check depth with, and
+          Section B is trivially clean on an empty stream. Depth stays at full
+          human check (SOURCE_POLICY §7.4, §7.5).
+exit=0

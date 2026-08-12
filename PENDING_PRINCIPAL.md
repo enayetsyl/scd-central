@@ -634,3 +634,55 @@ had established, and it sent the diagnosis toward *hang* rather than *cost*.
 Principal's claims and in the agent's own scaffolding** — a statement carried further than the
 evidence behind it. **CD-080** fixes the underlying cost and adds the budget that turns the
 next such case into a named REFUSE instead of a silence to be interpreted.
+
+---
+
+## ⚑ PENDING-P-027 — `grid_count_check.py` counts *filled vs empty*; ছাপা ৯৫'s bars need *green vs red*
+
+**Status: OPEN — logged mid-chapter, not built (CD-078(c)). Hand-verified around; ছাপা ৯৫ closed on
+crop evidence, not on a gate verdict.**
+
+**The shape.** অধ্যায় ৬ ছাপা ৯৫ অনুশীলন ৫ prints four two-colour bars. The value the exercise asks
+for is carried entirely by the figure — no percentage is printed anywhere on the page, all eight
+boxes are blank. But the question is **not** "how many cells are filled": every cell is filled.
+It is "how many are green and how many are red".
+
+`grid_count_check.py` (P-018/CD-076) samples each cell centre and calls it FILLED when it differs
+from paper white by more than a threshold. Run against these bars it would answer 20/20, 20/20,
+40/40, 40/40 — **true, and useless**. It cannot be talked into a wrong answer here; it simply has
+no answer to the question being asked. That is a coverage gap, not a defect.
+
+**Why this is P-024's neighbour, not its duplicate.** P-024 is about a checker whose *alphabet* is
+too narrow (only Assamese `ৰ`/`ৱ`). This is a counter whose *predicate* is too narrow (ink vs no
+ink, where the book encodes meaning in hue). Both are "the gate passes because it was never
+looking", but the fixes are unrelated.
+
+**Hand-verification actually performed (in-file, ছাপা ৯৫):** two independent paths, both from the
+crop, neither from the OCR draft (which produced no usable text for this figure at all — অ-১৭):
+
+1. **Cell counting** — left and right halves cropped separately at 1180 px each and counted:
+   12+8 · 9+11 · 33+7 · 28+12.
+2. **Boundary position** — the colour boundary located as a fraction of the bar's own length,
+   measured against the printed scale's 100 units, **at three different heights in each bar**:
+   60.00 · 44.88 · 82.45 · 69.97. All four agree with path 1 (12×5=60, 9×5=45, 33×2.5=82.5,
+   28×2.5=70), and all three heights agree within each bar.
+
+The two paths cannot fail together in the same direction: one counts cells, the other measures a
+length ratio. A miscount would not land on the scale.
+
+**What a gate would have to do (for the gate sitting — NOT now).** Given a band and a declared
+palette, segment by hue rather than by darkness, report **runs in order** (not just totals, per
+§7.14.2c-i — the colour order is data: two of the four bars start green, two start red, and the
+two labels beneath swap sides accordingly), and REFUSE on any cell whose hue falls between the
+declared colours. It should take the bar's extent from the figure's own rules as `locate_grid`
+already does, and it should be seeded with a bar whose run order is reversed — the failure that
+matters here is order, not count.
+
+**Scope question for the Principal (the reason this is a P-row and not just a note):** is this
+worth a gate at all, or is it a one-figure shape? Unknown until অধ্যায় ৯–১০ are read; উপাত্ত
+বিন্যস্তকরণ (১০) is the chapter most likely to print more coloured bars. **Recommendation: hold
+P-027 unstarted until অধ্যায় ১০ is read, then decide once with the full census of coloured-bar
+figures in hand** — building now would be building for n=1.
+
+**Not blocking.** ছাপা ৯৫ is transcribed at পূর্ণ depth with the evidence above; the numbers are in
+the file and hand-verified. P-022/023/024/025 remain queued and unstarted alongside it.
