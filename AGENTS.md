@@ -37,6 +37,29 @@ from files alone. Phase-gated builds: no phase advances past its gate. Promotion
 **End — "save state and sync":** update `_wip/STATE.md`, append a session block to root
 `SESSION_LOG.md`, commit, push. Verbatim commands live in each LOCAL.md if they differ.
 
+### 3.1 Sync approval — the base rule, and the ruling-only carve-out (Principal ruling 2026-08-12, CD-079)
+
+**Base rule, in force throughout and recorded here for the first time: the agent syncs
+only on the Principal's explicit approval.** §3's End clause above describes the *ritual*
+— update STATE.md, append to SESSION_LOG.md, commit, push — and is left exactly as written.
+**The push step of that ritual waits for the Principal.** Committing does not.
+
+**Carve-out.** A commit **whose entire diff is text the Principal has already ruled in
+session** is **pre-approved to push**, with no further named-commit approval. This covers
+decision rows, `PENDING_PRINCIPAL.md` entries, and §-amendments that **execute** a CD row
+already given.
+
+**The agent verifies before invoking it, and states the verification in the push report:**
+the diff touches **no code, no gate, no extraction content, and no governance text beyond
+the ruling as given**. One added word the Principal did not rule makes it an ordinary commit.
+
+**Everything else still waits:** extraction work, gate and tooling changes, and new
+governance text not yet ruled sync **only on explicit Principal approval**.
+
+**Why:** a ruling-only commit created *after* a named-commit approval was correctly held
+under the base rule, costing a round-trip to release text the Principal had already given.
+**The hold protected nothing.**
+
 ## 4. Decisions
 
 - Append-only decision logs; a reversal is a new row citing the old one. Never edit old rows.

@@ -577,3 +577,43 @@ so far (ছাপা ৯৩ · ৯৪, four occurrences). Its siblings — `হ�
 form — **must be surveyed across the extracted chapters and the remaining OCR drafts before the
 parser is extended**, so the extension is measured rather than guessed. A guessed list rebuilds
 the same blind spot one word further along.
+
+---
+
+## ⚑ PENDING-P-026 — `canon_check.py` no longer terminates, and AGENTS §5 makes it a hard gate on every push touching `canon/`
+
+**Status: OPEN — and this one is a STOP, not a row to work around.**
+
+**The measurement.** `python3 tools/audits/canon_check.py` **does not finish.** Timed runs this
+sitting: 25 s → exit 124, 90 s → exit 124. **Earlier in this same session, on this same machine,
+it completed in about a second** — its `RESULT: CLEAN (0 fail, 1 warn)` is quoted verbatim in
+`evidence/GATE_SWEEP_ch6_p91_2026-08-12.txt` and in the two later sweeps.
+
+**What it is not — each ruled out by test, not by assumption:**
+
+- **Not the CD-079 edits.** Reverted `AGENTS.md` alone → hangs. Reverted `canon/DECISIONS.md`
+  alone → hangs. **Reverted both, i.e. clean HEAD → hangs.**
+- **Not the sandbox generally.** `python3 -c "print(1)"` and `git status` return instantly;
+  **`tools_check.py` runs to completion in the same shell** (`exit=0`, `RESULT: CLEAN (0 fail,
+  2 warn)`).
+- **Not `C5_MATH_Source_06.md`.** Moved aside, re-run → still hangs; file restored intact
+  (62 929 bytes, ছাপা ৯৪ section present).
+
+**Why it stops the sitting rather than becoming a row.** **AGENTS.md §5:** *"`python
+tools/audits/canon_check.py` must pass before any push that touches `canon/` or adds canon
+citations."* A gate that cannot be executed **has not passed** — CD-020 ("placed is not run")
+and CD-057 ("a script once run is not a gate") both say so from the other direction. **There is
+nothing to hand-verify around: the gate's own verdict is the requirement.** Under CD-078 this is
+an unresolved RED suspected to be a real error.
+
+**Not diagnosed further, deliberately.** Bisecting a gate is tooling work, and tooling work
+mid-chapter is the detour CD-078(c) and the অধ্যায় ৩ lesson forbid. **What is owed at the gate
+sitting:** reproduce with a timeout and a profile, find what turned a one-second run into a
+non-terminating one (the likeliest suspects are the canon tree having grown this sitting — ch6's
+source, its draft and four sweep files — and a superlinear or backtracking path over it), and
+**give `canon_check.py` its own internal time budget so it REFUSEs rather than hangs** (§7.17: a
+gate reports or refuses, it never omits — and a gate that hangs omits everything).
+
+**Consequence right now:** `CD-079` and `PENDING-P-026` are **committed locally and NOT pushed**.
+CD-079(b) pre-approves the *approval* side of a ruling-only push; **it does not override §5's
+gate**, and the gate has not passed.
