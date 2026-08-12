@@ -639,7 +639,10 @@ next such case into a named REFUSE instead of a silence to be interpreted.
 
 ## ⚑ PENDING-P-027 — `grid_count_check.py` counts *filled vs empty*; ছাপা ৯৫'s bars need *green vs red*
 
-**Status: OPEN — logged mid-chapter, not built (CD-078(c)). Hand-verified around; ছাপা ৯৫ closed on
+**Status: HELD by Principal ruling CD-081(d) — do not start until অধ্যায় ১০ is read; then decide
+once against the full census of coloured-bar figures. The two-path hand-verification below is the
+standing method for these bars meanwhile, and the Principal records it as stronger than the gate
+would have been. Logged mid-chapter, not built (CD-078(c)). Hand-verified around; ছাপা ৯৫ closed on
 crop evidence, not on a gate verdict.**
 
 **The shape.** অধ্যায় ৬ ছাপা ৯৫ অনুশীলন ৫ prints four two-colour bars. The value the exercise asks
