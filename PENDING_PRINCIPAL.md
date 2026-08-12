@@ -689,3 +689,29 @@ figures in hand** — building now would be building for n=1.
 
 **Not blocking.** ছাপা ৯৫ is transcribed at পূর্ণ depth with the evidence above; the numbers are in
 the file and hand-verified. P-022/023/024/025 remain queued and unstarted alongside it.
+
+### Queued onto P-025 by CD-082(e), 2026-08-12 — two-channel control-row sweep
+
+**Not started. Gate-sitting work, ordered AFTER the P-025 census re-run**, because the census
+re-run changes which rows exist to be swept.
+
+**Scope, exactly as ruled:** every existing **two-channel control row** in `C5_MATH_Source_03.md`,
+`_04`, `_05` and `_06` — every row that records "দুই চ্যানেল একমত" or carries the depth value
+`OCR-corroborated` on the strength of agreement alone. For each: **confirm an independent third
+corroboration exists** (second printing of the same value · series continuity · an arithmetic
+consequence · a book-wide constant) **or demote the row to single-channel at full crop depth**,
+saying so in the row.
+
+**Why it is a sweep and not a spot-check.** CR-010's failure mode leaves no trace in the file: a
+two-channel control row that lacked third corroboration reads exactly like one that had it. **The
+only way to tell them apart is to go back and look for the third control in each case.** Nothing
+in the current gate suite can do this — `source_check.py` verifies that an `OCR-corroborated` row
+carries numeral-crop evidence, a `## চ্যানেল-অমিল` log and `ক্রমসহ` on tabular rows (CD-070), but
+**it cannot ask whether the agreement it rests on was corroborated by anything outside the two
+channels.** Whether that becomes a gate at all is a question for the sitting, not an assumption
+of it: much of the third-control evidence (a value printed twice, a series holding) is not
+mechanically recoverable from the file text.
+
+**Known count to start from:** `C5_MATH_Source_06.md` currently declares 5 rows
+`OCR-corroborated` and carries control rows অ-১২, অ-১৮ and অ-২০ in its mismatch log. অ-২০ already
+states its third control (the numbers are printed twice); অ-১২ and অ-১৮ must be re-examined.
