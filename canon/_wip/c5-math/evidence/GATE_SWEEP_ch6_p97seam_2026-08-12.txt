@@ -1,0 +1,41 @@
+=== GATE SWEEP ছাপা ৯১–৯৬ + ৯৭(আংশিক) · 2026-08-12 ===
+Wed Aug 12 06:56:45 UTC 2026
+
+--- source_check.py ---
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-math/C5_MATH_Source_06.md
+subject : class 5 · MATH
+grammar : chapter word 'অধ্যায়'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range অধ্যায় 6-6: all 1 section(s) present
+[FAIL   ] SLOTS    11 spine slot(s) neither cross-referenced nor marked absent: MATH-S01, MATH-S02, MATH-S03, MATH-S04, MATH-S05, MATH-S06, MATH-S07, MATH-S08, MATH-S09, MATH-S10, MATH-S11
+[PASS   ] PAGES    offset constant (+7) over 8 verified rows; 7 body refs monotonic within 91-104, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  45 of 45 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; 40 row(s) 'পূর্ণ', 5 row(s) 'OCR-corroborated' with numeral-crop evidence, 0 of those tabular and cell-order-matched; log present
+------------------------------------------------------------------------------
+VERDICT : RED — returns to build phase (AGENTS.md §5)
+exit=2
+
+--- math_arith_check.py ---
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×226, ARITHMETIC LINE NOT PARSED ×8, bare exercise (no printed answer to check) ×5
+VERDICT: CLEAN — 19 verified · 0 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×226, ARITHMETIC LINE NOT PARSED ×8, bare exercise (no printed answer to check) ×5
+
+--- bangla_script_check.py ---
+------------------------------------------------------------------------------
+RESULT: CLEAN (0 in authored text; 146 in 4 declared draft(s))
+
+--- selftests ---
+------------------------------------------------------------------------------
+SELFTEST: PASS
+------------------------------------------------------------------------------
+SELFTEST: PASS
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+--- push gates ---
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn) · 8.4s elapsed, budget 300s
+RESULT: CLEAN (0 fail, 2 warn)
