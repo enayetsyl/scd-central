@@ -1,0 +1,95 @@
+GATE SWEEP — C5 MATH অধ্যায় ৬, ছাপা ৯১–৯৪ (PDF 98–101) · 2026-08-12
+Sitting stopped at a stated resume point per CD-067 (care-thin): ছাপা ৯৫ (PDF 102).
+Chapter is নির্মাণাধীন — source_check RED is the CORRECT state (§7.9).
+NOTE: PENDING-P-025 — math_arith_check cannot read the book's 'হলো' equality form and
+      files it under 'prose carrying numbers', not 'ARITHMETIC LINE NOT PARSED'.
+      ছাপা ৯৩ and ৯৪ therefore contribute ZERO verified chains. Every printed claim on
+      those two pages is hand-verified in-file in Fraction, marked [হাতে-যাচাই].
+==============================================================================
+
+### source_check.py C5_MATH_Source_06.md
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-math/C5_MATH_Source_06.md
+subject : class 5 · MATH
+grammar : chapter word 'অধ্যায়'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range অধ্যায় 6-6: all 1 section(s) present
+[FAIL   ] SLOTS    11 spine slot(s) neither cross-referenced nor marked absent: MATH-S01, MATH-S02, MATH-S03, MATH-S04, MATH-S05, MATH-S06, MATH-S07, MATH-S08, MATH-S09, MATH-S10, MATH-S11
+[PASS   ] PAGES    offset constant (+7) over 8 verified rows; 4 body refs monotonic within 91-104, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  36 of 36 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; 32 row(s) 'পূর্ণ', 4 row(s) 'OCR-corroborated' with numeral-crop evidence, 0 of those tabular and cell-order-matched; log present
+------------------------------------------------------------------------------
+VERDICT : RED — returns to build phase (AGENTS.md §5)
+
+### math_arith_check.py C5_MATH_Source_06.md
+math_arith_check.py — the extraction's arithmetic against itself
+file   : canon/_wip/c5-math/C5_MATH_Source_06.md
+found  : 0 worked block(s), 0 step-table row(s), 19 equality chain(s), 0 division block(s), 0 ladder(s), 0 marked comparison(s)
+------------------------------------------------------------------------------
+[CLEAN    ] line 73    চেইন: ৪০/১০০ = ৪০ × ১/১০০
+[CLEAN    ] line 74    চেইন: ৪৮/১০০ = ৪৮ × ১/১০০
+[CLEAN    ] line 76    চেইন: ১ × ১/১০০ = ১/১০০ = ০.০১
+[CLEAN    ] line 76    চেইন: ২ × ১/১০০ = **২/১০০** = ০.০২
+[CLEAN    ] line 78    চেইন: ১/১০০ = ০.০১
+[CLEAN    ] line 79    চেইন: ১৫ × ১/১০০ = ১৫/১০০ = ০.১৫
+[CLEAN    ] line 80    চেইন: ৬৭ × ১/১০০ = ৬৭/১০০ = ০.৬৭
+[CLEAN    ] line 81    চেইন: ১০০/১০০ = ১
+[CLEAN    ] line 156   চেইন: ২০/৫০ = ৪০/১০০ = ৪০ × ১/১০০
+[CLEAN    ] line 158   চেইন: ৪৮/১০০ = ৪৮ × ১/১০০
+[CLEAN    ] line 166   চেইন: ১ × ১/১০০ = ১/১০০ = ০.০১
+[CLEAN    ] line 168   চেইন: ২ × ১/১০০ = ২/১০০ = ০.০২
+[CLEAN    ] line 183   চেইন: ১/১০০ = ০.০১
+[CLEAN    ] line 187   চেইন: ১৫ × ১/১০০ = ১৫/১০০ = ০.১৫
+[CLEAN    ] line 191   চেইন: ৬৭ × ১/১০০ = ৬৭/১০০ = ০.৬৭
+[CLEAN    ] line 195   চেইন: ১০০/১০০ = ১
+[CLEAN    ] line 356   চেইন: ১২/৩০ = ২/৫
+[CLEAN    ] line 421   চেইন: ২ × ১/১০০ = **২/১০০**
+[CLEAN    ] line 425   চেইন: ১৫ × ১/১০০ = ১৫/১০০
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×108, ARITHMETIC LINE NOT PARSED ×8, bare exercise (no printed answer to check) ×2
+VERDICT: CLEAN — 19 verified · 0 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×108, ARITHMETIC LINE NOT PARSED ×8, bare exercise (no printed answer to check) ×2
+
+### math_arith_check.py --selftest (tail)
+[PASS] fixture · C5_MATH_Source_06.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_06.md flipped (landed outside a worked block — not a failure of the gate)
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+### source_check.py repo selftest (tail)
+------------------------------------------------------------------------------
+[PASS   ] control · a properly evidenced OCR-corroborated file -> PASS (wanted PASS)
+[PASS   ] seed · OCR-corroborated with no numeral-crop evidence -> FAIL (wanted FAIL)
+[PASS   ] seed · OCR-corroborated with the disagreement log removed -> FAIL (wanted FAIL)
+[PASS   ] seed · a tabular OCR-corroborated row with cell ORDER not crop-matched -> FAIL (wanted FAIL)
+[PASS   ] seed · a depth value this policy does not recognise -> FAIL (wanted FAIL)
+[PASS   ] seed · সমুনা/নমুনা sampling still refused alongside the new value -> FAIL (wanted FAIL)
+[PASS   ] control · a non-tabular OCR row needs no order token -> PASS (wanted PASS)
+[PASS   ] control · 'নিছক' must not be read as 'ছক' (prefix, not substring) -> PASS (wanted PASS)
+[PASS   ] seed · inflected 'ছকের' still demands the order token -> FAIL (wanted FAIL)
+[PASS   ] seed · inflected 'ঘরগুলো' still demands the order token -> FAIL (wanted FAIL)
+[PASS   ] control · the live C5_MATH_Source_03.md must not be RED on DEPTH -> PASS
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+### bangla_script_check.py (tail)
+------------------------------------------------------------------------------
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch3_2026-08-10.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch4_2026-08-11.md  — 30 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch5_2026-08-11.md  — 48 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch6_2026-08-12.md  — 41 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch3.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch4.md  — 28 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch5.md  — 46 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch6.md  — 41 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+------------------------------------------------------------------------------
+RESULT: CLEAN (0 in authored text; 288 in 8 declared draft(s))
+
+### grid_count_check.py --selftest (tail)
+[PASS] seed · 5×4 declared one too many -> RED -> RED
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+### canon_check.py
