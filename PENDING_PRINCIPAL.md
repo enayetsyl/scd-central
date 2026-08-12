@@ -553,3 +553,27 @@ silently wrong.
 **Sweep scope when built:** অধ্যায় ৩·৪·৫ are already closed and gate-GREEN on a census that
 could not see this shape. **Re-run the corrected census over all closed Math chapters** before
 the counter is trusted again. Bangla/English use no `হলো`-form arithmetic; Math only.
+
+### Ruled on scope, 2026-08-12 — Principal. Ordering fixed; extraction not blocked; the residual bucket is named as untrustworthy.
+
+**(1) The ৩·৪·৫ census re-run is REQUIRED and goes to the FRONT of the gate sitting's queue.**
+It runs **before those chapters' sign-off rows come to the Principal, not after**. A sign-off
+taken on a census that could not see the `হলো` form is a sign-off on an unmeasured claim.
+
+**(2) It does NOT block অধ্যায় ৬–১০ extraction.** Every chain in ৩·৪·৫ was read at **full manual
+crop depth**; the census is the **second** channel. **A visibility fix can reclassify lines; it
+cannot by itself make a read wrong.** If the corrected census names genuinely unparsed chains in
+a closed chapter, those are **hand-verified and their rows amended append-only — no
+re-extraction**, per the **CR-007 precedent** (অধ্যায় ৩/৪ corrected as dated append-only
+`## ⚠ অপসারিত স্লট-ছক` blocks, content untouched).
+
+**(3) The residual bucket is not trustworthy until the fix lands.** The `হলো` blind spot means
+`NOT LOOKED AT: prose carrying numbers (limit 3)` **cannot be read as "nothing there"** — it is
+currently the bucket where unreadable arithmetic hides. Until (a) and (b) of this row ship,
+**that count carries no assurance**, and no verdict citing it should be treated as coverage.
+
+**(4) Enumerate the equality words from the BOOK, not from the gate.** `হলো` is the one observed
+so far (ছাপা ৯৩ · ৯৪, four occurrences). Its siblings — `হয়`, `সমান`, `দাঁড়ায়` and any other
+form — **must be surveyed across the extracted chapters and the remaining OCR drafts before the
+parser is extended**, so the extension is measured rather than guessed. A guessed list rebuilds
+the same blind spot one word further along.
