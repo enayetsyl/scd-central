@@ -1,0 +1,44 @@
+GATE — bangla_script_check.py (CD-071 / SOURCE_POLICY §7.16)
+date: 2026-08-10 · AGENTS.md §5 · verbatim, executed
+==================================================================================
+
+$ python3 tools/audits/bangla_script_check.py --selftest
+bangla_script_check.py — SELFTEST (§7.16 / CD-071)
+------------------------------------------------------------------------------
+[PASS   ] control · correct Bengali প্রাথমিক / নির্ণয় is clean -> 0 hit(s) (wanted 0)
+[PASS   ] seed    · U+09F0 ৰ in প্ৰাথমিক must be found -> 2 hit(s) (wanted 2)
+[PASS   ] seed    · U+09F1 ৱ must be found -> 1 hit(s) (wanted 1)
+[PASS   ] control · a backticked citation `প্ৰাথমিক` is allowed -> 0 hit(s) (wanted 0)
+[PASS   ] control · both characters citable in backticks -> 0 hit(s) (wanted 0)
+[PASS   ] seed    · the same word in bare prose is still RED -> 1 hit(s) (wanted 1)
+[PASS   ] seed    · text after a closed code span is prose again -> 1 hit(s) (wanted 1)
+[PASS   ] seed    · a fenced block is authored transcription, not a citation escape -> 1 hit(s) (wanted 1)
+[PASS   ] codepoint U+09F0 is BENGALI LETTER RA WITH MIDDLE DIAGONAL -> BENGALI LETTER RA WITH MIDDLE DIAGONAL
+[PASS   ] codepoint U+09F1 is BENGALI LETTER RA WITH LOWER DIAGONAL -> BENGALI LETTER RA WITH LOWER DIAGONAL
+[PASS   ] control · a declared 'MACHINE OUTPUT' draft is counted (2) and exempted (True), not RED
+[PASS   ] control · the exemption requires the marker; authored text does not carry it
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+==================================================================================
+$ python3 tools/audits/bangla_script_check.py      # repo-wide sweep
+bangla_script_check.py — Assamese ৰ/ৱ in Bengali extractions (§7.16, CD-071)
+  root: /sessions/clever-youthful-curie/mnt/scd-central
+  scanned: 138 markdown file(s)
+------------------------------------------------------------------------------
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch3_2026-08-10.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch3.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+------------------------------------------------------------------------------
+RESULT: CLEAN (0 in authored text; 54 in 2 declared draft(s))
+
+==================================================================================
+$ python3 tools/audits/tools_check.py
+tools_check.py — root: /sessions/clever-youthful-curie/mnt/scd-central
+  WARN  MANIFEST: tools/images/pick_placements.py [VENDORED-UNPROVEN] vendored but never executed — no run recorded in tools/images/SMOKE.md
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)
+
+$ python3 tools/audits/canon_check.py
+canon_check.py — root: /sessions/clever-youthful-curie/mnt/scd-central
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn)

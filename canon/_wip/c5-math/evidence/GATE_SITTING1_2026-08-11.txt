@@ -1,0 +1,153 @@
+GATE SWEEP — SITTING 1 (P-018 + P-019 + P-020) · 2026-08-11T23:45:07Z
+
+########## grid_count_check.py --selftest  (P-018 · CD-076) ##########
+[PASS] control · a correct declared count (৪৮ of ১০০) -> CLEAN -> CLEAN
+[PASS] seed · declared one too few (৪৭) -> RED -> RED
+[PASS] seed · declared one too many (৪৯) -> RED -> RED
+[PASS] control · ছাপা ৬৩'s other grid (60) -> CLEAN -> CLEAN
+[PASS] seed · that grid declared 59 -> RED -> RED
+[PASS] control · ছাপা ৬৩'s other grid (49) -> CLEAN -> CLEAN
+[PASS] seed · that grid declared 48 -> RED -> RED
+[PASS] seed · no lattice on the page -> REFUSE, never a silent 0 -> REFUSE
+[PASS] seed · a cell between the thresholds -> REFUSE, not rounded -> REFUSE
+[PASS] seed · no declared count given -> REFUSE -> REFUSE
+[PASS] seed · nonsensical lattice 0×10 -> REFUSE -> REFUSE
+[PASS] control · a 5×4 lattice counts too -> CLEAN -> CLEAN
+[PASS] seed · 5×4 declared one too many -> RED -> RED
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+########## grid_count_check.py — ছাপা ৬৩'s THREE REAL GRIDS ##########
+-- grid (ka), extraction declares 48 --
+[CLEAN  ] declared 48 = sampled 48 on a 10×10 lattice
+-- grid (kha), extraction declares 60 --
+[CLEAN  ] declared 60 = sampled 60 on a 10×10 lattice
+-- grid (ga), extraction declares 49 --
+[CLEAN  ] declared 49 = sampled 49 on a 10×10 lattice
+
+########## math_arith_check.py --selftest  (P-019 · CD-074 · P-020 · CD-075) ##########
+SELFTEST — a mutated digit must turn the gate RED
+------------------------------------------------------------------------------
+[PASS] control · a fully printed block balances -> CLEAN (wanted CLEAN)
+[PASS] control · blanks pinned uniquely balance -> CLEAN (wanted CLEAN)
+[PASS] seed · digit flipped in the total -> RED (wanted RED)
+[PASS] seed · digit flipped in a partial -> RED (wanted RED)
+[PASS] seed · digit flipped in the multiplicand -> RED (wanted RED)
+[PASS] seed · digit flipped in the multiplier -> RED (wanted RED)
+[PASS] seed · digit flipped inside a blanks block -> RED (wanted RED)
+[PASS] seed · a partial row dropped (shape) -> RED (wanted RED)
+[PASS] seed · step table does not balance -> RED (wanted RED)
+[PASS] control · step table balances -> CLEAN (wanted CLEAN)
+[PASS] control · distributive terms sum to the multiplier -> CLEAN (wanted CLEAN)
+[PASS] seed · a distributive term is mutated -> RED (wanted RED)
+[PASS] seed · the multiplier is mutated against its own expansion -> RED (wanted RED)
+[PASS] control · (X − ১) matches the left-hand number -> CLEAN (wanted CLEAN)
+[PASS] seed · (X − ১) does not match the left-hand number -> RED (wanted RED)
+[PASS] seed · the left-hand number is mutated against (X − ১) -> RED (wanted RED)
+[PASS] control · the ×১০০ rearrangement chain holds -> CLEAN (wanted CLEAN)
+[PASS] seed · one line of the rearrangement chain is mutated -> RED (wanted RED)
+[PASS] control · the split-cell ladder table row is read -> CLEAN (wanted CLEAN)
+[PASS] seed · the split-cell ladder table row does not balance -> RED (wanted RED)
+[PASS] a chain segment containing ☐ is not evaluated -> REFUSE (wanted REFUSE)
+[PASS] seed · CD-073 · a two-column মই-ভাগ REFUSEs — it must never return empty -> REFUSE (wanted REFUSE)
+[PASS] seed · CD-073 · a three-column মই-ভাগ with a carried-down entry REFUSEs -> REFUSE (wanted REFUSE)
+[PASS] seed · CD-073 · the two-column ladder is COUNTED (parse_ladders -> 1, wanted 1) — the census can name it
+[PASS] seed · CD-073 · the three-column ladder is COUNTED (parse_ladders -> 1, wanted 1) — the census can name it
+[PASS] control · CD-073 · a signed long division is NOT read as a ladder (ladders 0 wanted 0, divisions 1 wanted 1)
+[PASS] control · CD-073 · a signless long division is NOT read as a ladder (ladders 0 wanted 0, divisions 1 wanted 1)
+[PASS] control · CD-072 · a SIGNLESS division (this book's layout) balances -> CLEAN (wanted CLEAN)
+[PASS] seed · CD-072 · signless: ভাগফল mutated must go RED, not silent -> RED (wanted RED)
+[PASS] seed · CD-072 · signless: one subtraction row mutated must go RED -> RED (wanted RED)
+[PASS] seed · CD-072 · signless: ভাগশেষ mutated must go RED -> RED (wanted RED)
+[PASS] seed · CD-072 · an unparseable division REFUSEs — it must never vanish -> REFUSE (wanted REFUSE)
+[PASS] control · long division balances -> CLEAN (wanted CLEAN)
+[PASS] control · long division with a remainder balances -> CLEAN (wanted CLEAN)
+[PASS] seed · ভাগফল mutated -> RED (wanted RED)
+[PASS] seed · a subtraction row is not ভাজক × its ভাগফল digit -> RED (wanted RED)
+[PASS] seed · the ভাগশেষ does not follow -> RED (wanted RED)
+[PASS] seed · an intermediate bring-down row is mutated -> RED (wanted RED)
+[PASS] seed · ভাজ্য mutated against its own working -> RED (wanted RED)
+[PASS] seed · ভাজক mutated against its own working -> RED (wanted RED)
+[PASS] a division block carrying ☐ is REFUSED, not guessed -> REFUSE (wanted REFUSE)
+[PASS] control · a chain does not jump over an unreadable line -> REFUSE (wanted REFUSE)
+[PASS] control · ÷ now evaluates, so a real ÷ chain joins -> CLEAN (wanted CLEAN)
+[PASS] control · a ✗-marked chain that does NOT balance is correct -> CLEAN (wanted CLEAN)
+[PASS] seed · a ✗-marked chain that BALANCES is a mis-read -> RED (wanted RED)
+[PASS] control · a ✓-marked chain that balances is correct -> CLEAN (wanted CLEAN)
+[PASS] seed · a ✓-marked chain that does NOT balance is a mis-read -> RED (wanted RED)
+[PASS] control · the verdict WORD মিথ্যা is read as the mark -> CLEAN (wanted CLEAN)
+[PASS] seed · a মিথ্যা-marked chain that balances is a mis-read -> RED (wanted RED)
+[PASS] control · a মিথ্যা-marked comparison that is false is correct -> CLEAN (wanted CLEAN)
+[PASS] seed · a মিথ্যা-marked comparison that is TRUE is a mis-read -> RED (wanted RED)
+[PASS] control · a সত্য-marked comparison that is true is correct -> CLEAN (wanted CLEAN)
+[PASS] an UNMARKED comparison is not assumed true — it is uncovered, not RED -> REFUSE (wanted REFUSE)
+[PASS] control · table-held marked blocks stay out of the checker (CD-061 layout guard) -> REFUSE (wanted REFUSE)
+[PASS] control · a genuine two-line chain still joins -> CLEAN (wanted CLEAN)
+[PASS] the summary names unparsed shapes, not just a count
+[PASS] an under-determined block is AMBIGUOUS, not CLEAN -> REFUSE (wanted REFUSE)
+[PASS] a file with no working REFUSEs rather than passing -> REFUSE (wanted REFUSE)
+[PASS] a pure scaffold is WIDTH-only, so the file REFUSEs rather than passing -> REFUSE (wanted REFUSE)
+[PASS] a scaffold whose widths contradict the operands is RED -> RED (wanted RED)
+[PASS] control · a zero multiplier digit does not redden the scaffold -> REFUSE (wanted REFUSE)
+[PASS] seed · zero-digit block still red on a printed-digit conflict -> RED (wanted RED)
+[PASS] control · exact decimal chains (Fraction, never float) -> CLEAN (wanted CLEAN)
+[PASS] seed · SHIFTED DECIMAL POINT, every digit right -> RED -> RED (wanted RED)
+[PASS] seed · one decimal digit mutated -> RED -> RED (wanted RED)
+[PASS] control · ০.১ + ০.২ is EXACTLY ০.৩ — Fraction, not float
+[PASS] control · _num refuses a decimal instead of silently dropping the point (got None)
+[PASS] control · ✗-marked block that IS wrong -> CLEAN (the book said so) -> CLEAN (wanted CLEAN)
+[PASS] seed · MIRROR — ✗-marked block tidied into the right answer -> RED -> RED (wanted RED)
+[PASS] seed · ✓-marked block that does not balance -> RED -> RED (wanted RED)
+[PASS] control · DECLARED wrong (instruction, no mark) and IS wrong -> CLEAN -> CLEAN (wanted CLEAN)
+[PASS] seed · declared-wrong block tidied into the right answer -> RED -> RED (wanted RED)
+[PASS] control · the declared region ENDS at the rule — a later correct line stays CLEAN -> CLEAN (wanted CLEAN)
+[PASS] control · one line carrying BOTH ✗ and ✓ lends neither mark -> CLEAN (wanted CLEAN)
+[PASS] fixture · C5_MATH_Source_01.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_01.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_02.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_02.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_03.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_03.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_04.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_04.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_05.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_05.md flipped (landed outside a worked block — not a failure of the gate)
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+########## অধ্যায় ৫ SWEEP — the chapter's own content, gate-covered ##########
+[CLEAN    ] line 2783  চেইন: ৩৬.৫ × ১.৬ = ৫৮.৪ — বইয়ের ✓ অনুযায়ী মেলে
+[CLEAN    ] line 2894  চেইন: `৪.৬৫ ÷ ১৫ = ৩১` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+[CLEAN    ] line 2894  চেইন: `২১.৩২ ÷ ৫.২ = ৪১` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+[CLEAN    ] line 2894  চেইন: `৩ ÷ ০.১২৫ = ০.০২৪` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+[CLEAN    ] line 2934  চেইন: `৪ − ২.৩১ = ২.৩৩` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+[CLEAN    ] line 2934  চেইন: `৩.৭৫ − ০.৫ = ৩.৭০` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+[CLEAN    ] line 2934  চেইন: `৭.৫৮ − ৬.৮৭ = ৭১` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×935, bare exercise (no printed answer to check) ×63, ÷ long division ×47, ARITHMETIC LINE NOT PARSED ×12, vertical-bar trailing-zero layout ×8
+VERDICT: CLEAN — 154 verified · 1 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×935, bare exercise (no printed answer to check) ×63, ÷ long division ×47, ARITHMETIC LINE NOT PARSED ×12, vertical-bar trailing-zero layout ×8
+
+-- the six deliberately-wrong items, under inversion --
+[CLEAN    ] line 2894  চেইন: `৪.৬৫ ÷ ১৫ = ৩১` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+[CLEAN    ] line 2894  চেইন: `২১.৩২ ÷ ৫.২ = ৪১` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+[CLEAN    ] line 2894  চেইন: `৩ ÷ ০.১২৫ = ০.০২৪` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+[CLEAN    ] line 2934  চেইন: `৪ − ২.৩১ = ২.৩৩` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+[CLEAN    ] line 2934  চেইন: `৩.৭৫ − ০.৫ = ৩.৭০` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+[CLEAN    ] line 2934  চেইন: `৭.৫৮ − ৬.৮৭ = ৭১` — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক
+
+########## regression: all five Math chapters ##########
+ch01  VERDICT: CLEAN — 26 verified · 3 uncovered (full manual depth, §7.
+ch02  VERDICT: CLEAN — 14 verified · 0 uncovered (full manual depth, §7.
+ch03  VERDICT: CLEAN — 21 verified · 4 uncovered (full manual depth, §7.
+ch04  VERDICT: CLEAN — 20 verified · 0 uncovered (full manual depth, §7.
+ch05  VERDICT: CLEAN — 154 verified · 1 uncovered (full manual depth, §7
+
+########## full repo gate sweep ##########
+source_check           SELFTEST: PASS
+math_arith_check       SELFTEST: PASS
+bangla_script_check    SELFTEST: PASS
+canon_check            RESULT: CLEAN (0 fail, 1 warn)
+tools_check            RESULT: CLEAN (0 fail, 2 warn)
+grid_count_check       SELFTEST: PASS

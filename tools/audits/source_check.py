@@ -109,6 +109,56 @@ def parse_offset_table(text: str):
     return rows
 
 
+# **The rule that survived contact with the repo.** The first attempt demanded half the label's
+# words and reddened eleven correct Bangla tables, which write `শব্দার্থ` for `শব্দার্থ লেখা`
+# and `মূলভাব` for `কবিতা বা গদ্যের মূলভাব` — faithful abbreviations, not errors. Punishing
+# concision is not catching error. What a mapping row must actually satisfy is narrower and
+# harder to satisfy by accident:
+#
+#   * it carries **at least one word** of its own slot's label — so an invented chapter-topic
+#     name fails; and
+#   * it reads **more like its own slot than like any other** — so a real spine label moved one
+#     place along fails, which is exactly the error অধ্যায় ৩ and ৪ carried.
+#
+# Neither alone is enough. The first misses the shift entirely; the second would accept a row
+# that matches nothing at all.
+LABEL_FLOOR = 0.0
+
+_STOP = {"ও", "এবং", "বা", "/", "-", "—"}
+
+
+def _label_tokens(label: str):
+    return [t for t in re.split(r"[^\w\u0980-\u09FF]+", label or "")
+            if t and t not in _STOP and len(t) > 1]
+
+
+def _label_score(label: str, row: str) -> float:
+    """How much of `label` the row carries, 0..1, tolerant of Bengali inflection.
+
+    A label token counts as present when it and a row token share one as a prefix of the
+    other — `উত্তরের` in the spine against `উত্তর` in the row is the same word, and an exact
+    match would fail every honestly-written table in the repo.
+    """
+    lts = _label_tokens(label)
+    if not lts:
+        return 0.0
+    rts = [t for t in re.split(r"[^\w\u0980-\u09FF]+", row) if t]
+    hit = 0
+    for lt in lts:
+        for rt in rts:
+            if len(rt) < 2:
+                continue
+            if lt == rt or (len(lt) >= 3 and rt.startswith(lt)) or (len(rt) >= 3 and lt.startswith(rt)):
+                hit += 1
+                break
+    return hit / len(lts)
+
+
+def _flat(s: str) -> str:
+    """Letters and digits only — emphasis, spacing and punctuation must not decide a match."""
+    return re.sub(r"[^\w\u0980-\u09FF]+", "", s or "")
+
+
 def parse_subject(path: Path):
     m = re.match(r"C(\d)_([A-Za-z\-]+)_Source_", path.name)
     return (m.group(1), m.group(2).upper()) if m else (None, None)
@@ -119,6 +169,32 @@ def spine_slots(subject: str):
     if not f or not f.exists():
         return None
     return sorted(set(re.findall(r"^### `([A-Z\-]+-[SL]\d\d)`", f.read_text(encoding="utf-8"), re.M)))
+
+
+def spine_labels(subject: str):
+    """-> {slot id: the spine's own label}, read from `### \`XXX-Snn\` — <label>`.
+
+    **P-021 (CD-077).** The label is why this function exists. `check_slots` used to ask only
+    whether an ID appeared somewhere in the section — and a table in which *every row was
+    mislabelled* passed, twice, at the close of অধ্যায় ৩ and ৪. Both named the eleven MATH
+    slots as **chapter topics** (`S04 = সাধারণ ভগ্নাংশ`) when the spine defines them as
+    **question types** (`S04 = চার প্রক্রিয়ার সমস্যা`); from S05 the whole list was shifted one
+    place and S01–S04's names were invented outright. The error propagated by table-copying:
+    each chapter's mapping was written from the previous chapter's, and the spine was never
+    reopened.
+
+    **Presence is not correctness — that is CD-070's substring-luck failure at the semantic
+    level.** `"ছক" in "নিছক"` was true and meant nothing; `MATH-S04 appears in this file` was
+    true and meant nothing. Both were a check that could be satisfied by accident.
+    """
+    f = SPINE.get(subject)
+    if not f or not f.exists():
+        return None
+    out = {}
+    for sid, label in re.findall(r"^### `([A-Z\-]+-[SL]\d\d)`\s*[—–-]\s*(.+?)\s*$",
+                                 f.read_text(encoding="utf-8"), re.M):
+        out[sid] = label.strip()
+    return out
 
 
 # -------------------------------------------------------------------------- checks
@@ -138,11 +214,61 @@ def check_slots(text, subject):
     m = re.search(r"^## MarkLogic স্লট মিলকরণ.*?(?=^## |\Z)", text, re.M | re.S)
     if not m:
         return "FAIL", "no 'MarkLogic স্লট মিলকরণ' section"
-    cited = set(re.findall(r"([A-Z\-]+-[SL]\d\d)", m.group(0)))
+    section = m.group(0)
+    cited = set(re.findall(r"([A-Z\-]+-[SL]\d\d)", section))
     missing = [s for s in slots if s not in cited]
     if missing:
         return "FAIL", f"{len(missing)} spine slot(s) neither cross-referenced nor marked absent: " + ", ".join(missing)
-    return "PASS", f"all {len(slots)} {subject} spine slots accounted for"
+
+    # ---- P-021 / CD-077: the row must name the slot the SPINE names, not one it invented.
+    #
+    # Checked per line, because that is the unit an author actually gets wrong: a whole row is
+    # copied from the previous chapter and the ID no longer matches the words beside it. A row
+    # is only judged when it carries exactly one slot ID — prose that mentions two slots in one
+    # sentence is commentary, not a mapping row, and reddening it would push authors toward
+    # writing less explanation rather than more.
+    labels = spine_labels(subject) or {}
+    wrong = []
+    for raw in section.splitlines():
+        # **Only table rows are mapping rows.** A prose line that mentions one slot while
+        # explaining something is commentary — `C5_ENG_Source_15.md` argues about `ENG-S03`
+        # in a sentence above its own table, and judging that sentence as a mapping would
+        # push authors toward writing less explanation, which is the opposite of the point.
+        if not raw.lstrip().startswith("|"):
+            continue
+        ids = re.findall(r"([A-Z\-]+-[SL]\d\d)", raw)
+        if len(ids) != 1 or ids[0] not in labels:
+            continue
+        sid = ids[0]
+        want = labels[sid]
+        if not _label_tokens(want):
+            continue
+        # **Score the naming cell, not the whole row.** The third cell is free prose, and a
+        # one-word spine label will "win" any row that happens to use that word: `BAN-S09`'s
+        # row explains *…মূলভাব লেখার মতো **রচনা** নয়*, and `রচনা` is `BAN-S15`'s entire
+        # label, so the row read as S15's. The cell that carries the ID is the cell that names
+        # the slot; everything after it is commentary.
+        cell = raw.strip().strip("|").split("|")[0]
+        mine = _label_score(want, cell)
+        rival = max(((k, _label_score(v, cell)) for k, v in labels.items() if k != sid),
+                    key=lambda kv: kv[1], default=(None, 0.0))
+        # **Two conditions, and the second is the one that catches the shift.** The row must
+        # look like its own slot (a floor, so an invented name fails) *and* must look more like
+        # its own slot than like any other (so a label moved one place along fails even though
+        # it is a perfectly real spine label). Either alone is not enough: the floor misses the
+        # shift, and the comparison alone would accept a row that matches nothing.
+        if mine <= LABEL_FLOOR or mine < rival[1]:
+            hint = (f" — it reads as {rival[0]}'s label instead" if rival[1] > mine
+                    else " — the row cites the ID but never names the slot")
+            wrong.append(f"{sid} (spine: “{want}”){hint}")
+    if wrong:
+        return "FAIL", (f"{len(wrong)} slot row(s) do not carry the spine's own label — "
+                        f"citing the ID is not mapping it (CD-077): " + " · ".join(wrong))
+    named = sum(1 for raw in section.splitlines()
+                if raw.lstrip().startswith("|")
+                and len(re.findall(r"([A-Z\-]+-[SL]\d\d)", raw)) == 1)
+    return "PASS", (f"all {len(slots)} {subject} spine slots accounted for; "
+                    f"{named} row(s) carry the spine's own label")
 
 
 def check_pages(text, scope, offset_rows):
@@ -231,6 +357,50 @@ SINGLE_CHANNEL = "**যাচাই-চ্যানেল:** একক"
 FULL, SAMPLED = "পূর্ণ", "নমুনা"
 DEPTH_COL = "গভীরতা"
 
+# ---- §7.14 (CD-068) + §7.14.2c cell-order (CD-070): the third depth value and its price.
+#
+# `OCR-corroborated` entered the vocabulary with CD-068 and for one session was enforced by
+# nothing. The rows written under it read `OCR-corroborated + পূর্ণ (সংখ্যা)`, and the old
+# `FULL not in cell` test passed them **because the string happened to contain পূর্ণ** — a
+# substring accident, not a check. A depth value the gate cannot enforce is a depth value the
+# file can claim for free, which is the whole failure class CD-020 and CD-057 exist to close.
+#
+# So the value is now recognised explicitly, and it is not free. A row may claim it only with:
+#   (a) NUMERAL_CROP  — the numerals themselves read at 400+ dpi (§7.14.2(a));
+#   (b) DISAGREE_LOG  — the file carries the disagreement log the second channel is FOR
+#                       (§7.14.3). Claiming OCR corroboration with no log is claiming a
+#                       channel that was never run;
+#   (c) ORDER_TOKEN   — for any row describing a table/row/cell, a record that cell **order**
+#                       was crop-matched, not merely cell value (§7.14.2c, CD-070).
+#
+# (c) is not hypothetical. On ছাপা ৩৫ the OCR read all eleven numerals of a table correctly
+# and **reordered them** — ১২ and ৩৬ drifted to the end of the row. A correct number in the
+# wrong cell is as wrong as a misread one, and **no spelling diff will ever catch it**.
+OCR_CORROB = "OCR-corroborated"
+NUMERAL_CROP = "পূর্ণ (সংখ্যা)"
+DISAGREE_LOG = "## চ্যানেল-অমিল"
+ORDER_TOKEN = "ক্রমসহ"
+CELL_WORDS = ("ছক", "সারি", "ঘর", "কলাম", "কোষ")
+
+
+def _is_tabular(row_text):
+    """Does this sign-off row describe a table, row, cell or column?
+
+    **Substring matching is wrong here, and the selftest caught it on the first run.**
+    `"ছক" in "একটি নিছক গদ্য-অনুচ্ছেদ"` is True — নি+ছক — so a plainly non-tabular row was
+    being ordered to prove its cell order, and the gate went red on a correct file. That is
+    the same failure shape as the নমুনা-in-the-wrong-column bug recorded in `check_depth`,
+    and it gets a gate ignored.
+
+    Bengali is agglutinative, so the cell word legitimately carries suffixes — ছকের, ঘরগুলো,
+    সারিতে all mean the table. The distinction that holds is **prefix, not substring**: the
+    word may grow to the right and still be the same word; a word that merely ends in it
+    (নিছক) is a different word. Tokens are split on everything that is not a Bengali or Latin
+    letter, so punctuation and the `**` emphasis markers do not defeat the match.
+    """
+    tokens = re.split(r"[^ঀ-৿A-Za-z]+", row_text)
+    return any(t.startswith(w) for t in tokens for w in CELL_WORDS)
+
 
 def check_depth(text):
     """§7.4's one-sample depth is bought with machine evidence. Where there is none, it
@@ -278,10 +448,37 @@ def check_depth(text):
         return "FAIL", (f"{len(sampled)} of {len(data)} sign-off row(s) claim '{SAMPLED}' depth on a "
                         f"single-channel source — §7.4's sampling depth needs a clean "
                         f"source_textcheck.py run, which a source with no text layer cannot produce")
-    missing = [r for r in data if FULL not in r[col]]
+    missing = [r for r in data if FULL not in r[col] and OCR_CORROB not in r[col]]
     if missing:
-        return "FAIL", (f"{len(missing)} of {len(data)} sign-off row(s) state no depth; a "
-                        f"single-channel source needs every row marked '{FULL}'")
+        return "FAIL", (f"{len(missing)} of {len(data)} sign-off row(s) state no depth this policy "
+                        f"recognises; a single-channel source needs every row marked '{FULL}' "
+                        f"(§7.4/§7.12) or '{OCR_CORROB}' (§7.14.2)")
+
+    ocr_rows = [r for r in data if OCR_CORROB in r[col]]
+    if ocr_rows:
+        # (b) the log first: without it the claim has no second channel behind it at all.
+        if DISAGREE_LOG not in text:
+            return "FAIL", (f"{len(ocr_rows)} row(s) claim '{OCR_CORROB}' depth but the file carries "
+                            f"no '{DISAGREE_LOG}' section — §7.14.3 makes the disagreement log the "
+                            f"thing this source class buys; corroboration with no log is a channel "
+                            f"that was never run")
+        # (a) numerals are never corroborated by OCR — they are cropped (§7.14.2(a)).
+        no_crop = [r for r in ocr_rows if NUMERAL_CROP not in r[col]]
+        if no_crop:
+            return "FAIL", (f"{len(no_crop)} of {len(ocr_rows)} '{OCR_CORROB}' row(s) do not record "
+                            f"'{NUMERAL_CROP}' — §7.14.2(a) crops every numeral at 400+ dpi, and OCR "
+                            f"corroboration never extends to digits")
+        # (c) cell ORDER, not just cell value (§7.14.2c, CD-070).
+        tabular = [r for r in ocr_rows if _is_tabular(" ".join(r))]
+        no_order = [r for r in tabular if ORDER_TOKEN not in " ".join(r)]
+        if no_order:
+            return "FAIL", (f"{len(no_order)} of {len(tabular)} tabular '{OCR_CORROB}' row(s) do not "
+                            f"record '{ORDER_TOKEN}' — §7.14.2c (CD-070) requires cell ORDER to be "
+                            f"crop-matched, not only cell value; a correct numeral in the wrong cell "
+                            f"is invisible to every spelling diff")
+        return "PASS", (f"single-channel source; {len(data) - len(ocr_rows)} row(s) '{FULL}', "
+                        f"{len(ocr_rows)} row(s) '{OCR_CORROB}' with numeral-crop evidence, "
+                        f"{len(tabular)} of those tabular and cell-order-matched; log present")
     return "PASS", f"single-channel source; all {len(data)} sign-off row(s) marked '{FULL}'"
 
 
@@ -362,6 +559,82 @@ def fixture_pool():
     return sorted(set(out)), sorted(set(skipped))
 
 
+DEPTH_FIXTURE = """\
+**যাচাই-চ্যানেল:** একক — পূর্ণ যাচাই
+
+## স্পট-চেক সই
+
+| যাচাই করার অংশ | ছাপা পৃষ্ঠা | গভীরতা | সই | তারিখ |
+|---|---|---|---|---|
+| একটি সাধারণ অংশ, কোনো ছক নয় | ৩১ | পূর্ণ | — | — |
+| আমের সংখ্যার এগারোটি ঘর, ক্রমসহ | ৩৫ | OCR-corroborated + পূর্ণ (সংখ্যা) | — | — |
+| একটি গদ্য-অনুচ্ছেদ মাত্র | ৩৬ | OCR-corroborated + পূর্ণ (সংখ্যা) | — | — |
+
+---
+
+## চ্যানেল-অমিল
+
+| # | ছাপা | যাচাইকৃত | OCR | বইয়ে | কে ভুল |
+|---|---|---|---|---|---|
+| ১ | ৩৫ | ক | খ | ক | OCR |
+"""
+
+
+def depth_selftest():
+    """§7.14.2 / §7.14.2c seeds — deliberately NOT drawn from the fixture pool.
+
+    The only file carrying `OCR-corroborated` rows is `C5_MATH_Source_03.md`, which declares
+    itself নির্মাণাধীন and is therefore excluded from the pool by design (CD-055). Seeding the
+    new rules from the pool would report BROKEN today and, worse, would report **green** the
+    day that file finishes — a seed whose biting depends on which files happen to be complete
+    is the silently-stops-biting failure CD-064(f) recorded. So the fixture is built here, in
+    full, and every seed bites every run.
+    """
+    cases = [
+        ("control · a properly evidenced OCR-corroborated file", lambda t: t, "PASS"),
+        ("seed · OCR-corroborated with no numeral-crop evidence",
+         lambda t: t.replace("OCR-corroborated + পূর্ণ (সংখ্যা)", "OCR-corroborated", 1), "FAIL"),
+        ("seed · OCR-corroborated with the disagreement log removed",
+         lambda t: t.split("## চ্যানেল-অমিল")[0], "FAIL"),
+        ("seed · a tabular OCR-corroborated row with cell ORDER not crop-matched",
+         lambda t: t.replace("এগারোটি ঘর, ক্রমসহ", "এগারোটি ঘর", 1), "FAIL"),
+        ("seed · a depth value this policy does not recognise",
+         lambda t: t.replace("| পূর্ণ |", "| মোটামুটি |", 1), "FAIL"),
+        ("seed · সমুনা/নমুনা sampling still refused alongside the new value",
+         lambda t: t.replace("| পূর্ণ |", "| নমুনা |", 1), "FAIL"),
+        ("control · a non-tabular OCR row needs no order token",
+         lambda t: t.replace("আমের সংখ্যার এগারোটি ঘর, ক্রমসহ", "একটি গদ্য-বাক্য", 1), "PASS"),
+        # The false positive the first selftest run found: নিছক ends in ছক. A substring test
+        # ordered this row to prove cell order it has no cells for. Seeded so it stays fixed.
+        ("control · 'নিছক' must not be read as 'ছক' (prefix, not substring)",
+         lambda t: t.replace("আমের সংখ্যার এগারোটি ঘর, ক্রমসহ", "একটি নিছক গদ্য-অনুচ্ছেদ", 1), "PASS"),
+        # ...and the inflected forms must still bite, or the fix would have bought silence.
+        ("seed · inflected 'ছকের' still demands the order token",
+         lambda t: t.replace("আমের সংখ্যার এগারোটি ঘর, ক্রমসহ", "ছকের এগারোটি মান", 1), "FAIL"),
+        ("seed · inflected 'ঘরগুলো' still demands the order token",
+         lambda t: t.replace("আমের সংখ্যার এগারোটি ঘর, ক্রমসহ", "ঘরগুলো মিলিয়ে দেখা", 1), "FAIL"),
+    ]
+    print("SELFTEST · §7.14 depth value (CD-070) — synthetic fixture, always bites")
+    print("-" * 78)
+    ok = True
+    for label, mutate, want in cases:
+        got = check_depth(mutate(DEPTH_FIXTURE))[0]
+        hit = got == want
+        print(f"[{'PASS' if hit else 'FAIL':7}] {label} -> {got} (wanted {want})")
+        ok = ok and hit
+    # and the real file, read straight from disk rather than through the pool
+    real = REPO / "canon/_wip/c5-math/C5_MATH_Source_03.md"
+    if real.exists():
+        got = check_depth(real.read_text(encoding="utf-8"))[0]
+        hit = got != "FAIL"
+        print(f"[{'PASS' if hit else 'FAIL':7}] control · the live {real.name} must not be RED on DEPTH -> {got}")
+        ok = ok and hit
+    else:
+        print("[BROKEN ] control · C5_MATH_Source_03.md not on disk")
+        ok = False
+    return ok
+
+
 def selftest():
     """Seeded-error negative test (handoff §2 evidence rules): a gate that has never
     been shown to go red on a known-bad input has not been shown to do anything.
@@ -406,6 +679,45 @@ def selftest():
         # slot — removing only the first left the table still resolving and the seed toothless.
         return t.replace("S09", "S91")
 
+    # ---- P-021 / CD-077: the two ways a mapping is wrong while every ID is present.
+
+    def shift_slot_labels(t):
+        """Move one row's label onto the next slot — the exact error অধ্যায় ৩ and ৪ carried.
+
+        Nothing is missing and nothing is invented; the IDs and the words simply no longer
+        correspond. The old check could not see this at all, which is why it shipped twice.
+        """
+        subj = "MATH" if "MATH" in t or "গণিত" in t else None
+        labels = spine_labels(subj) if subj else None
+        if not labels:
+            return t
+        ids = sorted(labels)
+        for a, b in zip(ids, ids[1:]):
+            la, lb = labels[a], labels[b]
+            if la and lb and la in t and lb != la:
+                return t.replace(la, lb, 1)
+        return t
+
+    def invent_slot_label(t):
+        """Replace a mapping ROW's label with a plausible chapter-topic name in no spine.
+
+        Aimed at the table row rather than the first occurrence anywhere: the first attempt hit
+        a label mentioned in prose, left the table untouched, and reported MISSED — an honest
+        miss, and exactly the kind of toothless seed CD-057 exists to prevent.
+        """
+        out, done = [], False
+        for line in t.splitlines():
+            if (not done and line.lstrip().startswith("|")
+                    and len(re.findall(r"([A-Z\-]+-[SL]\d\d)", line)) == 1):
+                head, sep, rest = line.strip().strip("|").partition("|")
+                sid = re.findall(r"([A-Z\-]+-[SL]\d\d)", head)
+                if sid and sep:
+                    out.append(f"| `{sid[0]}` সংখ্যা ও স্থানীয় মান |{rest}|")
+                    done = True
+                    continue
+            out.append(line)
+        return "\n".join(out) if done else t
+
     def break_offset(t):
         return re.sub(r"^\| (\d+) \| (\d+) \|", lambda m: f"| {m.group(1)} | {int(m.group(2))+1} |",
                       t, count=1, flags=re.M)
@@ -435,6 +747,8 @@ def selftest():
         ("DEPTH  · a single-channel source claims sampled depth", sample_a_full_row),
         ("DEPTH  · a single-channel source drops the depth column", drop_depth_column),
         ("SLOTS  · one spine slot dropped from the cross-reference", drop_slot),
+        ("SLOTS  · every ID present but one label SHIFTED onto the next slot", shift_slot_labels),
+        ("SLOTS  · every ID present but one label INVENTED (a chapter topic)", invent_slot_label),
         ("PAGES  · offset broken on one row", break_offset),
         ("PAGES  · in-body page reference outside the stated range", page_out_of_range),
         ("PAGES  · in-body page references out of order", pages_out_of_order),
@@ -484,6 +798,8 @@ def selftest():
             clean = "FAIL" not in verdict(p)
             print(f"[{'CLEAN  ' if clean else 'FALSE+ '}] control · {src.name} must not be red")
             ok = ok and clean
+    print("-" * 78)
+    ok = depth_selftest() and ok
     print("-" * 78)
     print(f"SELFTEST: {'PASS' if ok else 'FAIL'}")
     return 0 if ok else 2

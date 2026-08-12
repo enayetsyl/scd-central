@@ -1,0 +1,78 @@
+GATE SWEEP — অধ্যায় ৩, ছাপা ৩১–৩৮ (stop point: ছাপা ৩৯ · chapter NOT closed)
+date: 2026-08-10 · AGENTS.md §5 · verbatim, executed
+==================================================================================
+
+$ python3 tools/audits/source_check.py canon/_wip/c5-math/C5_MATH_Source_03.md
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-math/C5_MATH_Source_03.md
+subject : class 5 · MATH
+grammar : chapter word 'অধ্যায়'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range অধ্যায় 3-3: all 1 section(s) present
+[FAIL   ] SLOTS    11 spine slot(s) neither cross-referenced nor marked absent: MATH-S01, MATH-S02, MATH-S03, MATH-S04, MATH-S05, MATH-S06, MATH-S07, MATH-S08, MATH-S09, MATH-S10, MATH-S11
+[PASS   ] PAGES    offset constant (+7) over 12 verified rows; 8 body refs monotonic within 31-48, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  23 of 23 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; 11 row(s) 'পূর্ণ', 12 row(s) 'OCR-corroborated' with numeral-crop evidence, 10 of those tabular and cell-order-matched; log present
+------------------------------------------------------------------------------
+VERDICT : RED — returns to build phase (AGENTS.md §5)
+
+==================================================================================
+$ python3 tools/audits/math_arith_check.py canon/_wip/c5-math/C5_MATH_Source_03.md
+math_arith_check.py — the extraction's arithmetic against itself
+file   : canon/_wip/c5-math/C5_MATH_Source_03.md
+found  : 0 worked block(s), 0 step-table row(s), 10 equality chain(s), 1 division block(s), 0 marked comparison(s)
+------------------------------------------------------------------------------
+[REFUSE   ] line 486   division block carries blanks or an unreadable ভাজক/ভাজ্য — not checked
+[CLEAN    ] line 344   চেইন: ৪ = ২ × ২
+[CLEAN    ] line 348   চেইন: ১২ = ২ × ৬
+[CLEAN    ] line 349   চেইন: ২ × ৬ = ২ × ২ × ৩
+[CLEAN    ] line 353   চেইন: ৩৬ = ২ × ১৮
+[CLEAN    ] line 354   চেইন: ২ × ১৮ = ২ × ২ × ৯
+[CLEAN    ] line 355   চেইন: ২ × ২ × ৯ = ২ × ২ × ৩ × ৩
+[CLEAN    ] line 359   চেইন: ৪৯ = ৭ × ৭
+[CLEAN    ] line 393   চেইন: ১২ = ২ × ২ × ৩
+[CLEAN    ] line 397   চেইন: ১৫ = ৩ × ৫
+[CLEAN    ] line 406   চেইন: ৩ × ২ × ২ × ৫ = ৬০
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×179, ÷ long division ×11, ARITHMETIC LINE NOT PARSED ×1
+VERDICT: CLEAN — 10 verified · 1 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×179, ÷ long division ×11, ARITHMETIC LINE NOT PARSED ×1
+
+==================================================================================
+$ python3 tools/audits/bangla_script_check.py
+bangla_script_check.py — Assamese ৰ/ৱ in Bengali extractions (§7.16, CD-071)
+  root: /sessions/clever-youthful-curie/mnt/scd-central
+  scanned: 138 markdown file(s)
+------------------------------------------------------------------------------
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch3_2026-08-10.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch3.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+------------------------------------------------------------------------------
+RESULT: CLEAN (0 in authored text; 54 in 2 declared draft(s))
+
+==================================================================================
+PENDING-P-016 measurement — parse_divisions on the same block, signless vs signed:
+no minus  -> blocks found: 0
+with minus-> blocks found: 1
+
+==================================================================================
+$ python3 tools/audits/source_check.py --selftest
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+$ python3 tools/audits/math_arith_check.py --selftest
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+$ python3 tools/audits/bangla_script_check.py --selftest
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+$ python3 tools/audits/canon_check.py
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn)
+
+$ python3 tools/audits/tools_check.py
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)

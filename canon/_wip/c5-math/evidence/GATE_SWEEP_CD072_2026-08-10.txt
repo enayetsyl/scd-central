@@ -1,0 +1,137 @@
+GATE — math_arith_check.py CD-072 (REFUSE-never-vanish + signless division layout)
+date: 2026-08-10 · AGENTS.md §5 · verbatim, executed · closes PENDING-P-016
+==================================================================================
+
+$ python3 tools/audits/math_arith_check.py --selftest
+SELFTEST — a mutated digit must turn the gate RED
+------------------------------------------------------------------------------
+[PASS] control · a fully printed block balances -> CLEAN (wanted CLEAN)
+[PASS] control · blanks pinned uniquely balance -> CLEAN (wanted CLEAN)
+[PASS] seed · digit flipped in the total -> RED (wanted RED)
+[PASS] seed · digit flipped in a partial -> RED (wanted RED)
+[PASS] seed · digit flipped in the multiplicand -> RED (wanted RED)
+[PASS] seed · digit flipped in the multiplier -> RED (wanted RED)
+[PASS] seed · digit flipped inside a blanks block -> RED (wanted RED)
+[PASS] seed · a partial row dropped (shape) -> RED (wanted RED)
+[PASS] seed · step table does not balance -> RED (wanted RED)
+[PASS] control · step table balances -> CLEAN (wanted CLEAN)
+[PASS] control · distributive terms sum to the multiplier -> CLEAN (wanted CLEAN)
+[PASS] seed · a distributive term is mutated -> RED (wanted RED)
+[PASS] seed · the multiplier is mutated against its own expansion -> RED (wanted RED)
+[PASS] control · (X − ১) matches the left-hand number -> CLEAN (wanted CLEAN)
+[PASS] seed · (X − ১) does not match the left-hand number -> RED (wanted RED)
+[PASS] seed · the left-hand number is mutated against (X − ১) -> RED (wanted RED)
+[PASS] control · the ×১০০ rearrangement chain holds -> CLEAN (wanted CLEAN)
+[PASS] seed · one line of the rearrangement chain is mutated -> RED (wanted RED)
+[PASS] control · the split-cell ladder table row is read -> CLEAN (wanted CLEAN)
+[PASS] seed · the split-cell ladder table row does not balance -> RED (wanted RED)
+[PASS] a chain segment containing ☐ is not evaluated -> REFUSE (wanted REFUSE)
+[PASS] control · CD-072 · a SIGNLESS division (this book's layout) balances -> CLEAN (wanted CLEAN)
+[PASS] seed · CD-072 · signless: ভাগফল mutated must go RED, not silent -> RED (wanted RED)
+[PASS] seed · CD-072 · signless: one subtraction row mutated must go RED -> RED (wanted RED)
+[PASS] seed · CD-072 · signless: ভাগশেষ mutated must go RED -> RED (wanted RED)
+[PASS] seed · CD-072 · an unparseable division REFUSEs — it must never vanish -> REFUSE (wanted REFUSE)
+[PASS] control · long division balances -> CLEAN (wanted CLEAN)
+[PASS] control · long division with a remainder balances -> CLEAN (wanted CLEAN)
+[PASS] seed · ভাগফল mutated -> RED (wanted RED)
+[PASS] seed · a subtraction row is not ভাজক × its ভাগফল digit -> RED (wanted RED)
+[PASS] seed · the ভাগশেষ does not follow -> RED (wanted RED)
+[PASS] seed · an intermediate bring-down row is mutated -> RED (wanted RED)
+[PASS] seed · ভাজ্য mutated against its own working -> RED (wanted RED)
+[PASS] seed · ভাজক mutated against its own working -> RED (wanted RED)
+[PASS] a division block carrying ☐ is REFUSED, not guessed -> REFUSE (wanted REFUSE)
+[PASS] control · a chain does not jump over an unreadable line -> REFUSE (wanted REFUSE)
+[PASS] control · ÷ now evaluates, so a real ÷ chain joins -> CLEAN (wanted CLEAN)
+[PASS] control · a ✗-marked chain that does NOT balance is correct -> CLEAN (wanted CLEAN)
+[PASS] seed · a ✗-marked chain that BALANCES is a mis-read -> RED (wanted RED)
+[PASS] control · a ✓-marked chain that balances is correct -> CLEAN (wanted CLEAN)
+[PASS] seed · a ✓-marked chain that does NOT balance is a mis-read -> RED (wanted RED)
+[PASS] control · the verdict WORD মিথ্যা is read as the mark -> CLEAN (wanted CLEAN)
+[PASS] seed · a মিথ্যা-marked chain that balances is a mis-read -> RED (wanted RED)
+[PASS] control · a মিথ্যা-marked comparison that is false is correct -> CLEAN (wanted CLEAN)
+[PASS] seed · a মিথ্যা-marked comparison that is TRUE is a mis-read -> RED (wanted RED)
+[PASS] control · a সত্য-marked comparison that is true is correct -> CLEAN (wanted CLEAN)
+[PASS] an UNMARKED comparison is not assumed true — it is uncovered, not RED -> REFUSE (wanted REFUSE)
+[PASS] control · table-held marked blocks stay out of the checker (CD-061 layout guard) -> REFUSE (wanted REFUSE)
+[PASS] control · a genuine two-line chain still joins -> CLEAN (wanted CLEAN)
+[PASS] the summary names unparsed shapes, not just a count
+[PASS] an under-determined block is AMBIGUOUS, not CLEAN -> REFUSE (wanted REFUSE)
+[PASS] a file with no working REFUSEs rather than passing -> REFUSE (wanted REFUSE)
+[PASS] a pure scaffold is WIDTH-only, so the file REFUSEs rather than passing -> REFUSE (wanted REFUSE)
+[PASS] a scaffold whose widths contradict the operands is RED -> RED (wanted RED)
+[PASS] control · a zero multiplier digit does not redden the scaffold -> REFUSE (wanted REFUSE)
+[PASS] seed · zero-digit block still red on a printed-digit conflict -> RED (wanted RED)
+[PASS] fixture · C5_MATH_Source_01.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_01.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_02.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_02.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_03.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_03.md flipped (landed outside a worked block — not a failure of the gate)
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+==================================================================================
+$ python3 tools/audits/math_arith_check.py canon/_wip/c5-math/C5_MATH_Source_03.md
+math_arith_check.py — the extraction's arithmetic against itself
+file   : canon/_wip/c5-math/C5_MATH_Source_03.md
+found  : 0 worked block(s), 0 step-table row(s), 10 equality chain(s), 3 division block(s), 0 marked comparison(s)
+------------------------------------------------------------------------------
+[REFUSE   ] line 486   division block carries blanks or an unreadable ভাজক/ভাজ্য — not checked
+[CLEAN    ] line 558   ৫৩৯৪০ ÷ ৪ = ১৩৪৮৫ ভাগশেষ ০  (5 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 580   ৬৯০৫ ÷ ৪ = ১৭২৬ ভাগশেষ ১  (4 subtraction row(s) check out; ভাগশেষ < ভাজক)
+[CLEAN    ] line 344   চেইন: ৪ = ২ × ২
+[CLEAN    ] line 348   চেইন: ১২ = ২ × ৬
+[CLEAN    ] line 349   চেইন: ২ × ৬ = ২ × ২ × ৩
+[CLEAN    ] line 353   চেইন: ৩৬ = ২ × ১৮
+[CLEAN    ] line 354   চেইন: ২ × ১৮ = ২ × ২ × ৯
+[CLEAN    ] line 355   চেইন: ২ × ২ × ৯ = ২ × ২ × ৩ × ৩
+[CLEAN    ] line 359   চেইন: ৪৯ = ৭ × ৭
+[CLEAN    ] line 393   চেইন: ১২ = ২ × ২ × ৩
+[CLEAN    ] line 397   চেইন: ১৫ = ৩ × ৫
+[CLEAN    ] line 406   চেইন: ৩ × ২ × ২ × ৫ = ৬০
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×162, ÷ long division ×11, ARITHMETIC LINE NOT PARSED ×1
+VERDICT: CLEAN — 12 verified · 1 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×162, ÷ long division ×11, ARITHMETIC LINE NOT PARSED ×1
+
+==================================================================================
+$ python3 tools/audits/source_check.py canon/_wip/c5-math/C5_MATH_Source_03.md
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-math/C5_MATH_Source_03.md
+subject : class 5 · MATH
+grammar : chapter word 'অধ্যায়'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range অধ্যায় 3-3: all 1 section(s) present
+[FAIL   ] SLOTS    11 spine slot(s) neither cross-referenced nor marked absent: MATH-S01, MATH-S02, MATH-S03, MATH-S04, MATH-S05, MATH-S06, MATH-S07, MATH-S08, MATH-S09, MATH-S10, MATH-S11
+[PASS   ] PAGES    offset constant (+7) over 12 verified rows; 8 body refs monotonic within 31-48, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  23 of 23 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; 11 row(s) 'পূর্ণ', 12 row(s) 'OCR-corroborated' with numeral-crop evidence, 10 of those tabular and cell-order-matched; log present
+------------------------------------------------------------------------------
+VERDICT : RED — returns to build phase (AGENTS.md §5)
+
+$ python3 tools/audits/bangla_script_check.py
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch3_2026-08-10.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch3.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+------------------------------------------------------------------------------
+RESULT: CLEAN (0 in authored text; 54 in 2 declared draft(s))
+
+$ python3 tools/audits/source_check.py --selftest
+[PASS   ] control · the live C5_MATH_Source_03.md must not be RED on DEPTH -> PASS
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+$ python3 tools/audits/bangla_script_check.py --selftest
+[PASS   ] control · the exemption requires the marker; authored text does not carry it
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+$ python3 tools/audits/canon_check.py
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn)
+
+$ python3 tools/audits/tools_check.py
+  WARN  MANIFEST: tools/images/pick_placements.py [VENDORED-UNPROVEN] vendored but never executed — no run recorded in tools/images/SMOKE.md
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)

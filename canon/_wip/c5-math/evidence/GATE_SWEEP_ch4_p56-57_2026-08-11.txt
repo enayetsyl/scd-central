@@ -1,0 +1,161 @@
+GATE SWEEP — অধ্যায় ৪, ছাপা ৪৯–৫৭ (stop point: ছাপা ৫৮)
+date: 2026-08-11 · AGENTS.md §5 · verbatim, executed
+§7.12 decision: NOT taken on ছাপা ৫৬ or ৫৭ — both print a complete worked example
+                and a printed answer, so CD-066's condition fails. Full depth.
+==================================================================================
+
+$ python3 tools/audits/source_check.py canon/_wip/c5-math/C5_MATH_Source_04.md
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-math/C5_MATH_Source_04.md
+subject : class 5 · MATH
+grammar : chapter word 'অধ্যায়'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range অধ্যায় 4-4: all 1 section(s) present
+[FAIL   ] SLOTS    11 spine slot(s) neither cross-referenced nor marked absent: MATH-S01, MATH-S02, MATH-S03, MATH-S04, MATH-S05, MATH-S06, MATH-S07, MATH-S08, MATH-S09, MATH-S10, MATH-S11
+[PASS   ] PAGES    offset constant (+7) over 12 verified rows; 9 body refs monotonic within 49-62, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  31 of 31 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; 0 row(s) 'পূর্ণ', 31 row(s) 'OCR-corroborated' with numeral-crop evidence, 15 of those tabular and cell-order-matched; log present
+------------------------------------------------------------------------------
+VERDICT : RED — returns to build phase (AGENTS.md §5)
+-------------------------------------------------------------
+
+$ python3 tools/audits/math_arith_check.py canon/_wip/c5-math/C5_MATH_Source_04.md
+math_arith_check.py — the extraction's arithmetic against itself
+file   : canon/_wip/c5-math/C5_MATH_Source_04.md
+found  : 0 worked block(s), 0 step-table row(s), 13 equality chain(s), 0 division block(s), 0 ladder(s), 0 marked comparison(s)
+------------------------------------------------------------------------------
+[CLEAN    ] line 130   চেইন: ৪ × ২ + ১ = ৯
+[CLEAN    ] line 276   চেইন: ৮/২৪ = ৪/১২ = ২/৬ = ১/৩
+[CLEAN    ] line 319   চেইন: ৯/৩৬ = ১/৪
+[CLEAN    ] line 339   চেইন: ১৫/৪৫ = ৫/১৫ = ১/৩
+[CLEAN    ] line 385   চেইন: ২/৩ = ৪/৬ = ৬/৯ = ৮/১২
+[CLEAN    ] line 389   চেইন: ৩/৪ = ৬/৮ = ৯/১২
+[CLEAN    ] line 412   চেইন: ৩/৫ = ৬/১০ = ৯/১৫ = ১২/২০
+[CLEAN    ] line 416   চেইন: ২/৩ = ৪/৬ = ৬/৯ = ৮/১২ = ১০/১৫
+[CLEAN    ] line 482   চেইন: ১৮ ÷ ৬ = ৩
+[CLEAN    ] line 488   চেইন: ১৮ ÷ ৯ = ২
+[CLEAN    ] line 610   চেইন: ১/২ + ১/৩ = ৩/৬ + ২/৬
+[CLEAN    ] line 619   চেইন: ১/২ + ১/৩ = ৩/৬ + ২/৬ — বইয়ের ✓ অনুযায়ী মেলে
+[CLEAN    ] line 670   চেইন: ২/৩ - ১/৪ = ৮/১২ - ৩/১২
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×130, ARITHMETIC LINE NOT PARSED ×19, ÷ long division ×4, bare exercise (no printed answer to check) ×2
+VERDICT: CLEAN — 13 verified · 0 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×130, ARITHMETIC LINE NOT PARSED ×19, ÷ long division ×4, bare exercise (no printed answer to check) ×2
+-------------------------------------------------------------
+
+$ python3 tools/audits/source_check.py canon/_wip/c5-math/C5_MATH_Source_03.md
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-math/C5_MATH_Source_03.md
+subject : class 5 · MATH
+grammar : chapter word 'অধ্যায়'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range অধ্যায় 3-3: all 1 section(s) present
+[PASS   ] SLOTS    all 11 MATH spine slots accounted for
+[PASS   ] PAGES    offset constant (+7) over 12 verified rows; 18 body refs monotonic within 31-48, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  43 of 43 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; 12 row(s) 'পূর্ণ', 31 row(s) 'OCR-corroborated' with numeral-crop evidence, 22 of those tabular and cell-order-matched; log present
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+-------------------------------------------------------------
+
+$ python3 tools/audits/bangla_script_check.py
+bangla_script_check.py — Assamese ৰ/ৱ in Bengali extractions (§7.16, CD-071)
+  root: /sessions/clever-youthful-curie/mnt/scd-central
+  scanned: 141 markdown file(s)
+------------------------------------------------------------------------------
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch3_2026-08-10.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch4_2026-08-11.md  — 30 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch3.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch4.md  — 28 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+------------------------------------------------------------------------------
+RESULT: CLEAN (0 in authored text; 112 in 4 declared draft(s))
+-------------------------------------------------------------
+
+$ python3 tools/audits/source_check.py --selftest
+[CLEAN  ] control · C5_ENG_Source_17.md must not be red
+[CLEAN  ] control · C5_ENG_Source_18.md must not be red
+[CLEAN  ] control · C5_ENG_Source_19.md must not be red
+[CLEAN  ] control · C5_ENG_Source_20.md must not be red
+[CLEAN  ] control · C5_MATH_Source_01.md must not be red
+[CLEAN  ] control · C5_MATH_Source_02.md must not be red
+[CLEAN  ] control · C5_MATH_Source_03.md must not be red
+[CLEAN  ] control · C5_ENG_Source_01.md must not be red
+------------------------------------------------------------------------------
+SELFTEST · §7.14 depth value (CD-070) — synthetic fixture, always bites
+------------------------------------------------------------------------------
+[PASS   ] control · a properly evidenced OCR-corroborated file -> PASS (wanted PASS)
+[PASS   ] seed · OCR-corroborated with no numeral-crop evidence -> FAIL (wanted FAIL)
+[PASS   ] seed · OCR-corroborated with the disagreement log removed -> FAIL (wanted FAIL)
+[PASS   ] seed · a tabular OCR-corroborated row with cell ORDER not crop-matched -> FAIL (wanted FAIL)
+[PASS   ] seed · a depth value this policy does not recognise -> FAIL (wanted FAIL)
+[PASS   ] seed · সমুনা/নমুনা sampling still refused alongside the new value -> FAIL (wanted FAIL)
+[PASS   ] control · a non-tabular OCR row needs no order token -> PASS (wanted PASS)
+[PASS   ] control · 'নিছক' must not be read as 'ছক' (prefix, not substring) -> PASS (wanted PASS)
+[PASS   ] seed · inflected 'ছকের' still demands the order token -> FAIL (wanted FAIL)
+[PASS   ] seed · inflected 'ঘরগুলো' still demands the order token -> FAIL (wanted FAIL)
+[PASS   ] control · the live C5_MATH_Source_03.md must not be RED on DEPTH -> PASS
+------------------------------------------------------------------------------
+SELFTEST: PASS
+-------------------------------------------------------------
+
+$ python3 tools/audits/math_arith_check.py --selftest
+[PASS] seed · a মিথ্যা-marked chain that balances is a mis-read -> RED (wanted RED)
+[PASS] control · a মিথ্যা-marked comparison that is false is correct -> CLEAN (wanted CLEAN)
+[PASS] seed · a মিথ্যা-marked comparison that is TRUE is a mis-read -> RED (wanted RED)
+[PASS] control · a সত্য-marked comparison that is true is correct -> CLEAN (wanted CLEAN)
+[PASS] an UNMARKED comparison is not assumed true — it is uncovered, not RED -> REFUSE (wanted REFUSE)
+[PASS] control · table-held marked blocks stay out of the checker (CD-061 layout guard) -> REFUSE (wanted REFUSE)
+[PASS] control · a genuine two-line chain still joins -> CLEAN (wanted CLEAN)
+[PASS] the summary names unparsed shapes, not just a count
+[PASS] an under-determined block is AMBIGUOUS, not CLEAN -> REFUSE (wanted REFUSE)
+[PASS] a file with no working REFUSEs rather than passing -> REFUSE (wanted REFUSE)
+[PASS] a pure scaffold is WIDTH-only, so the file REFUSEs rather than passing -> REFUSE (wanted REFUSE)
+[PASS] a scaffold whose widths contradict the operands is RED -> RED (wanted RED)
+[PASS] control · a zero multiplier digit does not redden the scaffold -> REFUSE (wanted REFUSE)
+[PASS] seed · zero-digit block still red on a printed-digit conflict -> RED (wanted RED)
+[PASS] fixture · C5_MATH_Source_01.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_01.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_02.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_02.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_03.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_03.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_04.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_04.md flipped (landed outside a worked block — not a failure of the gate)
+------------------------------------------------------------------------------
+SELFTEST: PASS
+-------------------------------------------------------------
+
+$ python3 tools/audits/bangla_script_check.py --selftest
+bangla_script_check.py — SELFTEST (§7.16 / CD-071)
+------------------------------------------------------------------------------
+[PASS   ] control · correct Bengali প্রাথমিক / নির্ণয় is clean -> 0 hit(s) (wanted 0)
+[PASS   ] seed    · U+09F0 ৰ in প্ৰাথমিক must be found -> 2 hit(s) (wanted 2)
+[PASS   ] seed    · U+09F1 ৱ must be found -> 1 hit(s) (wanted 1)
+[PASS   ] control · a backticked citation `প্ৰাথমিক` is allowed -> 0 hit(s) (wanted 0)
+[PASS   ] control · both characters citable in backticks -> 0 hit(s) (wanted 0)
+[PASS   ] seed    · the same word in bare prose is still RED -> 1 hit(s) (wanted 1)
+[PASS   ] seed    · text after a closed code span is prose again -> 1 hit(s) (wanted 1)
+[PASS   ] seed    · a fenced block is authored transcription, not a citation escape -> 1 hit(s) (wanted 1)
+[PASS   ] codepoint U+09F0 is BENGALI LETTER RA WITH MIDDLE DIAGONAL -> BENGALI LETTER RA WITH MIDDLE DIAGONAL
+[PASS   ] codepoint U+09F1 is BENGALI LETTER RA WITH LOWER DIAGONAL -> BENGALI LETTER RA WITH LOWER DIAGONAL
+[PASS   ] control · a declared 'MACHINE OUTPUT' draft is counted (2) and exempted (True), not RED
+[PASS   ] control · the exemption requires the marker; authored text does not carry it
+------------------------------------------------------------------------------
+SELFTEST: PASS
+-------------------------------------------------------------
+
+$ python3 tools/audits/canon_check.py
+canon_check.py — root: /sessions/clever-youthful-curie/mnt/scd-central
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn)
+-------------------------------------------------------------
+
+$ python3 tools/audits/tools_check.py
+tools_check.py — root: /sessions/clever-youthful-curie/mnt/scd-central
+  WARN  MANIFEST: tools/images/pick_placements.py [VENDORED-UNPROVEN] vendored but never executed — no run recorded in tools/images/SMOKE.md
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)
+-------------------------------------------------------------

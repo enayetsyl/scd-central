@@ -1,0 +1,69 @@
+GATE SWEEP — ch5 ছাপা ৭২–৭৩ · 2026-08-11T13:33:48Z
+
+===== tools/audits/source_check.py =====
+[PASS   ] control · 'নিছক' must not be read as 'ছক' (prefix, not substring) -> PASS (wanted PASS)
+[PASS   ] seed · inflected 'ছকের' still demands the order token -> FAIL (wanted FAIL)
+[PASS   ] seed · inflected 'ঘরগুলো' still demands the order token -> FAIL (wanted FAIL)
+[PASS   ] control · the live C5_MATH_Source_03.md must not be RED on DEPTH -> PASS
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+===== tools/audits/math_arith_check.py =====
+[PASS] fixture · C5_MATH_Source_04.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_04.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_05.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_05.md flipped (landed outside a worked block — not a failure of the gate)
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+===== tools/audits/bangla_script_check.py =====
+  DRAFT canon/_wip/c5-math/evidence/OCRDRAFT_ch5_2026-08-11.md  — 48 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch3.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch4.md  — 28 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch5.md  — 46 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+------------------------------------------------------------------------------
+RESULT: CLEAN (0 in authored text; 206 in 6 declared draft(s))
+
+===== tools/audits/canon_check.py =====
+canon_check.py — root: /sessions/clever-youthful-curie/mnt/scd-central
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn)
+
+===== tools/audits/tools_check.py =====
+tools_check.py — root: /sessions/clever-youthful-curie/mnt/scd-central
+  WARN  MANIFEST: tools/images/pick_placements.py [VENDORED-UNPROVEN] vendored but never executed — no run recorded in tools/images/SMOKE.md
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)
+
+===== math_arith_check.py canon/_wip/c5-math/C5_MATH_Source_05.md =====
+math_arith_check.py — the extraction's arithmetic against itself
+file   : canon/_wip/c5-math/C5_MATH_Source_05.md
+found  : 0 worked block(s), 0 step-table row(s), 7 equality chain(s), 0 division block(s), 0 ladder(s), 0 marked comparison(s)
+------------------------------------------------------------------------------
+[CLEAN    ] line 248   চেইন: ২৫০ + ১০০ + ৫০০ + ৩৭৫ = ১২২৫
+[CLEAN    ] line 505   চেইন: ১৫/১০০ = ৩/২০
+[CLEAN    ] line 514   চেইন: ৮/১০০০ = ১/১২৫
+[CLEAN    ] line 577   চেইন: ৩/৫ = (৩ × ২)/(৫ × ২) = ৬/১০
+[CLEAN    ] line 581   চেইন: ৭/২৫ = (৭ × ৪)/(২৫ × ৪) = ২৮/১০০
+[CLEAN    ] line 585   চেইন: ১৭৩/৫০০ = (১৭৩ × ২)/(৫০০ × ২) = ৩৪৬/১০০০
+[CLEAN    ] line 621   চেইন: ১২৩/১০০ = ১২৩০/১০০০
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×343, ARITHMETIC LINE NOT PARSED ×20, bare exercise (no printed answer to check) ×15
+VERDICT: CLEAN — 7 verified · 0 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×343, ARITHMETIC LINE NOT PARSED ×20, bare exercise (no printed answer to check) ×15
+
+===== MANUAL ARITH — ছাপা ৭২–৭৩, exact Fraction (CD-064 doctrine, run by hand outside the gate) =====
+OK  25.52 + 12.65 = 38.17
+OK  4.80 - 3.59  = 1.21
+OK  4.06 + 2.94  = 7.00
+OK  4.00 - 2.31  = 1.69
+OK  3.75 - 0.50  = 3.25
+OK  7.58 - 6.87  = 0.71
+--- the three ✗ blocks confirmed WRONG (book-false, table-held):
+OK(wrong)  4 - 2.31   printed 2.33 ; true 1.69
+OK(wrong)  3.75 - 0.5 printed 3.70 ; true 3.25
+OK(wrong)  7.58 - 6.87 printed 71  ; true 0.71
+
+NOTE: math_arith_check.py reports 0 worked block(s) and 0 marked comparison(s) for this file —
+      it is blind to all four items on ছাপা ৭৩. That gap is PENDING-P-020 + PENDING-P-019.

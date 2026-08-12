@@ -217,7 +217,35 @@ def parse_steps(text: str):
 # because the operators do not exist yet, and inversion without them would be untested
 # machinery — until then the extraction's own warning block is the guard.
 
-EXPR_OK = re.compile(r"^[০-৯\s+\-−×xX*÷/()]+$")
+# **P-019 (CD-074).** The decimal point is inside the character class, and every numeral is
+# read as an exact `Fraction`. It was outside for four chapters and that was correct while the
+# book had no decimals; in অধ্যায় ৫ it meant **every line carrying a decimal produced no chain
+# at all** — `parse_chains("০.৩ + ০.৪ = ০.৯")` returned zero chains, so a wrong sum was
+# invisible rather than red. The fix is not "allow `.`": it is **read `.` as a place value**,
+# because allowing the character while `_num`-style stripping continued would be worse than
+# refusing — `০.৬` would become `৬`.
+EXPR_OK = re.compile(r"^[০-৯\s.+\-−×xX*÷/()]+$")
+DEC_RE = re.compile(r"^([০-৯]*)\.?([০-৯]*)$")
+
+
+def _dec(s: str):
+    """A Bengali numeral, with or without a decimal point, as an exact Fraction.
+
+    Never float. `০.১ + ০.২` must be exactly `০.৩`, and on a float it is not — a tolerance is
+    a thing this book never asked for and would quietly absorb the chapter's signature error,
+    a point one place out. Handles the two truncated forms the book actually prints:
+    `৪.` (ছাপা ৭৩, ⛔-৩) and `.৮৭` (ছাপা ৮৯, ⛔-১০).
+    """
+    m = DEC_RE.match(s)
+    if not m:
+        return None
+    whole, frac = m.group(1), m.group(2)
+    if not whole and not frac:
+        return None
+    w = int(whole.translate(TO_ASCII)) if whole else 0
+    if not frac:
+        return Fraction(w)
+    return Fraction(w) + Fraction(int(frac.translate(TO_ASCII)), 10 ** len(frac))
 
 
 def _tokens(s: str):
@@ -228,11 +256,18 @@ def _tokens(s: str):
         c = s[i]
         if c.isspace():
             i += 1
-        elif c in BN:
+        elif c in BN or (c == "." and i + 1 < len(s) and s[i + 1] in BN):
             j = i
             while j < len(s) and s[j] in BN:
                 j += 1
-            out.append(int(s[i:j].translate(TO_ASCII)))
+            if j < len(s) and s[j] == ".":
+                j += 1
+                while j < len(s) and s[j] in BN:
+                    j += 1
+            v = _dec(s[i:j])
+            if v is None:
+                return None
+            out.append(v)
             i = j
         elif c in "+-*/()":
             out.append(c)
@@ -286,7 +321,7 @@ def _parse(tok):
         if pos >= len(tok):
             return None
         t = tok[pos]
-        if isinstance(t, int):
+        if isinstance(t, (int, Fraction)):
             pos += 1
             return t
         if t == "(":
@@ -328,6 +363,52 @@ def evaluate(seg: str):
 
 FALSE_MARKS = ("✗", "✘", "মিথ্যা")
 TRUE_MARKS = ("✓", "✔", "সত্য")
+
+
+# **P-020 (CD-075) — the mark is not the only signal.**
+#
+# CD-063 read the book's `✗` and inverted the expectation against it. ছাপা ৮৬ prints three more
+# deliberately-wrong long divisions **with no mark at all** — the signal is the instruction
+# above them: *নিচের হিসাবগুলোতে কী ভুল আছে ব্যাখ্যা করি এবং তা ঠিক করি।* Keying on the mark
+# alone would have reddened three faithful transcriptions, which is the same failure as
+# skipping a `✗` line, arrived at from the other side.
+#
+# So expectation is inverted on **either** signal:
+#
+#     marked    — `✗`/`✓` beside the line or block            (ছাপা ৭৩, seven marks)
+#     declared  — the line sits under a find-the-error heading (ছাপা ৮৬, three panels)
+#
+# A declared region ends at the next heading or horizontal rule, which is how the extraction
+# separates exercises. Deliberately narrow: it must not swallow the rest of a chapter.
+
+DECLARE_WRONG_RE = re.compile(
+    r"(কী\s*ভুল\s*আছে|কি\s*ভুল\s*আছে|ভুল(?:গুলো)?\s*(?:খুঁজে|চিহ্নিত|শনাক্ত)"
+    r"|ভুল\s*(?:আছে|থাকলে)\s*[^।]*ঠিক\s*করি)")
+
+# The extraction's own declaration counts too — but it governs **its own line only**, never a
+# region. Tried as a region first and it over-fired at once: a ⛔ paragraph in অধ্যায় ১, ৩ and ৪
+# that *discusses* a deliberately-wrong block was followed, before the next heading, by
+# perfectly correct divisions — which the inversion then reddened. An instruction printed in
+# the book governs what comes after it; a remark in our own prose governs the sentence it is in.
+DECLARE_SELF_RE = re.compile(r"(ইচ্ছাকৃতভাবে\s*ভুল|বইয়ের-মিথ্যা)")
+REGION_END_RE = re.compile(r"^\s*(#{1,6}\s|-{3,}\s*$|\*{3,}\s*$)")
+
+
+def declared_wrong_lines(text: str) -> set:
+    """Line numbers sitting under a find-the-error instruction."""
+    out, active = set(), False
+    for i, raw in enumerate(text.splitlines(), 1):
+        line = raw.strip().lstrip(">").strip()
+        if REGION_END_RE.match(raw):
+            active = False
+        if DECLARE_SELF_RE.search(line):
+            out.add(i)
+        if DECLARE_WRONG_RE.search(line):
+            active = True
+            continue
+        if active:
+            out.add(i)
+    return out
 
 
 def mark_of(line: str):
@@ -392,21 +473,43 @@ def parse_chains(text: str):
         # The mark has already been read off the raw line (CD-063); strip it before splitting,
         # or the segment carrying it evaluates to nothing and the chain silently disappears —
         # which would hand the mark's whole purpose back to luck.
-        mk_here = mark_of(raw)
-        if mk_here is not None:
+        # **The mark belongs to the statement, not the line.** Once one line may hold several
+        # claims (below), reading the mark off the whole line hands one statement's verdict to
+        # its neighbour — and it did: a sign-off row naming both the `✗` block and the `✓`
+        # block of the same printed item took the row's `✗` and reddened the `✓` half, which
+        # balances and is *supposed* to. So: a statement's own mark wins; a line carrying both
+        # kinds of mark lends neither.
+        kinds = {mark_of(m) for m in (FALSE_MARKS + TRUE_MARKS) if m in raw}
+        mk_line = kinds.pop() if len(kinds) == 1 else None
+        # **One line may carry several independent claims, and joining them invents a false
+        # one.** Found by the gate itself the moment decimals became readable (CD-074): an
+        # annotation reading `০.৩২ × ১০ = ৩.২ ✓; ০.৩২ × ১০০ = ৩২ ✓; …` was split on `=` across
+        # the whole line, so `৩.২` and `৩২` landed in the same chain and a correct line went
+        # RED. The separators below are sentence separators, not operators — a chain never
+        # crosses one. Splitting here *adds* coverage: that one line is three verifications.
+        stmts = [t for t in re.split(r"[;।,]|\s·\s|→|\sও\s|\sএবং\s|\sআর\s", line) if t.strip()]
+        made = 0
+        last = None
+        for si, stmt in enumerate(stmts):
+            mk_here = mark_of(stmt)
+            if mk_here is None:
+                mk_here = mk_line
             for _m in FALSE_MARKS + TRUE_MARKS:
-                line = line.replace(_m, " ")
-            line = line.strip(" —-–·")
-        parts = [p for p in line.split("=")]
-        vals = []
-        for p in parts:
-            v = evaluate(p)
-            if v is not None:
-                vals.append((p.strip(), v))
-        if line.startswith("=") and carry is not None and vals:
-            vals = [carry] + vals
-        if len(vals) >= 2:
-            out.append((f"line {i}", vals, i, mk_here))
+                stmt = stmt.replace(_m, " ")
+            stmt = stmt.strip(" —-–·")
+            vals = []
+            for p in stmt.split("="):
+                v = evaluate(p)
+                if v is not None:
+                    vals.append((p.strip(), v))
+            if si == 0 and stmt.lstrip().startswith("=") and carry is not None and vals:
+                vals = [carry] + vals
+            if len(vals) >= 2:
+                out.append((f"line {i}", vals, i, mk_here))
+                made += 1
+            if vals:
+                last = vals[-1]
+        vals = [last] if last else []
         if vals:
             carry, carry_lbl = vals[-1], f"line {i}"
         else:
@@ -531,8 +634,112 @@ class Div:
 
 
 def _num(s):
+    """An INTEGER from a printed row, or None. **Never a silently de-pointed decimal.**
+
+    **P-019's mine, defused in the same commit that made it reachable.** This used to strip
+    every non-digit, so `_num("০.৬")` returned `৬` — the point simply gone. No live path
+    reached it while `EXPR_OK` and `cells()` both rejected `.`, but the decimal evaluator
+    above makes decimals ordinary, and a de-pointed divisor would turn a correct transcription
+    RED or a wrong one CLEAN. Long-division simulation is integer-only by design (`simulate`
+    walks digits), so the honest answer here is **refuse, not guess**: a decimal row returns
+    None, the block REFUSEs by CD-072, and the census names it. Extending the simulator to
+    decimal ভাজ্য/ভাজক is a separate ruling, not a side effect of this one.
+    """
+    if re.search(r"[০-৯]\s*\.|\.\s*[০-৯]", s):
+        return None
     s = "".join(ch for ch in s if ch in BN)
     return int(s.translate(TO_ASCII)) if s else None
+
+
+# --------------------------------------------------------------- ladder (মই-ভাগ) · CD-073
+#
+# The ladder is how this book finds লসাগু:
+#
+#     ২ ) ১২,  ১৮
+#         ──────────
+#     ৩ )  ৬,   ৯
+#         ──────────
+#          ২,   ৩
+#
+# It is NOT a long division and must never be simulated as one: the divisor line carries
+# **several** dividends, and a row is not the previous row minus anything — it is the previous
+# row divided, entry by entry, with indivisible entries carried down untouched.
+#
+# `DIV_LINE` therefore does not match it, and `parse_divisions` correctly returns nothing.
+# **The bug was what happened next: also nothing.** Claiming no shape meant CD-072's
+# never-vanish guarantee never engaged, and the census had no name for a ladder at all — so a
+# block dense with exactly this book's hazard (multi-column numerals in fixed layout, §7.14.2c)
+# was invisible. §7.17(a) says silence is not a permitted gate outcome; this extends it to a
+# second shape.
+#
+# **Scope is deliberately visibility, not verification.** Checking a ladder — every entry
+# divides by the stated prime, indivisible entries carry down unchanged, the left column's
+# product is the লসাগু — is a real evaluator and a separate ruling. Bundling it here would be
+# the detour that already cost a sitting. So: **the ladder is named and REFUSED, and its
+# arithmetic stays where it is today, verified by hand at 400 dpi.**
+LADDER_LINE = re.compile(r"^\s*[০-৯]+\s*\)\s*[০-৯]+\s*,[০-৯\s,]*$")
+
+
+def parse_ladders(text: str):
+    """Fenced blocks whose divisor line divides *several* numbers at once."""
+    out = []
+    lines = text.splitlines()
+    i = 0
+    while i < len(lines):
+        if not lines[i].strip().startswith("```"):
+            i += 1
+            continue
+        j, blk = i + 1, []
+        while j < len(lines) and not lines[j].strip().startswith("```"):
+            blk.append((j + 1, lines[j]))
+            j += 1
+        hit = next((k for k, (_, l) in enumerate(blk) if LADDER_LINE.match(l)), None)
+        if hit is not None:
+            rungs = sum(1 for _, l in blk if LADDER_LINE.match(l))
+            out.append((f"line {blk[hit][0]}", rungs, [k for k, _ in blk]))
+        i = j + 1
+    return out
+
+
+def _split_rows(rows):
+    """Sort a division's rows into subtraction rows, intermediates, and the final remainder.
+
+    **CD-072 · why this is structural and not sign-based.** The original reader called a row a
+    subtraction row only if it started with `−`. `C5_MATH_Source_01.md` writes them that way, so
+    the rule looked sound — but **C5 গণিত prints no minus signs at all**: a long division on
+    ছাপা ৩৮ is aligned digits under rules and nothing else. With no signs, `subs` came back empty
+    and the whole block was dropped.
+
+    **Adding `−` to the transcription was never an option** — the book does not print it, and
+    SOURCE_POLICY §3 says an extraction records what is printed. So the parser learns the layout
+    instead of the page learning the parser.
+
+    **The layout carries the information the sign was carrying.** In both styles a division runs
+
+        <subtraction row>
+        ─────────────────
+        <intermediate>
+        <subtraction row>
+        ─────────────────
+        ...
+        <final remainder>
+
+    so **the row immediately above a rule is the row being subtracted**, and the row below one is
+    what the subtraction left. That is true of the signed style too, which is why one rule now
+    reads both books: an explicit `−` still wins where it is printed, and position decides where
+    it is not. Nothing about the signed path changes.
+    """
+    subs, inters = [], []
+    cleaned = [(i, l.strip()) for i, l in enumerate(l for _, l in rows)]
+    numeric = [(i, s) for i, s in cleaned if any(c in BN for c in s)]
+    is_rule = {i for i, s in cleaned if s and RULE_RE.match(s)}
+    for pos, (i, s) in enumerate(numeric):
+        nxt = numeric[pos + 1][0] if pos + 1 < len(numeric) else len(cleaned)
+        # a rule between this numeric row and the next one closes a subtraction step
+        rule_follows = any(j in is_rule for j in range(i + 1, nxt))
+        (subs if s.startswith(("−", "-")) or rule_follows else inters).append(_num(s))
+    final = inters[-1] if inters else None
+    return subs, inters, final
 
 
 def parse_divisions(text: str):
@@ -567,15 +774,19 @@ def parse_divisions(text: str):
             divisor, dividend = _num(m.group(1)), _num(m.group(2))
             quotient = next((_num(l) for _, l in blk[:hit][::-1]
                              if any(c in BN for c in l)), None)
-            subs, inters = [], []
-            for _, l in blk[hit + 1:]:
-                s = l.strip()
-                if not any(c in BN for c in s):
-                    continue
-                (subs if s.startswith(("−", "-")) else inters).append(_num(s))
-            final = inters[-1] if inters else None
+            subs, inters, final = _split_rows(blk[hit + 1:])
             if None not in (divisor, dividend, quotient) and subs:
                 out.append(Div(f"line {ln}", quotient, divisor, dividend, subs, inters, final,
+                               [k for k, _ in blk]))
+            else:
+                # **CD-072: the block does not vanish.** It used to. If the numbers would not
+                # parse the append simply never happened, so the block was neither verified nor
+                # reported — and the census cannot name a shape the parser never returned. That
+                # is strictly worse than an uncovered shape: CD-059 exists so unparsed shapes are
+                # *visible*, and a `☐` block has always REFUSEd out loud (CD-060b). This one was
+                # silent, and the file read as fully covered while two complete divisions on
+                # ছাপা ৩৮ went unchecked. **Every path out of here now appends something.**
+                out.append(Div(f"line {ln}", None, None, None, [], [], None,
                                [k for k, _ in blk]))
         elif hit is not None:
             out.append(Div(f"line {blk[hit][0]}", None, None, None, [], [], None,
@@ -608,7 +819,21 @@ def simulate(n: int, d: int):
     return subs, inters
 
 
-def check_division(b: Div):
+def check_division(b: Div, expect: bool = True):
+    """`expect=False` means the book prints this block as a deliberate error (CD-075).
+
+    Under inversion a block that checks out is RED — the only way a *deliberately wrong* panel
+    balances is that a digit was mis-transcribed — and a block that does not check out is
+    CLEAN, because the book said so.
+    """
+    if expect is False:
+        st, detail, _ = check_division(b, expect=True)
+        if st == "REFUSE":
+            return st, detail, 0
+        if st == "RED":
+            return "CLEAN", "বইয়ের ঘোষিত-ভুল ব্লক, এবং সত্যিই মেলে না — যা সঠিক (" + detail + ")", 1
+        return "RED", ("the book declares this working WRONG, but it checks out — a mis-read has "
+                       "made a deliberately wrong panel come out right: " + detail), 0
     if b.q is None:
         return "REFUSE", "division block carries blanks or an unreadable ভাজক/ভাজ্য — not checked", 0
     q, d, n = b.q, b.d, b.n
@@ -687,12 +912,27 @@ def run(path: Path, quiet=False):
     text = body(path.read_text(encoding="utf-8"))
     blocks, steps, chains = parse_blocks(text), parse_steps(text), parse_chains(text)
     divs, comps = parse_divisions(text), parse_comparisons(text)
+    ladders = parse_ladders(text)
+    declared = declared_wrong_lines(text)          # CD-075, second signal
+    lines_ = text.splitlines()
     rows, red, covered, uncovered = [], False, 0, 0
     seen = set()
+    for label, rungs, lns in ladders:
+        # CD-073 · named and REFUSED, never absent. Visibility only — see parse_ladders.
+        for k in lns:
+            seen.add(k)
+        rows.append(("REFUSE", label,
+                     f"ladder (মই-ভাগ), {rungs} rung(s) — not a long division; "
+                     f"no ladder evaluator exists, so nothing here is machine-checked"))
+        uncovered += 1
     for dv in divs:
         for k in dv.lines:
             seen.add(k)
-        st, detail, got = check_division(dv)
+        # Either signal flips the expectation: a `✗` anywhere in the block, or the block
+        # sitting under a find-the-error instruction.
+        marked = any(mark_of(lines_[k - 1]) is False for k in dv.lines if 0 < k <= len(lines_))
+        expect = not (marked or any(k in declared for k in dv.lines))
+        st, detail, got = check_division(dv, expect)
         rows.append((st, dv.label, detail))
         red = red or st == "RED"
         covered += got
@@ -715,11 +955,15 @@ def run(path: Path, quiet=False):
         seen.add(ln)
         holds = len({v for _, v in vals}) == 1
         shown = " = ".join(s for s, _ in vals)
-        # CD-063: the book's own mark sets the expectation. Unmarked -> must hold, as before.
-        expect = True if mk is None else mk
+        # CD-063 + CD-075: the book's own mark sets the expectation; failing a mark, a
+        # find-the-error instruction above the line sets it. Neither -> must hold, as before.
+        expect = mk if mk is not None else (False if ln in declared else True)
+        declared_here = mk is None and ln in declared
         if holds == expect:
-            note = "" if mk is None else (" — বইয়ের ✓ অনুযায়ী মেলে" if mk
-                                          else " — বইয়ের ✗/মিথ্যা অনুযায়ী মেলে না, যা সঠিক")
+            note = (" — বইয়ের নির্দেশ অনুযায়ী ভুল, এবং সত্যিই মেলে না, যা সঠিক"
+                    if declared_here else
+                    "" if mk is None else (" — বইয়ের ✓ অনুযায়ী মেলে" if mk
+                                           else " — বইয়ের ✗/মিথ্যা অনুযায়ী মেলে না, যা সঠিক"))
             rows.append(("CLEAN", label, f"চেইন: {shown}{note}"))
             covered += 1
         else:
@@ -727,6 +971,8 @@ def run(path: Path, quiet=False):
             why = ("the book marks this line FALSE, but it balances — a mis-read has made a "
                    "deliberately wrong line come out true" if mk is False else
                    "the book marks this line TRUE, but it does not balance" if mk is True else
+                   "the book declares this working WRONG, but it balances — a mis-read has made "
+                   "a deliberately wrong line come out true" if declared_here else
                    "equality chain does not hold")
             rows.append(("RED", label, why + ": " +
                          " ≠ ".join(f"{s} ({render(v)})" for s, v in vals)))
@@ -754,6 +1000,7 @@ def run(path: Path, quiet=False):
     print(f"file   : {path.relative_to(REPO) if str(path).startswith(str(REPO)) else path}")
     print(f"found  : {len(blocks)} worked block(s), {len(steps)} step-table row(s), "
           f"{len(chains)} equality chain(s), {len(divs)} division block(s), "
+          f"{len(ladders)} ladder(s), "
           f"{len(comps)} marked comparison(s)")
     print("-" * 78)
     for st, label, detail in rows:
@@ -871,6 +1118,75 @@ SYNTH_DIV = """
 ```
 """
 
+# CD-072 · the signless layout this book actually prints: aligned digits under rules, no `−`.
+# ৬৯০৫ ÷ ৪ = ১৭২৬, ভাগশেষ ১ (ছাপা ৩৮).
+SYNTH_DIV_NOSIGN = """
+# অধ্যায় ৩
+
+```
+       ১   ৭   ২   ৬
+   ৪ ) ৬   ৯   ০   ৫
+       ৪
+       ───
+       ২   ৯
+       ২   ৮
+       ───
+           ১   ০
+               ৮
+           ───
+               ২   ৫
+               ২   ৪
+               ───
+                   ১
+```
+"""
+
+# The same block with the ভাজ্য made unreadable. The point of this seed is NOT the RED/REFUSE
+# label — it is that the block still appears in the output at all. Before CD-072 a block whose
+# numbers would not parse was appended to nothing and vanished from the census.
+SYNTH_DIV_UNPARSEABLE = """
+# অধ্যায় ৩
+
+```
+       ১   ৭   ২   ৬
+   ৪ ) ৬   ৯   ০   ৫
+```
+"""
+
+# CD-073 · the মই-ভাগ from ছাপা ৩৯. Hand-verified sound: ২ × ৩ × ২ × ৩ = ৩৬ = লসাগু(১২, ১৮).
+# The gate must NAME it and REFUSE, never return empty. It must not try to verify it.
+#
+# **Named SYNTH_MOI, not SYNTH_LADDER — and the selftest is why.** `SYNTH_LADDER` was already
+# taken by ছাপা ৫'s ×১০০ rearrangement box, so the first draft of this fixture silently
+# overwrote it and two unrelated chain cases went REFUSE. The clash was invisible in the diff
+# and obvious in the run. **Two different things in this book are called a "ladder" in English;
+# only one of them is the মই-ভাগ.**
+SYNTH_MOI = """
+# অধ্যায় ৩
+
+```text
+২ ) ১২,  ১৮
+    ──────────
+৩ )  ৬,   ৯
+    ──────────
+     ২,   ৩
+```
+"""
+
+# Three columns, and the middle entry carries down undivided (৩ does not divide ৭) — the shape
+# that most obviously is not a long division. ২ × ৩ × ২ × ৭ × ৩ = ২৫২ = লসাগু(১২, ১৪, ১৮).
+SYNTH_MOI_3COL = """
+# অধ্যায় ৩
+
+```text
+২ ) ১২,  ১৪,  ১৮
+    ────────────────
+৩ )  ৬,   ৭,   ৯,
+    ────────────────
+     ২,   ৭,   ৩
+```
+"""
+
 # A division that leaves a remainder — the ভাগশেষ < ভাজক invariant has something to bite on.
 SYNTH_DIV_REM = """
 # অধ্যায় ১
@@ -901,6 +1217,95 @@ SYNTH_ZERO = """
 > ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐
 > ─────
 > ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐
+"""
+
+
+
+# ---------------------------------------------------------------- P-019 / P-020 fixtures
+#
+# Ground truth is অধ্যায় ৫, hand-verified at 400 dpi in the session that read it: the three
+# `✗` blocks of ছাপা ৭৩, the three declared-wrong panels of ছাপা ৮৬, and the correct results
+# beside them. A fixture drawn from the book beats an invented one — it fails the way the book
+# would actually make it fail.
+
+SYNTH_DEC_OK = """
+# অধ্যায় ৫
+
+> ০.১ + ০.২ = ০.৩
+> ২৫.৫২ + ১২.৬৫ = ৩৮.১৭
+> ৪.৮০ − ৩.৫৯ = ১.২১
+> ২.১৩ × ৬ = ১২.৭৮
+> ৯৮.৭ ÷ ২১ = ৪.৭
+"""
+
+# The chapter's signature failure: every digit right, the point one place out.
+SYNTH_DEC_SHIFT = """
+# অধ্যায় ৫
+
+> ২.১৩ × ৬ = ১.২৭৮
+"""
+
+SYNTH_DEC_DIGIT = """
+# অধ্যায় ৫
+
+> ২৫.৫২ + ১২.৬৫ = ৩৮.১৮
+"""
+
+# ছাপা ৭৩: the book prints these WRONG on purpose and marks them ✗.
+SYNTH_MARKED_WRONG = """
+# অধ্যায় ৫
+
+> ✗ ৪ − ২.৩১ = ২.৩৩
+> ✗ ৩.৭৫ − ০.৫ = ৩.৭০
+> ✗ ৭.৫৮ − ৬.৮৭ = ৭১
+"""
+
+# The mirror seed. If a transcription "tidies" a ✗ block into the right answer, the block stops
+# being what the book printed — and that is precisely the mis-read the mark exists to catch.
+SYNTH_MARKED_WRONG_TIDIED = """
+# অধ্যায় ৫
+
+> ✗ ৪.০০ − ২.৩১ = ১.৬৯
+"""
+
+SYNTH_MARKED_TRUE_BAD = """
+# অধ্যায় ৫
+
+> ✓ ৪.০৬ + ২.৯৪ = ৭.০১
+"""
+
+# ছাপা ৮৬: three more deliberately-wrong workings, and this time NO mark — the instruction
+# above them is the only signal.
+SYNTH_DECLARED_WRONG = """
+# অধ্যায় ৫
+
+> নিচের হিসাবগুলোতে কী ভুল আছে ব্যাখ্যা করি এবং তা ঠিক করি।
+
+> ৪.৬৫ ÷ ১৫ = ৩১
+> ২১.৩২ ÷ ৫.২ = ৪১
+> ৩ ÷ ০.১২৫ = ০.০২৪
+"""
+
+SYNTH_DECLARED_WRONG_TIDIED = """
+# অধ্যায় ৫
+
+> নিচের হিসাবগুলোতে কী ভুল আছে ব্যাখ্যা করি এবং তা ঠিক করি।
+
+> ৪.৬৫ ÷ ১৫ = ০.৩১
+"""
+
+# The declared region must end. If it leaked past the exercise, every later correct line in the
+# chapter would be expected to be wrong — a gate that reddens the whole book after one heading.
+SYNTH_DECLARED_SCOPE = """
+# অধ্যায় ৫
+
+> নিচের হিসাবগুলোতে কী ভুল আছে ব্যাখ্যা করি এবং তা ঠিক করি।
+
+> ৪.৬৫ ÷ ১৫ = ৩১
+
+---
+
+> ২.১৩ × ৬ = ১২.৭৮
 """
 
 
@@ -962,6 +1367,36 @@ def selftest():
          "# অধ্যায় ১\n\n> ৯৯ × ২৪ = ☐ × ২৪ − ☐ × ২৪\n", 3)
 
     # --- long division (CD-060): the invariants are as forced as multiplication's
+    # --- CD-073 · the ladder is NAMED and REFUSED, never absent. Visibility, not verification.
+    case("seed · CD-073 · a two-column মই-ভাগ REFUSEs — it must never return empty",
+         SYNTH_MOI, 3)
+    case("seed · CD-073 · a three-column মই-ভাগ with a carried-down entry REFUSEs",
+         SYNTH_MOI_3COL, 3)
+    for _lbl, _txt in (("two-column", SYNTH_MOI), ("three-column", SYNTH_MOI_3COL)):
+        _found = len(parse_ladders(body(_txt)))
+        _hit = _found == 1
+        ok = ok and _hit
+        print(f"[{'PASS' if _hit else 'FAIL'}] seed · CD-073 · the {_lbl} ladder is COUNTED "
+              f"(parse_ladders -> {_found}, wanted 1) — the census can name it")
+    # ...and no regression: a real long division is still a division, not a ladder.
+    for _lbl, _txt in (("signed", SYNTH_DIV), ("signless", SYNTH_DIV_NOSIGN)):
+        _lad, _div = len(parse_ladders(body(_txt))), len(parse_divisions(body(_txt)))
+        _hit = (_lad, _div) == (0, 1)
+        ok = ok and _hit
+        print(f"[{'PASS' if _hit else 'FAIL'}] control · CD-073 · a {_lbl} long division is NOT "
+              f"read as a ladder (ladders {_lad} wanted 0, divisions {_div} wanted 1)")
+
+    # --- CD-072. The first case is the fix; the rest guard it in both directions.
+    case("control · CD-072 · a SIGNLESS division (this book's layout) balances",
+         SYNTH_DIV_NOSIGN, 0)
+    case("seed · CD-072 · signless: ভাগফল mutated must go RED, not silent",
+         SYNTH_DIV_NOSIGN.replace("১   ৭   ২   ৬", "১   ৭   ২   ৫"), 2)
+    case("seed · CD-072 · signless: one subtraction row mutated must go RED",
+         SYNTH_DIV_NOSIGN.replace("       ২   ৮", "       ২   ৭"), 2)
+    case("seed · CD-072 · signless: ভাগশেষ mutated must go RED",
+         SYNTH_DIV_NOSIGN.replace("                   ১\n", "                   ৩\n"), 2)
+    case("seed · CD-072 · an unparseable division REFUSEs — it must never vanish",
+         SYNTH_DIV_UNPARSEABLE, 3)
     case("control · long division balances", SYNTH_DIV, 0)
     case("control · long division with a remainder balances", SYNTH_DIV_REM, 0)
     case("seed · ভাগফল mutated", SYNTH_DIV.replace("৯ ৫", "৯ ৬"), 2)
@@ -1040,6 +1475,45 @@ def selftest():
     # in a non-zero row, the block is still checked.
     case("seed · zero-digit block still red on a printed-digit conflict",
          SYNTH_ZERO.replace("> ☐ ☐ ☐ ☐ ☐\n", "> ৪ ৩ ৮ ০ ৭\n"), 2)
+
+    # ------------------------------------------------------- P-019 · decimals (CD-074)
+    #
+    # Ten seeds, both directions. The two that carry the weight are the shifted point and the
+    # mirror of the mark: everything else here would have been caught eventually by a human
+    # re-reading, and those two would not.
+    case("control · exact decimal chains (Fraction, never float)", SYNTH_DEC_OK, 0)
+    case("seed · SHIFTED DECIMAL POINT, every digit right -> RED", SYNTH_DEC_SHIFT, 2)
+    case("seed · one decimal digit mutated -> RED", SYNTH_DEC_DIGIT, 2)
+
+    # `০.১ + ০.২` is the canonical float trap. On floats it is 0.30000000000000004 and this
+    # control would fail; on Fraction it is exactly ০.৩. The control is the proof, not the note.
+    exact = evaluate("০.১ + ০.২") == evaluate("০.৩")
+    ok = ok and exact
+    print(f"[{'PASS' if exact else 'FAIL'}] control · ০.১ + ০.২ is EXACTLY ০.৩ — Fraction, not float")
+
+    # P-019's mine: `_num` must not hand back a de-pointed integer.
+    mine = _num("০.৬") is None and _num("৪৫") == 45
+    ok = ok and mine
+    print(f"[{'PASS' if mine else 'FAIL'}] control · _num refuses a decimal instead of "
+          f"silently dropping the point (got {_num('০.৬')!r})")
+
+    # ------------------------------------------------- P-020 · deliberately-wrong (CD-075)
+    case("control · ✗-marked block that IS wrong -> CLEAN (the book said so)",
+         SYNTH_MARKED_WRONG, 0)
+    case("seed · MIRROR — ✗-marked block tidied into the right answer -> RED",
+         SYNTH_MARKED_WRONG_TIDIED, 2)
+    case("seed · ✓-marked block that does not balance -> RED", SYNTH_MARKED_TRUE_BAD, 2)
+    case("control · DECLARED wrong (instruction, no mark) and IS wrong -> CLEAN",
+         SYNTH_DECLARED_WRONG, 0)
+    case("seed · declared-wrong block tidied into the right answer -> RED",
+         SYNTH_DECLARED_WRONG_TIDIED, 2)
+    case("control · the declared region ENDS at the rule — a later correct line stays CLEAN",
+         SYNTH_DECLARED_SCOPE, 0)
+
+    # A line naming both blocks of one printed item carries both marks; it must lend neither,
+    # or the ✓ half inherits the ✗ and a correct row goes red. Found on the live file.
+    both = "# অধ্যায় ৫\n\n> `✗` ৪ − ২.৩১ = ২.৩৩ ও `✓` ৪.০০ − ২.৩১ = ১.৬৯\n"
+    case("control · one line carrying BOTH ✗ and ✓ lends neither mark", both, 0)
 
     # and the real extraction on disk, if one is there
     pool = sorted((REPO / "canon/_wip").glob("*/C*_MATH_Source_*.md")) + \

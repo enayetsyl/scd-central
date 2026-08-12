@@ -1,0 +1,66 @@
+GATE SWEEP — ch5 ছাপা ৭৬–৭৭ · 2026-08-11T14:04:24Z
+
+===== tools/audits/source_check.py =====
+[PASS   ] seed · inflected 'ছকের' still demands the order token -> FAIL (wanted FAIL)
+[PASS   ] seed · inflected 'ঘরগুলো' still demands the order token -> FAIL (wanted FAIL)
+[PASS   ] control · the live C5_MATH_Source_03.md must not be RED on DEPTH -> PASS
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+===== tools/audits/math_arith_check.py =====
+[n/a ] fixture seed · first digit of C5_MATH_Source_04.md flipped (landed outside a worked block — not a failure of the gate)
+[PASS] fixture · C5_MATH_Source_05.md must not be RED
+[n/a ] fixture seed · first digit of C5_MATH_Source_05.md flipped (landed outside a worked block — not a failure of the gate)
+------------------------------------------------------------------------------
+SELFTEST: PASS
+
+===== tools/audits/bangla_script_check.py =====
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch3.md  — 27 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch4.md  — 28 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+  DRAFT _inbox/C5_MATH_OCRDRAFT_ch5.md  — 46 occurrence(s); declares 'MACHINE OUTPUT', evidence preserved verbatim (§7.14.3a) — counted, not failed
+------------------------------------------------------------------------------
+RESULT: CLEAN (0 in authored text; 206 in 6 declared draft(s))
+
+===== tools/audits/canon_check.py =====
+canon_check.py — root: /sessions/clever-youthful-curie/mnt/scd-central
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 1 warn)
+
+===== tools/audits/tools_check.py =====
+tools_check.py — root: /sessions/clever-youthful-curie/mnt/scd-central
+  WARN  MANIFEST: tools/images/pick_placements.py [VENDORED-UNPROVEN] vendored but never executed — no run recorded in tools/images/SMOKE.md
+  WARN  PLACEHOLDER: tools/assets/README.md still unslotted
+RESULT: CLEAN (0 fail, 2 warn)
+
+===== math_arith_check.py canon/_wip/c5-math/C5_MATH_Source_05.md =====
+math_arith_check.py — the extraction's arithmetic against itself
+file   : canon/_wip/c5-math/C5_MATH_Source_05.md
+found  : 0 worked block(s), 0 step-table row(s), 7 equality chain(s), 0 division block(s), 0 ladder(s), 0 marked comparison(s)
+------------------------------------------------------------------------------
+[CLEAN    ] line 270   চেইন: ২৫০ + ১০০ + ৫০০ + ৩৭৫ = ১২২৫
+[CLEAN    ] line 527   চেইন: ১৫/১০০ = ৩/২০
+[CLEAN    ] line 536   চেইন: ৮/১০০০ = ১/১২৫
+[CLEAN    ] line 599   চেইন: ৩/৫ = (৩ × ২)/(৫ × ২) = ৬/১০
+[CLEAN    ] line 603   চেইন: ৭/২৫ = (৭ × ৪)/(২৫ × ৪) = ২৮/১০০
+[CLEAN    ] line 607   চেইন: ১৭৩/৫০০ = (১৭৩ × ২)/(৫০০ × ২) = ৩৪৬/১০০০
+[CLEAN    ] line 643   চেইন: ১২৩/১০০ = ১২৩০/১০০০
+------------------------------------------------------------------------------
+LIMITS : computed working only · words/names/instructions out of scope ·
+         problem-statement figures unchecked where the book prints no working
+NOT LOOKED AT: prose carrying numbers (limit 3) ×512, bare exercise (no printed answer to check) ×37, ARITHMETIC LINE NOT PARSED ×23, vertical-bar trailing-zero layout ×6
+VERDICT: CLEAN — 7 verified · 0 uncovered (full manual depth, §7.10) · shapes not parsed: prose carrying numbers (limit 3) ×512, bare exercise (no printed answer to check) ×37, ARITHMETIC LINE NOT PARSED ×23, vertical-bar trailing-zero layout ×6
+
+===== MANUAL ARITH — ছাপা ৭৬–৭৭, exact Fraction (outside the gate) =====
+OK  2395*10 = 23950 | 23950
+OK  2.395*10 = 23.950 | 479/20
+OK  2395*100 = 239500 | 239500
+OK  2.395*100 = 239.500 | 479/2
+OK  2*6 = 12 | 12
+OK  2*1 = 2 | 2
+OK  0.2*0.16 = 0.032 | 4/125
+OK  28*5 = 140 | 140
+OK  28*7 = 196 | 196
+OK  28*1 = 28 | 28
+OK  2.8*1.75 = 4.900 | 49/10
+OK  5.9*1.28 = 7.552 | 944/125
+OK  15*0.29 = 4.35 | 87/20

@@ -1,7 +1,7 @@
-# SOURCE_POLICY — v1.7
+# SOURCE_POLICY — v1.13
 
 *Canon. Adopted v1.0 by Principal ruling 2026-08-09 (CD-037), superseding the v0.1 draft staged in `_inbox/`.*
-*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration; v1.5 (CD-057) adds §7.10 the depth rule's math extension; v1.6 (CD-065) adds §7.11 the rendering-choice rule; v1.7 (CD-066, CD-067) adds §7.12 the pure-exercise convention and §7.13 the multi-chapter cadence. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
+*v1.1 (CD-046) added **§7 Amendments**; v1.2 (CD-048) adds §7.4 spot-check depth and §7.5 raster-only content; v1.3 (CD-050) adds §7.6 the C5 Bangla book's real structure and §7.7 a third source class; v1.4 (CD-054, CD-055) adds §7.8 the extraction cadence for single-channel books and §7.9 the `নির্মাণাধীন` self-declaration; v1.5 (CD-057) adds §7.10 the depth rule's math extension; v1.6 (CD-065) adds §7.11 the rendering-choice rule; v1.7 (CD-066, CD-067) adds §7.12 the pure-exercise convention and §7.13 the multi-chapter cadence; v1.8 (CD-068) adds §7.14 the OCR-drafted source class and its verify-not-read inversion; v1.9 (CD-069) adds §7.15, which supersedes 7.14.2a's direction-blind trip-wire count; v1.10 (CD-070) adds §7.14.2c-i, the cell-order rule, and makes `OCR-corroborated` an enforced depth value; v1.11 (CD-071) adds §7.16, the Assamese-character gate; v1.12 (CD-072) adds §7.17 — a gate reports or refuses, never omits, and learns the page rather than the page learning the gate; v1.13 (CD-073) adds §7.18, the মই-ভাগ as a named census shape. §7 is forward-only: the sections it supersedes are left as written and are not edited.*
 *Consumed by: question-banks · scholarship · class-tests · support-books.*
 *Cited, never copied (AGENTS.md §8).*
 
@@ -416,3 +416,202 @@ care beat three at partial**, and the reason is on the record rather than assert
 near-miss this book and its sibling have produced — `ঝকঝাক` for `ঝকঝক`, `প্রচন্দ` for `প্রচণ্ড`,
 `শীঁখ` for `শাঁখ`, and the eight-box count that should have been seven — happened where attention
 or resolution had thinned. **Three is a ceiling, never a target.**
+
+## 7.14 A fourth source class: OCR-drafted — the agent inverts from reader to verifier (Principal ruling 2026-08-10, CD-068)
+
+§7.3 and §7.7 classify books by what the *publisher's file* carries. This section classifies by
+what the *Principal supplies alongside it*: the Principal runs local OCR over the page rasters and
+stages **per-chapter draft markdown in `_inbox/`** next to the PDF. The agent no longer reads the
+book cover-to-cover by vision; it hunts the draft for disagreement.
+
+**The motive is cost and is stated rather than hidden.** Vision-reading every page at 400 dpi in
+four tiles was the budget driver. A machine that reads prose well enough to be argued with is
+cheaper than one that reads nothing — which is what this book's text layer does (§7.7: 190 pages,
+zero letters).
+
+### 7.14.1 The draft is never trusted, and never discarded
+
+It is a **machine channel of exactly the standing a text layer has under §7.3** — a
+disagreement-hunting input, **never an authority**. §7.3's proof carries over without amendment: a
+channel's fluency says nothing about its truth, and the C5 English text layer returned fluent
+English with **every comma silently gone**. **A passage may not enter an extraction on the draft's
+authority, and a draft reading may not overrule a crop.**
+
+### 7.14.2 Verification depth — enumerated, not sampled at large
+
+The agent spot-crops and vision-reads at **400 dpi**:
+
+- **(a) every numeral.** Digits are where the marks live. The test run turned `৪` into `8`, `৭`
+  into Arabic `٩`, `৫` into `¢`, and produced Cyrillic `ЪΟ` — a numeral channel this unreliable is
+  not sampled, it is read.
+- **(b) all known weak-glyph classes** — conjuncts, ণ/ন, শ/স/ষ, ড়/র, chandrabindu/hasant
+  clusters, mixed-digit runs.
+- **(c) every table cell, blank-box count, and `✗`/`✓` mark.** **CR-002 is why counting is named
+  separately from reading:** those boxes were legible at 400 dpi and were still miscounted.
+- **(d) headings, exercise labels, and poem lines in full.**
+- **(e) a random 10% sample of plain prose lines.**
+
+**Prose the OCR and the sample-check agree on is accepted at draft value**, recorded as
+**`OCR-corroborated`** in the sign-off row's depth column — a new depth value following §7.12's
+pattern, so the Principal **reads** which depth each row was taken at instead of inferring it.
+
+**7.14.2a — the sample is a trip-wire, not a formality.** **One** substantive disagreement inside
+the sample **widens it to 25%**; a **second voids OCR-corroboration for that chapter**, which drops
+to **raster-full**. A sample that cannot fail is not a check.
+
+> **SUPERSEDE NOTE (CD-069).** The counting rule in 7.14.2a is **direction-blind** as written — it
+> counts any disagreement, including one where the OCR is *right* and our own transcription is
+> wrong. **§7.15 supersedes it** and states which disagreements count. The text above stands as
+> written; read **§7.15** for what is in force.
+
+**7.14.2b — the sample is deterministic.** **Seed = chapter id**, and the **sampled indices are
+logged**. A later reader can re-draw the same sample, and the agent cannot quietly re-roll until
+the sample comes back clean.
+
+**7.14.2c — provenance and patterns.** The draft header records **OCR engine, exact version, dpi,
+and page range**. **Three occurrences of the same weak-glyph pattern become a `PATTERN` row in the
+corrections ledger** (AGENTS.md §6), with promotion to an executing gate proposed.
+
+**7.14.2c-i — cell ORDER is crop-matched, not only cell value (CD-070).** The cell-crop clause
+above says every cell is read. **Reading every cell is not enough: the cells must be read in the
+order the book prints them.** On ছাপা ৩৫ the OCR read all eleven numerals of a table **correctly**
+and **reordered them** — ১২ and ৩৬ drifted to the end of the row. **A correct numeral in the wrong
+cell is exactly as wrong as a misread one, and no spelling diff will ever catch it**, because
+nothing is missing and nothing is misspelt. So the crop match is positional: **cell *n* of the
+transcription against cell *n* of the page.** A sign-off row covering any table, row, cell or
+column **states that the order was matched**, and `source_check.py` fails an `OCR-corroborated`
+row that describes tabular content without it.
+
+### 7.14.3 The disagreement log is what this source class buys
+
+**Every OCR-vs-crop disagreement is logged in the file's `## চ্যানেল-অমিল` section, with the
+resolution and the crop citation.** This log **replaces `source_textcheck.py`'s REFUSE** — which on
+a §7.7 book is the honest verdict of a channel that has nothing to say, and therefore guards
+nothing. For the first time on this book there is a real second channel, and its output is a
+written record rather than an exit code.
+
+**7.14.3a — the draft is committed as evidence, not merely staged.** `_inbox/` is gitignored
+(§2.1). A draft left there would make the disagreement log cite a file **no other device can see**,
+and the corroboration claim unauditable.
+
+### 7.14.4 Nothing else moves
+
+**All existing doctrine is unchanged:** arithmetic gates run identically; the **fence rule**
+(CD-061), **`✗`/`✓` inversion** (CD-063/CD-064), **§7.11 rendering choice**, **§7.5 artwork
+quarantine**, **Principal-only sign-off**, and **`নির্মাণাধীন`** (§7.9) all stand exactly as
+written.
+
+**7.14.4a — the pipeline buys no cadence.** **The §7.13 ceiling and its stop-rule lift only after
+three consecutive gate-GREEN §7.14 chapters**, and not before. **A faster channel is a reason to
+verify more, not to close chapters sooner.**
+
+### 7.14.5 First use, and it starts by being tested
+
+**First use is the C5 গণিত অধ্যায় ৩ resume.** Before any new page is touched, the draft is
+**diffed against the already-verified pages of the same chapter** and the result reported. The
+channel is **measured against known-good ground before it is trusted on unknown ground** — and if
+it fails there, it fails cheaply.
+
+## 7.17 A gate reports or refuses; it never omits — and it learns the page, the page never learns it (Principal ruling 2026-08-10, CD-072)
+
+**Two rules, ruled together because one incident produced both.**
+
+**(a) Silence is not a permitted gate outcome.** CD-059 requires unparsed shapes to be *named* in
+the census; CD-060(b) makes a `☐`-bearing division REFUSE out loud. Both assume the shape reaches
+the report. `math_arith_check.py` had a path where it did not: a division block whose numbers
+would not parse was appended to nothing, so it was **neither verified nor reported**, and
+**the census cannot name what the parser never returned**. The file then reads as fully covered.
+**That is worse than an uncovered shape — an uncovered shape is visible.** In force: **every exit
+from a shape parser appends something.** Unparseable is a **REFUSE with a line number**, never an
+absence.
+
+**(b) When the book's layout defeats a gate, the gate changes — not the transcription.** C5 গণিত
+prints long division as **aligned digits under rules with no minus signs**; the reader identified
+subtraction rows by a leading `−`, so those blocks yielded nothing. **Writing `−` into the
+extraction to feed the parser would print something the book does not print, which §3 forbids.**
+The parser was taught the layout instead: **the row immediately above a rule is the row being
+subtracted**, which is true of the signed style as well, so one reader now handles both.
+
+**The book uses both conventions, and that is the point.** ছাপা ৮ **does** print `− ৪ ০ ৫` and
+`− ২ ২ ৫` — verified by 400 dpi crop during the sibling check — while ছাপা ৩৮ prints no signs at
+all. **A gate keyed to one house style would have been silently wrong on half its own book.**
+
+## 7.18 The মই-ভাগ (ladder) is a named shape — visible before it is verified (Principal ruling 2026-08-10, CD-073)
+
+C5 গণিত finds লসাগু with a **ladder**, not a long division: the divisor line carries **several**
+dividends at once, and each row is the row above **divided entry by entry**, with entries the
+prime does not divide **carried down unchanged**.
+
+**`math_arith_check.py` was right to refuse to parse it as a division — and wrong to then say
+nothing.** Claiming no shape meant §7.17(a)'s never-vanish guarantee never engaged, so a block
+dense with this book's own hazard — multi-column numerals in fixed layout, the §7.14.2c class —
+was **invisible to the census**. In force: **a fenced block whose divisor line matches
+`<prime> ) <n>, <n>[, …]` is reported as `ladder (মই-ভাগ)`, REFUSE**, with its line number and
+rung count.
+
+**Scope is visibility, and the limit is deliberate.** Verifying a ladder — every entry divisible
+by the stated prime, indivisible entries carried down untouched, the left column's product equal
+to the লসাগু — is a real evaluator and **a separate ruling**. Until it exists, ladder arithmetic
+stays where it is: **read by hand at 400 dpi**. **REFUSE means "nothing here was machine-checked",
+and saying so is the whole point** — an honest gap named in the census beats a silent one.
+
+## 7.16 Assamese letters are not Bengali letters — an executed check, not a proofreading habit (Principal ruling 2026-08-10, CD-071)
+
+**`ৰ` (U+09F0) and `ৱ` (U+09F1) have no valid use in a Bengali extraction.** They are the
+Assamese letters of the shared Bengali-Assamese script; Bengali ra is `র` (U+09B0) and Bengali
+ba is `ব` (U+09AC). A hit is therefore **never a house-style question and never a judgement
+call** — which is exactly what makes it gate-able **with no false positives by construction**.
+
+**`python tools/audits/bangla_script_check.py` fails on any occurrence in authored text**, in
+any `canon/`, `_inbox/` or `workstreams/` markdown, printing every hit with file, line, column
+and the word it sits in.
+
+**Why it is code and not a habit.** The C5 গণিত অধ্যায় ৩ draft carried **27 occurrences across
+8 words**, 18 of them `প্ৰাথমিক` — the running head of **every page of the book**. Against
+`প্রাথমিক` that is one glyph's inner curve at reading size. **No human proofreader catches that
+reliably; a machine catches it perfectly.** CR-003 was the mirror image — the machine channel
+caught a dropped য-ফলা on a page already read at 400 dpi and signed off পূর্ণ. **One error a
+machine misses and a human finds; one a human misses and a machine finds. Neither channel is
+the reliable one — the reliability is in the disagreement**, which is §7.14's whole thesis,
+now demonstrated in both directions on one chapter.
+
+**Two exemptions, both narrow and both visible in the source:**
+
+- **A file that declares itself `MACHINE OUTPUT`** in its header (§7.14 draft convention) is
+  **counted and reported, never failed.** A committed OCR draft is *supposed* to contain these
+  characters — it is evidence preserved byte-for-byte so the disagreement log can cite it, and
+  "correcting" it would destroy the evidence.
+- **A citation inside `backticks`.** The disagreement log and the corrections ledger must be
+  able to quote `প্ৰাথমিক` in order to say it is wrong; **a gate that forbids naming the defect
+  makes the defect unwriteable.** Inline code is already markdown's way of saying "literal
+  string, not prose". **Bare prose stays clean, and fenced blocks are still checked** — in an
+  extraction a fence carries authored transcription of the book, so contamination there is
+  contamination.
+
+## 7.15 The trip-wire counts only the disagreements it was built to catch — supersedes 7.14.2a's counting rule (Principal ruling 2026-08-10, CD-069)
+
+**7.14.2a was written direction-blind, and the very first control set walked into the gap.** It
+counts *any* substantive disagreement, so four disagreements would have voided C5 গণিত অধ্যায় ৩ —
+including the one where the OCR was **right** and our own পূর্ণ-depth transcription was **wrong**
+(CR-003, the dropped য-ফলা in `উপলক্ষ্যে`). Read literally, the rule retires the pipeline for
+finding exactly what the pipeline exists to find.
+
+**In force: the trip-wire counts only a substantive disagreement where the OCR LOSES on a plain-prose
+line inside the 10% sample.** Explicitly **excluded from the count**:
+
+- **the §7.14.2(b) weak-glyph classes** and **the §7.14.2(c) table, blank-box and `✗`/`✓` classes** —
+  these are **crop-mandatory and are never accepted at draft value**, so an OCR failure there
+  measures nothing about the sample. It was already going to be read at 400 dpi.
+- **any disagreement where the OCR WINS.** That is not a trip-wire hit — **it is evidence the
+  channel works**, and what it tightens is scrutiny of **our own prior reading**, not of the
+  pipeline. It belongs in the corrections ledger as our error (AGENTS.md §6), not in the trip-wire
+  count as the machine's.
+
+**Everything else in 7.14.2a is unchanged:** one counted disagreement widens the sample to **25%**;
+a second **voids OCR-corroboration for the chapter**, which drops to **raster-full**. **The
+threshold did not move — only what is counted toward it.**
+
+**Applied to the first control set (ছাপা ৩১–৩৪): zero trip-wire hits, one canon error caught.**
+The three OCR failures (`পুরণ` for `পূরণ` · `গল্লটি` for `গল্পটি` · `সর্বনিয়` for `সর্বনিম্ন`) are
+all weak-glyph-class and all crop-mandatory; the fourth was ours. **The pipeline proceeds, and the
+reason it proceeds is written down rather than assumed.**

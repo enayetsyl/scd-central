@@ -1,0 +1,63 @@
+GATE SWEEP — SITTING 2 (P-021 · CD-077) · 2026-08-12T00:02:34Z
+
+########## STEP 3 · TRI-SWEEP — অধ্যায় ৩ · ৪ · ৫ under the hardened SLOTS gate ##########
+-- C5_MATH_Source_03.md --
+[PASS   ] RANGE    stated range অধ্যায় 3-3: all 1 section(s) present
+[PASS   ] SLOTS    all 11 MATH spine slots accounted for; 11 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+7) over 12 verified rows; 18 body refs monotonic within 31-48, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  43 of 43 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; 12 row(s) 'পূর্ণ', 31 row(s) 'OCR-corroborated' with numeral-crop evidence, 22 of those tabular and cell-order-matched; log present
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+
+-- C5_MATH_Source_04.md --
+[PASS   ] RANGE    stated range অধ্যায় 4-4: all 1 section(s) present
+[PASS   ] SLOTS    all 11 MATH spine slots accounted for; 11 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+7) over 12 verified rows; 14 body refs monotonic within 49-62, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  50 of 50 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; 3 row(s) 'পূর্ণ', 47 row(s) 'OCR-corroborated' with numeral-crop evidence, 22 of those tabular and cell-order-matched; log present
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+
+-- C5_MATH_Source_05.md --
+[PASS   ] RANGE    stated range অধ্যায় 5-5: all 1 section(s) present
+[PASS   ] SLOTS    all 11 MATH spine slots accounted for; 11 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+7) over 10 verified rows; 28 body refs monotonic within 63-90, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  109 of 109 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; 78 row(s) 'পূর্ণ', 31 row(s) 'OCR-corroborated' with numeral-crop evidence, 15 of those tabular and cell-order-matched; log present
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+
+########## SLOTS seeds — the two new ones, both directions ##########
+[RED    ] SLOTS  · one spine slot dropped from the cross-reference   (C5_BAN_Source_01.md)
+[RED    ] SLOTS  · every ID present but one label SHIFTED onto the next slot   (C5_MATH_Source_01.md)
+[RED    ] SLOTS  · every ID present but one label INVENTED (a chapter topic)   (C5_BAN_Source_01.md)
+
+########## full repo · all six gates ##########
+source_check           SELFTEST: PASS
+math_arith_check       SELFTEST: PASS
+bangla_script_check    SELFTEST: PASS
+canon_check            ########## SLOTS seeds — the two new ones, both directions ##########
+[RED    ] SLOTS  · one spine slot dropped from the cross-reference   (C5_BAN_Source_01.md)
+[RED    ] SLOTS  · every ID present but one label SHIFTED onto the next slot   (C5_MATH_Source_01.md)
+[RED    ] SLOTS  · every ID present but one label INVENTED (a chapter topic)   (C5_BAN_Source_01.md)
+
+########## full repo · all six gates ##########
+source_check           SELFTEST: PASS
+math_arith_check       SELFTEST: PASS
+bangla_script_check    SELFTEST: PASS
+canon_check            RESULT: FAIL (4 fail, 1 warn)
+tools_check            RESULT: CLEAN (0 fail, 2 warn)
+grid_count_check       SELFTEST: PASS
+
+########## FINAL · all six gates after CD-077 recorded ##########
+source_check           SELFTEST: PASS
+math_arith_check       SELFTEST: PASS
+bangla_script_check    SELFTEST: PASS
+canon_check            RESULT: CLEAN (0 fail, 1 warn)
+tools_check            RESULT: CLEAN (0 fail, 2 warn)
+grid_count_check       SELFTEST: PASS
+
+########## math_arith regression · five chapters ##########
+ch01  VERDICT: CLEAN — 26 verified · 3 uncovered (full manual
+ch02  VERDICT: CLEAN — 14 verified · 0 uncovered (full manual
+ch03  VERDICT: CLEAN — 21 verified · 4 uncovered (full manual
+ch04  VERDICT: CLEAN — 20 verified · 0 uncovered (full manual
+ch05  VERDICT: CLEAN — 154 verified · 1 uncovered (full manua

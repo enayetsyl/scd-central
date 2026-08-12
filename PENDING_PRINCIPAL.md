@@ -33,3 +33,335 @@ Ruled rows stay below as history; a reversal is a new row citing the old, never 
 | PENDING-P-003 | 2026-08-09 | islamic-studies (+ any Arabic subject) | CD-012 makes Arabic script RED in any string, but islamic-studies and the Arabic subject will need ayat, hadith and du'a. Does tier 1 carve out Arabic-bearing subjects? | — | — | **RULED 2026-08-09 → CD-014** (tier 1 stands for all current workstreams; ground restated as renderer capability; lifts per render path on proven shaping + verbatim-sourced আলিম-reviewed text; `ARABIC-SLOT` placeholder meanwhile). |
 | PENDING-P-002 | 2026-08-09 | canon/language + hub-export + support-books | Script-guard sources disagreed (CD-011 cross-check): Hub harness has none, SB validator check 8 has a narrower one than the old canon summary. Which is canon? | — | — | **RULED 2026-08-09 → CD-012** (SB validator's verified scope, 3 tiers; old summary corrected on 3 of 4 items). Harness gap logged upstream as UP-001 / CD-013. |
 | PENDING-P-001 | 2026-08-09 | canon (all curation consumers) | REF-1 v1.2 declares Class 1 Bangla/English scope — how is C2–C5 / other-subject curation governed? | — | — | **RULED 2026-08-09 → CD-015** (whole-school scope, extends one class per year; class list read from SCHOOL_FACTS.md; overrides REF-1 §1.2, which is LOCKED and not edited). |
+
+## ⚑ PENDING-P-016 — `math_arith_check.py` silently drops a long-division block that prints no minus signs
+
+**Raised:** 2026-08-10 · **Workstream:** canon/_wip/c5-math · **Needed by:** before ছাপা ৩৯ is transcribed
+**Status:** ✅ **CLOSED 2026-08-10 by CD-072** — both parts built and seeded; `SELFTEST: PASS`.
+Evidence: `canon/_wip/c5-math/evidence/GATE_SWEEP_CD072_2026-08-10.txt`.
+**Sibling check resolved CLEAN:** ছাপা ৮ **does** print `−` (400 dpi crop) — `C5_MATH_Source_01.md`
+is faithful and owes no correction. The book uses **both** conventions in different chapters, which
+is why the parser now reads both rather than picking one.
+
+**What was found.** `parse_divisions` identifies a subtraction row by a leading `−`/`-`. **C5 গণিত
+prints its long divisions with no minus signs at all** — just aligned digits under rules. When the
+subtraction rows carry no sign, `subs` comes back empty, the block fails the guard
+`if None not in (...) and subs:`, and **it is appended to nothing: neither verified nor reported**.
+
+**Measured, not suspected.** The same ৬৯০৫ ÷ ৪ block, run through `parse_divisions`:
+
+```
+no minus  -> blocks found: 0
+with minus-> blocks found: 1
+```
+
+**Why this is more serious than an uncovered shape.** CD-059 exists so unparsed shapes are *named* in
+the census rather than vanishing. A `☐`-bearing block REFUSEs and is listed — visible. **This one is
+absent.** The census cannot report what the parser never returned, so the file looks fully covered
+while two complete divisions went unchecked. **Silence is the failure mode, not the gap.**
+
+**Scope right now:** ছাপা ৩৮'s two blocks (৫৩৯৪০ ÷ ৪ and ৬৯০৫ ÷ ৪). Both were **verified by hand at
+400 dpi** — ১৩৪৮৫ ভাগশেষ ০ and ১৭২৬ ভাগশেষ ১, every subtraction row matched — and the extraction says
+so next to them. **অধ্যায় ৩ has more divisions ahead (ছাপা ৩৯–৪৮), and every one will be dropped the
+same way until this is fixed.**
+
+**Not fixed by the agent, and the reason is the transcription rule, not caution.** Adding `−` to make
+the parser bite would be **printing something the book does not print** (SOURCE_POLICY §3). The
+extraction must stay faithful; the parser must learn the book's layout.
+
+**Proposed fix, one recommendation:** treat a rule-delimited numeric row inside a division block as a
+subtraction row **whether or not it carries a sign**, and — separately and more importantly — **make an
+unparseable division block REFUSE-and-report instead of disappearing**, so the census can never again
+be silent about one. Seeds both ways: a signless block must verify; a signless block with a mutated
+subtraction row must go RED; an undetectable block must appear as REFUSE, never absent.
+
+**Note on the sibling file (AGENTS.md §6).** `C5_MATH_Source_01.md` writes its divisions **with** `−`.
+Whether the book prints those signs on ছাপা ৮ was not re-checked this sitting — **if it does not, that
+extraction has an unfaithful character in it** and the same crop check is owed there. Raised, not
+assumed.
+
+## ⚑ PENDING-P-017 — the ladder (মই-ভাগ) is a shape no gate models and no census names
+
+**Raised:** 2026-08-10 · **Workstream:** canon/_wip/c5-math · **Needed by:** before অধ্যায় ৩ closes
+**Status:** ✅ **CLOSED 2026-08-10 by CD-073** — census-visibility built and seeded (6 cases, PASS);
+ladder *verification* deliberately deferred to its own ruling. Evidence:
+`canon/_wip/c5-math/evidence/GATE_LADDER_CD073_2026-08-10.txt`.
+
+**What.** ছাপা ৩৯ introduces the **ladder division** used for লসাগু — `২ ) ১২, ১৮` over a rule, then
+`৩ ) ৬, ৯`, then `২, ৩`. It is not a long division: the divisor line carries **several** dividends
+separated by commas, so `DIV_LINE` does not match and `parse_divisions` returns nothing.
+
+**That part is correct** — a ladder is genuinely a different shape and must not be simulated as a
+long division. **The problem is what happens next: nothing.** The block claims no shape, so
+CD-072's REFUSE-never-vanish rule never engages, and the census line names `prose carrying numbers`
+and `÷ long division` but **has no name for a ladder at all**. Measured: `parse_divisions` on the
+ছাপা ৩৯ ladder returns **0 blocks**, and the census gains **0 entries**.
+
+**Why it matters here specifically.** A ladder is dense with exactly the content this book gets
+wrong — multi-column numerals in a fixed layout, the §7.14.2c hazard class. অধ্যায় ৩ has **two on
+ছাপা ৩৯ alone** and near-certainly more on ৪০–৪৮, and চ্যানেল-অমিল row 5 already showed the OCR
+reordering a multi-column row while reading every digit correctly.
+
+**Both ছাপা ৩৯ ladders are hand-verified at 400 dpi and arithmetically sound:**
+`২ ) ১২, ১৮ → ৬, ৯ → ২, ৩` with `২ × ৩ × ২ × ৩ = ৩৬` = লসাগু(১২, ১৮) ✓, and
+`২ ) ১২, ১৪, ১৮ → ৬, ৭, ৯ → ২, ৭, ৩` with `২ × ৩ × ২ × ৭ × ৩` = ২৫২ = লসাগু(১২, ১৪, ১৮) ✓
+(৭ is carried down undivided per the book's own printed step (২)).
+
+**Proposed, one recommendation — smallest useful first: make the shape VISIBLE before making it
+verified.** Teach the census to name a fenced block whose first line matches
+`<prime> ) <n>, <n>[, <n>…]` as **`ladder (মই-ভাগ)`, REFUSE**, so it can never be silently absent.
+That is §7.17(a) applied to a new shape and is a small change. **Verifying** a ladder — each row
+divides by the stated prime, indivisible entries carry down unchanged, and the product of the left
+column equals the লসাগু — is a **separate, larger ruling** and should not be bundled with it.
+
+**Not built.** A second tooling detour inside a chapter the Principal asked to close would repeat
+what already cost a sitting; and the arithmetic here is hand-verified, so nothing is unchecked —
+only unnamed.
+
+## ⚑ PENDING-P-018 — the coloured-grid figure is a shape whose *count* is the answer, and nothing checks it
+
+> **✅ BUILT & CLOSED 2026-08-11 → CD-076.** Sitting 1, one commit, all four tasks together. Selftests PASS; evidence `canon/_wip/c5-math/evidence/GATE_SITTING1_2026-08-11.txt`.
+
+**Raised:** 2026-08-11 · **Workstream:** canon/_wip/c5-math · **Needed by:** before অধ্যায় ৫ closes
+**Status:** OPEN — propose-don't-build
+
+**What.** অধ্যায় ৫ teaches decimals with **১০ × ১০ শতাংশ-ছক**: a 100-cell grid with some cells
+coloured, and the pupil writes the shaded part as a fraction and a decimal. ছাপা ৬৩ alone carries
+**three** of them (৪৮, ৬০, ৪৯ cells) and the chapter runs 28 pages.
+
+**Why it is not just another figure.** In every previous chapter a figure was context — a photo, a
+ribbon, a Venn. **Here the figure IS the number.** "৪৮ cells shaded" is the value ০.৪৮, and a
+question authored from this page rests entirely on that count being right. It is CR-002's failure
+class (counting, not reading) at 100 cells per figure, and `math_arith_check.py` has nothing to say
+about it — there is no printed arithmetic to check.
+
+**What was done on ছাপা ৬৩, so nothing is unverified today.** Two independent channels, agreeing:
+**(a)** each grid enlarged at 400 dpi and counted by eye, row by row; **(b)** an **ad-hoc pixel
+sampler** measuring colour saturation at the centre of each cell of a 10×10 lattice. Both returned
+**৪৮ · ৬০ · ৪৯**.
+
+**The sampler is NOT a gate and is not claimed as one (CD-020).** Run once, no seeds, not in
+`tools/`, no SMOKE. **The crop is the authority; the sampler was a second pair of eyes.**
+
+**Proposed, smallest useful first:** promote the lattice sampler to a real gate —
+`tools/audits/grid_count_check.py` — that takes a page raster and a declared count, samples the
+lattice, and goes **RED on disagreement**. Seeds both ways: a correct declared count CLEAN; a count
+off by one RED; a grid whose lattice cannot be located REFUSE-and-report (never silent, §7.17(a)).
+
+**Not built** — the অধ্যায় ৩ lesson: no gate construction mid-chapter. The counts stay
+double-channel by hand until this has its own sitting.
+
+## ⚑ PENDING-P-019 — `math_arith_check.py` cannot read a decimal, in the decimals chapter
+
+> **✅ BUILT & CLOSED 2026-08-11 → CD-074.** Sitting 1, one commit, all four tasks together. Selftests PASS; evidence `canon/_wip/c5-math/evidence/GATE_SITTING1_2026-08-11.txt`.
+
+**Raised:** 2026-08-11 · **Workstream:** canon/_wip/c5-math · **Needed by:** before অধ্যায় ৫ closes
+**Status:** OPEN — propose-don't-build. **Run halted at ছাপা ৭০ to report this.**
+
+**What.** The evaluator's `EXPR_OK` character class does not include the decimal point, so **any
+line containing a decimal number yields no evaluable segment**. Measured, not surmised:
+
+```
+EXPR_OK accepts "০.৬"?  -> False
+parse_chains("৬/১০ = ০.৬")        -> chains found: 0
+parse_chains("০.৫ + ০.৫ = ১.০")   -> chains found: 0
+parse_chains("০.৩ + ০.৪ = ০.৯")   -> chains found: 0     <-- a WRONG sum, unseen
+```
+
+**Why it matters here specifically.** In অধ্যায় ১–৪ the arith gate was the second channel that
+caught *my* transcription errors — a mis-cropped digit broke an equality and went RED. It did
+exactly that on অধ্যায় ৪'s ছাপা ৫৯. **In অধ্যায় ৫ that net is absent for the chapter's own
+subject.** Every decimal sum, difference and equivalence the book prints is machine-unchecked;
+the six chains verified so far are all *fraction* lines that happen to sit beside the decimals.
+**The chapter is single-channel in the strongest sense: for decimals, the crop is the only check.**
+
+**Not a false-RED risk — the current behaviour is safe.** Because `EXPR_OK` rejects the point, a
+decimal line is *refused*, never mis-evaluated. Nothing is silently wrong today.
+
+**But there is a landmine worth recording.** `_num("০.৬")` returns **6** — it strips the point.
+No live path reaches it (chains are guarded by `EXPR_OK`; blocks and divisions use `cells()`,
+which also rejects `.`), **but any future code path that passes a decimal to `_num` would read
+০.৬ as 6 and could go RED on a correct transcription, or CLEAN on a wrong one.** Whoever builds
+the decimal evaluator must fix `_num` in the same commit, not after.
+
+**Proposed:** extend the evaluator to Bengali decimals using **`Fraction`, exactly as CD-064 did
+for `÷`** — never float, so `০.১ + ০.২ = ০.৩` is exact and not 0.30000000000000004. Seeds both
+ways: a correct decimal chain CLEAN; a mutated decimal digit RED; a **shifted decimal point** RED
+(the chapter's signature failure); and `_num` on a decimal asserted to raise or return None rather
+than silently drop the point.
+
+**Not built** — the অধ্যায় ৩ lesson. **Pairs naturally with PENDING-P-018:** both want the same
+dedicated gate sitting after অধ্যায় ৫'s pages are read, so both can be seeded against the whole
+chapter's shapes rather than one page's.
+
+**Nothing is unverified today.** Every decimal on ছাপা ৬৩–৬৯ was crop-read under the full
+three-clause convention, and every printed computation was hand-checked and recorded next to it.
+
+---
+
+## ⚑ PENDING-P-020 — the book prints deliberately WRONG arithmetic, marked `✗`, and no gate models that shape
+
+> **✅ BUILT & CLOSED 2026-08-11 → CD-075.** Sitting 1, one commit, all four tasks together. Selftests PASS; evidence `canon/_wip/c5-math/evidence/GATE_SITTING1_2026-08-11.txt`.
+
+**Status: OPEN. Logged, hand-verified, not built** — the অধ্যায় ৩ lesson, and the standing
+instruction that a new gate-shape found mid-chapter is logged and nothing more.
+
+**The shape, measured.** ছাপা ৭৩ prints four worked items. Three of them show **two blocks
+side by side**: a left block marked with a red `✗` whose arithmetic is *wrong on purpose*, and
+a right block marked `✓` that is correct. The three ✗ blocks are:
+
+| ছাপা (হুবহু) | সঠিক মান | কেন ছাপা হয়েছে |
+|---|---|---|
+| `৪ − ২.৩১ = ২.৩৩` | ১.৬৯ | উপরের রাশি ডান-প্রান্তে সাজানো, বিন্দু মেলানো হয়নি |
+| `৩.৭৫ − ০.৫ = ৩.৭০` | ৩.২৫ | `০.৫`-এর `৫` শতাংশের স্তম্ভে বসেছে |
+| `৭.৫৮ − ৬.৮৭ = ৭১` | ০.৭১ | ফলাফলে বিন্দু ও এককের `০` দুটোই বসানো হয়নি |
+
+**Why this is a gate-shape and not just a page.** §7.11's table-hold exists for a line that is
+*wrong in the book by accident* (অধ্যায় ৪, ছাপা ৫৯). This is different in kind: the book is
+**correct to print these**, and the `✗` is load-bearing pedagogy. Two consequences:
+
+1. **The mark is part of the datum.** A ✗ block quoted without its ✗ inverts the book's teaching.
+   Chapter 2 already met this once, for comparisons, and answered it with the `সত্য`/`মিথ্যা`
+   marking convention that `math_arith_check.py` reads. **The same idea now has to reach worked
+   blocks**, not only comparisons.
+2. **This directly constrains PENDING-P-019.** The moment a decimal evaluator exists, these three
+   blocks become the first thing it reads, and it will go **RED on a correct transcription** unless
+   it understands `✗`. So P-019 cannot ship a bare evaluator.
+
+**Binding note for the build, to sit alongside the `_num` clause in P-019:** the decimal
+evaluator and `✗`/`✓`-awareness must land **in the same commit**. Seeds both ways — a `✗`-marked
+block whose arithmetic is wrong is **CLEAN** (the book said so); a `✗`-marked block whose
+arithmetic is *right* is **RED** (a mis-transcription, the exact mirror of the `মিথ্যা` seed);
+a `✓`-marked block that is wrong is **RED**. **A decimal evaluator that has never been shown to
+stay quiet on a ✗ block is worse than no evaluator**, because its first three findings in this
+chapter would all be false.
+
+**Protection taken today, coverage deferred.** All three ✗ blocks are in **table-hold (§7.11)** in
+`C5_MATH_Source_05.md`, so no future gate can reach them by accident; and they are recorded in
+that file's `## ⛔ উৎস-সীমা` as ⛔-৪ with the never-quote-without-the-✗ condition. **Nothing was
+built mid-chapter.**
+
+**Hand-verified.** All seven marks counted twice (crop, and the OCR draft's four `\sqrt` +
+three `\times`/`X` — the counts agree), and all four correct results checked by hand column by
+column: ৭.০০ · ১.৬৯ · ৩.২৫ · ০.৭১.
+
+### Amendment, 2026-08-11 — a **second sub-shape**, found on ছাপা ৮৬
+
+**Scope widened by the agent; no new ruling sought.** This is the same doctrine and the same
+gate sitting, so it is folded into P-020 rather than opened as P-021.
+
+ছাপা ৮৬'s অনুশীলন ৬ prints **three more deliberately-wrong long divisions — with no `✗` at
+all.** The only signal is the instruction: *নিচের হিসাবগুলোতে কী ভুল আছে ব্যাখ্যা করি এবং
+তা ঠিক করি।*
+
+| ছাপা (হুবহু) | সঠিক | ভুলের ধরন |
+|---|---|---|
+| `৪.৬৫ ÷ ১৫ = ৩১` | ০.৩১ | point absent |
+| `২১.৩২ ÷ ৫.২ = ৪১` | ৪.১ | point absent |
+| `৩ ÷ ০.১২৫ = ০.০২৪` | ২৪ | point three places wrong — **1000× too small** |
+
+**Why this matters for the build.** P-020's original seed spec keyed on the `✗` mark. That spec
+would leave these three **RED on a faithful transcription**, because there is no mark to key on.
+So the evaluator needs **two** signals, not one:
+
+1. **marked** — a `✓`/`✗` beside a worked block (ছাপা ৭৩);
+2. **declared** — a block sitting under an instruction that says *find the error* (ছাপা ৮৬).
+
+**Binding, alongside the `_num` clause and the `✗`-awareness clause — all in one commit:** the
+evaluator must treat a block as *expected-wrong* when **either** signal is present, and seeds must
+cover both. Add: a declared-wrong block that is **arithmetically right** is **RED** (a
+mis-transcription — the mirror seed), exactly as for the `✗` case.
+
+**Interim handling taken, same as before:** all three panels are in **table-hold (§7.11)** and
+recorded as **⛔-৮** in `C5_MATH_Source_05.md` with a never-quote-without-the-instruction
+condition. **Nothing built mid-chapter.** All three true values hand-checked with `Fraction`:
+০.৩১ · ৪.১ · ২৪.
+
+
+---
+
+## ⚑ PENDING-P-021 — `source_check.py`'s SLOTS test checks that a slot is *mentioned*, not that it is *correctly identified* — and two closed chapters are wrong because of it
+
+> **✅ BUILT & CLOSED 2026-08-11 → CD-077.** Sitting 2, three steps in order: gate hardened → অধ্যায় ৩ and ৪ corrected as dated append-only blocks → tri-sweep ৩·৪·৫ all SLOTS GREEN. Evidence `canon/_wip/c5-math/evidence/GATE_SITTING2_2026-08-11.txt`.
+
+**Status: OPEN. Found at অধ্যায় ৫'s close, by writing the slot table against the spine
+instead of copying the previous chapter's. Ch5 fixed before closing; ch3 and ch4 NOT
+touched — they are closed and already reported, so correcting them is the Principal's call.**
+
+**The measurement.** `canon/marklogic/MarkLogic_MATH_Spine.md` defines eleven slots, and they
+are **exam question-types, not chapter topics**:
+
+| slot | spine name |
+|---|---|
+| MATH-S01 | বহুনির্বাচনি প্রশ্ন |
+| MATH-S02 | শূন্যস্থান পূরণ ও চিহ্ন বসানো |
+| MATH-S03 | সংক্ষিপ্ত উত্তরের প্রশ্ন |
+| MATH-S04 | চার প্রক্রিয়ার সমস্যা |
+| MATH-S05 | লসাগু ও গসাগু |
+| MATH-S06 | সাধারণ ও দশমিক ভগ্নাংশ |
+| MATH-S07 | শতকরা |
+| MATH-S08 | গড় |
+| MATH-S09 | পরিমাপ |
+| MATH-S10 | জ্যামিতি |
+| MATH-S11 | উপাত্ত |
+
+`C5_MATH_Source_03.md` and `C5_MATH_Source_04.md` both name them as **chapter topics**
+(`S04 = সাধারণ ভগ্নাংশ`, `S05 = দশমিক`, `S09 = জ্যামিতি`…). From S05 onward the whole list is
+**shifted by one**, and S01–S04's names are **invented**. Both chapters closed **SLOTS PASS**.
+
+**Why the gate passed them.** The SLOTS check tests only that each of the eleven IDs appears
+somewhere in the file. It does not compare the row's description against the spine. So a table
+in which **every single row is mislabelled** is green.
+
+**Why it matters, concretely.** The mapping is what step ④ reads to decide *which chapter
+sources which exam slot*. Under the wrong table, অধ্যায় ৪ looks like the source for "সাধারণ
+ভগ্নাংশ (S04)"; under the spine it is a source for **চার প্রক্রিয়ার সমস্যা (S04)** and for
+**সাধারণ ও দশমিক ভগ্নাংশ (S06)** — different slots, different mark weights. And the corrected
+অধ্যায় ৫ table shows something the wrong shape hid entirely: **the chapter is a direct source
+for five slots at once** (S01 · S02 · S03 · S04 · S06), because the book itself prints MCQs,
+fill-in-the-blanks, short answers and word problems inside the chapter.
+
+**Two questions for the Principal.**
+
+1. **Correct ch3 and ch4?** They are closed, gate-green, and reported. Re-opening them touches
+   the CD-067 atomic-close record. The transcriptions themselves are untouched — the error is
+   confined to the slot table at the end of each file. Recommend: correct both, as a single
+   dated amendment block in each file rather than a silent edit, so the record shows what was
+   believed at close and what replaced it.
+2. **Tighten the gate?** Proposed smallest-useful scope: SLOTS additionally requires each row to
+   carry the spine's own name for that slot, compared literally against
+   `MarkLogic_MATH_Spine.md`'s `### \`MATH-Sxx\` — <name>` headings. Seeds both ways — a table
+   with a renamed slot goes **RED**; a correct table stays CLEAN; a slot missing entirely stays
+   RED as it does today. This is cheap and it is the check that would have caught this at
+   অধ্যায় ৩'s close instead of অধ্যায় ৫'s.
+
+**Not built.** Logged and handed over, per the standing rule for a new gate-shape.
+
+### ✅ RULED — Principal, 2026-08-11. Status: **RULED, build scoped, not yet built.**
+
+**Q1 — correct অধ্যায় ৩ and ৪: YES**, as **dated correction-blocks**. Both SLOTS tables are
+re-derived from `MarkLogic_MATH_Spine.md`; each chapter gets a CR/supersede row stating the
+error (**chapter-topic vs question-type, propagated by table-copying**), the corrected mapping,
+and the date. **Append-only and visible — never a silent edit.** **Do NOT re-extract:** only
+SLOTS was wrong; the transcriptions stand.
+
+**Q2 — harden the SLOTS gate: YES.** The gate must verify each cited slot ID **against the
+spine's own label**, not merely that an ID is present. The Principal's framing, recorded because
+it names the class: *presence-not-correctness is the **CD-070 substring-luck failure at the
+semantic level***. Seed both ways — correct mapping **PASS**, shifted/invented mapping **FAIL**.
+**This gate would have caught ৩/৪ at close; it is the same class of fix as P-018/019/020.**
+
+**Counter ruling — stays at 2.** অধ্যায় ৫'s close does **not** reach 3. The chapter is
+mechanically GREEN, but **the same close proved অধ্যায় ৩/৪'s SLOTS-green was weaker than
+claimed**, so "three consecutive GREEN" is not yet satisfied. **The counter reaches 3 only after
+৩ and ৪ are corrected and the hardened SLOTS gate sweeps all three GREEN.** That sitting is what
+*makes* the third GREEN real — it is not optional cleanup.
+
+**Ordered tooling debt — two sittings** (see `canon/_wip/c5-math/STATE.md` for the executable
+scope):
+
+- **Sitting 1** — P-018 + P-019 + P-020, **one commit**.
+- **Sitting 2** — P-021: harden SLOTS → correct ৩/৪ as dated CR blocks → re-sweep ৩/৪/৫.
+  **Counter reaches 3 on that sweep.**
+
+**Sync held** pending the Principal's go after both sittings are scoped.
