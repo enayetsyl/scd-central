@@ -1,0 +1,420 @@
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_02.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 2-2: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 8 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 8 body refs monotonic within 7-11, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_03.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 3-3: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 6 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 5 body refs monotonic within 12-15, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_04.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 4-4: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 8 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 15 body refs monotonic within 16-23, 0 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  1 of 2 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_05.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 5-5: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 4 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 10 body refs monotonic within 24-29, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_06.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 6-6: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 4 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 6 body refs monotonic within 30-34, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_07.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 7-7: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 3 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 5 body refs monotonic within 35-38, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_08.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 8-8: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 4 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 11 body refs monotonic within 39-46, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_09.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 9-9: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 3 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 9 body refs monotonic within 47-51, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_10.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 10-10: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 3 verified rows; 5 body refs monotonic within 52-53, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_11.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 11-11: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 3 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 13 body refs monotonic within 54-60, 1 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  1 of 2 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_12.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 12-12: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 3 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 14 body refs monotonic within 61-68, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_13.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 13-13: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 4 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 3 verified rows; 8 body refs monotonic within 69-73, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_14.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 14-14: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 3 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 3 verified rows; 8 body refs monotonic within 74-78, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_15.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 15-15: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 5 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 3 verified rows; 7 body refs monotonic within 79-81, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_16.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 16-16: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 5 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 3 verified rows; 10 body refs monotonic within 82-90, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_17.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 17-17: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 4 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 6 body refs monotonic within 91-96, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_18.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 18-18: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 7 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 5 body refs monotonic within 97-99, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_19.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 19-19: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 6 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 8 body refs monotonic within 100-105, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-english/C5_ENG_Source_20.md
+subject : class 5 · ENG
+grammar : chapter word 'Unit'
+channel : dual
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range Unit 20-20: all 1 section(s) present
+[PASS   ] SLOTS    all 14 ENG spine slots accounted for; 6 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+6) over 4 verified rows; 8 body refs monotonic within 106-111, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 1 spot-check row(s) signed
+[PASS   ] DEPTH    dual-channel source — §7.4 sampling depth governs, nothing to enforce here
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_01.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 1-1: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 11 verified rows; 11 body refs monotonic within 1-5, 6 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 6 spot-check row(s) signed
+[PASS   ] DEPTH    single-channel source; all 6 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_02.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 2-2: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 20 body refs monotonic within 6-18, 2 commentary/cross-ref refs in range
+[PENDING] SIGNOFF  1 of 10 spot-check row(s) unsigned — only the Principal or the teacher can close this
+[PASS   ] DEPTH    single-channel source; all 10 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : NOT DONE — mechanical checks pass; spot-check sign-off owed
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_03.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 3-3: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 10 body refs monotonic within 19-23, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 8 spot-check row(s) signed
+[PASS   ] DEPTH    single-channel source; all 8 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_04.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 4-4: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 8 body refs monotonic within 24-27, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 7 spot-check row(s) signed
+[PASS   ] DEPTH    single-channel source; all 7 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_05.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 5-5: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 8 body refs monotonic within 28-31, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 6 spot-check row(s) signed
+[PASS   ] DEPTH    single-channel source; all 6 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_06.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 6-6: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 11 body refs monotonic within 32-37, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 7 spot-check row(s) signed
+[PASS   ] DEPTH    single-channel source; all 7 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_07.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 7-7: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 9 body refs monotonic within 38-41, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 6 spot-check row(s) signed
+[PASS   ] DEPTH    single-channel source; all 6 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_08.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 8-8: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 9 body refs monotonic within 42-46, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 7 spot-check row(s) signed
+[PASS   ] DEPTH    single-channel source; all 7 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_09.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 9-9: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 10 body refs monotonic within 47-52, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 7 spot-check row(s) signed
+[PASS   ] DEPTH    single-channel source; all 7 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_10.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 10-10: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 9 body refs monotonic within 53-56, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 5 spot-check row(s) signed
+[PASS   ] DEPTH    single-channel source; all 5 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : GREEN
+
+source_check.py — SOURCE_POLICY.md §5
+file    : canon/_wip/c5-bangla/C5_BAN_Source_11.md
+subject : class 5 · BAN
+grammar : chapter word 'পাঠ'
+channel : single (§7.4 sampling unavailable)
+------------------------------------------------------------------------------
+[PASS   ] RANGE    stated range পাঠ 11-11: all 1 section(s) present
+[PASS   ] SLOTS    all 15 BAN spine slots accounted for; 15 row(s) carry the spine's own label
+[PASS   ] PAGES    offset constant (+9) over 8 verified rows; 10 body refs monotonic within 57-62, 0 commentary/cross-ref refs in range
+[PASS   ] SIGNOFF  all 8 spot-check row(s) signed
+[PASS   ] DEPTH    single-channel source; all 8 sign-off row(s) marked 'পূর্ণ'
+------------------------------------------------------------------------------
+VERDICT : GREEN
+

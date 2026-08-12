@@ -1559,3 +1559,43 @@ negation commits this one). A section that draws a content-check should carry it
 **Sign-off status unchanged: Units 2–20 still BUILT, sign-off owed.** Nothing was promoted. The
 teacher check is an input to the Principal's spot-check, not a substitute for it (SOURCE_POLICY
 §7.4, AGENTS.md §2) — promotion still waits on the Principal's "done".
+
+## 2026-08-12 (continued) · CD-084 — teacher check closes sign-off; 28 files promoted
+
+**The Principal ruled the 2026-08-12 teacher content-check IS the §2.3 spot-check** for C5
+English Units 2–20 and C5 Bangla পাঠ ১–১১. **The authority was already there and was being read
+too narrowly:** §2.3 says *the Principal **or the teacher*** confirms the sampled passages, and
+`source_check.py`'s PENDING message says the same — but all thirty file headers said
+`কেবল প্রধান শিক্ষক সই করেন`. **The scaffolding was stricter than the policy it implements**,
+which is CD-079(b)'s observation arriving from the other side: agent-authored sign-off structure
+drifts from the ruled text, and **a gate that is too strict never goes red, so nothing catches it.**
+
+**95 of 98 rows signed `Teacher · 2026-08-12`. Three held, and the exclusion is §7.5's:**
+`C5_ENG_Source_04.md` (two maps, ~75 drawn place names), `C5_ENG_Source_11.md`, and
+`C5_BAN_Source_02.md` (ছবির ভেতরের আঁকা লেখা — “বুম! বুম!!”, ছাপা ১৪). Artwork-borne text has no
+second channel at all, so CD-048(b) puts it outside §7.4's sampling and keeps it Principal-only.
+
+**The third held file was not in the ruling as put to the Principal**, which named only English
+Units 4 and 11. It is held anyway: §7.5 reaches it identically, and excluding it would have been
+an artefact of which files the agent happened to enumerate when writing the question. Recorded
+rather than smoothed, because the ruling's *scope* was widened by the agent and the Principal
+should see where.
+
+**Promoted: 28 files.** 17 English units to `canon/sources/c5/english/`, 10 পাঠ to the new
+`canon/sources/c5/bangla/`, each with its own evidence. **Every one GREEN** —
+`evidence/SOURCE_CHECK_2026-08-12.txt` in both destinations. The three held files stay in
+`_wip/` at SIGNOFF PENDING, **and the gate keeps them there without help**: `check_signoff`
+reports PENDING while a row's সই/তারিখ cells read `—`, so a later session that skims CD-084 and
+sees "signed" still cannot promote them.
+
+**Shared sweep evidence was copied, not moved** (`GATE_SWEEP_2026-08-09`,
+`TEXTCHECK_RESIDUAL/SELFTEST`, both `TEXTLAYER_ARTEFACTS` files) — the held units still cite it,
+and a moved file would have left three `_wip` extractions citing evidence that is no longer
+beside them.
+
+**Gates after promotion:** `source_check.py` 28/28 **GREEN** at the new paths ·
+`--selftest` **PASS** · `bangla_script_check.py` **CLEAN** (0 in authored text) ·
+`canon_check.py` **CLEAN (0 fail, 1 warn)**, 3.3 s.
+
+**Push held.** Per CD-083(c) the range must be classified before any push, and this session's
+commits are extraction/governance work that has not been approved for sync.

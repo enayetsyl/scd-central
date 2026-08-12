@@ -8,16 +8,24 @@ A killed session must be resumable from this file alone (AGENTS.md §3).
 Book: **আমার বাংলা বই, পঞ্চম শ্রেণি**, NCTB, প্রথম মুদ্রণ সেপ্টেম্বর ২০২৫, শিক্ষাবর্ষ ২০২৬.
 **23 পাঠ, printed pages ১–১৩২.**
 
-- **পাঠ ১–১১ — ALL BUILT. EXTRACTION COMPLETE, promotion pending.** All eleven:
+- **পাঠ ১, ৩–১১ — DONE, PROMOTED 2026-08-12 (CD-084).** Ten পাঠ signed `Teacher · 2026-08-12`
+  on the teacher content-check (returned **clean**), moved with their evidence to
+  `canon/sources/c5/bangla/`, gate **GREEN** on every one.
+  Run: `canon/sources/c5/bangla/evidence/SOURCE_CHECK_2026-08-12.txt`.
+- **পাঠ ২ — HELD HERE, sign-off owed.** It records artwork-borne text — **ছবির ভেতরের আঁকা লেখা
+  “বুম! বুম!!”, ছাপা ১৪** — which has no second channel, so §7.5/CD-048(b) makes it
+  Principal-only full-check. Its other nine rows are signed; that one is not, and
+  `source_check.py` holds the file at SIGNOFF **PENDING** on its own.
+- *(Superseded by the two rows above, kept for the record.)* **পাঠ ১–১১ — ALL BUILT.** All eleven:
   `source_check.py` RANGE/SLOTS/PAGES/DEPTH **PASS**, SIGNOFF **PENDING**;
   `source_textcheck.py` **REFUSE** ×11 (see below — the correct outcome on this book, not a
   failure). Gate sweep: `evidence/GATE_SWEEP_2026-08-10.txt`.
   **Coverage verified programmatically: printed ১–৬২ contiguous, no gaps, no overlaps**,
   and `BAN-S14` bound in পাঠ ৪ only, absent in the other ten.
   **77 sign-off rows, 0 signed.**
-- **শিক্ষক content-check — returned 2026-08-12, CLEAN.** No findings on পাঠ ১–১১. This is an
-  input to the Principal's spot-check, not a substitute for it (SOURCE_POLICY §7.4); the 77
-  sign-off rows above stand unsigned and promotion still waits on the Principal's "done".
+- **শিক্ষক content-check — returned 2026-08-12, CLEAN.** No findings on পাঠ ১–১১. **Ruled at
+  CD-084 to BE the §2.3 spot-check** for these পাঠ — §2.3 always read "the Principal *or the
+  teacher*". **76 of the 77 rows are now signed; the one artwork row in পাঠ ২ is not.**
   *(C5 English's check returned three findings, all Unit 14 §3.1, all closed as no-change —
   `canon/_wip/c5-english/STATE.md`.)*
 - **পাঠ ১২ — NOT EXTRACTED by ruling.** See `EXCLUDED_paath_12.md`.

@@ -13,9 +13,15 @@ prescribed from academic year 2026. **20 units, printed pages 1–111.**
 
 - **Unit 1 — DONE.** Spot-checked and signed by the Principal, promoted to
   `canon/sources/c5/english/`, gate **GREEN** (CD-046).
-- **Units 2–20 — BUILT, sign-off owed.** Held here. `source_check.py` is RANGE/SLOTS/PAGES
-  **PASS** and SIGNOFF **PENDING** on all nineteen. Promotion = move each file plus its
-  evidence to `canon/sources/c5/english/` on the Principal's "done".
+- **Units 2, 3, 5–10, 12–20 — DONE, PROMOTED 2026-08-12 (CD-084).** Seventeen units signed
+  `Teacher · 2026-08-12` on the teacher content-check, moved with their evidence to
+  `canon/sources/c5/english/`, gate **GREEN** on every one. Run:
+  `evidence/SOURCE_CHECK_2026-08-12.txt`.
+- **Units 4 and 11 — HELD HERE, sign-off owed.** These two record **artwork-borne text**
+  (Unit 4's two maps carry ~75 drawn place names), which has no second channel, so CD-048(b)/
+  §7.5 makes it Principal-only full-check. Their prose rows are signed; the artwork row is not.
+  `source_check.py` is RANGE/SLOTS/PAGES **PASS**, SIGNOFF **PENDING** on both — the gate
+  refuses to promote them on its own, so a later session cannot move them by mistake.
 
 ## Source PDF (provenance — not committed, SOURCE_POLICY §2.1)
 
@@ -66,16 +72,17 @@ already carries the printed underline spans exactly — `want to be` / `wants to
 stopping before the article, not running on to the profession.
 Evidence gap the check exposed has been filled: **`evidence/C5_ENG_U14_p077.png` added**.
 
-This is an **input to** the Principal's spot-check, not a substitute for it. Sign-off status below
-is unchanged. *(C5 Bangla's teacher check came back clean — see `canon/_wip/c5-bangla/STATE.md`.)*
+**Ruled at CD-084: this check IS the §2.3 spot-check** for Units 2–20 — §2.3 always read
+"the Principal **or the teacher**", and the Principal-only wording in the file headers was
+scaffolding stricter than the policy it implemented. **It does not reach artwork text (§7.5).**
+*(C5 Bangla's teacher check came back clean — see `canon/_wip/c5-bangla/STATE.md`.)*
 
 ## Open / next
 
-1. Principal spot-checks Units 2–20 and signs, then "done" → promote. **Depth per CD-048:
-   one sampled passage per unit — the longest, named in each file's header — because Section B
-   is clean and every word-level disagreement is provenance-proven. Units 4 and 11 additionally
-   carry a full-check row for their artwork-borne text, which no machine can corroborate; the
-   gate FAILs either of them without it.**
+1. **Principal signs the artwork rows in Units 4 and 11, then "done" → promote those two.**
+   This is the one thing left in this workstream. Depth is **full check, never sampled**
+   (CD-048(b), §7.5): Unit 4's two maps carry ~75 drawn place names of which the text layer
+   holds not one character. Everything else is promoted.
 2. Then **C5 Bangla** — started 2026-08-09, state at `canon/_wip/c5-bangla/STATE.md`.
    ⚠️ The scope written here (**"পাঠ ১–১২ and ২৪+"**) was wrong at both ends and is superseded by
    **SOURCE_POLICY §7.6 / CD-050**: the book has **23 পাঠ**, there is no পাঠ ২৪, and পাঠ ১২ is
