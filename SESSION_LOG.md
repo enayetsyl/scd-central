@@ -1771,3 +1771,71 @@ Verbatim output pasted in the session report per AGENTS §5.
 **Committed, not pushed.** New governance text beyond the rulings as given is present (AGENTS §12's
 prose lead, the gate code, the manifest notes), so **CD-079(b)'s ruling-only carve-out does not
 apply** and the push waits on explicit Principal approval with the CD-083(c) range check pasted.
+
+---
+
+## 2026-08-14 · P00/P04 unification session 2 — continuation: the policy layer lands
+
+**Seven rulings answered, Step 2 resumed and committed, Step 3 executed in full, and the held
+commits released.** Protocol **v1.3 → v1.4**. CD rows minted this session: **CD-085 … CD-120** (36).
+
+### The rulings
+
+1. **CD-085's scoping ratified, not assumed.** Census-only; phantom resolution untouched. Recorded
+   in CD-089(d) so a later reader of CD-085 sees it was decided.
+2. **Promoted, not patched → AGENTS.md §5.1 + CD-089.** *A gate that forbids naming the defect makes
+   the defect unwriteable* is now a **gate-design rule every new gate is checked against**, and it is
+   applied to `PLACEHOLDER` in both repo-wide gates. **Three sites, one rule:** SOURCE_POLICY §7.16 ·
+   CD-085 · CD-089. Both retirement notes now quote the marker they retire — that is the verification.
+   `tools_check.py` gained a `--selftest` it did not have (5 seeds); `canon_check --selftest` is 22.
+3. **P01 scaffolded at `D-PROJ01-016` → CD-090**, option (a). Twelve attested rows recorded
+   RECONSTRUCTED-UNKNOWN; **001 / 003 / 011 recorded UNATTESTED-INSIDE-RANGE**, the third state ruled
+   real. No decision body invented anywhere.
+4. **D-1 ruled (a) → the supersede is listed.** Executed at CD-118 and QUESTION_POLICY §9.
+5. **ch3/4/5 header diff reported, nothing deleted.** ch4 and ch5 differ **only** by the §7.14.2c
+   provenance block → redundant, §12.4 case 1. **ch3 does not meet the ruling's condition**: it also
+   carries a corrected body byte (`surya-ocr 0.22.1` → `0.14.7`). Held.
+6. **CD-091 — standing precondition.** The Math lane's next session commits evidence copies for
+   `ch7`–`ch10` **before opening any chapter**. §7.14.3a already owed it.
+7. Noted; folded into CD-088's session-3 build.
+
+### Step 2 — resumed, eight checks, CLEAN, committed
+
+`QUESTION_POLICY_v0.3_DRAFT.md` verified against source on all eight checks (five named + §5 supersede
+shape + §7 promoted-source census + §9 row label). **The v0.2→v0.3 diff is exactly the seven
+corrections and nothing else** — verified by diff, not by trust. Committed as
+**`canon/QUESTION_POLICY.md` v1.0**, minting **CD-092 … CD-113** (22 rows: §2, the eighteen §3
+conflicts in order, §4, §5, §6). Both drafts removed from `_inbox/` — moved, not copied (§12.5).
+
+### Step 3 — six supersedes, each supersede-with-archive, pointer stubs not banners
+
+**Pre-supersede dependent check run first (master §5.3 / D-PROJ00-061): none of REF-01, REF-09,
+REF-10 or REF-25 is a `LOCKED_ProductionCore_v1` source — those are REF-02 · REF-07 · REF-08 ·
+REF-18 — so no built-asset rebuild is owed.** Recorded in CD-114(e).
+
+| # | File | Change | CD |
+|---|---|---|---|
+| 1 | **REF-01 → v1.3** | §1.2 only — all classes and subjects; living/append-extensible per REF-21's mechanism | CD-114 |
+| 2 | **REF-10 → v1.1** | §4's বৃত্তি bullet only | CD-115 |
+| 3 | **REF-09 → v1.1** | §4.1's easy ≥40% line only; **§4's totals overridden, not superseded** | CD-116 |
+| 4 | **REF-25 → v1.1** | Annex A demoted; §2–§3 retained; §0's Math-MCQ claim known-false at the demotion | CD-117 |
+| 5 | **MarkLogic QuestionPolicy** | §৮'s `শ্রেণি পরীক্ষা ও বড় পরীক্ষা` row, `Remember` only · §৯ → pointer + C-coded summary | CD-118 · CD-119 |
+| 6 | **QUESTION_BANK_POLICY → v1.1** | §2 one Pool · §3 `tier` · §4 keys + domain ratio to paper level · §5 gate list | CD-120 |
+
+**Every superseded LOCKED predecessor is retained on disk, unedited** — that is the §5.3 archive.
+Moving it would break every citation of its path and prove nothing. Manifest rows repoint to the
+successors; `canon/MANIFEST.md` gains a **Superseded-in-place** table naming each pair.
+**Conventions v1.4 was NOT amended** — its own sitting.
+
+### `_inbox/` §12.7 retention at close
+
+**14 files, down from 16.** Both QUESTION_POLICY drafts left: v0.3 adopted into canon, v0.2 deleted
+as withdrawn. Unchanged and still owed: **ch3** (held — body byte differs, not only the header,
+Principal) · **ch4 · ch6** (redundant, deletable on approval) · **ch5** (held with ch3's set pending
+the same ruling; header-only difference confirmed) · **ch7–ch10** (no committed evidence — now
+covered by CD-091's precondition) · **4 NCTB PDFs** (staged 2026-04-28, correctly §2.1's) ·
+**2 Naskh fonts** (unvendored, unconsumed) · `README.md`.
+
+### Sync
+
+Pushed. Range check and per-commit permission pasted in the session report.

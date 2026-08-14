@@ -1,4 +1,10 @@
-# QUESTION_BANK_POLICY — v1.0
+# QUESTION_BANK_POLICY — v1.1
+
+*Amended 2026-08-14 under `canon/QUESTION_POLICY.md` §9 (**CD-120**): §2 (one Pool; HW/AS/CT are
+selection labels) · §3 (`tier` added) · §4 (REF-09 §5 key wording; domain ratio to paper level) ·
+§5 (gate list per QUESTION_POLICY §6). Amendments are pointer stubs with the superseded text
+archived in place, per master §5.3. **This file is not LOCKED**, so the amendments sit inline
+rather than in a successor file; the original text is preserved in every case.*
 
 *Workstream: question-banks (P04). Adopted by Principal ruling 2026-08-09 (QB-D-001…QB-D-004),
 superseding the v0.1 draft staged in `_inbox/`.*
@@ -11,6 +17,32 @@ Per chapter, per class × subject: tagged question pools authored **born-conform
 Hub's LOCKED import contract, delivered to teachers through the Hub.
 
 ## 2. The three pools — the founding decision (QB-D-001)
+
+> **AMENDED 2026-08-14 — pointer stub (CD-120).** **There is ONE Pool per chapter.**
+> **HW · AS · CT are *selection labels*, not authored partitions.** Governing text:
+> `canon/QUESTION_POLICY.md` §3.12 and §4, which resolve this against **REF-07** and **REF-08**,
+> both of which describe a single Pool that instruments draw from.
+>
+> **Why the three-pool form was retired:** it triples the authoring cost, makes per-chapter coverage
+> unmeasurable (three partial pools each covering part of the chapter is not the same as one Pool
+> covering it), and — the decisive one — **makes an item's instrument an authoring-time decision
+> that cannot later be changed without rewriting the item.** A selection label can be re-selected.
+> An authored partition cannot.
+>
+> **What survives unchanged:** there is still **no CW pool**, and zero-repeat within an instrument
+> still holds. **What goes:** the zero-overlap-between-pools gate — with one Pool there are no
+> pools to overlap; the repetition rule that replaces it is `QUESTION_POLICY` §5, bound by Bloom
+> level. Sizing ceilings below are superseded by §4's floor-20-no-ceiling, coverage-not-count.
+>
+> <details><summary><strong>ARCHIVE — the superseded QB-D-001 text, verbatim</strong></summary>
+>
+> Every chapter carries exactly **three pools — HW · Assignment (AS) · CT**.
+> A question belongs to **exactly one pool.** Zero overlap between the three pools of the same
+> chapter, enforced by gate — the EnglishDrive zero-repeat principle (PD-036/PD-038) applied here.
+>
+> </details>
+
+*The original section follows, retained as the record of what was decided at QB-D-001.*
 
 Every chapter carries exactly **three pools — HW · Assignment (AS) · CT**.
 
@@ -45,8 +77,15 @@ the plan.
 
 ## 3. Tagging — and where the pool label actually lives (QB-D-003)
 
+> **AMENDED 2026-08-14 (CD-120).** The field list below is **incomplete: `tier` is required** and
+> is missing from it. The authoritative list is the LOCKED payload's own `required` array — **ten
+> fields**: `qid` · `topic_tag` · `ref19_topic_id` · `question_text` · `question_type` ·
+> `paper_role` · `bloom_level` · `difficulty` · **`tier`** · `marks` — verified against
+> `tools/hub-export/LOCKED_QuestionPayload_Schema_v1.json` on 2026-08-14. `tier1` only for now.
+> Governing text: `canon/QUESTION_POLICY.md` §4.
+
 Every question carries, in its LOCKED payload: `bloom_level` · `difficulty` · `topic_tag`
-(`TOP-*`, the cross-repo join key) · `ref19_topic_id` · `paper_role` · `marks`. The scholarship
+(`TOP-*`, the cross-repo join key) · `ref19_topic_id` · `paper_role` · `marks` · **`tier`**. The scholarship
 domain label (জ্ঞান · অনুধাবন · প্রয়োগ · উচ্চতর) maps onto `bloom_level` per
 `canon/marklogic/MarkLogic_QuestionPolicy.md` §৩.
 
@@ -74,6 +113,16 @@ every item.
   before they can be built.
 
 ## 4. Authoring rules
+
+> **AMENDED 2026-08-14 (CD-120).** Two changes, both from `canon/QUESTION_POLICY.md`:
+> **(a) Keys and rubrics — REF-09 §5's wording governs: *no question is finished until its key is
+> written*.** The key is not a later pass; an item without its key or rubric is not an item. The
+> schema enforces it by type (`mcq`→`options` · `true_false`→`tf_answer` · `fill_blank`→`blanks` ·
+> `matching`→`pairs` · `short_answer`→`answer_key` · `descriptive`→`rubric`, each forbidding the
+> others). **(b) The domain ratio moves to PAPER level and is never checked per pool.** MarkLogic
+> §৩ sets the ratio for a **প্রশ্নপত্র**; a Pool is not a paper, and a pool-level domain gate would
+> force every chapter to carry all four domains in proportion — which §৬ itself says is impossible
+> even for a 25-mark class test. Governing text: `QUESTION_POLICY` §4 and §6.
 
 - **Content ONLY from the chapter's source extraction** (`canon/sources/SOURCE_POLICY.md`).
   No extraction → no bank for that chapter; the gap is **recorded, not filled from memory**.
@@ -103,9 +152,27 @@ every item.
    out into per-item envelopes.
 2. `tools/hub-export/validate_import.py` L1–L4 on every envelope — born conformant, **verbatim
    output pasted** (AGENTS.md §5).
-3. `workstreams/question-banks/audits/gates.py`: zero-overlap across the chapter's three pools ·
-   domain-ratio per pool · mark-value check against MarkLogic · source-traceability · AS
-   difficulty mix · sizing-ceiling report · script guard.
+3. `workstreams/question-banks/audits/gates.py`:
+
+   > **AMENDED 2026-08-14 (CD-120) — the gate list is now `canon/QUESTION_POLICY.md` §6's,
+   > eleven checks:** mark value against spine values · source traceability to the chapter
+   > extraction · script guard (LANGUAGE_RULES §7) · `ref19_topic_id` against REF-19's slug set ·
+   > `topic_tag` against `TOPIC_NUMBERS.md` (**an unminted number FAILs, never auto-mints**) ·
+   > key/rubric present per type · Bloom band at **chapter** scope · difficulty easy ≥30% /
+   > hard ≤25% with the Pool *able to supply* · repetition (no verbatim reuse above `Remember`) ·
+   > coverage of every topic and spine slot-type · **domain ratio at paper level only**.
+   >
+   > **Two of the old checks are retired by the one-Pool ruling, not dropped for convenience:**
+   > *zero-overlap across three pools* has nothing left to compare, and *domain-ratio per pool*
+   > is the §4(b) error above. **The suite is not yet built** — it is session 3's work.
+   >
+   > <details><summary><strong>ARCHIVE — the superseded gate list, verbatim</strong></summary>
+   >
+   > zero-overlap across the chapter's three pools · domain-ratio per pool · mark-value check
+   > against MarkLogic · source-traceability · AS difficulty mix · sizing-ceiling report ·
+   > script guard.
+   >
+   > </details>
 4. Hub import as `draft` → teacher in-app review → Principal promotes `reviewed → gold`
    (the existing loop, CD-003).
 

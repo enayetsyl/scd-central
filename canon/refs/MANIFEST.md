@@ -31,7 +31,7 @@ row is owed for them; they live in `canon/MANIFEST.md` and `canon/marklogic/READ
 
 | ID | Title | Version | Lock | Consuming workstreams | Status | Path |
 |---|---|---|---|---|---|---|
-| REF-01 | Islamic Curation Policy | v1.2 | LOCKED 2026-05-26 | support-books · lesson-plans · question-banks · class-tests · english-drive | **ACTIVE** | `canon/islamic-curation/REF-01_Curation_Policy.md` |
+| REF-01 | Islamic Curation Policy | **v1.3** | LOCKED 2026-08-14 (living/append-extensible per its §1.2) | **all classes · all subjects** — support-books · lesson-plans · question-banks · class-tests · english-drive · islamic-studies | **ACTIVE** | `canon/islamic-curation/REF-01_Curation_Policy_v1_3.md` · *predecessor v1.2 retained at `…/REF-01_Curation_Policy.md`* |
 | REF-02 | Three-Layer Lesson Plan Template | v1.6 | LOCKED 2026-05-31 | lesson-plans | REFERENCE | `canon/refs/LOCKED_REF-02_Three_Layer_Lesson_Plan_Template_v1_6.md` |
 | REF-03 | Subject Spine Playbook — Bangla (C1–C5) | v1.2 | LOCKED 2026-06-02 | lesson-plans · question-banks | REFERENCE | `canon/refs/LOCKED_REF-03_Bangla_Subject_Spine_Playbook_v1_2.md` |
 | REF-03 | Subject Spine Playbook — English (C1–C5) | v1.2 | LOCKED | english-programme · lesson-plans | REFERENCE | `canon/refs/LOCKED_REF-03_English_Subject_Spine_Playbook_v1_2.md` |
@@ -43,8 +43,8 @@ row is owed for them; they live in `canon/MANIFEST.md` and `canon/marklogic/READ
 | REF-06 | Bloom's Taxonomy — Comprehensive Primer for Teachers (V1A) | V1A | not LOCKED | lesson-plans · question-banks | REFERENCE | **canonical:** `canon/refs/Bloom_Taxonomy_Comprehensive_Primer_Teachers_V1A.docx` · **derived reading copy:** `…V1A.md` — see note 7 |
 | REF-07 | Revision Architecture | v1.2 | LOCKED 2026-05-31 | lesson-plans · question-banks · class-tests | **ACTIVE** | `canon/refs/LOCKED_REF-07_Revision_Architecture_v1_2.md` |
 | REF-08 | Homework Architecture | v1.3 | LOCKED 2026-05-31 | lesson-plans · question-banks | **ACTIVE** | `canon/refs/LOCKED_REF-08_Homework_Architecture_v1_3.md` |
-| REF-09 | Tier 1 Question-Setting Guidelines | v1.0 | LOCKED | question-banks · class-tests · scholarship | **ACTIVE** | `canon/refs/LOCKED_REF-09_Tier1_Question_Setting_Guidelines_v1_0.md` |
-| REF-10 | Tier 2 Question-Setting Guidelines | v1.0 | LOCKED | question-banks · scholarship | **ACTIVE** | `canon/refs/LOCKED_REF-10_Tier2_Question_Setting_Guidelines_v1_0.md` |
+| REF-09 | Tier 1 Question-Setting Guidelines | **v1.1** | LOCKED 2026-08-14 | question-banks · class-tests · scholarship | **ACTIVE** | `canon/refs/LOCKED_REF-09_Tier1_Question_Setting_Guidelines_v1_1.md` · *predecessor v1.0 retained* |
+| REF-10 | Tier 2 Question-Setting Guidelines | **v1.1** | LOCKED 2026-08-14 | question-banks · scholarship | **ACTIVE** | `canon/refs/LOCKED_REF-10_Tier2_Question_Setting_Guidelines_v1_1.md` · *predecessor v1.0 retained* |
 | REF-11 | Classroom Observation Rubric | v1.1 | LOCKED 2026-06-02 | lesson-plans | REFERENCE | `canon/refs/LOCKED_REF-11_Classroom_Observation_Rubric_v1_1.md` |
 | REF-12 | School Mission and Islamic Values Reference | v1.0 | LOCKED 2026-05-28 | islamic-studies · support-books | REFERENCE | `canon/refs/LOCKED_REF-12_School_Mission_and_Islamic_Values_Reference_v1_0.md` |
 | REF-13 | `PROJECT00_GLOSSARY` | — | — | curriculum-foundations | **POINTER** | `workstreams/curriculum-foundations/PROJECT00_GLOSSARY.md` |
@@ -59,7 +59,7 @@ row is owed for them; they live in `canon/MANIFEST.md` and `canon/marklogic/READ
 | REF-22 | English Controlled Word Bank (C1–C5) | v1.0 | LOCKED | english-programme · english-drive · question-banks | REFERENCE | `canon/refs/LOCKED_REF-22_English_Controlled_WordBank_C1-C5_v1_0.xlsx` |
 | REF-23 | Lean Project Scaffolding Standard | v1.0 | LOCKED | *(all — scaffolding)* | REFERENCE | `canon/refs/LOCKED_REF-23_Lean_Project_Scaffolding_Standard_v1_0.md` |
 | REF-24 | Teacher Image-Handling Protocol (SR1) | v1.0 | LOCKED 2026-05-31 | lesson-plans · support-books | REFERENCE | `canon/refs/LOCKED_REF-24_Teacher_Image_Handling_Protocol_v1_0.md` |
-| REF-25 | Paper Assembly Template Standard (PAT) | v1.0 | LOCKED 2026-07-16 | scholarship · class-tests · question-banks | **ACTIVE** | `canon/refs/LOCKED_REF-25_Paper_Assembly_Template_Standard_v1_0.md` |
+| REF-25 | Paper Assembly Template Standard (PAT) | **v1.1** | LOCKED 2026-08-14 | scholarship · class-tests · question-banks | **ACTIVE** (assembly **mechanism** §2–§3 only; **Annex A demoted** to historical format reference) | `canon/refs/LOCKED_REF-25_Paper_Assembly_Template_Standard_v1_1.md` · *predecessor v1.0 retained* |
 | REF-26 | Exam Anchor Set (EAS) | v1.0 | LOCKED 2026-07-17 | scholarship · class-tests | **ACTIVE** | `canon/refs/LOCKED_REF-26_Exam_Anchor_Set_v1_0.md` |
 | REF-27 | *(unassigned — the next free REF number)* | — | — | — | **RESERVED** | *(no file; see note 6)* |
 
@@ -89,7 +89,9 @@ to the **storybook venture** — a separate repo under AGENTS.md §1's absolute 
 The support-book document itself is **not in this repo**; the only reference to it is a hard-coded
 old-account path in `workstreams/support-books/audits/validate_admin_pass.py` line 50.
 
-**4 — REF-25 §0 carries a known-false statement about Math MCQ.** Verified at source this session
+**4 — REF-25 §0 carries a known-false statement about Math MCQ. RULED and RECORDED at v1.1 (CD-094,
+CD-117): the correction now lives in v1.1's Annex-A demotion note, which is where a reader of Annex A
+meets it. v1.0's §0 is unedited, as a LOCKED file must be.** Verified at source this session
 against `canon/marklogic/MarkLogic_MATH_Spine.md`: slot **S01 IS বহুনির্বাচনি**, carrying 10 marks
 at C2–C5 and 6 at C1. REF-25's lane/format authority was already demoted in favour of the spines
 (UD-09/UD-11). **REF-25 is LOCKED and is not edited**; the correction is recorded in the demoted
