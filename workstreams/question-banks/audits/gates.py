@@ -1,30 +1,74 @@
 #!/usr/bin/env python3
-"""gates.py — question-banks (P04) audit gates.
+"""gates.py — the question-bank gate suite. ONE suite, two authorities (CD-123).
 
 Run from repo root:
-    python workstreams/question-banks/audits/gates.py <bank.json>
+    python workstreams/question-banks/audits/gates.py [bank.json]
 
-A SEEDED-ERROR SELFTEST runs FIRST (the support-books pattern, CD-025): the instrument is
-proven before any bank verdict is believed. If the selftest fails, no verdict is printed.
+WHAT THIS FILE IS
+-----------------
+The union of two gate lists, merged on the Principal's ruling (CD-123, closing Q-5):
 
-Gates (QUESTION_BANK_POLICY.md v1.0 §5, LOCAL.md):
-  SELFTEST        every check fires on a deliberately broken bank
-  POOL-MEMBERSHIP every question in exactly one pool; no orphan qid            (QB-D-001)
-  ZERO-OVERLAP    no duplicate/near-duplicate stem or answer across pools      (QB-D-001)
-  DOMAIN-RATIO    mark-weighted domain mix: HW/AS enforced per pool, CT reported,
-                  chapter total enforced, class band +/-5 points   (QuestionPolicy §৩, QB-D-006)
-  MARK-VALUE      per-item marks match the MarkLogic spine slot value          (QuestionPolicy §৬)
-  SOURCE-TRACE    every item traces to the chapter's source extraction         (SOURCE_POLICY)
-  QUOTE-VERBATIM  every quoted span exists verbatim in the extraction          (KEEP-AS-IS/PROTECTED)
-  HONORIFIC       the Prophet's name always carries (স)                        (extraction, বিশেষ নির্দেশ)
-  AS-MIX          AS pool is roughly half HW-level, half above                 (QB-D-004)
-  SCRIPT-GUARD    LANGUAGE_RULES §7 tiers over rendered strings                (CD-012/CD-018)
-  NUMERALS        no ASCII digits in student-facing strings                    (LANGUAGE_RULES §2)
-  ANSWER-SHAPE    exactly-one-correct MCQ, non-empty keys, rubric bands == marks
-  RUBRIC-SPECIFICITY  no two S08 items share a content rubric
-  TOPIC-NUMBER    every topic_tag is a row in canon/topics/TOPIC_NUMBERS.md  (CD-044)
-  FLAG-TRACE      every ⚑ flag in the bank resolves in PENDING_PRINCIPAL.md and is not OPEN
-  CEILING         balance owed against per-chapter ceilings — REPORT ONLY      (QB-D-002)
+  * `QUESTION_BANK_POLICY.md` v1.0 §5 — the workstream policy, three of whose gates were
+    PROMOTED OUT OF THE CORRECTIONS LEDGER (QB-CR-001, QB-CR-003, QB-CR-008).
+  * `canon/QUESTION_POLICY.md` v1.0 §6 — canon's eleven rows.
+
+**§6's eleven are the FLOOR, not the ceiling.** QUESTION_POLICY §9 *amends* QB_POLICY §5 rather
+than superseding it, and retiring a gate promoted from a correction would un-learn the incident
+that produced it. So nothing is deleted — with one ruled exception, below.
+
+THE ONE RETIREMENT
+------------------
+**DOMAIN-RATIO's per-pool form is RETIRED. Paper level replaces it.** §6 says the ratio is
+*"paper level only, never per pool"*; the old §5 form enforced it per pool (HW and AS) and at
+chapter total. The two cannot both run, and QUESTION_POLICY §9 amends QB_POLICY §4 exactly there.
+The two seeded cases that proved the per-pool form are removed with it; the paper-level gate
+carries its own seeds, including two negatives proving it stays quiet on a pool and on a single
+class test.
+
+TWO BANK SHAPES, AND NO GATE EVER PASSES BY ACCIDENT
+----------------------------------------------------
+The two families read different bank shapes — §5's (`pool_index` · `source_extraction`) and §4's
+(`header` · `source_index` · `papers`). A gate whose shape a bank does not have reports **`N/A`
+with the reason**, never `PASS`. SOURCE_POLICY §7.17: a gate reports or refuses, it never omits.
+Four gate NAMES carry one implementation per shape for exactly this reason — MARK-VALUE,
+SOURCE-TRACE, SCRIPT-GUARD and TOPIC-NUMBER exist once each and dispatch on the shape in hand.
+
+THE GATES — 21, and where each comes from
+------------------------------------------
+| Gate | Authority |
+|---|---|
+| POOL-MEMBERSHIP     | QB_POLICY §5 · **promoted from QB-CR-001** |
+| ZERO-OVERLAP        | QB_POLICY §5 (QB-D-001) |
+| MARK-VALUE          | **both** — QB_POLICY §5 **promoted from QB-CR-003** · §6 row 1 |
+| SOURCE-TRACE        | **both** — QB_POLICY §5 · §6 row 2 |
+| SCRIPT-GUARD        | **both** — QB_POLICY §5 · §6 row 3 |
+| REF19-SLUG          | §6 row 4 |
+| TOPIC-NUMBER        | **both** — QB_POLICY §5 **promoted from QB-CR-008** · §6 row 5 |
+| KEY-RUBRIC          | §6 row 6 |
+| BLOOM-BAND          | §6 row 7, as corrected by CD-121 (REF-06 §3.6 only; UD-23) |
+| DIFFICULTY          | §6 row 8, as ruled by CD-122 (easy floor only) |
+| REPETITION          | §6 row 9 |
+| COVERAGE            | §6 row 10, header fallback per §4 (CD-122) |
+| DOMAIN-RATIO        | §6 row 11 — **paper level only; the per-pool form is retired** |
+| ANSWER-SHAPE        | QB_POLICY §5 |
+| RUBRIC-SPECIFICITY  | QB_POLICY §5 |
+| FLAG-TRACE          | QB_POLICY §5 (QB-D-012's synthetic-queue rule) |
+| QUOTE-VERBATIM      | QB_POLICY §5 (KEEP-AS-IS / PROTECTED) |
+| HONORIFIC           | QB_POLICY §5 (extraction, বিশেষ নির্দেশ) |
+| AS-MIX              | QB_POLICY §5 (QB-D-004) |
+| NUMERALS            | QB_POLICY §5 (LANGUAGE_RULES §2) |
+| CEILING             | QB_POLICY §5 (QB-D-002) — REPORT ONLY |
+
+11 from §6 · 14 from §5 · 4 shared names ⇒ **21 gates**.
+
+SELFTEST FIRST, ALWAYS (CD-025). Both families' selftests run before any verdict. Every fixture is
+synthetic and written for the test; the §6 family's chapter is a fictional পাঠ ৯৯ that exists in no
+book. No file under canon/sources/ or canon/marklogic/ is read as fixture data.
+
+  ⚠ On the fixture rule and its citation: `canon/QUESTION_POLICY.md` §6 cited this as
+  "(CD-055, CD-064(f))" and **that citation was false** — corrected at CD-121, which also gives the
+  rule a canon home and records the distinction the flat form had flattened: **controls may be
+  drawn from the live pool (CD-051(d)); SEEDS may not (QB-D-012).** The seeds here are synthetic.
 
 Exit 0 = CLEAN, 1 = FAIL. Paste output verbatim per AGENTS.md §5.
 """
@@ -36,7 +80,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 
-# ---- canon-derived constants (cited, not copied: see the source file for each) ----
+
+# =================================================================================
+# CONSTANTS — QUESTION_BANK_POLICY §5 family
+# =================================================================================
 
 # MarkLogic_QuestionPolicy.md §৩ — domain mix by class band, +/-৫ points.
 DOMAIN_BANDS = {
@@ -46,7 +93,10 @@ DOMAIN_BANDS = {
     4: {"জ্ঞান": 35, "অনুধাবন": 35, "প্রয়োগ": 20, "উচ্চতর": 10},
     5: {"জ্ঞান": 30, "অনুধাবন": 35, "প্রয়োগ": 25, "উচ্চতর": 10},
 }
+
 DOMAIN_TOLERANCE = 5.0
+
+# MarkLogic_QuestionPolicy.md §৩ — Bloom to domain.
 
 # MarkLogic_QuestionPolicy.md §৩ — Bloom to domain.
 BLOOM_DOMAIN = {
@@ -59,37 +109,130 @@ BLOOM_DOMAIN = {
 }
 
 # MarkLogic_BAN_Spine.md — C5 per-ITEM marks by slot (not slot totals).
-SPINE_ITEM_MARKS = {
+
+# MarkLogic_BAN_Spine.md — C5 per-ITEM marks by slot (not slot totals).
+QB_SPINE_ITEM_MARKS = {
     ("BAN", 5): {"S01": 10, "S02": 1, "S03": 1, "S04": 1, "S05": 1, "S06": 1,
                  "S07": 2, "S08": 5, "S09": 5, "S10": 1, "S11": 1, "S12": 1,
                  "S13": 1, "S14": 5, "S15": 12},
 }
 
 # QUESTION_BANK_POLICY.md §2 (QB-D-002) — per-chapter cumulative ceilings.
+
+# QUESTION_BANK_POLICY.md §2 (QB-D-002) — per-chapter cumulative ceilings.
 CEILINGS = {"HW": 100, "AS": 50, "CT": 30}
 
 # LANGUAGE_RULES.md §7 — codepoint ranges taken from the validator, not restated from memory.
+
+# LANGUAGE_RULES.md §7 — codepoint ranges taken from the validator, not restated from memory.
 ARABIC = re.compile(r"[؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿]")
+
 ARROWS = re.compile(r"[←-⇿⟰-⟿⤀-⥿]")
+
 EMOJI = re.compile(r"[\U0001F000-\U0001FAFF☀-➿⬀-⯿︀-️]")
+
 WATCH = re.compile(r"[—…]")
+
 ASCII_DIGIT = re.compile(r"[0-9]")
 
 # The extraction's বিশেষ নির্দেশ for পাঠ ২১: the honorific is mandatory everywhere.
 # Longest-first: alternation is leftmost-FIRST in Python, so "মহানবি" must precede "নবি"
 # or the shorter branch would match inside it. Holes closed after the 2026-08-09 audit:
 # bare নবি, হজরত, রসুল, মোহাম্মদ all walked through the original four-branch pattern.
+
+# The extraction's বিশেষ নির্দেশ for পাঠ ২১: the honorific is mandatory everywhere.
+# Longest-first: alternation is leftmost-FIRST in Python, so "মহানবি" must precede "নবি"
+# or the shorter branch would match inside it. Holes closed after the 2026-08-09 audit:
+# bare নবি, হজরত, রসুল, মোহাম্মদ all walked through the original four-branch pattern.
 PROPHET = re.compile(r"(মহানবি|মুহাম্মদ|মোহাম্মদ|নবিজি|রাসুল|রসুল|হজরত|নবি)")
+
 HONORIFIC_WINDOW = 30
 
 NEAR_DUP_JACCARD = 0.80
+
 MIN_ANCHOR_TOKENS = 3
+
 MIN_MCQ_OPTIONS = 3
 
 
 # ---- helpers -------------------------------------------------------------------
 
-def norm(s):
+
+# =================================================================================
+# CONSTANTS — QUESTION_POLICY §6 family
+# =================================================================================
+
+# REF-06 §3.6, "Indicative Bloom's Distribution by Class Group", Class 3–5 row.
+# Read at CHAPTER scope per the section's own D-050 note, restated at QUESTION_POLICY §4.
+REF06_C3_5 = {
+    "Remember": (20, 30), "Understand": (25, 35), "Apply": (25, 35),
+    "Analyze": (10, 20), "Evaluate": (0, 10), "Create": (0, 10),
+}
+
+# MarkLogic_QuestionPolicy.md §৩ — C5 domain mix, ±৫ points (QUESTION_POLICY §5 quotes the C5
+# জ্ঞান figure as "৩০%, ±৫% and no more").
+
+# MarkLogic_QuestionPolicy.md §৩ — C5 domain mix, ±৫ points (QUESTION_POLICY §5 quotes the C5
+# জ্ঞান figure as "৩০%, ±৫% and no more").
+MARKLOGIC_C5 = {"জ্ঞান": (25, 35), "অনুধাবন": (30, 40), "প্রয়োগ": (20, 30), "উচ্চতর": (5, 15)}
+
+# QUESTION_POLICY §3 row 10 / CD-101 — six Bloom levels stored, four domains derived.
+
+# QUESTION_POLICY §3 row 10 / CD-101 — six Bloom levels stored, four domains derived.
+BLOOM_TO_DOMAIN = {
+    "Remember": "জ্ঞান", "Understand": "অনুধাবন", "Apply": "প্রয়োগ",
+    "Analyze": "উচ্চতর", "Evaluate": "উচ্চতর", "Create": "উচ্চতর",
+}
+
+DOMAIN_TO_BLOOM = {"জ্ঞান": ["Remember"], "অনুধাবন": ["Understand"], "প্রয়োগ": ["Apply"],
+                   "উচ্চতর": ["Analyze", "Evaluate", "Create"]}
+
+# MarkLogic_BAN_Spine.md — C5 per-ITEM marks by slot (slot TOTALS are a different column;
+# QB-CR-003 is the row that establishes the distinction).
+
+# MarkLogic_BAN_Spine.md — C5 per-ITEM marks by slot (slot TOTALS are a different column;
+# QB-CR-003 is the row that establishes the distinction).
+QP6_SPINE_ITEM_MARKS = {
+    ("BAN", 5): {"S01": 10, "S02": 1, "S03": 1, "S04": 1, "S05": 1, "S06": 1, "S07": 2,
+                 "S08": 5, "S09": 5, "S10": 1, "S11": 1, "S12": 1, "S13": 1, "S14": 5, "S15": 12},
+}
+
+# REF-09 §3, restated at QUESTION_POLICY §4 "Difficulty".
+
+# REF-09 §3, restated at QUESTION_POLICY §4 "Difficulty".
+EASY_FLOOR = 30.0
+
+HARD_CEILING = 25.0
+
+# LANGUAGE_RULES.md §7 — codepoint ranges taken from that section's own block, which itself took
+# them from the validator rather than restating them from memory.
+
+# LOCKED_QuestionPayload_Schema_v1.json — the allOf discriminator, read at source.
+KEY_FIELD_BY_TYPE = {
+    "mcq": "options", "true_false": "tf_answer", "fill_blank": "blanks",
+    "matching": "pairs", "short_answer": "answer_key", "descriptive": "rubric",
+}
+
+# A paper whose domain ratio is testable. §5, last paragraph: "The domain ratio is met across the
+# year's tests, not within any single one — 25 marks cannot carry four domains in proportion, so
+# there is no per-CT domain gate."
+
+# A paper whose domain ratio is testable. §5, last paragraph: "The domain ratio is met across the
+# year's tests, not within any single one — 25 marks cannot carry four domains in proportion, so
+# there is no per-CT domain gate."
+RATIO_PAPER_KINDS = {"annual", "halfyearly"}
+
+
+# ---------------------------------------------------------------------------------
+# helpers
+# ---------------------------------------------------------------------------------
+
+
+# =================================================================================
+# HELPERS — §5 family
+# =================================================================================
+
+def qb_norm(s):
     """Normalise a Bengali string for comparison: NFC, collapse space, drop punctuation."""
     s = unicodedata.normalize("NFC", s or "")
     # Markdown emphasis is presentation, not content — strip it so a verbatim quote from the
@@ -97,18 +240,15 @@ def norm(s):
     s = re.sub(r"[‘’“”'\"()\[\]।,;:?!—–\-….*_#>|/·]", " ", s)
     return re.sub(r"\s+", " ", s).strip()
 
+def qb_tokens(s):
+    return set(qb_norm(s).split())
 
-def tokens(s):
-    return set(norm(s).split())
-
-
-def jaccard(a, b):
+def qb_jaccard(a, b):
     if not a or not b:
         return 0.0
     return len(a & b) / len(a | b)
 
-
-def rendered_strings(q):
+def qb_rendered_strings(q):
     """Every string a student or teacher actually reads (LANGUAGE_RULES §7 'rendered text')."""
     out = [q.get("question_text", "")]
     for o in q.get("options", []) or []:
@@ -131,31 +271,29 @@ def rendered_strings(q):
         out += [g.get("term", ""), g.get("gloss", "")]
     return [s for s in out if s]
 
-
-def answer_signature(q):
+def qb_answer_signature(q):
     """A comparable representation of what the item actually asks the student to produce."""
     qt = q.get("question_type")
     if qt == "mcq":
-        return norm(next((o.get("text", "") for o in q.get("options", []) if o.get("is_correct")), ""))
+        return qb_norm(next((o.get("text", "") for o in q.get("options", []) if o.get("is_correct")), ""))
     if qt == "true_false":
         return ""  # a boolean is not a discriminating answer; the stem check does this work
     if qt == "fill_blank":
-        return " | ".join(norm((b.get("accepted") or [""])[0]) for b in q.get("blanks", []))
+        return " | ".join(qb_norm((b.get("accepted") or [""])[0]) for b in q.get("blanks", []))
     if qt == "matching":
-        return " | ".join(f"{norm(p.get('left'))}={norm(p.get('right'))}" for p in q.get("pairs", []))
+        return " | ".join(f"{qb_norm(p.get('left'))}={qb_norm(p.get('right'))}" for p in q.get("pairs", []))
     if qt == "short_answer":
-        return norm(((q.get("answer_key") or {}).get("accepted") or [""])[0])
+        return qb_norm(((q.get("answer_key") or {}).get("accepted") or [""])[0])
     if qt == "descriptive":
         # Descriptive items had NO signature, so all S08 items were exempt from the
         # answer-collision check (2026-08-09 audit). The rubric's content criterion is what
         # an S08 item actually asks for, so that is its signature.
         rb = q.get("rubric") or {}
-        return " | ".join(norm(c.get("criterion")) for c in rb.get("criteria", [])
+        return " | ".join(qb_norm(c.get("criterion")) for c in rb.get("criteria", [])
                           if c.get("role") == "content")
     return ""
 
-
-def chapter_section(text, unit_bn):
+def qb_chapter_section(text, unit_bn):
     """Slice the extraction down to this chapter (headings are '# পাঠ <number>')."""
     m = re.search(rf"^#\s*পাঠ\s*{re.escape(unit_bn)}\b.*?$", text, re.M)
     if not m:
@@ -166,6 +304,94 @@ def chapter_section(text, unit_bn):
 
 
 # ---- gates ---------------------------------------------------------------------
+
+
+# =================================================================================
+# HELPERS — §6 family
+# =================================================================================
+
+def qp_norm(s):
+    """NFC, punctuation-stripped, whitespace-collapsed — for verbatim comparison."""
+    s = unicodedata.normalize("NFC", s or "")
+    s = re.sub(r"[‘’“”'\"()\[\]।,;:?!—–\-….*_#>|/·]", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+def pct(n, d):
+    return 0.0 if not d else 100.0 * n / d
+
+def qp_rendered_strings(q):
+    """Every string a student or teacher reads. LANGUAGE_RULES §7's "rendered text" column."""
+    out = [q.get("question_text", "")]
+    for o in q.get("options") or []:
+        out.append(o.get("text", "") if isinstance(o, dict) else str(o))
+    for b in q.get("blanks") or []:
+        out.append(b.get("answer", "") if isinstance(b, dict) else str(b))
+    for p in q.get("pairs") or []:
+        if isinstance(p, dict):
+            out += [p.get("left", ""), p.get("right", "")]
+    if isinstance(q.get("answer_key"), str):
+        out.append(q["answer_key"])
+    r = q.get("rubric") or {}
+    for c in r.get("criteria") or []:
+        out.append(c.get("criterion", ""))
+        out += list((c.get("band_descriptors") or {}).values())
+    return [s for s in out if s]
+
+def metadata_strings(q):
+    """Fields §7 explicitly permits →, ⚠ and 🔒 in: "metadata is not what a child sees"."""
+    out = []
+    for k in ("learning_outcome_ref", "chapter_ref", "lesson_ref", "stimulus_ref", "source_note"):
+        v = q.get(k)
+        if isinstance(v, str):
+            out.append(v)
+    return out
+
+def load_ref19_slugs(root):
+    """REF-19's slug set, parsed FROM THE LOCKED ARTIFACT.
+
+    CD-011's standing rule: a registry is written from the actual artifact, never from a summary or
+    a derived copy. `tools/hub-export/validate_import.py`'s `REF19_SLUGS_DEFAULT` is a derived
+    copy — auto-extracted, and QB-CR-007 already recorded that building canon from it would be the
+    phantom-content failure CD-026 refused. So this reads the LOCKED file.
+
+    Anchored on BACKTICKS, not on a bare word boundary. Unbackticked matching pulls in
+    `DROP-CROSS` and `TGR-BGS` (truncations of a flag name and a task id) and, worse, TRUNCATES
+    the two real three-segment Math slugs. Backtick-anchoring is the same reasoning as
+    AGENTS.md §5.1's exemption: inline code is markdown's way of saying "literal token".
+    """
+    p = root / "canon" / "topics" / "LOCKED_REF-19_Vertical_Topic_Progression_Map_v1_10.md"
+    if not p.exists():
+        return None, f"{p.relative_to(root).as_posix()} is missing — no slug can be validated"
+    text = p.read_text(encoding="utf-8", errors="replace")
+    slugs = set(re.findall(r"`((?:BAN|ENG|MATH|SCI|BGS)-[A-Z0-9]+(?:-[A-Z0-9]+)*)`", text))
+    return slugs, None
+
+def load_topic_numbers(root):
+    """canon/topics/TOPIC_NUMBERS.md — CD-044. An unminted number FAILs and is NEVER auto-minted;
+    the file's own §17 is the rule: "a number not listed here is not used. It is queued.\""""
+    p = root / "canon" / "topics" / "TOPIC_NUMBERS.md"
+    if not p.exists():
+        return None, f"{p.relative_to(root).as_posix()} is missing — no topic number can be validated"
+    text = p.read_text(encoding="utf-8", errors="replace")
+    # Only rows of the chart table mint. A `TOP-` string in prose is a citation, not a mint —
+    # the same first-cell discipline `tools/audits/ledger_check.py` uses, for the same reason.
+    tags = set()
+    for line in text.splitlines():
+        m = re.match(r"^\|\s*\**\s*`(TOP-[A-Z]+-C[1-5]-\d{2})`", line)
+        if m:
+            tags.add(m.group(1))
+    return tags, None
+
+
+# ---------------------------------------------------------------------------------
+# THE ELEVEN QP6_GATES — one function each, in §6's table order.
+# Each returns (errors, report_lines).
+# ---------------------------------------------------------------------------------
+
+
+# =================================================================================
+# GATES — §5 family (nothing here is deleted: CD-123)
+# =================================================================================
 
 def g_pool_membership(bank, ctx):
     errs = []
@@ -190,7 +416,6 @@ def g_pool_membership(bank, ctx):
         errs.append("duplicate qid in the bank — qids are permanent and never reused")
     return errs
 
-
 def g_zero_overlap(bank, ctx):
     errs = []
     pool_of = ctx["pool_of"]
@@ -202,73 +427,20 @@ def g_zero_overlap(bank, ctx):
             if pa is None or pb is None:
                 continue
             where = f"[{pa}] and {b['qid']} [{pb}]" if pa != pb else f"and {b['qid']}, both in [{pa}]"
-            sim = jaccard(tokens(a.get("question_text")), tokens(b.get("question_text")))
+            sim = qb_jaccard(qb_tokens(a.get("question_text")), qb_tokens(b.get("question_text")))
             if sim >= NEAR_DUP_JACCARD:
                 errs.append(f"{a['qid']} {where} have near-identical stems "
                             f"(token overlap {sim:.2f} >= {NEAR_DUP_JACCARD})")
-            sa, sb = answer_signature(a), answer_signature(b)
+            sa, sb = qb_answer_signature(a), qb_answer_signature(b)
             if sa and sa == sb and a.get("question_type") == b.get("question_type"):
                 errs.append(f"{a['qid']} {where} have the identical answer "
                             f"'{sa[:40]}' for the same question_type")
     return errs
 
-
-def _mix(items, band, errs):
-    total = sum(i.get("marks", 0) for i in items)
-    got = {d: 0.0 for d in band}
-    for it in items:
-        dom = BLOOM_DOMAIN.get(it.get("bloom_level"))
-        if dom is None:
-            errs.append(f"{it.get('qid')}: bloom_level '{it.get('bloom_level')}' maps to no domain")
-            continue
-        got[dom] += it.get("marks", 0)
-    return total, got
-
-
-def g_domain_ratio(bank, ctx):
-    """QB-D-006 — HW and AS enforced per pool; CT REPORTED, not enforced; chapter total enforced.
-
-    The CT carve-out is canon, not convenience: MarkLogic_QuestionPolicy.md §৬ rule ৩ rules that
-    a class test's domain ratio is satisfied **across the year's tests combined**, not inside one
-    test, because 25 marks cannot seat four domains at ratio. A single chapter's CT pool is that
-    same situation, so enforcing the band inside it would contradict the canon rule it claims to
-    implement. The chapter total is enforced instead, and that is where the mix has to hold.
-    """
-    errs = []
-    cls = ctx["class_level"]
-    band = DOMAIN_BANDS.get(cls)
-    if not band:
-        return [f"no domain band for class {cls}"]
-    pools = bank.get("pool_index") or {}
-    for pool in ("HW", "AS", "CT"):
-        items = [ctx["by_qid"][q] for q in pools.get(pool, []) if q in ctx["by_qid"]]
-        total, got = _mix(items, band, errs)
-        if not total:
-            continue
-        for dom, want in band.items():
-            pct = 100.0 * got[dom] / total
-            off = abs(pct - want) > DOMAIN_TOLERANCE
-            if pool == "CT":
-                ctx["report"].append(("DOMAIN-RATIO", f"CT {dom} {pct:.1f}% vs band {want}%"
-                                  + ("  <-- outside band, reported not enforced" if off else "")))
-            elif off:
-                errs.append(f"{pool}: {dom} {pct:.1f}% vs band {want}% "
-                            f"(tolerance +/-{DOMAIN_TOLERANCE:.0f}) — QuestionPolicy §৩")
-    allitems = [ctx["by_qid"][q] for ids in pools.values() for q in ids if q in ctx["by_qid"]]
-    total, got = _mix(allitems, band, errs)
-    if total:
-        for dom, want in band.items():
-            pct = 100.0 * got[dom] / total
-            if abs(pct - want) > DOMAIN_TOLERANCE:
-                errs.append(f"CHAPTER TOTAL: {dom} {pct:.1f}% vs band {want}% "
-                            f"(tolerance +/-{DOMAIN_TOLERANCE:.0f}) — QuestionPolicy §৩")
-    return errs
-
-
-def g_mark_value(bank, ctx):
+def g_qb_mark_value(bank, ctx):
     errs = []
     key = (ctx["subject"], ctx["class_level"])
-    table = SPINE_ITEM_MARKS.get(key)
+    table = QB_SPINE_ITEM_MARKS.get(key)
     if not table:
         return [f"no spine per-item mark table vendored for {key} — add it from the spine before authoring"]
     slots = bank.get("slot_index") or {}
@@ -295,20 +467,19 @@ def g_mark_value(bank, ctx):
                         f"(QuestionPolicy §৬ — CT lifts annual questions at unchanged marks)")
     return errs
 
-
-def g_source_trace(bank, ctx):
+def g_qb_source_trace(bank, ctx):
     """SOURCE_POLICY §1 — content comes only from the extraction.
 
     Hardened after the 2026-08-09 audit, which showed the original check was vacuous: it only
     asked whether the anchor string appeared anywhere in the chapter, so a two-character word
     like "না" satisfied it and the anchor was never tied to the question it supposedly sourced.
-    An anchor must now be a real span (3+ tokens), must appear in the chapter, and must SHARE
+    An anchor must now be a real span (3+ qb_tokens), must appear in the chapter, and must SHARE
     vocabulary with the item — otherwise it is decoration, not provenance.
     """
     errs = []
     src = ctx["source_text"]
     idx = bank.get("source_index") or {}
-    nsrc = norm(src) if src is not None else None
+    nsrc = qb_norm(src) if src is not None else None
     for q in bank.get("questions", []):
         qid = q.get("qid")
         ref = idx.get(qid)
@@ -316,22 +487,21 @@ def g_source_trace(bank, ctx):
             errs.append(f"{qid}: no source_index entry — content comes only from the extraction "
                         f"(SOURCE_POLICY §1); no extraction reference, no question")
             continue
-        atoks = [t for t in norm(ref).split() if len(t) >= 3]
-        if len(norm(ref).split()) < MIN_ANCHOR_TOKENS:
+        atoks = [t for t in qb_norm(ref).split() if len(t) >= 3]
+        if len(qb_norm(ref).split()) < MIN_ANCHOR_TOKENS:
             errs.append(f"{qid}: source_index anchor '{ref}' is only "
-                        f"{len(norm(ref).split())} token(s) — an anchor must be a real span of at "
+                        f"{len(qb_norm(ref).split())} token(s) — an anchor must be a real span of at "
                         f"least {MIN_ANCHOR_TOKENS}, or it proves nothing")
             continue
-        if nsrc is not None and norm(ref) not in nsrc:
+        if nsrc is not None and qb_norm(ref) not in nsrc:
             errs.append(f"{qid}: source_index anchor '{ref[:50]}' does not appear in the extraction")
             continue
-        itoks = {t for s_ in rendered_strings(q) for t in norm(s_).split() if len(t) >= 3}
+        itoks = {t for s_ in qb_rendered_strings(q) for t in qb_norm(s_).split() if len(t) >= 3}
         shared = set(atoks) & itoks
         if not (any(len(t) >= 4 for t in shared) or len(shared) >= 2):
             errs.append(f"{qid}: source_index anchor '{ref[:50]}' shares no substantive word with "
                         f"the item — the anchor is not tied to the question it claims to source")
     return errs
-
 
 def g_answer_shape(bank, ctx):
     """Added after the 2026-08-09 audit: no gate looked at the answer carrier at all, so an MCQ
@@ -354,7 +524,7 @@ def g_answer_shape(bank, ctx):
             for o in opts:
                 if not o.get("is_correct") and not (o.get("why_wrong") or "").strip():
                     errs.append(f"{qid}: distractor '{o.get('option_id')}' has no why_wrong")
-            if len({norm(o.get("text")) for o in opts}) != len(opts):
+            if len({qb_norm(o.get("text")) for o in opts}) != len(opts):
                 errs.append(f"{qid}: two options carry the same text")
         elif qt == "short_answer":
             if not ((q.get("answer_key") or {}).get("accepted") or []):
@@ -372,7 +542,6 @@ def g_answer_shape(bank, ctx):
                             f"correspond one-to-one")
     return errs
 
-
 def g_rubric_specificity(bank, ctx):
     """Added after the 2026-08-09 audit, which found all eight S08 rubrics byte-identical and the
     recall descriptor ("পাঠ থেকে পাঁচটি আলাদা কথা") applied unchanged to opinion prompts."""
@@ -386,7 +555,7 @@ def g_rubric_specificity(bank, ctx):
         if not content:
             errs.append(f"{q.get('qid')}: rubric has no content criterion")
             continue
-        sig = norm(json.dumps([c.get("band_descriptors") for c in content],
+        sig = qb_norm(json.dumps([c.get("band_descriptors") for c in content],
                               ensure_ascii=False, sort_keys=True))
         if sig in seen:
             errs.append(f"{q.get('qid')}: content rubric is identical to {seen[sig]} — a rubric "
@@ -395,8 +564,7 @@ def g_rubric_specificity(bank, ctx):
             seen[sig] = q.get("qid")
     return errs
 
-
-def g_topic_number(bank, ctx):
+def g_qb_topic_number(bank, ctx):
     """canon/topics/TOPIC_NUMBERS.md — a number not in the chart is not used, it is queued.
 
     This gate exists because a wrong topic_tag survived a full gate chain AND a promotion: nothing
@@ -419,7 +587,6 @@ def g_topic_number(bank, ctx):
                         f"canon/topics/TOPIC_NUMBERS.md — an unattested number is queued, not used")
     return errs
 
-
 def g_flag_trace(bank, ctx):
     """QB-D-009 / CD-042 — a bank may be promoted carrying a FLAGGED tag, but only if the flag is
     real: it must name a tag that resolves in PENDING_PRINCIPAL.md, and that row must not be OPEN
@@ -428,9 +595,9 @@ def g_flag_trace(bank, ctx):
     """
     errs = []
     flags = bank.get("flags") or []
-    # The selftest injects a synthetic queue. Reading the live file in a seeded case made the
+    # The qb_selftest injects a synthetic queue. Reading the live file in a seeded case made the
     # instrument depend on repo state that changes every session: the OPEN-path case named a real
-    # OPEN row, the Principal ruled it, and the selftest went red on the next run — not because
+    # OPEN row, the Principal ruled it, and the qb_selftest went red on the next qb_run — not because
     # the gate broke, but because the fixture was the live world. A test fixture must be a fixture.
     text = bank.get("_selftest_queue")
     if text is None:
@@ -459,27 +626,25 @@ def g_flag_trace(bank, ctx):
                 errs.append(f"flag {tag} has no '{key}' — a flag a reader cannot act on is decoration")
     return errs
 
-
 def g_quote_verbatim(bank, ctx):
     """KEEP-AS-IS / PROTECTED: a quoted span must exist verbatim in the extraction."""
     errs = []
     src = ctx["source_text"]
     if src is None:
         return errs
-    nsrc = norm(src)
+    nsrc = qb_norm(src)
     for q in bank.get("questions", []):
-        for s in rendered_strings(q):
+        for s in qb_rendered_strings(q):
             for span in re.findall(r"[‘“]([^’”]{15,})[’”]", s):
-                if norm(span) not in nsrc:
+                if qb_norm(span) not in nsrc:
                     errs.append(f"{q.get('qid')}: quoted span '{span[:45]}…' is not verbatim in the "
                                 f"extraction — this পাঠ is KEEP-AS-IS and PROTECTED")
     return errs
 
-
 def g_honorific(bank, ctx):
     errs = []
     for q in bank.get("questions", []):
-        for s in rendered_strings(q):
+        for s in qb_rendered_strings(q):
             for m in PROPHET.finditer(s):
                 window = s[m.end(): m.end() + HONORIFIC_WINDOW]
                 if "(স)" not in window:
@@ -487,7 +652,6 @@ def g_honorific(bank, ctx):
                                 f"{HONORIFIC_WINDOW} characters — the extraction's বিশেষ নির্দেশ "
                                 f"makes the honorific mandatory everywhere")
     return errs
-
 
 def g_as_mix(bank, ctx):
     """QB-D-004 — AS is roughly half HW-level, half above."""
@@ -504,11 +668,10 @@ def g_as_mix(bank, ctx):
                 f"roughly half, i.e. 35–65%"]
     return []
 
-
-def g_script_guard(bank, ctx):
+def g_qb_script_guard(bank, ctx):
     errs = []
     for q in bank.get("questions", []):
-        for s in rendered_strings(q):
+        for s in qb_rendered_strings(q):
             if ARABIC.search(s):
                 errs.append(f"{q.get('qid')}: Arabic script in rendered text — tier 1 RED anywhere "
                             f"(LANGUAGE_RULES §7 / CD-014). Use (স), never the Arabic glyph")
@@ -518,16 +681,14 @@ def g_script_guard(bank, ctx):
             ctx["watch"] += len(WATCH.findall(s))
     return errs
 
-
 def g_numerals(bank, ctx):
     errs = []
     for q in bank.get("questions", []):
-        for s in rendered_strings(q):
+        for s in qb_rendered_strings(q):
             if ASCII_DIGIT.search(s):
                 errs.append(f"{q.get('qid')}: ASCII digit in a student-facing string "
                             f"('{s[:40]}…') — Bengali numerals only (LANGUAGE_RULES §2)")
     return errs
-
 
 def g_ceiling(bank, ctx):
     """REPORT ONLY — being under ceiling is never a failure (QB-D-002)."""
@@ -540,28 +701,500 @@ def g_ceiling(bank, ctx):
     return errs
 
 
+# =================================================================================
+# GATES — §6 family (canon's eleven)
+# =================================================================================
+
+def g_mark_value(bank, ctx):
+    """§6 row 1 — Mark value: against MarkLogic spine values."""
+    errs, rep = [], []
+    key = (bank.get("subject"), bank.get("class"))
+    table = QP6_SPINE_ITEM_MARKS.get(key)
+    if not table:
+        return [], [f"no spine item-mark table vendored for {key} — not judged, not assumed clean"]
+    slots = bank.get("slot_index") or {}
+    for q in bank["questions"]:
+        qid = q.get("qid")
+        slot = slots.get(qid)
+        if not slot:
+            errs.append(f"{qid}: no spine slot in slot_index — a mark cannot be checked against a "
+                        f"slot the bank does not name")
+            continue
+        if slot not in table:
+            errs.append(f"{qid}: slot '{slot}' is not in the {key[0]} C{key[1]} spine")
+            continue
+        want, got = table[slot], q.get("marks")
+        if got != want:
+            errs.append(f"{qid}: slot {slot} carries {want} marks per item in the spine, "
+                        f"item declares {got}")
+    rep.append(f"{len(bank['questions'])} items checked against {key[0]} C{key[1]} spine")
+    return errs, rep
+
+def g_source_trace(bank, ctx):
+    """§6 row 2 — Source traceability: every item resolves to its chapter extraction.
+
+    QUESTION_POLICY §3 row 15 / CD-107: the extraction is the source of FACT. So the anchor must
+    exist verbatim in the extraction, and it must be long enough to mean something — a one-word
+    anchor matches anything and traces nothing.
+    """
+    errs, rep = [], []
+    extraction = ctx.get("extraction")
+    if extraction is None:
+        return [], ["no extraction supplied — not judged, not assumed clean"]
+    hay = qp_norm(extraction)
+    idx = bank.get("source_index") or {}
+    MIN_ANCHOR_TOKENS = 3
+    for q in bank["questions"]:
+        qid = q.get("qid")
+        anchor = idx.get(qid)
+        if not anchor:
+            errs.append(f"{qid}: no source_index anchor — the item traces to nothing")
+            continue
+        na = qp_norm(anchor)
+        if len(na.split()) < MIN_ANCHOR_TOKENS:
+            errs.append(f"{qid}: anchor '{anchor}' is {len(na.split())} token(s) — too short to "
+                        f"trace; an anchor that matches anything traces nothing")
+            continue
+        if na not in hay:
+            errs.append(f"{qid}: anchor '{anchor}' does not appear in the chapter extraction")
+    rep.append(f"{len(idx)} anchors resolved against the extraction")
+    return errs, rep
+
+def g_script_guard(bank, ctx):
+    """§6 row 3 — Script guard: LANGUAGE_RULES §7.
+
+    Tier 1 Arabic RED everywhere. Tier 2 arrows/emoji RED in rendered text, GREY in metadata —
+    the split exists because metadata legitimately carries → and ⚠. Tier 3 em-dash/ellipsis is a
+    WATCH counter and never a failure.
+    """
+    errs, rep = [], []
+    watch = grey = 0
+    for q in bank["questions"]:
+        qid = q.get("qid")
+        for s in qp_rendered_strings(q):
+            if ARABIC.search(s):
+                errs.append(f"{qid}: tier-1 Arabic script in rendered text: {s[:40]!r}")
+            if ARROWS.search(s) or EMOJI.search(s):
+                errs.append(f"{qid}: tier-2 arrow/emoji/symbol in rendered text: {s[:40]!r}")
+            watch += len(WATCH.findall(s))
+        for s in metadata_strings(q):
+            if ARABIC.search(s):
+                errs.append(f"{qid}: tier-1 Arabic script in metadata (RED in both columns): {s[:40]!r}")
+            if ARROWS.search(s) or EMOJI.search(s):
+                grey += 1
+    rep.append(f"tier-3 WATCH counter (em-dash/ellipsis): {watch}; tier-2 GREY in metadata: {grey}")
+    return errs, rep
+
+def g_ref19_slug(bank, ctx):
+    """§6 row 4 — `ref19_topic_id` resolves, against REF-19's slug set.
+
+    §3 row 18 / CD-108: two registers, two identities. This one is a SLUG and is REF-19's; it is
+    not derived from `topic_tag` and does not validate against TOPIC_NUMBERS.md.
+    """
+    errs, rep = [], []
+    slugs = ctx.get("ref19_slugs")
+    if slugs is None:
+        return [ctx.get("ref19_error", "REF-19 slug set unavailable")], []
+    for q in bank["questions"]:
+        sid = q.get("ref19_topic_id")
+        if sid not in slugs:
+            errs.append(f"{q.get('qid')}: ref19_topic_id '{sid}' is not a REF-19 slug")
+    rep.append(f"{len(slugs)} REF-19 slugs loaded from the LOCKED artifact")
+    return errs, rep
+
+def g_topic_number(bank, ctx):
+    """§6 row 5 — `topic_tag` resolves against TOPIC_NUMBERS.md; an unminted number FAILs,
+    never auto-mints. QB-CR-008 is why: a wrong tag survived a full gate chain AND a promotion."""
+    errs, rep = [], []
+    tags = ctx.get("topic_numbers")
+    if tags is None:
+        return [ctx.get("topic_error", "TOPIC_NUMBERS.md unavailable")], []
+    for q in bank["questions"]:
+        t = q.get("topic_tag")
+        if t not in tags:
+            errs.append(f"{q.get('qid')}: topic_tag '{t}' is in no chart row — an unattested "
+                        f"number is QUEUED, not used, and this gate never mints one")
+    rep.append(f"{len(tags)} charted topic numbers loaded")
+    return errs, rep
+
+def g_key_rubric(bank, ctx):
+    """§6 row 6 — Key/rubric present, every item, per type.
+
+    §4 "Rubric shape (interim)": minimum conforming is TWO BANDS and a single `islamic_alignment`
+    criterion row with band descriptors. The schema's `minContains: 1` permits more than one such
+    row; the policy says "a single", so a second is reported rather than failed — the schema is
+    the LOCKED contract and this gate does not tighten it past what §4 states.
+    """
+    errs, rep = [], []
+    extra_align = 0
+    for q in bank["questions"]:
+        qid, qt = q.get("qid"), q.get("question_type")
+        want = KEY_FIELD_BY_TYPE.get(qt)
+        if want is None:
+            errs.append(f"{qid}: question_type '{qt}' is not in the LOCKED schema enum")
+            continue
+        if not q.get(want):
+            errs.append(f"{qid}: {qt} carries no '{want}' — REF-09 §5: no question is finished "
+                        f"until its key is written")
+            continue
+        for other in set(KEY_FIELD_BY_TYPE.values()) - {want}:
+            if q.get(other) is not None:
+                errs.append(f"{qid}: {qt} also carries '{other}' — the schema forbids the others")
+        if want == "rubric":
+            r = q["rubric"]
+            bands = r.get("bands") or []
+            crits = r.get("criteria") or []
+            if len(bands) < 2:
+                errs.append(f"{qid}: rubric has {len(bands)} band(s) — §4's minimum is two")
+            aligns = [c for c in crits if c.get("role") == "islamic_alignment"]
+            if not aligns:
+                errs.append(f"{qid}: rubric has no `islamic_alignment` criterion row — §4 makes it "
+                            f"the one mandatory row")
+            elif len(aligns) > 1:
+                extra_align += 1
+            for c in crits:
+                bd = c.get("band_descriptors") or {}
+                missing = [b for b in bands if b not in bd]
+                if missing:
+                    errs.append(f"{qid}: criterion '{c.get('role')}' has no descriptor for "
+                                f"band(s) {missing} — the schema cannot cross-check this, so the "
+                                f"gate must")
+    rep.append(f"key/rubric checked per type on {len(bank['questions'])} items"
+               + (f"; {extra_align} rubric(s) carry >1 islamic_alignment row (reported, not failed)"
+                  if extra_align else ""))
+    return errs, rep
+
+def g_bloom_band(bank, ctx):
+    """§6 row 7 — Bloom band: the Pool spans REF-06 §3.6, read at CHAPTER scope.
+
+    RULED (CD-121, closing Q-1). §6's row said "the wider of REF-06 §3.6 / MarkLogic §৩ at each
+    level" and **the §6 text was wrong** — corrected in the same CD row that mints this reading.
+
+    UD-23: **the Bloom axis governs the POOL; the domain axis governs the PAPER.** They are two
+    different axes, not two ranges on one axis — which is exactly why "each level" had no common
+    referent above Apply. REF-06 bands six Bloom levels; MarkLogic §৩ bands four NAPE domains.
+    Nothing is "wider" than the other because they do not measure the same thing.
+
+    So: this gate reads REF-06 §3.6's six levels and **MarkLogic §৩ does not appear here at all**.
+    It appears at paper level, in DOMAIN-RATIO, and nowhere else.
+
+    Never read per session (§4's D-050 paragraph): a bank banded session-by-session drifts low.
+    This gate reads the whole pool, which IS the chapter.
+    """
+    errs, rep = [], []
+    total = len(bank["questions"])
+    counts = {lvl: 0 for lvl in REF06_C3_5}
+    for q in bank["questions"]:
+        bl = q.get("bloom_level")
+        if bl not in REF06_C3_5:
+            errs.append(f"{q.get('qid')}: bloom_level '{bl}' is not one of the six LOCKED levels")
+            continue
+        counts[bl] += 1
+    for lvl, (lo, hi) in REF06_C3_5.items():
+        share = pct(counts[lvl], total)
+        if not (lo <= share <= hi):
+            errs.append(f"chapter pool: {lvl} is {share:.1f}% of {total} items, outside REF-06 "
+                        f"§3.6's C3–5 band {lo}–{hi}%")
+    rep.append("bands: REF-06 §3.6 C3–5, six Bloom levels (CD-121/UD-23 — the Bloom axis governs "
+               "the pool; MarkLogic §৩ is the PAPER's axis and is not read here): "
+               + " · ".join(f"{l} {lo}–{hi}%" for l, (lo, hi) in REF06_C3_5.items()))
+    rep.append("observed: " + " · ".join(f"{l} {pct(counts[l], total):.1f}%" for l in counts)
+               + "  (read at CHAPTER scope, never per session — §4's D-050 paragraph)")
+    return errs, rep
+
+def g_difficulty(bank, ctx):
+    """§6 row 8 — Difficulty at POOL level: easy ≥30% present. There is NO pool-level hard test.
+
+    RULED (CD-122, closing Q-2). "Can supply" = **easy ≥30% present in the pool**, and nothing else.
+
+    ⚠ DO NOT "TIGHTEN" THIS INTO A SYMMETRIC CHECK. The reasoning is recorded here precisely so a
+    later reader does not restore the hard ceiling as a pool rule and redden correct pools:
+
+        A pool cannot fail a CEILING. An author can always decline to use hard items, so however
+        hard-heavy a pool is, a compliant paper remains constructible from it. Absence is the only
+        thing a pool can be guilty of — and **easy is the only side where absence in the pool makes
+        paper-level compliance impossible.** If <30% of the pool is easy, no compliant paper exists;
+        if 90% of the pool is hard, a compliant paper still exists.
+
+    The hard ≤25% ceiling is real and binding — at PAPER level (§4), where it belongs.
+    """
+    errs, rep = [], []
+    total = len(bank["questions"])
+    counts = {"easy": 0, "medium": 0, "hard": 0}
+    for q in bank["questions"]:
+        d = q.get("difficulty")
+        if d not in counts:
+            errs.append(f"{q.get('qid')}: difficulty '{d}' is not in the LOCKED enum")
+            continue
+        counts[d] += 1
+    easy_share = pct(counts["easy"], total)
+    if easy_share < EASY_FLOOR:
+        errs.append(f"pool cannot supply easy ≥{EASY_FLOOR:.0f}%: only {easy_share:.1f}% of "
+                    f"{total} items are easy, so no compliant paper can be drawn from it")
+    rep.append(f"pool: easy {easy_share:.1f}% · medium {pct(counts['medium'], total):.1f}% · "
+               f"hard {pct(counts['hard'], total):.1f}%  (easy floor only — CD-122; the hard "
+               f"≤{HARD_CEILING:.0f}% ceiling is a PAPER-level test and is not applied to a pool)")
+    return errs, rep
+
+def g_repetition(bank, ctx):
+    """§6 row 9 — Repetition: no verbatim reuse of non-`Remember` items.
+
+    §5 supersedes MarkLogic §৮'s শ্রেণি পরীক্ষা ও বড় পরীক্ষা row for `Remember` items ONLY, and
+    the exemption runs BOTH DIRECTIONS — across HW · AS · CT *and* into HY/annual. So a `Remember`
+    stem repeated anywhere is expected, not an error, and this gate must stay silent on it. Above
+    `Remember` the identical question is barred; same chapter and same type stay fine.
+    """
+    errs, rep = [], []
+    exempt = 0
+    seen = {}
+    for q in bank["questions"]:
+        stem = qp_norm(q.get("question_text"))
+        if not stem:
+            continue
+        seen.setdefault(stem, []).append(q)
+    for stem, group in seen.items():
+        if len(group) < 2:
+            continue
+        if all(q.get("bloom_level") == "Remember" for q in group):
+            exempt += 1
+            continue
+        qids = ", ".join(q.get("qid", "?") for q in group)
+        levels = sorted({q.get("bloom_level") for q in group})
+        errs.append(f"verbatim reuse above `Remember` ({'/'.join(levels)}): {qids}")
+    # The same rule across instruments, including into HY/annual.
+    papers = bank.get("papers") or []
+    stems_by_paper = {}
+    byqid = {q.get("qid"): q for q in bank["questions"]}
+    for p in papers:
+        stems_by_paper[p.get("paper_id")] = {
+            qp_norm(byqid[qid].get("question_text")): byqid[qid]
+            for qid in p.get("items", []) if qid in byqid}
+    names = list(stems_by_paper)
+    for i in range(len(names)):
+        for j in range(i + 1, len(names)):
+            a, b = names[i], names[j]
+            for stem in set(stems_by_paper[a]) & set(stems_by_paper[b]):
+                q = stems_by_paper[a][stem]
+                if q.get("bloom_level") == "Remember":
+                    exempt += 1
+                    continue
+                errs.append(f"verbatim reuse of a non-`Remember` item across papers "
+                            f"{a} → {b}: {q.get('qid')}")
+    rep.append(f"{exempt} `Remember` repetition(s) permitted by §5 — expected, not an error")
+    return errs, rep
+
+def g_coverage(bank, ctx):
+    """§6 row 10 — Coverage: every topic and every spine slot-type supplied.
+
+    ⚑ RECORDED ABSENCE — THE PER-CHAPTER SPINE SLOT-MAPPING DOES NOT EXIST AS DATA (CD-122,
+    closing Q-3). This is written down so its ARRIVAL is a known trigger: **the day a per-chapter
+    slot-mapping is committed as data, this gate changes and this docstring is the notice.**
+
+    What exists instead is `canon/marklogic/C5_Bangla_Source_13-23.md`'s "কোন প্রশ্নের জন্য কোন পাঠ"
+    table, which runs the OTHER WAY — slot → best-source পাঠ, with a separate বিকল্প column — and
+    each পাঠ's own "কোন প্রশ্নে কাজে লাগবে" line, which is prose. Inverting a best/alternative
+    table into a per-chapter obligation is inventing the mapping, and §4 forbids that.
+
+    So §4's fallback governs, and the Principal confirmed it: "The per-chapter target is decided at
+    production time and STATED IN THE BANK FILE HEADER with a one-line reason… When per-chapter
+    spine slot-mapping exists as data, this replaces the header-stated target." It does not, so the
+    header binds, and this gate checks the pool against the header the bank itself declares.
+    """
+    errs, rep = [], []
+    header = bank.get("header") or {}
+    topics = header.get("topics")
+    slots = header.get("spine_slots")
+    if not header.get("reason"):
+        errs.append("bank header states no one-line reason for its target — §4 requires one")
+    if topics is None or slots is None:
+        errs.append("bank header does not declare `topics` and `spine_slots` — with no slot "
+                    "mapping in data, the header IS the coverage target (§4) and cannot be absent")
+        return errs, rep
+    have_topics = {q.get("topic_tag") for q in bank["questions"]}
+    have_slots = set((bank.get("slot_index") or {}).values())
+    for t in topics:
+        if t not in have_topics:
+            errs.append(f"header declares topic {t}; no item in the pool supplies it")
+    for s in slots:
+        if s not in have_slots:
+            errs.append(f"header declares spine slot {s}; no item in the pool supplies it")
+    target = header.get("target")
+    if isinstance(target, int) and len(bank["questions"]) < target:
+        errs.append(f"header target is {target} items; the pool holds {len(bank['questions'])}")
+    if len(bank["questions"]) < 20:
+        errs.append(f"pool holds {len(bank['questions'])} items — REF-09 §4.3's floor is 20 per "
+                    f"chapter (cite §4.3, not REF-08 §4.1, for the chapter reading)")
+    rep.append(f"coverage read against the HEADER-STATED target (§4 fallback — Q-3): "
+               f"{len(topics)} topic(s), {len(slots)} slot(s), target {target}")
+    return errs, rep
+
+def g_domain_ratio(bank, ctx):
+    """§6 row 11 — Domain ratio: PAPER LEVEL ONLY, never per pool.
+
+    Two things this gate must not do, both stated in canon rather than inferred:
+      · It must not fire on a POOL. §6's row says "paper level only, never per pool" — the pool is
+        banded by BLOOM-BAND, and applying the ratio to it as well would double-band the same
+        items against two different targets.
+      · It must not fire on a SINGLE CLASS TEST. §5, from MarkLogic §৬: the ratio is met "across
+        the year's tests, not within any single one — 25 marks cannot carry four domains in
+        proportion, so there is no per-CT domain gate."
+    A bank with no `papers` block is therefore NOT judged here, and that is the correct verdict,
+    not a skipped one.
+    """
+    errs, rep = [], []
+    papers = bank.get("papers") or []
+    if not papers:
+        rep.append("no papers in this bank — domain ratio is PAPER LEVEL ONLY (§6) and is not "
+                   "applied to a pool. Not judged; not assumed clean.")
+        return errs, rep
+    byqid = {q.get("qid"): q for q in bank["questions"]}
+    cts = [p for p in papers if p.get("kind") == "classtest"]
+    judged = 0
+    for p in papers:
+        kind = p.get("kind")
+        if kind not in RATIO_PAPER_KINDS:
+            continue
+        judged += 1
+        items = [byqid[q] for q in p.get("items", []) if q in byqid]
+        marks = sum(q.get("marks", 0) for q in items) or 0
+        dom = {d: 0.0 for d in MARKLOGIC_C5}
+        for q in items:
+            d = BLOOM_TO_DOMAIN.get(q.get("bloom_level"))
+            if d:
+                dom[d] += q.get("marks", 0)
+        for d, (lo, hi) in MARKLOGIC_C5.items():
+            share = pct(dom[d], marks)
+            if not (lo <= share <= hi):
+                errs.append(f"paper {p.get('paper_id')} ({kind}): {d} is {share:.1f}% of {marks} "
+                            f"marks, outside MarkLogic §৩ C5 {lo}–{hi}%")
+        rep.append(f"paper {p.get('paper_id')} ({kind}, {marks} marks): "
+                   + " · ".join(f"{d} {pct(dom[d], marks):.1f}%" for d in dom))
+    if cts:
+        # The year's class tests are checked as a SET, per §5. One CT alone is never judged.
+        items = [byqid[q] for p in cts for q in p.get("items", []) if q in byqid]
+        marks = sum(q.get("marks", 0) for q in items) or 0
+        dom = {d: 0.0 for d in MARKLOGIC_C5}
+        for q in items:
+            d = BLOOM_TO_DOMAIN.get(q.get("bloom_level"))
+            if d:
+                dom[d] += q.get("marks", 0)
+        if len(cts) > 1:
+            judged += 1
+            for d, (lo, hi) in MARKLOGIC_C5.items():
+                share = pct(dom[d], marks)
+                if not (lo <= share <= hi):
+                    errs.append(f"the year's {len(cts)} class tests together: {d} is {share:.1f}% "
+                                f"of {marks} marks, outside MarkLogic §৩ C5 {lo}–{hi}%")
+            rep.append(f"{len(cts)} class tests as a SET ({marks} marks): "
+                       + " · ".join(f"{d} {pct(dom[d], marks):.1f}%" for d in dom))
+        else:
+            rep.append("1 class test present — a single CT is NEVER judged on domain ratio "
+                       "(§5 / MarkLogic §৬: met across the year's tests)")
+    if not judged:
+        rep.append("no annual/half-yearly paper and fewer than two class tests — nothing this "
+                   "gate may judge")
+    return errs, rep
+
+
+# =================================================================================
+# THE REGISTRY — 21 gates, each declaring its authority and the shape it reads
+# =================================================================================
+# `shape` is what makes the union safe. "qb" reads QB_POLICY §5's bank; "qp6" reads
+# QUESTION_POLICY §4's. A gate whose shape is absent reports N/A WITH THE REASON — never PASS.
+# Four names carry both, and dispatch: the gate exists once, its implementation follows the bank.
+
 GATES = [
-    ("POOL-MEMBERSHIP", g_pool_membership),
-    ("ZERO-OVERLAP", g_zero_overlap),
-    ("DOMAIN-RATIO", g_domain_ratio),
-    ("MARK-VALUE", g_mark_value),
-    ("SOURCE-TRACE", g_source_trace),
-    ("ANSWER-SHAPE", g_answer_shape),
-    ("RUBRIC-SPECIFICITY", g_rubric_specificity),
-    ("TOPIC-NUMBER", g_topic_number),
-    ("FLAG-TRACE", g_flag_trace),
-    ("QUOTE-VERBATIM", g_quote_verbatim),
-    ("HONORIFIC", g_honorific),
-    ("AS-MIX", g_as_mix),
-    ("SCRIPT-GUARD", g_script_guard),
-    ("NUMERALS", g_numerals),
-    ("CEILING", g_ceiling),
+    ("POOL-MEMBERSHIP",    {"qb": g_pool_membership},                    "§5 · QB-CR-001"),
+    ("ZERO-OVERLAP",       {"qb": g_zero_overlap},                       "§5 · QB-D-001"),
+    ("MARK-VALUE",         {"qb": g_qb_mark_value, "qp6": g_mark_value}, "§5 · QB-CR-003 + §6.1"),
+    ("SOURCE-TRACE",       {"qb": g_qb_source_trace, "qp6": g_source_trace}, "§5 + §6.2"),
+    ("SCRIPT-GUARD",       {"qb": g_qb_script_guard, "qp6": g_script_guard}, "§5 + §6.3"),
+    ("REF19-SLUG",         {"qp6": g_ref19_slug},                        "§6.4"),
+    ("TOPIC-NUMBER",       {"qb": g_qb_topic_number, "qp6": g_topic_number}, "§5 · QB-CR-008 + §6.5"),
+    ("KEY-RUBRIC",         {"qp6": g_key_rubric},                        "§6.6"),
+    ("BLOOM-BAND",         {"qp6": g_bloom_band},                        "§6.7 · CD-121"),
+    ("DIFFICULTY",         {"qp6": g_difficulty},                        "§6.8 · CD-122"),
+    ("REPETITION",         {"qp6": g_repetition},                        "§6.9"),
+    ("COVERAGE",           {"qp6": g_coverage},                          "§6.10 · CD-122"),
+    ("DOMAIN-RATIO",       {"qp6": g_domain_ratio},                      "§6.11 (per-pool RETIRED)"),
+    ("ANSWER-SHAPE",       {"qb": g_answer_shape},                       "§5"),
+    ("RUBRIC-SPECIFICITY", {"qb": g_rubric_specificity},                 "§5"),
+    ("FLAG-TRACE",         {"qb": g_flag_trace},                         "§5 · QB-D-012"),
+    ("QUOTE-VERBATIM",     {"qb": g_quote_verbatim},                     "§5"),
+    ("HONORIFIC",          {"qb": g_honorific},                          "§5"),
+    ("AS-MIX",             {"qb": g_as_mix},                             "§5 · QB-D-004"),
+    ("NUMERALS",           {"qb": g_numerals},                           "§5"),
+    ("CEILING",            {"qb": g_ceiling},                            "§5 · QB-D-002 (report)"),
 ]
+assert len(GATES) == 21, "CD-123: the merged suite is 21 gates"
+assert sum(1 for _, i, _ in GATES if "qp6" in i) == 11, "QUESTION_POLICY §6 has eleven rows"
 
 
-# ---- runner --------------------------------------------------------------------
+def bank_shape(bank):
+    """→ 'qp6' | 'qb' | None. Declared beats inferred: a bank may state its own shape."""
+    declared = (bank.get("header") or {}).get("policy_shape")
+    if declared in ("qp6", "qb"):
+        return declared
+    if "header" in bank and isinstance(bank.get("questions"), list):
+        return "qp6"
+    if "pool_index" in bank:
+        return "qb"
+    return None
 
-def build_ctx(bank):
+
+def run(bank, ctx=None, quiet=False):
+    """Runs all 21. Returns (fails, report). Shape-absent gates print N/A and the reason."""
+    shape = bank_shape(bank)
+    if ctx is None:
+        ctx = qp_ctx_for(bank) if shape == "qp6" else qb_build_ctx(bank)
+    fails, report = [], []
+    for name, impls, authority in GATES:
+        fn = impls.get(shape)
+        if fn is None:
+            if not quiet:
+                why = (f"reads QUESTION_POLICY §4's shape; this bank is {shape or 'unrecognised'}"
+                       if "qp6" in impls else
+                       f"reads QUESTION_BANK_POLICY §5's shape; this bank is {shape or 'unrecognised'}")
+                print(f"  N/A   {name:<18} {why}")
+            continue
+        out = fn(bank, ctx)
+        errs, rep = out if isinstance(out, tuple) else (out, [])
+        if not quiet:
+            print(f"  {'FAIL' if errs else 'PASS'}  {name:<18} [{authority}]"
+                  + "".join(f"\n        - {e}" for e in errs))
+        fails += [(name, e) for e in errs]
+        report += [(name, line) for line in rep]
+    return fails, report
+
+
+def qp_ctx_for(bank):
+    slugs, slug_err = load_ref19_slugs(ROOT)
+    tags, tag_err = load_topic_numbers(ROOT)
+    ctx = {"ref19_slugs": slugs, "ref19_error": slug_err,
+           "topic_numbers": tags, "topic_error": tag_err, "extraction": None}
+    ex = bank.get("extraction_path")
+    if ex and (ROOT / ex).exists():
+        ctx["extraction"] = (ROOT / ex).read_text(encoding="utf-8", errors="replace")
+    return ctx
+
+
+# Both families' selftests now drive the MERGED registry through these two shims, so what they
+# prove is this suite — not the two lists it was built from. That is the point of merging: a
+# selftest that still exercised the old GATES list would go on passing after the merge broke it.
+
+def qb_run(bank, quiet=False):
+    return run(bank, qb_build_ctx(bank), quiet=quiet)
+
+
+def qp_run(bank, ctx, quiet=False):
+    return run(bank, ctx, quiet=quiet)
+
+
+# =================================================================================
+# CONTEXT — §5 family
+# =================================================================================
+
+def qb_build_ctx(bank):
     by_qid = {q.get("qid"): q for q in bank.get("questions", [])}
     pool_of = {}
     for pool, ids in (bank.get("pool_index") or {}).items():
@@ -580,34 +1213,124 @@ def build_ctx(bank):
         if path.exists():
             full = path.read_text(encoding="utf-8")
             unit_bn = str(int(unit)).translate(str.maketrans("0123456789", "০১২৩৪৫৬৭৮৯"))
-            src_text = chapter_section(full, unit_bn) or full
+            src_text = qb_chapter_section(full, unit_bn) or full
     return {"by_qid": by_qid, "pool_of": pool_of, "subject": subject,
             "class_level": class_level, "unit": unit, "source_text": src_text,
             "watch": 0, "report": []}
 
 
-def run(bank, quiet=False):
-    ctx = build_ctx(bank)
-    fails = []
-    for name, fn in GATES:
-        errs = fn(bank, ctx)
-        if not quiet:
-            print(f"  {'FAIL' if errs else 'PASS'}  {name}"
-                  + "".join(f"\n        - {e}" for e in errs))
-        fails += [(name, e) for e in errs]
-    return fails, ctx
+# =================================================================================
+# PART-AUTHORED BANKS — CD-055's self-declaration
+# =================================================================================
+
+MARKER = "নির্মাণাধীন"
+
+DECL_RE = re.compile(r"^\s*" + MARKER + r"\s*[—-]\s*(?P<detail>\S.*)$")
+
+def bank_declaration(bank):
+    """→ (is_marked, detail, error). Reads `header.অবস্থা` only — never a free-text scan.
+
+    A bank that carries the marker with no resume tail is marked-but-invalid: it gets the
+    exclusion refused, not granted, because CD-055's exclusion is bought by the detail.
+    """
+    raw = (bank.get("header") or {}).get("অবস্থা")
+    if raw is None:
+        return False, None, None
+    if not isinstance(raw, str) or MARKER not in raw:
+        return False, None, (f"`header.অবস্থা` is present but does not carry `{MARKER}` "
+                             f"— got {raw!r}; §7.9 defines exactly one marker")
+    m = DECL_RE.match(raw)
+    if not m:
+        return True, None, (f"declares `{MARKER}` with no resume detail — §7.9's line is "
+                            f"`{MARKER} — <what is authored, what is not, where to resume>`, "
+                            f"and the tail is what the exclusion is bought with")
+    return True, m.group("detail").strip(), None
+
+def classify(path, bank):
+    """→ (in_controls: bool, reason: str). Every verdict is printed by the sweep, both ways.
+
+    PRE-POLICY is a DECLARED status, not a shape accident (CD-123). A bank authored under
+    superseded policy says so in `policy_status`, and the sweep quotes its own words. The
+    difference matters: a bank held out because a parser could not find `header` is held out by
+    luck, and the day someone adds a `header` key it silently re-enters. A bank held out because
+    it declares itself pre-policy re-enters only when a human removes the line.
+    """
+    marked, detail, err = bank_declaration(bank)
+    if err:
+        return False, f"REFUSED  {err}"
+    if marked:
+        return False, f"SKIPPED  declares {MARKER} — resume: {detail}"
+    pre = bank.get("policy_status")
+    if isinstance(pre, str) and pre.startswith("pre-policy"):
+        return False, f"PRE-POLICY  {pre}"
+    if not isinstance(bank.get("questions"), list) or "header" not in bank:
+        return False, ("REFUSED  built to no policy shape this suite knows, and declares no "
+                       "`policy_status` — a bank is judged or it says why not; it is not simply "
+                       "unrecognised (SOURCE_POLICY §7.17)")
+    return True, "CONTROL  complete and §4-shaped"
+
+def sweep(root, ctx):
+    """Repo-wide pass. Prints the skip ledger FIRST, then judges everything it found.
+
+    The order is deliberate: the exclusions are printed before any verdict, so a reader cannot
+    reach a green line without having read what was held out to get there.
+    """
+    found = sorted((root / "workstreams/question-banks/banks").glob("*.json"))
+    print(f"\nBANK SWEEP — {len(found)} file(s) under workstreams/question-banks/banks/")
+    if not found:
+        print("  (none)")
+        return []
+    rows, fails = [], []
+    for p in found:
+        try:
+            bank = json.loads(p.read_text(encoding="utf-8"))
+        except Exception as e:                                    # noqa: BLE001
+            print(f"  REFUSED  {p.relative_to(root)} — unreadable: {e}")
+            fails.append((str(p), "unreadable"))
+            continue
+        in_ctl, reason = classify(p, bank)
+        rows.append((p, bank, in_ctl, reason))
+        print(f"  {reason:<64} {p.relative_to(root)}")
+    print(f"  → {sum(1 for r in rows if r[2])} in controls, "
+          f"{sum(1 for r in rows if not r[2])} held out (each named above)")
+
+    for p, bank, in_ctl, _ in rows:
+        marked, _, _ = bank_declaration(bank)
+        if not in_ctl and not marked:
+            continue                       # out of §6's scope entirely — not judged, said so above
+        print(f"\n  BANK: {p.relative_to(root)}"
+              + (f"   [{MARKER} — judged anyway; the marker is not a waiver (CD-055)]"
+                 if marked else ""))
+        f, _ = qp_run(bank, ctx)
+        fails += [(str(p), e) for _, e in f]
+        if marked and not f:
+            msg = (f"passes all eleven while still declaring {MARKER} — the marker is stale and "
+                   f"removing it is part of finishing (SOURCE_POLICY §7.9; STATED DEFAULT, Q-4)")
+            print(f"  FAIL  STALE-MARKER\n        - {msg}")
+            fails.append((str(p), msg))
+    return fails
 
 
-# ---- seeded-error selftest (runs FIRST, CD-025) ---------------------------------
+# =================================================================================
+# SEEDED SELFTEST — synthetic fixtures only (CD-055, CD-064(f))
+# =================================================================================
+# Every fixture below is written for this test. Nothing is read from canon/sources/ or
+# canon/marklogic/. The synthetic chapter is a fictional "পাঠ ৯৯" that does not exist in any book,
+# precisely so that no future reader can mistake it for a real extraction.
+
+
+# =================================================================================
+# SELFTEST — §5 family
+# =================================================================================
 
 SELFTEST_ANCHOR = "আরাফাতের ময়দানে মহানবি (স) ভাষণ দিলেন"
+
 BN_DIGITS = str.maketrans("0123456789", "০১২৩৪৫৬৭৮৯")
 
-
-def bn(n):
+def qb_bn(n):
     return str(n).translate(BN_DIGITS)
 
-def _good_bank():
+def _qb_good_bank():
     """A synthetic bank that must be CLEAN: 3 pools x 20 one-mark items, each pool split
     6/7/5/2 = exactly the C5 band 30/35/25/10. Stems are unique so ZERO-OVERLAP stays quiet.
     It points at the REAL extraction so SOURCE-TRACE and QUOTE-VERBATIM are exercised."""
@@ -622,13 +1345,13 @@ def _good_bank():
             diff = "hard" if (pool == "AS" and bloom == "Understand" and k < 9) else "easy"
             qs.append({"qid": qid, "topic_tag": "TOP-BAN-C5-07",
                        "ref19_topic_id": "BAN-INFOTEXT",
-                       "question_text": f"সেলফটেস্ট নমুনা ভাষণ প্রশ্ন ক্রমিক {bn(n)} কোনটি",
+                       "question_text": f"সেলফটেস্ট নমুনা ভাষণ প্রশ্ন ক্রমিক {qb_bn(n)} কোনটি",
                        "question_type": "mcq", "paper_role": "mcq", "bloom_level": bloom,
                        "difficulty": diff, "tier": "tier1", "marks": 1,
-                       "options": [{"option_id": "ক", "text": f"সঠিক বিকল্প {bn(n)}", "is_correct": True},
-                                   {"option_id": "খ", "text": f"ভুল বিকল্প {bn(n)}", "is_correct": False,
+                       "options": [{"option_id": "ক", "text": f"সঠিক বিকল্প {qb_bn(n)}", "is_correct": True},
+                                   {"option_id": "খ", "text": f"ভুল বিকল্প {qb_bn(n)}", "is_correct": False,
                                     "why_wrong": "পাঠে এই কথা নেই"},
-                                   {"option_id": "গ", "text": f"অন্য ভুল বিকল্প {bn(n)}",
+                                   {"option_id": "গ", "text": f"অন্য ভুল বিকল্প {qb_bn(n)}",
                                     "is_correct": False, "why_wrong": "পাঠে এই কথাও নেই"}]})
             pools[pool].append(qid)
             slots[qid] = "S05"
@@ -637,8 +1360,7 @@ def _good_bank():
             "source_extraction": "canon/marklogic/C5_Bangla_Source_13-23.md",
             "pool_index": pools, "slot_index": slots, "source_index": srcs, "questions": qs}
 
-
-def _twin_rubrics(b):
+def _qb_twin_rubrics(b):
     """Two descriptive items carrying a byte-identical content rubric."""
     rb = {"bands": ["৫", "৪", "৩", "২", "১"],
           "criteria": [{"role": "content", "criterion": "সব প্রশ্নে খাটে এমন একটি মানদণ্ড",
@@ -649,7 +1371,7 @@ def _twin_rubrics(b):
         qid = f"QP-BAN-C5-U21-Q9{k}"
         b["questions"].append({"qid": qid, "topic_tag": "TOP-BAN-C5-07",
                                "ref19_topic_id": "BAN-INFOTEXT",
-                               "question_text": f"সেলফটেস্ট ভাষণ বিস্তৃত প্রশ্ন {bn(k)}",
+                               "question_text": f"সেলফটেস্ট ভাষণ বিস্তৃত প্রশ্ন {qb_bn(k)}",
                                "question_type": "descriptive", "paper_role": "structured",
                                "bloom_level": "Evaluate", "difficulty": "hard", "tier": "tier1",
                                "marks": 5, "rubric": json.loads(json.dumps(rb))})
@@ -657,20 +1379,18 @@ def _twin_rubrics(b):
         b["slot_index"][qid] = "S08"
         b["source_index"][qid] = SELFTEST_ANCHOR
 
-
-def _mutate(fn):
-    b = json.loads(json.dumps(_good_bank()))
+def _qb_mutate(fn):
+    b = json.loads(json.dumps(_qb_good_bank()))
     fn(b)
     return b
 
-
-def selftest():
+def qb_selftest():
     """Every gate must fire on a bank broken specifically for it."""
     import copy  # noqa: F401
     cases = []
 
     def add(gate, label, fn, expect=None):
-        cases.append((gate, label, _mutate(fn), expect))
+        cases.append((gate, label, _qb_mutate(fn), expect))
 
     add("POOL-MEMBERSHIP", "question in two pools",
         lambda b: b["pool_index"]["CT"].append("QP-BAN-C5-U21-Q01"))
@@ -694,7 +1414,7 @@ def selftest():
         lambda b: b["questions"][0].update({"question_text": "নবি সাহেব কোথায় ভাষণ দেন"}))
     add("HONORIFIC", "হজরত with no (স)",
         lambda b: b["questions"][0].update({"question_text": "হজরত মুহাম্মদ কোথায় ভাষণ দেন"}))
-    add("RUBRIC-SPECIFICITY", "two S08 items sharing one rubric", _twin_rubrics)
+    add("RUBRIC-SPECIFICITY", "two S08 items sharing one rubric", _qb_twin_rubrics)
     add("TOPIC-NUMBER", "a topic_tag that is in no chart row",
         lambda b: b["questions"][0].update({"topic_tag": "TOP-BAN-C5-99"}))
     add("FLAG-TRACE", "a flag pointing at a tag that does not exist",
@@ -709,12 +1429,6 @@ def selftest():
     add("FLAG-TRACE", "a flag with no closes_on",
         lambda b: b.update({"flags": [{"tag": "PENDING-P-005", "status": "FLAGGED",
                                        "scope": "x", "what": "y", "closes_on": ""}]}))
-    add("DOMAIN-RATIO", "every HW item becomes জ্ঞান",
-        lambda b: [q.update({"bloom_level": "Remember"})
-                   for q in b["questions"] if q["qid"] in b["pool_index"]["HW"]])
-    add("DOMAIN-RATIO", "chapter total goes all-উচ্চতর",
-        lambda b: [q.update({"bloom_level": "Create"}) for q in b["questions"]],
-        expect="CHAPTER TOTAL")
     add("MARK-VALUE", "MCQ carries 5 marks",
         lambda b: b["questions"][0].update({"marks": 5}))
     add("SOURCE-TRACE", "an item with no extraction anchor",
@@ -741,17 +1455,17 @@ def selftest():
 
     # Negative case: a FLAGGED row is promotable (CD-042) and must NOT trip FLAG-TRACE.
     # A gate that fires on everything is as useless as one that fires on nothing.
-    neg = _mutate(lambda b: b.update({
+    neg = _qb_mutate(lambda b: b.update({
         "flags": [{"tag": "PENDING-P-XXX", "status": "FLAGGED",
                    "scope": "x", "what": "y", "closes_on": "z"}],
         "_selftest_queue": "| PENDING-P-XXX | d | w | q | def | by | **FLAGGED** — synthetic |"}))
-    if any(g == "FLAG-TRACE" for g, _ in run(neg, quiet=True)[0]):
+    if any(g == "FLAG-TRACE" for g, _ in qb_run(neg, quiet=True)[0]):
         print("  FAIL  FLAG-TRACE fires on a FLAGGED row — it must not; FLAGGED is promotable")
         ok = False
     else:
         print("  PASS  FLAG-TRACE stays quiet on a FLAGGED row (CD-042: FLAGGED is promotable)")
 
-    clean, _ = run(_good_bank(), quiet=True)
+    clean, _ = qb_run(_qb_good_bank(), quiet=True)
     if clean:
         print(f"  FAIL  baseline: the good bank is not clean -> {clean}")
         ok = False
@@ -759,7 +1473,7 @@ def selftest():
         print("  PASS  baseline: an unbroken bank is CLEAN")
 
     for gate, label, broken, expect in cases:
-        fails, _ = run(broken, quiet=True)
+        fails, _ = qb_run(broken, quiet=True)
         fired = {g for g, _ in fails}
         hit = gate in fired and (expect is None
                                  or any(expect in m for g, m in fails if g == gate))
@@ -773,20 +1487,320 @@ def selftest():
     return ok
 
 
+# =================================================================================
+# SELFTEST — §6 family
+# =================================================================================
+
+SYNTH_EXTRACTION = """
+# পাঠ ৯৯ — কল্পিত পাঠ (SYNTHETIC FIXTURE — this chapter does not exist in any book)
+
+আকাশে একটি নীল ঘুড়ি উড়ছিল ধীরে ধীরে।
+ছোট্ট মেয়েটি জানালা দিয়ে সেই ঘুড়ি দেখছিল অনেকক্ষণ।
+বাতাস থেমে গেলে ঘুড়িটি নিচে নেমে এল গাছের ডালে।
+মেয়েটি তখন উঠোনে গিয়ে ঘুড়িটিকে নামিয়ে আনল।
+সন্ধ্যার আগে সে ঘুড়িটি আবার আকাশে ওড়াল।
+পাখিরা সারাদিন আকাশে ওড়ে আর সন্ধ্যায় ঘরে ফেরে।
+নদীর ধারে একটি পুরানো নৌকা বাঁধা ছিল দড়ি দিয়ে।
+"""
+
+SYNTH_TOPICS = ["TOP-BAN-C5-05", "TOP-BAN-C5-01"]
+
+SYNTH_SLUGS = {"BAN-POEM", "BAN-VOCAB", "BAN-SENTENCE"}
+
+SYNTH_SLOTS = ["S02", "S05", "S07", "S08"]
+
+def _qp_rubric():
+    return {"bands": ["ভালো", "মোটামুটি"],
+            "criteria": [
+                {"role": "content", "criterion": "বিষয়বস্তু",
+                 "band_descriptors": {"ভালো": "সব পয়েন্ট আছে", "মোটামুটি": "কিছু পয়েন্ট আছে"}},
+                {"role": "islamic_alignment", "criterion": "ইসলামি মূল্যবোধের সঙ্গে সংগতি",
+                 "band_descriptors": {"ভালো": "পুরোপুরি সংগত", "মোটামুটি": "আংশিক সংগত"}},
+            ]}
+
+def _qp_good_bank():
+    """A synthetic chapter bank that passes all eleven. 24 items — above REF-09 §4.3's floor of 20.
+
+    Composition sits inside REF-06 §3.6's SIX bands (CD-121/Q-1) and supplies the easy floor:
+    6 Remember (25.0%), 8 Understand (33.3%), 6 Apply (25.0%), 3 Analyze (12.5%), 1 Evaluate
+    (4.2%), 0 Create (0%); easy 10 (41.7%), medium 10, hard 4.
+
+    THE FIXTURE HAS BEEN RE-CUT TWICE, BOTH TIMES BECAUSE THE GATE WAS RIGHT. Recorded, not
+    quietly fixed, because the direction of the correction is the whole discipline:
+
+      1. The first draft sat at 9 Remember (37.5%) and reddened the জ্ঞান ceiling.
+      2. When Q-1 was ruled and the band moved from four NAPE domains to REF-06's six Bloom
+         levels, Analyze fell to 8.3% against a 10–20% floor. The composition was re-cut to
+         6/8/6/3/1/0; **the band was not widened to admit the fixture.**
+
+    Widening a band to admit a fixture shapes the gate to pass its own test — CD-055 / CD-064(f)'s
+    hazard one level up, and the reason this session authors no bank content.
+    """
+    anchors = [
+        "আকাশে একটি নীল ঘুড়ি", "উড়ছিল ধীরে ধীরে", "ছোট্ট মেয়েটি জানালা দিয়ে",
+        "সেই ঘুড়ি দেখছিল অনেকক্ষণ", "বাতাস থেমে গেলে ঘুড়িটি", "নিচে নেমে এল গাছের ডালে",
+        "মেয়েটি তখন উঠোনে গিয়ে", "ঘুড়িটিকে নামিয়ে আনল", "সন্ধ্যার আগে সে ঘুড়িটি",
+        "আবার আকাশে ওড়াল", "পাখিরা সারাদিন আকাশে ওড়ে", "সন্ধ্যায় ঘরে ফেরে",
+        "নদীর ধারে একটি পুরানো নৌকা", "বাঁধা ছিল দড়ি দিয়ে",
+    ]
+    blooms = (["Remember"] * 6 + ["Understand"] * 8 + ["Apply"] * 6
+              + ["Analyze"] * 3 + ["Evaluate"] * 1)
+    diffs = (["easy"] * 10 + ["medium"] * 10 + ["hard"] * 4)
+    qs, pool, slot_idx, src_idx = [], {"HW": [], "AS": [], "CT": []}, {}, {}
+    for i in range(24):
+        qid = f"QP-BAN-C5-U99-Q{i + 1:02d}"
+        # S05 is বহুনির্বাচনি (mcq); S02 শব্দার্থ and S07 সংক্ষিপ্ত are short; S08 is descriptive.
+        if i < 6:
+            slot, qtype, role, marks = "S05", "mcq", "mcq", 1
+        elif i < 12:
+            slot, qtype, role, marks = "S02", "short_answer", "short", 1
+        elif i < 20:
+            slot, qtype, role, marks = "S07", "short_answer", "short", 2
+        else:
+            slot, qtype, role, marks = "S08", "descriptive", "creative", 5
+        q = {
+            "qid": qid,
+            "topic_tag": SYNTH_TOPICS[i % 2],
+            "ref19_topic_id": "BAN-POEM" if i % 2 == 0 else "BAN-VOCAB",
+            "question_text": f"কল্পিত প্রশ্ন {i + 1} — ঘুড়ি ও পাখি নিয়ে সংখ্যা {i + 1}",
+            "question_type": qtype, "paper_role": role,
+            "bloom_level": blooms[i], "difficulty": diffs[i], "tier": "tier1", "marks": marks,
+        }
+        if qtype == "mcq":
+            q["options"] = [{"text": "প্রথম", "correct": True},
+                            {"text": "দ্বিতীয়", "correct": False, "why_wrong": "ভুল"},
+                            {"text": "তৃতীয়", "correct": False, "why_wrong": "ভুল"}]
+        elif qtype == "short_answer":
+            q["answer_key"] = f"উত্তর {i + 1}"
+        else:
+            q["rubric"] = _qp_rubric()
+        qs.append(q)
+        slot_idx[qid] = slot
+        src_idx[qid] = anchors[i % len(anchors)]
+        pool[["HW", "AS", "CT"][i % 3]].append(qid)
+    return {
+        "bank_id": "SYNTH-BAN-C5-U99", "subject": "BAN", "class": 5, "chapter": "U99",
+        "header": {"target": 24,
+                   "reason": "synthetic fixture sized to exercise all eleven gates",
+                   "topics": SYNTH_TOPICS, "spine_slots": SYNTH_SLOTS},
+        "pool_index": pool, "slot_index": slot_idx, "source_index": src_idx,
+        "questions": qs,
+    }
+
+def _qp_ctx():
+    """A synthetic context. The REF-19 and TOPIC_NUMBERS registers are STUBBED for the qp_selftest so
+    the instrument is proven against fixtures rather than against the live canon files — the same
+    discipline the fixtures themselves follow."""
+    return {"extraction": SYNTH_EXTRACTION,
+            "ref19_slugs": SYNTH_SLUGS,
+            "topic_numbers": set(SYNTH_TOPICS) | {"TOP-BAN-C5-07"}}
+
+def _qp_mutate(fn):
+    b = json.loads(json.dumps(_qp_good_bank()))
+    fn(b)
+    return b
+
+def qp_selftest():
+    print("SELFTEST — the instrument is proven before any bank verdict (CD-025). "
+          "Synthetic fixtures only; no canon/sources or canon/marklogic file is read as fixture "
+          "data (CD-055, CD-064(f)).")
+    ok = True
+    ctx = _qp_ctx()
+
+    clean, _ = qp_run(_qp_good_bank(), ctx, quiet=True)
+    if clean:
+        print(f"  FAIL  baseline: the synthetic bank is not clean -> {clean}")
+        ok = False
+    else:
+        print("  PASS  baseline: an unbroken synthetic chapter bank passes all eleven")
+
+    cases = []
+
+    def add(gate, label, fn, ctx_override=None):
+        cases.append((gate, label, _qp_mutate(fn), ctx_override))
+
+    # --- one seeded failure per gate, in §6 order -------------------------------------
+    add("MARK-VALUE", "an S05 mcq carrying 5 marks instead of the spine's 1",
+        lambda b: b["questions"][0].update({"marks": 5}))
+    add("SOURCE-TRACE", "an anchor that appears nowhere in the extraction",
+        lambda b: b["source_index"].update(
+            {"QP-BAN-C5-U99-Q01": "এই বাক্যটি পাঠে কোথাও নেই একেবারেই"}))
+    add("SCRIPT-GUARD", "tier-1 Arabic script in a stem",
+        lambda b: b["questions"][0].update({"question_text": "بسم শব্দের অর্থ কী"}))
+    add("REF19-SLUG", "a ref19_topic_id that is in no REF-19 row",
+        lambda b: b["questions"][0].update({"ref19_topic_id": "BAN-NOTASLUG"}))
+    add("TOPIC-NUMBER", "an unminted topic_tag — must FAIL and must not auto-mint",
+        lambda b: b["questions"][0].update({"topic_tag": "TOP-BAN-C5-99"}))
+    add("KEY-RUBRIC", "a descriptive item whose rubric has one band",
+        lambda b: b["questions"][20]["rubric"].update({"bands": ["ভালো"]}))
+    add("BLOOM-BAND", "every item becomes Remember — the pool stops spanning the band",
+        lambda b: [q.update({"bloom_level": "Remember"}) for q in b["questions"]])
+    add("DIFFICULTY", "the pool cannot supply easy ≥30%",
+        lambda b: [q.update({"difficulty": "medium"}) for q in b["questions"]])
+    add("REPETITION", "an identical stem on two Understand items",
+        lambda b: b["questions"][10].update(
+            {"question_text": b["questions"][11]["question_text"]}))
+    add("COVERAGE", "a declared spine slot that no item supplies",
+        lambda b: b["header"]["spine_slots"].append("S15"))
+    add("DOMAIN-RATIO", "an annual paper that is entirely জ্ঞান",
+        lambda b: b.update({"papers": [
+            {"paper_id": "SYNTH-ANNUAL", "kind": "annual",
+             "items": [q["qid"] for q in b["questions"] if q["bloom_level"] == "Remember"]}]}))
+
+    # --- extra seeds on the rows where §6 is most specific ----------------------------
+    add("KEY-RUBRIC", "a descriptive item with no islamic_alignment criterion row",
+        lambda b: b["questions"][20]["rubric"].update(
+            {"criteria": [b["questions"][20]["rubric"]["criteria"][0]]}))
+    add("KEY-RUBRIC", "an mcq that also carries a rubric — the schema forbids the others",
+        lambda b: b["questions"][0].update({"rubric": _qp_rubric()}))
+    add("KEY-RUBRIC", "a criterion with no descriptor for one of the declared bands",
+        lambda b: b["questions"][20]["rubric"]["criteria"][1]["band_descriptors"].pop("মোটামুটি"))
+    add("SOURCE-TRACE", "a one-word anchor — short enough to match anything",
+        lambda b: b["source_index"].update({"QP-BAN-C5-U99-Q02": "ঘুড়ি"}))
+    add("COVERAGE", "the bank header states no reason for its target",
+        lambda b: b["header"].pop("reason"))
+    add("COVERAGE", "a pool below REF-09 §4.3's floor of 20",
+        lambda b: b.update({"questions": b["questions"][:12]}))
+
+    print()
+    for gate, label, broken, over in cases:
+        c = dict(ctx)
+        if over:
+            c.update(over)
+        fails, _ = qp_run(broken, c, quiet=True)
+        fired = {g for g, _ in fails}
+        if gate in fired:
+            print(f"  PASS  {gate:<14} fires on: {label}")
+        else:
+            print(f"  FAIL  {gate:<14} DID NOT FIRE on: {label}")
+            ok = False
+
+    # --- NEGATIVE CASES: a gate that fires on everything is as useless as one that fires
+    # --- on nothing. Each of these is a thing §6 or §5 explicitly PERMITS.
+    print()
+    negatives = [
+        ("REPETITION", "a `Remember` stem repeated across HW · AS · CT — §5 permits it",
+         lambda b: b["questions"][1].update({"question_text": b["questions"][0]["question_text"]})),
+        ("REPETITION", "a `Remember` stem lifted verbatim from a CT into the annual — §5's "
+                       "listed supersede of MarkLogic §৮'s row 2, and it runs BOTH directions",
+         lambda b: b.update({"papers": [
+             {"paper_id": "CT-1", "kind": "classtest", "items": [b["questions"][0]["qid"]]},
+             {"paper_id": "ANN", "kind": "annual", "items": [b["questions"][1]["qid"]]}]}
+         ) or b["questions"][1].update({"question_text": b["questions"][0]["question_text"]})),
+        ("DOMAIN-RATIO", "a bank with NO papers — the ratio is paper level only and must not "
+                         "fire on a pool (§6)",
+         lambda b: None),
+        ("DOMAIN-RATIO", "a SINGLE class test skewed all-জ্ঞান — never judged (§5: the ratio is "
+                         "met across the year's tests, not within any one)",
+         lambda b: b.update({"papers": [
+             {"paper_id": "CT-ONLY", "kind": "classtest",
+              "items": [q["qid"] for q in b["questions"] if q["bloom_level"] == "Remember"]}]})),
+        ("BLOOM-BAND", "a pool banded flat against the CHAPTER band — §4 says that is correct; "
+                       "only a session-scoped reading drifts low",
+         lambda b: None),
+        ("DIFFICULTY", "a pool at 70% easy — CAN-SUPPLY, not equality, so this passes",
+         lambda b: [q.update({"difficulty": "easy"}) for q in b["questions"][:17]]),
+        ("DIFFICULTY", "a pool that is 67% HARD while still holding easy ≥30% — CD-122: a pool "
+                       "cannot fail a ceiling, because an author can decline to use hard items and "
+                       "a compliant paper stays constructible. This was a SEEDED FAILURE until Q-2 "
+                       "was ruled; it is kept, inverted, so the symmetric check cannot creep back "
+                       "in unnoticed",
+         lambda b: [q.update({"difficulty": "hard"}) for q in b["questions"][8:]]),
+    ]
+    for gate, label, fn in negatives:
+        broken = _qp_mutate(fn)
+        fails, _ = qp_run(broken, ctx, quiet=True)
+        if any(g == gate for g, _ in fails):
+            print(f"  FAIL  {gate:<14} WRONGLY FIRES on: {label}")
+            print("        " + "; ".join(e for g, e in fails if g == gate))
+            ok = False
+        else:
+            print(f"  PASS  {gate:<14} stays quiet on: {label}")
+
+    # --- CD-055 self-declaration for part-authored banks, seeded BOTH directions -------
+    # The load-bearing case is the fourth: the marker must buy the control exclusion and
+    # NOTHING ELSE. A version of this that quieted a gate would be a waiver, which is the one
+    # thing CD-055 says it is not.
+    print()
+
+    def _marked(detail="S02/S05 authored; S07/S08 not; resume at Q13"):
+        b = _qp_good_bank()
+        b["header"]["অবস্থা"] = f"{MARKER} — {detail}"
+        return b
+
+    decl = []
+
+    def dcheck(label, cond):
+        decl.append(cond)
+        print(f"  {'PASS' if cond else 'FAIL'}  DECLARE        {label}")
+
+    in_ctl, reason = classify(Path("synthetic.json"), _marked())
+    dcheck(f"a bank declaring {MARKER} is held OUT of the controls, and the reason names the "
+           f"resume point", (not in_ctl) and "resume at Q13" in reason)
+
+    in_ctl, reason = classify(Path("synthetic.json"), _qp_good_bank())
+    dcheck("stays quiet on: a finished, unmarked, §4-shaped bank — it IS a control",
+           in_ctl and reason.startswith("CONTROL"))
+
+    b = _qp_good_bank()
+    b["header"]["অবস্থা"] = MARKER
+    in_ctl, reason = classify(Path("synthetic.json"), b)
+    dcheck(f"a bare `{MARKER}` with no resume tail is REFUSED, not silently skipped",
+           (not in_ctl) and reason.startswith("REFUSED"))
+
+    broken_marked = _marked()
+    broken_marked["questions"][0]["topic_tag"] = "TOP-BAN-C5-99"
+    f_marked, _ = qp_run(broken_marked, ctx, quiet=True)
+    dcheck("THE MARKER IS NOT A WAIVER — every gate still runs on a marked bank and TOPIC-NUMBER "
+           "still reports it red",
+           "TOPIC-NUMBER" in {g for g, _ in f_marked})
+
+    f_unmarked, _ = qp_run(_qp_good_bank(), ctx, quiet=True)
+    dcheck("and it changes no verdict: marked and unmarked copies of the same clean bank give "
+           "byte-identical gate output",
+           qp_run(_marked(), ctx, quiet=True)[0] == f_unmarked == [])
+
+    b = _qp_good_bank()
+    b["header"]["অবস্থা"] = "সম্পূর্ণ"
+    in_ctl, reason = classify(Path("synthetic.json"), b)
+    dcheck(f"an `অবস্থা` carrying some other word is REFUSED — §7.9 defines exactly one marker",
+           (not in_ctl) and reason.startswith("REFUSED"))
+
+    ok = ok and all(decl)
+
+    print(f"\nSELFTEST RESULT: {'PASS' if ok else 'FAIL'} "
+          f"({len(cases)} seeded failures + {len(negatives)} negatives + {len(decl)} "
+          f"CD-055 declaration cases + 1 baseline, across all {sum(1 for _, i, _ in GATES if 'qp6' in i)} gates)")
+    return ok
+
+
 def main():
-    if not selftest():
+    print("SELFTEST — both families, before any verdict (CD-025). Synthetic fixtures only; no "
+          "canon/sources or canon/marklogic file is read as fixture data.\n")
+    print("--- QUESTION_BANK_POLICY §5 family "
+          + "-" * 44)
+    a = qb_selftest()
+    print("\n--- canon/QUESTION_POLICY §6 family "
+          + "-" * 43)
+    b = qp_selftest()
+    if not (a and b):
         print("\nRESULT: FAIL (selftest red — no bank verdict is believable, nothing was judged)")
         sys.exit(1)
+    print(f"\nSUITE: {len(GATES)} gates "
+          f"({sum(1 for _, i, _ in GATES if 'qp6' in i)} carry a QUESTION_POLICY §6 row, "
+          f"{sum(1 for _, i, _ in GATES if 'qb' in i)} a QUESTION_BANK_POLICY §5 row, "
+          f"{sum(1 for _, i, _ in GATES if len(i) == 2)} both)")
+
     if len(sys.argv) < 2:
-        print("\nusage: gates.py <bank.json>   (selftest above ran clean)")
-        sys.exit(0)
+        fails = sweep(ROOT, None)
+        print(f"\nRESULT: {'FAIL' if fails else 'CLEAN'} ({len(fails)} failures)")
+        sys.exit(1 if fails else 0)
     path = Path(sys.argv[1])
     bank = json.loads(path.read_text(encoding="utf-8"))
-    print(f"\nBANK: {path}")
-    fails, ctx = run(bank)
-    for gate, line in ctx["report"]:
-        print(f"  REPORT  {gate:<14} {line}")
-    print(f"  REPORT  {'SCRIPT-GUARD':<14} tier-3 WATCH counter (em-dash/ellipsis): {ctx['watch']}")
+    print(f"\nBANK: {path}   [shape: {bank_shape(bank) or 'unrecognised'}]")
+    fails, report = run(bank)
+    for gate, line in report:
+        print(f"  REPORT  {gate:<18} {line}")
     print(f"RESULT: {'FAIL' if fails else 'CLEAN'} ({len(fails)} failures)")
     sys.exit(1 if fails else 0)
 

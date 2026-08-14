@@ -1,5 +1,7 @@
 {
   "schema_version": "1.0",
+  "policy_status": "pre-policy — authored 2026-08-09 under QUESTION_BANK_POLICY v1.0 §5, before canon/QUESTION_POLICY.md v1.0 existed. It is NOT re-judged retroactively against §4's shape or §6's eleven (CD-123). Held out of the gate suite's controls as a STATED status, not because a parser failed to recognise it. It re-enters when wave 2 revises it; QB-CR-009's U14 re-tag is owed at that time.",
+  "policy_shape": "qb",
   "bank_id": "QB-BAN-C5-U21",
   "wave": 1,
   "source_extraction": "canon/marklogic/C5_Bangla_Source_13-23.md",
