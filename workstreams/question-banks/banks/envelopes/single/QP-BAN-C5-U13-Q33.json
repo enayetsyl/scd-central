@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-02",
+    "bloom_level": "Apply",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q33",
+    "topic_tag": "TOP-BAN-C5-02",
+    "ref19_topic_id": "BAN-SENTENCE",
+    "question_text": "'নদী' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Apply",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "answer_key": {
+      "accepted": [
+        "নদীর পাড়ে বসে থাকতে আমার খুব ভালো লাগে।"
+      ],
+      "model_note": "শব্দটি কবিতার নিজের ('নদীর কাছে থাকতে'), অনুশীলনী ১-এর তালিকার নয় — বাক্য গঠনের জন্য কবিতার শব্দ নেওয়া হয়েছে। শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য। নমুনা উত্তর দেওয়া হলো।"
+    }
+  }
+}

@@ -2,7 +2,7 @@
  "schema_version": "1.0",
  "policy_shape": "qp6",
  "bank_id": "QB-BAN-C5-U13",
- "wave": 1,
+ "wave": 2,
  "subject": "BAN",
  "class": 5,
  "chapter": "পাঠ ১৩ — পাখির মতো",
@@ -10,8 +10,8 @@
  "source_extraction": "canon/marklogic/C5_Bangla_Source_13-23.md",
  "curation": "FLEXIBLE · C-03 substitution applied at Q23 (অনুশীলনী ৫)",
  "header": {
-  "target": 24,
-  "reason": "24 clears REF-09 §4.3's floor of 20, serves all seven slots this chapter's own 'কোন প্রশ্নে কাজে লাগবে' line names (S01·S02·S03·S07·S08·S09·S10), and divides against REF-06 §3.6's C3–5 band without forcing any level outside it — a §4 production target, not a quota.",
+  "target": 36,
+  "reason": "36 is the largest pool this chapter supports with NO marginal item — every Bloom level lands mid-band rather than on a floor, so a later re-tag cannot redden it. Wave 1's ceiling was 25 (Remember 5 ÷ REF-09/REF-06's 20% floor); the teacher-gloss ruling takes Remember to 10 and the ceiling to 50, so content is again the limit and 36 is where content stops being distinct.",
   "topics": [
    "TOP-BAN-C5-05",
    "TOP-BAN-C5-01",
@@ -28,18 +28,21 @@
   ],
   "slot_counts": {
    "S01": 1,
-   "S02": 3,
-   "S03": 5,
-   "S07": 5,
-   "S08": 4,
+   "S02": 7,
+   "S03": 6,
+   "S07": 10,
+   "S08": 5,
    "S09": 1,
-   "S10": 5
+   "S10": 6
   },
-  "remember_cap": "শব্দার্থ IS CAPPED, DELIBERATELY, and the cap was planned before drafting. MarkLogic §৩ fixes শব্দার্থ as জ্ঞানমূলক, so every S02 item is `Remember` and REF-06 §3.6's 20–30% band is the binding constraint. Two caps applied: (1) only FOUR words carry a meaning IN the extraction (কর্ণফুলী · কাঁঠালচাঁপা · 'দুধভরা ওই চাঁদের বাটি' · বন্য) — অনুশীলনী ১'s গন্ধ · কূল · গাঁ · ইচ্ছা are set as TASKS with no key in the chapter, so a শব্দার্থ item on them would take its answer from outside the chapter (§4, REF-09 §5); they are used at S03 instead, where the STUDENT supplies the sentence. (2) Of those four, 'দুধভরা ওই চাঁদের বাটি' is authored once, as the S07 অনুশীলনী ৪ঙ item, not twice. Net: S02 = 3, and Remember = 3 (S02) + 1 (S01) + 1 (S07 ৪ক, literal recall labelled honestly) = 5 = 20.8% — inside the floor, not 40% over the ceiling.",
+  "teacher_gloss_ruling": "PRINCIPAL RULING 2026-08-14 — a TEACHER-SUPPLIED GLOSS is an acceptable key for a শব্দার্থ item. **Q25 গন্ধ · Q26 কূল · Q27 গাঁ · Q28 ইচ্ছা carry keys that are NOT in the extraction.** অনুশীলনী ১ sets these four as tasks and the chapter glosses none of them; every other key in this bank resolves to পাঠ ১৩ and these four resolve to the teacher. Each says so in its own `model_note`, so the provenance travels with the item and not only with this header. Their `source_index` anchors point at the word's OCCURRENCE in the poem, which is what the item is about — there is no gloss in the file to anchor to, and SOURCE-TRACE would be satisfied either way, which is precisely why the difference is written down rather than left to the gate.",
+  "remember_cap": "THE CAP IS LIFTED AND THE ARITHMETIC IS RESTATED, because it is what sizes every future wave of this chapter. REF-06 §3.6 puts `Remember` at 20–30% of the pool, so max pool size = Remember ÷ 0.20 and min = Remember ÷ 0.30. Wave 1: Remember 5 → the pool could not exceed 25, and it held 24 — ONE item from a ceiling nobody had computed. Wave 2: Remember 10 (7 × S02 + S01 + Q10 ৪ক + Q29 ফেরেস্তারা) → the band admits 34–50, and 36 sits inside it at 27.8%. **শব্দার্থ is now exhausted at 7: four glossed in the chapter (one of which, 'দুধভরা ওই চাঁদের বাটি', is authored once at S07 not twice) plus the four ruled here.** A further wave cannot add a শব্দার্থ item without a new word, so the next Remember must come from somewhere else or the pool stops growing at 50.",
   "gaps": [
-   "S04 শূন্যস্থান · S05 বহুনির্বাচনি · S06 বিপরীত শব্দ · S11 বিরামচিহ্ন · S12 যুক্তবর্ণ · S13 এক কথায় প্রকাশ · S14 আবেদনপত্র · S15 রচনা — NOT served. পাঠ ১৩'s own 'কোন প্রশ্নে কাজে লাগবে' line names seven slots and these are not among them; the chapter carries no material for them. Recorded as a gap, not filled (§4, §7).",
-   "S02 শব্দার্থ is under-served relative to what a শব্দার্থ slot could take: 3 items against অনুশীলনী ১'s five words plus the four glossed ones. See remember_cap — the limit is the Bloom band and the absence of keys in the chapter, not the wave size.",
-   "S10 is authored as ভাব নির্ণয়, NOT পদ নির্ণয়. MarkLogic_BAN_Spine.md's BAN-S10 C5 row reads পদ নির্ণয় (D0); this chapter's own line authorises ভাব নির্ণয় as its alternative and পাঠ ১৩ carries no পদ material. The per-item mark is 1 either way, so no mark is inferred. RAISED, not settled."
+   "S04 শূন্যস্থান · S05 বহুনির্বাচনি · S06 বিপরীত শব্দ · S11 বিরামচিহ্ন · S12 যুক্তবর্ণ · S13 এক কথায় প্রকাশ · S14 আবেদনপত্র · S15 রচনা — NOT served, unchanged from wave 1. পাঠ ১৩'s own 'কোন প্রশ্নে কাজে লাগবে' line names seven slots and these are not among them. Recorded as a gap, not filled (§4, §7).",
+   "অনুশীলনী ৮ (ছকের ভিতর শব্দ খোঁজা) is UNAUTHORABLE: the grid itself is not reproduced in canon/marklogic/C5_Bangla_Source_13-23.md. This is an EXTRACTION gap, not a wave gap — no future wave can close it without the চাপা being re-extracted. Raised.",
+   "মিল-শব্দ (অনুশীলনী ৩) has no C5 spine slot of its own. Q34 rides S07 (সংক্ষিপ্ত উত্তর, 2 marks), which is legitimate but is a workaround, not a mapping. Raised.",
+   "S10 is authored as ভাব নির্ণয়, NOT পদ নির্ণয়. MarkLogic_BAN_Spine.md's BAN-S10 C5 row reads পদ নির্ণয় (D0); this chapter's own line authorises ভাব নির্ণয় as its alternative and পাঠ ১৩ carries no পদ material. Per-item mark is 1 either way. RAISED, not settled.",
+   "Not authored, judged too weak rather than overlooked: অনুশীলনী ৭'s গাছের তালিকা (the answer is wholly the student's own and traces to nothing), অনুশীলনী ২'s line-ordering task (re-uses Q01's eight lines), and a stanza-by-stanza movement item (overlaps Q36)."
   ]
  },
  "flags": [],
@@ -65,7 +68,18 @@
    "QP-BAN-C5-U13-Q21",
    "QP-BAN-C5-U13-Q22",
    "QP-BAN-C5-U13-Q23",
-   "QP-BAN-C5-U13-Q24"
+   "QP-BAN-C5-U13-Q24",
+   "QP-BAN-C5-U13-Q25",
+   "QP-BAN-C5-U13-Q26",
+   "QP-BAN-C5-U13-Q27",
+   "QP-BAN-C5-U13-Q28",
+   "QP-BAN-C5-U13-Q29",
+   "QP-BAN-C5-U13-Q30",
+   "QP-BAN-C5-U13-Q31",
+   "QP-BAN-C5-U13-Q32",
+   "QP-BAN-C5-U13-Q33",
+   "QP-BAN-C5-U13-Q34",
+   "QP-BAN-C5-U13-Q35"
   ],
   "AS": [
    "QP-BAN-C5-U13-Q02",
@@ -80,14 +94,21 @@
    "QP-BAN-C5-U13-Q18",
    "QP-BAN-C5-U13-Q19",
    "QP-BAN-C5-U13-Q21",
-   "QP-BAN-C5-U13-Q23"
+   "QP-BAN-C5-U13-Q23",
+   "QP-BAN-C5-U13-Q25",
+   "QP-BAN-C5-U13-Q27",
+   "QP-BAN-C5-U13-Q29",
+   "QP-BAN-C5-U13-Q31",
+   "QP-BAN-C5-U13-Q34",
+   "QP-BAN-C5-U13-Q36"
   ],
   "CT": [
    "QP-BAN-C5-U13-Q02",
    "QP-BAN-C5-U13-Q10",
    "QP-BAN-C5-U13-Q13",
    "QP-BAN-C5-U13-Q16",
-   "QP-BAN-C5-U13-Q19"
+   "QP-BAN-C5-U13-Q19",
+   "QP-BAN-C5-U13-Q29"
   ]
  },
  "slot_index": {
@@ -114,7 +135,19 @@
   "QP-BAN-C5-U13-Q21": "S10",
   "QP-BAN-C5-U13-Q22": "S10",
   "QP-BAN-C5-U13-Q23": "S10",
-  "QP-BAN-C5-U13-Q24": "S10"
+  "QP-BAN-C5-U13-Q24": "S10",
+  "QP-BAN-C5-U13-Q25": "S02",
+  "QP-BAN-C5-U13-Q26": "S02",
+  "QP-BAN-C5-U13-Q27": "S02",
+  "QP-BAN-C5-U13-Q28": "S02",
+  "QP-BAN-C5-U13-Q29": "S07",
+  "QP-BAN-C5-U13-Q30": "S07",
+  "QP-BAN-C5-U13-Q31": "S07",
+  "QP-BAN-C5-U13-Q32": "S07",
+  "QP-BAN-C5-U13-Q33": "S03",
+  "QP-BAN-C5-U13-Q34": "S07",
+  "QP-BAN-C5-U13-Q35": "S10",
+  "QP-BAN-C5-U13-Q36": "S08"
  },
  "source_index": {
   "QP-BAN-C5-U13-Q01": "আম্মা বলেন পড়রে সোনা আব্বা বলেন মন দে",
@@ -140,7 +173,19 @@
   "QP-BAN-C5-U13-Q21": "আমার কেবল ইচ্ছে জাগে নদীর কাছে থাকতে",
   "QP-BAN-C5-U13-Q22": "কেমন করে শহর ছেড়ে সবুজ গাঁয়ে ঘুরব",
   "QP-BAN-C5-U13-Q23": "ভাব নির্ণয় আদেশ নিষেধ অনুরোধ",
-  "QP-BAN-C5-U13-Q24": "ভাব নির্ণয় আদেশ নিষেধ অনুরোধ"
+  "QP-BAN-C5-U13-Q24": "ভাব নির্ণয় আদেশ নিষেধ অনুরোধ",
+  "QP-BAN-C5-U13-Q25": "মন বসে না কাঁঠালচাঁপার গন্ধে",
+  "QP-BAN-C5-U13-Q26": "সবাই যখন ঘুমিয়ে পড়ে কর্ণফুলীর কূলটায়",
+  "QP-BAN-C5-U13-Q27": "কেমন করে শহর ছেড়ে সবুজ গাঁয়ে ঘুরব",
+  "QP-BAN-C5-U13-Q28": "শব্দের অর্থ ও বাক্য গন্ধ কূল বন্য গাঁ ইচ্ছা",
+  "QP-BAN-C5-U13-Q29": "দুধভরা ওই চাঁদের বাটি ফেরেস্তারা উল্টায়",
+  "QP-BAN-C5-U13-Q30": "তোমরা যখন শিখছ পড়া মানুষ হওয়ার জন্য",
+  "QP-BAN-C5-U13-Q31": "সবাই যখন ঘুমিয়ে পড়ে কর্ণফুলীর কূলটায়",
+  "QP-BAN-C5-U13-Q32": "আমি না হয় পাখিই হব পাখির মতো বন্য",
+  "QP-BAN-C5-U13-Q33": "আমার কেবল ইচ্ছে জাগে নদীর কাছে থাকতে",
+  "QP-BAN-C5-U13-Q34": "মিল শব্দ খুঁজে বের করা",
+  "QP-BAN-C5-U13-Q35": "আম্মা বলেন পড়রে সোনা আব্বা বলেন মন দে",
+  "QP-BAN-C5-U13-Q36": "বকুল ডালে লুকিয়ে থেকে পাখির মতো ডাকতে"
  },
  "questions": [
   {
@@ -643,6 +688,256 @@
     ],
     "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ নিষেধবাচক বাক্য গ্রহণযোগ্য, যদি তা কবিতার প্রসঙ্গের সঙ্গে যুক্ত হয়। নমুনা উত্তর দেওয়া হলো।"
    }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q25",
+   "topic_tag": "TOP-BAN-C5-01",
+   "ref19_topic_id": "BAN-VOCAB",
+   "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'গন্ধ' শব্দের অর্থ লেখো।",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Remember",
+   "difficulty": "easy",
+   "tier": "tier1",
+   "marks": 1,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "ঘ্রাণ; নাক দিয়ে যা অনুভব করা যায়",
+     "ঘ্রাণ"
+    ],
+    "model_note": "শব্দার্থটি পাঠের 'অর্থ জেনে নিই' ছকে নেই — অনুশীলনী ১ শব্দটিকে কাজ হিসেবে দিয়েছে, অর্থ দেয়নি। এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (প্রধান শিক্ষকের সিদ্ধান্ত, ১৪ আগস্ট ২০২৬); কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q26",
+   "topic_tag": "TOP-BAN-C5-01",
+   "ref19_topic_id": "BAN-VOCAB",
+   "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'কূল' শব্দের অর্থ লেখো।",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Remember",
+   "difficulty": "easy",
+   "tier": "tier1",
+   "marks": 1,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "নদীর তীর; পাড়",
+     "তীর",
+     "পাড়",
+     "নদীর পাড়"
+    ],
+    "model_note": "শব্দার্থটি পাঠের 'অর্থ জেনে নিই' ছকে নেই — অনুশীলনী ১ শব্দটিকে কাজ হিসেবে দিয়েছে, অর্থ দেয়নি। এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (প্রধান শিক্ষকের সিদ্ধান্ত, ১৪ আগস্ট ২০২৬); কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q27",
+   "topic_tag": "TOP-BAN-C5-01",
+   "ref19_topic_id": "BAN-VOCAB",
+   "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'গাঁ' শব্দের অর্থ লেখো।",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Remember",
+   "difficulty": "easy",
+   "tier": "tier1",
+   "marks": 1,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "গ্রাম",
+     "গ্রাম",
+     "পল্লি"
+    ],
+    "model_note": "শব্দার্থটি পাঠের 'অর্থ জেনে নিই' ছকে নেই — অনুশীলনী ১ শব্দটিকে কাজ হিসেবে দিয়েছে, অর্থ দেয়নি। এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (প্রধান শিক্ষকের সিদ্ধান্ত, ১৪ আগস্ট ২০২৬); কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q28",
+   "topic_tag": "TOP-BAN-C5-01",
+   "ref19_topic_id": "BAN-VOCAB",
+   "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'ইচ্ছা' শব্দের অর্থ লেখো।",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Remember",
+   "difficulty": "easy",
+   "tier": "tier1",
+   "marks": 1,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "মনের বাসনা; যা করতে মন চায়",
+     "বাসনা",
+     "মনের চাওয়া"
+    ],
+    "model_note": "শব্দার্থটি পাঠের 'অর্থ জেনে নিই' ছকে নেই — অনুশীলনী ১ শব্দটিকে কাজ হিসেবে দিয়েছে, অর্থ দেয়নি। এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (প্রধান শিক্ষকের সিদ্ধান্ত, ১৪ আগস্ট ২০২৬); কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q29",
+   "topic_tag": "TOP-BAN-C5-05",
+   "ref19_topic_id": "BAN-POEM",
+   "question_text": "'পাখির মতো' কবিতায় দুধভরা চাঁদের বাটি কারা উল্টায়?",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Remember",
+   "difficulty": "easy",
+   "tier": "tier1",
+   "marks": 2,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "ফেরেস্তারা"
+    ],
+    "model_note": "পাঠের পঙক্তি: 'দুধভরা ওই চাঁদের বাটি / ফেরেস্তারা উল্টায়।' শব্দটি কবিতারই, এবং পাঠের সতর্কতা-নির্দেশে একে গ্রহণযোগ্য বলা হয়েছে।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q30",
+   "topic_tag": "TOP-BAN-C5-05",
+   "ref19_topic_id": "BAN-POEM",
+   "question_text": "'তোমরা যখন শিখছ পড়া' — এখানে 'তোমরা' বলতে কাদের বোঝানো হয়েছে?",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Understand",
+   "difficulty": "medium",
+   "tier": "tier1",
+   "marks": 2,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "যারা মানুষ হওয়ার জন্য পড়াশোনা করছে — কবির সহপাঠী ও অন্য শিক্ষার্থীরা"
+    ],
+    "model_note": "'পাঠক' বা 'আমরা যারা পড়ছি' — কাছাকাছি উত্তরও গ্রহণযোগ্য। শুধু 'পাখিরা' লিখলে নম্বর হবে না।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q31",
+   "topic_tag": "TOP-BAN-C5-05",
+   "ref19_topic_id": "BAN-POEM",
+   "question_text": "'পাখির মতো' কবিতার তৃতীয় স্তবকে রাতের যে ছবি আঁকা হয়েছে তা নিজের ভাষায় লেখো।",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Understand",
+   "difficulty": "medium",
+   "tier": "tier1",
+   "marks": 2,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "সবাই যখন কর্ণফুলীর কূলে ঘুমিয়ে পড়ে, তখন আকাশে পূর্ণিমার চাঁদ ওঠে — কবি কল্পনা করেন ফেরেস্তারা সেই দুধভরা চাঁদের বাটি উল্টে দিচ্ছেন।"
+    ],
+    "model_note": "দুটি আলাদা কথা — সবার ঘুম ও চাঁদের কল্পনা; প্রতিটিতে ১ নম্বর। পঙক্তি হুবহু তুলে দিলে পূর্ণ নম্বর হবে না, নিজের ভাষা চাই।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q32",
+   "topic_tag": "TOP-BAN-C5-05",
+   "ref19_topic_id": "BAN-POEM",
+   "question_text": "কবিতাটির নাম 'পাখির মতো' রাখা কেন সার্থক হয়েছে?",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Understand",
+   "difficulty": "medium",
+   "tier": "tier1",
+   "marks": 2,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "কবিতার শুরু থেকে শেষ পর্যন্ত কবি পাখির মতো মুক্ত হতে চেয়েছেন — পাখির মতো ডাকতে, উড়তে আর পাখির মতো বন্য হতে; তাই নামটি সার্থক।"
+    ],
+    "model_note": "মূলভাব (S09) থেকে আলাদা প্রশ্ন: এখানে শুধু নামের সঙ্গে কবিতার মিলটা দেখাতে হবে, পুরো ভাব লিখতে হবে না।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q33",
+   "topic_tag": "TOP-BAN-C5-02",
+   "ref19_topic_id": "BAN-SENTENCE",
+   "question_text": "'নদী' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Apply",
+   "difficulty": "easy",
+   "tier": "tier1",
+   "marks": 1,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "নদীর পাড়ে বসে থাকতে আমার খুব ভালো লাগে।"
+    ],
+    "model_note": "শব্দটি কবিতার নিজের ('নদীর কাছে থাকতে'), অনুশীলনী ১-এর তালিকার নয় — বাক্য গঠনের জন্য কবিতার শব্দ নেওয়া হয়েছে। শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য। নমুনা উত্তর দেওয়া হলো।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q34",
+   "topic_tag": "TOP-BAN-C5-05",
+   "ref19_topic_id": "BAN-POEM",
+   "question_text": "'পাখির মতো' কবিতা থেকে দুটি মিল-শব্দের জোড়া খুঁজে বের করে লেখো (উদাহরণ: মন দে — গন্ধে)।",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Apply",
+   "difficulty": "medium",
+   "tier": "tier1",
+   "marks": 2,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "থাকতে — ডাকতে; কূলটায় — উল্টায়"
+    ],
+    "model_note": "কবিতায় মোট পাঁচটি জোড়া আছে: মন দে — গন্ধে (উদাহরণ, ধরা হবে না) · থাকতে — ডাকতে · কূলটায় — উল্টায় · উড়ব — ঘুরব · জন্য — বন্য। যেকোনো দুটি সঠিক জোড়ায় পূর্ণ নম্বর, প্রতিটিতে ১।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q35",
+   "topic_tag": "TOP-BAN-C5-05",
+   "ref19_topic_id": "BAN-POEM",
+   "question_text": "'পাখির মতো' কবিতায় আম্মা-আব্বা আদেশের ভাবে কথা বলেছেন। একই কথা 'উপদেশ' ভাবে কীভাবে বলা যায়, একটি বাক্যে লেখো।",
+   "question_type": "short_answer",
+   "paper_role": "short",
+   "bloom_level": "Apply",
+   "difficulty": "easy",
+   "tier": "tier1",
+   "marks": 1,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "answer_key": {
+    "accepted": [
+     "মন দিয়ে পড়লে জীবনে ভালো মানুষ হওয়া যায়।"
+    ],
+    "model_note": "ছয়টি ভাবের মধ্যে উপদেশই একমাত্র যেটি কবিতার কোনো পঙক্তিতে নেই, তাই এখানে আদেশ-বাক্যকে উপদেশে বদলাতে বলা হয়েছে। আদেশ (হুকুম) নয়, বোঝানোর সুরে লেখা যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য।"
+   }
+  },
+  {
+   "qid": "QP-BAN-C5-U13-Q36",
+   "topic_tag": "TOP-BAN-C5-05",
+   "ref19_topic_id": "BAN-POEM",
+   "question_text": "'পাখির মতো' কবিতায় প্রকৃতির যেসব ছবি ফুটে উঠেছে সেগুলো খুঁজে বের করে বর্ণনা করো।",
+   "question_type": "descriptive",
+   "paper_role": "structured",
+   "bloom_level": "Analyze",
+   "difficulty": "hard",
+   "tier": "tier1",
+   "marks": 5,
+   "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+   "rubric": {
+    "bands": [
+     "সম্পূর্ণ",
+     "আংশিক"
+    ],
+    "criteria": [
+     {
+      "role": "islamic_alignment",
+      "criterion": "কবিতা জুড়ে ছড়িয়ে থাকা প্রকৃতির ছবিগুলো আলাদা করে চেনা — কাঁঠালচাঁপার গন্ধ, নদী, বকুল ডাল, কর্ণফুলীর কূল, পূর্ণিমার চাঁদ, সবুজ গাঁ — আর সেগুলোকে আল্লাহর সৃষ্টির সৌন্দর্য হিসেবে দেখার দৃষ্টি",
+      "band_descriptors": {
+       "সম্পূর্ণ": "অন্তত পাঁচটি আলাদা প্রাকৃতিক ছবি পাঠ থেকে খুঁজে বের করে নিজের ভাষায় বর্ণনা করা হয়েছে, কোনোটি বানানো নয়; আর প্রকৃতির সৌন্দর্যকে সৃষ্টিকর্তার নিদর্শন হিসেবে দেখার কথা এসেছে।",
+       "আংশিক": "দু-তিনটি ছবি লেখা হয়েছে, বা পাঠে নেই এমন ছবি ঢুকেছে; সৃষ্টির সৌন্দর্যের দিকটি অনুপস্থিত।"
+      }
+     }
+    ]
+   }
   }
- ]
+ ],
+ "waves": {
+  "1": "Q01–Q24 · 2026-08-14 · author_U13_wave1.py · the first bank under QUESTION_POLICY v1.1",
+  "2": "Q25–Q36 · 2026-08-14 · author_U13_wave2.py · unlocked by the teacher-gloss ruling"
+ }
 }
