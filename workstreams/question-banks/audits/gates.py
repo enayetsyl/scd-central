@@ -334,6 +334,149 @@ def qb_chapter_section(text, unit_bn):
     return rest[: nxt.start()] if nxt else rest
 
 
+# =================================================================================
+# CONSUMPTION EXCLUSION — CD-131, the executor for CD-127(b)
+# =================================================================================
+# CD-127 split the পাঠ ১২ ruling in two: **extraction PERMITTED, consumption STILL EXCLUDED.**
+# That second half lived only as prose in a decision row, and an extracted পাঠ ১২ would have
+# passed all 21 gates — it looks exactly like পাঠ ১–১১ to every reader downstream. **A gate is
+# the only form of the rule that survives a session which never reads CD-127.**
+#
+# WHERE THE DECLARATION LIVES, AND WHY IT IS NOT ONLY THE SOURCE FILE'S HEADER
+# ---------------------------------------------------------------------------
+# The proposed design put the declaration in the extraction's header. **That design cannot cover
+# the case it was built for:** পাঠ ১২ has NO extraction, so it has no header. The exclusion has to
+# be readable *before* any extraction exists, or the gate is blind exactly while the prohibition
+# is doing all of its work.
+#
+# So the gate reads **any file under `canon/`** carrying the declaration, which today means
+# `canon/_wip/c5-bangla/EXCLUDED_paath_12.md` — the file `SOURCE_POLICY` §7.6 and CD-050(b)
+# ALREADY name as where this exclusion is recorded. No new home was invented; the existing one was
+# made machine-readable, in the HTML-comment form CD-124 already uses for `ledger-prefix`.
+#
+#     <!-- excluded-from-consumption: subject=BAN class=5 chapter=12 cd=CD-127 -->
+#
+# ⚠ **The extraction-header half is PROPOSED AND NOT BUILT.** §7.9 set the precedent that a
+# machine-read line in an extraction header is a `SOURCE_POLICY` §7 clause carried by a CD row
+# (CD-055), not a field a gate may invent. So it is raised, not written. This gate will read it
+# the day it exists — the loader already scans every `canon/` file, headers included.
+
+EXCL_MARK = "excluded-from-consumption:"
+
+# Anchored on the qid's own structure. Groups are read as RAW STRINGS and never collapsed —
+# CD-088(d)(i) / CD-130. `U012` and `U12` reaching the same exclusion is deliberate and is handled
+# on the DECLARATION side below, where widening is safe.
+QID_PARTS = re.compile(r"^QP-([A-Z]+)-C([1-5])-U(\d+)")
+
+
+def _parse_exclusion_line(line):
+    """`k=v` pairs after the marker. Split, not captured — deliberately.
+
+    A regex capture here would put this parser's own values under `int_id_check.py`'s taint
+    analysis, and `_chapter_tokens` below legitimately calls `zfill` — which is a CD-129(b) sink.
+    Parsing by `str.split` keeps the distinction honest rather than waived: **the declaration is
+    text we author, not an identifier we read off someone else's data.**
+    """
+    body = line.split(EXCL_MARK, 1)[1].replace("-->", " ")
+    out = {}
+    for tok in body.split():
+        if "=" in tok:
+            k, _, v = tok.partition("=")
+            out[k.strip().lower()] = v.strip()
+    return out
+
+
+def _chapter_tokens(value):
+    """Every raw spelling of a DECLARED chapter number — `12`, `012`, `0012`.
+
+    Widening here is the safe direction and the opposite of CD-088's failure. CD-088 forbids
+    collapsing two IDs *when deciding they are the same*; an exclusion gate is deciding whether to
+    REFUSE, so over-matching costs a false refusal and under-matching ships a forbidden question.
+    **It fails closed.** And the widening is applied to the declaration, never to a captured id.
+    """
+    bare = value.lstrip("0") or "0"
+    return {value, bare} | {bare.zfill(w) for w in (2, 3, 4)}
+
+
+def load_exclusions(root):
+    """Every declared consumption exclusion under `canon/`. -> (declarations, errors)."""
+    out, errs = [], []
+    base = root / "canon"
+    if not base.exists():
+        return out, [f"canon/ not found at {root} — exclusions could not be read, and an "
+                     f"unreadable prohibition is not an absent one"]
+    for p in sorted(base.rglob("*.md")):
+        try:
+            text = p.read_text(encoding="utf-8", errors="replace")
+        except OSError as e:                                          # noqa: PERF203
+            errs.append(f"{p.name}: unreadable ({e})")
+            continue
+        if EXCL_MARK not in text:
+            continue
+        for line in text.splitlines():
+            if EXCL_MARK not in line:
+                continue
+            d = _parse_exclusion_line(line)
+            missing = [k for k in ("subject", "class", "chapter", "cd") if not d.get(k)]
+            if missing:
+                errs.append(f"{p.relative_to(root).as_posix()}: exclusion declaration is missing "
+                            f"{', '.join(missing)} — a prohibition nobody can resolve to a "
+                            f"chapter is not a prohibition")
+                continue
+            d["_file"] = p.relative_to(root).as_posix()
+            d["_tokens"] = _chapter_tokens(d["chapter"])
+            out.append(d)
+    return out, errs
+
+
+def g_source_exclusion(bank, ctx):
+    """SOURCE-EXCLUSION — CD-127(b) / CD-131. No item may source a declared-excluded chapter.
+
+    Shape-independent on purpose: both bank families carry `questions[].qid`, and the qid is where
+    the chapter lives. One implementation, both shapes — CD-123's four dual-shape gates exist
+    because their DATA differs; this one's does not.
+    """
+    excl = ctx.get("exclusions")
+    if excl is None:
+        excl, load_err = load_exclusions(ROOT)
+    else:
+        load_err = list(ctx.get("exclusion_errors") or [])
+    errs, rep = list(load_err), []
+    if not excl:
+        rep.append("no consumption exclusion is declared anywhere under canon/ — nothing to "
+                   "enforce, and that is reported rather than passed silently")
+        return errs, rep
+
+    by_sc = {}
+    for d in excl:
+        by_sc.setdefault((d["subject"].upper(), d["class"]), []).append(d)
+
+    # (1) the bank's whole declared source is an excluded file.
+    srcref = (bank.get("source_extraction") or bank.get("extraction_path") or "").split("#")[0]
+    for d in excl:
+        if srcref and d["_file"] == srcref:
+            errs.append(f"the bank's declared source `{srcref}` is itself declared excluded from "
+                        f"consumption by {d['cd']} — no item in it can be sourced")
+
+    # (2) per item, off the raw qid segments.
+    for q in bank.get("questions", []):
+        qid = q.get("qid") or ""
+        m = QID_PARTS.match(qid)
+        if not m:
+            continue
+        subject, cls, unit = m.group(1), m.group(2), m.group(3)
+        for d in by_sc.get((subject, cls), []):
+            if unit in d["_tokens"]:
+                errs.append(f"{qid}: sources chapter {d['chapter']} of C{cls} {subject}, which is "
+                            f"DECLARED EXCLUDED FROM CONSUMPTION by {d['cd']} "
+                            f"({d['_file']}) — extraction may exist; consumption does not")
+                break
+
+    rep.append("consumption exclusions in force: " + " · ".join(
+        f"{d['subject']}-C{d['class']}-chapter {d['chapter']} ({d['cd']})" for d in excl))
+    return errs, rep
+
+
 # ---- gates ---------------------------------------------------------------------
 
 
@@ -1156,9 +1299,20 @@ GATES = [
     ("AS-MIX",             {"qb": g_as_mix},                             "§5 · QB-D-004"),
     ("NUMERALS",           {"qb": g_numerals},                           "§5"),
     ("CEILING",            {"qb": g_ceiling},                            "§5 · QB-D-002 (report)"),
+    # CD-131 — the 22nd, and the first that carries NEITHER policy's § row. It executes a DECISION
+    # ROW (CD-127(b)) rather than a policy clause, which is why its authority cell names a CD and
+    # not a §. Shape-independent: it reads qids, and both families have them.
+    ("SOURCE-EXCLUSION",   {"qb": g_source_exclusion, "qp6": g_source_exclusion},
+                                                                         "CD-127(b) · CD-131"),
 ]
-assert len(GATES) == 21, "CD-123: the merged suite is 21 gates"
-assert sum(1 for _, i, _ in GATES if "qp6" in i) == 11, "QUESTION_POLICY §6 has eleven rows"
+# CD-123's invariant is preserved by counting what CD-123 was counting — the gates that carry a
+# QUESTION_POLICY §6 row — rather than the total, which CD-131 has now moved. Asserting on the
+# total alone would have made the §6 count unverifiable the moment any gate was added from
+# anywhere else, which is the shape CD-083 keeps naming: a check written in a coarser unit than
+# the thing it is protecting.
+QP6_POLICY_GATES = [n for n, i, a in GATES if "qp6" in i and a.startswith("§")]
+assert len(QP6_POLICY_GATES) == 11, "CD-123: QUESTION_POLICY §6 has eleven rows"
+assert len(GATES) == 22, "CD-123's 21 + CD-131's SOURCE-EXCLUSION"
 
 
 def bank_shape(bank):
@@ -1174,7 +1328,9 @@ def bank_shape(bank):
 
 
 def run(bank, ctx=None, quiet=False):
-    """Runs all 21. Returns (fails, report). Shape-absent gates print N/A and the reason."""
+    """Runs all 22 (CD-123's 21 + CD-131's SOURCE-EXCLUSION). Returns (fails, report).
+
+    Shape-absent gates print N/A and the reason — never PASS."""
     shape = bank_shape(bank)
     if ctx is None:
         ctx = qp_ctx_for(bank) if shape == "qp6" else qb_build_ctx(bank)
@@ -1531,6 +1687,70 @@ def qb_selftest():
             print(f"  FAIL  {gate:<16} DID NOT FIRE on: {label}")
             ok = False
 
+    # --- CD-131: SOURCE-EXCLUSION, seeded both directions. The declarations are SYNTHETIC and
+    # --- injected through ctx — the gate never reads live canon/ in a seed (CD-121(e)).
+    SYNTH_EXCL = [{"subject": "BAN", "class": "5", "chapter": "12", "cd": "CD-127",
+                   "_file": "canon/_wip/c5-bangla/EXCLUDED_synthetic.md",
+                   "_tokens": _chapter_tokens("12")}]
+
+    def _excl_run(bank, decls, errors=None):
+        c = qb_build_ctx(bank)
+        c["exclusions"] = decls
+        c["exclusion_errors"] = errors or []
+        return run(bank, c, quiet=True)[0]
+
+    def _retag(bank, unit):
+        """Move a synthetic bank onto another chapter — qids only, nothing else touched."""
+        b = json.loads(json.dumps(bank))
+        sw = lambda s: s.replace("-U21-", f"-U{unit}-")                      # noqa: E731
+        b["questions"] = [{**q, "qid": sw(q["qid"])} for q in b["questions"]]
+        b["pool_index"] = {k: [sw(x) for x in v] for k, v in b["pool_index"].items()}
+        b["slot_index"] = {sw(k): v for k, v in b["slot_index"].items()}
+        b["source_index"] = {sw(k): v for k, v in b["source_index"].items()}
+        return b
+
+    excl_cases = [
+        ("FAILs when an item's qid resolves to a declared-excluded chapter (`U12`) — CD-127(b) "
+         "given an executor",
+         lambda: any(g == "SOURCE-EXCLUSION" and "CD-127" in m
+                     for g, m in _excl_run(_retag(_qb_good_bank(), "12"), SYNTH_EXCL))),
+        ("FAILs on the ZERO-PADDED spelling `U012` too — the exclusion fails CLOSED, which is the "
+         "opposite direction from CD-088 and the safe one",
+         lambda: any(g == "SOURCE-EXCLUSION"
+                     for g, _ in _excl_run(_retag(_qb_good_bank(), "012"), SYNTH_EXCL))),
+        ("control · a NON-excluded chapter (`U21`) stays silent — a gate that fires on everything "
+         "is as useless as one that fires on nothing",
+         lambda: not any(g == "SOURCE-EXCLUSION"
+                         for g, _ in _excl_run(_qb_good_bank(), SYNTH_EXCL))),
+        ("control · the same chapter number in a DIFFERENT subject/class is not excluded — the "
+         "declaration is (subject, class, chapter), not a bare number",
+         lambda: not any(g == "SOURCE-EXCLUSION" for g, _ in _excl_run(
+             _retag(_qb_good_bank(), "12"),
+             [{**SYNTH_EXCL[0], "subject": "ENG", "_tokens": _chapter_tokens("12")}]))),
+        ("FAILs when the bank's whole declared SOURCE FILE is excluded, even with no matching qid",
+         lambda: any(g == "SOURCE-EXCLUSION" and "declared source" in m for g, m in _excl_run(
+             {**_qb_good_bank(), "source_extraction": "canon/x/EXCLUDED_whole.md"},
+             [{**SYNTH_EXCL[0], "_file": "canon/x/EXCLUDED_whole.md"}]))),
+        ("a MALFORMED declaration FAILs rather than being skipped — a prohibition nobody can "
+         "resolve is not a prohibition (§7.17: reports or refuses, never omits)",
+         lambda: any(g == "SOURCE-EXCLUSION" and "missing" in m for g, m in _excl_run(
+             _qb_good_bank(), [], ["fixture.md: exclusion declaration is missing chapter"]))),
+        ("with NO declaration anywhere the gate is silent but SAYS SO — it never passes by "
+         "reporting nothing",
+         lambda: (not any(g == "SOURCE-EXCLUSION" for g, _ in _excl_run(_qb_good_bank(), []))
+                  and any("nothing to enforce" in line for _, line in
+                          run(_qb_good_bank(),
+                              {**qb_build_ctx(_qb_good_bank()), "exclusions": []},
+                              quiet=True)[1]))),
+    ]
+    for label, fn in excl_cases:
+        try:
+            passed = bool(fn())
+        except Exception as e:                                   # noqa: BLE001
+            passed, label = False, f"{label} — raised {e!r}"
+        print(f"  {'PASS' if passed else 'FAIL'}  {'SOURCE-EXCLUSION':<16} {label}")
+        ok = ok and passed
+
     # --- CD-130(a): the chapter resolver, seeded BOTH directions on synthetic strings only.
     # Without these the rewrite of the `str(int(unit))` line is an assertion, not a proof — and
     # the one thing CD-088 keeps demonstrating is that this defect is invisible until it is run.
@@ -1560,7 +1780,8 @@ def qb_selftest():
         ok = ok and passed
 
     print(f"SELFTEST RESULT: {'PASS' if ok else 'FAIL'} ({len(cases)} seeded errors + "
-          f"{len(pad_cases)} CD-130(a) resolver cases + 1 baseline)")
+          f"{len(excl_cases)} CD-131 exclusion cases + {len(pad_cases)} CD-130(a) resolver cases "
+          f"+ 1 baseline)")
     return ok
 
 
@@ -1864,9 +2085,19 @@ def main():
         print("\nRESULT: FAIL (selftest red — no bank verdict is believable, nothing was judged)")
         sys.exit(1)
     print(f"\nSUITE: {len(GATES)} gates "
-          f"({sum(1 for _, i, _ in GATES if 'qp6' in i)} carry a QUESTION_POLICY §6 row, "
-          f"{sum(1 for _, i, _ in GATES if 'qb' in i)} a QUESTION_BANK_POLICY §5 row, "
-          f"{sum(1 for _, i, _ in GATES if len(i) == 2)} both)")
+          f"({len(QP6_POLICY_GATES)} carry a QUESTION_POLICY §6 row, "
+          f"{sum(1 for _, i, a in GATES if 'qb' in i and a.startswith('§'))} a "
+          f"QUESTION_BANK_POLICY §5 row, "
+          f"{sum(1 for _, i, a in GATES if len(i) == 2 and a.startswith('§'))} both, "
+          f"{sum(1 for _, _, a in GATES if not a.startswith('§'))} from a decision row "
+          f"with no § of its own — CD-131)")
+    live_excl, live_excl_err = load_exclusions(ROOT)
+    for e in live_excl_err:
+        print(f"  WARN  SOURCE-EXCLUSION declaration: {e}")
+    print(f"CONSUMPTION EXCLUSIONS IN FORCE: {len(live_excl)}"
+          + ("" if not live_excl else " — " + " · ".join(
+              f"{d['subject']}-C{d['class']}-chapter {d['chapter']} ({d['cd']}, {d['_file']})"
+              for d in live_excl)))
 
     if len(sys.argv) < 2:
         fails = sweep(ROOT, None)

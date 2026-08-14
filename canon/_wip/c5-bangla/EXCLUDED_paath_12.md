@@ -1,5 +1,12 @@
 # পাঠ ১২ — শিষ্যের সাধনা · দুই স্তরে ভাগ করা: নিষ্কাশন অনুমোদিত · ব্যবহার এখনো নিষিদ্ধ
 
+<!-- CD-131: the machine-readable half of §২-এর নিষেধ. Read by SOURCE-EXCLUSION in
+     workstreams/question-banks/audits/gates.py. This note is where SOURCE_POLICY §7.6 and
+     CD-050(b) ALREADY say the exclusion is recorded — no new home was invented, the existing
+     one was made readable. Form is CD-124's `ledger-prefix` comment.
+     Removing this line removes the enforcement. It comes out only on a Principal ruling. -->
+<!-- excluded-from-consumption: subject=BAN class=5 chapter=12 cd=CD-127 -->
+
 > **হালনাগাদ ১৪ আগস্ট ২০২৬ — `canon/DECISIONS.md` CD-127।** এই নোটটি আগে যা বলত তার
 > **একটি অংশ উল্টে গেছে**, পুরোটা নয়। নিচের ছকটিই এখনকার অবস্থা।
 
