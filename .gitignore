@@ -8,7 +8,13 @@ Thumbs.db
 *.tmp
 
 # canon slotting staging (AGENTS.md §3 _wip; not authority)
-_inbox/
+# CD-128: `_inbox/` -> `_inbox/*` + an un-ignored README, the CD-126 / `_unvendored/` form.
+# The staged files stay out of Git; the NOTE that says why they are staged goes in. A retention
+# reason written into a gitignored file is per-machine, so the next sweep on another device would
+# re-raise the same four PDFs a fourth time — which is the thing §12.7's three-session rule was
+# supposed to end.
+_inbox/*
+!_inbox/README.md
 
 # Render artifact retention (CD-024): evidence stays, scratch goes.
 # Anything a SMOKE.md cites as proof lives under an evidence/ folder and IS committed.
