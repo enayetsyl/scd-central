@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "medium",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q16",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'পাখির মতো' কবিতায় কবি পাখির মতো বন্য হতে চান কেন? পাঠ থেকে বুঝিয়ে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "কবির চাওয়ার কারণ পাঠের ভেতর থেকে ব্যাখ্যা করা — বইয়ের বাঁধা পড়ায় মন বসে না, প্রকৃতির টান বেশি, তাই মুক্তভাবে উড়তে চান; সেই সঙ্গে বোঝানো যে কবির এই চাওয়া একটি কল্পনা, পড়াশোনা ছেড়ে দেওয়ার পরামর্শ নয়",
+          "band_descriptors": {
+            "সম্পূর্ণ": "কারণ পাঠের পঙক্তি ধরে ব্যাখ্যা করা হয়েছে, এবং শিক্ষার্থী স্পষ্ট করেছে যে এটি কবির কল্পনা — জ্ঞান অর্জনের দায়িত্ব অস্বীকার করা হয়নি।",
+            "আংশিক": "কারণ বলা হয়েছে কিন্তু পাঠের সঙ্গে যুক্ত করা হয়নি; অথবা পড়াশোনা ছেড়ে দেওয়াই ভালো — এমন ভাব এসেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

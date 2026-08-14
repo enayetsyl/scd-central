@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q01",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "কবি ও কবিতার নাম লিখে 'পাখির মতো' কবিতার প্রথম আট পঙক্তি মুখস্থ লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "structured",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 10,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "answer_key": {
+      "accepted": [
+        "কবিতা: পাখির মতো; কবি: আল মাহমুদ। আম্মা বলেন, পড়রে সোনা / আব্বা বলেন, মন দে। / পাঠে আমার মন বসে না / কাঁঠালচাঁপার গন্ধে। / আমার কেবল ইচ্ছে জাগে / নদীর কাছে থাকতে, / বকুল ডালে লুকিয়ে থেকে / পাখির মতো ডাকতে।"
+      ],
+      "model_note": "নেপ §১ অনুযায়ী নম্বর ভাগ: কবিতার নাম ১ + কবির নাম ১ + আট পঙক্তি ৮ = ১০। পঙক্তি হুবহু পাঠের মতো হতে হবে; বানান ও যতিচিহ্নে ছাড় দেওয়া যাবে।"
+    }
+  }
+}

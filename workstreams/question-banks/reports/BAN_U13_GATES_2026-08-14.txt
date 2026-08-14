@@ -1,0 +1,757 @@
+BAN U13 wave 1 — full gate chain, run 2026-08-14. Verbatim, unelided (AGENTS.md §5).
+jsonschema 4.26.0 installed in the session sandbox (system 3.2.0 lacks Draft202012Validator).
+
+############ STEP 1 — build_question_envelopes.py ############
+wrote 24 envelopes to workstreams/question-banks/banks/envelopes/C5_BAN_U13_QuestionBank_v1.envelopes.json
+EXIT=0
+split 24 envelopes into workstreams/question-banks/banks/envelopes/single
+
+############ STEP 2 — validate_import.py L1-L4, all 24 ############
+=== QP-BAN-C5-U13-Q01.json ===
+
+=== QP-BAN-C5-U13-Q01.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q02.json ===
+
+=== QP-BAN-C5-U13-Q02.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q03.json ===
+
+=== QP-BAN-C5-U13-Q03.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q04.json ===
+
+=== QP-BAN-C5-U13-Q04.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q05.json ===
+
+=== QP-BAN-C5-U13-Q05.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q06.json ===
+
+=== QP-BAN-C5-U13-Q06.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q07.json ===
+
+=== QP-BAN-C5-U13-Q07.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q08.json ===
+
+=== QP-BAN-C5-U13-Q08.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q09.json ===
+
+=== QP-BAN-C5-U13-Q09.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q10.json ===
+
+=== QP-BAN-C5-U13-Q10.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q11.json ===
+
+=== QP-BAN-C5-U13-Q11.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q12.json ===
+
+=== QP-BAN-C5-U13-Q12.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q13.json ===
+
+=== QP-BAN-C5-U13-Q13.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q14.json ===
+
+=== QP-BAN-C5-U13-Q14.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q15.json ===
+
+=== QP-BAN-C5-U13-Q15.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q16.json ===
+
+=== QP-BAN-C5-U13-Q16.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q17.json ===
+
+=== QP-BAN-C5-U13-Q17.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q18.json ===
+
+=== QP-BAN-C5-U13-Q18.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q19.json ===
+
+=== QP-BAN-C5-U13-Q19.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q20.json ===
+
+=== QP-BAN-C5-U13-Q20.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q21.json ===
+
+=== QP-BAN-C5-U13-Q21.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q22.json ===
+
+=== QP-BAN-C5-U13-Q22.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q23.json ===
+
+=== QP-BAN-C5-U13-Q23.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q24.json ===
+
+=== QP-BAN-C5-U13-Q24.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+NON-ZERO EXITS: 0 of 24
+
+############ STEP 3 — gates.py, single-bank path ############
+SELFTEST — both families, before any verdict (CD-025). Synthetic fixtures only; no canon/sources or canon/marklogic file is read as fixture data.
+
+--- QUESTION_BANK_POLICY §5 family --------------------------------------------
+SELFTEST — the instrument is proven before any bank verdict (CD-025)
+  PASS  FLAG-TRACE stays quiet on a FLAGGED row (CD-042: FLAGGED is promotable)
+  PASS  baseline: an unbroken bank is CLEAN
+  PASS  POOL-MEMBERSHIP  fires on: question in two pools
+  PASS  POOL-MEMBERSHIP  fires on: a CW pool reappears
+  PASS  ZERO-OVERLAP     fires on: same stem in HW and CT
+  PASS  ZERO-OVERLAP     fires on: exact duplicate INSIDE the HW pool
+  PASS  ANSWER-SHAPE     fires on: an MCQ with two correct options
+  PASS  ANSWER-SHAPE     fires on: an MCQ with no correct option
+  PASS  ANSWER-SHAPE     fires on: a distractor with no why_wrong
+  PASS  SOURCE-TRACE     fires on: a one-word anchor that matches anything
+  PASS  SOURCE-TRACE     fires on: a real span that has nothing to do with the item
+  PASS  HONORIFIC        fires on: bare নবি with no (স)
+  PASS  HONORIFIC        fires on: হজরত with no (স)
+  PASS  RUBRIC-SPECIFICITY fires on: two S08 items sharing one rubric
+  PASS  TOPIC-NUMBER     fires on: a topic_tag that is in no chart row
+  PASS  FLAG-TRACE       fires on: a flag pointing at a tag that does not exist
+  PASS  FLAG-TRACE       fires on: a flag naming a row that is OPEN (Principal-owed)
+  PASS  FLAG-TRACE       fires on: a flag with no closes_on
+  PASS  MARK-VALUE       fires on: MCQ carries 5 marks
+  PASS  SOURCE-TRACE     fires on: an item with no extraction anchor
+  PASS  QUOTE-VERBATIM   fires on: an invented quotation
+  PASS  HONORIFIC        fires on: the Prophet's name without (স)
+  PASS  AS-MIX           fires on: AS is entirely recall
+  PASS  SCRIPT-GUARD     fires on: Arabic script in a stem
+  PASS  SCRIPT-GUARD     fires on: an arrow in a stem
+  PASS  NUMERALS         fires on: an ASCII digit in a stem
+  PASS  CEILING          fires on: HW above its ceiling
+  PASS  SOURCE-EXCLUSION FAILs when an item's qid resolves to a declared-excluded chapter (`U12`) — CD-127(b) given an executor
+  PASS  SOURCE-EXCLUSION FAILs on the ZERO-PADDED spelling `U012` too — the exclusion fails CLOSED, which is the opposite direction from CD-088 and the safe one
+  PASS  SOURCE-EXCLUSION control · a NON-excluded chapter (`U21`) stays silent — a gate that fires on everything is as useless as one that fires on nothing
+  PASS  SOURCE-EXCLUSION control · the same chapter number in a DIFFERENT subject/class is not excluded — the declaration is (subject, class, chapter), not a bare number
+  PASS  SOURCE-EXCLUSION FAILs when the bank's whole declared SOURCE FILE is excluded, even with no matching qid
+  PASS  SOURCE-EXCLUSION a MALFORMED declaration FAILs rather than being skipped — a prohibition nobody can resolve is not a prohibition (§7.17: reports or refuses, never omits)
+  PASS  SOURCE-EXCLUSION with NO declaration anywhere the gate is silent but SAYS SO — it never passes by reporting nothing
+  PASS  SOURCE-EXCLUSION a STANDALONE declaration comment is read — the mint
+  PASS  SOURCE-EXCLUSION the SAME string quoted inside a table row is NOT read — a CD row that shows the form must not mint an exclusion (AGENTS §5.1, ledger_check's mint-vs-cite anchor)
+  PASS  SOURCE-EXCLUSION the same string inside a FENCED BLOCK is NOT read — P-035's policy clause has to be able to print its own convention
+  PASS  CHAPTER-RESOLVE  `U09` and `U9` are TWO chapters when the extraction prints both — not merged
+  PASS  CHAPTER-RESOLVE  an EXACT match reports no note — the fallback stays out of the way
+  PASS  CHAPTER-RESOLVE  `U09` against an extraction printing only `পাঠ ৯` resolves on the unpadded spelling AND says so (P-034 evidence is printed, not absorbed)
+  PASS  CHAPTER-RESOLVE  the fallback runs ONLY for a padded token: `U9` against a padded-only extraction does not silently grab `পাঠ ০৯`
+  PASS  CHAPTER-RESOLVE  a unit with no section at all falls back to the whole file, as before
+SELFTEST RESULT: PASS (25 seeded errors + 10 CD-131 exclusion cases + 5 CD-130(a) resolver cases + 1 baseline)
+
+--- canon/QUESTION_POLICY §6 family -------------------------------------------
+SELFTEST — the instrument is proven before any bank verdict (CD-025). Synthetic fixtures only; no canon/sources or canon/marklogic file is read as fixture data (CD-055, CD-064(f)).
+  PASS  baseline: an unbroken synthetic chapter bank passes all eleven
+
+  PASS  MARK-VALUE     fires on: an S05 mcq carrying 5 marks instead of the spine's 1
+  PASS  SOURCE-TRACE   fires on: an anchor that appears nowhere in the extraction
+  PASS  SCRIPT-GUARD   fires on: tier-1 Arabic script in a stem
+  PASS  REF19-SLUG     fires on: a ref19_topic_id that is in no REF-19 row
+  PASS  TOPIC-NUMBER   fires on: an unminted topic_tag — must FAIL and must not auto-mint
+  PASS  KEY-RUBRIC     fires on: a descriptive item whose rubric has one band
+  PASS  BLOOM-BAND     fires on: every item becomes Remember — the pool stops spanning the band
+  PASS  DIFFICULTY     fires on: the pool cannot supply easy ≥30%
+  PASS  REPETITION     fires on: an identical stem on two Understand items
+  PASS  COVERAGE       fires on: a declared spine slot that no item supplies
+  PASS  DOMAIN-RATIO   fires on: an annual paper that is entirely জ্ঞান
+  PASS  KEY-RUBRIC     fires on: a descriptive item with no islamic_alignment criterion row
+  PASS  KEY-RUBRIC     fires on: an mcq that also carries a rubric — the schema forbids the others
+  PASS  KEY-RUBRIC     fires on: a criterion with no descriptor for one of the declared bands
+  PASS  SOURCE-TRACE   fires on: a one-word anchor — short enough to match anything
+  PASS  COVERAGE       fires on: the bank header states no reason for its target
+  PASS  COVERAGE       fires on: a pool below REF-09 §4.3's floor of 20
+
+  PASS  REPETITION     stays quiet on: a `Remember` stem repeated across HW · AS · CT — §5 permits it
+  PASS  REPETITION     stays quiet on: a `Remember` stem lifted verbatim from a CT into the annual — §5's listed supersede of MarkLogic §৮'s row 2, and it runs BOTH directions
+  PASS  DOMAIN-RATIO   stays quiet on: a bank with NO papers — the ratio is paper level only and must not fire on a pool (§6)
+  PASS  DOMAIN-RATIO   stays quiet on: a SINGLE class test skewed all-জ্ঞান — never judged (§5: the ratio is met across the year's tests, not within any one)
+  PASS  BLOOM-BAND     stays quiet on: a pool banded flat against the CHAPTER band — §4 says that is correct; only a session-scoped reading drifts low
+  PASS  DIFFICULTY     stays quiet on: a pool at 70% easy — CAN-SUPPLY, not equality, so this passes
+  PASS  DIFFICULTY     stays quiet on: a pool that is 67% HARD while still holding easy ≥30% — CD-122: a pool cannot fail a ceiling, because an author can decline to use hard items and a compliant paper stays constructible. This was a SEEDED FAILURE until Q-2 was ruled; it is kept, inverted, so the symmetric check cannot creep back in unnoticed
+
+  PASS  DECLARE        a bank declaring নির্মাণাধীন is held OUT of the controls, and the reason names the resume point
+  PASS  DECLARE        stays quiet on: a finished, unmarked, §4-shaped bank — it IS a control
+  PASS  DECLARE        a bare `নির্মাণাধীন` with no resume tail is REFUSED, not silently skipped
+  PASS  DECLARE        THE MARKER IS NOT A WAIVER — every gate still runs on a marked bank and TOPIC-NUMBER still reports it red
+  PASS  DECLARE        and it changes no verdict: marked and unmarked copies of the same clean bank give byte-identical gate output
+  PASS  DECLARE        an `অবস্থা` carrying some other word is REFUSED — §7.9 defines exactly one marker
+
+SELFTEST RESULT: PASS (17 seeded failures + 7 negatives + 6 CD-055 declaration cases + 1 baseline, across all 12 gates)
+
+SUITE: 22 gates (11 carry a QUESTION_POLICY §6 row, 14 a QUESTION_BANK_POLICY §5 row, 4 both, 1 from a decision row with no § of its own — CD-131)
+CONSUMPTION EXCLUSIONS IN FORCE: 1 — BAN-C5-chapter 12 (CD-127, canon/_wip/c5-bangla/EXCLUDED_paath_12.md)
+
+BANK: workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json   [shape: qp6]
+  N/A   POOL-MEMBERSHIP    reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   ZERO-OVERLAP       reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  PASS  MARK-VALUE         [§5 · QB-CR-003 + §6.1]
+  PASS  SOURCE-TRACE       [§5 + §6.2]
+  PASS  SCRIPT-GUARD       [§5 + §6.3]
+  PASS  REF19-SLUG         [§6.4]
+  PASS  TOPIC-NUMBER       [§5 · QB-CR-008 + §6.5]
+  PASS  KEY-RUBRIC         [§6.6]
+  PASS  BLOOM-BAND         [§6.7 · CD-121]
+  PASS  DIFFICULTY         [§6.8 · CD-122]
+  PASS  REPETITION         [§6.9]
+  PASS  COVERAGE           [§6.10 · CD-122]
+  PASS  DOMAIN-RATIO       [§6.11 (per-pool RETIRED)]
+  N/A   ANSWER-SHAPE       reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   RUBRIC-SPECIFICITY reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   FLAG-TRACE         reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   QUOTE-VERBATIM     reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   HONORIFIC          reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   AS-MIX             reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   NUMERALS           reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   CEILING            reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  PASS  SOURCE-EXCLUSION   [CD-127(b) · CD-131]
+  REPORT  MARK-VALUE         24 items checked against BAN C5 spine
+  REPORT  SOURCE-TRACE       24 anchors resolved against the extraction
+  REPORT  SCRIPT-GUARD       tier-3 WATCH counter (em-dash/ellipsis): 16; tier-2 GREY in metadata: 0
+  REPORT  REF19-SLUG         121 REF-19 slugs loaded from the LOCKED artifact
+  REPORT  TOPIC-NUMBER       11 charted topic numbers loaded
+  REPORT  KEY-RUBRIC         key/rubric checked per type on 24 items
+  REPORT  BLOOM-BAND         bands: REF-06 §3.6 C3–5, six Bloom levels (CD-121/UD-23 — the Bloom axis governs the pool; MarkLogic §৩ is the PAPER's axis and is not read here): Remember 20–30% · Understand 25–35% · Apply 25–35% · Analyze 10–20% · Evaluate 0–10% · Create 0–10%
+  REPORT  BLOOM-BAND         observed: Remember 20.8% · Understand 29.2% · Apply 29.2% · Analyze 12.5% · Evaluate 8.3% · Create 0.0%  (read at CHAPTER scope, never per session — §4's D-050 paragraph)
+  REPORT  DIFFICULTY         pool: easy 45.8% · medium 41.7% · hard 12.5%  (easy floor only — CD-122; the hard ≤25% ceiling is a PAPER-level test and is not applied to a pool)
+  REPORT  REPETITION         0 `Remember` repetition(s) permitted by §5 — expected, not an error
+  REPORT  COVERAGE           coverage read against the HEADER-STATED target (§4 fallback — Q-3): 3 topic(s), 7 slot(s), target 24
+  REPORT  DOMAIN-RATIO       no papers in this bank — domain ratio is PAPER LEVEL ONLY (§6) and is not applied to a pool. Not judged; not assumed clean.
+  REPORT  SOURCE-EXCLUSION   consumption exclusions in force: BAN-C5-chapter 12 (CD-127)
+RESULT: CLEAN (0 failures)
+EXIT=0
+
+############ STEP 4 — gates.py, repo sweep (no argument) ############
+SELFTEST — both families, before any verdict (CD-025). Synthetic fixtures only; no canon/sources or canon/marklogic file is read as fixture data.
+
+--- QUESTION_BANK_POLICY §5 family --------------------------------------------
+SELFTEST — the instrument is proven before any bank verdict (CD-025)
+  PASS  FLAG-TRACE stays quiet on a FLAGGED row (CD-042: FLAGGED is promotable)
+  PASS  baseline: an unbroken bank is CLEAN
+  PASS  POOL-MEMBERSHIP  fires on: question in two pools
+  PASS  POOL-MEMBERSHIP  fires on: a CW pool reappears
+  PASS  ZERO-OVERLAP     fires on: same stem in HW and CT
+  PASS  ZERO-OVERLAP     fires on: exact duplicate INSIDE the HW pool
+  PASS  ANSWER-SHAPE     fires on: an MCQ with two correct options
+  PASS  ANSWER-SHAPE     fires on: an MCQ with no correct option
+  PASS  ANSWER-SHAPE     fires on: a distractor with no why_wrong
+  PASS  SOURCE-TRACE     fires on: a one-word anchor that matches anything
+  PASS  SOURCE-TRACE     fires on: a real span that has nothing to do with the item
+  PASS  HONORIFIC        fires on: bare নবি with no (স)
+  PASS  HONORIFIC        fires on: হজরত with no (স)
+  PASS  RUBRIC-SPECIFICITY fires on: two S08 items sharing one rubric
+  PASS  TOPIC-NUMBER     fires on: a topic_tag that is in no chart row
+  PASS  FLAG-TRACE       fires on: a flag pointing at a tag that does not exist
+  PASS  FLAG-TRACE       fires on: a flag naming a row that is OPEN (Principal-owed)
+  PASS  FLAG-TRACE       fires on: a flag with no closes_on
+  PASS  MARK-VALUE       fires on: MCQ carries 5 marks
+  PASS  SOURCE-TRACE     fires on: an item with no extraction anchor
+  PASS  QUOTE-VERBATIM   fires on: an invented quotation
+  PASS  HONORIFIC        fires on: the Prophet's name without (স)
+  PASS  AS-MIX           fires on: AS is entirely recall
+  PASS  SCRIPT-GUARD     fires on: Arabic script in a stem
+  PASS  SCRIPT-GUARD     fires on: an arrow in a stem
+  PASS  NUMERALS         fires on: an ASCII digit in a stem
+  PASS  CEILING          fires on: HW above its ceiling
+  PASS  SOURCE-EXCLUSION FAILs when an item's qid resolves to a declared-excluded chapter (`U12`) — CD-127(b) given an executor
+  PASS  SOURCE-EXCLUSION FAILs on the ZERO-PADDED spelling `U012` too — the exclusion fails CLOSED, which is the opposite direction from CD-088 and the safe one
+  PASS  SOURCE-EXCLUSION control · a NON-excluded chapter (`U21`) stays silent — a gate that fires on everything is as useless as one that fires on nothing
+  PASS  SOURCE-EXCLUSION control · the same chapter number in a DIFFERENT subject/class is not excluded — the declaration is (subject, class, chapter), not a bare number
+  PASS  SOURCE-EXCLUSION FAILs when the bank's whole declared SOURCE FILE is excluded, even with no matching qid
+  PASS  SOURCE-EXCLUSION a MALFORMED declaration FAILs rather than being skipped — a prohibition nobody can resolve is not a prohibition (§7.17: reports or refuses, never omits)
+  PASS  SOURCE-EXCLUSION with NO declaration anywhere the gate is silent but SAYS SO — it never passes by reporting nothing
+  PASS  SOURCE-EXCLUSION a STANDALONE declaration comment is read — the mint
+  PASS  SOURCE-EXCLUSION the SAME string quoted inside a table row is NOT read — a CD row that shows the form must not mint an exclusion (AGENTS §5.1, ledger_check's mint-vs-cite anchor)
+  PASS  SOURCE-EXCLUSION the same string inside a FENCED BLOCK is NOT read — P-035's policy clause has to be able to print its own convention
+  PASS  CHAPTER-RESOLVE  `U09` and `U9` are TWO chapters when the extraction prints both — not merged
+  PASS  CHAPTER-RESOLVE  an EXACT match reports no note — the fallback stays out of the way
+  PASS  CHAPTER-RESOLVE  `U09` against an extraction printing only `পাঠ ৯` resolves on the unpadded spelling AND says so (P-034 evidence is printed, not absorbed)
+  PASS  CHAPTER-RESOLVE  the fallback runs ONLY for a padded token: `U9` against a padded-only extraction does not silently grab `পাঠ ০৯`
+  PASS  CHAPTER-RESOLVE  a unit with no section at all falls back to the whole file, as before
+SELFTEST RESULT: PASS (25 seeded errors + 10 CD-131 exclusion cases + 5 CD-130(a) resolver cases + 1 baseline)
+
+--- canon/QUESTION_POLICY §6 family -------------------------------------------
+SELFTEST — the instrument is proven before any bank verdict (CD-025). Synthetic fixtures only; no canon/sources or canon/marklogic file is read as fixture data (CD-055, CD-064(f)).
+  PASS  baseline: an unbroken synthetic chapter bank passes all eleven
+
+  PASS  MARK-VALUE     fires on: an S05 mcq carrying 5 marks instead of the spine's 1
+  PASS  SOURCE-TRACE   fires on: an anchor that appears nowhere in the extraction
+  PASS  SCRIPT-GUARD   fires on: tier-1 Arabic script in a stem
+  PASS  REF19-SLUG     fires on: a ref19_topic_id that is in no REF-19 row
+  PASS  TOPIC-NUMBER   fires on: an unminted topic_tag — must FAIL and must not auto-mint
+  PASS  KEY-RUBRIC     fires on: a descriptive item whose rubric has one band
+  PASS  BLOOM-BAND     fires on: every item becomes Remember — the pool stops spanning the band
+  PASS  DIFFICULTY     fires on: the pool cannot supply easy ≥30%
+  PASS  REPETITION     fires on: an identical stem on two Understand items
+  PASS  COVERAGE       fires on: a declared spine slot that no item supplies
+  PASS  DOMAIN-RATIO   fires on: an annual paper that is entirely জ্ঞান
+  PASS  KEY-RUBRIC     fires on: a descriptive item with no islamic_alignment criterion row
+  PASS  KEY-RUBRIC     fires on: an mcq that also carries a rubric — the schema forbids the others
+  PASS  KEY-RUBRIC     fires on: a criterion with no descriptor for one of the declared bands
+  PASS  SOURCE-TRACE   fires on: a one-word anchor — short enough to match anything
+  PASS  COVERAGE       fires on: the bank header states no reason for its target
+  PASS  COVERAGE       fires on: a pool below REF-09 §4.3's floor of 20
+
+  PASS  REPETITION     stays quiet on: a `Remember` stem repeated across HW · AS · CT — §5 permits it
+  PASS  REPETITION     stays quiet on: a `Remember` stem lifted verbatim from a CT into the annual — §5's listed supersede of MarkLogic §৮'s row 2, and it runs BOTH directions
+  PASS  DOMAIN-RATIO   stays quiet on: a bank with NO papers — the ratio is paper level only and must not fire on a pool (§6)
+  PASS  DOMAIN-RATIO   stays quiet on: a SINGLE class test skewed all-জ্ঞান — never judged (§5: the ratio is met across the year's tests, not within any one)
+  PASS  BLOOM-BAND     stays quiet on: a pool banded flat against the CHAPTER band — §4 says that is correct; only a session-scoped reading drifts low
+  PASS  DIFFICULTY     stays quiet on: a pool at 70% easy — CAN-SUPPLY, not equality, so this passes
+  PASS  DIFFICULTY     stays quiet on: a pool that is 67% HARD while still holding easy ≥30% — CD-122: a pool cannot fail a ceiling, because an author can decline to use hard items and a compliant paper stays constructible. This was a SEEDED FAILURE until Q-2 was ruled; it is kept, inverted, so the symmetric check cannot creep back in unnoticed
+
+  PASS  DECLARE        a bank declaring নির্মাণাধীন is held OUT of the controls, and the reason names the resume point
+  PASS  DECLARE        stays quiet on: a finished, unmarked, §4-shaped bank — it IS a control
+  PASS  DECLARE        a bare `নির্মাণাধীন` with no resume tail is REFUSED, not silently skipped
+  PASS  DECLARE        THE MARKER IS NOT A WAIVER — every gate still runs on a marked bank and TOPIC-NUMBER still reports it red
+  PASS  DECLARE        and it changes no verdict: marked and unmarked copies of the same clean bank give byte-identical gate output
+  PASS  DECLARE        an `অবস্থা` carrying some other word is REFUSED — §7.9 defines exactly one marker
+
+SELFTEST RESULT: PASS (17 seeded failures + 7 negatives + 6 CD-055 declaration cases + 1 baseline, across all 12 gates)
+
+SUITE: 22 gates (11 carry a QUESTION_POLICY §6 row, 14 a QUESTION_BANK_POLICY §5 row, 4 both, 1 from a decision row with no § of its own — CD-131)
+CONSUMPTION EXCLUSIONS IN FORCE: 1 — BAN-C5-chapter 12 (CD-127, canon/_wip/c5-bangla/EXCLUDED_paath_12.md)
+
+BANK SWEEP — 2 file(s) under workstreams/question-banks/banks/
+  CONTROL  complete and §4-shaped                                  workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+  PRE-POLICY  pre-policy — authored 2026-08-09 under QUESTION_BANK_POLICY v1.0 §5, before canon/QUESTION_POLICY.md v1.0 existed. It is NOT re-judged retroactively against §4's shape or §6's eleven (CD-123). Held out of the gate suite's controls as a STATED status, not because a parser failed to recognise it. It re-enters when wave 2 revises it; QB-CR-009's U14 re-tag is owed at that time. workstreams/question-banks/banks/C5_BAN_U21_QuestionBank_v1.json
+  → 1 in controls, 1 held out (each named above)
+
+  BANK: workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+  N/A   POOL-MEMBERSHIP    reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   ZERO-OVERLAP       reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  PASS  MARK-VALUE         [§5 · QB-CR-003 + §6.1]
+  PASS  SOURCE-TRACE       [§5 + §6.2]
+  PASS  SCRIPT-GUARD       [§5 + §6.3]
+  PASS  REF19-SLUG         [§6.4]
+  PASS  TOPIC-NUMBER       [§5 · QB-CR-008 + §6.5]
+  PASS  KEY-RUBRIC         [§6.6]
+  PASS  BLOOM-BAND         [§6.7 · CD-121]
+  PASS  DIFFICULTY         [§6.8 · CD-122]
+  PASS  REPETITION         [§6.9]
+  PASS  COVERAGE           [§6.10 · CD-122]
+  PASS  DOMAIN-RATIO       [§6.11 (per-pool RETIRED)]
+  N/A   ANSWER-SHAPE       reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   RUBRIC-SPECIFICITY reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   FLAG-TRACE         reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   QUOTE-VERBATIM     reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   HONORIFIC          reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   AS-MIX             reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   NUMERALS           reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   CEILING            reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  PASS  SOURCE-EXCLUSION   [CD-127(b) · CD-131]
+
+RESULT: CLEAN (0 failures)
+EXIT=0
+
+############ RERUN 2026-08-14 (after removing an arrow/emoji glyph from Q23's model_note) ############
+=== QP-BAN-C5-U13-Q01.json ===
+
+=== QP-BAN-C5-U13-Q01.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q02.json ===
+
+=== QP-BAN-C5-U13-Q02.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q03.json ===
+
+=== QP-BAN-C5-U13-Q03.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q04.json ===
+
+=== QP-BAN-C5-U13-Q04.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q05.json ===
+
+=== QP-BAN-C5-U13-Q05.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q06.json ===
+
+=== QP-BAN-C5-U13-Q06.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q07.json ===
+
+=== QP-BAN-C5-U13-Q07.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q08.json ===
+
+=== QP-BAN-C5-U13-Q08.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q09.json ===
+
+=== QP-BAN-C5-U13-Q09.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q10.json ===
+
+=== QP-BAN-C5-U13-Q10.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q11.json ===
+
+=== QP-BAN-C5-U13-Q11.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q12.json ===
+
+=== QP-BAN-C5-U13-Q12.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q13.json ===
+
+=== QP-BAN-C5-U13-Q13.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q14.json ===
+
+=== QP-BAN-C5-U13-Q14.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q15.json ===
+
+=== QP-BAN-C5-U13-Q15.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q16.json ===
+
+=== QP-BAN-C5-U13-Q16.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q17.json ===
+
+=== QP-BAN-C5-U13-Q17.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q18.json ===
+
+=== QP-BAN-C5-U13-Q18.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q19.json ===
+
+=== QP-BAN-C5-U13-Q19.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q20.json ===
+
+=== QP-BAN-C5-U13-Q20.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q21.json ===
+
+=== QP-BAN-C5-U13-Q21.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q22.json ===
+
+=== QP-BAN-C5-U13-Q22.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q23.json ===
+
+=== QP-BAN-C5-U13-Q23.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+=== QP-BAN-C5-U13-Q24.json ===
+
+=== QP-BAN-C5-U13-Q24.json ===
+RESULT: PASS (0 warn, 0 advisory) — importable
+EXIT=0
+NON-ZERO EXITS: 0 of 24
+
+SELFTEST — both families, before any verdict (CD-025). Synthetic fixtures only; no canon/sources or canon/marklogic file is read as fixture data.
+
+--- QUESTION_BANK_POLICY §5 family --------------------------------------------
+SELFTEST — the instrument is proven before any bank verdict (CD-025)
+  PASS  FLAG-TRACE stays quiet on a FLAGGED row (CD-042: FLAGGED is promotable)
+  PASS  baseline: an unbroken bank is CLEAN
+  PASS  POOL-MEMBERSHIP  fires on: question in two pools
+  PASS  POOL-MEMBERSHIP  fires on: a CW pool reappears
+  PASS  ZERO-OVERLAP     fires on: same stem in HW and CT
+  PASS  ZERO-OVERLAP     fires on: exact duplicate INSIDE the HW pool
+  PASS  ANSWER-SHAPE     fires on: an MCQ with two correct options
+  PASS  ANSWER-SHAPE     fires on: an MCQ with no correct option
+  PASS  ANSWER-SHAPE     fires on: a distractor with no why_wrong
+  PASS  SOURCE-TRACE     fires on: a one-word anchor that matches anything
+  PASS  SOURCE-TRACE     fires on: a real span that has nothing to do with the item
+  PASS  HONORIFIC        fires on: bare নবি with no (স)
+  PASS  HONORIFIC        fires on: হজরত with no (স)
+  PASS  RUBRIC-SPECIFICITY fires on: two S08 items sharing one rubric
+  PASS  TOPIC-NUMBER     fires on: a topic_tag that is in no chart row
+  PASS  FLAG-TRACE       fires on: a flag pointing at a tag that does not exist
+  PASS  FLAG-TRACE       fires on: a flag naming a row that is OPEN (Principal-owed)
+  PASS  FLAG-TRACE       fires on: a flag with no closes_on
+  PASS  MARK-VALUE       fires on: MCQ carries 5 marks
+  PASS  SOURCE-TRACE     fires on: an item with no extraction anchor
+  PASS  QUOTE-VERBATIM   fires on: an invented quotation
+  PASS  HONORIFIC        fires on: the Prophet's name without (স)
+  PASS  AS-MIX           fires on: AS is entirely recall
+  PASS  SCRIPT-GUARD     fires on: Arabic script in a stem
+  PASS  SCRIPT-GUARD     fires on: an arrow in a stem
+  PASS  NUMERALS         fires on: an ASCII digit in a stem
+  PASS  CEILING          fires on: HW above its ceiling
+  PASS  SOURCE-EXCLUSION FAILs when an item's qid resolves to a declared-excluded chapter (`U12`) — CD-127(b) given an executor
+  PASS  SOURCE-EXCLUSION FAILs on the ZERO-PADDED spelling `U012` too — the exclusion fails CLOSED, which is the opposite direction from CD-088 and the safe one
+  PASS  SOURCE-EXCLUSION control · a NON-excluded chapter (`U21`) stays silent — a gate that fires on everything is as useless as one that fires on nothing
+  PASS  SOURCE-EXCLUSION control · the same chapter number in a DIFFERENT subject/class is not excluded — the declaration is (subject, class, chapter), not a bare number
+  PASS  SOURCE-EXCLUSION FAILs when the bank's whole declared SOURCE FILE is excluded, even with no matching qid
+  PASS  SOURCE-EXCLUSION a MALFORMED declaration FAILs rather than being skipped — a prohibition nobody can resolve is not a prohibition (§7.17: reports or refuses, never omits)
+  PASS  SOURCE-EXCLUSION with NO declaration anywhere the gate is silent but SAYS SO — it never passes by reporting nothing
+  PASS  SOURCE-EXCLUSION a STANDALONE declaration comment is read — the mint
+  PASS  SOURCE-EXCLUSION the SAME string quoted inside a table row is NOT read — a CD row that shows the form must not mint an exclusion (AGENTS §5.1, ledger_check's mint-vs-cite anchor)
+  PASS  SOURCE-EXCLUSION the same string inside a FENCED BLOCK is NOT read — P-035's policy clause has to be able to print its own convention
+  PASS  CHAPTER-RESOLVE  `U09` and `U9` are TWO chapters when the extraction prints both — not merged
+  PASS  CHAPTER-RESOLVE  an EXACT match reports no note — the fallback stays out of the way
+  PASS  CHAPTER-RESOLVE  `U09` against an extraction printing only `পাঠ ৯` resolves on the unpadded spelling AND says so (P-034 evidence is printed, not absorbed)
+  PASS  CHAPTER-RESOLVE  the fallback runs ONLY for a padded token: `U9` against a padded-only extraction does not silently grab `পাঠ ০৯`
+  PASS  CHAPTER-RESOLVE  a unit with no section at all falls back to the whole file, as before
+SELFTEST RESULT: PASS (25 seeded errors + 10 CD-131 exclusion cases + 5 CD-130(a) resolver cases + 1 baseline)
+
+--- canon/QUESTION_POLICY §6 family -------------------------------------------
+SELFTEST — the instrument is proven before any bank verdict (CD-025). Synthetic fixtures only; no canon/sources or canon/marklogic file is read as fixture data (CD-055, CD-064(f)).
+  PASS  baseline: an unbroken synthetic chapter bank passes all eleven
+
+  PASS  MARK-VALUE     fires on: an S05 mcq carrying 5 marks instead of the spine's 1
+  PASS  SOURCE-TRACE   fires on: an anchor that appears nowhere in the extraction
+  PASS  SCRIPT-GUARD   fires on: tier-1 Arabic script in a stem
+  PASS  REF19-SLUG     fires on: a ref19_topic_id that is in no REF-19 row
+  PASS  TOPIC-NUMBER   fires on: an unminted topic_tag — must FAIL and must not auto-mint
+  PASS  KEY-RUBRIC     fires on: a descriptive item whose rubric has one band
+  PASS  BLOOM-BAND     fires on: every item becomes Remember — the pool stops spanning the band
+  PASS  DIFFICULTY     fires on: the pool cannot supply easy ≥30%
+  PASS  REPETITION     fires on: an identical stem on two Understand items
+  PASS  COVERAGE       fires on: a declared spine slot that no item supplies
+  PASS  DOMAIN-RATIO   fires on: an annual paper that is entirely জ্ঞান
+  PASS  KEY-RUBRIC     fires on: a descriptive item with no islamic_alignment criterion row
+  PASS  KEY-RUBRIC     fires on: an mcq that also carries a rubric — the schema forbids the others
+  PASS  KEY-RUBRIC     fires on: a criterion with no descriptor for one of the declared bands
+  PASS  SOURCE-TRACE   fires on: a one-word anchor — short enough to match anything
+  PASS  COVERAGE       fires on: the bank header states no reason for its target
+  PASS  COVERAGE       fires on: a pool below REF-09 §4.3's floor of 20
+
+  PASS  REPETITION     stays quiet on: a `Remember` stem repeated across HW · AS · CT — §5 permits it
+  PASS  REPETITION     stays quiet on: a `Remember` stem lifted verbatim from a CT into the annual — §5's listed supersede of MarkLogic §৮'s row 2, and it runs BOTH directions
+  PASS  DOMAIN-RATIO   stays quiet on: a bank with NO papers — the ratio is paper level only and must not fire on a pool (§6)
+  PASS  DOMAIN-RATIO   stays quiet on: a SINGLE class test skewed all-জ্ঞান — never judged (§5: the ratio is met across the year's tests, not within any one)
+  PASS  BLOOM-BAND     stays quiet on: a pool banded flat against the CHAPTER band — §4 says that is correct; only a session-scoped reading drifts low
+  PASS  DIFFICULTY     stays quiet on: a pool at 70% easy — CAN-SUPPLY, not equality, so this passes
+  PASS  DIFFICULTY     stays quiet on: a pool that is 67% HARD while still holding easy ≥30% — CD-122: a pool cannot fail a ceiling, because an author can decline to use hard items and a compliant paper stays constructible. This was a SEEDED FAILURE until Q-2 was ruled; it is kept, inverted, so the symmetric check cannot creep back in unnoticed
+
+  PASS  DECLARE        a bank declaring নির্মাণাধীন is held OUT of the controls, and the reason names the resume point
+  PASS  DECLARE        stays quiet on: a finished, unmarked, §4-shaped bank — it IS a control
+  PASS  DECLARE        a bare `নির্মাণাধীন` with no resume tail is REFUSED, not silently skipped
+  PASS  DECLARE        THE MARKER IS NOT A WAIVER — every gate still runs on a marked bank and TOPIC-NUMBER still reports it red
+  PASS  DECLARE        and it changes no verdict: marked and unmarked copies of the same clean bank give byte-identical gate output
+  PASS  DECLARE        an `অবস্থা` carrying some other word is REFUSED — §7.9 defines exactly one marker
+
+SELFTEST RESULT: PASS (17 seeded failures + 7 negatives + 6 CD-055 declaration cases + 1 baseline, across all 12 gates)
+
+SUITE: 22 gates (11 carry a QUESTION_POLICY §6 row, 14 a QUESTION_BANK_POLICY §5 row, 4 both, 1 from a decision row with no § of its own — CD-131)
+CONSUMPTION EXCLUSIONS IN FORCE: 1 — BAN-C5-chapter 12 (CD-127, canon/_wip/c5-bangla/EXCLUDED_paath_12.md)
+
+BANK: workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json   [shape: qp6]
+  N/A   POOL-MEMBERSHIP    reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   ZERO-OVERLAP       reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  PASS  MARK-VALUE         [§5 · QB-CR-003 + §6.1]
+  PASS  SOURCE-TRACE       [§5 + §6.2]
+  PASS  SCRIPT-GUARD       [§5 + §6.3]
+  PASS  REF19-SLUG         [§6.4]
+  PASS  TOPIC-NUMBER       [§5 · QB-CR-008 + §6.5]
+  PASS  KEY-RUBRIC         [§6.6]
+  PASS  BLOOM-BAND         [§6.7 · CD-121]
+  PASS  DIFFICULTY         [§6.8 · CD-122]
+  PASS  REPETITION         [§6.9]
+  PASS  COVERAGE           [§6.10 · CD-122]
+  PASS  DOMAIN-RATIO       [§6.11 (per-pool RETIRED)]
+  N/A   ANSWER-SHAPE       reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   RUBRIC-SPECIFICITY reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   FLAG-TRACE         reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   QUOTE-VERBATIM     reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   HONORIFIC          reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   AS-MIX             reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   NUMERALS           reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   CEILING            reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  PASS  SOURCE-EXCLUSION   [CD-127(b) · CD-131]
+  REPORT  MARK-VALUE         24 items checked against BAN C5 spine
+  REPORT  SOURCE-TRACE       24 anchors resolved against the extraction
+  REPORT  SCRIPT-GUARD       tier-3 WATCH counter (em-dash/ellipsis): 16; tier-2 GREY in metadata: 0
+  REPORT  REF19-SLUG         121 REF-19 slugs loaded from the LOCKED artifact
+  REPORT  TOPIC-NUMBER       11 charted topic numbers loaded
+  REPORT  KEY-RUBRIC         key/rubric checked per type on 24 items
+  REPORT  BLOOM-BAND         bands: REF-06 §3.6 C3–5, six Bloom levels (CD-121/UD-23 — the Bloom axis governs the pool; MarkLogic §৩ is the PAPER's axis and is not read here): Remember 20–30% · Understand 25–35% · Apply 25–35% · Analyze 10–20% · Evaluate 0–10% · Create 0–10%
+  REPORT  BLOOM-BAND         observed: Remember 20.8% · Understand 29.2% · Apply 29.2% · Analyze 12.5% · Evaluate 8.3% · Create 0.0%  (read at CHAPTER scope, never per session — §4's D-050 paragraph)
+  REPORT  DIFFICULTY         pool: easy 45.8% · medium 41.7% · hard 12.5%  (easy floor only — CD-122; the hard ≤25% ceiling is a PAPER-level test and is not applied to a pool)
+  REPORT  REPETITION         0 `Remember` repetition(s) permitted by §5 — expected, not an error
+  REPORT  COVERAGE           coverage read against the HEADER-STATED target (§4 fallback — Q-3): 3 topic(s), 7 slot(s), target 24
+  REPORT  DOMAIN-RATIO       no papers in this bank — domain ratio is PAPER LEVEL ONLY (§6) and is not applied to a pool. Not judged; not assumed clean.
+  REPORT  SOURCE-EXCLUSION   consumption exclusions in force: BAN-C5-chapter 12 (CD-127)
+RESULT: CLEAN (0 failures)
+EXIT=0
+
+SELFTEST — both families, before any verdict (CD-025). Synthetic fixtures only; no canon/sources or canon/marklogic file is read as fixture data.
+
+--- QUESTION_BANK_POLICY §5 family --------------------------------------------
+SELFTEST — the instrument is proven before any bank verdict (CD-025)
+  PASS  FLAG-TRACE stays quiet on a FLAGGED row (CD-042: FLAGGED is promotable)
+  PASS  baseline: an unbroken bank is CLEAN
+  PASS  POOL-MEMBERSHIP  fires on: question in two pools
+  PASS  POOL-MEMBERSHIP  fires on: a CW pool reappears
+  PASS  ZERO-OVERLAP     fires on: same stem in HW and CT
+  PASS  ZERO-OVERLAP     fires on: exact duplicate INSIDE the HW pool
+  PASS  ANSWER-SHAPE     fires on: an MCQ with two correct options
+  PASS  ANSWER-SHAPE     fires on: an MCQ with no correct option
+  PASS  ANSWER-SHAPE     fires on: a distractor with no why_wrong
+  PASS  SOURCE-TRACE     fires on: a one-word anchor that matches anything
+  PASS  SOURCE-TRACE     fires on: a real span that has nothing to do with the item
+  PASS  HONORIFIC        fires on: bare নবি with no (স)
+  PASS  HONORIFIC        fires on: হজরত with no (স)
+  PASS  RUBRIC-SPECIFICITY fires on: two S08 items sharing one rubric
+  PASS  TOPIC-NUMBER     fires on: a topic_tag that is in no chart row
+  PASS  FLAG-TRACE       fires on: a flag pointing at a tag that does not exist
+  PASS  FLAG-TRACE       fires on: a flag naming a row that is OPEN (Principal-owed)
+  PASS  FLAG-TRACE       fires on: a flag with no closes_on
+  PASS  MARK-VALUE       fires on: MCQ carries 5 marks
+  PASS  SOURCE-TRACE     fires on: an item with no extraction anchor
+  PASS  QUOTE-VERBATIM   fires on: an invented quotation
+  PASS  HONORIFIC        fires on: the Prophet's name without (স)
+  PASS  AS-MIX           fires on: AS is entirely recall
+  PASS  SCRIPT-GUARD     fires on: Arabic script in a stem
+  PASS  SCRIPT-GUARD     fires on: an arrow in a stem
+  PASS  NUMERALS         fires on: an ASCII digit in a stem
+  PASS  CEILING          fires on: HW above its ceiling
+  PASS  SOURCE-EXCLUSION FAILs when an item's qid resolves to a declared-excluded chapter (`U12`) — CD-127(b) given an executor
+  PASS  SOURCE-EXCLUSION FAILs on the ZERO-PADDED spelling `U012` too — the exclusion fails CLOSED, which is the opposite direction from CD-088 and the safe one
+  PASS  SOURCE-EXCLUSION control · a NON-excluded chapter (`U21`) stays silent — a gate that fires on everything is as useless as one that fires on nothing
+  PASS  SOURCE-EXCLUSION control · the same chapter number in a DIFFERENT subject/class is not excluded — the declaration is (subject, class, chapter), not a bare number
+  PASS  SOURCE-EXCLUSION FAILs when the bank's whole declared SOURCE FILE is excluded, even with no matching qid
+  PASS  SOURCE-EXCLUSION a MALFORMED declaration FAILs rather than being skipped — a prohibition nobody can resolve is not a prohibition (§7.17: reports or refuses, never omits)
+  PASS  SOURCE-EXCLUSION with NO declaration anywhere the gate is silent but SAYS SO — it never passes by reporting nothing
+  PASS  SOURCE-EXCLUSION a STANDALONE declaration comment is read — the mint
+  PASS  SOURCE-EXCLUSION the SAME string quoted inside a table row is NOT read — a CD row that shows the form must not mint an exclusion (AGENTS §5.1, ledger_check's mint-vs-cite anchor)
+  PASS  SOURCE-EXCLUSION the same string inside a FENCED BLOCK is NOT read — P-035's policy clause has to be able to print its own convention
+  PASS  CHAPTER-RESOLVE  `U09` and `U9` are TWO chapters when the extraction prints both — not merged
+  PASS  CHAPTER-RESOLVE  an EXACT match reports no note — the fallback stays out of the way
+  PASS  CHAPTER-RESOLVE  `U09` against an extraction printing only `পাঠ ৯` resolves on the unpadded spelling AND says so (P-034 evidence is printed, not absorbed)
+  PASS  CHAPTER-RESOLVE  the fallback runs ONLY for a padded token: `U9` against a padded-only extraction does not silently grab `পাঠ ০৯`
+  PASS  CHAPTER-RESOLVE  a unit with no section at all falls back to the whole file, as before
+SELFTEST RESULT: PASS (25 seeded errors + 10 CD-131 exclusion cases + 5 CD-130(a) resolver cases + 1 baseline)
+
+--- canon/QUESTION_POLICY §6 family -------------------------------------------
+SELFTEST — the instrument is proven before any bank verdict (CD-025). Synthetic fixtures only; no canon/sources or canon/marklogic file is read as fixture data (CD-055, CD-064(f)).
+  PASS  baseline: an unbroken synthetic chapter bank passes all eleven
+
+  PASS  MARK-VALUE     fires on: an S05 mcq carrying 5 marks instead of the spine's 1
+  PASS  SOURCE-TRACE   fires on: an anchor that appears nowhere in the extraction
+  PASS  SCRIPT-GUARD   fires on: tier-1 Arabic script in a stem
+  PASS  REF19-SLUG     fires on: a ref19_topic_id that is in no REF-19 row
+  PASS  TOPIC-NUMBER   fires on: an unminted topic_tag — must FAIL and must not auto-mint
+  PASS  KEY-RUBRIC     fires on: a descriptive item whose rubric has one band
+  PASS  BLOOM-BAND     fires on: every item becomes Remember — the pool stops spanning the band
+  PASS  DIFFICULTY     fires on: the pool cannot supply easy ≥30%
+  PASS  REPETITION     fires on: an identical stem on two Understand items
+  PASS  COVERAGE       fires on: a declared spine slot that no item supplies
+  PASS  DOMAIN-RATIO   fires on: an annual paper that is entirely জ্ঞান
+  PASS  KEY-RUBRIC     fires on: a descriptive item with no islamic_alignment criterion row
+  PASS  KEY-RUBRIC     fires on: an mcq that also carries a rubric — the schema forbids the others
+  PASS  KEY-RUBRIC     fires on: a criterion with no descriptor for one of the declared bands
+  PASS  SOURCE-TRACE   fires on: a one-word anchor — short enough to match anything
+  PASS  COVERAGE       fires on: the bank header states no reason for its target
+  PASS  COVERAGE       fires on: a pool below REF-09 §4.3's floor of 20
+
+  PASS  REPETITION     stays quiet on: a `Remember` stem repeated across HW · AS · CT — §5 permits it
+  PASS  REPETITION     stays quiet on: a `Remember` stem lifted verbatim from a CT into the annual — §5's listed supersede of MarkLogic §৮'s row 2, and it runs BOTH directions
+  PASS  DOMAIN-RATIO   stays quiet on: a bank with NO papers — the ratio is paper level only and must not fire on a pool (§6)
+  PASS  DOMAIN-RATIO   stays quiet on: a SINGLE class test skewed all-জ্ঞান — never judged (§5: the ratio is met across the year's tests, not within any one)
+  PASS  BLOOM-BAND     stays quiet on: a pool banded flat against the CHAPTER band — §4 says that is correct; only a session-scoped reading drifts low
+  PASS  DIFFICULTY     stays quiet on: a pool at 70% easy — CAN-SUPPLY, not equality, so this passes
+  PASS  DIFFICULTY     stays quiet on: a pool that is 67% HARD while still holding easy ≥30% — CD-122: a pool cannot fail a ceiling, because an author can decline to use hard items and a compliant paper stays constructible. This was a SEEDED FAILURE until Q-2 was ruled; it is kept, inverted, so the symmetric check cannot creep back in unnoticed
+
+  PASS  DECLARE        a bank declaring নির্মাণাধীন is held OUT of the controls, and the reason names the resume point
+  PASS  DECLARE        stays quiet on: a finished, unmarked, §4-shaped bank — it IS a control
+  PASS  DECLARE        a bare `নির্মাণাধীন` with no resume tail is REFUSED, not silently skipped
+  PASS  DECLARE        THE MARKER IS NOT A WAIVER — every gate still runs on a marked bank and TOPIC-NUMBER still reports it red
+  PASS  DECLARE        and it changes no verdict: marked and unmarked copies of the same clean bank give byte-identical gate output
+  PASS  DECLARE        an `অবস্থা` carrying some other word is REFUSED — §7.9 defines exactly one marker
+
+SELFTEST RESULT: PASS (17 seeded failures + 7 negatives + 6 CD-055 declaration cases + 1 baseline, across all 12 gates)
+
+SUITE: 22 gates (11 carry a QUESTION_POLICY §6 row, 14 a QUESTION_BANK_POLICY §5 row, 4 both, 1 from a decision row with no § of its own — CD-131)
+CONSUMPTION EXCLUSIONS IN FORCE: 1 — BAN-C5-chapter 12 (CD-127, canon/_wip/c5-bangla/EXCLUDED_paath_12.md)
+
+BANK SWEEP — 2 file(s) under workstreams/question-banks/banks/
+  CONTROL  complete and §4-shaped                                  workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+  PRE-POLICY  pre-policy — authored 2026-08-09 under QUESTION_BANK_POLICY v1.0 §5, before canon/QUESTION_POLICY.md v1.0 existed. It is NOT re-judged retroactively against §4's shape or §6's eleven (CD-123). Held out of the gate suite's controls as a STATED status, not because a parser failed to recognise it. It re-enters when wave 2 revises it; QB-CR-009's U14 re-tag is owed at that time. workstreams/question-banks/banks/C5_BAN_U21_QuestionBank_v1.json
+  → 1 in controls, 1 held out (each named above)
+
+  BANK: workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+  N/A   POOL-MEMBERSHIP    reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   ZERO-OVERLAP       reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  PASS  MARK-VALUE         [§5 · QB-CR-003 + §6.1]
+  PASS  SOURCE-TRACE       [§5 + §6.2]
+  PASS  SCRIPT-GUARD       [§5 + §6.3]
+  PASS  REF19-SLUG         [§6.4]
+  PASS  TOPIC-NUMBER       [§5 · QB-CR-008 + §6.5]
+  PASS  KEY-RUBRIC         [§6.6]
+  PASS  BLOOM-BAND         [§6.7 · CD-121]
+  PASS  DIFFICULTY         [§6.8 · CD-122]
+  PASS  REPETITION         [§6.9]
+  PASS  COVERAGE           [§6.10 · CD-122]
+  PASS  DOMAIN-RATIO       [§6.11 (per-pool RETIRED)]
+  N/A   ANSWER-SHAPE       reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   RUBRIC-SPECIFICITY reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   FLAG-TRACE         reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   QUOTE-VERBATIM     reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   HONORIFIC          reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   AS-MIX             reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   NUMERALS           reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  N/A   CEILING            reads QUESTION_BANK_POLICY §5's shape; this bank is qp6
+  PASS  SOURCE-EXCLUSION   [CD-127(b) · CD-131]
+
+RESULT: CLEAN (0 failures)
+EXIT=0
