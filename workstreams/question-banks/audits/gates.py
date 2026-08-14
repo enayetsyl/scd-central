@@ -398,6 +398,23 @@ def _chapter_tokens(value):
     return {value, bare} | {bare.zfill(w) for w in (2, 3, 4)}
 
 
+def _is_declaration_line(line):
+    """A MINT, not a CITATION. Found by this gate's own first live run.
+
+    `CONSUMPTION EXCLUSIONS IN FORCE: 2` — because **CD-131's decision row quotes the declaration
+    form**, and the loader counted the quotation. Harmless there (same chapter, same CD) and a real
+    defect: a policy clause, a session log or a CD row that shows the form would mint a phantom
+    exclusion, and the reverse — a real exclusion created by someone *describing* one.
+
+    **This is AGENTS.md §5.1 exactly** — a gate must not make naming the defect unwriteable — and
+    `ledger_check.py` solved the identical mint-vs-cite problem by anchoring on the first cell of a
+    table row. The anchor here: **the declaration is the WHOLE LINE.** A row of prose that contains
+    it is discussing it; a standalone comment is declaring it.
+    """
+    s = line.strip()
+    return s.startswith("<!--") and s.endswith("-->")
+
+
 def load_exclusions(root):
     """Every declared consumption exclusion under `canon/`. -> (declarations, errors)."""
     out, errs = [], []
@@ -413,8 +430,15 @@ def load_exclusions(root):
             continue
         if EXCL_MARK not in text:
             continue
+        fenced = False
         for line in text.splitlines():
-            if EXCL_MARK not in line:
+            if line.lstrip().startswith("```"):
+                # A fenced block SHOWS the form; it does not use it. P-035's proposed
+                # SOURCE_POLICY clause will certainly print the line in a fence, and a policy
+                # that could not quote its own convention would be the §5.1 failure again.
+                fenced = not fenced
+                continue
+            if fenced or EXCL_MARK not in line or not _is_declaration_line(line):
                 continue
             d = _parse_exclusion_line(line)
             missing = [k for k in ("subject", "class", "chapter", "cd") if not d.get(k)]
@@ -1743,6 +1767,30 @@ def qb_selftest():
                               {**qb_build_ctx(_qb_good_bank()), "exclusions": []},
                               quiet=True)[1]))),
     ]
+    # --- MINT vs CITE, found by this gate's own first live run (CD-131 addendum). Both
+    # --- directions, on synthetic text: a standalone comment DECLARES; a row of prose that
+    # --- contains the same string DISCUSSES. AGENTS.md §5.1 — naming the defect stays writeable.
+    import tempfile
+    from pathlib import Path as _Path
+
+    def _load_from(text):
+        d = _Path(tempfile.mkdtemp()) / "canon"
+        d.mkdir(parents=True)
+        (d / "note.md").write_text(text, encoding="utf-8")
+        return load_exclusions(d.parent)[0]
+
+    DECL = "<!-- excluded-from-consumption: subject=BAN class=5 chapter=12 cd=CD-127 -->"
+    excl_cases += [
+        ("a STANDALONE declaration comment is read — the mint",
+         lambda: len(_load_from(f"# note\n\n{DECL}\n")) == 1),
+        ("the SAME string quoted inside a table row is NOT read — a CD row that shows the form "
+         "must not mint an exclusion (AGENTS §5.1, ledger_check's mint-vs-cite anchor)",
+         lambda: _load_from(f"| CD-131 | 2026-08-14 | the form is `{DECL}` | cites |\n") == []),
+        ("the same string inside a FENCED BLOCK is NOT read — P-035's policy clause has to be "
+         "able to print its own convention",
+         lambda: _load_from(f"# clause\n\n```\n{DECL}\n```\n") == []),
+    ]
+
     for label, fn in excl_cases:
         try:
             passed = bool(fn())
