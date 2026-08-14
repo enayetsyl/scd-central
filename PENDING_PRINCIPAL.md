@@ -821,7 +821,7 @@ harness will disagree with the gate on exactly two values.
 
 ## ⚑ PENDING-P-030 — a promoted C5 Bangla source file tells the next session to extract পাঠ ১২, three days after the ruling that put it out of scope
 
-**Status: OPEN — HELD UNRULED at the Principal's direction, 2026-08-14.** He reads `SOURCE_POLICY` §7.6 and CD-050(b) at source himself before this is decided. **No agent may act on it, in either direction.** Blocks nothing; no file edited, no decision row minted.
+**Status: CLOSED 2026-08-14 → CD-127.** Ruled a **PARTIAL REVERSAL of CD-050(b)**, recorded as one: **extraction PERMITTED** when the Principal calls for it (**none exists; none produced**) · **consumption STILL EXCLUDED** until a further ruling. Whether পাঠ ১২ is taught is **not decided**. CD-050(b)'s text and §7.6's text are **unedited**; a forward-only pointer was added. The two stale traces at `C5_BAN_Source_01.md:223–224` corrected under **`CR-002`** (lane `c5-bangla`); `EXCLUDED_paath_12.md` rewritten to the two-layer state. **Correction to this item's own reasoning:** its claim that *"CD-004 forbids editing the promoted source file"* **does not hold at source** — CD-004 covers the seven `canon/marklogic/` files and grandfathers `C5_Bangla_Source_13-23.md`, not `C5_BAN_Source_01.md`; `CR-001` is the in-place precedent. Recorded at CD-127(f) rather than smoothed away.
 *(Next free number verified at source: no `P-030` token exists anywhere in the repo.)*
 
 **The two statements, both at source.**
@@ -911,7 +911,7 @@ the part that touches history.
 
 ## ⚑ PENDING-P-032 — the four NCTB PDFs: third retention list, and §12.7's rule now applies
 
-**Status: OPEN — Principal's call, and it is the only thing left in `_inbox/` that needs one.**
+**Status: CLOSED 2026-08-14 → CD-128.** Confirmed at source by the Principal. **All four are RETAINED. Owner: Principal. Retained indefinitely as the scan-of-record.** §12.7 asked for an owner and a date, not removal, and it now has both. The reason is recorded in `_inbox/README.md` so the **next retention sweep does not re-raise it** — the three-session rule has been satisfied, not merely deferred a fourth time.
 *(Next free verified at source: no `P-032` token exists anywhere in the repo.)*
 
 `Class 5 Bangla.pdf` · `Class 5 English.pdf` · `Class 5 Math.pdf` · `C5_Science.pdf` — **staged
@@ -932,3 +932,94 @@ from here (the CD-026 / QB-CR-007 condition). **The ruling needed is one line pe
 and a date, or out.**
 
 **Needed by:** the next session that prints a retention list — which will be the fourth.
+
+---
+
+## ⚑ PENDING-P-033 — the CD-088(d)(i) lint is built and fires twice; and the corpus mints BOTH `U09` and `U2`, so the ID convention itself is where the sixth instance lives
+
+**Status: OPEN — three rulings owed, none acted on. Nothing was rewritten.**
+*(Next free number verified at source: `PENDING_PRINCIPAL.md` defines through `P-032`; no `P-033`
+token existed anywhere in the repo before this row.)*
+
+`tools/audits/int_id_check.py` is built — **CD-088(d)(i)**, the half its sibling `ledger_check.py`
+(CD-088(d)(ii), CD-124) left owed. **Selftest PASS, 16 cases: 15 seeded/control + 1 baseline.**
+Repo verdict **FAIL: 2 INT-ON-ID-CAPTURE · 15 untyped sites reported and not judged.** The session
+brief's instruction was explicit — *report the findings and stop; a lint that forces same-session
+rewrites of six gates is how a clean tree becomes a risky one* — so **no audit script was edited**.
+
+### Finding 1 — both live hits are in one file, and only one of them is real
+
+`workstreams/question-banks/audits/gates.py`, `qb_build_ctx()`, pattern
+`^QP-([A-Z]+)-C([1-5])-U(\d+)`:
+
+| Line | Code | Reading |
+|---|---|---|
+| 1207 | `subject, class_level, unit = m.group(1), int(m.group(2)), m.group(3)` | **Benign.** Group 2 is `C([1-5])` — one digit, no padding expressible, and `class_level` is used as an ordered number. This is the case the waiver form exists for. |
+| 1215 | `unit_bn = str(int(unit)).translate(…)` | **Real.** Group 3 is `U(\d+)`. `int()` maps **`U09` and `U9` to the same `৯`**, and `unit_bn` is what selects the chapter section out of the source extraction. Two distinct banks would read one chapter. |
+
+**The raw `unit` string is retained** on the same line, which is why this is latent rather than
+live: nothing downstream currently compares the normalised form. **CD-088's whole point is that
+this is not a defence** — TOOLS-CR-001 was also one careless comparison away from harmless.
+
+### Finding 2 — the ambiguity is in the ID convention, not only in the code (a SIXTH instance)
+
+`int()` only collapses `U09` into `U9` if both forms are writable. **They are, and canon writes
+both:**
+
+| Form | Where, at source |
+|---|---|
+| `QP-ENG-C5-**U09**-Q01` | `tools/hub-export/build_question_envelopes.py:97` — the error message that *defines* the expected shape |
+| `QP-BAN-C1-**U2**-L4-Q03` | `tools/hub-export/LOCKED_QuestionPayload_Schema_v1.json:27` · `workstreams/question-banks/LOCKED_QuestionBank_Production_Conventions_v1_4.md:48` |
+| `QP-BAN-C1-**U1**-L?` | `canon/refs/LOCKED_REF-08_Homework_Architecture_v1_3.md:255` |
+
+**Three canon-layer artifacts, two padding conventions, and no rule anywhere stating which.** This
+is **CD-088(c)'s instance-4 face** — *not a form discarded, a form that never existed* — and it is
+the same shape as `CR-001`…`CR-004` (P-031): **one scheme, several writers, nothing distinguishing
+them.** It is the **sixth** instance of the PATTERN and the first found in the ID *convention*
+rather than in code reading one.
+
+⚠ **Two of the three sites are LOCKED** (`LOCKED_QuestionPayload_Schema_v1.json`,
+`LOCKED_..._Conventions_v1_4.md`) and are **supersede-only** (CD-013, CD-003). **Nothing was
+edited.** If the ruling is *pad to two digits*, it needs a supersede, not a patch — the same road
+`UP-003` is already on.
+
+### Finding 3 — the lint's own design choices, offered for ratification rather than assumed
+
+Built inside CD-088(d)(i)'s stated scope, but three choices were the agent's and should be ruled:
+
+1. **Two tiers, not one.** `INT-ON-ID-CAPTURE` **FAILs**; `INT-ON-CAPTURE-UNTYPED` **reports and
+   does not judge**. The flat *"every capture is an ID"* form was considered and rejected:
+   `math_arith_check.py` calls `int()` on captured Bangla numerals ~30× **because they are
+   quantities — that is the gate's whole job** — and failing those makes the ruling
+   unimplementable. The untyped list is printed in full every run (`SOURCE_POLICY` §7.17: reports
+   or refuses, never omits) so **the lint's own blind spot is measurable rather than invisible**.
+2. **The classifier.** A pattern is *identifier-shaped* when its source insists on a **literal**
+   uppercase-plus-hyphen scheme prefix (`QP-`, `CD-`, `REF-`), character classes stripped first —
+   without stripping, `([A-Z]+)` reads as a literal and every pattern in the repo looks like an ID.
+   *(That is CD-070's substring-vs-token, and it bit while this file was being written: the first
+   `grep` for `int(` matched every `print(`.)*
+3. **The waiver, `# int-id-ok: <reason>`** — same line or the line above, reason mandatory, a bare
+   waiver is itself a FAIL. Deliberately **CD-124's shape**: the information that tells an ID from
+   a count does not live in the code, so the repo **declares** it rather than the gate inferring
+   it. **The declaration is the repair; the lint is the alarm.**
+   ⚠ **No waiver exists anywhere in the repo and none was added.** Writing one is ruling on the
+   site it sits on, which is the Principal's call, and it would mean editing an audit script.
+
+**Not built, and named so the omission is on the record:** `float()`, `Decimal()` and `str.zfill()`
+destroy the same information and are **not** checked. CD-088(d)(i) names `int()`. **Widening the
+sink is a ruling, not a patch.**
+
+### What is being asked
+
+1. **`gates.py:1215`** — waiver, or rewrite to compare the raw `unit` string? *(The rewrite is one
+   line and is the CD-088-consistent answer; it was not made because the brief forbids rewriting
+   audit scripts this session.)*
+2. **`gates.py:1207`** — waiver with a stated reason, as the form intends?
+3. **Unit-segment padding** — is the canonical form `U09` or `U9`? Whichever it is, **two LOCKED
+   artifacts disagree with it today** and closing this needs a supersede.
+
+**Blocks:** nothing today. **Would block** the first C5 Bangla bank whose unit segment is
+single-digit, i.e. **any bank before পাঠ ১০** — wave 1 is পাঠ ২১, so wave 1 is clear.
+
+**Needed by:** 2026-08-21 — before the first single-digit-unit bank, and in any case before the
+`gates.py` findings are older than the session that found them.

@@ -2033,3 +2033,101 @@ No bank item or bank file authored · no live source file read as fixture data �
 `canon/_wip/c5-*` and the Math lane untouched · U14 not re-tagged (QB-CR-009 stays
 RULED/execution-owed) · Conventions v1.4 not amended · no topic number minted ·
 CD-088(d)(i) not built · nothing pushed.
+
+---
+
+## 2026-08-14 · P00/P04 unification session 4 — the ruled-but-unexecuted queue closed (Cowork, `scd-agent-cowork`)
+
+**Opened at `cd03467`, clean tree, `origin/main` == `HEAD`.** Brief: close every ruled-but-unexecuted
+item in this lane so question authoring opens owing nothing. **No bank content authored.**
+`canon/_wip/c5-math/` and the Math `_inbox` drafts untouched — that lane is its own session.
+
+### Step 0 — verified at source before anything was written
+
+- **Next free numbers:** `canon/DECISIONS.md` defined through **CD-126** → CD-127, CD-128 minted.
+  `PENDING_PRINCIPAL.md` defined through **P-032** → P-033 minted. Both confirmed absent repo-wide first.
+- **`SOURCE_POLICY` §7.6 · CD-050(b) · `EXCLUDED_paath_12.md`** read and quoted verbatim in the
+  session report. §7.6 and CD-050(b) place the exclusion **at the extraction layer** and name
+  themselves a **named exception to §3**; `EXCLUDED_paath_12.md` closed by requiring **a new CD row
+  citing CD-050** to restore পাঠ ১২. **CD-127 is that row, in that form.**
+- **Queue state, corrected against the brief:** **P-029 and P-031 were already CLOSED by `cd03467`**
+  (CD-125, CD-124). **P-030 and P-032 were the only two open.**
+
+### What was ruled
+
+- **CD-127 — পাঠ ১২, a PARTIAL REVERSAL of CD-050(b), recorded as one.** The exclusion **splits**:
+  **extraction PERMITTED** on the Principal's call · **consumption STILL EXCLUDED** until a further
+  ruling. **Whether it is taught is not decided.** **No extraction exists and none was produced.**
+  The split is written down because *"not extracted"* used to do all the work — the moment
+  extraction is permitted, an extracted পাঠ ১২ looks like পাঠ ১–১১ to every downstream reader and
+  **`QUESTION_POLICY` has no field, gate or convention that would say otherwise**. It would be
+  bankable not because anyone decided to bank it but because **nobody would have had to decide not
+  to.** CD-050(b)'s text and §7.6's text **unedited**; forward-only pointer added.
+- **CD-128 — the four NCTB PDFs RETAINED as the scan-of-record.** Owner **Principal**, **no end
+  date**. §12.7 asked for an owner and a date, not removal; **the three-session rule is discharged,
+  not restarted.** A retention list must still **name** them; it must no longer **raise** them.
+
+### What was corrected
+
+- **`CR-002`** (lane `c5-bangla`) — the two stale traces in `canon/sources/c5/bangla/C5_BAN_Source_01.md`.
+  **Line 223** *"পাঠ ১২-এর নিষ্কাশন তৈরি হবে"*: under CD-127(a) it stops being wrong about
+  extraction, **but it is silent on consumption, which is now the half that binds** — so it was
+  **not left as it stood**; the consumption clause was written in beside it. *A sentence that has
+  become true by accident is not the same as a sentence that is right.* **Line 224** *"পাঠ ১–১২"*
+  → **পাঠ ১–১১**: a separate defect with a separate origin, corrected regardless. **Old wording
+  quoted in place, not deleted. The transcription itself was not touched.** `source_check.py` re-run
+  on the edited file: **GREEN**.
+- **P-030's own reasoning corrected at CD-127(f).** Its claim *"CD-004 forbids editing the promoted
+  source file"* **does not hold at source**: CD-004 covers the seven `canon/marklogic/` files and
+  grandfathers `C5_Bangla_Source_13-23.md`. `CR-001` is the in-place precedent, on a sibling file in
+  the same directory. Recorded rather than smoothed.
+
+### What was built
+
+- **`tools/audits/int_id_check.py` — CD-088(d)(i)**, the half `ledger_check.py` (d)(ii) left owed.
+  **Selftest PASS: 16 cases, 15 seeded/control + 1 baseline**, synthetic throughout (CD-121(e):
+  seeds synthetic, controls may be live). **Repo verdict FAIL — 2 INT-ON-ID-CAPTURE, 15 untyped
+  sites reported and not judged.** Per the brief, **the findings were reported and nothing was
+  rewritten**: a lint that forces same-session rewrites of six gates is how a clean tree becomes a
+  risky one. Raised as **PENDING-P-033**.
+- **`.gitignore`: `_inbox/` → `_inbox/*` + `!_inbox/README.md`** (CD-128(d), the CD-126 form). The
+  retention reason had to be committed or the next sweep on **another device** would re-raise the
+  same four PDFs a fourth time. **Staged bytes stay out; the accounting goes in.**
+
+### Findings raised, none acted on — PENDING-P-033
+
+- **`gates.py:1215`** — `str(int(unit))` on `U(\d+)` maps **`U09` and `U9` to one `৯`**, and that
+  value selects the chapter section. **`gates.py:1207`** is the benign twin (`C([1-5])`, one digit).
+- **A SIXTH instance of CD-088's PATTERN, and it is in the ID convention itself.** The corpus mints
+  **both** paddings: `QP-ENG-C5-U09-Q01` (`build_question_envelopes.py:97`) against
+  `QP-BAN-C1-U2-L4-Q03` (`LOCKED_QuestionPayload_Schema_v1.json:27`, `Conventions_v1_4.md:48`) and
+  `QP-BAN-C1-U1-L?` (`LOCKED_REF-08:255`). **Three canon-layer artifacts, two conventions, no rule.**
+  CD-088(c)'s instance-4 face — *the form never existed*. **Two of the three are LOCKED and
+  supersede-only; nothing was edited.**
+- **The lint's three design choices** — two tiers, the literal-scheme-prefix classifier, and the
+  `# int-id-ok:` waiver — are **offered for ratification, not assumed.** **No waiver exists anywhere
+  in the repo and none was added**, because writing one is ruling on the site it sits on.
+- **Named omission:** `float()`, `Decimal()`, `str.zfill()` destroy the same information and are
+  **not** checked. CD-088(d)(i) names `int()`; **widening the sink is a ruling, not a patch.**
+- **UP-003 needed nothing.** Already filed at `cd03467` and P-029 already closed by CD-125. The
+  census was re-run independently at source anyway: **121 REF-19 slugs, exactly 2 fail the LOCKED
+  pattern** — `MATH-ADDSUB-REL`, `MATH-MULDIV-REL`. **`MATH-ADDSUB-REL` is not alone; the count is
+  two, and UP-003 already states both.** No edit made.
+
+### §12.7 retention — everything still in `_inbox/` at session close
+
+| File / set | Why it is still there | Owner |
+|---|---|---|
+| `Class 5 Bangla.pdf` · `Class 5 English.pdf` · `Class 5 Math.pdf` · `C5_Science.pdf` | **RULED — CD-128. Retained indefinitely as the scan-of-record**: the authority any spot-check or re-extraction runs against, and the only channel that settles a disputed glyph. Math is mid-chapter and Science has not begun; and CD-127 has just given `Class 5 Bangla.pdf` a named future consumer. **Named here as §12.7 requires; no longer raised.** | **Principal — settled** |
+| `C5_MATH_OCRDRAFT_ch7.md` · `ch8.md` · `ch9.md` · `ch10.md` | Unchanged from session 3. অধ্যায় ৭–১০ have **no committed evidence copy** under `canon/_wip/c5-math/evidence/`, so §7.14.3a has not run and deleting them would discard the draft (§7.14.1 forbids). They leave when their chapters are extracted and the drafts committed as evidence. **Math lane's own session — untouched here.** | Principal (Math lane) |
+| `README.md` | The folder's own note — **now committed** (CD-128(d)) and carrying the retention table above. Permanent. | — |
+
+**`_inbox/` unchanged at 9 files.** Nothing added, nothing removed.
+
+### Standing constraints observed
+
+No bank item or bank file authored · **পাঠ ১২ extraction NOT produced** · CD-050(b)'s text not
+edited · §7.6's text not edited · `canon/_wip/c5-math/` and the Math OCR drafts untouched ·
+U14 not re-tagged (QB-CR-009 stays RULED/execution-owed) · **no audit script rewritten to satisfy
+the new lint** · the vendored schema not patched · no LOCKED artifact edited · no row renumbered ·
+no topic number minted.
