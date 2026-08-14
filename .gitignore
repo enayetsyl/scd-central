@@ -18,3 +18,8 @@ _inbox/
 # as if it were evidence — the exact outcome CD-024 exists to prevent.
 **/_wip/**/*.png
 !**/evidence/*.png
+
+# Parked-not-vendored (session 3): the note is committed, the binaries are not.
+# See _unvendored/README.md — a file with no consumer is not an Assets-class file (AGENTS.md 12.1).
+_unvendored/*
+!_unvendored/README.md
