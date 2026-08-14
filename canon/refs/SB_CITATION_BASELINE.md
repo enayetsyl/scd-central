@@ -16,6 +16,10 @@ Re-freezing is a Principal decision and takes a CD row.
 **Counts are occurrences, not lines**, and include `.py` / `.json` as well as markdown.
 `canon/refs/MANIFEST.md` and this file are excluded — they define the aliases.
 
+**Citations inside `backticks` are NOT counted** — SOURCE_POLICY §7.16 applied by
+analogy (session-2 ruling 1): a gate that forbids naming the retired number makes the
+retirement unwriteable. Bare prose is still counted, and fenced blocks are still counted.
+
 | File | Count |
 |---|---|
 | `AGENTS.md` | 2 |
@@ -27,15 +31,15 @@ Re-freezing is a Principal decision and takes a CD row.
 | `canon/_wip/STATE.md` | 14 |
 | `canon/image-rules/IMAGE_RULES.md` | 12 |
 | `canon/image-rules/README.md` | 1 |
-| `canon/islamic-curation/README.md` | 5 |
+| `canon/islamic-curation/README.md` | 4 |
 | `canon/language/LANGUAGE_RULES.md` | 1 |
 | `canon/language/README.md` | 2 |
-| `canon/names/README.md` | 2 |
+| `canon/names/README.md` | 1 |
 | `canon/school-facts/SCHOOL_FACTS.md` | 1 |
 | `canon/sources/SOURCE_POLICY.md` | 2 |
-| `tools/CORRECTIONS.md` | 5 |
+| `tools/CORRECTIONS.md` | 2 |
 | `tools/_wip/STATE.md` | 2 |
-| `tools/audits/canon_check.py` | 29 |
+| `tools/audits/canon_check.py` | 26 |
 | `workstreams/_template/LOCAL.md` | 1 |
 | `workstreams/accounting/LOCAL.md` | 1 |
 | `workstreams/class-tests/CORRECTIONS.md` | 3 |
@@ -67,7 +71,7 @@ Re-freezing is a Principal decision and takes a CD row.
 | `workstreams/support-books/books/C1-BAN/reference/completed_C1_BAN_Skeleton_v2.md` | 5 |
 | `workstreams/support-books/books/C1-BAN/reference/completed_C1_BAN_TGReconciliation_v1.md` | 4 |
 | `workstreams/support-books/books/C1-BAN/support-book_C1-BAN.json` | 14 |
-| `workstreams/support-books/governance/README.md` | 5 |
+| `workstreams/support-books/governance/README.md` | 3 |
 | `workstreams/support-books/governance/SETUP.md` | 1 |
 
-**Total: 247 citation(s) across 51 file(s).**
+**Total: 237 citation(s) across 51 file(s).**

@@ -33,6 +33,23 @@ the census taken at unification — one row per file, with its SB-citation count
 does not move. That is the residual hole and it is stated rather than papered over; closing it
 needs per-line provenance, which is the git archaeology this deliberately avoids.
 
+**A citation inside `backticks` is exempt from the SB census — SOURCE_POLICY §7.16 applied by
+analogy (Principal ruling 2026-08-14, unification session-2 ruling 1).** §7.16 exempts a
+backticked `প্ৰাথমিক` from the Assamese gate because *"a gate that forbids naming the defect
+makes the defect unwriteable"*. The reasoning transfers unchanged: the manifest's HISTORICAL
+rows, this docstring, `tools/CORRECTIONS.md` and every future session log have to be able to
+**name the retired number in order to say it is retired**. Inline code is already markdown's way
+of saying "literal string, not prose". **Bare prose stays counted**, so a newly written bare
+`REF-1` above baseline still FAILs, and — as in §7.16 — **fenced blocks are still counted**.
+
+**The exemption is scoped to the SB census and NOT to phantom resolution.** §7.16's rationale is
+about naming *the retired number*; a two-digit REF with no register row is a broken citation
+whether or not it wears backticks, and exempting it would hollow out the resolver. Scoping
+recorded here because the ruling's one-line form ("REF-CITE exempts backticked citations") is
+wider than its reason. *(No phantom number is written out in this file even in backticks — the
+exemption is census-only, so the resolver would rightly FAIL on it. It did, on the first run of
+this edit: the CD-080(e) trap, reached from the REF side.)*
+
 **The baseline is regenerated only by ruling** — `--write-sb-baseline` exists but is never run to
 make a red gate green. Re-freezing after an unapproved addition would launder exactly what the
 check exists to catch, so the flag prints that warning every time it is used.
@@ -125,6 +142,43 @@ def read_text_cache(files, root, budget=None):
         except (UnicodeDecodeError, OSError):
             continue
     return cache
+
+
+def _code_span_mask(line):
+    """True at every column that sits inside an inline `code span`.
+
+    Mechanism lifted verbatim from `tools/audits/bangla_script_check.py`, which implements
+    SOURCE_POLICY §7.16's backtick exemption. It is copied rather than imported on purpose: the
+    two gates are run independently and one must not be able to break the other by refactor.
+    Any change here is owed to that file too.
+    """
+    mask = [False] * len(line)
+    inside, start = False, 0
+    for i, ch in enumerate(line):
+        if ch == "`":
+            if inside:
+                for j in range(start, i + 1):
+                    mask[j] = True
+            else:
+                start = i
+            inside = not inside
+    return mask
+
+
+def count_outside_code(text, pattern):
+    """Occurrences of `pattern` that are NOT inside an inline code span.
+
+    Per-line, like §7.16's gate: an unclosed backtick cannot swallow the rest of the file.
+    Fenced blocks are deliberately not exempted — §7.16 makes the same choice for the same
+    reason, that a fence carries authored content rather than a citation.
+    """
+    n = 0
+    for line in text.splitlines():
+        mask = _code_span_mask(line)
+        for m in re.finditer(pattern, line):
+            if not mask[m.start()]:
+                n += 1
+    return n
 
 
 def check_manifest(root):
@@ -224,8 +278,11 @@ def check_ref_citations(root, cache):
                 fails.append(f"REF-CITE: REF-{raw} cited in {rel} but has no row in "
                              "canon/refs/MANIFEST.md (phantom citation)")
             elif raw in alias:
-                sb_census[rel] = sb_census.get(rel, 0) + len(
-                    re.findall(rf"\bREF-{raw}\b", text))
+                # Backticked citations are exempt (§7.16 by analogy — see the module docstring).
+                # A file left at zero after the exemption does not enter the census at all.
+                n = count_outside_code(text, rf"\bREF-{raw}\b")
+                if n:
+                    sb_census[rel] = sb_census.get(rel, 0) + n
     _judge_sb_census(root, sb_census)
 
 
@@ -291,7 +348,8 @@ def write_sb_baseline(root, budget_s=DEFAULT_BUDGET):
     for p, text in cache.items():
         if p in (manifest, out):
             continue
-        n = sum(len(re.findall(rf"\bREF-{raw}\b", text)) for raw in alias)
+        # Same exemption as the check, or the frozen numbers would not match the live census.
+        n = sum(count_outside_code(text, rf"\bREF-{raw}\b") for raw in alias)
         if n:
             census[p.relative_to(root).as_posix()] = n
     lines = [
@@ -312,6 +370,10 @@ def write_sb_baseline(root, budget_s=DEFAULT_BUDGET):
         "",
         "**Counts are occurrences, not lines**, and include `.py` / `.json` as well as markdown.",
         "`canon/refs/MANIFEST.md` and this file are excluded — they define the aliases.",
+        "",
+        "**Citations inside `backticks` are NOT counted** — SOURCE_POLICY §7.16 applied by",
+        "analogy (session-2 ruling 1): a gate that forbids naming the retired number makes the",
+        "retirement unwriteable. Bare prose is still counted, and fenced blocks are still counted.",
         "",
         "| File | Count |",
         "|---|---|",
@@ -482,6 +544,62 @@ def selftest():
         note(rc == 1, "seed · unlisted file citing retired REF-1 -> FAIL",
              {0: "CLEAN", 1: "FAIL", 2: "REFUSE"}.get(rc, rc), "FAIL")
         (root / "written_today.md").unlink()
+
+        # ---- §7.16-by-analogy backtick exemption: seeded in BOTH directions ----
+        # The retirement must be writeable: a row saying the retired number is retired has to
+        # be able to name it. A bare one newly added still fails.
+        #
+        # **Every SB token below is BUILT, never written as a literal.** The seeds already on
+        # this file were written as literals and are therefore part of the gate's own frozen
+        # baseline; writing nine more inflated the live census past that baseline and the gate
+        # FAILed itself on the first run of this edit. That is CD-080(e)'s trap — a gate's own
+        # source is not exempt from citation discipline — reached from the REF side rather than
+        # the CD side. Constructed tokens do not enter the census at all.
+        sb1 = "REF-" + "1"
+        base2 = f"a 2026-05 log line citing {sb1} and {sb1} again."
+        (root / "old_history.md").write_text(base2 + "\n", encoding="utf-8")
+        (root / "retirement_note.md").write_text(
+            f"the support-book number `{sb1}` is retired and resolves to REF-01.\n",
+            encoding="utf-8")
+        rc = run(root, DEFAULT_BUDGET, quiet=True)
+        note(rc == 0,
+             "seed · UNLISTED file naming the retired number in `backticks` -> CLEAN "
+             "(the retirement stays writeable)",
+             {0: "CLEAN", 1: "FAIL", 2: "REFUSE"}.get(rc, rc), "CLEAN")
+
+        # The other direction, on the same unlisted file: strip the backticks and it fails.
+        (root / "retirement_note.md").write_text(
+            f"the support-book number {sb1} is retired and resolves to REF-01.\n",
+            encoding="utf-8")
+        rc = run(root, DEFAULT_BUDGET, quiet=True)
+        note(rc == 1,
+             "seed · the same citation BARE in prose -> FAIL (exemption is backticks only)",
+             {0: "CLEAN", 1: "FAIL", 2: "REFUSE"}.get(rc, rc), "FAIL")
+        (root / "retirement_note.md").unlink()
+
+        # A listed file: backticked additions do not move its count, bare ones do.
+        (root / "old_history.md").write_text(
+            f"{base2} and a quoted `{sb1}`.\n", encoding="utf-8")
+        rc = run(root, DEFAULT_BUDGET, quiet=True)
+        note(rc == 0,
+             "seed · backticked citation ADDED to a listed file -> CLEAN (count unmoved at 2)",
+             {0: "CLEAN", 1: "FAIL", 2: "REFUSE"}.get(rc, rc), "CLEAN")
+        (root / "old_history.md").write_text(
+            f"{base2} and a bare {sb1}.\n", encoding="utf-8")
+        rc = run(root, DEFAULT_BUDGET, quiet=True)
+        note(rc == 1,
+             "control · bare citation ADDED to a listed file (2 -> 3) still -> FAIL",
+             {0: "CLEAN", 1: "FAIL", 2: "REFUSE"}.get(rc, rc), "FAIL")
+
+        # The exemption must NOT reach phantom resolution: backticks do not conjure a row.
+        (root / "old_history.md").write_text(base2 + "\n", encoding="utf-8")
+        (root / "backticked_phantom.md").write_text(
+            f"cites `{phantom_ref}`, which has no row.\n", encoding="utf-8")
+        rc = run(root, DEFAULT_BUDGET, quiet=True)
+        note(rc == 1,
+             "seed · a BACKTICKED phantom REF still -> FAIL (exemption is census-only)",
+             {0: "CLEAN", 1: "FAIL", 2: "REFUSE"}.get(rc, rc), "FAIL")
+        (root / "backticked_phantom.md").unlink()
 
         # A count that FALLS is a cleanup, not a violation.
         (root / "old_history.md").write_text("one citation of REF-1 left.\n", encoding="utf-8")
