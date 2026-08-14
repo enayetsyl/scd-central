@@ -1,4 +1,4 @@
-# AGENTS.md — scd-central canonical protocol · v1.3
+# AGENTS.md — scd-central canonical protocol · v1.4
 
 Every agent session (Claude Cowork, Claude Code, Codex, or any other tool) in this repository
 follows this file. `CLAUDE.md` is a pointer here. Per-workstream rules live in
@@ -77,6 +77,35 @@ under the base rule, costing a round-trip to release text the Principal had alre
   "done", or promotion claims require the gate run's **verbatim output pasted in chat** first.
 - A red gate returns the artifact to its build phase. No exceptions survive contact; a needed
   exception becomes a decision row + a gate-code change, not a waiver in chat.
+
+### 5.1 Gate-design rule — a gate that forbids naming the defect makes the defect unwriteable (CD-089)
+
+**Every new gate is checked against this before it ships, and the check is recorded in its
+`SMOKE.md` or selftest.** A gate that scans authored text for a forbidden token will also match the
+places that exist **in order to say the token is forbidden** — the corrections ledger, the
+disagreement log, the decision row that retires it, the README that explains the retirement. When
+that happens the gate has not caught an error; it has made the error unrecordable, and the author
+routes around it by not naming the thing. **A rule nobody can write down is not enforced, it is
+forgotten.**
+
+**The exemption, in three parts, identical at every site:**
+
+- **A citation inside `backticks` is exempt.** Inline code is already markdown's way of saying
+  "literal string, not prose", the escape is visible in the source rather than implicit, and every
+  legitimate citation is one edit away from being correct markdown.
+- **Bare prose is still counted.** The exemption is for naming the defect, not for committing it.
+- **Fenced blocks are still checked.** A fence carries authored content, so contamination there is
+  contamination.
+
+**Scope the exemption to the check whose reason it is, never wider.** At REF-CITE the reason is
+about naming the *retired* number, so the exemption covers the retired-number census and **not**
+phantom resolution — a citation that resolves to nothing is broken whether or not it wears
+backticks, and a wider reading would hollow out the resolver (CD-085(c), ruled not assumed).
+
+**Three sites, one rule** — `SOURCE_POLICY` §7.16 (the Assamese script gate, source lane) ·
+CD-085 (`canon_check.py` REF-CITE, retired-number census) · CD-089 (`PLACEHOLDER`, both repo-wide
+gates). Each was discovered the same way: the gate went red on the file documenting the thing the
+gate exists to catch. **The third one is why this is a design rule and not a third patch.**
 - Repo-wide: `python tools/audits/canon_check.py` must pass before any push that touches
   canon/ or adds canon citations; `python tools/audits/tools_check.py` must pass before any
   push that touches tools/.

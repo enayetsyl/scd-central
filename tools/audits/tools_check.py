@@ -121,10 +121,52 @@ def check_manifest(manifest_rows):
                          f"{folder}/SMOKE.md — REQUIRED asserts the tool is proven")
 
 
+def _code_span_mask(line):
+    """True at every column inside an inline `code span`.
+
+    Mechanism lifted verbatim from `tools/audits/bangla_script_check.py` (SOURCE_POLICY §7.16) and
+    from `canon_check.py` (CD-085). **Copied to each gate rather than shared**: these gates run
+    independently and one must not be able to break the others by refactor. Any change here is
+    owed to all three.
+    """
+    mask = [False] * len(line)
+    inside, start = False, 0
+    for i, ch in enumerate(line):
+        if ch == "`":
+            if inside:
+                for j in range(start, i + 1):
+                    mask[j] = True
+            else:
+                start = i
+            inside = not inside
+    return mask
+
+
+def count_outside_code(text, needle):
+    """Occurrences of `needle` not inside an inline code span. Per-line, so an unclosed
+    backtick cannot swallow the rest of the file. Fenced blocks are deliberately not exempt."""
+    n = 0
+    for line in text.splitlines():
+        mask = _code_span_mask(line)
+        i = line.find(needle)
+        while i != -1:
+            if not mask[i]:
+                n += 1
+            i = line.find(needle, i + 1)
+    return n
+
+
 def check_placeholders():
+    """The unslotted marker, outside inline code spans (AGENTS.md §5.1, CD-089).
+
+    A file that *retires* a placeholder has to be able to name the marker it retires. Without the
+    exemption the retirement note re-fires the warn it was written to end, and the author routes
+    around the gate by describing the string instead of writing it — which is what happened, and
+    what promoted this from a patch to a design rule. Bare prose still warns.
+    """
     for p in sorted(TOOLS.rglob("*.md")):
         try:
-            if PLACEHOLDER in p.read_text(encoding="utf-8"):
+            if count_outside_code(p.read_text(encoding="utf-8"), PLACEHOLDER):
                 warns.append(f"PLACEHOLDER: {p.relative_to(ROOT)} still unslotted")
         except (UnicodeDecodeError, OSError):
             pass
@@ -176,7 +218,42 @@ def check_vendor():
                      "upstream source and contract version (CD-003; supersede-only)")
 
 
+def selftest():
+    """Seeded, synthetic — never drawn from the live file pool (CD-055, CD-064(f)).
+
+    Covers exactly the one behaviour CD-089 changed here. The marker is **built**, never written
+    as a literal: a literal in this file would be a real unslotted marker in the gate's own
+    source, and while the `tools/audits/*.py` carve-out happens to cover it in `canon_check.py`,
+    relying on a carve-out to hide a fixture is how CD-080(e) happened.
+    """
+    results = []
+
+    def note(ok, label, got, want):
+        results.append(ok)
+        print(f"[{'PASS' if ok else 'FAIL'}] {label} -> {got} (wanted {want})")
+
+    m = "NOT YET " + "SLOTTED"
+    note(count_outside_code(f"the `{m}` marker is retired here.\n", m) == 0,
+         "seed · marker named in `backticks` -> not counted "
+         "(the retirement stays writeable)", 0, 0)
+    note(count_outside_code(f"this folder is {m}.\n", m) == 1,
+         "control · marker bare in prose -> counted (exemption is backticks only)", 1, 1)
+    note(count_outside_code(f"```\n{m}\n```\n", m) == 1,
+         "control · marker inside a FENCED block -> still counted "
+         "(§7.16 makes the same choice)", 1, 1)
+    note(count_outside_code(f"`{m}` and then a bare {m}.\n", m) == 1,
+         "seed · one quoted + one bare on the same line -> exactly the bare one counts", 1, 1)
+    note(count_outside_code(f"an unclosed ` backtick then {m} on the NEXT line is bare.\n"
+                            f"{m}\n", m) == 2,
+         "seed · an unclosed backtick cannot swallow the next line (per-line masking)", 2, 2)
+    print("-" * 78)
+    print(f"SELFTEST: {'PASS' if all(results) else 'FAIL'}")
+    return 0 if all(results) else 1
+
+
 def main():
+    if "--selftest" in sys.argv:
+        sys.exit(selftest())
     manifest_rows = rows()
     check_manifest(manifest_rows)
     check_placeholders()

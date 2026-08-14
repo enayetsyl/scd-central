@@ -14,8 +14,7 @@ venture's own repo (AGENTS.md §1 — absolute no-crossover), not here.
 **Trigger:** storybook asset sync becoming real work in a lane that lives here, **or** the first use
 of rclone by anything in this repo. Until one of those, this folder is correctly empty.
 
-*The unslotted marker — the four-word string `PLACEHOLDER` matches, spelled out in
-`tools/audits/tools_check.py` — was removed 2026-08-14 (Principal ruling, session-2 ruling 7). It had
+*The `NOT YET SLOTTED` marker was removed 2026-08-14 (Principal ruling, session-2 ruling 7). It had
 fired a PLACEHOLDER warn on every gate run in every session for a month; a warning that never stops
 firing has stopped conveying information, and it was training the reader to skim past the line where
 a real one would appear.*

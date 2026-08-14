@@ -198,12 +198,24 @@ def check_manifest(root):
 
 
 def check_placeholders(root, cache):
+    """The unslotted marker, outside inline code spans (AGENTS.md §5.1, CD-089).
+
+    **The backtick exemption is the same one at its third site.** A file that *retires* a
+    placeholder has to be able to name the marker it is retiring — the retirement note, the
+    DEFERRED row that replaces it, the decision row that ruled it. Without the exemption both
+    of those re-fire the warn they were written to end, and the author routes around the gate by
+    describing the string instead of writing it. That happened, and it is what promoted this from
+    a patch to §5.1.
+
+    Bare prose still warns; fenced blocks are still checked. The `tools/audits/*.py` carve-out is
+    retained unchanged — a gate script holds the marker as a module constant, not a citation.
+    """
     for p, text in cache.items():
         # Gate scripts carry the marker as a string literal by necessity — skip tools/audits/*.py.
         rel = p.relative_to(root).as_posix()
         if rel.startswith("tools/audits/") and p.suffix == ".py":
             continue
-        if PLACEHOLDER in text:
+        if count_outside_code(text, re.escape(PLACEHOLDER)):
             warns.append(f"PLACEHOLDER: {p.relative_to(root)} still unslotted")
 
 
@@ -619,6 +631,31 @@ def selftest():
         # Restore the CD phantom the later seeds rely on.
         (root / "phantom.md").write_text(
             f"cites {phantom}, which does not exist.\n", encoding="utf-8")
+
+        # ---- PLACEHOLDER backtick exemption (AGENTS.md §5.1, CD-089): both directions ----
+        # Same rule at its third site. The marker is BUILT, never written as a literal — a
+        # literal here would be a real unslotted marker inside the gate's own source. The
+        # tools/audits/*.py carve-out would swallow it in the live repo, but this fixture is
+        # written to a temp tree where that carve-out does not apply, so the seed would be
+        # measuring the carve-out instead of the exemption.
+        marker = "NOT YET " + "SLOTTED"
+        (root / "retires_it.md").write_text(
+            f"the `{marker}` marker is removed; this folder is DEFERRED by design.\n",
+            encoding="utf-8")
+        run(root, DEFAULT_BUDGET, quiet=True)
+        note(not any("retires_it.md" in w for w in warns),
+             "seed · a file NAMING the marker in `backticks` -> no warn "
+             "(the retirement stays writeable)",
+             "no warn", "no warn")
+
+        (root / "retires_it.md").write_text(
+            f"this folder is {marker} and nobody has said why.\n", encoding="utf-8")
+        run(root, DEFAULT_BUDGET, quiet=True)
+        note(any("retires_it.md" in w for w in warns),
+             "control · the same marker BARE in prose -> still WARN "
+             "(exemption is backticks only)",
+             "warned", "warned")
+        (root / "retires_it.md").unlink()
 
         # Pruning must not change what the gate sees: a skipped dir stays invisible.
         (root / ".git").mkdir()
