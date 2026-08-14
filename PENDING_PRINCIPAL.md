@@ -937,7 +937,21 @@ and a date, or out.**
 
 ## ⚑ PENDING-P-033 — the CD-088(d)(i) lint is built and fires twice; and the corpus mints BOTH `U09` and `U2`, so the ID convention itself is where the sixth instance lives
 
-**Status: OPEN — three rulings owed, none acted on. Nothing was rewritten.**
+**Status: CLOSED 2026-08-14 — all eight items ruled → CD-129, CD-130, CD-131, CD-132; padding raised onward as PENDING-P-034; the extraction-header field raised as PENDING-P-035.**
+| Item | Ruling |
+|---|---|
+| 1 · `gates.py:1215` | **REWRITTEN, not waived** → CD-130(a). `qb_resolve_chapter()` compares the raw captured string; padding mismatch is reported, never absorbed. 5 seeded cases. |
+| 2 · `gates.py:1207` | **WAIVED with a stated reason** → CD-130(b). The repo's first `# int-id-ok:`, written to be the example the second is copied from. |
+| 3 · unit-segment padding | **RAISED, not decided** → **PENDING-P-034**. Does not block wave 1 (পাঠ ১৩ is `U13`, two digits either way); bites only `U01`–`U09`. |
+| 4 · the lint's three design choices | **ALL RATIFIED** → CD-129(a). The two-tier reason is now in the docstring, not only in a CD row. |
+| 5 · widen the sink | **WIDENED — but by stating a RULE, not lengthening a list** → CD-129(b). |
+| 6 · consumption-exclusion executor | **BUILT** → CD-131. `SOURCE-EXCLUSION`, the 22nd gate. The header half is **proposed and stopped** → **PENDING-P-035**. |
+| 7 · `.gitignore` | **RATIFIED** → CD-132. |
+| 8 · sink widening | folded into item 5 / CD-129(b). |
+
+*(Original text of this item follows, unedited.)*
+
+**Status when raised: OPEN — three rulings owed, none acted on. Nothing was rewritten.**
 *(Next free number verified at source: `PENDING_PRINCIPAL.md` defines through `P-032`; no `P-033`
 token existed anywhere in the repo before this row.)*
 
@@ -1023,3 +1037,89 @@ single-digit, i.e. **any bank before পাঠ ১০** — wave 1 is পাঠ 
 
 **Needed by:** 2026-08-21 — before the first single-digit-unit bank, and in any case before the
 `gates.py` findings are older than the session that found them.
+
+---
+
+## ⚑ PENDING-P-034 — the unit segment is minted BOTH zero-padded and unpadded across three canon artifacts, and no rule says which; a sixth instance of CD-088's PATTERN
+
+**Status: OPEN — RAISED, deliberately NOT decided. No agent may act on it in either direction.**
+*(Next free number verified at source: `PENDING_PRINCIPAL.md` defines through `P-033`; no `P-034`
+token existed anywhere in the repo before this row.)*
+
+**The three conflicting sites, at source.**
+
+| Form | Where |
+|---|---|
+| `QP-ENG-C5-**U09**-Q01` | `tools/hub-export/build_question_envelopes.py:97` — the error message that **defines** the expected shape |
+| `QP-BAN-C1-**U2**-L4-Q03` | `tools/hub-export/LOCKED_QuestionPayload_Schema_v1.json:27` · `workstreams/question-banks/LOCKED_QuestionBank_Production_Conventions_v1_4.md:48` |
+| `QP-BAN-C1-**U1**-L?` | `canon/refs/LOCKED_REF-08_Homework_Architecture_v1_3.md:255` |
+
+**Three canon-layer artifacts, two conventions, and no rule stated anywhere.** Not a disagreement
+between a rule and a practice — **there is no rule to disagree with.**
+
+**This is a SIXTH instance of CD-088's PATTERN, and the first found in the ID *convention* rather
+than in code reading one.** CD-088(c)'s instance-4 face: *not a form discarded, a form that never
+existed.* It is the same shape as `CR-001`…`CR-004` at P-031 — **one scheme, several writers,
+nothing distinguishing them** — and it was invisible until `int_id_check.py` fired on the code
+that consumed it.
+
+**Not blocking, and the boundary is exact.** Wave 1 is **পাঠ ২১** → `U21`, two digits either way.
+The ambiguity bites **only `U01`–`U09`**, so it blocks the first single-digit-unit bank and
+nothing before it.
+
+**The Principal's leaning, recorded for whoever takes the sitting — NOT a ruling, and not to be
+acted on:** **zero-padded `U09`**, matching `build_question_envelopes.py`'s own defining message,
+because **fixed width sorts and pattern-matches predictably.**
+
+⚠ **Two of the three sites are LOCKED and supersede-only** (`LOCKED_QuestionPayload_Schema_v1.json`,
+`LOCKED_QuestionBank_Production_Conventions_v1_4.md` — CD-013, CD-003). **Whichever form is ruled,
+two LOCKED artifacts disagree with it today, so closing this needs a SUPERSEDE, not a patch** —
+the same road `UP-003` is already on, and plausibly the same shipment.
+
+**What is already in place meanwhile, and what it is NOT.** `qb_resolve_chapter()` (CD-130(a))
+resolves a padded qid against an unpadded chapter heading **as a second, named attempt and prints
+the mismatch**. That is *evidence collection*, not a decision: the two spellings are not merged,
+and the day this is ruled the fallback becomes either unnecessary or a FAIL.
+
+**Needed by:** before the first bank whose unit segment is single-digit. No date is set, because
+nothing currently scheduled reaches one.
+
+---
+
+## ⚑ PENDING-P-035 — the consumption-exclusion declaration on an EXTRACTION HEADER: proposed, and stopped short of inventing the convention
+
+**Status: OPEN — proposed only, per the ruling's own instruction. Nothing written.**
+*(Next free number verified at source: no `P-035` token existed anywhere in the repo before this row.)*
+
+CD-131 built `SOURCE-EXCLUSION` and put the declaration in
+`canon/_wip/c5-bangla/EXCLUDED_paath_12.md` — the file `SOURCE_POLICY` §7.6 and CD-050(b) already
+name as the exclusion's record. **That half is done and enforced.** This is the other half.
+
+**Why the proposed header field was not written.** The ruling said *"if the declaration's placement
+needs a `SOURCE_POLICY` clause rather than an ad-hoc header field, propose it and stop rather than
+inventing the convention."* **It does.** §7.9 is the precedent and it is exact: the one existing
+machine-read line in an extraction header — `**অবস্থা:** নির্মাণাধীন` — was established as a
+**`SOURCE_POLICY` §7 clause carried by a CD row (CD-055)**, with its exemption behaviour, its
+removal obligation and its printing rule all written into policy. **A second machine-read header
+line is the same kind of thing, and a gate may not mint one.**
+
+**And a finding that shaped CD-131, recorded here because it also shapes this:** **পাঠ ১২ has no
+extraction, so it has no header.** A header-only design is blind **exactly while the prohibition is
+doing all of its work.** So the header field is not the mechanism — it is a *second* site the
+mechanism should also read, for the day an excluded chapter *is* extracted and its file has to
+carry its own status where a reader will see it.
+
+**What is proposed, for approval:**
+
+1. A `SOURCE_POLICY` §7 clause (next free §7.x) defining one machine-read line in an extraction
+   header, on §7.9's model, carrying **the reason and the CD row that set it**.
+2. Its removal obligation stated in the same clause — §7.9's own named opposite-direction failure:
+   *a marker nobody takes out* would keep a chapter excluded forever after it had been released.
+3. **No gate change is needed.** `load_exclusions()` already scans every file under `canon/`,
+   headers included. It will read the line the day the clause exists.
+
+**Blocks:** nothing. **Becomes owed** the moment CD-127(a) is exercised and a পাঠ ১২ extraction is
+produced — at that point the file exists, and a file that does not declare its own status is
+relying on a gate reading a note somewhere else.
+
+**Needed by:** before any excluded chapter is extracted.

@@ -2131,3 +2131,80 @@ edited · §7.6's text not edited · `canon/_wip/c5-math/` and the Math OCR draf
 U14 not re-tagged (QB-CR-009 stays RULED/execution-owed) · **no audit script rewritten to satisfy
 the new lint** · the vendored schema not patched · no LOCKED artifact edited · no row renumbered ·
 no topic number minted.
+
+---
+
+## 2026-08-14 (continued) · session 4, part 2 — the eight rulings executed (Cowork, `scd-agent-cowork`)
+
+**Push released.** `cd03467..3b6e9ee` reached `origin/main` on the Principal's explicit approval,
+all four commits permitted. His ratification of the reading: *the brief's standing "push" predated
+these four commits and is not explicit approval for them.* **CD-079(a) is per-named-commit.**
+
+**Two defects in the brief were the advisor's and are recorded as such:** the wrong path for
+`EXCLUDED_paath_12.md`, and Step 3's instruction to file `UP-003` when P-029 had been closed at
+`cd03467` — *the brief was written without re-reading the queue.* The CD-004 correction at
+CD-127(f) was accepted on the same ground.
+
+### The eight rulings
+
+- **CD-129(a) — the lint's three design choices ratified as built.** The two-tier split is the load-
+  bearing one and its reason now lives in the **docstring**, not only in a CD row: reporting
+  untyped captures rather than failing them is **what keeps CD-088(d)(i) implementable at all**,
+  given `math_arith_check.py` legitimately `int()`s ~30 captured Bangla numerals because they are
+  quantities. **A flat form would have made the ruling unimplementable — and an unimplementable
+  rule gets "fixed" by weakening it.**
+- **CD-129(b) — the sink widened to `float()`, `Decimal()`, `str.zfill()`, BY STATING A RULE.**
+  *Any transform that can map two distinct ID strings to one.* `zfill` collapses `U9`→`U09` exactly
+  as `int()` collapses `U09`→`U9`, **in the opposite direction** — which is why *collapse* is the
+  right word for the family and *normalise* is the wrong one. **Enumerating sinks is CD-088's own
+  disease one level up**, so the docstring states the rule **above** the instances and records that
+  the next widening is an addition to a list: *if it required rediscovering the principle, the
+  principle was written down badly.*
+- **CD-130(a) — `gates.py`'s chapter resolution REWRITTEN, not waived.** `str(int(unit))` mapped
+  `U09` and `U9` to one `৯`, selecting the chapter section — **CD-088's PATTERN inside the suite
+  that judges every bank.** Now `qb_resolve_chapter()`: raw string, padding intact, exact lookup,
+  and the padding mismatch **reported as a named second attempt rather than absorbed**. *A resolver
+  that quietly accepted both would be the thing hiding the evidence that P-034 has to be ruled.*
+- **CD-130(b) — the repo's FIRST `# int-id-ok:` waiver**, on `C([1-5])`. Written to be the example
+  the second is copied from, so it states the test: **not "this is fine today" but "the transform
+  CANNOT merge two distinct IDs here".** `U(\d+)`, three lines below in the same regex, was
+  rewritten instead — **same file, same pattern, opposite disposition, because the question is
+  about the group.**
+- **CD-130(d) — recorded, not smoothed.** `6df4463` was committed **before** `canon_check.py` was
+  run, so it cited `CD-130` while the row did not yet exist. CD-CITE caught it on the next full
+  run, **which is what it is for — but the gate is not a substitute for running the gate.** Wrong
+  order, one commit.
+- **CD-131 — `SOURCE-EXCLUSION`, the 22nd gate, and the proposed home could not work.** The
+  declaration was to go in the extraction's header. **পাঠ ১২ has no extraction, so it has no
+  header** — a header-only design is blind **exactly while the prohibition is doing all of its
+  work.** So no new home was invented: the gate reads the file **§7.6 and CD-050(b) already name**.
+  **Fails closed**, and the padding widening runs on the **declaration** side only, parsed with
+  `str.split` so no captured value is ever `zfill`-ed. **The header half is proposed and stopped →
+  P-035**, because §7.9 makes a machine-read header line a `SOURCE_POLICY` §7 clause (CD-055), not
+  a field a gate may invent.
+- **CD-132 — the `.gitignore` change ratified.** Flagged by the agent as a config change it had made
+  rather than one that had been ruled; **this row is the answer to the flag, not a silent adoption.**
+
+### Raised, not decided
+
+- **PENDING-P-034 — unit-segment padding.** Three canon artifacts, two conventions, **no rule**.
+  Sixth instance of CD-088's PATTERN and **the first in the ID convention rather than in code
+  reading one.** Blocks only `U01`–`U09`, so wave 1 (`U21`) is clear. **The Principal's leaning is
+  recorded — zero-padded `U09` — explicitly as a leaning and not a ruling.** Two of the three sites
+  are LOCKED; closing it needs a supersede, plausibly `UP-003`'s shipment.
+- **PENDING-P-035 — the extraction-header declaration.** Proposed with its §7.9 grounding; **nothing
+  written.** Becomes owed the moment CD-127(a) is exercised.
+
+### Carried forward, by the Principal's direction
+
+**`CR-002` now spans FOUR lanes, up from three, because this session added a row.** The collisions
+grow while renumbering waits for lanes to close. **That ordering was ruled deliberately (P-031,
+CD-124) and stands** — but **a fifth cross-lane token is a trigger to revisit, and is to be
+reported as such rather than as routine.** `ledger_check.py` prints all four every run.
+
+### Standing constraints observed
+
+No bank content authored · পাঠ ১২ extraction NOT produced · the `U09`/`U9` padding NOT decided ·
+no audit script rewritten beyond `gates.py`'s `U(\d+)` fix and the `C([1-5])` waiver ·
+`canon/_wip/c5-math/` untouched · no LOCKED artifact edited · the vendored schema not patched ·
+U14 not re-tagged · no row renumbered · no topic number minted.
