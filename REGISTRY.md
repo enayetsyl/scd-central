@@ -14,6 +14,8 @@ One row per workstream. Adding a workstream = copy `workstreams/_template/` + ad
 | English Programme (EIA + phonics) | `workstreams/english-programme/` | PLANNED | EP-D-### (new) | 5 | recovered old-account instructions |
 | Islamic Studies C1–5 | `workstreams/islamic-studies/` | GREENFIELD | IS-D-### (new) | 5 | none (new) |
 | Accounting | `workstreams/accounting/` | PLANNED | AC-D-### (new) | 5 | recovery package (open: Check-5 423,533; +28,592 residual) |
+| Curriculum Foundations (P00) | `workstreams/curriculum-foundations/` | **LIVE** | `D-PROJ00-###` (imported at 072) · **canonical home of the master `D-###` series** (README §3, at D-053) | 4 ✅ | P00 project — README · DECISIONS · TODO · CROSS_PROJECT_INDEX · GLOSSARY |
+| NCTB Stability (P01) | `workstreams/p01-nctb-stability/` | PLANNED | `D-PROJ01-###` (attested to 006 in REF-04; register not yet imported) | 5 | scaffold only — no content this session; method is REF-04 |
 
 ## Production sequence (Principal directive, CD-045)
 

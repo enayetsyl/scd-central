@@ -4,7 +4,7 @@
 
 | File | Version | What it settles |
 |---|---|---|
-| `REF-1_Curation_Policy.md` | **v1.2 LOCKED** (locked 2026-05-26) | The school's operational rulebook for adapting NCTB content to its Islamic commitments — what to replace, what to preserve, how to handle unclear cases |
+| `REF-01_Curation_Policy.md` | **v1.2 LOCKED** (locked 2026-05-26) | The school's operational rulebook for adapting NCTB content to its Islamic commitments — what to replace, what to preserve, how to handle unclear cases |
 
 Structure: **19 replacement categories C-01…C-19** (§4.1) · **three annotation tags** —
 KEEP-AS-IS / NEEDS-REPLACEMENT / FLEXIBLE (§3) · preservation rules for learning outcome,
@@ -14,9 +14,14 @@ scholarly-disagreement register (§5). Theological framing: D-020, Salafi method
 Consumed by: lesson-plans, question-banks, support-books, islamic-studies, and storybook
 conventions. **Cite the path and the C-code; never copy the text** (AGENTS.md §8).
 
+**Numbering (UD-60(b)).** This file is **REF-01** under Project 00 numbering. The retired
+support-book number **REF-2** — the old name for the names pool, not for this file — and the retired
+**REF-1** used for this one are resolved by the HISTORICAL alias rows in `canon/refs/MANIFEST.md`.
+Historical `REF-1` citations elsewhere are **left as written**; new citations use `REF-01`.
+
 ## ⚠️ Scope — read this before reading the file
 
-**REF-1 governs the whole school (CD-015).** All current classes — today Nursery–C5 as
+**REF-01 governs the whole school (CD-015).** All current classes — today Nursery–C5 as
 applicable, C1–C5 for support-book work — extending **automatically by one class each year** as
 the school adds one (C6 in 2027, through C10). It is not a Class-1 or pilot-only policy.
 

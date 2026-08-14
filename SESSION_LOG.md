@@ -1635,3 +1635,56 @@ the CD-070 substring-luck shape once more.
 CD-050(b) cites the exclusion file at that exact path. The now-empty `evidence/` directories in
 both `_wip` folders could not be removed (sandbox cannot rmdir); they carry no tracked files and
 git will not record them.
+
+---
+
+## 2026-08-14 · Cowork · P00/P04 unification session 1 (import + REF resolver + SB baseline)
+
+**Agent:** scd-agent-cowork. **Lane:** unification/import. Math extraction lane untouched.
+
+**Step 0 verified at source before anything moved.** AGENTS §5/§8 confirmed as cited.
+**No clause governs non-source `_inbox` classification** — SOURCE_POLICY §2.1 covers scanned NCTB
+books only, and a repo-wide grep for `_inbox` across AGENTS/REGISTRY/canon README/all LOCAL.md
+returned zero hits. Next-free verified: the CD number after CD-084 · D-PROJ00-073 · D-054 master · D-PROJ04-017 ·
+QB-D-013.
+
+**Two advisor premises were wrong and both were caught by checking at source.**
+- **Q-4:** REF-19 v1.10 carries **zero `TOP-` strings** — its IDs are slugs (`BAN-POEM`). The
+  numbers live in `canon/topics/TOPIC_NUMBERS.md` (CD-043/CD-044). No REF-19 supersede was owed.
+- **Q-5:** the two retired-numbered canon files are **byte-identical** to P00's REF-01 and REF-20
+  (md5 `8289b9b7…`, `de8db3b8…`). There was no content divergence to adjudicate — one lineage
+  under two naming conventions. The expected recurring-cast content is in neither file; CD-006 had
+  already assigned it to the storybook venture.
+
+**Imported.** `canon/refs/` — 22 REF files + register (33 rows: ACTIVE/REFERENCE/POINTER/
+NOT-STAGED/RESERVED + 2 HISTORICAL aliases). REF-19 and the four MarkLogic spines were **not**
+copied — already canon; rows point at existing paths (§8). REF-04 and REF-06 were found **already
+staged** under non-REF filenames, against a ruling that expected them absent.
+`workstreams/curriculum-foundations/` (P00 registers, canonical home of the master D-series) ·
+`workstreams/p01-nctb-stability/` (scaffold only) · P04 folded into question-banks.
+lesson-plans READ-ONLY copies replaced with pointers after recording their contents.
+
+**Renamed per UD-60(b):** `REF-1_Curation_Policy.md` → `REF-01_Curation_Policy.md`, `REF-2_Content_Register.md` →
+`REF-20_Approved_Names_Pool.md`. 247 historical SB citations across 51 files left as written.
+
+**Ruled this session:** U14 কুপোকাত is **Drama `-09`** (QB-CR-009, execution owed — items not
+re-tagged in place). **`TOP-BAN-C5-14`/`-15` minted**; PENDING-P-008 **closed for C5 Bangla**,
+still FLAGGED overall.
+
+**Gate work — and the defect it caught in itself.** `canon_check.py` gained **REF-CITE** and the
+**SB baseline census**. The first REF-CITE draft normalised ids with `int()`, so `int("01") ==
+int("1")` collapsed **REF-01 and the retired one-digit support-book number into one key** and every SB citation silently stopped being
+censused **while the gate still printed CLEAN** — the very collision the check was built to police,
+reappearing inside it. Caught by the census seed, not by the clean run. Logged **CR-012** in the
+new `tools/CORRECTIONS.md` and named a **PATTERN candidate** with QB-CR-008:
+*normalising an ID discards the thing that makes it an ID.* Two instances; a third promotes it.
+
+**REF-06** (`.docx`, the only binary in `canon/refs/`) gained a DERIVED markdown twin; the recorded
+regeneration command was proven to reproduce it byte-for-byte. §3.6's Bloom bands verified against
+REF-17 §5.2 / REF-18 §4.2 — **faithful, nothing stale downstream**.
+
+**Gates:** `canon_check.py` CLEAN (0 fail, 2 warn — down from 52) · `--selftest` **PASS 15/15** ·
+`tools_check.py` CLEAN.
+
+**Held as draft, NOT adopted:** `_wip_PROPOSAL_AGENTS_inbox_section.md`. This session's
+classification ran under it held as draft, recorded as such rather than claimed as compliance.
