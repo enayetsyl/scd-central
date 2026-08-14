@@ -19,6 +19,7 @@ are different.
 | canon/marklogic/MarkLogic_QuestionPolicy.md | REQUIRED |
 | canon/marklogic/C5_Bangla_Source_13-23.md | REQUIRED |
 | canon/islamic-curation/REF-01_Curation_Policy.md | REQUIRED |
+| canon/islamic-curation/REF-01_Curation_Policy_v1_3.md | REQUIRED |
 | canon/names/REF-20_Approved_Names_Pool.md | REQUIRED |
 | canon/refs/MANIFEST.md | REQUIRED |
 | canon/refs/SB_CITATION_BASELINE.md | REQUIRED |
@@ -34,7 +35,9 @@ are different.
 | canon/refs/LOCKED_REF-07_Revision_Architecture_v1_2.md | REQUIRED |
 | canon/refs/LOCKED_REF-08_Homework_Architecture_v1_3.md | REQUIRED |
 | canon/refs/LOCKED_REF-09_Tier1_Question_Setting_Guidelines_v1_0.md | REQUIRED |
+| canon/refs/LOCKED_REF-09_Tier1_Question_Setting_Guidelines_v1_1.md | REQUIRED |
 | canon/refs/LOCKED_REF-10_Tier2_Question_Setting_Guidelines_v1_0.md | REQUIRED |
+| canon/refs/LOCKED_REF-10_Tier2_Question_Setting_Guidelines_v1_1.md | REQUIRED |
 | canon/refs/LOCKED_REF-11_Classroom_Observation_Rubric_v1_1.md | REQUIRED |
 | canon/refs/LOCKED_REF-12_School_Mission_and_Islamic_Values_Reference_v1_0.md | REQUIRED |
 | canon/refs/LOCKED_REF-17_Blooms_Primer_V1B_Standard_Reference_v1_0.md | REQUIRED |
@@ -44,6 +47,7 @@ are different.
 | canon/refs/LOCKED_REF-23_Lean_Project_Scaffolding_Standard_v1_0.md | REQUIRED |
 | canon/refs/LOCKED_REF-24_Teacher_Image_Handling_Protocol_v1_0.md | REQUIRED |
 | canon/refs/LOCKED_REF-25_Paper_Assembly_Template_Standard_v1_0.md | REQUIRED |
+| canon/refs/LOCKED_REF-25_Paper_Assembly_Template_Standard_v1_1.md | REQUIRED |
 | canon/refs/LOCKED_REF-26_Exam_Anchor_Set_v1_0.md | REQUIRED |
 | canon/image-rules/IMAGE_RULES.md | REQUIRED |
 | canon/language/LANGUAGE_RULES.md | REQUIRED |
@@ -51,6 +55,7 @@ are different.
 | canon/sources/SOURCE_POLICY.md | REQUIRED |
 | canon/topics/LOCKED_REF-19_Vertical_Topic_Progression_Map_v1_10.md | REQUIRED |
 | canon/topics/TOPIC_NUMBERS.md | REQUIRED |
+| canon/QUESTION_POLICY.md | REQUIRED |
 | canon/DECISIONS.md | REQUIRED |
 
 ## Retired rows (forward-only — a row leaves this index only when its file leaves `canon/`)
@@ -58,3 +63,17 @@ are different.
 | Path that was rowed | Where it went | Ruling |
 |---|---|---|
 | `canon/refs/_ref06_header.txt` | `tools/_ref06_header.txt` | Principal 2026-08-14, session-2 ruling 5 — **canon holds authority; a build input is not authority.** The file is the DERIVED banner block `cat`-ed onto the head of REF-06's markdown twin at each regeneration. It is an input to a build command, not a thing anything cites, and a REQUIRED row here made it read like the LOCKED REF files it sits beside. Moved byte-identical (md5 `7d0927be…`); the regeneration command in `canon/refs/MANIFEST.md`'s REF-06 row now names the new path. Takes no `tools/MANIFEST.md` row — that register is executable tools only. |
+
+## Superseded-in-place (v0 rows are RETAINED, not removed — §5.3 archive)
+
+**A superseded LOCKED file stays rowed and stays on disk, unedited.** That is the archive: master
+§5.3 says a locked output is *"superseded only by a newer locked version (old one archived)"*, and
+moving the old file would break every citation of its path while proving nothing. **The successor
+carries the authority; the predecessor carries the history.** Read the successor.
+
+| Predecessor (retained, unedited) | Successor (authoritative) | What changed |
+|---|---|---|
+| `REF-01_Curation_Policy.md` (v1.2) | `REF-01_Curation_Policy_v1_3.md` | §1.2 scope only — all classes and subjects, living/append-extensible (CD-114) |
+| `LOCKED_REF-09_…_v1_0.md` | `…_v1_1.md` | §4.1's easy ≥40% line only; §4's totals overridden, not superseded (CD-116) |
+| `LOCKED_REF-10_…_v1_0.md` | `…_v1_1.md` | §4's বৃত্তি bullet only (CD-115) |
+| `LOCKED_REF-25_…_v1_0.md` | `…_v1_1.md` | Annex A demoted to historical format reference; §2–§3 retained; §0's Math-MCQ claim recorded known-false (CD-117) |
