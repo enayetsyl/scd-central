@@ -293,6 +293,37 @@ def qb_answer_signature(q):
                           if c.get("role") == "content")
     return ""
 
+def qb_resolve_chapter(full, unit):
+    """(chapter_text, note) for a RAW captured unit segment. Never calls int() on it.
+
+    CD-130(a). This resolution used to read `str(int(unit))`, and that was CD-088's PATTERN
+    sitting inside the suite that judges every bank: `int()` maps `U09` and `U9` to one `৯`, so
+    two DISTINCT qids would silently have read one chapter. **The raw string is what gets
+    translated** — digit for digit, padding intact — and the section lookup is EXACT.
+
+    The padding ambiguity is then REPORTED, never absorbed. If the qid is zero-padded and the book
+    prints its chapter numbers unpadded, the unpadded spelling is tried as a **second, named**
+    attempt and the mismatch is printed. **The two spellings stay two spellings.** PENDING-P-034
+    has the real defect — three canon artifacts, two padding conventions, no rule anywhere. The
+    day that is ruled this fallback becomes either unnecessary or a FAIL; until then, a resolver
+    that quietly accepted both would be the thing hiding the evidence that it has to be ruled.
+
+    Pure by design: it takes text, not a path, so its seeds are synthetic strings and need no file
+    on disk (CD-121(e) — seeds synthetic, controls may be live).
+    """
+    exact = qb_chapter_section(full, unit.translate(BN_DIGITS))
+    if exact is not None:
+        return exact, None
+    if unit != unit.lstrip("0"):
+        alt = (unit.lstrip("0") or "0").translate(BN_DIGITS)
+        loose = qb_chapter_section(full, alt)
+        if loose is not None:
+            return loose, (f"qid unit segment is `U{unit}` but the extraction prints `পাঠ {alt}` "
+                           f"— resolved on the UNPADDED spelling; the two are NOT merged "
+                           f"(PENDING-P-034)")
+    return full, None
+
+
 def qb_chapter_section(text, unit_bn):
     """Slice the extraction down to this chapter (headings are '# পাঠ <number>')."""
     m = re.search(rf"^#\s*পাঠ\s*{re.escape(unit_bn)}\b.*?$", text, re.M)
@@ -1206,17 +1237,19 @@ def qb_build_ctx(bank):
         if m:
             subject, class_level, unit = m.group(1), int(m.group(2)), m.group(3)
             break
-    src_text = None
+    src_text, unit_note = None, None
     ref = bank.get("source_extraction")
     if ref:
         path = ROOT / ref.split("#")[0]
         if path.exists():
             full = path.read_text(encoding="utf-8")
-            unit_bn = str(int(unit)).translate(str.maketrans("0123456789", "০১২৩৪৫৬৭৮৯"))
-            src_text = qb_chapter_section(full, unit_bn) or full
-    return {"by_qid": by_qid, "pool_of": pool_of, "subject": subject,
-            "class_level": class_level, "unit": unit, "source_text": src_text,
-            "watch": 0, "report": []}
+            src_text, unit_note = qb_resolve_chapter(full, unit)
+    ctx = {"by_qid": by_qid, "pool_of": pool_of, "subject": subject,
+           "class_level": class_level, "unit": unit, "source_text": src_text,
+           "watch": 0, "report": []}
+    if unit_note:
+        ctx["report"].append(("SOURCE-TRACE", unit_note))
+    return ctx
 
 
 # =================================================================================
@@ -1483,7 +1516,36 @@ def qb_selftest():
             print(f"  FAIL  {gate:<16} DID NOT FIRE on: {label}")
             ok = False
 
-    print(f"SELFTEST RESULT: {'PASS' if ok else 'FAIL'} ({len(cases)} seeded errors + 1 baseline)")
+    # --- CD-130(a): the chapter resolver, seeded BOTH directions on synthetic strings only.
+    # Without these the rewrite of the `str(int(unit))` line is an assertion, not a proof — and
+    # the one thing CD-088 keeps demonstrating is that this defect is invisible until it is run.
+    PAD_FIX = "# পাঠ ০৯ — padded\nপ্যাডেড অংশের লেখা\n\n# পাঠ ৯ — unpadded\nআনপ্যাডেড অংশের লেখা\n"
+    pad_cases = [
+        ("`U09` and `U9` are TWO chapters when the extraction prints both — not merged",
+         lambda: (qb_resolve_chapter(PAD_FIX, "09")[0].strip().startswith("প্যাডেড")
+                  and qb_resolve_chapter(PAD_FIX, "9")[0].strip().startswith("আনপ্যাডেড"))),
+        ("an EXACT match reports no note — the fallback stays out of the way",
+         lambda: qb_resolve_chapter(PAD_FIX, "09")[1] is None),
+        ("`U09` against an extraction printing only `পাঠ ৯` resolves on the unpadded spelling "
+         "AND says so (P-034 evidence is printed, not absorbed)",
+         lambda: (lambda r: r[0].strip() == "লেখা" and r[1] is not None
+                  and "NOT merged" in r[1])(qb_resolve_chapter("# পাঠ ৯ — unpadded\nলেখা\n", "09"))),
+        ("the fallback runs ONLY for a padded token: `U9` against a padded-only extraction "
+         "does not silently grab `পাঠ ০৯`",
+         lambda: qb_resolve_chapter("# পাঠ ০৯ — padded\nলেখা\n", "9")[1] is None),
+        ("a unit with no section at all falls back to the whole file, as before",
+         lambda: qb_resolve_chapter("# পাঠ ৭ — অন্য\nলেখা\n", "21")[0].startswith("# পাঠ ৭")),
+    ]
+    for label, fn in pad_cases:
+        try:
+            passed = bool(fn())
+        except Exception as e:                                   # noqa: BLE001
+            passed, label = False, f"{label} — raised {e!r}"
+        print(f"  {'PASS' if passed else 'FAIL'}  {'CHAPTER-RESOLVE':<16} {label}")
+        ok = ok and passed
+
+    print(f"SELFTEST RESULT: {'PASS' if ok else 'FAIL'} ({len(cases)} seeded errors + "
+          f"{len(pad_cases)} CD-130(a) resolver cases + 1 baseline)")
     return ok
 
 
