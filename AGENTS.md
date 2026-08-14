@@ -1,4 +1,4 @@
-# AGENTS.md — scd-central canonical protocol · v1.2
+# AGENTS.md — scd-central canonical protocol · v1.3
 
 Every agent session (Claude Cowork, Claude Code, Codex, or any other tool) in this repository
 follows this file. `CLAUDE.md` is a pointer here. Per-workstream rules live in
@@ -143,3 +143,89 @@ one sentence.
 Artifacts destined for SCD Hub pass `tools/hub-export/validate_import.py` (the vendored LOCKED
 contract v1.0 harness) at authoring time. Flow: envelope JSON → harness → Hub import `draft` →
 in-app teacher review → Principal promotes `reviewed→gold`. Nothing else is an integration path.
+
+## 12. `_inbox/` — staging and classification (CD-086)
+
+`_inbox/` is the repo's single staging area. It is **gitignored**, so anything in it exists on one
+machine only; an agent on another device cannot see it and **stops rather than improvising**
+(the failure recorded at CD-026).
+
+### 12.1 What may be staged
+
+Anything the Principal puts there. In practice the traffic falls into four classes, and **the class
+decides the destination** — a staged file is not routed by where it looks like it belongs, but by
+what kind of thing it is. Getting the class right is most of the work; the table is the whole rule.
+
+| Class | Examples | Destination |
+|---|---|---|
+| **Source scans** | NCTB textbook PDFs, OCR drafts staged beside them | governed by `canon/sources/SOURCE_POLICY.md` §2.1 and §7.14 — **this section does not touch them** |
+| **Canon references** | LOCKED REF files, policy documents several workstreams cite | `canon/` — the subtree that already holds that kind of authority; a REF file to `canon/refs/` with a `canon/refs/MANIFEST.md` row |
+| **Workstream registers** | `PROJECT00_*`, `PROJECT04_*` decision logs, READMEs, TODOs | the owning `workstreams/<name>/`; read-only imports to its `references/` per CD-034 |
+| **Assets** | fonts, images, spreadsheets consumed by a tool | `tools/` beside the tool that consumes them, with a `tools/MANIFEST.md` row |
+
+**SOURCE_POLICY §2.1 governs scans and is not stretched to cover the other three.** It is written
+about photographing a printed book; a policy import is not that, and reading it as though it were
+is how a rule ends up governing something it never mentioned.
+
+### 12.2 Who classifies
+
+**The agent classifies; the Principal approves the destination for anything that is not obvious.**
+Classification is a proposal like any other (§2 — the agent never self-approves).
+
+### 12.3 A file that cannot be classified is reported, never moved
+
+If a staged file matches no class, or matches two, or its identity cannot be verified at source —
+**it stays in `_inbox/` and is reported.** A guess that lands in `canon/` is worse than a file left
+staged, because the guess acquires the authority of its new location and the next session reads it
+as settled.
+
+**Report, do not move, in particular when:** the file's own header names a different ID than its
+filename · the set is partial against the manifest it belongs to · two staged files claim the same
+ID · the file is a register whose owning workstream does not exist yet.
+
+### 12.4 Duplicates of existing canon are reported for deletion, never silently overwritten
+
+Before moving anything into `canon/`, the agent checks whether canon already holds it, **by hash,
+not by filename** — the unification import found five byte-identical duplicates whose names
+matched and two whose names did not.
+
+- **Byte-identical to a canon file** → the staged copy is **redundant**. The agent **reports it,
+  with the md5 of both sides, and deletes only on approval** (§9's deletion rule applies unchanged:
+  state the reason in chat first).
+- **Same ID, different bytes** → **stop.** This is a version question and it is the Principal's.
+  Never overwrite; never assume the staged copy is newer because it was staged later.
+- **Already in canon under a different name** → the manifest row points at the **existing** path.
+  **No second copy is made inside `canon/`** — that is precisely what §8 forbids, and a duplicate
+  inside canon is invisible to `canon_check.py`'s NO-COPY check, which only looks *outside* canon.
+
+*The second bullet was flagged at drafting as unenforceable — a gate can detect same-ID-different-
+bytes but cannot rule on it. **The flag is rejected, and the reason is the section's purpose:** this
+clause does not tell a gate what to do, it says **whose call it is**. That is protocol, not gate
+logic, and a rule is not weaker for being addressed to a person.*
+
+### 12.5 What leaves `_inbox/` leaves it completely
+
+A classified file is **moved, not copied**. A copy left behind becomes a second source of truth
+that no gate compares against the first.
+
+### 12.6 The gate
+
+`python tools/audits/canon_check.py` runs after any `_inbox/` classification that touched `canon/`,
+and its verbatim output is pasted before the work is called done (§5).
+
+### 12.7 Retention — nothing stays staged silently
+
+**Anything still in `_inbox/` at session close is listed in that session's `SESSION_LOG.md` block,
+with a one-line reason and a named owner.** Not a count, not "the usual" — one line per file or per
+clearly-named set, saying why it is still there and who is expected to move it.
+
+**Why this is a rule and not a habit.** `_inbox/` is gitignored (§12.1), so nothing that sits there
+is visible in a diff, a commit, or a pull. At the time this section was adopted it held **8 OCR
+drafts, 4 textbook PDFs and 2 font files with no review point at all** — some staged in April,
+carried through every session since without once being named. **Staging that accumulates silently
+is how a stale PDF gets picked up six weeks later as though it were current**, by a session that
+has no way of knowing it is not: the file has no date in its name, no header, and no row anywhere
+that says when it arrived or what supersedes it.
+
+The retention list is the review point. **A file that appears on it three sessions running is
+raised to the Principal** — either it has an owner and a date, or it does not belong in `_inbox/`.

@@ -49,4 +49,32 @@ trigger the "promote me" warn on a VENDORED-UNPROVEN row.
 | tools/images/verify_strip.py | REQUIRED |
 | tools/images/crop_edges.py | REQUIRED |
 | tools/images/pick_placements.py | VENDORED-UNPROVEN |
-| tools/assets/sync.py | DEFERRED |
+
+## DEFERRED rows — carrying their reason and their trigger
+
+A `DEFERRED` row is silent to the gate by design, so the row itself has to say **why** it is
+deferred and **what would end the deferral**. Without both, "deferred" and "forgotten" are the
+same row. These rows take two extra cells; `tools_check.py` anchors on the first two only.
+
+| Tool | Status | Deferred because | Trigger — what un-defers it |
+|---|---|---|---|
+| tools/assets/sync.py | DEFERRED | **Deferred by design at migration Step 2.** Large binaries (book images, scans) live on Google Drive via rclone and are deliberately not in this repo; nothing in the repo consumes an asset through a wrapper today, so there is no script to vendor and no smoke to record. R2 is a storefront concern and belongs to the storybook venture's own repo (AGENTS.md §1, absolute no-crossover). | **Either of:** (a) **storybook asset sync** becomes real work in a lane that lives here; or (b) **first use of rclone** by anything in this repo. On either, this row goes `PENDING` → `VENDORED-UNPROVEN` → `REQUIRED` with a `tools/assets/SMOKE.md`. |
+
+**Why the placeholder was retired (Principal ruling 2026-08-14, session-2 ruling 7).**
+`tools/assets/README.md` carried the unslotted marker (the literal string is not reproduced here —
+see the note below), which made `canon_check.py` and
+`tools_check.py` each emit a PLACEHOLDER warn on **every run, in every session, for a month**.
+**A warning that has fired every session for a month has stopped conveying information** — it is
+read as furniture, and the next real placeholder warn arrives into a report where warns are
+already ignored. The deferral was never in doubt; only its record was in the wrong shape. The
+state is now a row that says what it is, and the warn is gone because the condition is gone.
+
+**A finding raised while writing the above, NOT acted on (batched to the Principal).** This note
+cannot quote the marker it is retiring: the `PLACEHOLDER` check has **no backtick exemption**, so
+writing the string here — even in inline code, even to say it was removed — re-fires the warn on
+this file. That is **SOURCE_POLICY §7.16's exact shape at a third site**: §7.16 exempted backticks
+for the Assamese gate, session-2 ruling 1 extended it to REF-CITE's retired-number census, and
+PLACEHOLDER is the next one down the same list. **Not applied here** — ruling 1 is scoped to
+REF-CITE, and a gate change beyond it is not the agent's to make (AGENTS.md §2). Both files are
+written around the marker instead, which works and is exactly the workaround §7.16 was written to
+end.

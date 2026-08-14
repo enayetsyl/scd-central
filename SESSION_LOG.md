@@ -1688,3 +1688,86 @@ REF-17 §5.2 / REF-18 §4.2 — **faithful, nothing stale downstream**.
 
 **Held as draft, NOT adopted:** `_wip_PROPOSAL_AGENTS_inbox_section.md`. This session's
 classification ran under it held as draft, recorded as such rather than claimed as compliance.
+
+---
+
+## 2026-08-14 · P00/P04 unification session 2 — the policy layer (Cowork, `scd-agent-cowork`)
+
+**Scope as given:** close seven session-1 follow-ups, land the policy layer, supersede the §9 names.
+**Not a source-extraction session** — `canon/_wip/c5-*` and the Math lane's `_inbox` files were not
+touched. Gates were not built beyond the one ruling that directed a gate change (CD-085).
+
+**Outcome in one line: Step 1 closed in full; Step 2 STOPPED on three at-source discrepancies in
+the staged draft; Step 3 therefore did not open**, per its own precondition ("only after §2 commits").
+
+### Step 0 — verified at source
+
+- **Next free CD = CD-085.** `canon/DECISIONS.md` defined `CD-001…CD-084`, continuous, no gaps; the
+  only higher token in the repo is the constructed `CD-999` seed fixture (CD-080(e)). Registers
+  touched this session and their next-free at entry: `tools/CORRECTIONS.md` → **TOOLS-CR-001** (new
+  prefix, this session); `canon/refs/MANIFEST.md` → **REF-27** (RESERVED row, unchanged — no new REF
+  minted). `workstreams/question-banks/CORRECTIONS.md` next-free **QB-CR-010**, not used.
+- **REF-01 · 09 · 10 · 19 · 20 · 25 · 26 all resolve** to files present at their stated paths
+  (sizes recorded in the session report). Zero manifest rows dangle.
+- **SOURCE_POLICY §7.16's backtick exemption exists**, at `canon/sources/SOURCE_POLICY.md:574`,
+  quoted verbatim in CD-085(b). Its wording supports the analogy CD-085 draws; the section was read
+  before it was leaned on, not after.
+
+### Step 1 — the seven follow-ups (eight items)
+
+1. **REF-CITE backtick exemption → CD-085.** Census **247 → 237**, 51 files unchanged; 10 exempted
+   across 5 files. Seven seeds both directions, all PASS. Baseline re-frozen by ruling; the gate was
+   CLEAN against the *old* baseline first, so nothing was laundered.
+2. **AGENTS.md §12 adopted → CD-086.** Protocol **v1.2 → v1.3**. §12.1 prose lead accepted; §12.4
+   flag rejected on the record with its reason written into the section; **§12.7 retention added**.
+   `_wip_PROPOSAL_AGENTS_inbox_section.md` deleted per its own adoption clause.
+3. **U14 re-tag NOT executed.** `QB-CR-009` re-read at source and stands **RULED — execution owed**;
+   the bank is opened once, in the bank lane's own session, not twice. No bank file touched.
+4. **`TOOLS-CR-###` prefix → CD-087(a)(b).** `CR-012` → **`TOOLS-CR-001`**. The renumber corrected a
+   **live collision**: the Math lane already held its own CR-012 (`5634a5f`, 2026-08-12) with three
+   citations. Math lane untouched.
+5. **`_ref06_header.txt` → `tools/`** → CD-087(c). Byte-identical (md5 `7d0927be…`); REF-06's pandoc
+   command and the `canon/MANIFEST.md` row both updated, the latter into a new Retired-rows table.
+6. **P01 register — NEITHER case applies as stated; nothing built.** See the batched questions.
+7. **Assets placeholder retired** → CD-087(d). Gate warns: `tools_check` 3 → 1, `canon_check` 3 → 1.
+8. **PATTERN promoted at four instances → CD-088.** CD-034 checked and confirmed as instance 3; the
+   session's own `CR-012` collision is instance 4. **Gate proposed, not built.**
+
+### Step 2 — the policy layer: STOPPED
+
+`_inbox/QUESTION_POLICY_v0.2_DRAFT.md` was read against the files it cites. **The five named checks
+verified clean** (§3 row 2 · §3 row 9 · §3 row 18 · §4 · §9). **Three discrepancies were found
+outside them**, in §5 and §7, and the draft was **not corrected by the agent** and **not committed**.
+Detail and verbatim source quotations are in the session report.
+
+### Step 3 — not opened
+
+Its precondition is "only after §2 commits". §2 did not commit. No supersede was written; REF-01,
+REF-09, REF-10, REF-25, the MarkLogic QuestionPolicy and QUESTION_BANK_POLICY are **untouched**.
+Conventions v1.4 untouched as instructed.
+
+### §12.7 retention — `_inbox/` at session close (first exercise of the new rule)
+
+**16 files. The rule found three STOP conditions on its first run.**
+
+| Staged file(s) | Since | Why still staged | Owner |
+|---|---|---|---|
+| `QUESTION_POLICY_v0.2_DRAFT.md` | 2026-08-14 | **Held by Step 2's stop.** Three at-source discrepancies reported; the agent is forbidden to correct the draft. Moves on the Principal's ruling on those three. | **Principal** |
+| `C5_MATH_OCRDRAFT_ch3.md` · `ch4.md` · `ch5.md` | 2026-08-10 → 08-11 | ⚠ **§12.4 STOP — same ID, different bytes.** Each differs from its committed evidence twin in `canon/_wip/c5-math/evidence/` (ch3 `27b3f37a` vs `7029e20e`; ch4 `60e9039b` vs `ab8c7659`; ch5 `ede7b507` vs `24e3c57a`). Committed copies are 2–3 KB larger, consistent with an added `MACHINE OUTPUT` header — **but §12.4 says a gate can detect this and cannot rule on it.** Not touched. | **Principal** (version question) |
+| `C5_MATH_OCRDRAFT_ch6.md` | 2026-08-12 | Byte-identical to its committed evidence twin (`cb8e331e`) — **redundant staged copy**, §12.4 first bullet. Deletable on approval; not deleted. | Principal (approval) → agent |
+| `C5_MATH_OCRDRAFT_ch7.md` · `ch8.md` · `ch9.md` · `ch10.md` | 2026-08-12 | ⚠ **No committed evidence copy exists.** `_inbox/` is gitignored, so these four exist **on one machine only** and are not recoverable from git. Chapters 7–10 are the Math lane's open work. | Math lane session |
+| `Class 5 Bangla.pdf` · `Class 5 English.pdf` · `Class 5 Math.pdf` · `C5_Science.pdf` | **2026-04-28** | The four NCTB source scans. Correctly staged — SOURCE_POLICY §2.1 governs them and AGENTS §12.1 explicitly does not touch them. **Named here because 108 days unnamed is the condition §12.7 exists to end**, not because their placement is wrong. | Principal (retention) |
+| `NotoNaskhArabic-Medium.ttf` · `-SemiBold.ttf` | 2026-08-09 | **Unvendored and unconsumed.** `tools/render/fonts/` carries Naskh **Bold** and **Regular**; nothing in the repo references Medium or SemiBold. Either they slot under §12.1's Assets class with a `tools/MANIFEST.md` row, or they are surplus. Unclassifiable without a consumer → §12.3 reported, not moved. | Principal |
+| `README.md` | 2026-08-09 | The staging folder's own note. Permanent; not staged content. | — |
+
+### Gates — repo-wide, at close
+
+`canon_check.py` **CLEAN (0 fail, 1 warn)** · `tools_check.py` **CLEAN (0 fail, 1 warn)** ·
+`bangla_script_check.py` **CLEAN (0 in authored text)** · `canon_check.py --selftest` **PASS (20/20)**.
+Verbatim output pasted in the session report per AGENTS §5.
+
+### Sync
+
+**Committed, not pushed.** New governance text beyond the rulings as given is present (AGENTS §12's
+prose lead, the gate code, the manifest notes), so **CD-079(b)'s ruling-only carve-out does not
+apply** and the push waits on explicit Principal approval with the CD-083(c) range check pasted.

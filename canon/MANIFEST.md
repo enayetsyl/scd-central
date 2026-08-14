@@ -23,7 +23,6 @@ are different.
 | canon/refs/MANIFEST.md | REQUIRED |
 | canon/refs/SB_CITATION_BASELINE.md | REQUIRED |
 | canon/refs/Bloom_Taxonomy_Comprehensive_Primer_Teachers_V1A.md | REQUIRED |
-| canon/refs/_ref06_header.txt | REQUIRED |
 | canon/refs/LOCKED_REF-02_Three_Layer_Lesson_Plan_Template_v1_6.md | REQUIRED |
 | canon/refs/LOCKED_REF-03_Bangla_Subject_Spine_Playbook_v1_2.md | REQUIRED |
 | canon/refs/LOCKED_REF-03_English_Subject_Spine_Playbook_v1_2.md | REQUIRED |
@@ -53,3 +52,9 @@ are different.
 | canon/topics/LOCKED_REF-19_Vertical_Topic_Progression_Map_v1_10.md | REQUIRED |
 | canon/topics/TOPIC_NUMBERS.md | REQUIRED |
 | canon/DECISIONS.md | REQUIRED |
+
+## Retired rows (forward-only — a row leaves this index only when its file leaves `canon/`)
+
+| Path that was rowed | Where it went | Ruling |
+|---|---|---|
+| `canon/refs/_ref06_header.txt` | `tools/_ref06_header.txt` | Principal 2026-08-14, session-2 ruling 5 — **canon holds authority; a build input is not authority.** The file is the DERIVED banner block `cat`-ed onto the head of REF-06's markdown twin at each regeneration. It is an input to a build command, not a thing anything cites, and a REQUIRED row here made it read like the LOCKED REF files it sits beside. Moved byte-identical (md5 `7d0927be…`); the regeneration command in `canon/refs/MANIFEST.md`'s REF-06 row now names the new path. Takes no `tools/MANIFEST.md` row — that register is executable tools only. |

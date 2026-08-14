@@ -108,12 +108,22 @@ repo root:
 cd canon/refs && \
   pandoc -f docx -t gfm --wrap=none \
     Bloom_Taxonomy_Comprehensive_Primer_Teachers_V1A.docx -o _ref06_body.md && \
-  cat _ref06_header.txt _ref06_body.md > Bloom_Taxonomy_Comprehensive_Primer_Teachers_V1A.md && \
+  cat ../../tools/_ref06_header.txt _ref06_body.md \
+    > Bloom_Taxonomy_Comprehensive_Primer_Teachers_V1A.md && \
   rm _ref06_body.md
 ```
 
-`_ref06_header.txt` is the DERIVED banner block, reproduced verbatim at the top of the current `.md`.
-Generated with **pandoc 2.9.2.1**; record the version used at each regeneration.
+**`tools/_ref06_header.txt`** is the DERIVED banner block, reproduced verbatim at the top of the
+current `.md`. Generated with **pandoc 2.9.2.1**; record the version used at each regeneration.
+
+**It lives in `tools/`, not `canon/refs/`, and the move is the point (Principal ruling 2026-08-14,
+session-2 ruling 5).** It was staged into `canon/refs/` beside the file it helps build, and a
+`canon/MANIFEST.md` REQUIRED row was written for it. **Canon holds authority; a build input is not
+authority.** A banner fragment sitting in `canon/refs/` with a REQUIRED row reads, to any later
+session walking the manifest, exactly like the LOCKED REF files around it. Moved byte-identical
+(md5 `7d0927be…`); its `canon/MANIFEST.md` row is retired and this row's command now names the new
+path. It takes **no `tools/MANIFEST.md` row** — that register is executable tools only, by its own
+header, and a REQUIRED row there would oblige a `SMOKE.md` for a text fragment.
 
 **§3.6 verified at source 2026-08-14 — the indicative Bloom bands propagate faithfully, and nothing
 downstream is stale.** REF-06 §3.6's four class-group rows (1–2 · 3–5 · 6–8 · 9–10) were read
