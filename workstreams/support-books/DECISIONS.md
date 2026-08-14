@@ -1,4 +1,8 @@
 # DECISIONS.md — Support-Book Programme Decision Log
+
+<!-- CD-124: the prefix is what rows in this file ALREADY mint; the lane identifies this ledger. Declared now, renumbered per lane at close — no row is renumbered by this line. -->
+<!-- ledger-prefix: D -->
+<!-- ledger-lane: support-books-decisions -->
 *Append-only. One row per decision. Never edit or delete a row — reversals get a NEW row citing the old ID. The `D-` series is the only decision series in this project; it is self-contained.*
 
 **Founding note.** The programme was re-founded in July 2026 on a redesigned production flow. This log opens fresh with the `D-` series. Every content, safety, and posture ruling the programme depends on is re-asserted below as a founding decision — the rules stand on their own merits, not on any retired prior series. The earlier process apparatus (per-book ledger chats, per-পাঠ brief documents, a separate MERGE chat, front-loaded freeze ceremony) is **not** carried forward; it is replaced by D-001.

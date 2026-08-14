@@ -1,5 +1,9 @@
 # CORRECTIONS.md — support-books (CR-###, append-only)
 
+<!-- CD-124: the prefix is what rows in this file ALREADY mint; the lane identifies this ledger. Declared now, renumbered per lane at close — no row is renumbered by this line. -->
+<!-- ledger-prefix: CR -->
+<!-- ledger-lane: support-books-corrections -->
+
 Every teacher/Principal correction is logged here same-session (AGENTS.md §6). The agent
 re-reads this ledger before drafting. 3+ occurrences of a pattern → mark **PATTERN** → propose
 promotion to an executing gate. A fix applied to one artifact is checked across siblings the

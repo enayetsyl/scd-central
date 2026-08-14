@@ -1,5 +1,9 @@
 # CORRECTIONS.md — C5 গণিত extraction (AGENTS.md §6)
 
+<!-- CD-124: the prefix is what rows in this file ALREADY mint; the lane identifies this ledger. Declared now, renumbered per lane at close — no row is renumbered by this line. -->
+<!-- ledger-prefix: CR -->
+<!-- ledger-lane: c5-math -->
+
 সংশোধনের হিসাব। **সারি কখনো মুছে ফেলা হয় না** — ভুল ধরা পড়লে নতুন সারি যোগ হয়, পুরোনোটি
 বহাল থাকে। এখানকার প্রতিটি সারি এজেন্টের নিজের ভুল, শিক্ষকের সংশোধন নয়।
 

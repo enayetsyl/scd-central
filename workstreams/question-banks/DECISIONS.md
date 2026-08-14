@@ -1,5 +1,9 @@
 # DECISIONS.md — question-banks (P04) (append-only)
 
+<!-- CD-124: the prefix is what rows in this file ALREADY mint; the lane identifies this ledger. Declared now, renumbered per lane at close — no row is renumbered by this line. -->
+<!-- ledger-prefix: QB-D -->
+<!-- ledger-lane: question-banks-decisions -->
+
 Series: `QB-D-###` · Reversal = a new row citing the old · the agent assigns the next free number
 (verified at source, AGENTS.md §4).
 
