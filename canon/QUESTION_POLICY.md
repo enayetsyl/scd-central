@@ -1,7 +1,19 @@
-# QUESTION_POLICY — v1.0 (canon)
+# QUESTION_POLICY — v1.1 (canon)
 
 *Adopted 2026-08-14 by Principal ruling, unification session 2. Location: `canon/QUESTION_POLICY.md`.*
 *Minted as **CD-092 … CD-113** — one row per §3 resolved conflict, plus §2, §4, §5 and §6, per §10.*
+
+**v1.1 — 2026-08-14, unification session 3. Two §6 defects corrected, both found by building the
+gates §6 specifies.** The path is unchanged because §10 makes the CD rows the authority and this
+file their readable form; a second file would be a second thing to keep in sync (CD-011). The
+superseded wording is quoted in place at each site rather than deleted, so a reader who arrives
+via an old citation sees what changed and why.
+
+| § | Was | Now | Row |
+|---|---|---|---|
+| §6 Bloom band | *"the wider of REF-06 §3.6 / MarkLogic §৩"* | REF-06 §3.6 only — two axes, not two ranges (UD-23) | **CD-121** |
+| §6 selftest ¶ | *"(CD-055, CD-064(f))"* | QB-D-012, with the controls-vs-seeds distinction restored | **CD-121** |
+| §6 / §4 Difficulty | *"can supply"*, unread | pool = easy ≥30% present; no pool-level hard test | **CD-122** |
 
 **Status: ADOPTED. This file is canon and is cited, never copied (AGENTS.md §8).**
 
@@ -107,8 +119,13 @@ correct; **a bank built session-by-session drifts low** if the band is read per 
 - The pool label lives authoring-side in the bank file's `pool_index`, outside the payload
   (`additionalProperties: false`). Upstream row **UP-002** requests an additive `pool` field.
 
-**Difficulty.** REF-09 §3's floor applies at both levels: **easy ≥30%, hard ≤25%** on the paper, and
-the Pool must be *able to supply* that split.
+**Difficulty.** REF-09 §3's floor: **easy ≥30%, hard ≤25% on the paper.** The Pool must be *able to
+supply* that split, and **CD-122 fixes what "able to supply" means: easy ≥30% present in the pool,
+and nothing else.** There is **no pool-level hard test** — a pool cannot fail a *ceiling*, because
+an author can always decline to use hard items and a compliant paper stays constructible however
+hard-heavy the pool is. **Absence is the only thing a pool can be guilty of, and easy is the only
+side where absence makes paper-level compliance impossible.** Recorded at this length so the check
+is not later "tightened" into a symmetric one that reddens correct pools.
 
 **Keys and rubrics.** Per REF-09 §5 — no question is finished until its key is written. The schema
 enforces this by type: `mcq`→`options`, `true_false`→`tf_answer`, `fill_blank`→`blanks`,
@@ -178,14 +195,28 @@ proportion, so there is no per-CT domain gate.
 | `ref19_topic_id` resolves | against REF-19's slug set |
 | `topic_tag` resolves | against `TOPIC_NUMBERS.md`; an unminted number FAILs, never auto-mints |
 | Key/rubric present | every item, per type |
-| Bloom band | Pool spans the wider of REF-06 §3.6 / MarkLogic §৩, read at **chapter** scope |
-| Difficulty | easy ≥30% / hard ≤25%; Pool *can supply* |
+| Bloom band | Pool spans **REF-06 §3.6**, read at **chapter** scope — six Bloom levels (CD-121) |
+| Difficulty | **Pool level: easy ≥30% present.** No pool-level hard test — hard ≤25% is a paper rule (CD-122) |
 | Repetition | no verbatim reuse of non-`Remember` items |
 | Coverage | every topic and every spine slot-type supplied |
 | Domain ratio | **paper level only**, never per pool |
 
-Every gate carries a seeded selftest that bites each run, built from synthetic fixtures and never
-drawn from the live file pool (CD-055, CD-064(f)).
+**Two axes, not two ranges on one axis (CD-121, correcting this section).** This table read
+*"Pool spans the wider of REF-06 §3.6 / MarkLogic §৩"* until 2026-08-14. **That was wrong.** Per
+UD-23 the **Bloom axis governs the pool** and the **domain axis governs the paper**; the two files
+never measured the same thing, which is why "the wider at each level" had no common referent above
+Apply — REF-06 bands six Bloom levels, MarkLogic §৩ bands four NAPE domains. MarkLogic §৩ appears
+at paper level, in the domain-ratio row, and nowhere else. §3 row 9 is unaffected: it resolves
+whether the two conflict, and they do not, because they are different axes.
+
+**The selftest rule, with its citation corrected (CD-121).** Every gate carries a seeded selftest
+that bites each run. **Seeds are synthetic and are never drawn from the live file pool** — origin
+`workstreams/question-banks/DECISIONS.md` **QB-D-012**, *"a fixture is a fixture"*. **Controls are
+a different thing and may be drawn from the live pool**, as `source_check.py` does by design
+(CD-051(d)); a file held out of the controls declares itself and is named in the skip list
+(CD-055 / SOURCE_POLICY §7.9). This paragraph previously cited *"(CD-055, CD-064(f))"* for the
+seed rule; **that citation was false** — CD-055 is the `নির্মাণাধীন` convention and CD-064(f) is a
+seed that stopped biting. See CD-121 for how a docstring became a canon sentence.
 
 4. Anchor coverage per REF-26 (Conventions §9 step 8a).
 5. Human review gate — REF-09 §9. **The Principal acts as Subject Lead until Subject Leads are named.**
