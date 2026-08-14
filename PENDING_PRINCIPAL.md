@@ -770,3 +770,165 @@ these lines as not-looked-at rather than as verified. **P-028 is a coverage gap,
 verdict** — nothing GREEN is false because of it. What is false is any reading of "0 uncovered"
 as "everything arithmetic on this page was checked". The relevant lines are hand-verified and
 recorded as hand-verified.
+
+---
+
+## ⚑ PENDING-P-029 — REF-19 and the LOCKED payload schema disagree about what a topic id *is*, and only one of the two forms can ever validate
+
+**Status: CLOSED 2026-08-14 → CD-125.** Routed upstream as **`UP-003`** in `tools/hub-export/UPSTREAM_ISSUES.md`; never patched locally (CD-013, supersede-only). **Blocks every C5 Math bank; does NOT block wave 1 (Bangla).** Nothing changed here — both artifacts remain LOCKED.
+*(Next free number verified at source: `PENDING_PRINCIPAL.md` defines through P-028; no `P-029`
+token exists anywhere in the repo.)*
+
+**Measured, not inferred.** Parsing `canon/topics/LOCKED_REF-19_Vertical_Topic_Progression_Map_v1_10.md`
+for backticked slugs yields **121**. Two of them carry a third hyphenated segment:
+
+> `MATH-ADDSUB-REL` · `MATH-MULDIV-REL`
+
+`tools/hub-export/validate_import.py`'s auto-extracted `REF19_SLUGS_DEFAULT` also holds 121 — but
+holds **`MATH-ADDSUB`** and **`MATH-MULDIV`** instead. Set difference, both directions:
+
+```
+artifact − harness = {MATH-ADDSUB-REL, MATH-MULDIV-REL}
+harness − artifact = {MATH-ADDSUB,     MATH-MULDIV}
+```
+
+**The truncated forms exist nowhere in REF-19.** The extractor's regex stopped at the second
+hyphen and invented two ids by subtraction.
+
+**And the schema agrees with the truncation, which is what makes this a ruling and not a bug.**
+`LOCKED_QuestionPayload_Schema_v1.json` constrains `ref19_topic_id` to
+`^(BAN|ENG|MATH|SCI|BGS)-[A-Z0-9]+$` — **one hyphen only**. So REF-19's two real slugs are
+*unrepresentable in any payload*, and the only two values that would validate are the two that
+REF-19 does not contain.
+
+**This is CD-088's PATTERN at a fifth instance**, and the discarded thing is a hyphenated segment
+— the same class of loss as CD-088(b)'s scheme prefix. Logged as `TOOLS-CR-002`.
+
+**What was done and not done.** The new `REF19-SLUG` gate in
+`workstreams/question-banks/audits/gates.py` (merged, CD-123) reads the **LOCKED artifact**, never the derived
+copy — CD-011's rule that a registry is written from the artifact and never from a summary, which
+is the same ground `QB-CR-007` refused to build canon on this exact constant. So the gate accepts
+the two real slugs and would reject the truncations. **Neither LOCKED file was edited** (CD-013:
+the vendored contract is supersede-only).
+
+**The question.** Does **REF-19 supersede** to two-segment ids, or does the **schema pattern
+widen** to admit a third segment? Until it is ruled, no Math bank can carry either slug, and the
+harness will disagree with the gate on exactly two values.
+
+**Needed by:** 2026-08-21 (before any Math bank opens; no Bangla work is blocked).
+
+---
+
+## ⚑ PENDING-P-030 — a promoted C5 Bangla source file tells the next session to extract পাঠ ১২, three days after the ruling that put it out of scope
+
+**Status: OPEN — HELD UNRULED at the Principal's direction, 2026-08-14.** He reads `SOURCE_POLICY` §7.6 and CD-050(b) at source himself before this is decided. **No agent may act on it, in either direction.** Blocks nothing; no file edited, no decision row minted.
+*(Next free number verified at source: no `P-030` token exists anywhere in the repo.)*
+
+**The two statements, both at source.**
+
+`canon/sources/c5/bangla/C5_BAN_Source_01.md:223`, under **সংশ্লিষ্ট নথি**:
+
+> সেটি বাছাইয়ের (curation) সিদ্ধান্ত, নিষ্কাশনের নয় — SOURCE_POLICY §৩ অনুযায়ী পাঠ ১২-এর নিষ্কাশন
+> তৈরি হবে, আর ঐ বাদ দেওয়ার সিদ্ধান্ত ব্যবহারকারী ওয়ার্কস্ট্রিমে বহাল থাকবে।
+
+`canon/sources/SOURCE_POLICY.md` §7.6, which **is** CD-050(b), Principal ruling 2026-08-09:
+
+> **পাঠ ১২ (শিষ্যের সাধনা) is not extracted.** … the Principal confirmed that standing ruling
+> **reaches the extraction layer** here (2026-08-09). This is a **named exception to §3's
+> record-never-curate rule, not a loosening of it** … **So the remaining scope is পাঠ ১–১১**.
+
+**Why this is not a division of labour.** The tempting reading is that the two answer different
+questions — the source records the book, canon governs what the school prints, QUESTION_POLICY §3
+row 15 / CD-107's line. **That reading is exactly the position CD-050(b) considered and
+overruled.** §7.6 does not say the exclusion stops at consumption; it says in as many words that
+it *reaches the extraction layer*, and it names itself an exception to §3 rather than an
+application of it. `canon/_wip/c5-bangla/EXCLUDED_paath_12.md` was written to hold that gap open
+so a later session would not read it as an oversight.
+
+**The dating is what settles it.** `C5_BAN_Source_01.md` was first committed **2026-08-12**
+(`ccd38bc`), three days *after* the ruling. Its line restates §3's *general* rule and does not
+know about the named exception that had already displaced it. The same paragraph carries a second
+stale trace — *"পাঠ ১–১২ এই সেটেই বইটি সম্পূর্ণ হয়"* — against §7.6's **পাঠ ১–১১**. Two errors of
+the same origin, in one bullet.
+
+**So it is one question answered twice, and the later text is the stale one.**
+
+**Why no row was minted.** A CD row saying *the exclusion binds consumption, not extraction* would
+restate the position CD-050(b) overruled — a reversal, and reversals are the Principal's (AGENTS
+§2, §4). CD-004 forbids editing the promoted source file.
+
+**Proposed disposition, for approval:** a CD row recording that bullet as **known-false against
+SOURCE_POLICY §7.6** — the REF-25 §0 pattern from QUESTION_POLICY §9, where a false claim in a
+retained file is *recorded* rather than edited — leaving the extraction itself untouched, and
+naming §7.6 as the file a session reads for পাঠ ১২'s status.
+
+**Needed by:** 2026-08-21.
+
+---
+
+## ⚑ PENDING-P-031 — `CR-001` … `CR-004` are each live in two or three ledgers; CR-012's defect predates CR-012
+
+**Status: CLOSED 2026-08-14 → CD-124.** Ruled: **declare every lane now, renumber each lane as it closes** — the ordering is the ruling. All 17 ledgers now declare `ledger-prefix` and `ledger-lane`; **no row was renumbered and no citation was touched**. The gate went 20 failures → 0, with the four cross-lane tokens **printed as deferrals every run**.
+*(Next free number verified at source: no `P-031` token exists anywhere in the repo.)*
+
+**Found by the gate on its first live run**, which is what CD-088(d)(ii) built it for.
+
+| ID | Minted as a row in |
+|---|---|
+| `CR-001` | `canon/_wip/c5-bangla/CORRECTIONS.md:8` · `workstreams/class-tests/CORRECTIONS.md:10` · `workstreams/support-books/CORRECTIONS.md:14` |
+| `CR-002` | `canon/_wip/c5-math/CORRECTIONS.md:8` · `workstreams/class-tests/CORRECTIONS.md:11` · `workstreams/support-books/CORRECTIONS.md:11` |
+| `CR-003` | `canon/_wip/c5-math/CORRECTIONS.md:10` · `workstreams/class-tests/CORRECTIONS.md:12` · `workstreams/support-books/CORRECTIONS.md:12` |
+| `CR-004` | `canon/_wip/c5-math/CORRECTIONS.md:12` · `workstreams/support-books/CORRECTIONS.md:13` |
+
+**Four ledgers all mint bare `CR-###`.** CD-087(a) noted the Math lane's bare series in passing —
+*"the Math lane's bare `CR-###`"* — as evidence that per-lane prefixes were already the pattern.
+**Nobody checked whether the bare ones collided.** They did, and they had, before `CR-012` ever
+happened: `CR-001` has been three different corrections since the ledgers were opened.
+
+**This is CD-088(c)'s instance-4 face** — not a form discarded, a form that never existed — and it
+is larger than the incident that named it.
+
+**Why the agent did not renumber.** CD-087(b) gives the rule (*the row written first and cited
+keeps the number*) but not the assignment, and applying it means renaming live, cited rows across
+four workstreams including a `canon/_wip/` lane this session is instructed not to touch. That is a
+Principal call.
+
+**Also owed by the same ruling.** CD-088(d)(ii)'s first clause requires *every* corrections ledger
+to declare its prefix in its header. **16 of 17 declare none** (the exception is
+`workstreams/scholarship/DECISIONS.md`, which correctly declares itself a POINTER and mints
+nothing). The gate therefore ships red on a pre-existing condition — a new instrument reporting an
+old fact, not a regression.
+
+**Agent proposal, for approval:** one `<!-- ledger-prefix: … -->` line per ledger, declaring what
+each already mints (`CD` · `QB-CR` · `QB-D` · `TOOLS-CR` · `D` · and a per-lane replacement for the
+four bare `CR` series), with **no row renumbering** until the collisions above are ruled
+separately. The declaration alone clears 16 findings and prevents the next one; the renumber is
+the part that touches history.
+
+**Needed by:** 2026-08-21.
+
+---
+
+## ⚑ PENDING-P-032 — the four NCTB PDFs: third retention list, and §12.7's rule now applies
+
+**Status: OPEN — Principal's call, and it is the only thing left in `_inbox/` that needs one.**
+*(Next free verified at source: no `P-032` token exists anywhere in the repo.)*
+
+`Class 5 Bangla.pdf` · `Class 5 English.pdf` · `Class 5 Math.pdf` · `C5_Science.pdf` — **staged
+2026-04-28, and this is the third consecutive session they have appeared on a §12.7 retention
+list.** §12.7's rule bites at three: **they carry an owner and a date, or they leave `_inbox/`.**
+
+They are §12.1 row-1 source scans governed by `SOURCE_POLICY` §2.1/§7.14 and outside §12's reach
+in class terms, which is why they were never moved. That is not the same as being accounted for.
+State of the lanes they serve: **Bangla and English step ① CLOSED · Math mid-chapter (অধ্যায় ৬
+`নির্মাণাধীন`) · Science not begun.**
+
+**Two of the four have no remaining consumer in this repo.** Bangla and English are closed;
+`Class 5 Bangla.pdf`'s only outstanding use would be পাঠ ১২, which PENDING-P-030 holds unruled.
+
+**The agent did not decide this and is not proposing a deletion** — a staged source scan is the
+Principal's, and `_inbox/` is gitignored and per-machine, so what is on his disk is not visible
+from here (the CD-026 / QB-CR-007 condition). **The ruling needed is one line per file: an owner
+and a date, or out.**
+
+**Needed by:** the next session that prints a retention list — which will be the fourth.

@@ -7,6 +7,58 @@ here until `scd-hub` resolves it in **its own D-series** and ships a superseding
 
 ---
 
+## UP-003 — `ref19_topic_id`'s pattern forbids a hyphen after the subject prefix, so two real REF-19 slugs are unrepresentable
+
+**Status:** OPEN · raised 2026-08-14 (CD-125 / TOOLS-CR-002 / PENDING-P-029) · owner: `scd-hub` repo, its D-series
+**Component:** `LOCKED_QuestionPayload_Schema_v1.json` — `ref19_topic_id`
+**Blocks:** every C5 **Math** bank. **Does NOT block wave 1 (Bangla)** — no BAN slug is affected.
+
+**What.** The pattern is
+
+```
+^(BAN|ENG|MATH|SCI|BGS)-[A-Z0-9]+$
+```
+
+`[A-Z0-9]+` excludes `-`, so **exactly one hyphen is permitted**: the one after the subject prefix.
+`canon/topics/LOCKED_REF-19_Vertical_Topic_Progression_Map_v1_10.md` carries **121 backticked
+slugs**, and **two of them have three segments**:
+
+> `MATH-ADDSUB-REL` · `MATH-MULDIV-REL`
+
+Neither can ever validate. **Two slugs that canon defines cannot be written into a payload.**
+
+**And the harness's derived copy already "solved" it by truncation, which is the part that makes
+this a ruling.** `validate_import.py`'s auto-extracted `REF19_SLUGS_DEFAULT` also holds 121 — but
+holds `MATH-ADDSUB` and `MATH-MULDIV`. Measured both directions:
+
+```
+artifact − harness = {MATH-ADDSUB-REL, MATH-MULDIV-REL}
+harness − artifact = {MATH-ADDSUB,     MATH-MULDIV}
+```
+
+The extractor's regex stopped at the second hyphen. **The truncated forms exist nowhere in REF-19**
+— so the only two values that would validate are two ids canon does not contain, and two canon-layer
+artifacts disagree about what a REF-19 id *is*.
+
+**This is CD-088's PATTERN at a fifth instance** — *normalising an ID discards the thing that makes
+it an ID* — and the discarded thing is a hyphenated segment, the same class of loss as CD-088(b)'s
+scheme prefix.
+
+**Nothing was patched.** The schema is LOCKED and supersede-only (CD-013), and the derived constant
+is inside a vendored file under the same contract. The gate suite's `REF19-SLUG` reads the **LOCKED
+artifact**, never the derived copy (CD-011: a registry is written from the artifact, never from a
+summary — the ground QB-CR-007 refused to build canon on this exact constant), so it accepts the
+two real slugs and would reject the truncations.
+
+**What would close it.** A superseding `LOCKED_QuestionPayload_Schema_v1.json` whose
+`ref19_topic_id` pattern admits further hyphenated segments — e.g.
+`^(BAN|ENG|MATH|SCI|BGS)(-[A-Z0-9]+)+$` — **and** a re-extraction of `REF19_SLUGS_DEFAULT` that
+does not truncate. On arrival: re-vendor, update `VENDOR.md` and `SMOKE.md`, re-run the slug census
+both directions, and log the supersede as a CD row. **Until then no Math bank may be authored**,
+because either value it could carry is wrong somewhere.
+
+---
+
 ## UP-002 — the question payload has no field for the pool a question belongs to
 
 **Status:** OPEN · raised 2026-08-09 (QB-D-003 / CD-039) · owner: `scd-hub` repo, its D-series

@@ -1839,3 +1839,197 @@ covered by CD-091's precondition) · **4 NCTB PDFs** (staged 2026-04-28, correct
 ### Sync
 
 Pushed. Range check and per-commit permission pasted in the session report.
+
+---
+
+## 2026-08-14 · P00/P04 unification session 3 — the gate suite (Cowork, `scd-agent-cowork`)
+
+**The one rule that shaped this session: no bank content was authored.** The gate suite is built
+independently of the bank it will judge. Every fixture is synthetic; the synthetic chapter is a
+fictional **পাঠ ৯৯** that exists in no book, named that way so no later reader can mistake it for
+an extraction. No file under `canon/sources/` or `canon/marklogic/` was read as fixture data
+(CD-055, CD-064(f), one level up).
+
+### Step 0 — verify at source, and one premise that did not survive it
+
+- **Next free CD number: 121** — `canon/DECISIONS.md` defines through CD-120 and `CD-999` is a
+  placeholder. *Written as a bare number on purpose: `canon_check.py`'s CD-CITE resolver caught
+  the first draft of this line, which named the token, as a phantom citation — the row is not
+  minted, so the citation resolved to nothing. Correct catch, and CD-085(c) is explicit that the
+  backtick exemption covers the retired-number census and **not** phantom resolution.* **Next free in `workstreams/question-banks/CORRECTIONS.md`: `QB-CR-010`**
+  (QB-CR-001…009 present). Neither was used — see below.
+- **V-0c FAILED AT SOURCE. `workstreams/question-banks/audits/gates.py` is NOT at `_template`
+  zero-gate state.** It is **795 lines, 16 named gates, 27 seeded selftests, all green, exit 0**,
+  built to `QUESTION_BANK_POLICY.md` v1.0 §5 and carrying three gates promoted out of the
+  corrections ledger (QB-CR-001 → POOL-MEMBERSHIP, QB-CR-003 → MARK-VALUE, QB-CR-008 →
+  TOPIC-NUMBER). The `_template` file is a different, 29-line file. **Building §6's eleven on top
+  of it would have deleted ten gates and un-promoted three rulings.** Reported, not done.
+- **V-0d confirmed.** পাঠ ১৩ is `canon/marklogic/C5_Bangla_Source_13-23.md`, heading line 33:
+  `# পাঠ ১৩ — পাখির মতো`. It is **not** under `canon/sources/c5/`, which holds পাঠ ১–১১ only.
+  The traceability gate resolves against the path a bank declares, not against an assumed one.
+
+### Housekeeping
+
+1. **Four `_inbox/` OCR drafts deleted** after an AGENTS §9 notice stating the reason first.
+   `ch6` byte-identical to its committed evidence copy (md5 `cb8e331e589bd5b77ea36a265b280b09`
+   both sides). `ch4`/`ch5` differ **only** by a prepended provenance block (`diff` = `0a1,19` and
+   `0a1,18`); every original byte survives in `canon/_wip/c5-math/evidence/`. `ch3` deleted on its
+   own ground: its committed copy also carries `0.22.1` → `0.14.7` on line 2, and that block
+   records the Principal's instruction *"ভুল বাইটগুলো প্রতিস্থাপন করা হয়েছে, দুটো পাশাপাশি রাখা
+   হয়নি"* — the staged file was the last surviving carrier of the string ruled false.
+   **§7.14.1's "never discarded" is satisfied by §7.14.3a's committed copy**, which is the only
+   reason redundancy could be established at all. **ch7–ch10 have no committed evidence copy and
+   were not touched.**
+2. **The two Naskh fonts moved `_inbox/` → `_unvendored/`, and the note is committed while the
+   binaries are not.** A font with no consumer is not an Assets-class file: §12.1's row reads
+   *"consumed by a tool"* and `tools/MANIFEST.md`'s own header refuses fonts outright. Moving to a
+   second gitignored folder would have changed nothing — `_inbox/`'s invisibility is the whole of
+   §12.7's complaint — so `_unvendored/README.md` is tracked and carries the row. `.gitignore`
+   gained `_unvendored/*` + `!_unvendored/README.md`.
+3. **The পাঠ ১২ CD row was NOT minted, and that is the finding.** See **PENDING-P-030**: the
+   session's instruction was to record a division of labour, but `SOURCE_POLICY` §7.6 / CD-050(b)
+   says in as many words that the exclusion **reaches the extraction layer** and is a **named
+   exception** to §3 — the position a division-of-labour row would have reversed. The
+   contradicting sentence lives at `C5_BAN_Source_01.md:223` and was committed **2026-08-12**
+   (`ccd38bc`), three days *after* the ruling. One question answered twice; the later text is the
+   stale one. Raised, not ruled.
+4. **`tools/audits/ledger_check.py` built — CD-088(d)(ii).** 10 selftest cases, 9 seeded, both
+   directions, synthetic ledgers in a temp dir. **CD-088(d)(i)'s source lint was NOT built** —
+   proposed only. `tools/MANIFEST.md` row added as REQUIRED (`tools/audits` is `SMOKE_EXEMPT`:
+   gates evidence themselves).
+
+### The gate suite
+
+**`workstreams/question-banks/audits/gates.py` — ONE suite, 21 gates, two authorities (CD-123).**
+
+The §6 eleven were first built as a separate `gates_qp6.py`, because V-0c's premise failed and
+merging was a decision nobody had ruled. **The Principal ruled it: union, not replacement.** §6's
+eleven are the floor; the three gates promoted out of QB-CR-001/003/008 stay enforced, because
+retiring a gate promoted from a correction un-learns the incident that produced it. **One
+retirement: DOMAIN-RATIO's per-pool form, replaced by §6's paper-level test** — the two cannot both
+run, and the two seeded cases that proved the per-pool form were deleted with it rather than left
+dead, since a seed for a retired gate is a seed that stops biting (CD-064(f)).
+
+**11 §6 rows · 14 §5 rows · 4 shared names ⇒ 21 gates.** The four shared names — MARK-VALUE,
+SOURCE-TRACE, SCRIPT-GUARD, TOPIC-NUMBER — carry one implementation per bank shape and dispatch.
+**A gate whose shape a bank lacks reports `N/A` with the reason, never `PASS`** (§7.17). Both
+families' selftests now drive the **merged registry**, not the lists they were built from: a
+selftest still exercising the old `GATES` would go on passing after the merge broke it.
+**25 seeded + 1 baseline (§5 family) · 17 seeded + 7 negatives + 6 CD-055 declaration cases + 1
+baseline (§6 family). `gates_qp6.py` deleted — never committed, and its content is all here.**
+
+### The three underdetermined rows, now ruled — and one gate that changed direction
+
+**Q-1 · BLOOM-BAND: the §6 text was wrong, not merely ambiguous.** UD-23 — the Bloom axis governs
+the pool, the domain axis governs the paper. Two axes, not two ranges on one axis, which is exactly
+why "the wider at each level" had no referent above Apply. "The wider of" is dropped; the pool bands
+against REF-06 §3.6's six levels and MarkLogic §৩ appears at paper level only.
+
+**Q-2 · DIFFICULTY: the check got SMALLER, and that is the interesting part.** "Can supply" = easy
+≥30% present, and nothing else. **A pool cannot fail a ceiling** — an author can decline to use hard
+items, so a compliant paper stays constructible however hard-heavy the pool is. The seeded case that
+proved the hard ceiling **was kept and inverted**: a 67%-hard pool must now stay *quiet*. A removed
+case would have left the symmetric form free to creep back; an inverted one bites if it does.
+
+**And the fixture was re-cut a second time, for the same reason as the first.** When the band moved
+from four NAPE domains to REF-06's six levels, Analyze fell to 8.3% against a 10–20% floor. The
+composition was re-cut to 6/8/6/3/1/0. **The band was not widened to admit the fixture** — that
+direction is the whole discipline, and it is recorded in the fixture's docstring both times.
+
+**This session ran in two sittings, and the seam is recorded because the second sitting found
+something the first had missed.** The first sitting was interrupted before reporting; nothing had
+been committed, so the repo was the only continuity (AGENTS §3). The second re-verified every
+Step-0 claim independently at source — CD-050/§7.6, `C5_BAN_Source_01.md:223`, the `ch3` provenance
+block, the `_wip/c5-math/evidence/` hashes, and both new scripts re-run from clean — and **found
+one brief-mandated requirement not built: CD-055's self-declaration convention for part-authored
+banks was absent from `gates_qp6.py` (`grep -c নির্মাণাধীন` → 0).** It is built now, verified
+against `canon/DECISIONS.md` CD-055 and `SOURCE_POLICY` §7.9 rather than against the summary of
+them. Four clauses, unchanged: the bank declares itself in `header.অবস্থা` with what is authored,
+what is not and where to resume; it is excluded from **controls only**; the sweep **prints every
+file it held out and why**, before any verdict, so a reader cannot reach a green line without
+passing the exclusions; and **the marker is not a waiver** — `run()` is never told about it, all
+eleven still fire, and a seeded case proves TOPIC-NUMBER still reddens a marked bank while another
+proves marked and unmarked copies of one clean bank give identical output. A bare `নির্মাণাধীন`
+with no resume tail is **REFUSED, not skipped**: §7.9's em-dash tail is what the exclusion is
+bought with. §7.9's fifth clause — *removing the line is part of finishing* — is an instruction to
+the author, not a gate; it is mechanised as `STALE-MARKER` on a **stated default printed in its own
+output** and batched as **Q-4**, not ruled here.
+
+**The sweep's first live run holds out the one bank on disk and says so:**
+`C5_BAN_U21_QuestionBank_v1.json` is not built to §4's shape, so §6's eleven do not judge it —
+**out of scope, not clean**, and printed as such. It is not re-judged and not touched.
+
+The negatives are the half that matters: **DOMAIN-RATIO must stay quiet on a pool and on a single
+class test**, and **REPETITION must stay quiet on a `Remember` stem lifted verbatim from a CT into
+the annual** — §5's listed supersede of MarkLogic §৮'s row 2, running both directions. A gate that
+fires on those is as wrong as one that never fires.
+
+**Three rows run on stated defaults printed in their own output, batched as Q-1/Q-2/Q-3:** the
+Bloom band's "wider at each level" has no common referent above Apply (REF-06 bands six Bloom
+levels, MarkLogic four NAPE domains); difficulty's "can supply" has no fixed reading; and the
+per-chapter spine slot-mapping **does not exist as data**, so COVERAGE falls back to §4's
+header-stated target and does not invent it.
+
+**One fixture was re-cut and the reason is recorded in the code:** the first synthetic bank sat at
+9/24 `Remember` (37.5%) and the baseline went red against জ্ঞান's 35% ceiling. **The fixture was
+wrong and the gate was right** — the only direction that discovery may run. Widening the band to
+admit the fixture would have shaped the gate to pass its own test.
+
+### Rulings executed (Principal, 2026-08-14 — CD-121 … CD-126)
+
+- **CD-121** — `QUESTION_POLICY` → **v1.1**. Two §6 defects, both found by building the gates §6
+  specifies: the Bloom-band row's "wider of" dropped (Q-1), and the **false `(CD-055, CD-064(f))`
+  citation corrected**. The rule's home is now canon, citing **QB-D-012** as origin, and it carries
+  the distinction the flat form had flattened: **seeds synthetic; controls MAY be live** (CD-051(d)).
+  Recorded with it: how a **docstring** at `canon_check.py:458` (CD-080) → `tools_check.py:222`
+  (`b9a9cc9`) → **canon** (`109b232`) acquired canon's authority without ever being ruled.
+- **CD-122** — the three underdetermined rows read, each with its reasoning recorded against later
+  "tightening".
+- **CD-123** — the merge. 21 gates. পাঠ ২১ marked **`policy_status: pre-policy` in its own file**,
+  so it is held out by a stated status rather than by a parser failing to recognise its shape.
+- **CD-124** — **declare every lane now, renumber each lane as it closes.** All 17 ledgers declare
+  `ledger-prefix` + `ledger-lane`. **No row renumbered, no citation touched.** The gate went
+  **20 failures → 0**, with the four cross-lane tokens **printed as deferrals every run** — a debt
+  nobody prints is indistinguishable from a fix. Two ledgers claiming one lane FAILs, and that is
+  what keeps the deferral from being a loophole.
+- **CD-125** — P-029 routed upstream as **`UP-003`**, never patched locally. Blocks every C5 Math
+  bank; **does not block wave 1**.
+- **CD-126** — the Naskh fonts are the **Arabic lane's**, parked until **CD-014**'s executed smoke
+  test exists. `_unvendored/README.md` now points the next reader at CD-014 and at `islamic-studies`
+  so the lane does not open by re-sourcing fonts it already has.
+
+**PENDING-P-030 (পাঠ ১২) is held UNRULED at the Principal's direction** — he reads §7.6 and
+CD-050(b) at source himself. No agent may act on it in either direction.
+
+### Findings raised, none acted on
+
+- **PENDING-P-029 / TOOLS-CR-002 — a fifth instance of CD-088's PATTERN, in a LOCKED-adjacent
+  constant.** REF-19 carries `MATH-ADDSUB-REL` and `MATH-MULDIV-REL`; the harness's derived copy
+  truncated both at the second hyphen; the LOCKED payload schema's `ref19_topic_id` pattern allows
+  one hyphen only, so the two real slugs are **unrepresentable** and the only validating values
+  are two that REF-19 does not contain. Both files LOCKED and supersede-only; neither edited.
+- **PENDING-P-031 — `CR-001`…`CR-004` are each live in two or three ledgers.** CR-012's defect
+  predates CR-012 by months. Four ledgers all mint bare `CR-###`. No renumbering performed.
+- **PENDING-P-030 — the পাঠ ১২ contradiction above.**
+
+### §12.7 retention — everything still in `_inbox/` at session close
+
+| File / set | Why it is still there | Owner |
+|---|---|---|
+| `C5_MATH_OCRDRAFT_ch7.md` · `ch8.md` · `ch9.md` · `ch10.md` | **Not redundant.** অধ্যায় ৭–১০ have no committed evidence copy under `canon/_wip/c5-math/evidence/` — verified by hash comparison this session — so §7.14.3a has not yet run on them and deleting them would discard the draft, which §7.14.1 forbids. They leave when their chapters are extracted and the drafts are committed as evidence. | Principal (Math lane, extraction) |
+| `Class 5 Bangla.pdf` · `Class 5 English.pdf` · `Class 5 Math.pdf` · `C5_Science.pdf` | Source scans under §12.1 row 1, governed by `SOURCE_POLICY` §2.1/§7.14 and out of §12's reach. Bangla and English step ① are CLOSED; Math is mid-chapter; Science has not begun. **Staged April 28 — third session running on this list, so §12.7's three-session rule now bites. Raised as PENDING-P-032: one line per file, an owner and a date, or out.** Not decided here — a staged source scan is the Principal's, and `_inbox/` is gitignored and per-machine. | Principal — **ruling owed** |
+| `README.md` | The folder's own explanatory note. Permanent. | — |
+
+**Cleared this session:** 4 OCR drafts (deleted, redundant), 2 font files (moved to
+`_unvendored/`). `_inbox/` goes **14 files → 9**.
+
+**Three-session rule (§12.7).** The four PDFs have now appeared on a retention list three times.
+Per §12.7 they are raised to the Principal: either they carry an owner and a date, or they do not
+belong in `_inbox/`.
+
+### Standing constraints observed
+
+No bank item or bank file authored · no live source file read as fixture data ·
+`canon/_wip/c5-*` and the Math lane untouched · U14 not re-tagged (QB-CR-009 stays
+RULED/execution-owed) · Conventions v1.4 not amended · no topic number minted ·
+CD-088(d)(i) not built · nothing pushed.
