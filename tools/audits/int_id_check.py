@@ -16,30 +16,52 @@ was owed. The two are one pattern seen from two sides: (ii) catches an ID whose 
 form **never existed**; (i) catches an ID whose distinguishing form is **thrown away at the point
 of comparison**.
 
-WHY `int()` IS THE NAMED SINK
-----------------------------
-TOOLS-CR-001, the incident that started the census: two reference IDs differing **only in their
-zero-padding** were collapsed into one because the check compared `int(captured)` instead of the
-captured string. *(The two real tokens are written out in `tools/CORRECTIONS.md` at TOOLS-CR-001;
-they are deliberately not repeated here — one of them is a retired support-book citation form and
-UD-60(b) forbids minting new ones, which `canon_check.py`'s REF-CITE gate enforces and which it
-caught in this file's first draft.)*
+THE RULE — READ THIS BEFORE THE LIST (CD-129(b))
+------------------------------------------------
+**A sink is any transform that can map two distinct ID strings to one.**
 
-`canon_check.py:239` still carries the confession in its own docstring — *"`int("01") == int("1")`"*. Zero-padding is
-not decoration on an ID; it is part of the name. So is a scheme prefix (CD-088(b)), and so is a
-hyphenated segment (CD-125 / UP-003, the fifth instance). **`int()` is the single call that
-destroys all three at once**, which is why the ruling names it rather than naming a principle.
+That sentence is the definition. Everything below it is a list of the instances currently known to
+satisfy it, and **the list is not the rule**. CD-088's PATTERN is *normalising an ID discards the
+thing that makes it an ID*; a lint that defined itself as "the four calls we thought of" would be
+that same pattern one level up — **a list that looks complete and is not**, hardening into a
+definition because nobody re-read what it was a list *of*. The next widening must be an addition
+to `SINK_CALLS` / `SINK_METHODS` and nothing else. **If it required rediscovering the principle,
+the principle was written down badly.**
+
+THE CURRENTLY-KNOWN INSTANCES — four, and why each satisfies the rule
+--------------------------------------------------------------------
+  `int(x)`      drops zero-padding: `01` and `1` become one value.
+  `float(x)`    drops zero-padding **and** invents a numeric reading of a name.
+  `Decimal(x)`  the same, and looks more careful while doing it.
+  `x.zfill(n)`  **adds** zero-padding: `9` and `09` become one value — the identical collapse,
+                running in the opposite direction, which is why "normalise" is the wrong word for
+                the family and "collapse" is the right one.
+
+**The founding incident.** TOOLS-CR-001: two reference IDs differing **only in their zero-padding**
+were collapsed into one because the check compared `int(captured)` instead of the captured string.
+*(The two real tokens are in `tools/CORRECTIONS.md` at TOOLS-CR-001 and are deliberately not
+repeated here — one is a retired support-book citation form, UD-60(b) forbids minting new ones,
+and `canon_check.py`'s REF-CITE gate caught exactly that in this file's first draft.)*
+
+`canon_check.py:239` still carries the confession in its own docstring — *"`int("01") == int("1")`"*.
+Zero-padding is not decoration on an ID; it is part of the name. So is a scheme prefix (CD-088(b)),
+and so is a hyphenated segment (CD-125 / UP-003, the fifth instance). `int()` destroys all three at
+once, which is why **CD-088(d)(i) named it** — and CD-129(b) is why the lint does not stop there.
 
 WHAT IS CHECKED, AND WHAT IS ONLY REPORTED
 ------------------------------------------
-  INT-ON-ID-CAPTURE       FAIL.     `int()` is applied to a value flowing from a regex capture
-                                    whose pattern is **identifier-shaped** — the pattern carries a
-                                    literal scheme prefix (`QP-`, `CD-`, `TOP-BAN-`, a `U` behind
-                                    a literal hyphen, …). This is the ruling's own scope.
-  INT-ON-CAPTURE-UNTYPED  REPORT.   `int()` on a capture whose pattern is **not** identifier-shaped
-                                    (a page count, a folio, a mark) or could not be resolved
-                                    statically. Printed, never silently dropped, never counted
-                                    toward the verdict.
+  INT-ON-ID-CAPTURE       FAIL.     A collapsing transform is applied to a value flowing from a
+                                    regex capture whose pattern is **identifier-shaped** — the
+                                    pattern carries a literal scheme prefix (`QP-`, `CD-`,
+                                    `TOP-BAN-`, a `U` behind a literal hyphen, …).
+  INT-ON-CAPTURE-UNTYPED  REPORT.   The same transform on a capture whose pattern is **not**
+                                    identifier-shaped (a page count, a folio, a mark) or could not
+                                    be resolved statically. Printed, never silently dropped, never
+                                    counted toward the verdict.
+
+*(Both names keep `INT-` from CD-088(d)(i)'s wording, which named `int()`. The gate is wider than
+its name; the name is not renamed, because a gate name that appears in commit messages and CD rows
+is itself an identifier — and this is the file that argues identifiers are not tidied.)*
 
 The second tier is not padding. `SOURCE_POLICY` §7.17 — *a gate reports or refuses, it never
 omits* — and CD-041's standing rule that an instrument shown only against the errors it was built
@@ -68,10 +90,14 @@ ledger **declaring** its prefix rather than a gate inferring one, because the in
 tells two IDs apart does not live in the code. Same here. **The declaration is the repair; the
 lint is the alarm.**
 
-  ⚠ **No `int-id-ok:` waiver exists anywhere in the repo, and none was added by the session that
-  built this file.** The waiver form is built, seeded both directions, and left unused. Adding
-  waivers means editing audit scripts, which this session is instructed not to do, and which would
-  in any case be ruling on each site — the Principal's call, not the agent's.
+  **The repo's first and only waiver is `workstreams/question-banks/audits/gates.py`, at the
+  `C([1-5])` class-level group** (CD-130(b)). Read it before writing a second — it was written to
+  be the example, and it states the test a waiver has to meet: **not "this is fine today", but
+  "the transform CANNOT merge two distinct ID strings here".** `C([1-5])` is one digit, so no
+  padding is expressible and no second spelling exists. The `U(\d+)` group three lines below it in
+  the same regex was **rewritten, not waived**, because padding *is* expressible there — same
+  file, same pattern, opposite disposition. **The question is about the group, not about the
+  programmer's confidence.**
 
 LIMITS, STATED
 --------------
@@ -80,8 +106,13 @@ LIMITS, STATED
   it cannot lose a sink.
 * A pattern built by concatenation or an f-string is **unresolved**, not assumed innocent — it
   lands in INT-ON-CAPTURE-UNTYPED with `«pattern not statically resolvable»`.
-* `float()`, `Decimal()` and `str.zfill()` destroy the same information and are **not** checked.
-  CD-088(d)(i) names `int()`. Widening the sink is a ruling, not a patch.
+* The sink list is four calls deep and **the rule is wider than the list** — that is stated, not
+  apologised for, and it is the reason "THE RULE" is written above "THE INSTANCES". A transform
+  this lint does not know (a hand-rolled `strip_leading_zeros`, a `%d` format, an `int` inside a
+  comprehension key) collapses IDs just as well and is **invisible here**.
+* The waiver token stays `# int-id-ok:` now that the sinks are four, because CD-129(a) ratified
+  that spelling and renaming a declaration form invalidates every site already carrying it. **It
+  covers all four sinks**, not `int()` alone.
 
 Exit 0 = CLEAN, 1 = FAIL. Paste output verbatim per AGENTS.md §5.
 """
@@ -102,6 +133,25 @@ SCOPE_GLOBS = ("tools/audits/*.py", "workstreams/*/audits/*.py")
 CAPTURE_METHODS = {"group", "groups", "groupdict"}
 MATCH_MAKERS = {"search", "match", "fullmatch", "finditer"}
 LIST_MAKERS = {"findall"}
+
+# ---------------------------------------------------------------------------------
+# THE SINKS — a LIST OF KNOWN INSTANCES, not the definition. See "THE RULE" in the
+# module docstring. CD-129(b): enumerating sinks is CD-088's own disease one level up,
+# so the rule is stated first and this list is what is currently known to satisfy it.
+# Adding a fifth is an ADDITION TO A LIST. It must not require rediscovering the rule.
+# ---------------------------------------------------------------------------------
+
+# Called as a plain name — `int(x)` / `float(x)` / `Decimal(x)` — or as `decimal.Decimal(x)`.
+SINK_CALLS = {
+    "int":     "int() drops zero-padding: `01` and `1` become one value",
+    "float":   "float() drops zero-padding AND invents a numeric reading of a name",
+    "Decimal": "Decimal() drops zero-padding AND invents a numeric reading of a name",
+}
+# Called as a method on the captured value — `x.zfill(2)`.
+SINK_METHODS = {
+    "zfill": "str.zfill() ADDS zero-padding: `9` and `09` become one value — the same "
+             "collapse as int(), running in the opposite direction",
+}
 
 WAIVER = re.compile(r"#\s*int-id-ok:\s*(?P<reason>.*)$")
 
@@ -313,10 +363,31 @@ class Analyser:
                     return m.group("reason").strip()
         return None
 
+    def sink_of(self, call):
+        """(display, why) if this call is a known collapsing transform, else None.
+
+        CD-129(b): what makes a call a sink is THE RULE — it can map two distinct ID strings to
+        one. `SINK_CALLS` / `SINK_METHODS` are the instances currently known to satisfy it, and
+        adding a fifth belongs here and nowhere else.
+        """
+        f = call.func
+        if isinstance(f, ast.Name) and f.id in SINK_CALLS and call.args:
+            return f"{f.id}()", SINK_CALLS[f.id]
+        if isinstance(f, ast.Attribute):
+            if f.attr in SINK_CALLS and call.args:            # decimal.Decimal(x)
+                return f"{f.attr}()", SINK_CALLS[f.attr]
+            if f.attr in SINK_METHODS:                        # x.zfill(2) — receiver is the value
+                return f".{f.attr}()", SINK_METHODS[f.attr]
+        return None
+
     def check_int_call(self, call):
-        if not (isinstance(call.func, ast.Name) and call.func.id == "int" and call.args):
+        sink = self.sink_of(call)
+        if sink is None:
             return
-        pat = self.taint_of(call.args[0])
+        shown_sink, why = sink
+        # For a plain call the value is the first argument; for a method sink it is the RECEIVER.
+        subject = (call.func.value if shown_sink.startswith(".") else call.args[0])
+        pat = self.taint_of(subject)
         if pat is False:
             return                                   # not from a capture at all
         shown = pat if pat is not None else UNRESOLVED
@@ -325,8 +396,9 @@ class Analyser:
             if reason is None:
                 self.findings.append((
                     "INT-ON-ID-CAPTURE", call.lineno,
-                    f"int() on a group captured by an ID pattern  r\"{shown}\"  — compare the "
-                    f"RAW captured string (CD-088(d)(i)); or declare `# int-id-ok: <reason>`"))
+                    f"{shown_sink} on a group captured by an ID pattern  r\"{shown}\"  — "
+                    f"{why}. Compare the RAW captured string (CD-088(d)(i)); or declare "
+                    f"`# int-id-ok: <reason>`"))
             elif not reason:
                 self.findings.append((
                     "INT-ON-ID-CAPTURE", call.lineno,
@@ -335,7 +407,8 @@ class Analyser:
         else:
             self.findings.append((
                 "INT-ON-CAPTURE-UNTYPED", call.lineno,
-                f"int() on a capture from a non-ID pattern  r\"{shown}\"  — reported, not judged"))
+                f"{shown_sink} on a capture from a non-ID pattern  r\"{shown}\"  — reported, "
+                f"not judged"))
 
     # -- walk ---------------------------------------------------------------------
 
@@ -412,7 +485,7 @@ def run(paths, quiet=False):
         for gate, where, detail in fails:
             print(f"  FAIL   {gate:<24} {where}\n         {detail}")
         if reports:
-            print(f"  REPORT {len(reports)} int()-on-capture site(s) from non-ID or unresolved "
+            print(f"  REPORT {len(reports)} collapsing-transform site(s) on captures from non-ID or unresolved "
                   f"patterns — printed, not judged (SOURCE_POLICY §7.17)")
             for _, where, detail in reports:
                 print(f"         - {where}  {detail.split('  — ')[0].split('int() on a capture ')[-1]}")
@@ -528,6 +601,44 @@ def selftest():
          'm = re.match(r"^QP-([A-Z]+)-C([1-5])", qid)\n'
          '# int-id-ok: the class level is a number here\n'
          'level = int(m.group(2))\n', False)
+
+    # --- CD-129(b): THE THREE SINKS ADDED TO THE LIST, each seeded in both directions. They are
+    # --- seeded as INSTANCES OF THE RULE, not as three special cases: each one can map two
+    # --- distinct ID strings to one, which is the only reason any of them is here.
+    case("INT-ON-ID-CAPTURE", "float() on an ID capture — drops padding AND invents a number",
+         'import re\n'
+         'm = re.match(r"^QP-([A-Z]+)-C([1-5])-U(\\d+)", qid)\n'
+         'n = float(m.group(3))\n', True, "float()")
+    case("INT-ON-ID-CAPTURE", "Decimal() on an ID capture — the same collapse, looking careful",
+         'import re\n'
+         'from decimal import Decimal\n'
+         'm = re.match(r"^QP-([A-Z]+)-C([1-5])-U(\\d+)", qid)\n'
+         'n = Decimal(m.group(3))\n', True, "Decimal()")
+    case("INT-ON-ID-CAPTURE", "decimal.Decimal() reached through the module also fires",
+         'import re, decimal\n'
+         'm = re.match(r"^QP-([A-Z]+)-C([1-5])-U(\\d+)", qid)\n'
+         'n = decimal.Decimal(m.group(3))\n', True, "Decimal()")
+    case("INT-ON-ID-CAPTURE", "str.zfill() on an ID capture — the collapse running the OTHER way "
+                              "(`9` and `09` become one), and it is the RECEIVER that is tainted",
+         'import re\n'
+         'm = re.match(r"^QP-([A-Z]+)-C([1-5])-U(\\d+)", qid)\n'
+         'key = m.group(3).zfill(2)\n', True, "zfill()")
+    #     ...and all three stay quiet on a quantity, exactly as int() does.
+    case("INT-ON-ID-CAPTURE", "control · float()/zfill() on a NON-ID capture do not fail",
+         'import re\n'
+         'm = re.search(r"printed page (\\d+)", line)\n'
+         'a = float(m.group(1))\n'
+         'b = m.group(1).zfill(3)\n', False)
+    #     ...and zfill on something that never touched a capture is not the lint's business.
+    case("INT-ON-CAPTURE-UNTYPED", "control · zfill() on a plain literal is invisible here",
+         'key = "7".zfill(2)\n', False)
+    #     ...and the waiver covers the new sinks too, not int() alone.
+    case("INT-ON-ID-CAPTURE", "the `# int-id-ok:` waiver covers zfill() as well as int() — one "
+                              "declaration form for the whole rule (CD-129(a))",
+         'import re\n'
+         'm = re.match(r"^QP-([A-Z]+)-C([1-5])-U(\\d+)", qid)\n'
+         'key = m.group(2).zfill(1)  # int-id-ok: C([1-5]) is one digit; zfill(1) is a no-op\n',
+         False)
 
     # --- 11. AN UNRESOLVED PATTERN IS NOT AN INNOCENT ONE. An f-string pattern still lands in the
     # --- report with `«pattern not statically resolvable»`, so the lint's blind spot is visible.

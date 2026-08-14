@@ -1235,7 +1235,22 @@ def qb_build_ctx(bank):
     for qid in by_qid:
         m = re.match(r"^QP-([A-Z]+)-C([1-5])-U(\d+)", qid or "")
         if m:
-            subject, class_level, unit = m.group(1), int(m.group(2)), m.group(3)
+            # CD-130(b) — THE REPO'S FIRST `int-id-ok:` WAIVER. It is written to be the example
+            # the second one is copied from, so the standard it sets is the standard that spreads.
+            #
+            # The test a waiver must meet is NOT "this is fine today". It is: **the transform
+            # CANNOT merge two distinct ID strings here.** Group 2 is `C([1-5])` — one digit by
+            # construction — so no padding is expressible and there is no second spelling for
+            # int() to collapse into the first. Contrast group 3, `U(\d+)`, three lines down:
+            # padding IS expressible there, `U09` and `U9` are two strings, and that one was
+            # REWRITTEN rather than waived. Same file, same regex, opposite disposition — because
+            # the question is about the group, not about the programmer's confidence.
+            #
+            # And `class_level` is genuinely a number: it is compared against 1..5 as an ordinal,
+            # not matched as a name. An identifier segment that is used as a quantity is the only
+            # thing this waiver is for.
+            class_level = int(m.group(2))  # int-id-ok: C([1-5]) is one digit — no padding expressible, so no two distinct IDs can collapse; used as an ordinal 1..5
+            subject, unit = m.group(1), m.group(3)
             break
     src_text, unit_note = None, None
     ref = bank.get("source_extraction")
