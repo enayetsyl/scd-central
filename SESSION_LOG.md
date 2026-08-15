@@ -2208,3 +2208,62 @@ No bank content authored · পাঠ ১২ extraction NOT produced · the `U09
 no audit script rewritten beyond `gates.py`'s `U(\d+)` fix and the `C([1-5])` waiver ·
 `canon/_wip/c5-math/` untouched · no LOCKED artifact edited · the vendored schema not patched ·
 U14 not re-tagged · no row renumbered · no topic number minted.
+
+---
+
+## 2026-08-15 · Cowork · question-banks session 5 — four rulings, the Bloom floor, and পাঠ ১৩ wave 3
+
+**Agent:** scd-agent-cowork. **Lane:** question-banks. **Tip at start: `6ecbe3b` — the handoff
+chain carried `4bc66d7` and was two commits stale.** Wave 1 and wave 2 had landed and were unpushed.
+
+**The repo was not mounted when the prompt arrived**, so the preamble's verify-at-source could not
+be run at all until the folder was connected. Reported and stopped rather than answering from the
+uploaded handoff — which is the failure `HANDOFF_2026-08-15` §4 records seven times.
+
+**One §-citation caught before it landed.** The drafted Ruling D cited **CD-090(b)** for a
+`NOT-IN-REPO` / `LOST` distinction. At source CD-090(b) mints **`UNATTESTED-INSIDE-RANGE` /
+`RECONSTRUCTED-UNKNOWN`**, for numbers in a sequence. The **principle** transfers; the **labels** do
+not. Ruled: cite the principle, mint the terms in the new row. **CD-121(c)'s pattern — a phrase
+acquiring authority by citation rather than by ruling — caught before it landed rather than after.**
+
+**Ruled and filed: `QB-D-013` · `CD-133` · `CD-134` · `CD-135` · `CD-136`.** QUESTION_POLICY
+**v1.1 → v1.2**, one bump over four sites. QUESTION_BANK_POLICY §4 first bullet → stimulus scope.
+`BLOOM-BAND` is **floors-only**; selftest 17+7 → **18 seeded + 9 negatives**, the above-ceiling case
+kept and **inverted** so the symmetric form cannot creep back.
+
+**The tagging error, which cost more than the authoring did.** The agent sized wave 3 by deriving
+`bloom_level` from **slot identity**. Bloom is a property of **cognitive demand**. The spine says so
+in its own words and the agent read past it — `BAN-S05`: *"বহুনির্বাচনি হলো উত্তর দেওয়ার একটা
+পদ্ধতি, কোনো দক্ষতা নয়।"* Corrected by a four-item probe before anything was authored.
+**Two of six slots moved.** Priced: **+31 items vs +11** to absorb the same release — nearly **3×**,
+and the error would very likely have ended in *"the chapter cannot support it."* Logged
+**`QB-CR-011`, PATTERN CANDIDATE, 2 of 3** — *a spine slot read as carrying a property it does not
+carry*; **`CR-007` is instance 1**. Hard to see because it was **right four times out of six**, for
+the wrong reason.
+
+**পাঠ ১৩ wave 3: 36 → 88 items, 7 → 13 slots, suite CLEAN.** Ruled minimum was 79; 88 authored for
+margin, because at 79 three levels sit exactly on their floor and one Subject Lead re-tag reddens
+the bank. Margins: `Remember` **+8** · `Understand` **+2** · `Apply` **+2** · `Analyze` **+3**.
+`REPETITION` caught a real duplicate mid-authoring — **replaced, not re-tagged**, because re-tagging
+the pair down to `Remember` would have used §5's carve-out to launder a duplicate.
+
+**A near-miss that would have reverted the session's canon, caught by the Principal.** The sandbox
+could not unlink `.git/index.lock`, and the agent used `GIT_INDEX_FILE` instead of **§9's documented
+aside practice**. Commit `cb248be` landed correctly, but `.git/index` was left describing the
+pre-commit tree, so **the next `git add` would have staged the exact inverse — CD-133–136 removed,
+QUESTION_POLICY back to v1.1, BLOOM-BAND back to a band.** **No gate would have caught it: the old
+rules are internally consistent, so the suite prints CLEAN on a repo that has silently un-ruled
+itself.** Recorded as **`TOOLS-CR-003`** with the rule (`git reset` after any `GIT_INDEX_FILE`
+commit) and an **`AGENTS.md` §9 clause**. The general finding is not that the flag is dangerous —
+it is that **an undocumented workaround has undocumented costs**, and §9's documented one was there.
+
+**Raised, not ruled:** `PENDING-P-036` gains a **second live case** with two measured findings —
+an `Analyze` floor forbade **28 of 32** distinct chapter-sourced items, and **margin costs ~2 items
+of authoring per item of margin** because the floor rises with the total. **`PENDING-P-037`** —
+CD-136's `model_note` declaration is **unwritable on four of six question types**; carries an
+**interim authoring rule in force**, not a queued proposal.
+
+**Drafting cost, for programme sizing:** ~73 minutes. Authoring the 52 items was **six** of them.
+The judgement before it was 42. That is the number that sizes wave 2 of the programme.
+
+**Nothing promoted.** The Principal reviews all 88 items as Subject Lead before promotion.

@@ -1123,3 +1123,113 @@ produced — at that point the file exists, and a file that does not declare its
 relying on a gate reading a note somewhere else.
 
 **Needed by:** before any excluded chapter is extracted.
+
+---
+
+## ⚑ PENDING-P-036 — should POOL floors be ABSOLUTE COUNTS rather than percentages?
+
+**Status: OPEN — raised by CD-135, not ruled. Nothing built.**
+*(Next free number verified at source: no `P-036` token existed anywhere in the repo before this row.)*
+
+**Where it comes from.** CD-135 made the pool-level Bloom check **REF-06 §3.6's lower bounds only**.
+That is right, and it exposes a question the ceiling had been hiding: **the floors are percentages,
+and a percentage floor on a growing pool is a moving target.** Every item added to a pool raises the
+absolute number of `Analyze` items that pool needs to stay compliant — at 36 items `Analyze` needs 4,
+at 93 it needs 10, at 150 it needs 15. **The pool is punished for growing**, on an axis where growth
+is exactly what §4's "no ceiling — stop when the source is exhausted" asks for.
+
+**The question.** Should pool floors be **absolute counts sized to the largest instrument the pool
+must supply** — enough `Analyze` items to build one compliant annual paper, plus the HY, plus the
+year's class tests — rather than percentages of whatever the pool happens to hold?
+
+**The argument for.** **A pool is inventory; a paper is the product.** Inventory adequacy is
+naturally absolute: you need enough of a part to build the things you build, and having *more* of
+some other part does not create a new shortage. Percentages make the pool's compliance depend on
+its own size rather than on demand, which is the wrong referent — and it is the same category error
+CD-122 and CD-135 both corrected one level up, where a **pool** was being judged by a **paper's**
+rule.
+
+**The argument against, and why this is raised rather than ruled.** REF-06 §3.6 states percentages
+and calls them *"only indicative"*; converting them to counts is a bigger step than reading one
+bound off a range, and it needs the demand side — how many papers a chapter's pool must supply in a
+year — which is `MODEL_PAPERS_POLICY` territory and is not settled. **CD-122's shape is the
+precedent to follow**: read the rule that exists, record the reading and its reasoning, and let the
+next defect say whether more is needed.
+
+**Blocks:** nothing. পাঠ ১৩ does not need it — CD-135(h)'s `Analyze` requirement is computable
+either way at the sizes in play.
+
+**Where it bites first:** a **recall-heavy chapter** — নামতা, বর্ণমালা, Math tables — where the
+material genuinely supports hundreds of `Remember` items and a percentage floor on `Analyze` would
+either cap the pool or force reasoning items the chapter cannot support. At that point the choice is
+between a smaller pool than the source allows and an invented item, and both are wrong.
+
+**Needed by:** before the first recall-heavy chapter is banked at scale.
+
+### SECOND LIVE CASE — accepted by the Principal 2026-08-15, still RAISED not ruled
+
+পাঠ ১৩ wave 3, measured rather than hypothesised. **Two findings.**
+
+**(a) An `Analyze` floor forbids 28 of 32 distinct chapter-sourced items on a chapter that
+supplies them.** After CD-134 and CD-136 released six slots, the chapter genuinely supports about
+32 further items. `Analyze` stood at 4, and a 10% floor caps the pool at **40** — so **only 4 of
+the 32 could be authored** until `Analyze` grew. The forbidden 28 are not near-duplicates and not
+unsupported by the source: **they are scholarship-shaped items the chapter can answer, blocked by
+the proportion of a different level.** Under absolute counts the question would instead have been
+*"does the pool hold enough `Analyze` items to build the papers it must build?"* — to which the
+answer at 12 items is plainly yes, at any pool size.
+
+**(b) Margin costs about TWO items of authoring per item of margin, because the floor rises with
+the total.** Adding one item to buy margin raises N, which raises every floor, which consumes part
+of the margin just bought. Measured on this bank: moving from the ruled minimum of **79** to the
+authored **88** — 9 items — bought margins of only **+2 · +2 · +3** on `Understand` · `Apply` ·
+`Analyze`. **A percentage floor charges compound interest on its own safety margin**, and an
+absolute floor does not: there, one item of margin costs one item.
+
+**Both findings point the same way and neither is dispositive.** Recorded so the ruling is made on
+measurements rather than on a hypothetical — which was the Principal's stated reason for holding it
+open at CD-135.
+
+---
+
+## ⚑ PENDING-P-037 — CD-136's `model_note` declaration cannot be written on four of the six question types
+
+**Status: OPEN — surfaced by authoring, not by review. Nothing built, nothing worked around.**
+*(Next free number verified at source: no `P-037` token existed anywhere in the repo before this row.)*
+
+**CD-136(b) requires** that an item with a teacher-supplied language key **"declares it in its own
+`model_note`, so the provenance travels with the item and not only with the header."**
+
+**Read against the LOCKED payload schema, that field exists on TWO of the six question types.**
+`answer_key.model_note` covers `short_answer`; `descriptive` can carry the declaration in its
+rubric criterion. **`mcq`, `fill_blank`, `true_false` and `matching` have no prose field at all** —
+`mcqOption` carries only `option_id`, `text`, `is_correct`, `why_wrong`, and `fillBlank` only
+`blank_no`, `accepted`, `normalized_match`, `marks`. Both are `additionalProperties: false`.
+
+**It did not bite in wave 3, and the reason is luck rather than design.** The three teacher-key
+slots — S06 বিপরীত · S12 যুক্তবর্ণ · S13 এক কথায় প্রকাশ — were all authored as `short_answer`, so
+all nine carry their declaration. **The same content as an MCQ could not.** A বিপরীত শব্দ item with
+four options is an ordinary C5 question and `BAN-S05` is a live slot on this very chapter.
+
+**Why it is not worked around here.** The obvious move — put the declaration in a distractor's
+`why_wrong`, or in the header only — **is the exact failure CD-136 and QB-D-013 both exist to
+prevent**: a header note is lost the moment an item is lifted into a paper. And the schema is
+**LOCKED and supersede-only (CD-013)**, so widening it locally is the silent divergence CD-013
+prevents.
+
+**INTERIM AUTHORING RULE — IN FORCE (Principal, 2026-08-15).** Not queued, not deferred:
+**any item carrying a teacher-supplied key is authored as `short_answer` or `descriptive`.**
+A chapter needing a teacher-keyed `mcq`, `fill_blank`, `true_false` or `matching` item is
+**STOP-AND-ASK, never a workaround** — the declaration does not go in a `why_wrong` and does not
+go in the header alone. **Recorded in `QUESTION_BANK_POLICY` §4 beside the CD-136 amendment**, so
+it is read at authoring time rather than only here. Same shape as `pool_index` under UP-002: the
+authoring side carries the constraint while the additive field is requested upstream. **This row
+is what lifts it.** পাঠ ১৩ wave 3 complies — all nine teacher-key items are `short_answer`.
+
+**What is proposed, for ruling:** route as an **additive** upstream request beside UP-002/UP-003 —
+an optional `model_note` on the payload root rather than inside `answer_key`, which covers all six
+types at once and leaves existing items valid. **Not written; raised.**
+
+**Blocks:** nothing today. **Becomes owed** the first time a teacher-supplied language key is wanted
+on an `mcq`, `fill_blank`, `true_false` or `matching` item — which is any chapter whose S05 or S04
+draws on S06/S12/S13 material.
