@@ -18,6 +18,7 @@ are different.
 | canon/marklogic/MarkLogic_SCI_BGS_Spine.md | REQUIRED |
 | canon/marklogic/MarkLogic_QuestionPolicy.md | REQUIRED |
 | canon/marklogic/C5_Bangla_Source_13-23.md | REQUIRED |
+| canon/marklogic/SLOT_REGISTER.json | REQUIRED |
 | canon/islamic-curation/REF-01_Curation_Policy.md | REQUIRED |
 | canon/islamic-curation/REF-01_Curation_Policy_v1_3.md | REQUIRED |
 | canon/names/REF-20_Approved_Names_Pool.md | REQUIRED |

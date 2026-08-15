@@ -36,6 +36,7 @@ trigger the "promote me" warn on a VENDORED-UNPROVEN row.
 | tools/audits/grid_count_check.py | REQUIRED |
 | tools/audits/ledger_check.py | REQUIRED |
 | tools/audits/int_id_check.py | REQUIRED |
+| tools/audits/slot_register_check.py | REQUIRED |
 | tools/hub-export/validate_import.py | REQUIRED |
 | tools/hub-export/import-contract.schema.json | REQUIRED |
 | tools/hub-export/LOCKED_C5_PlanSchema_v1.json | REQUIRED |
