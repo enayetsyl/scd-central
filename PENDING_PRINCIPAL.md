@@ -1233,3 +1233,40 @@ types at once and leaves existing items valid. **Not written; raised.**
 **Blocks:** nothing today. **Becomes owed** the first time a teacher-supplied language key is wanted
 on an `mcq`, `fill_blank`, `true_false` or `matching` item — which is any chapter whose S05 or S04
 draws on S06/S12/S13 material.
+
+---
+
+## ⚑ PENDING-P-038 — under CD-138(e), nothing checks that a slot is admitted by ANY chapter; and S14 at C5 Bangla is already down to one
+
+**Status: RAISED, not ruled — the Principal raised it in the same breath as the ruling it follows
+from, and it is recorded here rather than built.**
+*(Next free number verified at source: no `P-038` token existed anywhere in the repo before this row.)*
+
+**The question, per (subject, class):** does the register owe a **completeness check** — that every
+slot is admitted by **at least one** syllabus chapter — and **at what point in the year is it read?**
+**Additionally: report any slot admitted by EXACTLY ONE chapter**, as a single point of failure.
+
+**Why it exists.** CD-138(e) makes admissibility a per-chapter declaration and gives the gate exactly
+one job: check floors over the declared set, and FAIL on an item in a slot declared inadmissible.
+**Nothing in that mechanism looks across chapters.** So a slot every chapter declares inadmissible —
+each with a perfectly good one-line content reason — **fails nothing, and the paper it belongs to is
+silently unfillable.** The gate is right at every chapter and wrong about the year.
+
+**It is no longer hypothetical (CD-139(f)).** At C5 Bangla, **S14 is admitted by exactly one chapter
+— পাঠ ৪** — on নমুনা আবেদনপত্র (ছাপা ২৪), the সাত-অংশের ছক (২৫) and অনুশীলনী ২ ও ৪, with evidence
+crops on disk. **Retire or exclude that one chapter and the slot has no chapter at all**, and no gate
+in the suite would say so. **S15 at C5 stands at ZERO admitting chapters today** — declared, revisable
+on evidence, and precisely the state this check would report.
+
+**Blocked on:** **MarkLogic §৪'s syllabus split**, unread for this purpose (chain handoff §6 records
+it UNRESOLVED). The check needs to know **what the year's chapter set IS** before it can say a slot is
+unserved by all of it — and **a query's silence is evidence only if the query is known to be complete**
+(`TOOLS-CR-005`). A completeness check built over an incomplete chapter list would report false
+single-points-of-failure and, worse, false all-clears.
+
+**Not proposed as a gate today, and the reason is the same one:** the obvious implementation — sweep
+the banks on disk and count admitting chapters per slot — **measures the banks that exist, not the
+syllabus**. At C5 Bangla today that would read S14 as zero-admitted, because পাঠ ৪ has no bank yet.
+
+**Blocks:** nothing today. **Becomes owed** when the first full-year C5 Bangla paper is assembled
+from chapter banks — the first moment the year, rather than the chapter, is the unit being checked.
