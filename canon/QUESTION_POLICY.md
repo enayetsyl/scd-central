@@ -1,4 +1,4 @@
-# QUESTION_POLICY — v1.2 (canon)
+# QUESTION_POLICY — v1.3 (canon)
 
 *Adopted 2026-08-14 by Principal ruling, unification session 2. Location: `canon/QUESTION_POLICY.md`.*
 *Minted as **CD-092 … CD-113** — one row per §3 resolved conflict, plus §2, §4, §5 and §6, per §10.*
@@ -26,6 +26,16 @@ verification was **`6ecbe3b`** — the handoff chain carried `4bc66d7` and was t
 | §4 coverage | an unserved slot's reason unconstrained | the reason must be that the **CONTENT** does not support it, never the chapter's own use-line | **CD-134** |
 | §6 Bloom row | band at pool level — both bounds FAIL | **pool = REF-06 §3.6's LOWER BOUNDS ONLY**; the band survives at paper level | **CD-135** |
 | §9 | — | two rows added: the §6 Bloom row, and `QUESTION_BANK_POLICY` §4's first bullet → stimulus scope | **CD-135 · CD-136** |
+
+**v1.3 — 2026-08-15, question-banks session 6. The successor clause §4 wrote for itself has fired.**
+Repo tip at verification was **`5f95ce2`**; the handoff chain carried `dda7956` and was two commits
+stale — re-read, not carried.
+
+| § | Was | Now | Row |
+|---|---|---|---|
+| §4 coverage | the **header-stated target** binds, because no slot-mapping existed as data | **`canon/marklogic/SLOT_REGISTER.json` binds** — declared `task_mode`, per-chapter admissibility, paper-level undivided demand | **CD-138** |
+| §6 row 10 | *"every topic and every spine slot-type supplied"* | **admitted TASK, not slot-id presence** | **CD-138** |
+| §4 S14/S15 | out of chapter banks as a slot-level bar (CD-136(c)) | a **per-chapter content declaration**; পাঠ ৪ admits S14 | **CD-139** |
 
 **Status: ADOPTED. This file is canon and is cited, never copied (AGENTS.md §8).**
 
@@ -113,6 +123,33 @@ production time and **stated in the bank file header with a one-line reason**. T
 **coverage, not count**: the Pool must supply every topic in the chapter, every question-type its
 spine slots need, and every difficulty band. When per-chapter spine slot-mapping exists as data, this
 replaces the header-stated target.
+
+**IT NOW EXISTS — `canon/marklogic/SLOT_REGISTER.json` (CD-138), and the sentence above has fired.**
+The register carries, per (subject, class, slot), the spine's **কারণ column verbatim** as the class's
+`admitted_task`, a **declared** `task_mode ∈ {alternative, composite, simple}` with `admitted_set` /
+`selected` / `parts`, and `items_per_paper` · `marks` · `marks_per_item` as separate fields.
+**Three consequences bind the bank shape:**
+
+- **Every item declares the task it does**, in the register's own vocabulary (`task_index`, beside
+  `slot_index`). **A slot id is not a task**: an `alternative` slot admits only the task its class
+  **selected**, and a `composite` slot requires **every part of the task in every item** — an item
+  that breaks the যুক্তবর্ণ without forming the শব্দ does half the task and now fails.
+- **The chapter declares its admissible slots in its own header** (`admissible_slots`), with a
+  **one-line CONTENT reason per excluded slot** (`slot_exclusions`), countersigned at §6's human
+  review pass. **The gate never infers admissibility from content** — that inference is
+  `QB-CR-011`'s shape. An item in a slot the chapter declared inadmissible **FAILs**.
+- **Demand is paper-level and undivided (CD-138(d)).** An admissible chapter owes the paper's full
+  `items_per_paper` for that slot, capped by `PENDING-P-036`'s `min()`. **`items_per_paper` and
+  `marks` are separate facts** — BAN C5 is **56 items and 100 marks**, and only the marks column
+  totals 100.
+
+**`chapter_authorable` is DERIVED, never authored (CD-138(f)).** It is computed from the per-chapter
+declarations above; the register carries no authored copy, and a register row that carries one FAILs.
+**No gate reads a spine file.** CD-138(b) makes `task_mode` and its sets **declared**, and the markers
+that evidence them — *যেকোনো একটা* · *অথবা* · *বা* · *ও* · *+* · *ভেঙে* — are **authoring evidence,
+never gate inputs**; the spine parse lives at build time in `tools/audits/slot_register_check.py`.
+**S14/S15 are not slot-level exclusions** — per **CD-139** they are per-chapter content declarations
+like any other slot.
 
 **A chapter's own *কোন প্রশ্নে কাজে লাগবে* line is ADVISORY and caps nothing (CD-134, applying
 CD-122(b)).** That line is the book describing its own likely uses. **CD-122(b) already ruled it
@@ -234,7 +271,7 @@ proportion, so there is no per-CT domain gate.
 | Bloom band | **Pool level: REF-06 §3.6's LOWER BOUNDS ONLY**, read at **chapter** scope — six Bloom levels (CD-121 for the axis, **CD-135** for the floor). No upper bound fails a pool; per-level counts against floors are REPORTed every run. The band, both bounds, is a **paper** rule |
 | Difficulty | **Pool level: easy ≥30% present.** No pool-level hard test — hard ≤25% is a paper rule (CD-122) |
 | Repetition | no verbatim reuse of non-`Remember` items |
-| Coverage | every topic and every spine slot-type supplied |
+| Coverage | every topic supplied, and **every item does the task its class ADMITS at the slot it sits in** — read against `canon/marklogic/SLOT_REGISTER.json` (**CD-138**), not against slot-id presence and no longer against the header-stated target |
 | Domain ratio | **paper level only**, never per pool |
 
 **Two axes, not two ranges on one axis (CD-121, correcting this section).** This table read

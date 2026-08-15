@@ -48,7 +48,7 @@ THE GATES — 21, and where each comes from
 | BLOOM-BAND          | §6 row 7 — CD-121 for the axis (REF-06 §3.6 only; UD-23), **CD-135 for the floor** (pool = lower bounds only; the band is a paper rule) |
 | DIFFICULTY          | §6 row 8, as ruled by CD-122 (easy floor only) |
 | REPETITION          | §6 row 9 |
-| COVERAGE            | §6 row 10, header fallback per §4 (CD-122) |
+| COVERAGE            | §6 row 10 — reads the SLOT REGISTER (CD-138); the header fallback of CD-122(b) is spent |
 | DOMAIN-RATIO        | §6 row 11 — **paper level only; the per-pool form is retired** |
 | ANSWER-SHAPE        | QB_POLICY §5 |
 | RUBRIC-SPECIFICITY  | QB_POLICY §5 |
@@ -1221,49 +1221,211 @@ def g_repetition(bank, ctx):
     rep.append(f"{exempt} `Remember` repetition(s) permitted by §5 — expected, not an error")
     return errs, rep
 
+def load_slot_register(root):
+    """→ ({(subject, class, slot_short): row}, [errors]). The register is CD-138's data.
+
+    THE ONE THING THIS LOADER MUST NOT DO, stated here because it is the whole ruling: it reads
+    `canon/marklogic/SLOT_REGISTER.json` and NOTHING ELSE. **No spine file is opened anywhere in
+    this suite.** CD-138(b) forbids a gate deriving task mode, admitted-set membership or set
+    cardinality from a header marker string (যেকোনো একটা · অথবা · বা · ও · + · ভেঙে), and the
+    cheapest way to guarantee a gate cannot read a surface is to give it no path to the file the
+    surface lives in. The spine parse lives in `tools/audits/slot_register_check.py`, at build
+    time, where it is proven and pasted — not here.
+    """
+    path = root / "canon" / "marklogic" / "SLOT_REGISTER.json"
+    if not path.exists():
+        return {}, [f"{path} not found — CD-138's register is the coverage authority and is absent"]
+    try:
+        reg = json.loads(path.read_text(encoding="utf-8"))
+    except Exception as e:  # noqa: BLE001 - the reason must reach the report, not a traceback
+        return {}, [f"{path} is unreadable: {e}"]
+    out, errs = {}, []
+    for r in reg.get("rows", []):
+        if "chapter_authorable" in r:
+            errs.append(f"{r.get('slot')}: the register carries an AUTHORED `chapter_authorable` — "
+                        f"CD-138(f) makes it DERIVED from per-chapter declarations, never authored")
+        out[(r["subject"], r["class"], r["slot"].split("-")[-1])] = r
+    return out, errs
+
+
+def _declared_tasks(row):
+    """The slot's declared task vocabulary — the ONLY strings an item may claim at this slot."""
+    if row["task_mode"] == "alternative":
+        return list(row.get("admitted_set") or [])
+    if row["task_mode"] == "composite":
+        return [p["part"] for p in row.get("parts") or []]
+    return [row.get("admitted_task")]
+
+
 def g_coverage(bank, ctx):
-    """§6 row 10 — Coverage: every topic and every spine slot-type supplied.
+    """§6 row 10 — Coverage: the pool supplies every topic, and every item DOES THE TASK ITS CLASS
+    ADMITS at the slot it sits in.
 
-    ⚑ RECORDED ABSENCE — THE PER-CHAPTER SPINE SLOT-MAPPING DOES NOT EXIST AS DATA (CD-122,
-    closing Q-3). This is written down so its ARRIVAL is a known trigger: **the day a per-chapter
-    slot-mapping is committed as data, this gate changes and this docstring is the notice.**
+    CONVERTED AT CD-138. The gate no longer reads the bank's own header-stated slot list. CD-122(b)
+    ruled that fallback *because* the per-chapter slot-mapping did not exist as data, and recorded
+    the absence so its arrival would be a known trigger — "the day a slot-mapping is committed as
+    data, this gate changes; the gate's docstring is the notice." This is that notice.
 
-    What exists instead is `canon/marklogic/C5_Bangla_Source_13-23.md`'s "কোন প্রশ্নের জন্য কোন পাঠ"
-    table, which runs the OTHER WAY — slot → best-source পাঠ, with a separate বিকল্প column — and
-    each পাঠ's own "কোন প্রশ্নে কাজে লাগবে" line, which is prose. Inverting a best/alternative
-    table into a per-chapter obligation is inventing the mapping, and §4 forbids that.
+    WHAT CHANGED, AND WHY IT IS NOT A TIGHTENING FOR ITS OWN SAKE. The old gate read SLOT-ID
+    PRESENCE: it asked whether some item carried the slot id the header named. A bank could hold
+    ten items in `S10` doing ভাব নির্ণয় — a task admitted at NO class in the whole spine — and pass,
+    because the id was present. The spine's কারণ column, where the task lives, was read by nothing.
+    That is exactly what happened, and it is the defect the register exists to catch.
 
-    So §4's fallback governs, and the Principal confirmed it: "The per-chapter target is decided at
-    production time and STATED IN THE BANK FILE HEADER with a one-line reason… When per-chapter
-    spine slot-mapping exists as data, this replaces the header-stated target." It does not, so the
-    header binds, and this gate checks the pool against the header the bank itself declares.
+    THE THREE CHECKS, each naming its ruling:
+      · ADMISSIBILITY (CD-138(e)) — the chapter declares its admissible slots in its own header,
+        with a one-line CONTENT reason per excluded slot. The gate NEVER infers admissibility from
+        content; it checks the declaration is complete and FAILs on any item sitting in a slot the
+        chapter declared inadmissible.
+      · ADMITTED TASK (CD-138(b)) — every item declares the task it does, in the register's own
+        vocabulary. An `alternative` slot admits ONLY the task its class SELECTED; another member
+        of the admitted set is a real failure and is reported as a different thing from a task
+        admitted nowhere. A `composite` slot requires EVERY part — an item doing half the task
+        (breaking the যুক্তবর্ণ without forming the শব্দ) fails here and passed before.
+      · FLOOR (CD-138(g)) — an admissible slot owes the paper's full `items_per_paper`. Demand is
+        paper-level and there is no divisor (CD-138(d)).
     """
     errs, rep = [], []
     header = bank.get("header") or {}
-    topics = header.get("topics")
-    slots = header.get("spine_slots")
+    subject, cls = bank.get("subject"), bank.get("class")
+    # The register arrives through ctx so the SELFTEST can supply a synthetic one: QB-D-012 /
+    # CD-121(e) — seeds are synthetic and no canon/marklogic file is read as fixture data. A live
+    # run has it loaded from disk by `qp_ctx_for`.
+    if ctx and "slot_register" in ctx:
+        register, reg_errs = ctx["slot_register"], ctx.get("slot_register_error") or []
+    else:
+        register, reg_errs = load_slot_register(ROOT)
+    errs += reg_errs
+    if not register:
+        return errs, rep
+    slots_for_class = {s: r for (sub, c, s), r in register.items()
+                       if sub == subject and c == cls}
+    # CD-138(f) is checked HERE, on the register actually in hand, not only in the disk loader —
+    # a check that lives only in the loader is invisible to any caller that supplies the register
+    # another way, which is precisely how the selftest supplies it. The seed proved that.
+    for s, r in sorted(slots_for_class.items()):
+        if "chapter_authorable" in r:
+            errs.append(f"register row {r.get('slot', s)} carries an AUTHORED "
+                        f"`chapter_authorable` — CD-138(f) makes it DERIVED from this bank's own "
+                        f"admissibility declaration, never authored upstream")
+    if not slots_for_class:
+        errs.append(f"the register carries no rows for {subject} C{cls} — coverage cannot be read "
+                    f"against a register that does not cover this bank's class (CD-138)")
+        return errs, rep
+
     if not header.get("reason"):
         errs.append("bank header states no one-line reason for its target — §4 requires one")
-    if topics is None or slots is None:
-        errs.append("bank header does not declare `topics` and `spine_slots` — with no slot "
-                    "mapping in data, the header IS the coverage target (§4) and cannot be absent")
+
+    # --- topics are unchanged: the register governs SLOTS, not topic coverage -------------
+    topics = header.get("topics")
+    if topics is None:
+        errs.append("bank header does not declare `topics` — the register governs slots, not "
+                    "topics, and the header remains the topic authority (§4)")
+    else:
+        have_topics = {q.get("topic_tag") for q in bank["questions"]}
+        for t in topics:
+            if t not in have_topics:
+                errs.append(f"header declares topic {t}; no item in the pool supplies it")
+
+    # --- ADMISSIBILITY, declared per chapter (CD-138(e)) ----------------------------------
+    admissible = header.get("admissible_slots")
+    exclusions = header.get("slot_exclusions") or {}
+    if admissible is None:
+        errs.append("bank header declares no `admissible_slots` — CD-138(e) requires the chapter "
+                    "to declare which slots its content can support, with a one-line content "
+                    "reason per excluded slot. The gate never infers this from content")
         return errs, rep
-    have_topics = {q.get("topic_tag") for q in bank["questions"]}
-    have_slots = set((bank.get("slot_index") or {}).values())
-    for t in topics:
-        if t not in have_topics:
-            errs.append(f"header declares topic {t}; no item in the pool supplies it")
-    for s in slots:
-        if s not in have_slots:
-            errs.append(f"header declares spine slot {s}; no item in the pool supplies it")
-    target = header.get("target")
-    if isinstance(target, int) and len(bank["questions"]) < target:
-        errs.append(f"header target is {target} items; the pool holds {len(bank['questions'])}")
+    admissible = set(admissible)
+    undeclared = [s for s in sorted(slots_for_class) if s not in admissible and s not in exclusions]
+    if undeclared:
+        errs.append("the admissibility declaration is INCOMPLETE — neither admitted nor excluded "
+                    "with a reason: " + ", ".join(undeclared)
+                    + " (CD-138(e): every register slot for this class is one or the other)")
+    for s, why in exclusions.items():
+        if not str(why).strip():
+            errs.append(f"slot {s} is excluded with an empty reason — CD-134(c) requires the "
+                        f"recorded reason to be that the CONTENT does not support it")
+        if s in admissible:
+            errs.append(f"slot {s} is declared BOTH admissible and excluded")
+    unknown = sorted((admissible | set(exclusions)) - set(slots_for_class))
+    if unknown:
+        errs.append("declared slot(s) not in the register for this class: " + ", ".join(unknown))
+
+    # --- ADMITTED TASK, per item (CD-138(b)) ----------------------------------------------
+    slot_index = bank.get("slot_index") or {}
+    task_index = bank.get("task_index") or {}
+    supply = {}
+    for q in bank["questions"]:
+        qid = q.get("qid")
+        slot = slot_index.get(qid)
+        if slot is None:
+            errs.append(f"{qid}: no slot_index entry — coverage cannot read its slot")
+            continue
+        supply[slot] = supply.get(slot, 0) + 1
+        if slot not in admissible:
+            errs.append(f"{qid}: sits in slot {slot}, which this chapter declared INADMISSIBLE"
+                        + (f" — {exclusions[slot]}" if slot in exclusions else "")
+                        + " (CD-138(e))")
+            continue
+        row = slots_for_class.get(slot)
+        if row is None:
+            errs.append(f"{qid}: slot {slot} is in no register row for {subject} C{cls}")
+            continue
+        claimed = task_index.get(qid)
+        if claimed is None:
+            errs.append(f"{qid}: declares no task — CD-138(b) makes the task a DECLARED field, "
+                        f"and slot {slot} is `{row['task_mode']}`, so slot id alone says nothing "
+                        f"about what this item does")
+            continue
+        claimed_list = claimed if isinstance(claimed, list) else [claimed]
+        declared = _declared_tasks(row)
+        mode = row["task_mode"]
+        if mode == "composite":
+            missing = [p for p in declared if p not in claimed_list]
+            extra = [c for c in claimed_list if c not in declared]
+            if missing:
+                errs.append(f"{qid}: slot {slot} is COMPOSITE and its item must do every part; "
+                            f"missing {', '.join(missing)} — half the task (CD-138(b))")
+            if extra:
+                errs.append(f"{qid}: slot {slot} declares parts {declared}; this item also claims "
+                            f"{extra}, which is not a declared part")
+        else:
+            for c in claimed_list:
+                if c == row.get("selected") or (mode == "simple" and c == row.get("admitted_task")):
+                    continue
+                if mode == "alternative" and c in declared:
+                    errs.append(f"{qid}: does `{c}` at slot {slot}. That task IS admitted at this "
+                                f"slot, but C{cls} SELECTED `{row['selected']}` — an off-choice "
+                                f"item, not a wrong slot (CD-138(b))")
+                else:
+                    errs.append(f"{qid}: does `{c}` at slot {slot}, which admits "
+                                f"{declared} at C{cls}. Admitted nowhere in this slot's set")
+
+    # --- FLOOR over the declared set only (CD-138(g)) -------------------------------------
+    short = []
+    for s in sorted(admissible):
+        row = slots_for_class.get(s)
+        if row is None:
+            continue
+        owed, have = row["items_per_paper"], supply.get(s, 0)
+        if have < owed:
+            short.append(f"{s} {have}/{owed}")
+    if short:
+        errs.append("admissible slot(s) under the paper's own per-slot demand — an admissible "
+                    "chapter owes the FULL demand, there is no divisor (CD-138(d), CD-138(g)): "
+                    + " · ".join(short))
+
     if len(bank["questions"]) < 20:
         errs.append(f"pool holds {len(bank['questions'])} items — REF-09 §4.3's floor is 20 per "
                     f"chapter (cite §4.3, not REF-08 §4.1, for the chapter reading)")
-    rep.append(f"coverage read against the HEADER-STATED target (§4 fallback — Q-3): "
-               f"{len(topics)} topic(s), {len(slots)} slot(s), target {target}")
+
+    rep.append(f"coverage read against THE REGISTER (CD-138 — this replaces the header-stated "
+               f"target, §4's own successor clause): {len(slots_for_class)} slot(s) for {subject} "
+               f"C{cls}, {len(admissible)} declared admissible, {len(exclusions)} excluded with a "
+               f"content reason")
+    rep.append("per-slot demand is PAPER-LEVEL and undivided (CD-138(d)); P-036's `min()` has no "
+               "second term at slot granularity — its other half is a Bloom-axis quantity, and no "
+               "ruling maps slots to Bloom (QB-CR-011 forbids the inference). Reported, not applied")
     return errs, rep
 
 def g_domain_ratio(bank, ctx):
@@ -1353,7 +1515,7 @@ GATES = [
     ("BLOOM-BAND",         {"qp6": g_bloom_band},                        "§6.7 · CD-121 · CD-135"),
     ("DIFFICULTY",         {"qp6": g_difficulty},                        "§6.8 · CD-122"),
     ("REPETITION",         {"qp6": g_repetition},                        "§6.9"),
-    ("COVERAGE",           {"qp6": g_coverage},                          "§6.10 · CD-122"),
+    ("COVERAGE",           {"qp6": g_coverage},                          "§6.10 · CD-138"),
     ("DOMAIN-RATIO",       {"qp6": g_domain_ratio},                      "§6.11 (per-pool RETIRED)"),
     ("ANSWER-SHAPE",       {"qb": g_answer_shape},                       "§5"),
     ("RUBRIC-SPECIFICITY", {"qb": g_rubric_specificity},                 "§5"),
@@ -1421,8 +1583,10 @@ def run(bank, ctx=None, quiet=False):
 def qp_ctx_for(bank):
     slugs, slug_err = load_ref19_slugs(ROOT)
     tags, tag_err = load_topic_numbers(ROOT)
+    reg, reg_err = load_slot_register(ROOT)
     ctx = {"ref19_slugs": slugs, "ref19_error": slug_err,
-           "topic_numbers": tags, "topic_error": tag_err, "extraction": None}
+           "topic_numbers": tags, "topic_error": tag_err, "extraction": None,
+           "slot_register": reg, "slot_register_error": reg_err}
     ex = bank.get("extraction_path")
     if ex and (ROOT / ex).exists():
         ctx["extraction"] = (ROOT / ex).read_text(encoding="utf-8", errors="replace")
@@ -1939,7 +2103,7 @@ def _qp_good_bank():
     blooms = (["Remember"] * 6 + ["Understand"] * 8 + ["Apply"] * 6
               + ["Analyze"] * 3 + ["Evaluate"] * 1)
     diffs = (["easy"] * 10 + ["medium"] * 10 + ["hard"] * 4)
-    qs, pool, slot_idx, src_idx = [], {"HW": [], "AS": [], "CT": []}, {}, {}
+    qs, pool, slot_idx, src_idx, task_idx = [], {"HW": [], "AS": [], "CT": []}, {}, {}, {}
     for i in range(24):
         qid = f"QP-BAN-C5-U99-Q{i + 1:02d}"
         # S05 is বহুনির্বাচনি (mcq); S02 শব্দার্থ and S07 সংক্ষিপ্ত are short; S08 is descriptive.
@@ -1969,24 +2133,76 @@ def _qp_good_bank():
             q["rubric"] = _qp_rubric()
         qs.append(q)
         slot_idx[qid] = slot
+        task_idx[qid] = SYNTH_REGISTER_TASK[slot]
         src_idx[qid] = anchors[i % len(anchors)]
         pool[["HW", "AS", "CT"][i % 3]].append(qid)
     return {
         "bank_id": "SYNTH-BAN-C5-U99", "subject": "BAN", "class": 5, "chapter": "U99",
         "header": {"target": 24,
                    "reason": "synthetic fixture sized to exercise all eleven gates",
-                   "topics": SYNTH_TOPICS, "spine_slots": SYNTH_SLOTS},
-        "pool_index": pool, "slot_index": slot_idx, "source_index": src_idx,
+                   "topics": SYNTH_TOPICS, "spine_slots": SYNTH_SLOTS,
+                   # CD-138(e) — the chapter declares what its content can support, and gives a
+                   # CONTENT reason for each slot it cannot. The gate never infers either.
+                   "admissible_slots": ["S02", "S05", "S07", "S08"],
+                   "slot_exclusions": {
+                       "S10": "কল্পিত পাঠ ৯৯-এ পদ নির্ণয়ের উপাদান নেই",
+                       "S12": "কল্পিত পাঠ ৯৯-এ যুক্তবর্ণের অনুশীলনী নেই"}},
+        "pool_index": pool, "slot_index": slot_idx, "task_index": task_idx,
+        "source_index": src_idx,
         "questions": qs,
     }
 
+def _synth_register():
+    """A SYNTHETIC slot register for the fictional পাঠ ৯৯ fixture (CD-138).
+
+    `canon/marklogic/SLOT_REGISTER.json` is NOT read here. It is a canon/marklogic file, and the
+    fixture rule is absolute: seeds are synthetic (QB-D-012, CD-121(e)). The live register is a
+    CONTROL — it is exercised by `tools/audits/slot_register_check.py`, which proves it against the
+    spine — and a control is not a fixture.
+
+    It carries one row of each `task_mode` on purpose, because the three modes are what COVERAGE
+    now discriminates: `simple` (task fixed), `alternative` (a set, of which the class SELECTS one),
+    `composite` (every part, every item).
+    """
+    def row(slot, mode, items, mpi, task=None, admitted=None, selected=None, parts=None):
+        r = {"subject": "BAN", "class": 5, "slot": f"BAN-{slot}", "task_mode": mode,
+             "slot_task": f"কল্পিত কাজ {slot}",
+             "nape_frame": f"কল্পিত মূল কাঠামো {slot} · {items}টি · {mpi}×{items}",
+             "admitted_task": task, "items_per_paper": items, "marks": items * mpi,
+             "marks_per_item": mpi, "d_code": "D0", "authority": "SYNTHETIC — not NAPE",
+             "row_constraints": []}
+        if mode == "alternative":
+            r["admitted_set"], r["selected"] = admitted, selected
+        if mode == "composite":
+            r["parts"] = [{"part": p, "marks": None} for p in parts]
+        return r
+
+    rows = [
+        row("S02", "simple", 5, 1, task="শব্দার্থ"),
+        row("S05", "simple", 5, 1, task="বহুনির্বাচনি"),
+        row("S07", "simple", 4, 2, task="সংক্ষিপ্ত উত্তর"),
+        row("S08", "simple", 3, 5, task="বিস্তৃত উত্তর"),
+        row("S10", "alternative", 5, 1, task="পদ নির্ণয়",
+            admitted=["ভাষারীতি পরিবর্তন", "পদ নির্ণয়", "ক্রিয়ার কাল"], selected="পদ নির্ণয়"),
+        row("S12", "composite", 5, 1, task="যুক্তবর্ণ ভেঙে শব্দ",
+            parts=["যুক্তবর্ণ ভাঙা", "শব্দ গঠন"]),
+    ]
+    return {(r["subject"], r["class"], r["slot"].split("-")[-1]): r for r in rows}
+
+
+SYNTH_REGISTER_TASK = {"S02": "শব্দার্থ", "S05": "বহুনির্বাচনি",
+                       "S07": "সংক্ষিপ্ত উত্তর", "S08": "বিস্তৃত উত্তর"}
+
+
 def _qp_ctx():
-    """A synthetic context. The REF-19 and TOPIC_NUMBERS registers are STUBBED for the qp_selftest so
-    the instrument is proven against fixtures rather than against the live canon files — the same
-    discipline the fixtures themselves follow."""
+    """A synthetic context. The REF-19, TOPIC_NUMBERS and SLOT_REGISTER registers are STUBBED for
+    the qp_selftest so the instrument is proven against fixtures rather than against the live canon
+    files — the same discipline the fixtures themselves follow."""
     return {"extraction": SYNTH_EXTRACTION,
             "ref19_slugs": SYNTH_SLUGS,
-            "topic_numbers": set(SYNTH_TOPICS) | {"TOP-BAN-C5-07"}}
+            "topic_numbers": set(SYNTH_TOPICS) | {"TOP-BAN-C5-07"},
+            "slot_register": _synth_register(),
+            "slot_register_error": []}
 
 def _qp_set_blooms(b, seq):
     """Assign an exact Bloom distribution across the 24-item fixture.
@@ -2052,8 +2268,53 @@ def qp_selftest():
     add("REPETITION", "an identical stem on two Understand items",
         lambda b: b["questions"][10].update(
             {"question_text": b["questions"][11]["question_text"]}))
-    add("COVERAGE", "a declared spine slot that no item supplies",
-        lambda b: b["header"]["spine_slots"].append("S15"))
+    # --- COVERAGE, converted at CD-138: the register, not the header's slot list ------------
+    # The six S05 items are re-slotted wholesale and the DECLARATION is moved with them, so each
+    # case carries exactly one defect. A seed that also broke the floor or the declaration would
+    # still go red and would prove less.
+    def _reslot(b, dest, task, n=6):
+        moved = [q["qid"] for q in b["questions"] if b["slot_index"][q["qid"]] == "S05"][:n]
+        for qid in moved:
+            b["slot_index"][qid] = dest
+            b["task_index"][qid] = task
+        b["header"]["admissible_slots"] = [s for s in b["header"]["admissible_slots"]
+                                           if s != "S05"] + [dest]
+        b["header"]["slot_exclusions"].pop(dest, None)
+        b["header"]["slot_exclusions"]["S05"] = "কল্পিত পাঠ ৯৯-এ বহুনির্বাচনির উপাদান নেই"
+        return b
+
+    add("COVERAGE", "ten items in S10 doing ভাব নির্ণয় — a task admitted at NO class in the "
+                    "whole spine. THIS IS THE LIVE DEFECT THE REGISTER WAS BUILT FOR: it passed "
+                    "the old slot-id-presence reading, because the id was there",
+        lambda b: _reslot(b, "S10", "ভাব নির্ণয়"))
+    add("COVERAGE", "an OFF-CHOICE item — ক্রিয়ার কাল is in S10's admitted_set, but C5 selected "
+                    "পদ নির্ণয়. A different failure from the one above and reported as one",
+        lambda b: _reslot(b, "S10", "ক্রিয়ার কাল"))
+    add("COVERAGE", "an item sitting in a slot THIS CHAPTER DECLARED INADMISSIBLE (CD-138(e))",
+        lambda b: b["slot_index"].update(
+            {b["questions"][0]["qid"]: "S12"}))
+    add("COVERAGE", "a COMPOSITE slot done by halves — the item breaks the যুক্তবর্ণ and never "
+                    "forms the শব্দ. Passed every gate before CD-138",
+        lambda b: _reslot(b, "S12", ["যুক্তবর্ণ ভাঙা"]))
+    add("COVERAGE", "an INCOMPLETE admissibility declaration — S12 neither admitted nor excluded "
+                    "with a reason",
+        lambda b: b["header"]["slot_exclusions"].pop("S12"))
+    add("COVERAGE", "a slot excluded with an EMPTY reason — CD-134(c) requires a content reason",
+        lambda b: b["header"]["slot_exclusions"].update({"S10": "   "}))
+    add("COVERAGE", "an admissible slot under the paper's own per-slot demand — S07 owes 4 and "
+                    "supplies 2 (CD-138(g): the full demand, no divisor)",
+        lambda b: [b["questions"].remove(q) for q in list(b["questions"])
+                   if b["slot_index"][q["qid"]] == "S07"][:6])
+    add("COVERAGE", "an item that declares NO task — slot id alone says nothing about what it does",
+        lambda b: b["task_index"].pop(b["questions"][0]["qid"]))
+    add("COVERAGE", "a bank with no admissibility declaration at all",
+        lambda b: b["header"].pop("admissible_slots"))
+    add("COVERAGE", "a register that carries an AUTHORED chapter_authorable — CD-138(f) makes it "
+                    "derived from these very declarations, never authored upstream",
+        lambda b: None,
+        ctx_override={"slot_register": {
+            k: (dict(v, chapter_authorable=True) if k[2] == "S02" else v)
+            for k, v in _synth_register().items()}})
     add("DOMAIN-RATIO", "an annual paper that is entirely জ্ঞান",
         lambda b: b.update({"papers": [
             {"paper_id": "SYNTH-ANNUAL", "kind": "annual",
@@ -2122,6 +2383,13 @@ def qp_selftest():
                        "compliant and must not fire",
          lambda b: _qp_set_blooms(b, ["Remember"] * 6 + ["Understand"] * 6 + ["Apply"] * 6
                                      + ["Analyze"] * 6)),
+        ("COVERAGE", "six items in S10 doing পদ নির্ণয় — the task C5 SELECTED from that slot's "
+                     "three. The gate must fire on the wrong task and stay silent on the right "
+                     "one, or it is not reading the task at all",
+         lambda b: _reslot(b, "S10", "পদ নির্ণয়")),
+        ("COVERAGE", "a slot declared inadmissible with a content reason and supplying ZERO items "
+                     "— that is the declaration working, not a coverage failure (CD-138(e))",
+         lambda b: None),
         ("DIFFICULTY", "a pool at 70% easy — CAN-SUPPLY, not equality, so this passes",
          lambda b: [q.update({"difficulty": "easy"}) for q in b["questions"][:17]]),
         ("DIFFICULTY", "a pool that is 67% HARD while still holding easy ≥30% — CD-122: a pool "
@@ -2140,6 +2408,33 @@ def qp_selftest():
             ok = False
         else:
             print(f"  PASS  {gate:<14} stays quiet on: {label}")
+
+    # --- CD-138(b): THE MARKER-EDIT SEED. A gate whose verdict moves when a marker string is
+    # --- edited is non-conformant. Here the whole of the register's PROSE — the fields that
+    # --- carry or quote the markers (যেকোনো একটা · অথবা · বা · ও · + · ভেঙে) — is rewritten to
+    # --- garbage while every DECLARED field is left untouched. The verdict must not move.
+    # --- The other half of this seed lives at build time in tools/audits/slot_register_check.py,
+    # --- which strips the markers from the SPINE ITSELF and re-runs. Together they cover both
+    # --- files; this suite opens no spine at all, which is the structural half of the guarantee.
+    print()
+    scrubbed = {}
+    for k, v in _synth_register().items():
+        v = dict(v)
+        v["slot_task"] = "যেকোনো একটা অথবা বা ও + ভেঙে — এই লেখাটার কোনো মানে নেই"
+        v["nape_frame"] = "MARKER SOUP অথবা যেকোনো একটা"
+        v["row_constraints"] = [{"id": "NOISE", "text": "ভেঙে অথবা যেকোনো একটা"}]
+        scrubbed[k] = v
+    base_ctx = dict(ctx)
+    noise_ctx = dict(ctx)
+    noise_ctx["slot_register"] = scrubbed
+    a = qp_run(_qp_good_bank(), base_ctx, quiet=True)[0]
+    b_ = qp_run(_qp_good_bank(), noise_ctx, quiet=True)[0]
+    marker_ok = (a == b_ == [])
+    print(f"  {'PASS' if marker_ok else 'FAIL'}  CD-138(b)      "
+          + ("every marker-bearing prose field in the register rewritten to noise — verdict "
+             "byte-identical, because COVERAGE reads DECLARED fields and no marker string"
+             if marker_ok else f"marker edit moved the verdict: {a} -> {b_}"))
+    ok = ok and marker_ok
 
     # --- CD-055 self-declaration for part-authored banks, seeded BOTH directions -------
     # The load-bearing case is the fourth: the marker must buy the control exclusion and
