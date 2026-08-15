@@ -215,7 +215,10 @@ every item.
    > eleven checks:** mark value against the SLOT REGISTER's `marks_per_item` (CD-138; **amended 2026-08-15** from *"spine values"*, which named a vendored copy that is now retired) · source traceability to the chapter
    > extraction · script guard (LANGUAGE_RULES §7) · `ref19_topic_id` against REF-19's slug set ·
    > `topic_tag` against `TOPIC_NUMBERS.md` (**an unminted number FAILs, never auto-mints**) ·
-   > key/rubric present per type · Bloom band at **chapter** scope · difficulty easy ≥30% /
+   > key/rubric present per type · Bloom band at **chapter** scope · **export sync against
+   > `banks/envelopes/` (added 2026-08-15 — the export ran two waves behind the bank and no gate
+   > could see it, because every gate reads the bank and §11 imports the envelopes)** ·
+   > difficulty easy ≥30% /
    > hard ≤25% with the Pool *able to supply* · repetition (no verbatim reuse above `Remember`) ·
    > coverage of every topic and spine slot-type · **domain ratio at paper level only**.
    >

@@ -1,4 +1,6 @@
-# QUESTION_POLICY — v1.4 (canon)
+# QUESTION_POLICY — v1.5 (canon)
+
+**v1.5 — 2026-08-15.** §6 gains an **Export sync** row (ENVELOPE-SYNC), the suite's 23rd gate and the second to execute a ruling rather than a policy clause. Motivated by a named incident, quoted in the row itself.
 
 **v1.4 — 2026-08-15.** §6's Mark value row moves to the slot register and both vendored per-item mark tables are retired; §9 gains the pointer. The gate list is otherwise unchanged.
 
@@ -275,6 +277,7 @@ proportion, so there is no per-CT domain gate.
 | Repetition | no verbatim reuse of non-`Remember` items |
 | Coverage | every topic supplied, and **every item does the task its class ADMITS at the slot it sits in** — read against `canon/marklogic/SLOT_REGISTER.json` (**CD-138**), not against slot-id presence and no longer against the header-stated target |
 | Domain ratio | **paper level only**, never per pool |
+| **Export sync** | **`banks/envelopes/` must match the bank** — same qid set, same payload per id, and the array and `single/` must agree with each other. **ADDED 2026-08-15 on the wave-2 staleness incident:** the export sat at **36 envelopes while the bank held 88 and then 110, for two waves**, and no gate could see it because every gate here reads the BANK while **§11 imports the ENVELOPES**. It would have carried ten `S10 ভাব নির্ণয়` items — a task admitted at no class — into the Hub as `draft`, **past COVERAGE, the gate built for that exact defect**. A bank with no export at all is REPORTED, not failed: that is an unrun flow, not drift |
 
 **Two axes, not two ranges on one axis (CD-121, correcting this section).** This table read
 *"Pool spans the wider of REF-06 §3.6 / MarkLogic §৩"* until 2026-08-14. **That was wrong.** Per

@@ -58,8 +58,16 @@ THE GATES — 21, and where each comes from
 | AS-MIX              | QB_POLICY §5 (QB-D-004) |
 | NUMERALS            | QB_POLICY §5 (LANGUAGE_RULES §2) |
 | CEILING             | QB_POLICY §5 (QB-D-002) — REPORT ONLY |
+| ENVELOPE-SYNC       | AGENTS §11 · Principal ruling 2026-08-15 — no § row of its own |
 
-11 from §6 · 14 from §5 · 4 shared names ⇒ **21 gates**.
+11 from §6 · 14 from §5 · 4 shared names ⇒ 21, **plus two that execute a RULING rather than a
+policy clause: SOURCE-EXCLUSION (CD-131) and ENVELOPE-SYNC ⇒ 23 gates.**
+
+**ENVELOPE-SYNC is here because every other gate in this file reads the BANK, and AGENTS §11
+imports the ENVELOPES.** `banks/envelopes/` sat two waves behind — 36 envelopes against 88 and
+then 110 bank items — and nothing could see it, because the export path reads a file the gate
+never opened. It would have shipped ten `S10 ভাব নির্ণয়` items into the Hub past COVERAGE, the
+gate built for exactly that defect.
 
 SELFTEST FIRST, ALWAYS (CD-025). Both families' selftests run before any verdict. Every fixture is
 synthetic and written for the test; the §6 family's chapter is a fictional পাঠ ৯৯ that exists in no
@@ -72,6 +80,7 @@ book. No file under canon/sources/ or canon/marklogic/ is read as fixture data.
 
 Exit 0 = CLEAN, 1 = FAIL. Paste output verbatim per AGENTS.md §5.
 """
+import hashlib
 import json
 import re
 import sys
@@ -1479,6 +1488,141 @@ def g_coverage(bank, ctx):
                "ruling maps slots to Bloom (QB-CR-011 forbids the inference). Reported, not applied")
     return errs, rep
 
+
+def bank_content_digest(items):
+    """sha256 over a list of item dicts, sorted by qid. The signature row and this gate use the
+    SAME function, so "what the Principal signed" and "what the Hub receives" are comparable
+    quantities rather than two descriptions that happen to sound alike."""
+    return hashlib.sha256(json.dumps(sorted(items, key=lambda q: q.get("qid") or ""),
+                                     ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
+def envelope_prefix(qids):
+    """The `QP-{SUBJ}-C{n}-U{u}-` prefix every qid in one bank shares.
+
+    THIS EXISTS BECAUSE `single/` IS SHARED BY EVERY BANK. The first run of this gate globbed the
+    whole directory and reported পাঠ ২১'s 57 envelopes as orphans of পাঠ ১৩ — a gate that fires on
+    a correct export is worse than no gate, because the author learns to scroll past it.
+    `build_question_envelopes.py` refuses a bank whose items disagree on (subject, class, unit), so
+    one bank has exactly one prefix and it is read off the bank rather than assumed from a filename.
+    """
+    pres = {q.rsplit("-Q", 1)[0] for q in qids if q and "-Q" in q}
+    return pres.pop() + "-Q" if len(pres) == 1 else None
+
+
+def load_envelope_index(bank_path, qids):
+    """→ ({qid: payload}, {qid: payload}, note) — the split `single/` set and the array set.
+
+    Both are read because they are two artifacts that can drift from the bank AND from each other.
+    `split_envelopes.py` writes `single/` from the array, so they agree at build time and diverge
+    the moment either is regenerated alone.
+    """
+    if bank_path is None:
+        return None, None, "no bank path in context — the export directory cannot be located"
+    prefix = envelope_prefix(qids)
+    if prefix is None:
+        return None, None, ("this bank's qids do not share one QP-SUBJ-Cn-Uu prefix — the export "
+                            "cannot be scoped, and a mixed bank is refused upstream anyway")
+    envdir = Path(bank_path).parent / "envelopes"
+    array = envdir / (Path(bank_path).stem + ".envelopes.json")
+    single = envdir / "single"
+    if not array.exists() and not single.exists():
+        return None, None, (f"no export exists at {envdir.as_posix()} — this bank has never been "
+                            f"fanned out. That is not drift and is not judged; §11's flow has "
+                            f"simply not been run. Reported, not passed")
+    arr = {}
+    if array.exists():
+        try:
+            for e in json.loads(array.read_text(encoding="utf-8")):
+                arr[(e.get("payload") or {}).get("qid")] = e.get("payload")
+        except Exception as e:  # noqa: BLE001 — the reason must reach the report
+            return None, None, f"{array.as_posix()} is unreadable: {e}"
+    sing = {}
+    if single.exists():
+        for f in sorted(single.glob(prefix + "*.json")):
+            try:
+                e = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:  # noqa: BLE001
+                continue
+            qid = (e.get("payload") or {}).get("qid")
+            if qid:
+                sing[qid] = e.get("payload")
+    return sing, arr, None
+
+
+def g_envelope_sync(bank, ctx):
+    """EXPORT STALENESS FAILS LOUDLY — the gate the wave-2 incident bought.
+
+    THE DEFECT THIS EXISTS FOR, stated as it happened rather than in the abstract.
+    `banks/envelopes/` sat at **36 envelopes — Q01–Q36, the wave-1/2 surface — while the bank went
+    to 88 at wave 3 and 110 at wave 4.** Wave 3 did not regenerate them either, so the drift ran
+    two waves. Nothing caught it, and nothing could have: every gate in this suite reads the BANK,
+    and §11's flow imports the ENVELOPES. **The export path read a file the gate never opened.**
+
+    What that would have shipped: a 36-item bank still carrying the ten `S10 ভাব নির্ণয়` items —
+    a task admitted at NO class in the whole spine — into the Hub as `draft`, past COVERAGE, which
+    was built for exactly that defect and had already caught it in the bank. **A gate that catches
+    a defect in the artifact but not in the artifact's export has caught nothing.**
+
+    AND THE SECOND HALF, which is why an id check is not enough on its own. `build_question_
+    envelopes.py` and `split_envelopes.py` only WRITE. An item that leaves the bank leaves its
+    envelope behind, in a directory nobody prunes — seven such orphans were found at the
+    regeneration, including five of those ten `S10` items. **A stale ADDITION is loud; a stale
+    SURVIVAL is silent**, and the silent one is the one that reaches the Hub.
+
+    THREE CHECKS:
+      · SET — the envelope qids and the bank qids must be the same set. Missing → the export is
+        behind. Orphan → the export carries a retired item.
+      · CONTENT — each envelope's `payload` must equal its bank item. An id set can match while
+        every payload is a wave old, which is precisely what a re-tag or a rewrite produces.
+      · ARRAY vs SINGLE — the two export artifacts must agree with each other, not only with the
+        bank. They are written by different scripts and can be regenerated separately.
+
+    NO EXPORT AT ALL IS REPORTED, NOT FAILED. A bank that has never been fanned out is not stale;
+    §11's flow has simply not been run yet. Failing there would make the gate fire on every
+    in-progress bank and teach the author to ignore it (SOURCE_POLICY §7.17: report or refuse,
+    never omit — and never cry wolf).
+    """
+    errs, rep = [], []
+    items = {q.get("qid"): q for q in bank.get("questions", [])}
+    if "envelope_index" in ctx:
+        sing, arr, note = ctx["envelope_index"]
+    else:
+        sing, arr, note = load_envelope_index(ctx.get("bank_path"), set(items))
+    if note:
+        return [], [note]
+
+    for label, got in (("single/", sing), ("array", arr)):
+        if not got:
+            continue
+        missing = sorted(set(items) - set(got))
+        orphan = sorted(set(got) - set(items))
+        if missing:
+            errs.append(f"{label}: {len(missing)} bank item(s) have no envelope — the export is "
+                        f"BEHIND the bank: {', '.join(missing[:8])}"
+                        + (f" … +{len(missing)-8} more" if len(missing) > 8 else ""))
+        if orphan:
+            errs.append(f"{label}: {len(orphan)} envelope(s) have no bank item — the export "
+                        f"carries RETIRED content: {', '.join(orphan[:8])}"
+                        + (f" … +{len(orphan)-8} more" if len(orphan) > 8 else ""))
+        drift = [q for q in sorted(set(items) & set(got))
+                 if bank_content_digest([items[q]]) != bank_content_digest([got[q]])]
+        if drift:
+            errs.append(f"{label}: {len(drift)} envelope payload(s) differ from the bank item of "
+                        f"the same id — the ids match and the CONTENT does not, which is what a "
+                        f"re-tag or a rewrite produces: {', '.join(drift[:8])}"
+                        + (f" … +{len(drift)-8} more" if len(drift) > 8 else ""))
+    if sing and arr and set(sing) != set(arr):
+        errs.append(f"the array and single/ disagree with EACH OTHER — array {len(arr)}, "
+                    f"single/ {len(sing)}. They are written by different scripts and one was "
+                    f"regenerated without the other")
+    if not errs:
+        rep.append(f"export in sync: {len(sing or arr)} envelope(s) == {len(items)} bank item(s), "
+                   f"ids and payloads, array and single/ (digest "
+                   f"{bank_content_digest(list(items.values()))[:12]})")
+    return errs, rep
+
+
 def g_domain_ratio(bank, ctx):
     """§6 row 11 — Domain ratio: PAPER LEVEL ONLY, never per pool.
 
@@ -1581,6 +1725,10 @@ GATES = [
     # not a §. Shape-independent: it reads qids, and both families have them.
     ("SOURCE-EXCLUSION",   {"qb": g_source_exclusion, "qp6": g_source_exclusion},
                                                                          "CD-127(b) · CD-131"),
+    # The 23rd. Like SOURCE-EXCLUSION it carries no § row of its own — it executes a Principal
+    # ruling (2026-08-15) taken on a defect nothing in this suite could see, because every other
+    # gate reads the bank and §11 imports the envelopes.
+    ("ENVELOPE-SYNC",      {"qp6": g_envelope_sync},          "AGENTS §11 · Principal 2026-08-15"),
 ]
 # CD-123's invariant is preserved by counting what CD-123 was counting — the gates that carry a
 # QUESTION_POLICY §6 row — rather than the total, which CD-131 has now moved. Asserting on the
@@ -1589,7 +1737,14 @@ GATES = [
 # the thing it is protecting.
 QP6_POLICY_GATES = [n for n, i, a in GATES if "qp6" in i and a.startswith("§")]
 assert len(QP6_POLICY_GATES) == 11, "CD-123: QUESTION_POLICY §6 has eleven rows"
-assert len(GATES) == 22, "CD-123's 21 + CD-131's SOURCE-EXCLUSION"
+assert len(GATES) == 23, ("CD-123's 21 + CD-131's SOURCE-EXCLUSION + ENVELOPE-SYNC. The §6 count "
+                          "above is unmoved and that is the assertion doing the work: two gates "
+                          "now sit outside QUESTION_POLICY §6, each executing a ruling rather "
+                          "than a policy clause, and neither may quietly inflate the §6 total. "
+                          "ENVELOPE-SYNC's authority string deliberately reads `AGENTS §11` and "
+                          "not `§11` — a bare § prefix is how the §6 filter identifies its own, "
+                          "and the first draft of this row tripped that assertion by wearing the "
+                          "wrong prefix. The check caught it, which is what it is for.")
 
 
 def bank_shape(bank):
@@ -1604,13 +1759,13 @@ def bank_shape(bank):
     return None
 
 
-def run(bank, ctx=None, quiet=False):
+def run(bank, ctx=None, quiet=False, bank_path=None):
     """Runs all 22 (CD-123's 21 + CD-131's SOURCE-EXCLUSION). Returns (fails, report).
 
     Shape-absent gates print N/A and the reason — never PASS."""
     shape = bank_shape(bank)
     if ctx is None:
-        ctx = qp_ctx_for(bank) if shape == "qp6" else qb_build_ctx(bank)
+        ctx = qp_ctx_for(bank, bank_path) if shape == "qp6" else qb_build_ctx(bank)
     fails, report = [], []
     for name, impls, authority in GATES:
         fn = impls.get(shape)
@@ -1631,7 +1786,7 @@ def run(bank, ctx=None, quiet=False):
     return fails, report
 
 
-def qp_ctx_for(bank):
+def qp_ctx_for(bank, bank_path=None):
     slugs, slug_err = load_ref19_slugs(ROOT)
     tags, tag_err = load_topic_numbers(ROOT)
     reg, reg_err = load_slot_register(ROOT)
@@ -1641,6 +1796,10 @@ def qp_ctx_for(bank):
     ex = bank.get("extraction_path")
     if ex and (ROOT / ex).exists():
         ctx["extraction"] = (ROOT / ex).read_text(encoding="utf-8", errors="replace")
+    # ENVELOPE-SYNC needs to locate this bank's own export directory. The PATH is passed rather
+    # than the envelopes, so a caller that has no path (the selftest) supplies `envelope_index`
+    # instead and no real export file is ever read as fixture data.
+    ctx["bank_path"] = bank_path
     return ctx
 
 
@@ -1652,8 +1811,8 @@ def qb_run(bank, quiet=False):
     return run(bank, qb_build_ctx(bank), quiet=quiet)
 
 
-def qp_run(bank, ctx, quiet=False):
-    return run(bank, ctx, quiet=quiet)
+def qp_run(bank, ctx, quiet=False, bank_path=None):
+    return run(bank, ctx, quiet=quiet, bank_path=bank_path)
 
 
 # =================================================================================
@@ -1789,7 +1948,7 @@ def sweep(root, ctx):
         print(f"\n  BANK: {p.relative_to(root)}"
               + (f"   [{MARKER} — judged anyway; the marker is not a waiver (CD-055)]"
                  if marked else ""))
-        f, rep = qp_run(bank, ctx)
+        f, rep = qp_run(bank, ctx, bank_path=p)
         fails += [(str(p), e) for _, e in f]
         # CD-135(f): the per-level Bloom counts against floors are REPORTED on EVERY run, not
         # only when a floor is missed and not only on the single-bank path. A check written
@@ -2268,7 +2427,17 @@ def _qp_ctx():
             "ref19_slugs": SYNTH_SLUGS,
             "topic_numbers": set(SYNTH_TOPICS) | {"TOP-BAN-C5-07"},
             "slot_register": _synth_register(),
-            "slot_register_error": []}
+            "slot_register_error": [],
+            # ENVELOPE-SYNC's fixture: an export derived from the UNMUTATED fixture bank, so it is
+            # in sync by construction. Every seed then mutates the BANK and the drift appears by
+            # itself — which is the real failure mode. Nobody edits an envelope by hand; the bank
+            # moves and the export is left behind.
+            "envelope_index": (_qp_envelopes(), _qp_envelopes(), None)}
+
+
+def _qp_envelopes():
+    """{qid: payload} for the fixture bank — what a correct `single/` and array both hold."""
+    return {q["qid"]: json.loads(json.dumps(q)) for q in _qp_good_bank()["questions"]}
 
 def _qp_set_blooms(b, seq):
     """Assign an exact Bloom distribution across the 24-item fixture.
@@ -2349,6 +2518,16 @@ def qp_selftest():
         b["header"]["slot_exclusions"]["S05"] = "কল্পিত পাঠ ৯৯-এ বহুনির্বাচনির উপাদান নেই"
         return b
 
+    add("ENVELOPE-SYNC", "the bank gains an item and the export does not — the export is BEHIND, "
+                         "which is exactly the wave-2 shape: 36 envelopes against 88 then 110 "
+                         "bank items, for two waves, seen by nothing",
+        lambda b: b["questions"].append({**json.loads(json.dumps(b["questions"][0])),
+                                         "qid": "QP-BAN-C5-U99-Q97"}))
+    add("ENVELOPE-SYNC", "an item is RETIRED from the bank and its envelope survives — a stale "
+                         "ADDITION is loud, a stale SURVIVAL is silent, and the silent one is the "
+                         "one that reaches the Hub. Seven such orphans were found at the real "
+                         "regeneration, five of them retired S10 ভাব নির্ণয় items",
+        lambda b: b["questions"].pop())
     add("COVERAGE", "ten items in S10 doing ভাব নির্ণয় — a task admitted at NO class in the "
                     "whole spine. THIS IS THE LIVE DEFECT THE REGISTER WAS BUILT FOR: it passed "
                     "the old slot-id-presence reading, because the id was there",
@@ -2455,6 +2634,10 @@ def qp_selftest():
          lambda b: _reslot(b, "S10", "পদ নির্ণয়")),
         ("COVERAGE", "a slot declared inadmissible with a content reason and supplying ZERO items "
                      "— that is the declaration working, not a coverage failure (CD-138(e))",
+         lambda b: None),
+        ("ENVELOPE-SYNC", "an export IN SYNC with the bank — ids and payloads agree, array and "
+                          "single/ agree, nothing to say. The gate that fires on a healthy export "
+                          "is the gate an author learns to ignore",
          lambda b: None),
         ("COVERAGE", "a register carrying a D5 (absent) row for a slot the bank never declares — "
                      "the chapter owes it NOTHING, not even a content reason. Existence is a "
@@ -2635,7 +2818,7 @@ def main():
     path = Path(sys.argv[1])
     bank = json.loads(path.read_text(encoding="utf-8"))
     print(f"\nBANK: {path}   [shape: {bank_shape(bank) or 'unrecognised'}]")
-    fails, report = run(bank)
+    fails, report = run(bank, bank_path=path)
     for gate, line in report:
         print(f"  REPORT  {gate:<18} {line}")
     print(f"RESULT: {'FAIL' if fails else 'CLEAN'} ({len(fails)} failures)")
