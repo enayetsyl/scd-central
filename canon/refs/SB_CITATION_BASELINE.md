@@ -37,6 +37,10 @@ retirement unwriteable. Bare prose is still counted, and fenced blocks are still
 | `canon/names/README.md` | 1 |
 | `canon/school-facts/SCHOOL_FACTS.md` | 1 |
 | `canon/sources/SOURCE_POLICY.md` | 2 |
+| `handoffs/HANDOFF_2026-08-09_unification.md` | 4 |
+| `handoffs/HANDOFF_2026-08-10_scd-central-migration.md` | 3 |
+| `handoffs/HANDOFF_2026-08-15_question-policy-unification.md` | 1 |
+| `handoffs/SCD_UNIFICATION_SURVEY.md` | 11 |
 | `tools/CORRECTIONS.md` | 2 |
 | `tools/_wip/STATE.md` | 2 |
 | `tools/audits/canon_check.py` | 26 |
@@ -74,4 +78,4 @@ retirement unwriteable. Bare prose is still counted, and fenced blocks are still
 | `workstreams/support-books/governance/README.md` | 3 |
 | `workstreams/support-books/governance/SETUP.md` | 1 |
 
-**Total: 237 citation(s) across 51 file(s).**
+**Total: 256 citation(s) across 55 file(s).**

@@ -10,12 +10,22 @@ One row per workstream. Adding a workstream = copy `workstreams/_template/` + ad
 | Scholarship / MarkLogic | `workstreams/scholarship/` | MIGRATING | CD-### via canon (reader files stay history-free; local `DECISIONS.md` is a pointer) | 1 (canon extract) ✅ · MODEL_PAPERS_POLICY v1.0 (CD-038) | Scholarship Claude project |
 | Support Books (সহায়িকা) | `workstreams/support-books/` | **LIVE** | D-### (imported at D-019) | 3 ✅ | SB-Governance + SB-P Production projects |
 | Lesson Plans (P03) | `workstreams/lesson-plans/` | **LIVE** | D-PROJ03-### (reconstructed; continuous to D-049) · references: reference import — P00 workstream pending | 4 ✅ | P03 project |
-| Question Banks (P04) | `workstreams/question-banks/` | **LIVE** | QB-D-### (at QB-D-012) | 4 ✅ | P04 conventions via master D-051 (CD-036); no corpus imported — starts from policy + pilot |
+| Question Banks (P04) | `workstreams/question-banks/` | **LIVE** | QB-D-### (at QB-D-013) | 4 ✅ | P04 conventions via master D-051 (CD-036); no corpus imported — starts from policy + pilot |
 | English Programme (EIA + phonics) | `workstreams/english-programme/` | PLANNED | EP-D-### (new) | 5 | recovered old-account instructions |
 | Islamic Studies C1–5 | `workstreams/islamic-studies/` | GREENFIELD | IS-D-### (new) | 5 | none (new) |
 | Accounting | `workstreams/accounting/` | PLANNED | AC-D-### (new) | 5 | recovery package (open: Check-5 423,533; +28,592 residual) |
 | Curriculum Foundations (P00) | `workstreams/curriculum-foundations/` | **LIVE** | `D-PROJ00-###` (imported at 072) · **canonical home of the master `D-###` series** (README §3, at D-053) | 4 ✅ | P00 project — README · DECISIONS · TODO · CROSS_PROJECT_INDEX · GLOSSARY |
 | NCTB Stability (P01) | `workstreams/p01-nctb-stability/` | PLANNED | `D-PROJ01-###` (attested to 006 in REF-04; register not yet imported) | 5 | scaffold only — no content this session; method is REF-04 |
+
+## Initiative-wide locations (NOT workstreams)
+
+The table above is **one row per workstream**, by its own header rule. These are initiative-wide
+and belong to no lane, so they are listed separately rather than smuggled into that table.
+
+| Location | Folder | Status | Role |
+|---|---|---|---|
+| Session-continuity chain | `handoffs/` | **LIVE** (created 2026-08-15) | The handoff chain. **Current file is live; all others are read-only imports, cited never continued** (CD-034 / CD-043(b)). Lived outside the repo until 2026-08-15, which is how a handoff came to state a tip two commits and four CD rows stale — CD-133's shape one level up. See `handoffs/README.md`. |
+| Session record | `SESSION_LOG.md` | **LIVE** | Append-only narrative record, one entry per session. |
 
 ## Production sequence (Principal directive, CD-045)
 
