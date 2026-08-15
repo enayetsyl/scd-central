@@ -123,9 +123,66 @@ every item.
 > §৩ sets the ratio for a **প্রশ্নপত্র**; a Pool is not a paper, and a pool-level domain gate would
 > force every chapter to carry all four domains in proportion — which §৬ itself says is impossible
 > even for a 25-mark class test. Governing text: `QUESTION_POLICY` §4 and §6.
+>
+> **AMENDED AGAIN 2026-08-15 (CD-136).** The **first bullet** below moves from *content* scope to
+> **STIMULUS** scope: the stimulus must resolve to the extraction, and a key that is a general
+> Bangla language fact may be teacher-supplied, declared in the item's own `model_note`.
+> Generalised from `QB-D-013` per CD-121(d). The superseded bullet is archived in place beneath it.
+> **No gate change** — see CD-136(e)–(g). Governing text: `QUESTION_POLICY` §9.
 
-- **Content ONLY from the chapter's source extraction** (`canon/sources/SOURCE_POLICY.md`).
-  No extraction → no bank for that chapter; the gap is **recorded, not filled from memory**.
+- **Content from the chapter's source extraction — AMENDED 2026-08-15 (CD-136) to STIMULUS scope.**
+  **The STIMULUS must resolve to the chapter's source extraction** (`canon/sources/SOURCE_POLICY.md`).
+  **The KEY need not, where it is a general Bangla language fact** — সমার্থক · বিপরীত ·
+  যুক্তবর্ণ বিভাজন · এক কথায় প্রকাশ · ভাষারীতি / পদ নির্ণয় / ক্রিয়ার কাল. Such a key may be
+  **teacher-supplied**, and **the item declares it in its own `model_note`**, so the provenance
+  travels with the item and not only with the bank header — a header note is lost the moment an
+  item is lifted into a paper, which is the only form in which items are ever used.
+  **No extraction → no bank for that chapter; the gap is recorded, not filled from memory** —
+  unchanged.
+
+  **BOUNDARY, load-bearing.** This admits **language facts ABOUT chapter material**. It does
+  **not** admit new content, new facts, or prompts with no chapter anchor. The test is the
+  stimulus: *the word is in the chapter; its synonym is a fact about Bangla.* **S14 আবেদনপত্র and
+  S15 রচনা stay OUT of chapter banks** — they anchor to nothing in the chapter and carry no key at
+  all, so neither half of the rule is in play. Their home is paper-level authoring
+  (`workstreams/scholarship/MODEL_PAPERS_POLICY.md`).
+
+  **No gate enforces this, deliberately.** `SOURCE-TRACE` never read keys — both implementations
+  resolve only `source_index[qid]` — so *"the key need not resolve"* was already true. A FAIL
+  branch for an undeclared teacher key was **proposed and refused**: it would build key-resolution
+  the gate does not have **in order to enforce a loosening**, and would fire on legitimate items
+  whose keys are the student's own work. **Enforcement is the §6 human review gate — the Principal
+  as Subject Lead** (REF-09 §9). Reasoning in full at CD-136(e)–(g).
+
+  > **⚑ INTERIM AUTHORING RULE — binding at authoring time (Principal, 2026-08-15; `PENDING-P-037`).**
+  > **Any item carrying a teacher-supplied key is authored as `short_answer` or `descriptive`.**
+  >
+  > **Why the rule exists.** CD-136 requires the declaration to travel in the item's own
+  > `model_note`. Read against `LOCKED_QuestionPayload_Schema_v1.json`, **that field exists on two
+  > of the six question types**: `answer_key.model_note` (`short_answer`) and the rubric criterion
+  > (`descriptive`). **`mcq`, `fill_blank`, `true_false` and `matching` have no prose field at all**
+  > — `mcqOption` carries only `option_id` / `text` / `is_correct` / `why_wrong`, `fillBlank` only
+  > `blank_no` / `accepted` / `normalized_match` / `marks`, and both are
+  > `additionalProperties: false`. The schema is **LOCKED and supersede-only (CD-013)**, so it is
+  > not widened here.
+  >
+  > **A chapter that needs a teacher-keyed `mcq`, `fill_blank`, `true_false` or `matching` item is
+  > STOP-AND-ASK. It is never a workaround.** In particular the declaration does **not** go in a
+  > distractor's `why_wrong` and does **not** go in the bank header alone — **a header note is lost
+  > the moment an item is lifted into a paper**, which is the exact failure CD-136 and QB-D-013
+  > both exist to prevent.
+  >
+  > **Same shape as `pool_index` under UP-002**: the authoring side carries the constraint honestly
+  > while the additive field is requested upstream, rather than patching a LOCKED contract locally.
+  > **Lifts when `PENDING-P-037` closes.** পাঠ ১৩ wave 3 complies — all nine teacher-key items
+  > (S06 · S12 · S13) are `short_answer`.
+
+  <details><summary>SUPERSEDED TEXT — archived verbatim per master §5.3 (never left in place)</summary>
+
+  > - **Content ONLY from the chapter's source extraction** (`canon/sources/SOURCE_POLICY.md`).
+  >   No extraction → no bank for that chapter; the gap is **recorded, not filled from memory**.
+
+  </details>
 - **Marks per question ONLY from MarkLogic values.** Annual-slot per-item marks are carried
   unchanged at CT scale (`MarkLogic_QuestionPolicy.md` §৬: a class test lifts 4–6 questions from
   the annual paper with marks identical, never a shrunken version).

@@ -45,7 +45,7 @@ THE GATES — 21, and where each comes from
 | REF19-SLUG          | §6 row 4 |
 | TOPIC-NUMBER        | **both** — QB_POLICY §5 **promoted from QB-CR-008** · §6 row 5 |
 | KEY-RUBRIC          | §6 row 6 |
-| BLOOM-BAND          | §6 row 7, as corrected by CD-121 (REF-06 §3.6 only; UD-23) |
+| BLOOM-BAND          | §6 row 7 — CD-121 for the axis (REF-06 §3.6 only; UD-23), **CD-135 for the floor** (pool = lower bounds only; the band is a paper rule) |
 | DIFFICULTY          | §6 row 8, as ruled by CD-122 (easy floor only) |
 | REPETITION          | §6 row 9 |
 | COVERAGE            | §6 row 10, header fallback per §4 (CD-122) |
@@ -1063,7 +1063,7 @@ def g_key_rubric(bank, ctx):
     return errs, rep
 
 def g_bloom_band(bank, ctx):
-    """§6 row 7 — Bloom band: the Pool spans REF-06 §3.6, read at CHAPTER scope.
+    """§6 row 7 — Bloom at POOL level: REF-06 §3.6's LOWER BOUNDS ONLY, read at CHAPTER scope.
 
     RULED (CD-121, closing Q-1). §6's row said "the wider of REF-06 §3.6 / MarkLogic §৩ at each
     level" and **the §6 text was wrong** — corrected in the same CD row that mints this reading.
@@ -1075,6 +1075,33 @@ def g_bloom_band(bank, ctx):
 
     So: this gate reads REF-06 §3.6's six levels and **MarkLogic §৩ does not appear here at all**.
     It appears at paper level, in DOMAIN-RATIO, and nowhere else.
+
+    RULED AGAIN (CD-135, 2026-08-15) — and this is the half a later session is most likely to
+    "fix" back. Until 2026-08-15 this gate failed a pool on BOTH bounds. **The upper bounds do not
+    bind a pool.** It is CD-122(a)'s argument on the other axis, and nothing in that argument was
+    about difficulty:
+
+        **A pool cannot fail a CEILING.** An author can always decline to use the surplus, so
+        however skewed the pool is, a compliant paper stays constructible from it. **Absence is
+        the only thing a pool can be guilty of.**
+
+    A Remember-heavy pool still builds a compliant paper, because the teacher declines the
+    surplus. So: `share < lo` FAILs; `share > hi` DOES NOT. The BAND — both bounds — continues to
+    apply at PAPER level, alongside the domain ratio.
+
+    ⚠ DO NOT RESTORE THE UPPER-BOUND BRANCH. A symmetric check reddens correct pools. The seeded
+    case that used to prove the ceiling is KEPT AND INVERTED — a pool above an upper bound must
+    now stay quiet — so the symmetric form cannot creep back unnoticed. Same device CD-122(a)
+    used for the hard ceiling, same reason.
+
+    Per-level counts against floors are REPORTED on EVERY run, not only on failure: a check
+    written asymmetrically invites a later symmetric "fix", and a report that always prints is
+    what makes the asymmetry visible rather than something a reader has to infer from the code.
+
+    Note the arithmetic the floors already do (CD-135(g)): Understand 25 + Apply 25 + Analyze 10
+    = 60, so Remember can never exceed 40% of a pool however large. Removing the ceiling does not
+    make the pool unbounded — it moves the binding constraint to the floors, and Analyze at 10%
+    is the first to bite.
 
     Never read per session (§4's D-050 paragraph): a bank banded session-by-session drifts low.
     This gate reads the whole pool, which IS the chapter.
@@ -1090,14 +1117,27 @@ def g_bloom_band(bank, ctx):
         counts[bl] += 1
     for lvl, (lo, hi) in REF06_C3_5.items():
         share = pct(counts[lvl], total)
-        if not (lo <= share <= hi):
-            errs.append(f"chapter pool: {lvl} is {share:.1f}% of {total} items, outside REF-06 "
-                        f"§3.6's C3–5 band {lo}–{hi}%")
-    rep.append("bands: REF-06 §3.6 C3–5, six Bloom levels (CD-121/UD-23 — the Bloom axis governs "
-               "the pool; MarkLogic §৩ is the PAPER's axis and is not read here): "
-               + " · ".join(f"{l} {lo}–{hi}%" for l, (lo, hi) in REF06_C3_5.items()))
-    rep.append("observed: " + " · ".join(f"{l} {pct(counts[l], total):.1f}%" for l in counts)
-               + "  (read at CHAPTER scope, never per session — §4's D-050 paragraph)")
+        if share < lo:
+            need = -(-lo * total // 100)          # items required to clear the floor
+            errs.append(f"chapter pool: {lvl} is {counts[lvl]} of {total} items = {share:.1f}%, "
+                        f"below REF-06 §3.6's C3–5 FLOOR of {lo}% — needs {int(need)} "
+                        f"({int(need) - counts[lvl]} more)")
+        # NO upper-bound branch. CD-135: a pool cannot fail a ceiling. See the docstring's ⚠.
+    rep.append("POOL check is FLOORS ONLY (CD-135; CD-121/UD-23 for the axis — MarkLogic §৩ is "
+               "the PAPER's axis and is not read here). Upper bounds are a PAPER rule and are "
+               "not applied to a pool: an author declines the surplus, so absence is the only "
+               "thing a pool can be guilty of.")
+    rep.append("per-level counts against REF-06 §3.6 C3–5 floors (printed every run, pass or "
+               "fail): " + " · ".join(
+                   f"{l} {counts[l]}/{total}={pct(counts[l], total):.1f}% vs floor {lo}%"
+                   f"{'' if pct(counts[l], total) >= lo else ' ✗'}"
+                   for l, (lo, _hi) in REF06_C3_5.items()))
+    zero_floor = [l for l, (lo, _h) in REF06_C3_5.items() if lo == 0 and counts[l] == 0]
+    if zero_floor:
+        rep.append("levels at 0 against a 0% floor — nothing is required, but §4 requires the "
+                   "bank header to state these as a CONTENT fact rather than leave them silent "
+                   "(CD-135(d)): " + " · ".join(zero_floor))
+    rep.append("read at CHAPTER scope, never per session — §4's D-050 paragraph")
     return errs, rep
 
 def g_difficulty(bank, ctx):
@@ -1310,7 +1350,7 @@ GATES = [
     ("REF19-SLUG",         {"qp6": g_ref19_slug},                        "§6.4"),
     ("TOPIC-NUMBER",       {"qb": g_qb_topic_number, "qp6": g_topic_number}, "§5 · QB-CR-008 + §6.5"),
     ("KEY-RUBRIC",         {"qp6": g_key_rubric},                        "§6.6"),
-    ("BLOOM-BAND",         {"qp6": g_bloom_band},                        "§6.7 · CD-121"),
+    ("BLOOM-BAND",         {"qp6": g_bloom_band},                        "§6.7 · CD-121 · CD-135"),
     ("DIFFICULTY",         {"qp6": g_difficulty},                        "§6.8 · CD-122"),
     ("REPETITION",         {"qp6": g_repetition},                        "§6.9"),
     ("COVERAGE",           {"qp6": g_coverage},                          "§6.10 · CD-122"),
@@ -1529,8 +1569,15 @@ def sweep(root, ctx):
         print(f"\n  BANK: {p.relative_to(root)}"
               + (f"   [{MARKER} — judged anyway; the marker is not a waiver (CD-055)]"
                  if marked else ""))
-        f, _ = qp_run(bank, ctx)
+        f, rep = qp_run(bank, ctx)
         fails += [(str(p), e) for _, e in f]
+        # CD-135(f): the per-level Bloom counts against floors are REPORTED on EVERY run, not
+        # only when a floor is missed and not only on the single-bank path. A check written
+        # asymmetrically invites a later symmetric "fix"; a report that always prints is what
+        # makes the asymmetry visible rather than something a reader infers from the code.
+        for gate, line in rep:
+            if gate == "BLOOM-BAND":
+                print(f"  REPORT  {gate:<18} {line}")
         if marked and not f:
             msg = (f"passes all eleven while still declaring {MARKER} — the marker is stale and "
                    f"removing it is part of finishing (SOURCE_POLICY §7.9; STATED DEFAULT, Q-4)")
@@ -1941,6 +1988,19 @@ def _qp_ctx():
             "ref19_slugs": SYNTH_SLUGS,
             "topic_numbers": set(SYNTH_TOPICS) | {"TOP-BAN-C5-07"}}
 
+def _qp_set_blooms(b, seq):
+    """Assign an exact Bloom distribution across the 24-item fixture.
+
+    Added at CD-135 so the floor cases are stated as distributions rather than as mutations
+    whose effect a reader has to simulate. `seq` is padded with `Create` — floor 0 — so a short
+    list is a declaration about the levels it names and not an accident about the rest.
+    """
+    qs = b["questions"]
+    seq = list(seq) + ["Create"] * (len(qs) - len(seq))
+    for q, lvl in zip(qs, seq):
+        q["bloom_level"] = lvl
+    return b
+
 def _qp_mutate(fn):
     b = json.loads(json.dumps(_qp_good_bank()))
     fn(b)
@@ -1979,8 +2039,14 @@ def qp_selftest():
         lambda b: b["questions"][0].update({"topic_tag": "TOP-BAN-C5-99"}))
     add("KEY-RUBRIC", "a descriptive item whose rubric has one band",
         lambda b: b["questions"][20]["rubric"].update({"bands": ["ভালো"]}))
-    add("BLOOM-BAND", "every item becomes Remember — the pool stops spanning the band",
+    add("BLOOM-BAND", "every item becomes Remember — every OTHER level drops under its floor "
+                      "(CD-135: the floors are what bind a pool, not the ceilings)",
         lambda b: [q.update({"bloom_level": "Remember"}) for q in b["questions"]])
+    add("BLOOM-BAND", "Analyze falls to 1 of 24 = 4.2%, under REF-06 §3.6's 10% floor — the exact "
+                      "case CD-135(h) predicts becomes the binding constraint once the ceiling "
+                      "stops binding",
+        lambda b: _qp_set_blooms(b, ["Remember"] * 8 + ["Understand"] * 8 + ["Apply"] * 7
+                                    + ["Analyze"] * 1))
     add("DIFFICULTY", "the pool cannot supply easy ≥30%",
         lambda b: [q.update({"difficulty": "medium"}) for q in b["questions"]])
     add("REPETITION", "an identical stem on two Understand items",
@@ -2044,6 +2110,18 @@ def qp_selftest():
         ("BLOOM-BAND", "a pool banded flat against the CHAPTER band — §4 says that is correct; "
                        "only a session-scoped reading drifts low",
          lambda b: None),
+        ("BLOOM-BAND", "a pool at Remember 9/24 = 37.5%, ABOVE REF-06 §3.6's 30% upper bound, "
+                       "with every floor still clear — CD-135: a pool cannot fail a ceiling, "
+                       "because an author declines the surplus and a compliant paper stays "
+                       "constructible. This FAILED until 2026-08-15; it is KEPT AND INVERTED so "
+                       "the symmetric check cannot creep back in unnoticed (CD-122(a)'s device)",
+         lambda b: _qp_set_blooms(b, ["Remember"] * 9 + ["Understand"] * 6 + ["Apply"] * 6
+                                     + ["Analyze"] * 3)),
+        ("BLOOM-BAND", "a pool sitting EXACTLY on two floors — Understand 6/24 = 25.0% and "
+                       "Apply 6/24 = 25.0% — the boundary is inclusive, so exactly-at-floor is "
+                       "compliant and must not fire",
+         lambda b: _qp_set_blooms(b, ["Remember"] * 6 + ["Understand"] * 6 + ["Apply"] * 6
+                                     + ["Analyze"] * 6)),
         ("DIFFICULTY", "a pool at 70% easy — CAN-SUPPLY, not equality, so this passes",
          lambda b: [q.update({"difficulty": "easy"}) for q in b["questions"][:17]]),
         ("DIFFICULTY", "a pool that is 67% HARD while still holding easy ≥30% — CD-122: a pool "

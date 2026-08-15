@@ -1,4 +1,4 @@
-# QUESTION_POLICY — v1.1 (canon)
+# QUESTION_POLICY — v1.2 (canon)
 
 *Adopted 2026-08-14 by Principal ruling, unification session 2. Location: `canon/QUESTION_POLICY.md`.*
 *Minted as **CD-092 … CD-113** — one row per §3 resolved conflict, plus §2, §4, §5 and §6, per §10.*
@@ -14,6 +14,18 @@ via an old citation sees what changed and why.
 | §6 Bloom band | *"the wider of REF-06 §3.6 / MarkLogic §৩"* | REF-06 §3.6 only — two axes, not two ranges (UD-23) | **CD-121** |
 | §6 selftest ¶ | *"(CD-055, CD-064(f))"* | QB-D-012, with the controls-vs-seeds distinction restored | **CD-121** |
 | §6 / §4 Difficulty | *"can supply"*, unread | pool = easy ≥30% present; no pool-level hard test | **CD-122** |
+
+**v1.2 — 2026-08-15, question-banks session 5. ONE bump covering four sites, deliberately: three
+of the four rulings amend this file and a fourth adds a §9 row, and four successive bumps would
+have made the file's own history harder to read than the rulings it records.** Repo tip at
+verification was **`6ecbe3b`** — the handoff chain carried `4bc66d7` and was two commits stale.
+
+| § | Was | Now | Row |
+|---|---|---|---|
+| §10 last sentence | *"…is the provenance record and **is filed alongside**"* | **NOT-IN-REPO** — never filed; the CD rows are the authority and are unaffected | **CD-133** |
+| §4 coverage | an unserved slot's reason unconstrained | the reason must be that the **CONTENT** does not support it, never the chapter's own use-line | **CD-134** |
+| §6 Bloom row | band at pool level — both bounds FAIL | **pool = REF-06 §3.6's LOWER BOUNDS ONLY**; the band survives at paper level | **CD-135** |
+| §9 | — | two rows added: the §6 Bloom row, and `QUESTION_BANK_POLICY` §4's first bullet → stimulus scope | **CD-135 · CD-136** |
 
 **Status: ADOPTED. This file is canon and is cited, never copied (AGENTS.md §8).**
 
@@ -102,11 +114,35 @@ production time and **stated in the bank file header with a one-line reason**. T
 spine slots need, and every difficulty band. When per-chapter spine slot-mapping exists as data, this
 replaces the header-stated target.
 
+**A chapter's own *কোন প্রশ্নে কাজে লাগবে* line is ADVISORY and caps nothing (CD-134, applying
+CD-122(b)).** That line is the book describing its own likely uses. **CD-122(b) already ruled it
+cannot be inverted into an obligation** — *"inverting a best/alternative table into a per-chapter
+obligation is inventing the mapping, which §4 forbids"*. It equally does not **forbid** a slot:
+**a Pool may serve ANY spine slot the extracted content supports**, and this sentence's coverage
+test is defined against the spine, not against that line. **Executable half — where a slot is not
+served, the reason recorded in the bank header must be that the CONTENT does not support it, never
+that the chapter's own line did not name it.** The two reasons look identical in a header and are
+not: content-absence is a fact about the book that no later wave can change; line-absence caps
+nothing and is unfalsifiable, because nobody can tell from it whether the material was looked for.
+
 **Scope of the Bloom band (D-050).** The band is read at **chapter** scope — the whole teaching unit,
 however many periods it spans. Within a multi-period chapter the mix **climbs**: early sessions sit
 at the chapter's lower end, later sessions reach into Apply/Analyze as the band allows (REF-06 §3.6
 note; REF-02 §2.9 holds the per-session focus). A pool banded flat against the chapter band is
 correct; **a bank built session-by-session drifts low** if the band is read per session.
+
+**Bloom at POOL level is a FLOOR, not a band (CD-135).** REF-06 §3.6's **lower bounds bind the
+pool; its upper bounds do not.** This is the difficulty paragraph's own argument on the other axis:
+**a pool cannot fail a ceiling**, because an author can always decline the surplus and a compliant
+paper stays constructible however skewed the pool is. **The BAND — both bounds — continues to apply
+at PAPER level**, alongside the domain ratio. Where a level's floor is 0 (`Evaluate`, `Create`)
+nothing is required, but **a level the chapter cannot supply is stated in the bank header as a
+content fact rather than left silent** — a 0% level passing a 0% floor is otherwise
+indistinguishable from a level nobody looked for. **Recorded because it is the shape that recurs:
+a percentage floor implicitly caps every other level.** Understand 25 + Apply 25 + Analyze 10 = 60,
+so `Remember` can never exceed **40%** of a pool however large it grows. **Removing the ceiling does
+not make the pool unbounded — it moves the binding constraint to the floors, and `Analyze` at 10%
+is the first to bite.**
 
 **Metadata.** Every item carries, in the LOCKED payload: `qid` · `topic_tag` · `ref19_topic_id` ·
 `question_text` · `question_type` · `paper_role` · `bloom_level` · `difficulty` · `tier` · `marks`.
@@ -195,7 +231,7 @@ proportion, so there is no per-CT domain gate.
 | `ref19_topic_id` resolves | against REF-19's slug set |
 | `topic_tag` resolves | against `TOPIC_NUMBERS.md`; an unminted number FAILs, never auto-mints |
 | Key/rubric present | every item, per type |
-| Bloom band | Pool spans **REF-06 §3.6**, read at **chapter** scope — six Bloom levels (CD-121) |
+| Bloom band | **Pool level: REF-06 §3.6's LOWER BOUNDS ONLY**, read at **chapter** scope — six Bloom levels (CD-121 for the axis, **CD-135** for the floor). No upper bound fails a pool; per-level counts against floors are REPORTed every run. The band, both bounds, is a **paper** rule |
 | Difficulty | **Pool level: easy ≥30% present.** No pool-level hard test — hard ≤25% is a paper rule (CD-122) |
 | Repetition | no verbatim reuse of non-`Remember` items |
 | Coverage | every topic and every spine slot-type supplied |
@@ -208,6 +244,14 @@ never measured the same thing, which is why "the wider at each level" had no com
 Apply — REF-06 bands six Bloom levels, MarkLogic §৩ bands four NAPE domains. MarkLogic §৩ appears
 at paper level, in the domain-ratio row, and nowhere else. §3 row 9 is unaffected: it resolves
 whether the two conflict, and they do not, because they are different axes.
+
+**And the surviving range was still read as a BAND at pool level until 2026-08-15 — corrected by
+CD-135.** This row read *"Pool spans **REF-06 §3.6**, read at **chapter** scope — six Bloom levels
+(CD-121)"*, and `gates.py` failed a pool on **both** bounds. **The upper bounds do not bind a
+pool**, for the reason §4's difficulty paragraph already gives on the other axis: an author
+declines the surplus, so a skewed pool still yields a compliant paper, and **absence is the only
+thing a pool can be guilty of**. **CD-121(a)'s axis assignment is untouched** — this corrects what
+*governs* means on the Bloom axis, not which axis governs what.
 
 **The selftest rule, with its citation corrected (CD-121).** Every gate carries a seeded selftest
 that bites each run. **Seeds are synthetic and are never drawn from the live file pool** — origin
@@ -255,6 +299,8 @@ actual use · the storybook venture.
 | MarkLogic QuestionPolicy | §৯ | Pointer + class-general summary, headings citing C-codes |
 | Conventions v1.4 | §4 (30/topic), §6 (Drive storage), §8 (three streams) | Corrected to chapter scope, repo storage, selection labels |
 | QUESTION_BANK_POLICY | §2, §3, §4, §5 | Amended: one Pool, `tier` added, REF-09 §5 key wording, gate list per §6 |
+| **This file** | **§6 Bloom row** (pool-level band) | **Superseded by CD-135** — pool level is REF-06 §3.6's **lower bounds only**; the band, both bounds, is a paper rule. **CD-121(a) is superseded only to the extent it reads as a band; its axis assignment stands** |
+| **QUESTION_BANK_POLICY** | **§4, first bullet** — *"Content ONLY from the chapter's source extraction"* | **Amended to STIMULUS scope by CD-136** — the stimulus must resolve to the extraction; a **key that is a general Bangla language fact may be teacher-supplied**, declared in the item's own `model_note`. Supersede-with-archive per master §5.3 |
 
 **REF-09 §4's mark totals were overridden by the permission §4 itself grants, not superseded — REF-09
 needs no edit beyond §4.1.** **`TOPIC_NUMBERS.md` is not demoted** — an earlier draft proposed it on
@@ -273,4 +319,20 @@ The §9 supersedes were executed in the same session, each as supersede-with-arc
 §5.3 — pointer stubs, not banners, with the superseded text preserved in its own archive block and
 never left in place.
 
-The Unification Decision Register (60 rows) is the provenance record and is filed alongside.
+**The Unification Decision Register (60 rows) was NEVER FILED — corrected by `CD-133`,
+2026-08-15.** This sentence read, verbatim: *"The Unification Decision Register (60 rows)
+is the provenance record and **is filed alongside**."* **It is not filed alongside; it is not filed
+anywhere.** A repo-wide census finds **four** UD numbers cited — `UD-60` ×15 · `UD-23` ×11 ·
+`UD-11` ×2 · `UD-09` ×2 — **no file defining any row**, `UD-01` returning zero hits, and no file
+matching `*UNIFICATION*`, `*REGISTER*` or `*UD_*`.
+
+**Recorded as NOT-IN-REPO** — asserted as filed, absent from disk, and it may survive outside the
+repo — which is **distinct from LOST**, meaning known to have existed here and now unrecoverable.
+**NOT RECONSTRUCTED:** 56 of the 60 rows are cited nowhere, and CD-090(c) already rules that
+**cited-by is evidence a number was taken and never evidence of what it said.** CD-133 records
+where each cited UD's substance survives, so the four citations stay resolvable in meaning.
+
+**This section's AUTHORITY claim is unaffected. Only the filing claim was false.** The CD rows are
+the authority and this file is their readable form; the register was the *provenance* record, and
+**nothing in force depends on it** — every ruling it recorded was minted as a CD row, which is
+exactly what §10's design is for.
