@@ -2,12 +2,35 @@
 
 | Field | Value |
 |---|---|
-| Current build | **Teacher-lane foundations.** Agent work has moved OFF the mounted drive into a container clone (`tools/session_bootstrap.md`); the `PLAN` gate now holds the plan-table countersign; two ruling rows are DRAFTED and NOT filed. পাঠ ১৩ is unchanged — signed, 110 items, export in sync. |
-| Phase | **Awaiting the Principal on two drafts.** Autonomy does not begin until CD-14x(a) is filed; until then every push needs explicit approval with a per-commit range check. |
-| Last completed step | `649b37a` tools (session_bootstrap.md) · `78ccf4f` gate (PLAN + paired policy) · this log commit. Suite CLEAN across **24 gates**. **Nothing pushed** — `origin/main` at `a105125`. |
-| Next step | The Principal reads `_wip/RULING_DRAFTS_teacher-lane_2026-08-15.md` and rules. After filing: the register's remaining columns — ENG · MATH · SCI/BGS — as DATA ROWS. |
+| Current build | **The teacher-lane rulings are FILED — `CD-141` (standing authorization) and `CD-142` (§6 relocation).** পাঠ ১৩ unchanged: signed, 110 items, export in sync, suite CLEAN across 24 gates. |
+| Phase | **Autonomy is filed but NOT YET LIVE.** CD-141(h) requires a **DRY RUN before handover** — one full teacher-lane session end to end with the Principal watching. Until these rows are on `origin` AND that run passes, every push still needs explicit approval. |
+| Last completed step | `7cc4458` ruling (CD-141 + CD-142 + the §-amendments that execute them) · this log commit. `canon_check` CLEAN · `ledger_check` CLEAN. **Nothing pushed** — `origin/main` at `090871b`. |
+| Next step | The Principal's dry run. **HELD, NOT FORGOTTEN:** the batch-envelope import contract — a top-level array at the Hub's import endpoint. **That work is in `scd-hub`, not this repo**, and it changes LOCKED contract v1.0, so it is Principal-gated and outside CD-141's boundary by both class and path. |
 | Blockers / open PENDING-P tags | **`PENDING-P-038` RAISED** (nothing checks a slot is admitted by ANY chapter; S14 at C5 Bangla is down to one). FLAGGED-not-OPEN. |
-| Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` · `U13_ADMISSIBILITY_DRAFT_2026-08-15.md` · `BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md` · `U13_REVIEW_SHEET_2026-08-15.md` · `RULING_DRAFTS_teacher-lane_2026-08-15.md` |
+| Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` · `U13_ADMISSIBILITY_DRAFT_2026-08-15.md` · `BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md` · `U13_REVIEW_SHEET_2026-08-15.md` · `RULING_DRAFTS_teacher-lane_2026-08-15.md` (**drafts now FILED — kept as the review trail, superseded by the rows**) |
+
+## CD-141 in one screen — what an agent may do without asking
+
+**Both tests must pass, not either.** CLASS ∈ {build, corrections, log, promotion} **AND** PATH
+under `workstreams/question-banks/` or its `banks/envelopes/`. **AND** the full suite CLEAN
+including `PLAN` and `ENVELOPE-SYNC`, **with `N/A` excluded from CLEAN** — `N/A` means the gate did
+not judge, and an unjudged bank is what the row exists to keep out.
+
+**Everything else stops and reports.** Never ask the teacher: they cannot rule (§2), and
+`QB-CR-013` is the recorded instance of an agent reading an answer about mechanics as an answer
+about substance.
+
+**Never pre-approved:** a gate change · a policy edit · a decision row · an `_inbox/`
+classification · anything on the mount · **a `git reset` or any history rewrite, pushed or not** ·
+promotion to `gold` (a Hub act, CD-003).
+
+**THE 40-ITEM MINIMUM IS RULED AT CD-141(g).** No bank under 40 items can pass `PLAN` —
+`0.80n + 8 ≤ n`. **A thin chapter GROWS or COMBINES, ruled per case by the Principal.** The agent
+**stops rather than padding**: items authored to satisfy a gate are exactly the near-duplicates §4
+forbids, and `PLAN`'s own duplicate scan would then catch what the padding created.
+
+**The autonomy rests on one ledger instance** — `QB-CR-013` — where §6 promotes a pattern at three.
+Filed knowingly. **Dry run required before handover.**
 
 ## THE EXECUTION MODEL CHANGED — read `tools/session_bootstrap.md` before starting
 

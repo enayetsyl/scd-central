@@ -2511,3 +2511,46 @@ experts. **`CD-14x` is a placeholder — a number is verified at source at filin
 from a draft.** Autonomy begins when the row is filed and not before.
 
 **Nothing pushed.** `origin/main` at `a105125`.
+
+## 2026-08-15 · the teacher-lane rulings filed — CD-141 and CD-142
+
+**Bootstrap caught something before any work, which is what step 4 is for.** The mount was current
+at `090871b` — the Principal had pulled — but carried **9 modified files and two untracked ones**.
+Checked rather than assumed: `git diff --ignore-cr-at-eol --stat` came back **empty**, so the nine
+differ **only in line endings** (the worktree copies picked up CRLF; the committed blobs are LF) and
+**no work was at risk**. The two untracked files, `del` and `git`, are **0 bytes** — stray shell
+artifacts, near-certainly from the `.git/lock-debris` cleanup commands being typed where a shell
+took `del` and `git` as filenames. **Reported, not deleted: they are on the Principal's working
+copy and nothing on the mount is an agent's to remove.**
+
+**`CD-141` — the standing authorization.** Boundary drawn **twice**, class AND path, because a
+promotion-class commit reaching into `canon/` and a canon-class commit reaching into `banks/` are
+both plausible errors and **either single test lets one through**. `N/A` is **excluded from CLEAN**,
+so if a future bank shape silently makes `PLAN` or `ENVELOPE-SYNC` inapplicable **the authorization
+lapses rather than passing quietly**.
+
+**The 40-item minimum is ruled inside the row, not left to be met.** `PLAN`'s margin rule needs
+`0.80n + 8 ≤ n`. A thin chapter **grows or combines, per case, on the Principal's ruling** — and the
+agent **stops rather than pads**, because items authored to satisfy a gate are precisely the
+near-duplicates §4 forbids and `PLAN`'s own scan would then catch what the padding made.
+
+**And the row records what the autonomy rests on.** §6 promotes a pattern at **three** instances;
+the ledger's only entry about agent judgement is **`QB-CR-013`, one instance**. The row says so in
+its own text and requires a **dry run before handover**. **Filed deliberately rather than
+incidentally** — the difference being that a later reader can see the thinness was known.
+
+**`CD-142` — the venue moves, the standard does not.** Item-level review to Hub subject experts;
+CD-136(g) named the Principal **because the Hub lane did not exist yet, not because the judgement is
+his by nature**, and reading it the other way would freeze a stopgap into a principle. The
+plan-level countersign becomes the `PLAN` gate — **a human was spending judgement on counting.**
+CD-136(b)'s teacher-key rule is untouched.
+
+**Paired updates:** AGENTS §3.1 gains the second carve-out beside CD-079's and says **the pointer is
+not the authority**; AGENTS §6 gains the relocation; QUESTION_POLICY §6's Plan row gains CD-142's
+number, file to v1.7, with the push authorization pointed at AGENTS §3.1 rather than duplicated.
+
+**Held, not forgotten:** the batch-envelope import contract. **That endpoint is in `scd-hub`, not
+this repo** — no server code here, and `validate_import.py` is vendored supersede-only. It changes
+LOCKED contract v1.0, so it is Principal-gated and **outside CD-141 by both class and path.**
+
+**Nothing pushed.** `origin/main` at `090871b`.
