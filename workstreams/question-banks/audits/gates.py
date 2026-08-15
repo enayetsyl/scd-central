@@ -108,14 +108,14 @@ BLOOM_DOMAIN = {
     "Create": "উচ্চতর",
 }
 
-# MarkLogic_BAN_Spine.md — C5 per-ITEM marks by slot (not slot totals).
-
-# MarkLogic_BAN_Spine.md — C5 per-ITEM marks by slot (not slot totals).
-QB_SPINE_ITEM_MARKS = {
-    ("BAN", 5): {"S01": 10, "S02": 1, "S03": 1, "S04": 1, "S05": 1, "S06": 1,
-                 "S07": 2, "S08": 5, "S09": 5, "S10": 1, "S11": 1, "S12": 1,
-                 "S13": 1, "S14": 5, "S15": 12},
-}
+# RETIRED 2026-08-15 — `QB_SPINE_ITEM_MARKS` and `QP6_SPINE_ITEM_MARKS` were two hand-copied
+# transcriptions of the same spine column, and CD-011's standing rule is that a registry is written
+# from the artifact, never from a derived copy. They covered ("BAN", 5) ALONE, so MARK-VALUE
+# reported *"no spine item-mark table vendored"* for every other class in the school — a refusal,
+# correctly, but a refusal that would have had to be answered by hand-copying four more columns
+# twice each. `canon/marklogic/SLOT_REGISTER.json` now carries `marks_per_item` per
+# (subject, class, slot), proven against the spine by `tools/audits/slot_register_check.py`, so
+# MARK-VALUE reads it. See `register_item_marks` below.
 
 # QUESTION_BANK_POLICY.md §2 (QB-D-002) — per-chapter cumulative ceilings.
 
@@ -192,10 +192,6 @@ DOMAIN_TO_BLOOM = {"জ্ঞান": ["Remember"], "অনুধাবন": ["U
 
 # MarkLogic_BAN_Spine.md — C5 per-ITEM marks by slot (slot TOTALS are a different column;
 # QB-CR-003 is the row that establishes the distinction).
-QP6_SPINE_ITEM_MARKS = {
-    ("BAN", 5): {"S01": 10, "S02": 1, "S03": 1, "S04": 1, "S05": 1, "S06": 1, "S07": 2,
-                 "S08": 5, "S09": 5, "S10": 1, "S11": 1, "S12": 1, "S13": 1, "S14": 5, "S15": 12},
-}
 
 # REF-09 §3, restated at QUESTION_POLICY §4 "Difficulty".
 
@@ -591,6 +587,49 @@ def load_topic_numbers(root):
 # GATES — §5 family (nothing here is deleted: CD-123)
 # =================================================================================
 
+
+def register_item_marks(ctx, subject, cls):
+    """→ ({slot: marks_per_item}, refusal-or-None), read from CD-138's register.
+
+    ONE SOURCE, TWO CALLERS. MARK-VALUE exists once per bank shape and both implementations now
+    read this. The two vendored tables it replaces were transcriptions of the same spine column,
+    kept in sync by hand — which is the failure CD-011 names: *a registry is written from the
+    actual artifact, never from a summary or a derived copy.*
+
+    THE REGISTER IS NOT A SPINE FILE, and that distinction is the whole reason this is allowed.
+    CD-138(b) keeps every gate away from `MarkLogic_*_Spine.md` so no gate can read a header marker
+    string. The register is DECLARED data, proven against the spine at build time by
+    `tools/audits/slot_register_check.py`. Reading it is what CD-138 built it for.
+
+    D5 and D6 rows are already filtered out by `load_slot_register`, so a bank item sitting in a
+    slot its class does not carry falls through to the per-item "not in the register" error rather
+    than being silently compared against a mark that does not exist.
+    """
+    if ctx and "slot_register" in ctx and ctx["slot_register"]:
+        register = ctx["slot_register"]
+    else:
+        register, errs = load_slot_register(ROOT)
+        if errs:
+            return None, "; ".join(errs)
+    # D5/D6 filtered HERE as well as in the loader, and the selftest is why: `_synth_register()`
+    # supplies them unfiltered on purpose, so a caller that builds a register another way is the
+    # normal case rather than the exotic one. Without this, a D6 row's `marks_per_item: null`
+    # turned the whole class into a REFUSAL and MARK-VALUE stopped judging a bank it could judge
+    # perfectly well — a gate silenced by a row it should never have been reading.
+    table = {s: r.get("marks_per_item") for (sub, c, s), r in register.items()
+             if sub == subject and c == cls and r.get("d_code") not in ("D5", "D6")}
+    if not table:
+        return None, (f"the slot register carries no rows for {subject} C{cls} — a mark cannot be "
+                      f"checked against a column that has not been built (CD-138). Not judged, "
+                      f"not assumed clean")
+    missing = sorted(s for s, v in table.items() if v is None)
+    if missing:
+        return None, (f"{subject} C{cls} register rows carry no `marks_per_item` at "
+                      f"{', '.join(missing)} — the value MARK-VALUE reads is absent, so no verdict "
+                      f"is given")
+    return table, None
+
+
 def g_pool_membership(bank, ctx):
     errs = []
     pools = bank.get("pool_index") or {}
@@ -638,9 +677,9 @@ def g_zero_overlap(bank, ctx):
 def g_qb_mark_value(bank, ctx):
     errs = []
     key = (ctx["subject"], ctx["class_level"])
-    table = QB_SPINE_ITEM_MARKS.get(key)
-    if not table:
-        return [f"no spine per-item mark table vendored for {key} — add it from the spine before authoring"]
+    table, refusal = register_item_marks(ctx, key[0], key[1])
+    if refusal:
+        return [refusal]
     slots = bank.get("slot_index") or {}
     for q in bank.get("questions", []):
         qid = q.get("qid")
@@ -649,7 +688,8 @@ def g_qb_mark_value(bank, ctx):
             errs.append(f"{qid}: no slot_index entry — every item names its MarkLogic slot")
             continue
         if slot not in table:
-            errs.append(f"{qid}: slot '{slot}' is not in the {key[0]} C{key[1]} spine")
+            errs.append(f"{qid}: slot '{slot}' is in no {key[0]} C{key[1]} register row — either "
+                        f"the slot is wrong or the class does not carry it (CD-138)")
             continue
         per_item = table[slot]
         if q.get("question_type") == "fill_blank":
@@ -907,9 +947,9 @@ def g_mark_value(bank, ctx):
     """§6 row 1 — Mark value: against MarkLogic spine values."""
     errs, rep = [], []
     key = (bank.get("subject"), bank.get("class"))
-    table = QP6_SPINE_ITEM_MARKS.get(key)
-    if not table:
-        return [], [f"no spine item-mark table vendored for {key} — not judged, not assumed clean"]
+    table, refusal = register_item_marks(ctx, key[0], key[1])
+    if refusal:
+        return [], [refusal]
     slots = bank.get("slot_index") or {}
     for q in bank["questions"]:
         qid = q.get("qid")
@@ -919,13 +959,15 @@ def g_mark_value(bank, ctx):
                         f"slot the bank does not name")
             continue
         if slot not in table:
-            errs.append(f"{qid}: slot '{slot}' is not in the {key[0]} C{key[1]} spine")
+            errs.append(f"{qid}: slot '{slot}' is in no {key[0]} C{key[1]} register row — either "
+                        f"the slot is wrong or the class does not carry it (CD-138)")
             continue
         want, got = table[slot], q.get("marks")
         if got != want:
-            errs.append(f"{qid}: slot {slot} carries {want} marks per item in the spine, "
+            errs.append(f"{qid}: slot {slot} carries {want} marks per item in the register, "
                         f"item declares {got}")
-    rep.append(f"{len(bank['questions'])} items checked against {key[0]} C{key[1]} spine")
+    rep.append(f"{len(bank['questions'])} items checked against the SLOT REGISTER's "
+               f"{key[0]} C{key[1]} rows (CD-138 — the vendored mark table is retired)")
     return errs, rep
 
 def g_source_trace(bank, ctx):
@@ -1618,7 +1660,7 @@ def qp_run(bank, ctx, quiet=False):
 # CONTEXT — §5 family
 # =================================================================================
 
-def qb_build_ctx(bank):
+def qb_build_ctx(bank, register=None):
     by_qid = {q.get("qid"): q for q in bank.get("questions", [])}
     pool_of = {}
     for pool, ids in (bank.get("pool_index") or {}).items():
@@ -1652,9 +1694,14 @@ def qb_build_ctx(bank):
         if path.exists():
             full = path.read_text(encoding="utf-8")
             src_text, unit_note = qb_resolve_chapter(full, unit)
+    # The register arrives as an argument so the SELFTEST can supply a synthetic one: seeds are
+    # synthetic and no canon/marklogic file is read as fixture data (QB-D-012, CD-121(e)). A live
+    # run passes None and the loader reads the register from disk.
     ctx = {"by_qid": by_qid, "pool_of": pool_of, "subject": subject,
            "class_level": class_level, "unit": unit, "source_text": src_text,
-           "watch": 0, "report": []}
+           "watch": 0, "report": [],
+           "slot_register": register if register is not None
+                            else load_slot_register(ROOT)[0]}
     if unit_note:
         ctx["report"].append(("SOURCE-TRACE", unit_note))
     return ctx
@@ -1938,7 +1985,7 @@ def qb_selftest():
                    "_tokens": _chapter_tokens("12")}]
 
     def _excl_run(bank, decls, errors=None):
-        c = qb_build_ctx(bank)
+        c = qb_build_ctx(bank, _synth_register())
         c["exclusions"] = decls
         c["exclusion_errors"] = errors or []
         return run(bank, c, quiet=True)[0]
@@ -1984,7 +2031,7 @@ def qb_selftest():
          lambda: (not any(g == "SOURCE-EXCLUSION" for g, _ in _excl_run(_qb_good_bank(), []))
                   and any("nothing to enforce" in line for _, line in
                           run(_qb_good_bank(),
-                              {**qb_build_ctx(_qb_good_bank()), "exclusions": []},
+                              {**qb_build_ctx(_qb_good_bank(), _synth_register()), "exclusions": []},
                               quiet=True)[1]))),
     ]
     # --- MINT vs CITE, found by this gate's own first live run (CD-131 addendum). Both
@@ -2438,6 +2485,37 @@ def qp_selftest():
             ok = False
         else:
             print(f"  PASS  {gate:<14} stays quiet on: {label}")
+
+    # --- MARK-VALUE's REFUSAL BRANCH, asserted rather than assumed. Retiring the vendored mark
+    # --- tables replaced "no table vendored for (BAN, 3)" with "the register carries no rows for
+    # --- BAN C3". The words changed; what must NOT change is that it is a REFUSAL — reported,
+    # --- never silence, never a pass (SOURCE_POLICY §7.17). A negative case cannot prove this:
+    # --- "no errors" is exactly what a gate that quietly did nothing would also produce. So the
+    # --- REPORT LINE ITSELF is asserted.
+    print()
+    orphan = _qp_good_bank()
+    orphan["class"] = 3          # the synthetic register carries C5 rows only
+    o_errs, o_rep = g_mark_value(orphan, ctx)
+    refused = (not o_errs) and any("carries no rows for BAN C3" in r for r in o_rep)
+    print(f"  {'PASS' if refused else 'FAIL'}  MARK-VALUE     "
+          + ("a bank at a class the register has not built is REFUSED BY NAME, not judged and "
+             "not passed — the vendored table's own refusal, kept through the retirement"
+             if refused else f"the refusal branch did not report: errs={o_errs} rep={o_rep}"))
+    ok = ok and refused
+
+    # --- And the other direction: the register is the ONLY mark authority now, so a register that
+    # --- disagrees with the item must move the verdict. If it does not, the gate is still reading
+    # --- something else.
+    lowered = {k: {**v, "marks_per_item": 99} for k, v in _synth_register().items()}
+    l_ctx = dict(ctx)
+    l_ctx["slot_register"] = lowered
+    l_errs, _ = g_mark_value(_qp_good_bank(), l_ctx)
+    moved = bool(l_errs)
+    print(f"  {'PASS' if moved else 'FAIL'}  MARK-VALUE     "
+          + ("editing `marks_per_item` in the register alone moves the verdict — the retired "
+             "tables are gone and nothing else is being read"
+             if moved else "a register edit did NOT move the verdict — a second mark source survives"))
+    ok = ok and moved
 
     # --- CD-138(b): THE MARKER-EDIT SEED. A gate whose verdict moves when a marker string is
     # --- edited is non-conformant. Here the whole of the register's PROSE — the fields that

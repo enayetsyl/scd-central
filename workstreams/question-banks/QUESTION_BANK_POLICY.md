@@ -183,7 +183,7 @@ every item.
   >   No extraction → no bank for that chapter; the gap is **recorded, not filled from memory**.
 
   </details>
-- **Marks per question ONLY from MarkLogic values.** Annual-slot per-item marks are carried
+- **Marks per question ONLY from MarkLogic values — and as of 2026-08-15 that means the SLOT REGISTER, not a copy of it.** `MARK-VALUE` reads `canon/marklogic/SLOT_REGISTER.json`'s `marks_per_item` per (subject, class, slot); the two per-item mark tables vendored inside `audits/gates.py` are RETIRED. They covered `("BAN", 5)` alone, so every other class was refused for want of a table that would have had to be hand-copied — and a hand-kept copy is what CD-011 forbids. Annual-slot per-item marks are carried
   unchanged at CT scale (`MarkLogic_QuestionPolicy.md` §৬: a class test lifts 4–6 questions from
   the annual paper with marks identical, never a shrunken version).
 - **Domain ratios per class band, checked per pool, not per question**
@@ -212,7 +212,7 @@ every item.
 3. `workstreams/question-banks/audits/gates.py`:
 
    > **AMENDED 2026-08-14 (CD-120) — the gate list is now `canon/QUESTION_POLICY.md` §6's,
-   > eleven checks:** mark value against spine values · source traceability to the chapter
+   > eleven checks:** mark value against the SLOT REGISTER's `marks_per_item` (CD-138; **amended 2026-08-15** from *"spine values"*, which named a vendored copy that is now retired) · source traceability to the chapter
    > extraction · script guard (LANGUAGE_RULES §7) · `ref19_topic_id` against REF-19's slug set ·
    > `topic_tag` against `TOPIC_NUMBERS.md` (**an unminted number FAILs, never auto-mints**) ·
    > key/rubric present per type · Bloom band at **chapter** scope · difficulty easy ≥30% /

@@ -1,4 +1,6 @@
-# QUESTION_POLICY — v1.3 (canon)
+# QUESTION_POLICY — v1.4 (canon)
+
+**v1.4 — 2026-08-15.** §6's Mark value row moves to the slot register and both vendored per-item mark tables are retired; §9 gains the pointer. The gate list is otherwise unchanged.
 
 *Adopted 2026-08-14 by Principal ruling, unification session 2. Location: `canon/QUESTION_POLICY.md`.*
 *Minted as **CD-092 … CD-113** — one row per §3 resolved conflict, plus §2, §4, §5 and §6, per §10.*
@@ -262,7 +264,7 @@ proportion, so there is no per-CT domain gate.
 
 | Gate | Checks |
 |---|---|
-| Mark value | against MarkLogic spine values |
+| Mark value | against **`canon/marklogic/SLOT_REGISTER.json`'s `marks_per_item`** (**CD-138**), per (subject, class, slot) — **not against a mark table vendored inside the gate file**. Two such tables existed, one per bank shape, hand-copied from the same spine column and covering `("BAN", 5)` alone; CD-011's rule is that a registry is written from the artifact and never from a derived copy. A class the register has not built is **REFUSED by name** — reported, never passed |
 | Source traceability | every item resolves to its chapter extraction |
 | Script guard | LANGUAGE_RULES §7 |
 | `ref19_topic_id` resolves | against REF-19's slug set |
@@ -338,6 +340,7 @@ actual use · the storybook venture.
 | QUESTION_BANK_POLICY | §2, §3, §4, §5 | Amended: one Pool, `tier` added, REF-09 §5 key wording, gate list per §6 |
 | **This file** | **§6 Bloom row** (pool-level band) | **Superseded by CD-135** — pool level is REF-06 §3.6's **lower bounds only**; the band, both bounds, is a paper rule. **CD-121(a) is superseded only to the extent it reads as a band; its axis assignment stands** |
 | **QUESTION_BANK_POLICY** | **§4, first bullet** — *"Content ONLY from the chapter's source extraction"* | **Amended to STIMULUS scope by CD-136** — the stimulus must resolve to the extraction; a **key that is a general Bangla language fact may be teacher-supplied**, declared in the item's own `model_note`. Supersede-with-archive per master §5.3 |
+| **This file** | **§6 Mark value row** (*"against MarkLogic spine values"*) | **Amended 2026-08-15** — the authority is the SLOT REGISTER's declared `marks_per_item`, which `tools/audits/slot_register_check.py` proves against the spine at build time. The gate still never opens a spine file (CD-138(b)); it now reads the proven data instead of a hand-kept copy of it. Both vendored tables are RETIRED |
 
 **REF-09 §4's mark totals were overridden by the permission §4 itself grants, not superseded — REF-09
 needs no edit beyond §4.1.** **`TOPIC_NUMBERS.md` is not demoted** — an earlier draft proposed it on
