@@ -2321,3 +2321,83 @@ probe with a maximally favourable synthetic declaration measured the cost of the
 S12 3/5 · S13 3/5**, three slots two items short **before** any task defect is counted.
 
 **Open to the Principal:** পাঠ ১৩ cannot be cleared without editing it. **Nothing promoted.**
+
+---
+
+## 2026-08-15 · পাঠ ১৩ declaration + re-author · BAN C1–C4 register (Cowork)
+
+Opened at `4ec7b6f`, origin == HEAD, tree clean — verified before anything was read. The repo was
+not mounted at session start; access was requested and granted rather than guessed at.
+
+**Task 1 — the CD-138(e) declaration, drafted, countersigned, committed alone.** Thirteen slots
+admitted for পাঠ ১৩; S14 and S15 excluded, each with a one-line CONTENT reason (CD-134(c)), as a
+per-chapter declaration under CD-139(c) that makes no claim about পাঠ ৪. `6511352`,
+corrections-class, header only, 20 insertions and no deletions.
+
+**Two findings were reported before authoring, and both changed the work.** First, the bank
+carried **no `task_index` at all** — COVERAGE returned early on the missing `admissible_slots`, so
+the absence had never reached gate output; the declaration landing meant all 88 items would report
+*declares no task*. Second, **the ruled re-author scope landed the pool below two Bloom floors**:
+retiring the ten S10 items cost 3 `Understand` and 7 `Apply`, and the four re-tags took
+`Understand` down at the same time, giving a content cap of 68 against a pool of 89.
+
+**The Principal ruled (C) — extract to content limit, balanced, every floor clearing WITH MARGIN,
+a plan landing exactly on a floor being a defect rather than a pass.** A plan table was produced
+and countersigned before a line was authored.
+
+**Then the plan's own arithmetic was found to hide a term, and this is the transferable part.**
+Q34 was rejected and retired on the same ruling — মিল-শব্দ has no C5 slot, and CD-138(b) would
+have made it declare S07's `মূল কাঠামো`, *a declaration that is convenient and false*. But the
+countersigned table read `S07 = R6 · U15 · A1`, and **Q34 WAS that `A1`** — the pool's only S07
+`Apply` item. Its removal dropped the Apply margin to +1, below the standard the same ruling had
+just set. **Recompute after every ruling, not once per plan.** Restored to +2 without re-opening
+any countersigned content max, by authoring one S10 item as `Apply` on its own merit: `পড়রে` is a
+ক্রিয়া and `পড়া` a বিশেষ্য in the same poem.
+
+**Task 2 — the re-author.** `1b9e83d`, build-class: 4 re-tags **first** (every downstream count
+depends on them), 11 retirements, 6 rewrites, 33 new items, `task_index` for all 110 from the
+register's own vocabulary. **Suite CLEAN, 0 failures**, both selftests PASS, `canon_check` CLEAN.
+Remember 34/110=30.9% · Understand 30=27.3% · Apply 30=27.3% · Analyze 14=12.7%; margins +12 ·
++2 · +2 · +3, no floor landed on.
+
+**MARK-VALUE earned its keep.** Two S07 items were authored at 1 mark against the spine's 2 and
+the gate caught both. Fixed at source, with the reason written into the authoring helper's
+docstring rather than the number quietly corrected.
+
+**Withdrawn, not silently fixed:** wave 3's claim that S06 · S12 · S13 are content-limited at
+three. Read again at source the poem carries five distinct যুক্তবর্ণ, seven clean opposites and six
+এক কথায় প্রকাশ mappings. **The three-item reading was not a fact about the book; it was a fact
+about how far the poem had been read.** Recorded in the bank header.
+
+**Task 3 — STOPPED, and the brief predicted where.** *"If any C1–C4 row requires touching gate or
+checker code, STOP and report."* Four defects, none of them data problems:
+
+1. **`slot_register_check.py` reads one column and mislabels it.** `spine_c5_marks()` takes no
+   class and reads `cells[4]`; `check()` accepts `cls`, uses it in every error string, and never
+   passes it to the parser. Demonstrated, not inferred: an absurd C1 row — wrong marks, no
+   `d_code`, `task_mode: "NONSENSE"`, an authored `chapter_authorable`, four of the script's own
+   seeded failure classes at once — produced **NONE — the row was never read**. And `cls=1` emits
+   *"spine C1 column says 10"* where S01's C1 cell is `—` and **10 is the C5 value wearing a C1
+   label**. `main()` calls `check()` once at `cls=5`, so sixty new rows would be filtered out and
+   the script would print CLEAN. I-1's D6 term is read from C5 and is 0.0; I-8 is reported and
+   never computed.
+2. **No register shape for an ABSENT (D5) slot**, and both answers cost code.
+3. **D6 has no home — and the brief's own ফলা instruction proved it.** The ভেঙে ban attaches to
+   `BAN-S12` C1 and was already carried; the ফলা title ban is on **`BAN-L03`, a D6 row**, with
+   nothing to attach to. `BAN-L01` and `BAN-L03` each carry two class rows at different marks, so
+   an L-id is not unique alone.
+4. **Two cells underdetermined at source** — C2 S12 (10 marks) and C3 S09 (10 marks) give a total
+   with no `×n`, and both are deviations rather than মূল কাঠামো rows that could inherit C5's.
+   CD-138(d) makes 10×1 and 5×2 both inventions.
+
+All four columns' arithmetic was verified by hand against I-1 and the full row specification held
+at `_wip/BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md` so nothing was lost. **I-8 hand-walked: every
+BAN absence is a leading prefix, no interior hole** — the right answer, and worth nothing until
+something computes it.
+
+**All four were ruled the same day** — D5 rows approved, L-rows approved keyed `(L-id, class)`,
+checker repair authorized, and the two item splits ruled to a decision row with authority স্কুল
+কর্তৃপক্ষ rather than left UNRESOLVED. Execution follows in this session.
+
+**Nothing promoted.** পাঠ ১৩'s 110 items await the Subject Lead pass. **Nothing pushed** —
+`origin/main` still `4ec7b6f`.

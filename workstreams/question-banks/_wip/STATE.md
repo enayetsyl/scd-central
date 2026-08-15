@@ -2,63 +2,78 @@
 
 | Field | Value |
 |---|---|
-| Current build | **The slot register (CD-138).** `canon/marklogic/SLOT_REGISTER.json` is built at **BAN C5 only**; C1–C4 and ENG · MATH · SCI/BGS are owed. পাঠ ১৩'s bank is untouched this session and is **NOT promoted**. |
-| Phase | Register built and proven; COVERAGE converted. **Next phase is পাঠ ১৩'s re-author, and it is Principal-gated** (see Blockers). |
-| Last completed step | CD-138 (amended), CD-139, `PENDING-P-038`, `QB-CR-012` filed → register built at BAN C5, proven against the spine by `tools/audits/slot_register_check.py` (**8 seeded + 1 negative + 1 baseline, PASS**) → COVERAGE converted to read the register (**27 seeded + 11 negatives + 6 declaration cases + 1 baseline, PASS**; suite 22 gates). `canon_check` CLEAN · `tools_check` CLEAN. Three commits: `e1054c7` rulings · `5f95ce2` build · `8cec402` gate. **Nothing pushed.** |
-| Next step | **BLOCKED — see below.** After that: BAN C1–C4, then ENG, MATH, SCI/BGS, **added as DATA ROWS, never as new gate code**. If a new subject needs a code change, the register's shape is wrong. |
-| Blockers / open PENDING-P tags | **`PENDING-P-038` RAISED** (register completeness across chapters; blocked on MarkLogic §৪'s syllabus split). **One OPEN question to the Principal: পাঠ ১৩ is RED under CD-138 and cannot be cleared without editing it**, which this session's brief excluded. |
-| Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` |
+| Current build | **পাঠ ১৩ re-authored against the slot register — DONE and CLEAN at 110 items.** `canon/marklogic/SLOT_REGISTER.json` is still built at **BAN C5 only**; C1–C4 rows are specified and RULED but not yet written (see Next step). |
+| Phase | পাঠ ১৩ closed at gate-CLEAN. **Nothing promoted** — the 110-item set is held for the Principal's Subject Lead pass (CD-136(g), REF-09 §9). |
+| Last completed step | CD-138(e) declaration countersigned and committed (`6511352`, corrections-class, header only) → wave 4 re-author committed (`1b9e83d`, build-class): 4 re-tags, 11 retirements, 6 rewrites, 33 new items, `task_index` for all 110. Suite **CLEAN (0 failures)**, both selftests PASS, `canon_check` CLEAN. **Nothing pushed** — `origin/main` still `4ec7b6f`. |
+| Next step | BAN C1–C4 register rows, now UNBLOCKED by four Principal rulings (2026-08-15): D5 rows approved · L-rows approved · checker repair authorized · the two item splits ruled. Order: log → ruling (CD row) → gate (checker) → build (rows) → MARK-VALUE. |
+| Blockers / open PENDING-P tags | **`PENDING-P-038` RAISED** (register completeness across chapters; blocked on MarkLogic §৪'s syllabus split). No open question to the Principal — this session's four were all ruled. |
+| Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` · `U13_ADMISSIBILITY_DRAFT_2026-08-15.md` · `BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md` |
 
-## The suite is RED on পাঠ ১৩, deliberately, and the reason is one line
+## পাঠ ১৩ — what the re-author actually changed, and why the numbers are what they are
 
-`COVERAGE` FAILs with: *bank header declares no `admissible_slots`*. CD-138(e) makes the
-admissibility declaration a required part of a chapter bank, and পাঠ ১৩ was authored before that
-ruling existed. **The bank was not edited to clear it** — the session brief excluded পাঠ ১৩, and
-editing an artifact to green a gate is the move AGENTS §5 forbids.
+**110 items. Recomputed twice in session; no number carried from wave 3's 88.**
 
-**A read-only probe measured what the fix costs**, with a synthetic declaration crediting **every
-item with the right task** — the most favourable possible reading:
+| level | count | % | floor | margin |
+|---|--:|--:|--:|--:|
+| Remember | 34 | 30.9% | 20% (22) | **+12** |
+| Understand | 30 | 27.3% | 25% (28) | **+2** |
+| Apply | 30 | 27.3% | 25% (28) | **+2** |
+| Analyze | 14 | 12.7% | 10% (11) | **+3** |
+| Evaluate | 2 | 1.8% | 0% | +2 |
+| Create | 0 | 0.0% | 0% | content fact, CD-135(d) |
 
-```
-S06 3/5 · S12 3/5 · S13 3/5
-```
+Slots: S01 1 · S02 7 · S03 16 · S04 5 · S05 8 · S06 7 · S07 21 · S08 15 · S09 1 · S10 10 ·
+S11 8 · S12 5 · S13 6. Every one clears its CD-138(g) demand.
 
-**Three slots are two items short of the paper's own per-slot demand (CD-138(g)), before any of the
-known task defects are counted.** So the re-author owes **at least +6 items** on top of: the four
-re-tags, the ten mis-slotted S10 items, the S12 completion (শব্দ গঠন), and the S11 off-choice three.
-**Recompute the target after those, never on a carried number.**
+**The binding constraint was never pool size — it was the Apply base.** Retiring the ten S10
+ভাব নির্ণয় items cost 7 `Apply`; retiring Q34 cost the eighth. That is why S03, S11 and S12 are
+all authored to their content limits, and why one S10 item is `Apply`: `পড়রে` is a ক্রিয়া and
+`পড়া` a বিশেষ্য in the same poem, so deciding which by context is a rule applied in a new
+situation, not a classification.
 
-## What the register carries at BAN C5
+**Two things a later session must not re-derive:**
 
-15 rows · **56 items · 100 marks** (the two are separate fields; only marks total 100).
-**task_mode: 4 alternative · 2 composite · 9 simple.**
+- **A plan table's own arithmetic can hide a term.** The countersigned plan read `S07 = R6 · U15 ·
+  A1`, and Q34 WAS that `A1`. Retiring it was ruled after the table was signed, and the Apply
+  margin silently fell to +1 — below the standard the same ruling set. **Recompute after every
+  ruling, not once per plan.**
+- **A content limit is a claim about how far the book was read.** Wave 3 called S06 · S12 · S13
+  content-limited at three. Read again at source: five distinct যুক্তবর্ণ, seven clean opposites,
+  six এক কথায় প্রকাশ mappings. The withdrawal is recorded in the bank header, not silently fixed.
 
-| Slot | Mode | The fact that was invisible before |
-|---|---|---|
-| S01 | composite | কবির নাম · কবিতার নাম · ৮ লাইন — declared on the মূল কাঠামো line's own **1+1+8** split |
-| S06 | alternative | {বিপরীত, সমার্থক} → **বিপরীত**. C3 selects differently; S13 holds সমার্থক at C3 |
-| S10 | alternative | {ভাষারীতি, পদ নির্ণয়, ক্রিয়ার কাল} → **পদ নির্ণয়**. ভাব নির্ণয় is admitted at **no class** |
-| S11 | alternative | {প্রশ্ন তৈরি, বিরামচিহ্ন} → **বিরামচিহ্ন**. প্রশ্ন তৈরি is C4-and-above |
-| S12 | composite | ভাঙা **and** শব্দ গঠন. C1 is D3 with different parts — do not copy down |
-| S14 | alternative | cardinality **3** declared against a header saying দুটোর — declared, never counted off the string |
-| S15 | simple | *সূত্রসহ বা খোলা* varies the **stimulus**, not the task |
+**FIVE Remember items are left unextracted on the Principal's HOLD** — S02 +2 (ফেরেস্তা · বকুল),
+S04 +3 — and are NAMED in `header.gaps` so a later wave can take them. They raise the pool without
+raising `Apply`. Take them only together with enough new `Apply` to hold the margin.
 
-## Two things a later session must not re-derive
+**Q34 is retired and মিল-শব্দ is now UNSERVED.** That is the honest state: অনুশীলনী ৩ has no C5
+spine slot, and CD-138(b) would have made Q34 declare S07's `মূল কাঠামো` — a declaration that is
+convenient and false. The gap is in the spine, not in the bank.
 
-- **No gate reads a spine file.** The spine parse lives at build time in
-  `tools/audits/slot_register_check.py`. CD-138(b) makes mode DECLARED; the markers
-  (*যেকোনো একটা* · *অথবা* · *বা* · *ও* · *+* · *ভেঙে*) are authoring evidence only. Both halves are
-  seeded — strip the markers from the spine, and from the register's prose, and neither verdict moves.
-- **`chapter_authorable` is derived, never authored.** A register row carrying one FAILs, and the
-  check runs on the register **in hand** rather than only in the disk loader — the seed proved that
-  distinction the hard way.
+## BAN C1–C4 — specified, ruled, not yet written
+
+Full row specification and the arithmetic for all five columns:
+`_wip/BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md`. **The file's title is now historical** — all four
+blockers it records were ruled on 2026-08-15 and it is kept as the evidence trail, not as a
+standing block.
+
+| Blocker it found | Ruling |
+|---|---|
+| `slot_register_check.py` reads ONE column and mislabels it as whichever class it is asked for; `main()` never iterates | Repair authorized — parser takes `cls`, `main()` walks all five, I-1's D6 term per class (39·20·5·0·0) |
+| No shape for an absent (D5) slot | D5 rows APPROVED — `d_code: D5`, spine's reason verbatim; `g_coverage` and admissibility skip them structurally. **Existence is class-level; admissibility is chapter-level; never one field.** I-8 computes from the register |
+| D6 (`BAN-L01`…`L06`) has no home, and the ফলা title ban therefore has nothing to attach to | L-rows APPROVED — keyed `(L-id, class)` because L-ids repeat across classes at different marks. I-1 totals include them |
+| `items_per_paper` underdetermined at source for C2 S12 and C3 S09 | RULED — C2 S12 = ১০টি × ১; C3 S09 = ৫টি প্রশ্ন × ২. Filed as a decision row, authority স্কুল কর্তৃপক্ষ. **Not UNRESOLVED** |
+
+**I-8, hand-walked at source and expected to compute clean:** every BAN absence (S01, S06, S08,
+S09, S10, S11, S13) is a **leading prefix** that ends once the slot starts. There is no interior
+hole. The value of computing it is that the next subject's column will not be hand-walked.
 
 ## Carried forward, unchanged
 
 - **PENDING-P-008 (FLAGGED)** — `TOPIC_NUMBERS.md` is a C5-Bangla seed; REF-19 has no Bangla
-  punctuation slug.
-- **UP-002** `pool` field · **UP-003** `ref19_topic_id` rejects `MATH-*-REL`, blocking every C5 Math bank.
-- **QB-CR-009** U14 `-09` re-tag, execution owed at wave 2.
-- **`QB-CR-011` is now PATTERN** (`QB-CR-012`, four instances). No gate is proposed; the executable
-  residue is CD-138(b)/(e) and it is seeded there.
-- **The gate suite measures structure, not truth.** It cannot tell you an answer is wrong.
+  punctuation slug. Live this session: S11's বিরামচিহ্ন items ride `BAN-SENTENCE`, which is the
+  established choice and still not a punctuation slug.
+- **UP-002** `pool` field · **UP-003** `ref19_topic_id` rejects `MATH-*-REL`, blocking every C5
+  Math bank.
+- **No gate reads a spine file.** The spine parse lives at build time in
+  `tools/audits/slot_register_check.py`. Both halves of CD-138(b) stay seeded — strip every marker
+  from the spine, and every marker-bearing prose field from the register, and neither verdict moves.
