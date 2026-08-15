@@ -1244,6 +1244,15 @@ def load_slot_register(root):
         if "chapter_authorable" in r:
             errs.append(f"{r.get('slot')}: the register carries an AUTHORED `chapter_authorable` — "
                         f"CD-138(f) makes it DERIVED from per-chapter declarations, never authored")
+        # D5 and D6 rows are EXISTENCE facts about the class, not questions a chapter can serve
+        # (Principal ruling 2026-08-15). A D5 row says the class does not carry the slot at all; a
+        # D6 row is a school's-own question the বৃত্তি structure has no slot for. Neither is
+        # admissible-or-excluded, because ADMISSIBILITY IS A CHAPTER-LEVEL FACT AND EXISTENCE IS A
+        # CLASS-LEVEL ONE — collapsing them into one field is what forced the question. Left in,
+        # they would make every C1 chapter write a content reason for a question its paper does
+        # not contain, and would key an L-id no bank has ever declared.
+        if r.get("d_code") in ("D5", "D6"):
+            continue
         out[(r["subject"], r["class"], r["slot"].split("-")[-1])] = r
     return out, errs
 
@@ -1299,7 +1308,7 @@ def g_coverage(bank, ctx):
     if not register:
         return errs, rep
     slots_for_class = {s: r for (sub, c, s), r in register.items()
-                       if sub == subject and c == cls}
+                       if sub == subject and c == cls and r.get("d_code") not in ("D5", "D6")}
     # CD-138(f) is checked HERE, on the register actually in hand, not only in the disk loader —
     # a check that lives only in the loader is invisible to any caller that supplies the register
     # another way, which is precisely how the selftest supplies it. The seed proved that.
@@ -2187,6 +2196,16 @@ def _synth_register():
         row("S12", "composite", 5, 1, task="যুক্তবর্ণ ভেঙে শব্দ",
             parts=["যুক্তবর্ণ ভাঙা", "শব্দ গঠন"]),
     ]
+    # One D5 and one D6 row, so the skip is exercised on the IN-HAND path rather than only in the
+    # disk loader. These are supplied UNFILTERED on purpose — they simulate a caller that did not
+    # filter, which is the only way to prove g_coverage filters for itself.
+    rows.append({"subject": "BAN", "class": 5, "slot": "BAN-S15", "d_code": "D5",
+                 "slot_task": "কল্পিত অনুপস্থিত স্লট", "marks": 0, "items_per_paper": 0,
+                 "marks_per_item": 0, "absent_reason": "কল্পিত — এই শ্রেণিতে নেই",
+                 "row_constraints": []})
+    rows.append({"subject": "BAN", "class": 5, "slot": "BAN-L01", "d_code": "D6",
+                 "slot_task": "কল্পিত স্কুলের নিজস্ব প্রশ্ন", "marks": 5,
+                 "items_per_paper": None, "marks_per_item": None, "row_constraints": []})
     return {(r["subject"], r["class"], r["slot"].split("-")[-1]): r for r in rows}
 
 
@@ -2389,6 +2408,17 @@ def qp_selftest():
          lambda b: _reslot(b, "S10", "পদ নির্ণয়")),
         ("COVERAGE", "a slot declared inadmissible with a content reason and supplying ZERO items "
                      "— that is the declaration working, not a coverage failure (CD-138(e))",
+         lambda b: None),
+        ("COVERAGE", "a register carrying a D5 (absent) row for a slot the bank never declares — "
+                     "the chapter owes it NOTHING, not even a content reason. Existence is a "
+                     "CLASS-level fact and admissibility a CHAPTER-level one; requiring a পাঠ to "
+                     "explain why it does not serve a question its paper has never contained "
+                     "would be the two collapsed into one field (Principal, 2026-08-15)",
+         lambda b: None),
+        ("COVERAGE", "a register carrying a D6 school's-own row (`BAN-L01`) — skipped entirely. "
+                     "An L-id is in no bank's `admissible_slots`, has no per-slot demand a "
+                     "chapter could owe, and would key as `L01` against a declaration that has "
+                     "never named it",
          lambda b: None),
         ("DIFFICULTY", "a pool at 70% easy — CAN-SUPPLY, not equality, so this passes",
          lambda b: [q.update({"difficulty": "easy"}) for q in b["questions"][:17]]),
