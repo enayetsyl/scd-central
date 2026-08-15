@@ -13,7 +13,7 @@
   "tags": {
     "topic_tag": "TOP-BAN-C5-05",
     "bloom_level": "Understand",
-    "difficulty": "easy",
+    "difficulty": "medium",
     "paper_role": "short"
   },
   "provenance": {
@@ -23,21 +23,22 @@
     "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
   },
   "payload": {
-    "qid": "QP-BAN-C5-U13-Q21",
+    "qid": "QP-BAN-C5-U13-Q79",
     "topic_tag": "TOP-BAN-C5-05",
     "ref19_topic_id": "BAN-POEM",
-    "question_text": "'আমার কেবল ইচ্ছে জাগে নদীর কাছে থাকতে' — বাক্যটি কোন ভাব প্রকাশ করে?",
+    "question_text": "'সবুজ গাঁয়ে ঘুরব' — 'সবুজ' শব্দটি দিয়ে কবি গাঁয়ের কোন ছবি আঁকছেন?",
     "question_type": "short_answer",
     "paper_role": "short",
     "bloom_level": "Understand",
-    "difficulty": "easy",
+    "difficulty": "medium",
     "tier": "tier1",
-    "marks": 1,
+    "marks": 2,
     "chapter_ref": "পাঠ ১৩ — পাখির মতো",
     "answer_key": {
       "accepted": [
-        "ইচ্ছা"
-      ]
+        "গাছপালায় ভরা, শান্ত ও প্রাণে ভরা একটি গ্রামের ছবি।"
+      ],
+      "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
     }
   }
 }

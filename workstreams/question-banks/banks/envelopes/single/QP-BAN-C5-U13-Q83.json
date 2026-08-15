@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q83",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'দুধভরা ওই চাঁদের বাটি / ফেরেস্তারা উল্টায়' — চিত্রকল্পটি বিশ্লেষণ করে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "চিত্রকল্পের অংশগুলো আলাদা করা — চাঁদ, বাটি, দুধ, ফেরেস্তা — আর কোনটি কী বোঝায় তা মেলানো; ফেরেস্তা প্রসঙ্গে শ্রদ্ধাশীল ভাষা রাখা",
+          "band_descriptors": {
+            "সম্পূর্ণ": "চিত্রকল্পের প্রতিটি অংশ আলাদা করে বোঝানো হয়েছে এবং পূর্ণিমার রাতের সঙ্গে মিলিয়ে দেখানো হয়েছে; ফেরেস্তা প্রসঙ্গে ভাষা শ্রদ্ধাশীল।",
+            "আংশিক": "কেবল 'পূর্ণিমার চাঁদ' লিখে থেমে যাওয়া হয়েছে, অংশগুলো আলাদা করা হয়নি; অথবা ফেরেস্তা প্রসঙ্গে অসতর্ক ভাষা এসেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q88",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'পাখির মতো' কবিতার চারটি ছবি — কাঁঠালচাঁপার গন্ধ, বকুল ডাল, চাঁদের বাটি ও সবুজ গাঁ — কোনটি কী বোঝায়, মিলিয়ে বিশ্লেষণ করো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "চারটি ছবি আলাদা করে চেনা এবং প্রতিটিকে কবির মুক্তির ইচ্ছার সঙ্গে মিলিয়ে দেখানো; কোনো ছবিকে বানিয়ে না নিয়ে পাঠ থেকেই নেওয়া",
+          "band_descriptors": {
+            "সম্পূর্ণ": "চারটি ছবিই আলাদা করে বোঝানো হয়েছে এবং কবির ইচ্ছার সঙ্গে মিলিয়ে দেখানো হয়েছে; সবই পাঠের, কোনোটি বানানো নয়।",
+            "আংশিক": "দুই-তিনটি ছবি লেখা হয়েছে, বা পাঠে নেই এমন ছবি ঢুকেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

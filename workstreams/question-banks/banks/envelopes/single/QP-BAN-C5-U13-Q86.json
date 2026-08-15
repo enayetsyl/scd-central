@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q86",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'পাখির মতো' কবিতার শেষ দুই চরণে কবি যে সিদ্ধান্তে পৌঁছেছেন তা কোন কোন কথার উপর দাঁড়িয়ে আছে — বিশ্লেষণ করো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "শেষ সিদ্ধান্তের ভিত্তি আগের স্তবকগুলোতে খুঁজে বের করা; সিদ্ধান্তটিকে পড়াশোনার বিরুদ্ধে রায় হিসেবে না দেখিয়ে কবির কল্পনা হিসেবে দেখানো",
+          "band_descriptors": {
+            "সম্পূর্ণ": "শেষ দুই চরণের সঙ্গে আগের অন্তত দুটি স্তবকের যোগ দেখানো হয়েছে, আর সিদ্ধান্তটি কবির কল্পনা বলে বোঝানো হয়েছে।",
+            "আংশিক": "কেবল শেষ দুই চরণের অর্থ লেখা হয়েছে, ভিত্তি খোঁজা হয়নি; অথবা পড়াশোনা ছেড়ে দেওয়াকে সমর্থন করা হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

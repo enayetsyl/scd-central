@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q81",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'পাখির মতো' কবিতার পাঁচটি স্তবকে কবির মনের ভাব ধাপে ধাপে কীভাবে বদলেছে — বিশ্লেষণ করে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "স্তবক ধরে ধরে ভাবের বদল আলাদা করা — পড়ার নির্দেশ, ইচ্ছার জন্ম, রাতের কল্পনা, ওড়ার ভাবনা, শেষে সিদ্ধান্ত; আর পিতামাতার নির্দেশকে ছোট না করে কবির মনের কথা লেখা",
+          "band_descriptors": {
+            "সম্পূর্ণ": "পাঁচটি স্তবকের ভাব আলাদা করে ধাপে ধাপে দেখানো হয়েছে, প্রতিটি স্তবক থেকে প্রমাণ দেওয়া হয়েছে; ভাষা শালীন ও পিতামাতার প্রতি সম্মান বজায় আছে।",
+            "আংশিক": "দু-তিনটি স্তবক নিয়ে লেখা হয়েছে বা ধাপগুলো আলাদা হয়নি; অথবা পড়াশোনা বা পিতামাতাকে হেয় করে এমন কথা এসেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

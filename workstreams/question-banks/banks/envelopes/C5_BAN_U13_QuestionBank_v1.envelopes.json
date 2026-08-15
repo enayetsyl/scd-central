@@ -452,7 +452,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "paper_role": "short"
     },
@@ -469,7 +469,7 @@
       "question_text": "'পাখির মতো' কবিতায় কে শহর ছেড়ে গাঁয়ে যেতে চায়?",
       "question_type": "short_answer",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "tier": "tier1",
       "marks": 2,
@@ -540,7 +540,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "paper_role": "short"
     },
@@ -557,7 +557,7 @@
       "question_text": "'পাখির মতো' কবিতায় কবির পাঠে মন বসে না কেন?",
       "question_type": "short_answer",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "tier": "tier1",
       "marks": 2,
@@ -583,7 +583,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "paper_role": "short"
     },
@@ -600,7 +600,7 @@
       "question_text": "'পাখির মতো' কবিতায় কবি কোথায় লুকিয়ে থেকে কার মতো ডাকতে চান?",
       "question_type": "short_answer",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "tier": "tier1",
       "marks": 2,
@@ -880,223 +880,6 @@
             }
           }
         ]
-      }
-    }
-  },
-  {
-    "envelope_version": "1.0",
-    "doc_type": "question",
-    "subject": "BAN",
-    "class_level": 5,
-    "address": {
-      "anchor_word": "Unit",
-      "number": 13,
-      "title": "পাঠ ১৩ — পাখির মতো"
-    },
-    "curation_tag": "FLEXIBLE",
-    "review_status": "draft",
-    "tags": {
-      "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
-      "difficulty": "easy",
-      "paper_role": "short"
-    },
-    "provenance": {
-      "source_project": "P04",
-      "author": "Principal",
-      "content_version": "v1",
-      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
-    },
-    "payload": {
-      "qid": "QP-BAN-C5-U13-Q20",
-      "topic_tag": "TOP-BAN-C5-05",
-      "ref19_topic_id": "BAN-POEM",
-      "question_text": "'আম্মা বলেন, পড়রে সোনা' — বাক্যটি কোন ভাব প্রকাশ করে?",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Understand",
-      "difficulty": "easy",
-      "tier": "tier1",
-      "marks": 1,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "আদেশ"
-        ]
-      }
-    }
-  },
-  {
-    "envelope_version": "1.0",
-    "doc_type": "question",
-    "subject": "BAN",
-    "class_level": 5,
-    "address": {
-      "anchor_word": "Unit",
-      "number": 13,
-      "title": "পাঠ ১৩ — পাখির মতো"
-    },
-    "curation_tag": "FLEXIBLE",
-    "review_status": "draft",
-    "tags": {
-      "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
-      "difficulty": "easy",
-      "paper_role": "short"
-    },
-    "provenance": {
-      "source_project": "P04",
-      "author": "Principal",
-      "content_version": "v1",
-      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
-    },
-    "payload": {
-      "qid": "QP-BAN-C5-U13-Q21",
-      "topic_tag": "TOP-BAN-C5-05",
-      "ref19_topic_id": "BAN-POEM",
-      "question_text": "'আমার কেবল ইচ্ছে জাগে নদীর কাছে থাকতে' — বাক্যটি কোন ভাব প্রকাশ করে?",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Understand",
-      "difficulty": "easy",
-      "tier": "tier1",
-      "marks": 1,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "ইচ্ছা"
-        ]
-      }
-    }
-  },
-  {
-    "envelope_version": "1.0",
-    "doc_type": "question",
-    "subject": "BAN",
-    "class_level": 5,
-    "address": {
-      "anchor_word": "Unit",
-      "number": 13,
-      "title": "পাঠ ১৩ — পাখির মতো"
-    },
-    "curation_tag": "FLEXIBLE",
-    "review_status": "draft",
-    "tags": {
-      "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
-      "difficulty": "medium",
-      "paper_role": "short"
-    },
-    "provenance": {
-      "source_project": "P04",
-      "author": "Principal",
-      "content_version": "v1",
-      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
-    },
-    "payload": {
-      "qid": "QP-BAN-C5-U13-Q22",
-      "topic_tag": "TOP-BAN-C5-05",
-      "ref19_topic_id": "BAN-POEM",
-      "question_text": "'কেমন করে শহর ছেড়ে সবুজ গাঁয়ে ঘুরব!' — বাক্যটি কোন ভাব প্রকাশ করে?",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Understand",
-      "difficulty": "medium",
-      "tier": "tier1",
-      "marks": 1,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "বিস্ময়"
-        ]
-      }
-    }
-  },
-  {
-    "envelope_version": "1.0",
-    "doc_type": "question",
-    "subject": "BAN",
-    "class_level": 5,
-    "address": {
-      "anchor_word": "Unit",
-      "number": 13,
-      "title": "পাঠ ১৩ — পাখির মতো"
-    },
-    "curation_tag": "FLEXIBLE",
-    "review_status": "draft",
-    "tags": {
-      "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Apply",
-      "difficulty": "medium",
-      "paper_role": "short"
-    },
-    "provenance": {
-      "source_project": "P04",
-      "author": "Principal",
-      "content_version": "v1",
-      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
-    },
-    "payload": {
-      "qid": "QP-BAN-C5-U13-Q23",
-      "topic_tag": "TOP-BAN-C5-05",
-      "ref19_topic_id": "BAN-POEM",
-      "question_text": "'আর একটা গল্প বলো না!' — বাক্যটি কোন ভাব প্রকাশ করে?",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Apply",
-      "difficulty": "medium",
-      "tier": "tier1",
-      "marks": 1,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "অনুরোধ"
-        ],
-        "model_note": "অনুশীলনী ৫-এর অনুরোধ-বাক্যটি পাঠের সতর্কতা-নির্দেশ অনুযায়ী বদলানো হয়েছে (কোড C-03); কাজ, ভাব-শ্রেণি ও পড়ার কাঠিন্য অপরিবর্তিত।"
-      }
-    }
-  },
-  {
-    "envelope_version": "1.0",
-    "doc_type": "question",
-    "subject": "BAN",
-    "class_level": 5,
-    "address": {
-      "anchor_word": "Unit",
-      "number": 13,
-      "title": "পাঠ ১৩ — পাখির মতো"
-    },
-    "curation_tag": "FLEXIBLE",
-    "review_status": "draft",
-    "tags": {
-      "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Apply",
-      "difficulty": "easy",
-      "paper_role": "short"
-    },
-    "provenance": {
-      "source_project": "P04",
-      "author": "Principal",
-      "content_version": "v1",
-      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
-    },
-    "payload": {
-      "qid": "QP-BAN-C5-U13-Q24",
-      "topic_tag": "TOP-BAN-C5-05",
-      "ref19_topic_id": "BAN-POEM",
-      "question_text": "অনুশীলনী ৫-এর তালিকা থেকে 'নিষেধ' ভাব বেছে নাও, আর 'পাখির মতো' কবিতার প্রসঙ্গে সেই ভাব প্রকাশ করে এমন একটি বাক্য নিজে লেখো।",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Apply",
-      "difficulty": "easy",
-      "tier": "tier1",
-      "marks": 1,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "পড়ার সময় জানালার বাইরে তাকিয়ো না।"
-        ],
-        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ নিষেধবাচক বাক্য গ্রহণযোগ্য, যদি তা কবিতার প্রসঙ্গের সঙ্গে যুক্ত হয়। নমুনা উত্তর দেওয়া হলো।"
       }
     }
   },
@@ -1518,94 +1301,6 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Apply",
-      "difficulty": "medium",
-      "paper_role": "short"
-    },
-    "provenance": {
-      "source_project": "P04",
-      "author": "Principal",
-      "content_version": "v1",
-      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
-    },
-    "payload": {
-      "qid": "QP-BAN-C5-U13-Q34",
-      "topic_tag": "TOP-BAN-C5-05",
-      "ref19_topic_id": "BAN-POEM",
-      "question_text": "'পাখির মতো' কবিতা থেকে দুটি মিল-শব্দের জোড়া খুঁজে বের করে লেখো (উদাহরণ: মন দে — গন্ধে)।",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Apply",
-      "difficulty": "medium",
-      "tier": "tier1",
-      "marks": 2,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "থাকতে — ডাকতে; কূলটায় — উল্টায়"
-        ],
-        "model_note": "কবিতায় মোট পাঁচটি জোড়া আছে: মন দে — গন্ধে (উদাহরণ, ধরা হবে না) · থাকতে — ডাকতে · কূলটায় — উল্টায় · উড়ব — ঘুরব · জন্য — বন্য। যেকোনো দুটি সঠিক জোড়ায় পূর্ণ নম্বর, প্রতিটিতে ১।"
-      }
-    }
-  },
-  {
-    "envelope_version": "1.0",
-    "doc_type": "question",
-    "subject": "BAN",
-    "class_level": 5,
-    "address": {
-      "anchor_word": "Unit",
-      "number": 13,
-      "title": "পাঠ ১৩ — পাখির মতো"
-    },
-    "curation_tag": "FLEXIBLE",
-    "review_status": "draft",
-    "tags": {
-      "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Apply",
-      "difficulty": "easy",
-      "paper_role": "short"
-    },
-    "provenance": {
-      "source_project": "P04",
-      "author": "Principal",
-      "content_version": "v1",
-      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
-    },
-    "payload": {
-      "qid": "QP-BAN-C5-U13-Q35",
-      "topic_tag": "TOP-BAN-C5-05",
-      "ref19_topic_id": "BAN-POEM",
-      "question_text": "'পাখির মতো' কবিতায় আম্মা-আব্বা আদেশের ভাবে কথা বলেছেন। একই কথা 'উপদেশ' ভাবে কীভাবে বলা যায়, একটি বাক্যে লেখো।",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Apply",
-      "difficulty": "easy",
-      "tier": "tier1",
-      "marks": 1,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "মন দিয়ে পড়লে জীবনে ভালো মানুষ হওয়া যায়।"
-        ],
-        "model_note": "ছয়টি ভাবের মধ্যে উপদেশই একমাত্র যেটি কবিতার কোনো পঙক্তিতে নেই, তাই এখানে আদেশ-বাক্যকে উপদেশে বদলাতে বলা হয়েছে। আদেশ (হুকুম) নয়, বোঝানোর সুরে লেখা যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য।"
-      }
-    }
-  },
-  {
-    "envelope_version": "1.0",
-    "doc_type": "question",
-    "subject": "BAN",
-    "class_level": 5,
-    "address": {
-      "anchor_word": "Unit",
-      "number": 13,
-      "title": "পাঠ ১৩ — পাখির মতো"
-    },
-    "curation_tag": "FLEXIBLE",
-    "review_status": "draft",
-    "tags": {
-      "topic_tag": "TOP-BAN-C5-05",
       "bloom_level": "Analyze",
       "difficulty": "hard",
       "paper_role": "structured"
@@ -1643,6 +1338,3864 @@
             }
           }
         ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q37",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'আম্মা বলেন, পড়রে ______।' — শূন্যস্থান পূরণ করো।",
+      "question_type": "fill_blank",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "blanks": [
+        {
+          "blank_no": 1,
+          "accepted": [
+            "সোনা"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q38",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাঠে আমার মন বসে না ______ গন্ধে।' — শূন্যস্থান পূরণ করো।",
+      "question_type": "fill_blank",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "blanks": [
+        {
+          "blank_no": 1,
+          "accepted": [
+            "কাঁঠালচাঁপার"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q39",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'______ ডালে লুকিয়ে থেকে পাখির মতো ডাকতে।' — শূন্যস্থান পূরণ করো।",
+      "question_type": "fill_blank",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "blanks": [
+        {
+          "blank_no": 1,
+          "accepted": [
+            "বকুল"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q40",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'সবাই যখন ঘুমিয়ে পড়ে ______ কূলটায়।' — শূন্যস্থান পূরণ করো।",
+      "question_type": "fill_blank",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "blanks": [
+        {
+          "blank_no": 1,
+          "accepted": [
+            "কর্ণফুলীর"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q41",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'আমি না হয় ______ হব, পাখির মতো বন্য।' — শূন্যস্থান পূরণ করো।",
+      "question_type": "fill_blank",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "blanks": [
+        {
+          "blank_no": 1,
+          "accepted": [
+            "পাখিই"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "mcq"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q42",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-VOCAB",
+      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'কর্ণফুলী' শব্দটির অর্থ কী?",
+      "question_type": "mcq",
+      "paper_role": "mcq",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "options": [
+        {
+          "option_id": "ক",
+          "text": "একটি নদীর নাম",
+          "is_correct": true
+        },
+        {
+          "option_id": "খ",
+          "text": "একটি ফুলের নাম",
+          "is_correct": false,
+          "why_wrong": "কাঁঠালচাঁপা ফুলের নাম, কর্ণফুলী নয়।"
+        },
+        {
+          "option_id": "গ",
+          "text": "একটি পাখির নাম",
+          "is_correct": false,
+          "why_wrong": "কবিতায় পাখির কোনো নাম দেওয়া হয়নি।"
+        },
+        {
+          "option_id": "ঘ",
+          "text": "একটি গ্রামের নাম",
+          "is_correct": false,
+          "why_wrong": "কবিতায় গাঁয়ের কথা আছে, কিন্তু কর্ণফুলী গাঁয়ের নাম নয়।"
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "mcq"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q43",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতায় কবিকে পড়তে বলেন কারা?",
+      "question_type": "mcq",
+      "paper_role": "mcq",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "options": [
+        {
+          "option_id": "ক",
+          "text": "আম্মা ও আব্বা",
+          "is_correct": true
+        },
+        {
+          "option_id": "খ",
+          "text": "শিক্ষক ও সহপাঠীরা",
+          "is_correct": false,
+          "why_wrong": "কবিতায় শিক্ষক বা সহপাঠীর কথা নেই।"
+        },
+        {
+          "option_id": "গ",
+          "text": "ভাই ও বোন",
+          "is_correct": false,
+          "why_wrong": "কবিতায় ভাইবোনের কথা বলা হয়নি।"
+        },
+        {
+          "option_id": "ঘ",
+          "text": "প্রতিবেশীরা",
+          "is_correct": false,
+          "why_wrong": "কবিতায় প্রতিবেশীদের কথা নেই।"
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "mcq"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q44",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'আমি না হয় পাখিই হব, / পাখির মতো বন্য।' — এখানে কবি 'বন্য' হতে চান বলতে কী বোঝাচ্ছেন?",
+      "question_type": "mcq",
+      "paper_role": "mcq",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "options": [
+        {
+          "option_id": "ক",
+          "text": "তিনি হিংস্র হতে চান",
+          "is_correct": false,
+          "why_wrong": "'বন্য'-র অভিধানিক অর্থ ধরে থেমে গেলে এই ভুলটি হয়; কবিতায় হিংস্রতার কোনো ছবি নেই।"
+        },
+        {
+          "option_id": "খ",
+          "text": "তিনি বনের ভিতরে বাস করতে চান",
+          "is_correct": false,
+          "why_wrong": "কবি গাঁয়ের কথা বলেছেন, বনের নয়; এটিও অভিধানিক অর্থে থেমে যাওয়া।"
+        },
+        {
+          "option_id": "গ",
+          "text": "তিনি নিয়মের বাঁধন ছেড়ে স্বাধীন হতে চান",
+          "is_correct": true
+        },
+        {
+          "option_id": "ঘ",
+          "text": "তিনি পড়াশোনা একেবারে ছেড়ে দিতে চান",
+          "is_correct": false,
+          "why_wrong": "প্রথম স্তবকের উপরের ছবিটুকু দেখলে এমন মনে হয়; কবি পড়া ছাড়ার কথা বলেননি, মুক্তির ইচ্ছার কথা বলেছেন।"
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "mcq"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q45",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতায় 'শহর' ও 'গাঁ' — কবি কোনটি বেছে নিতে চান, আর কেন?",
+      "question_type": "mcq",
+      "paper_role": "mcq",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "options": [
+        {
+          "option_id": "ক",
+          "text": "শহর, কারণ সেখানে পড়াশোনার সুযোগ বেশি",
+          "is_correct": false,
+          "why_wrong": "কবিতায় শহরকে ছেড়ে যাওয়ার কথাই বলা হয়েছে।"
+        },
+        {
+          "option_id": "খ",
+          "text": "গাঁ, কারণ সেখানে সে পাখির মতো মুক্ত থাকতে পারবে",
+          "is_correct": true
+        },
+        {
+          "option_id": "গ",
+          "text": "শহর, কারণ সেখানে নদী আছে",
+          "is_correct": false,
+          "why_wrong": "নদী গাঁয়ের ছবির সঙ্গে এসেছে, শহরের নয়।"
+        },
+        {
+          "option_id": "ঘ",
+          "text": "গাঁ, কারণ সেখানে আম্মা-আব্বা থাকেন",
+          "is_correct": false,
+          "why_wrong": "আম্মা-আব্বা কবির কাছেই আছেন; তাঁদের অবস্থান নিয়ে কবিতায় কিছু বলা হয়নি।"
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "mcq"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q46",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'বকুল ডালে লুকিয়ে থেকে / পাখির মতো ডাকতে' — কবি লুকিয়ে থাকতে চান কেন?",
+      "question_type": "mcq",
+      "paper_role": "mcq",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "options": [
+        {
+          "option_id": "ক",
+          "text": "তিনি কাউকে ভয় পেয়েছেন",
+          "is_correct": false,
+          "why_wrong": "কবিতায় ভয়ের কোনো ছবি নেই।"
+        },
+        {
+          "option_id": "খ",
+          "text": "তিনি কারও সঙ্গে লুকোচুরি খেলছেন",
+          "is_correct": false,
+          "why_wrong": "কবিতায় খেলার কথা বলা হয়নি।"
+        },
+        {
+          "option_id": "গ",
+          "text": "কারও চোখে না পড়ে পাখির মতো স্বাধীনভাবে থাকতে চান বলে",
+          "is_correct": true
+        },
+        {
+          "option_id": "ঘ",
+          "text": "তিনি বকুল ফুল কুড়াতে চান",
+          "is_correct": false,
+          "why_wrong": "বকুল ডাল কেবল লুকোনোর জায়গা; ফুল কুড়ানোর কথা কবিতায় নেই।"
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "mcq"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q47",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'সবাই যখন ঘুমিয়ে পড়ে' — এই চরণটি কবি সম্পর্কে আমাদের কী জানায়?",
+      "question_type": "mcq",
+      "paper_role": "mcq",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "options": [
+        {
+          "option_id": "ক",
+          "text": "কবিও তখন ঘুমিয়ে পড়েন",
+          "is_correct": false,
+          "why_wrong": "কবি জেগে থেকেই রাতের ছবিটি দেখছেন।"
+        },
+        {
+          "option_id": "খ",
+          "text": "সবাই ঘুমোলে কবি জেগে থেকে রাতের ছবি দেখেন ও ভাবেন",
+          "is_correct": true
+        },
+        {
+          "option_id": "গ",
+          "text": "কবি রাতে পড়াশোনা করেন",
+          "is_correct": false,
+          "why_wrong": "পরের স্তবক বলছে কবি তখন ওড়ার কথা ভাবেন।"
+        },
+        {
+          "option_id": "ঘ",
+          "text": "কবির ঘুম আসে না বলে তিনি অসুস্থ",
+          "is_correct": false,
+          "why_wrong": "অসুস্থতার কোনো কথা কবিতায় নেই।"
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q48",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'শহর' শব্দের বিপরীত শব্দ লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "গ্রাম",
+          "গাঁ",
+          "পল্লি"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q49",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'ঘুম' শব্দের বিপরীত শব্দ লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "জাগরণ",
+          "জাগা"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q50",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'বন্য' শব্দের বিপরীত শব্দ লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "পোষা",
+          "গৃহপালিত"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q51",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-JUKTOBARNA",
+      "question_text": "'পাখির মতো' কবিতার 'কর্ণফুলী' শব্দের যুক্তবর্ণটি ভেঙে লেখো, আর সেই যুক্তবর্ণ দিয়ে কবিতায় নেই এমন নতুন একটি শব্দ গঠন করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "র্ণ = র + ণ; নতুন শব্দ — বর্ণ",
+          "র্ণ = রেফ + ণ; স্বর্ণ",
+          "র্ণ — র ও ণ; পূর্ণ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ (SLOT_REGISTER BAN-S12 composite)।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q52",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-JUKTOBARNA",
+      "question_text": "'পাখির মতো' কবিতার 'বন্য' শব্দের যুক্তবর্ণটি ভেঙে লেখো, আর সেই যুক্তবর্ণ দিয়ে কবিতায় নেই এমন নতুন একটি শব্দ গঠন করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ন্য = ন + য; নতুন শব্দ — অন্য",
+          "ন্য = ন + য; ধন্য",
+          "ন্য — ন ও য; জন্য"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ (SLOT_REGISTER BAN-S12 composite)।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q53",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-JUKTOBARNA",
+      "question_text": "'পাখির মতো' কবিতার 'ইচ্ছে' শব্দের যুক্তবর্ণটি ভেঙে লেখো, আর সেই যুক্তবর্ণ দিয়ে কবিতায় নেই এমন নতুন একটি শব্দ গঠন করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "চ্ছ = চ + ছ; নতুন শব্দ — স্বচ্ছ",
+          "চ্ছ = চ + ছ; ইচ্ছুক",
+          "চ্ছ — চ ও ছ; উচ্ছ্বাস"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ (SLOT_REGISTER BAN-S12 composite)।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q54",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'নদীর ধারে যে জায়গা' — 'পাখির মতো' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "কূল"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q55",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'যা বনের স্বভাবের, পোষ মানে না' — 'পাখির মতো' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "বন্য"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q56",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'গ্রাম' শব্দটির চলিত ও সংক্ষিপ্ত রূপ — 'পাখির মতো' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "গাঁ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q57",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'আব্বা বলেন মন দে' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "আব্বা বলেন, মন দে।"
+        ],
+        "model_note": "'বলেন'-এর পরে কমা আর বাক্যের শেষে দাঁড়ি — দুটোই লাগবে। একটি ঠিক হলে অর্ধেক।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q58",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'সবাই যখন ঘুমিয়ে পড়ে কর্ণফুলীর কূলটায়' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "সবাই যখন ঘুমিয়ে পড়ে কর্ণফুলীর কূলটায়,"
+        ],
+        "model_note": "কথাটি এখানে শেষ হয়নি, পরের চরণে গড়িয়েছে — তাই দাঁড়ি নয়, কমা।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q59",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'আমি না হয় পাখিই হব পাখির মতো বন্য' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "আমি না হয় পাখিই হব, পাখির মতো বন্য।"
+        ],
+        "model_note": "দুটি অংশের মাঝে কমা আর কবিতার শেষ বলে দাঁড়ি।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q60",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'আম্মা বলেন পড়রে সোনা' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "আম্মা বলেন, 'পড়রে সোনা।'",
+          "আম্মা বলেন, পড়রে সোনা।"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ ও প্রাসঙ্গিক উত্তর গ্রহণযোগ্য। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q61",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'কেমন করে শহর ছেড়ে সবুজ গাঁয়ে ঘুরব' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "কেমন করে শহর ছেড়ে সবুজ গাঁয়ে ঘুরব!"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ ও প্রাসঙ্গিক উত্তর গ্রহণযোগ্য। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q62",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'পাখি' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "শিক্ষার্থীর নিজের লেখা 'পাখি' শব্দযুক্ত শুদ্ধ বাক্য"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি 'পাখি' শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q63",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'চাঁদ' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "শিক্ষার্থীর নিজের লেখা 'চাঁদ' শব্দযুক্ত শুদ্ধ বাক্য"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি 'চাঁদ' শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q64",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'শহর' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "শিক্ষার্থীর নিজের লেখা 'শহর' শব্দযুক্ত শুদ্ধ বাক্য"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি 'শহর' শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q65",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'বকুল' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "শিক্ষার্থীর নিজের লেখা 'বকুল' শব্দযুক্ত শুদ্ধ বাক্য"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি 'বকুল' শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q66",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'সবুজ' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "শিক্ষার্থীর নিজের লেখা 'সবুজ' শব্দযুক্ত শুদ্ধ বাক্য"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি 'সবুজ' শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q71",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'দুধভরা ওই চাঁদের বাটি / ফেরেস্তারা উল্টায়' — এই কথায় কবি রাতের কোন ছবি এঁকেছেন? নিজের ভাষায় লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "পূর্ণিমার চাঁদকে দুধভরা বাটির মতো দেখাচ্ছে, আর ফেরেস্তারা সেই বাটি উল্টে দিচ্ছেন — অর্থাৎ চাঁদের আলো সারা রাত ছড়িয়ে পড়ছে।"
+        ],
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q72",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাঠে আমার মন বসে না / কাঁঠালচাঁপার গন্ধে' — কাঁঠালচাঁপার গন্ধ কবির কী করে? নিজের ভাষায় লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ফুলের গন্ধ কবির মনকে বই থেকে সরিয়ে বাইরের প্রকৃতির দিকে টেনে নেয়, তাই পড়ায় মন বসে না।"
+        ],
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q73",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'আমার কেবল ইচ্ছে জাগে / নদীর কাছে থাকতে' — কবির এই ইচ্ছার পিছনে কী আছে বলে তোমার মনে হয়?",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ঘরের ও পড়ার বাঁধন ছেড়ে খোলা প্রকৃতির কাছে মুক্তভাবে থাকার টান।"
+        ],
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q74",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতায় আম্মা ও আব্বা দুজনেই কী চান? তাঁদের কথা দুটির মিল কোথায়?",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "দুজনেই চান ছেলেটি মন দিয়ে পড়ুক; দুজনের কথাতেই পড়াশোনার প্রতি একই আগ্রহ ও যত্ন প্রকাশ পেয়েছে।"
+        ],
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q75",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'তখন কেবল ভাবতে থাকি' — 'তখন' বলতে কবিতায় কোন সময়কে বোঝানো হয়েছে?",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "রাতের বেলা, যখন সবাই ঘুমিয়ে পড়ে আর চাঁদের আলো ছড়িয়ে থাকে।"
+        ],
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q76",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'কেমন করে শহর ছেড়ে / সবুজ গাঁয়ে ঘুরব' — কবি শহর ছেড়ে যেতে চান কেন? বুঝিয়ে লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "শহরে তাঁর মন বাঁধা পড়ে থাকে; গাঁয়ে গাছ, নদী আর খোলা আকাশ আছে বলে সেখানে তিনি মুক্তভাবে ঘুরতে পারবেন।"
+        ],
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q77",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'আমি না হয় পাখিই হব' — 'না হয়' কথাটি কবির মনের কোন ভাব প্রকাশ করে?",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "একটু অভিমান মেশানো ইচ্ছা — সবাই যদি পড়ে মানুষ হয়, তবে সে না হয় পাখিই হবে।"
+        ],
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q78",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতায় 'পাখি' কেবল একটি প্রাণী নয় — আর কী বোঝায়? নিজের ভাষায় লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "পাখি এখানে স্বাধীনতার প্রতীক — বাঁধনহীনভাবে ওড়া, ডাকা আর ইচ্ছেমতো ঘুরে বেড়ানোর ছবি।"
+        ],
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q79",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'সবুজ গাঁয়ে ঘুরব' — 'সবুজ' শব্দটি দিয়ে কবি গাঁয়ের কোন ছবি আঁকছেন?",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "গাছপালায় ভরা, শান্ত ও প্রাণে ভরা একটি গ্রামের ছবি।"
+        ],
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q80",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "কবিতায় 'কর্ণফুলী' নদীর নাম আসায় কবির জায়গা সম্পর্কে আমরা কী বুঝতে পারি?",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "কবির শৈশবের জায়গাটি কর্ণফুলী নদীর তীরে — অর্থাৎ ছবিটি কল্পনার নয়, চেনা একটি জায়গার।"
+        ],
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "paper_role": "structured"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q81",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতার পাঁচটি স্তবকে কবির মনের ভাব ধাপে ধাপে কীভাবে বদলেছে — বিশ্লেষণ করে লেখো।",
+      "question_type": "descriptive",
+      "paper_role": "structured",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 5,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "rubric": {
+        "bands": [
+          "সম্পূর্ণ",
+          "আংশিক"
+        ],
+        "criteria": [
+          {
+            "role": "islamic_alignment",
+            "criterion": "স্তবক ধরে ধরে ভাবের বদল আলাদা করা — পড়ার নির্দেশ, ইচ্ছার জন্ম, রাতের কল্পনা, ওড়ার ভাবনা, শেষে সিদ্ধান্ত; আর পিতামাতার নির্দেশকে ছোট না করে কবির মনের কথা লেখা",
+            "band_descriptors": {
+              "সম্পূর্ণ": "পাঁচটি স্তবকের ভাব আলাদা করে ধাপে ধাপে দেখানো হয়েছে, প্রতিটি স্তবক থেকে প্রমাণ দেওয়া হয়েছে; ভাষা শালীন ও পিতামাতার প্রতি সম্মান বজায় আছে।",
+              "আংশিক": "দু-তিনটি স্তবক নিয়ে লেখা হয়েছে বা ধাপগুলো আলাদা হয়নি; অথবা পড়াশোনা বা পিতামাতাকে হেয় করে এমন কথা এসেছে।"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "paper_role": "structured"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q82",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতায় শহর ও গাঁয়ের ছবি দুটি আলাদা করে বিশ্লেষণ করো।",
+      "question_type": "descriptive",
+      "paper_role": "structured",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 5,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "rubric": {
+        "bands": [
+          "সম্পূর্ণ",
+          "আংশিক"
+        ],
+        "criteria": [
+          {
+            "role": "islamic_alignment",
+            "criterion": "দুটি জায়গার ছবি আলাদা করে চেনা ও পাশাপাশি রাখা, কবিতার চরণ থেকে প্রমাণসহ; শহর বা গ্রামের কোনোটিকেই হেয় না করে",
+            "band_descriptors": {
+              "সম্পূর্ণ": "শহরের ছবি ও গাঁয়ের ছবি আলাদা করে লেখা হয়েছে, প্রতিটির পক্ষে কবিতার চরণ দেওয়া হয়েছে, আর পার্থক্যটি নিজের ভাষায় বলা হয়েছে।",
+              "আংশিক": "একটি জায়গার ছবি লেখা হয়েছে, বা প্রমাণ ছাড়া কেবল মতামত দেওয়া হয়েছে।"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "paper_role": "structured"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q83",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'দুধভরা ওই চাঁদের বাটি / ফেরেস্তারা উল্টায়' — চিত্রকল্পটি বিশ্লেষণ করে লেখো।",
+      "question_type": "descriptive",
+      "paper_role": "structured",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 5,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "rubric": {
+        "bands": [
+          "সম্পূর্ণ",
+          "আংশিক"
+        ],
+        "criteria": [
+          {
+            "role": "islamic_alignment",
+            "criterion": "চিত্রকল্পের অংশগুলো আলাদা করা — চাঁদ, বাটি, দুধ, ফেরেস্তা — আর কোনটি কী বোঝায় তা মেলানো; ফেরেস্তা প্রসঙ্গে শ্রদ্ধাশীল ভাষা রাখা",
+            "band_descriptors": {
+              "সম্পূর্ণ": "চিত্রকল্পের প্রতিটি অংশ আলাদা করে বোঝানো হয়েছে এবং পূর্ণিমার রাতের সঙ্গে মিলিয়ে দেখানো হয়েছে; ফেরেস্তা প্রসঙ্গে ভাষা শ্রদ্ধাশীল।",
+              "আংশিক": "কেবল 'পূর্ণিমার চাঁদ' লিখে থেমে যাওয়া হয়েছে, অংশগুলো আলাদা করা হয়নি; অথবা ফেরেস্তা প্রসঙ্গে অসতর্ক ভাষা এসেছে।"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "paper_role": "structured"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q84",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতায় বাঁধন ও স্বাধীনতার ভাব কোন কোন চরণে ফুটে উঠেছে — বিশ্লেষণ করো।",
+      "question_type": "descriptive",
+      "paper_role": "structured",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 5,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "rubric": {
+        "bands": [
+          "সম্পূর্ণ",
+          "আংশিক"
+        ],
+        "criteria": [
+          {
+            "role": "islamic_alignment",
+            "criterion": "দুই ভাবের চরণ আলাদা করে বেছে নেওয়া ও পাশাপাশি রাখা; পড়াশোনাকে কেবল 'বাঁধন' বলে উড়িয়ে না দিয়ে কবির অনুভূতি হিসেবে দেখানো",
+            "band_descriptors": {
+              "সম্পূর্ণ": "বাঁধনের ও স্বাধীনতার চরণগুলো আলাদা করে দেখানো হয়েছে, আর দুটি ভাব কীভাবে মুখোমুখি দাঁড়িয়েছে তা বলা হয়েছে; পড়াশোনার মর্যাদা রক্ষা পেয়েছে।",
+              "আংশিক": "কেবল এক পক্ষের চরণ দেওয়া হয়েছে; অথবা পড়াশোনাকে অপ্রয়োজনীয় বলে দেখানো হয়েছে।"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "paper_role": "structured"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q85",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতার প্রথম স্তবকের দিনের ছবি আর তৃতীয় স্তবকের রাতের ছবি — দুটির পার্থক্য বিশ্লেষণ করো।",
+      "question_type": "descriptive",
+      "paper_role": "structured",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 5,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "rubric": {
+        "bands": [
+          "সম্পূর্ণ",
+          "আংশিক"
+        ],
+        "criteria": [
+          {
+            "role": "islamic_alignment",
+            "criterion": "দুই সময়ের ছবি আলাদা করা ও তুলনা করা, প্রতিটির পক্ষে চরণ দিয়ে; ঘরের কাজ ও কল্পনা দুটোরই মূল্য রেখে",
+            "band_descriptors": {
+              "সম্পূর্ণ": "দিনের ছবি ও রাতের ছবি আলাদা করে লেখা হয়েছে, চরণ দিয়ে প্রমাণ দেওয়া হয়েছে, আর কোথায় পার্থক্য তা নিজের ভাষায় বলা হয়েছে।",
+              "আংশিক": "একটি সময়ের ছবি লেখা হয়েছে বা তুলনা করা হয়নি।"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "paper_role": "structured"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q86",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতার শেষ দুই চরণে কবি যে সিদ্ধান্তে পৌঁছেছেন তা কোন কোন কথার উপর দাঁড়িয়ে আছে — বিশ্লেষণ করো।",
+      "question_type": "descriptive",
+      "paper_role": "structured",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 5,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "rubric": {
+        "bands": [
+          "সম্পূর্ণ",
+          "আংশিক"
+        ],
+        "criteria": [
+          {
+            "role": "islamic_alignment",
+            "criterion": "শেষ সিদ্ধান্তের ভিত্তি আগের স্তবকগুলোতে খুঁজে বের করা; সিদ্ধান্তটিকে পড়াশোনার বিরুদ্ধে রায় হিসেবে না দেখিয়ে কবির কল্পনা হিসেবে দেখানো",
+            "band_descriptors": {
+              "সম্পূর্ণ": "শেষ দুই চরণের সঙ্গে আগের অন্তত দুটি স্তবকের যোগ দেখানো হয়েছে, আর সিদ্ধান্তটি কবির কল্পনা বলে বোঝানো হয়েছে।",
+              "আংশিক": "কেবল শেষ দুই চরণের অর্থ লেখা হয়েছে, ভিত্তি খোঁজা হয়নি; অথবা পড়াশোনা ছেড়ে দেওয়াকে সমর্থন করা হয়েছে।"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "paper_role": "structured"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q87",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতায় 'পাখি' শব্দটি কত রকম অর্থে এসেছে — খুঁজে বের করে বিশ্লেষণ করো।",
+      "question_type": "descriptive",
+      "paper_role": "structured",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 5,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "rubric": {
+        "bands": [
+          "সম্পূর্ণ",
+          "আংশিক"
+        ],
+        "criteria": [
+          {
+            "role": "islamic_alignment",
+            "criterion": "একই শব্দের আলাদা আলাদা ব্যবহার চেনা — সত্যিকারের পাখি, পাখির মতো ডাকা, পাখি হয়ে যাওয়ার কল্পনা — আর প্রতিটির অর্থ আলাদা করে বলা",
+            "band_descriptors": {
+              "সম্পূর্ণ": "অন্তত তিনটি আলাদা ব্যবহার চরণসহ দেখানো হয়েছে এবং প্রতিটির অর্থ আলাদা করে বলা হয়েছে।",
+              "আংশিক": "একটি বা দুটি ব্যবহার দেখানো হয়েছে, বা অর্থগুলো আলাদা করা হয়নি।"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "paper_role": "structured"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q88",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতার চারটি ছবি — কাঁঠালচাঁপার গন্ধ, বকুল ডাল, চাঁদের বাটি ও সবুজ গাঁ — কোনটি কী বোঝায়, মিলিয়ে বিশ্লেষণ করো।",
+      "question_type": "descriptive",
+      "paper_role": "structured",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 5,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "rubric": {
+        "bands": [
+          "সম্পূর্ণ",
+          "আংশিক"
+        ],
+        "criteria": [
+          {
+            "role": "islamic_alignment",
+            "criterion": "চারটি ছবি আলাদা করে চেনা এবং প্রতিটিকে কবির মুক্তির ইচ্ছার সঙ্গে মিলিয়ে দেখানো; কোনো ছবিকে বানিয়ে না নিয়ে পাঠ থেকেই নেওয়া",
+            "band_descriptors": {
+              "সম্পূর্ণ": "চারটি ছবিই আলাদা করে বোঝানো হয়েছে এবং কবির ইচ্ছার সঙ্গে মিলিয়ে দেখানো হয়েছে; সবই পাঠের, কোনোটি বানানো নয়।",
+              "আংশিক": "দুই-তিনটি ছবি লেখা হয়েছে, বা পাঠে নেই এমন ছবি ঢুকেছে।"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q89",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'তোমরা যখন শিখছ পড়া মানুষ হওয়ার জন্য' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "তোমরা যখন শিখছ পড়া, মানুষ হওয়ার জন্য,"
+        ],
+        "model_note": "দুই জায়গাতেই কমা — কথাটি পরের চরণে গিয়ে শেষ হয়েছে।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q90",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'পাঠে আমার মন বসে না কাঁঠালচাঁপার গন্ধে' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "পাঠে আমার মন বসে না কাঁঠালচাঁপার গন্ধে।"
+        ],
+        "model_note": "এখানে ভেতরে কোনো বিরতি নেই; শুধু শেষে দাঁড়ি।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q91",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'কবি কোথায় লুকিয়ে থাকতে চান' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "কবি কোথায় লুকিয়ে থাকতে চান?"
+        ],
+        "model_note": "প্রশ্ন করা হয়েছে, তাই দাঁড়ি নয় — প্রশ্নবোধক চিহ্ন।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q92",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-JUKTOBARNA",
+      "question_text": "'পাখির মতো' কবিতার 'গন্ধ' শব্দের যুক্তবর্ণটি ভেঙে লেখো, আর সেই যুক্তবর্ণ দিয়ে কবিতায় নেই এমন নতুন একটি শব্দ গঠন করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ন্ধ = ন + ধ; নতুন শব্দ — বন্ধু",
+          "ন্ধ = ন + ধ; অন্ধ",
+          "ন্ধ — ন ও ধ; সন্ধি"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ (SLOT_REGISTER BAN-S12 composite)।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q93",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-JUKTOBARNA",
+      "question_text": "'পাখির মতো' কবিতার 'উল্টায়' শব্দের যুক্তবর্ণটি ভেঙে লেখো, আর সেই যুক্তবর্ণ দিয়ে কবিতায় নেই এমন নতুন একটি শব্দ গঠন করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ল্ট = ল + ট; নতুন শব্দ — পাল্টা",
+          "ল্ট = ল + ট; উল্টো",
+          "ল্ট — ল ও ট; ফল্টু"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ (SLOT_REGISTER BAN-S12 composite)।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q94",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'মানুষ' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "মানুষ শব্দটি ঠিকভাবে বসিয়ে লেখা যেকোনো অর্থপূর্ণ বাক্য।"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ ও প্রাসঙ্গিক উত্তর গ্রহণযোগ্য। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q95",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'ঘুম' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ঘুম শব্দটি ঠিকভাবে বসিয়ে লেখা যেকোনো অর্থপূর্ণ বাক্য।"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ ও প্রাসঙ্গিক উত্তর গ্রহণযোগ্য। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q96",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'ডাল' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ডাল শব্দটি ঠিকভাবে বসিয়ে লেখা যেকোনো অর্থপূর্ণ বাক্য।"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ ও প্রাসঙ্গিক উত্তর গ্রহণযোগ্য। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q97",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'মন' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "মন শব্দটি ঠিকভাবে বসিয়ে লেখা যেকোনো অর্থপূর্ণ বাক্য।"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ ও প্রাসঙ্গিক উত্তর গ্রহণযোগ্য। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-02",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q98",
+      "topic_tag": "TOP-BAN-C5-02",
+      "ref19_topic_id": "BAN-SENTENCE",
+      "question_text": "'ফেরেস্তা' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ফেরেস্তা শব্দটি ঠিকভাবে বসিয়ে লেখা যেকোনো অর্থপূর্ণ বাক্য।"
+        ],
+        "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ ও প্রাসঙ্গিক উত্তর গ্রহণযোগ্য। নমুনা উত্তর দেওয়া হলো।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "mcq"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q99",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'তখন কেবল ভাবতে থাকি / কেমন করে উড়ব' — কবি কখন এ কথা ভাবেন?",
+      "question_type": "mcq",
+      "paper_role": "mcq",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "options": [
+        {
+          "option_id": "ক",
+          "text": "সবাই ঘুমিয়ে পড়ার পর রাতে",
+          "is_correct": true
+        },
+        {
+          "option_id": "খ",
+          "text": "স্কুলে যাওয়ার পথে",
+          "is_correct": false,
+          "why_wrong": "কবিতায় স্কুলে যাওয়ার কোনো কথা নেই।"
+        },
+        {
+          "option_id": "গ",
+          "text": "আম্মা পড়তে বলার সঙ্গে সঙ্গে",
+          "is_correct": false,
+          "why_wrong": "আম্মার কথা প্রথম স্তবকে, আর 'তখন' তৃতীয় স্তবকের রাতকে বোঝায়।"
+        },
+        {
+          "option_id": "ঘ",
+          "text": "নদীতে গোসল করার সময়",
+          "is_correct": false,
+          "why_wrong": "কবিতায় গোসলের কোনো কথা নেই।"
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "mcq"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q100",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'দুধভরা ওই চাঁদের বাটি / ফেরেস্তারা উল্টায়' — এখানে কবি কী বোঝাতে চেয়েছেন?",
+      "question_type": "mcq",
+      "paper_role": "mcq",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "options": [
+        {
+          "option_id": "ক",
+          "text": "রাত গড়িয়ে যাওয়ার সঙ্গে চাঁদের আলো সরে যাচ্ছে",
+          "is_correct": true
+        },
+        {
+          "option_id": "খ",
+          "text": "আকাশে সত্যিই একটি বাটি ভাসছে",
+          "is_correct": false,
+          "why_wrong": "এটি একটি চিত্রকল্প; বাটি বলতে পূর্ণিমার চাঁদকে বোঝানো হয়েছে।"
+        },
+        {
+          "option_id": "গ",
+          "text": "কেউ দুধ ঢেলে ফেলেছে",
+          "is_correct": false,
+          "why_wrong": "'দুধভরা' চাঁদের রং ও উজ্জ্বলতার তুলনা, সত্যিকারের দুধ নয়।"
+        },
+        {
+          "option_id": "ঘ",
+          "text": "কবি দুধ খেতে চান",
+          "is_correct": false,
+          "why_wrong": "কবিতায় কবির খাওয়ার কোনো ইচ্ছার কথা নেই।"
+        }
+      ]
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q101",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'ইচ্ছা' শব্দের বিপরীত শব্দ লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "অনিচ্ছা"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q102",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'মানুষ' শব্দের বিপরীত শব্দ লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "অমানুষ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q103",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'ভরা' শব্দের বিপরীত শব্দ লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "খালি",
+          "শূন্য"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q104",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'লুকানো' শব্দের বিপরীত শব্দ লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "প্রকাশ করা",
+          "প্রকাশ",
+          "বেরিয়ে আসা"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "hard",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q105",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'আমার কেবল ইচ্ছে জাগে' আর 'তখন কেবল ভাবতে থাকি' — দুই জায়গায় 'কেবল' শব্দটি কবির মনের কোন দিক আমাদের দেখায়?",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "কবির মন একটি জিনিসেই আটকে আছে — পড়ার বদলে বাইরের জগতেই তাঁর সব ভাবনা, এটাই 'কেবল' শব্দটি বারবার বুঝিয়ে দেয়।"
+        ],
+        "model_note": "মূল ভাবটি ধরা পড়লেই পূর্ণ নম্বর।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Understand",
+      "difficulty": "hard",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q106",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'তোমরা যখন শিখছ পড়া' — কবি নিজেকে 'তোমরা'-র থেকে আলাদা করে দেখাচ্ছেন কেন? নিজের ভাষায় লেখো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "কবি বলতে চাইছেন সবাই যে পথে যাচ্ছে তিনি সে পথে যেতে পারছেন না; তাঁর মন পড়ার বদলে প্রকৃতির দিকে টানছে, তাই নিজেকে আলাদা করে দেখাচ্ছেন।"
+        ],
+        "model_note": "মূল ভাবটি ধরা পড়লেই পূর্ণ নম্বর।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "paper_role": "structured"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q107",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতায় আম্মা-আব্বার কথা আর কবির নিজের ইচ্ছা — এই দুইয়ের টানাপোড়েন কোন কোন চরণে ফুটে উঠেছে, বিশ্লেষণ করে লেখো।",
+      "question_type": "descriptive",
+      "paper_role": "structured",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 5,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "rubric": {
+        "bands": [
+          "সম্পূর্ণ",
+          "আংশিক"
+        ],
+        "criteria": [
+          {
+            "role": "islamic_alignment",
+            "criterion": "দুই পক্ষের কথা পাঠ থেকে আলাদা করে চেনা ও পাশাপাশি রেখে বিশ্লেষণ করা — এবং পিতামাতার নির্দেশকে ছোট না করে, পড়াশোনাকে হেয় না করে কবির মনের অবস্থাটি বোঝানো",
+            "band_descriptors": {
+              "সম্পূর্ণ": "আম্মা-আব্বার চরণ ও কবির ইচ্ছার চরণ দুই-ই পাঠ থেকে তুলে এনে পাশাপাশি বিশ্লেষণ করা হয়েছে; ভাষা শালীন, পিতামাতার প্রতি সম্মান অটুট, আর পড়াশোনার গুরুত্ব কোথাও খাটো করা হয়নি।",
+              "আংশিক": "কেবল এক পক্ষের কথা লেখা হয়েছে, বা পাঠে নেই এমন কথা ঢুকেছে; অথবা পিতামাতাকে বা পড়াশোনাকে হেয় করে এমন কথা এসেছে।"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-05",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "paper_role": "structured"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q108",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতার প্রতিটি স্তবকের শেষ শব্দে যে মিল আছে, তা কবিতার ভাব ফোটাতে কীভাবে সাহায্য করেছে — বিশ্লেষণ করে লেখো।",
+      "question_type": "descriptive",
+      "paper_role": "structured",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 5,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "rubric": {
+        "bands": [
+          "সম্পূর্ণ",
+          "আংশিক"
+        ],
+        "criteria": [
+          {
+            "role": "islamic_alignment",
+            "criterion": "অন্ত্যমিলের জোড়াগুলো পাঠ থেকে খুঁজে বের করা এবং সেগুলো কীভাবে ওড়া ও মুক্তির ভাব তৈরি করে তা দেখানো — কল্পনার কথা বলতে গিয়ে পড়াশোনা বা পিতামাতার নির্দেশকে খাটো না করা",
+            "band_descriptors": {
+              "সম্পূর্ণ": "অন্তত তিনটি মিল-জোড়া পাঠ থেকে তুলে এনে ভাবের সঙ্গে মিলিয়ে বিশ্লেষণ করা হয়েছে; ভাষা শালীন ও পাঠের বাইরের কিছু বানানো হয়নি।",
+              "আংশিক": "দু-একটি জোড়া লেখা হয়েছে কিন্তু ভাবের সঙ্গে মেলানো হয়নি, বা পাঠে নেই এমন উদাহরণ ঢুকেছে।"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q109",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-PARTSPEECH",
+      "question_text": "'আম্মা বলেন, পড়রে সোনা' — এখানে 'আম্মা' শব্দটি কোন পদ? নির্ণয় করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "বিশেষ্য",
+          "বিশেষ্য পদ",
+          "নামপদ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q110",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-PARTSPEECH",
+      "question_text": "'কেমন করে শহর ছেড়ে / সবুজ গাঁয়ে ঘুরব' — এখানে 'সবুজ' শব্দটি কোন পদ? নির্ণয় করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "বিশেষণ",
+          "বিশেষণ পদ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q111",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-PARTSPEECH",
+      "question_text": "'পাঠে আমার মন বসে না' — এখানে 'আমার' শব্দটি কোন পদ? নির্ণয় করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "সর্বনাম",
+          "সর্বনাম পদ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q112",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-PARTSPEECH",
+      "question_text": "'আব্বা বলেন, মন দে' — এখানে 'বলেন' শব্দটি কোন পদ? নির্ণয় করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ক্রিয়া",
+          "ক্রিয়া পদ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q113",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-PARTSPEECH",
+      "question_text": "'আমার কেবল ইচ্ছে জাগে' — এখানে 'কেবল' শব্দটি কোন পদ? নির্ণয় করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "অব্যয়",
+          "অব্যয় পদ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q114",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-PARTSPEECH",
+      "question_text": "'আমি না হয় পাখিই হব, / পাখির মতো বন্য' — এখানে 'বন্য' শব্দটি কোন পদ? নির্ণয় করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "বিশেষণ",
+          "বিশেষণ পদ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q115",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-PARTSPEECH",
+      "question_text": "'তোমরা যখন শিখছ পড়া' — এখানে 'তোমরা' শব্দটি কোন পদ? নির্ণয় করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "সর্বনাম",
+          "সর্বনাম পদ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q116",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-PARTSPEECH",
+      "question_text": "'দুধভরা ওই চাঁদের বাটি / ফেরেস্তারা উল্টায়' — এখানে 'উল্টায়' শব্দটি কোন পদ? নির্ণয় করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ক্রিয়া",
+          "ক্রিয়া পদ"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q117",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-PARTSPEECH",
+      "question_text": "'সবাই যখন ঘুমিয়ে পড়ে / কর্ণফুলীর কূলটায়' — এখানে 'কর্ণফুলী' শব্দটি কোন পদ? নির্ণয় করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "বিশেষ্য",
+          "বিশেষ্য পদ",
+          "নামবাচক বিশেষ্য",
+          "সংজ্ঞাবাচক বিশেষ্য"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Apply",
+      "difficulty": "hard",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q118",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-PARTSPEECH",
+      "question_text": "'আম্মা বলেন, পড়রে সোনা' আর 'তোমরা যখন শিখছ পড়া' — দুই চরণে 'পড়' একই পদ হয়নি। কোন চরণে কোন পদ হয়েছে, নির্ণয় করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Apply",
+      "difficulty": "hard",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "প্রথম চরণে ক্রিয়া ('পড়রে'), দ্বিতীয় চরণে বিশেষ্য ('পড়া')",
+          "'পড়রে' — ক্রিয়া; 'পড়া' — বিশেষ্য"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q119",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'যে রাতে পূর্ণ চাঁদ ওঠে' — 'পাখির মতো' কবিতার ছবিটির সঙ্গে মিলিয়ে এক কথায় প্রকাশ করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "পূর্ণিমা"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q120",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'হলুদ রঙের একধরনের ফুল' — 'পাখির মতো' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "কাঁঠালচাঁপা"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+      }
+    }
+  },
+  {
+    "envelope_version": "1.0",
+    "doc_type": "question",
+    "subject": "BAN",
+    "class_level": 5,
+    "address": {
+      "anchor_word": "Unit",
+      "number": 13,
+      "title": "পাঠ ১৩ — পাখির মতো"
+    },
+    "curation_tag": "FLEXIBLE",
+    "review_status": "draft",
+    "tags": {
+      "topic_tag": "TOP-BAN-C5-01",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "paper_role": "short"
+    },
+    "provenance": {
+      "source_project": "P04",
+      "author": "Principal",
+      "content_version": "v1",
+      "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+    },
+    "payload": {
+      "qid": "QP-BAN-C5-U13-Q121",
+      "topic_tag": "TOP-BAN-C5-01",
+      "ref19_topic_id": "BAN-WORDREL",
+      "question_text": "'আল্লাহর হুকুম পালন করেন যাঁরা, নূরের সৃষ্টি' — 'পাখির মতো' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "tier": "tier1",
+      "marks": 1,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "ফেরেস্তা",
+          "ফেরেশতা"
+        ],
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
       }
     }
   }

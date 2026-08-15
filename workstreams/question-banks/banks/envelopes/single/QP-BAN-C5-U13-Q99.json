@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q99",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'তখন কেবল ভাবতে থাকি / কেমন করে উড়ব' — কবি কখন এ কথা ভাবেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "সবাই ঘুমিয়ে পড়ার পর রাতে",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "স্কুলে যাওয়ার পথে",
+        "is_correct": false,
+        "why_wrong": "কবিতায় স্কুলে যাওয়ার কোনো কথা নেই।"
+      },
+      {
+        "option_id": "গ",
+        "text": "আম্মা পড়তে বলার সঙ্গে সঙ্গে",
+        "is_correct": false,
+        "why_wrong": "আম্মার কথা প্রথম স্তবকে, আর 'তখন' তৃতীয় স্তবকের রাতকে বোঝায়।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "নদীতে গোসল করার সময়",
+        "is_correct": false,
+        "why_wrong": "কবিতায় গোসলের কোনো কথা নেই।"
+      }
+    ]
+  }
+}

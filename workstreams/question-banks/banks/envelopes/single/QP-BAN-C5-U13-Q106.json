@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "hard",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q106",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'তোমরা যখন শিখছ পড়া' — কবি নিজেকে 'তোমরা'-র থেকে আলাদা করে দেখাচ্ছেন কেন? নিজের ভাষায় লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "answer_key": {
+      "accepted": [
+        "কবি বলতে চাইছেন সবাই যে পথে যাচ্ছে তিনি সে পথে যেতে পারছেন না; তাঁর মন পড়ার বদলে প্রকৃতির দিকে টানছে, তাই নিজেকে আলাদা করে দেখাচ্ছেন।"
+      ],
+      "model_note": "মূল ভাবটি ধরা পড়লেই পূর্ণ নম্বর।"
+    }
+  }
+}

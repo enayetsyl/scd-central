@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q46",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'বকুল ডালে লুকিয়ে থেকে / পাখির মতো ডাকতে' — কবি লুকিয়ে থাকতে চান কেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "তিনি কাউকে ভয় পেয়েছেন",
+        "is_correct": false,
+        "why_wrong": "কবিতায় ভয়ের কোনো ছবি নেই।"
+      },
+      {
+        "option_id": "খ",
+        "text": "তিনি কারও সঙ্গে লুকোচুরি খেলছেন",
+        "is_correct": false,
+        "why_wrong": "কবিতায় খেলার কথা বলা হয়নি।"
+      },
+      {
+        "option_id": "গ",
+        "text": "কারও চোখে না পড়ে পাখির মতো স্বাধীনভাবে থাকতে চান বলে",
+        "is_correct": true
+      },
+      {
+        "option_id": "ঘ",
+        "text": "তিনি বকুল ফুল কুড়াতে চান",
+        "is_correct": false,
+        "why_wrong": "বকুল ডাল কেবল লুকোনোর জায়গা; ফুল কুড়ানোর কথা কবিতায় নেই।"
+      }
+    ]
+  }
+}

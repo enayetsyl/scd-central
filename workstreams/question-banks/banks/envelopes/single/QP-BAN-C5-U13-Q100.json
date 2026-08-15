@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q100",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'দুধভরা ওই চাঁদের বাটি / ফেরেস্তারা উল্টায়' — এখানে কবি কী বোঝাতে চেয়েছেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "রাত গড়িয়ে যাওয়ার সঙ্গে চাঁদের আলো সরে যাচ্ছে",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "আকাশে সত্যিই একটি বাটি ভাসছে",
+        "is_correct": false,
+        "why_wrong": "এটি একটি চিত্রকল্প; বাটি বলতে পূর্ণিমার চাঁদকে বোঝানো হয়েছে।"
+      },
+      {
+        "option_id": "গ",
+        "text": "কেউ দুধ ঢেলে ফেলেছে",
+        "is_correct": false,
+        "why_wrong": "'দুধভরা' চাঁদের রং ও উজ্জ্বলতার তুলনা, সত্যিকারের দুধ নয়।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "কবি দুধ খেতে চান",
+        "is_correct": false,
+        "why_wrong": "কবিতায় কবির খাওয়ার কোনো ইচ্ছার কথা নেই।"
+      }
+    ]
+  }
+}

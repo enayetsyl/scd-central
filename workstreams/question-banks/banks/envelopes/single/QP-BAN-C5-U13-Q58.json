@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-02",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q58",
+    "topic_tag": "TOP-BAN-C5-02",
+    "ref19_topic_id": "BAN-SENTENCE",
+    "question_text": "'সবাই যখন ঘুমিয়ে পড়ে কর্ণফুলীর কূলটায়' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "answer_key": {
+      "accepted": [
+        "সবাই যখন ঘুমিয়ে পড়ে কর্ণফুলীর কূলটায়,"
+      ],
+      "model_note": "কথাটি এখানে শেষ হয়নি, পরের চরণে গড়িয়েছে — তাই দাঁড়ি নয়, কমা।"
+    }
+  }
+}

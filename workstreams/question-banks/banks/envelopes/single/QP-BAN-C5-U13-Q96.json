@@ -11,8 +11,8 @@
   "curation_tag": "FLEXIBLE",
   "review_status": "draft",
   "tags": {
-    "topic_tag": "TOP-BAN-C5-05",
-    "bloom_level": "Remember",
+    "topic_tag": "TOP-BAN-C5-02",
+    "bloom_level": "Apply",
     "difficulty": "easy",
     "paper_role": "short"
   },
@@ -23,22 +23,22 @@
     "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
   },
   "payload": {
-    "qid": "QP-BAN-C5-U13-Q11",
-    "topic_tag": "TOP-BAN-C5-05",
-    "ref19_topic_id": "BAN-POEM",
-    "question_text": "'পাখির মতো' কবিতায় কে শহর ছেড়ে গাঁয়ে যেতে চায়?",
+    "qid": "QP-BAN-C5-U13-Q96",
+    "topic_tag": "TOP-BAN-C5-02",
+    "ref19_topic_id": "BAN-SENTENCE",
+    "question_text": "'ডাল' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
     "question_type": "short_answer",
     "paper_role": "short",
-    "bloom_level": "Remember",
+    "bloom_level": "Apply",
     "difficulty": "easy",
     "tier": "tier1",
-    "marks": 2,
+    "marks": 1,
     "chapter_ref": "পাঠ ১৩ — পাখির মতো",
     "answer_key": {
       "accepted": [
-        "কবিতার কথক, অর্থাৎ কবি নিজে"
+        "ডাল শব্দটি ঠিকভাবে বসিয়ে লেখা যেকোনো অর্থপূর্ণ বাক্য।"
       ],
-      "model_note": "'কবি' বা 'কবিতার কথক' — দুটোই গ্রহণযোগ্য। শুধু 'পাখি' লিখলে নম্বর হবে না।"
+      "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ ও প্রাসঙ্গিক উত্তর গ্রহণযোগ্য। নমুনা উত্তর দেওয়া হলো।"
     }
   }
 }

@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 13,
+    "title": "পাঠ ১৩ — পাখির মতো"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U13_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U13-Q47",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'সবাই যখন ঘুমিয়ে পড়ে' — এই চরণটি কবি সম্পর্কে আমাদের কী জানায়?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "কবিও তখন ঘুমিয়ে পড়েন",
+        "is_correct": false,
+        "why_wrong": "কবি জেগে থেকেই রাতের ছবিটি দেখছেন।"
+      },
+      {
+        "option_id": "খ",
+        "text": "সবাই ঘুমোলে কবি জেগে থেকে রাতের ছবি দেখেন ও ভাবেন",
+        "is_correct": true
+      },
+      {
+        "option_id": "গ",
+        "text": "কবি রাতে পড়াশোনা করেন",
+        "is_correct": false,
+        "why_wrong": "পরের স্তবক বলছে কবি তখন ওড়ার কথা ভাবেন।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "কবির ঘুম আসে না বলে তিনি অসুস্থ",
+        "is_correct": false,
+        "why_wrong": "অসুস্থতার কোনো কথা কবিতায় নেই।"
+      }
+    ]
+  }
+}
