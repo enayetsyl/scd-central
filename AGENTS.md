@@ -156,6 +156,13 @@ and logged as CD-### rows. `archive/old-account/` is never cited as current auth
 - **Each git write re-creates the lock it cannot remove.** `git add` finishing successfully still
   leaves `index.lock` behind, so the *next* command fails. Move the lock aside immediately before
   each git write, not once at the start of the session.
+- **`GIT_INDEX_FILE` IS NOT A SUBSTITUTE FOR MOVING THE LOCK ASIDE (TOOLS-CR-003).** Committing
+  with `GIT_INDEX_FILE=<tmp>` works, but it **redirects the index without updating `.git/index`**,
+  which is left describing the pre-commit tree. **The next ordinary `git add` then stages the exact
+  inverse of the commit just made**, and **no gate catches it** — the pre-change rules are
+  internally consistent, so the suite prints CLEAN on a repo that has silently un-ruled its own
+  decisions. **If it is used at all, `git reset` MUST follow the commit before any further
+  staging.** The aside practice above has no such cost and is the one to use.
 - Workspace-boot stalls → fully quit Claude Desktop and retry.
 - Any deletion outside `.git/` requires the agent to state the reason in chat FIRST. Teacher's
   standing rule: Allow at task start; Deny+ask on unexpected deletes.
