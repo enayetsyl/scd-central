@@ -56,6 +56,15 @@ the ruling as given**. One added word the Principal did not rule makes it an ord
 **Everything else still waits:** extraction work, gate and tooling changes, and new
 governance text not yet ruled sync **only on explicit Principal approval**.
 
+**SECOND CARVE-OUT — THE TEACHER LANE (CD-141, 2026-08-15).** An agent working the bank-authoring
+lane may push without per-commit approval, but only where **class AND path both fall inside the
+boundary** (build · corrections · log · promotion, under `workstreams/question-banks/` and its
+`banks/envelopes/`) **and the full suite is CLEAN including `PLAN` and `ENVELOPE-SYNC`, with `N/A`
+excluded from CLEAN**. Anything else — any FAIL, any file outside scope, any question that needs a
+ruling — **stops and reports, and is never put to the teacher**, who cannot rule (§2). The row
+carries the rest, including the 40-item consequence and the dry run required before handover.
+**Read CD-141 before relying on this sentence; this pointer is not the authority.**
+
 **Why:** a ruling-only commit created *after* a named-commit approval was correctly held
 under the base rule, costing a round-trip to release text the Principal had already given.
 **The hold protected nothing.**
@@ -118,6 +127,14 @@ gate exists to catch. **The third one is why this is a design rule and not a thi
 workstream's CORRECTIONS.md (CR-### rows). The agent re-reads the ledger before drafting.
 3+ occurrences of a pattern → mark PATTERN → propose promotion to an executing gate. A fix
 applied to one artifact must be checked across the sibling artifacts same-session.
+
+**Human review — WHERE IT SITS (CD-142, 2026-08-15).** §6's review splits three ways.
+**Item-level content review moves to the Hub's subject experts** — whether a question is good,
+whether a teacher-supplied key is right. CD-136(g) named the Principal because the Hub lane did not
+exist yet, **not because the judgement is his by nature**. **The plan-level countersign is replaced
+by the `PLAN` gate**, which holds the arithmetic a human was counting by hand. **The Principal
+retains** rulings, gate and tooling changes, canon and policy, debugging, promotion `reviewed →
+gold` (a Hub act, CD-003), and revocation. **The venue moves; the standard does not.**
 
 **Questions (routing):** batch questions one message per phase; classify each **[teacher]**
 (operational, answer in-flow) vs **[Principal]** (policy/content ruling). Principal items go
