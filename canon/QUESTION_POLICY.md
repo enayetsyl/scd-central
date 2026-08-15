@@ -1,4 +1,6 @@
-# QUESTION_POLICY — v1.5 (canon)
+# QUESTION_POLICY — v1.6 (canon)
+
+**v1.6 — 2026-08-15.** §6 gains a **Plan** row (the PLAN gate), the suite's 24th gate and the third to execute a ruling rather than a policy clause. It mechanises the plan-table countersign; the item-level human review it does NOT replace is relocated, not removed.
 
 **v1.5 — 2026-08-15.** §6 gains an **Export sync** row (ENVELOPE-SYNC), the suite's 23rd gate and the second to execute a ruling rather than a policy clause. Motivated by a named incident, quoted in the row itself.
 
@@ -277,6 +279,7 @@ proportion, so there is no per-CT domain gate.
 | Repetition | no verbatim reuse of non-`Remember` items |
 | Coverage | every topic supplied, and **every item does the task its class ADMITS at the slot it sits in** — read against `canon/marklogic/SLOT_REGISTER.json` (**CD-138**), not against slot-id presence and no longer against the header-stated target |
 | Domain ratio | **paper level only**, never per pool |
+| **Plan** | **The machine replacement for the plan-table human countersign** (Principal 2026-08-15). Every REF-06 §3.6 positive floor clears with **margin ≥ 2 items — landing exactly on a floor is a DEFECT, not a pass**; every declared-admissible slot meets full paper demand (CD-138(g)); `task_index` complete, task admitted, `selected` honoured, every composite `part` present; P-037's type rule on teacher-keyed items; and a **within-slot near-duplicate stem scan** — exact or ≥95% FAILs, 85–95% REPORTS for the Hub's subject expert. **It deliberately disagrees with the Bloom row above:** CD-135 lets a POOL sit exactly on a floor because an author declines the surplus; a bank offered as FINISHED may not, because one re-tag then reddens it. Same numbers, different question — is this pool legal, versus is this plan safe to sign. **Consequence, stated once: the margin rule needs 0.80n + 8 ≤ n, so no bank under 40 items can satisfy it.** What PLAN does NOT judge is whether the content is any good; that is §6's human half and it moves to Hub subject experts |
 | **Export sync** | **`banks/envelopes/` must match the bank** — same qid set, same payload per id, and the array and `single/` must agree with each other. **ADDED 2026-08-15 on the wave-2 staleness incident:** the export sat at **36 envelopes while the bank held 88 and then 110, for two waves**, and no gate could see it because every gate here reads the BANK while **§11 imports the ENVELOPES**. It would have carried ten `S10 ভাব নির্ণয়` items — a task admitted at no class — into the Hub as `draft`, **past COVERAGE, the gate built for that exact defect**. A bank with no export at all is REPORTED, not failed: that is an unrun flow, not drift |
 
 **Two axes, not two ranges on one axis (CD-121, correcting this section).** This table read

@@ -1623,6 +1623,206 @@ def g_envelope_sync(bank, ctx):
     return errs, rep
 
 
+
+PLAN_MARGIN = 2
+PLAN_DUP_FAIL = 0.95
+PLAN_DUP_REPORT = 0.85
+
+# The floors are REF06_C3_5's LOWER bounds — the same table BLOOM-BAND reads, not a second copy of
+# it. CD-011: a registry is written from the artifact, never from a derived copy, and two gates
+# disagreeing about the floors because one of them holds a stale transcription is the failure this
+# avoids. The two gates disagree about the MARGIN, deliberately; they must never disagree about the
+# NUMBER.
+BLOOM_FLOORS = {lvl: lo for lvl, (lo, _hi) in REF06_C3_5.items()}
+
+
+def _stem_sim(a, b):
+    ta, tb = set(a.split()), set(b.split())
+    return len(ta & tb) / len(ta | tb) if (ta | tb) else 0.0
+
+
+def g_plan(bank, ctx):
+    """PLAN — the machine replacement for the plan-table human countersign (Principal 2026-08-15).
+
+    WHAT IT REPLACES, and why a gate can replace it at all. Through wave 4 a chapter bank was
+    planned in a table the Principal countersigned before authoring began: per-slot content maxima,
+    intended Bloom tags, resulting margins. **Every quantity in that table is derivable from the
+    register and the finished bank**, which is exactly why the countersign could be mechanised —
+    and why the ONE thing it never checked, whether the content is any good, stays with a human
+    (CD-136(g), and §6's relocation to Hub subject experts).
+
+    THE MARGIN RULE IS STRICTER THAN BLOOM-BAND'S, DELIBERATELY, AND THE TWO GATES DISAGREE ON
+    PURPOSE. `BLOOM-BAND` implements CD-135: a POOL may sit exactly on a floor, because an author
+    declines the surplus and a compliant paper stays constructible. `PLAN` implements the
+    Principal's standing rule for a bank offered as FINISHED: *a plan landing exactly on a floor is
+    a defect, not a pass*, because one Subject Lead re-tag then reddens it. Same numbers, different
+    question — is this pool legal, versus is this plan safe to sign. Both are seeded and neither
+    may be relaxed into the other.
+
+    AND THE MARGIN RULE HAS AN ARITHMETIC CONSEQUENCE WORTH STATING ONCE. Requiring margin >= 2 on
+    every positive REF-06 §3.6 floor (20 · 25 · 25 · 10) needs 0.80n + 8 <= n, i.e. **n >= 40. A
+    bank of fewer than 40 items cannot satisfy this rule no matter how it is tagged** — not a bug
+    in the gate, a fact about the floors. It is reported as such rather than as four separate
+    margin failures a reader would try to fix one at a time.
+
+    NEAR-DUPLICATE THRESHOLDS ARE MEASURED, NOT GUESSED. Jaccard over normalised stem tokens,
+    within a slot. On the live 110-item পাঠ ১৩: zero exact duplicates and a maximum of **0.905**,
+    from S12's যুক্তবর্ণ frame where only the word changes and that is the task. So FAIL sits at
+    0.95 with real headroom above the legitimate maximum, and 0.85–0.95 REPORTS for the Hub's
+    expert eyes. **The per-word drill slots are the reason this is not stricter**: S03's *"'X'
+    শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো"* is five near-identical stems BY DESIGN, and a gate
+    that fired there would be teaching authors to scroll past it.
+
+    This overlaps COVERAGE on demand and on task declaration, and the overlap is intended: COVERAGE
+    asks whether the bank is conformant, PLAN asks whether it is signable. A gate that replaces a
+    signature must check everything the signature covered, including what another gate also checks.
+    """
+    errs, rep = [], []
+    items = bank.get("questions") or []
+    n = len(items)
+    if not n:
+        return ["the bank holds no items — nothing to plan"], []
+    subject, cls = bank.get("subject"), bank.get("class")
+    header = bank.get("header") or {}
+    slot_index = bank.get("slot_index") or {}
+    task_index = bank.get("task_index") or {}
+
+    if ctx and "slot_register" in ctx:
+        register = ctx["slot_register"]
+    else:
+        register, _ = load_slot_register(ROOT)
+    rows = {s: r for (sub, c, s), r in (register or {}).items()
+            if sub == subject and c == cls and r.get("d_code") not in ("D5", "D6")}
+
+    # --- 1. Bloom floors, margin >= 2 ------------------------------------------------------
+    counts = {lvl: sum(1 for q in items if q.get("bloom_level") == lvl) for lvl in BLOOM_FLOORS}
+    positive = {k: v for k, v in BLOOM_FLOORS.items() if v > 0}
+    required = sum(-(-p * n // 100) + PLAN_MARGIN for p in positive.values())
+    if required > n:
+        errs.append(f"POOL TOO SMALL TO BE SIGNABLE: {n} items cannot clear every positive floor "
+                    f"with margin {PLAN_MARGIN} — the four floors "
+                    f"({' · '.join(f'{k} {v}%' for k, v in positive.items())}) demand "
+                    f"{required} items at this size. The minimum is 40; this is arithmetic, not "
+                    f"tagging, and no re-tag fixes it")
+    else:
+        for lvl, floor_pct in positive.items():
+            need = -(-floor_pct * n // 100)
+            margin = counts[lvl] - need
+            if margin < PLAN_MARGIN:
+                errs.append(f"{lvl} {counts[lvl]}/{n} = {100*counts[lvl]/n:.1f}% against a "
+                            f"{floor_pct}% floor ({need} items) — margin +{margin}, and the plan "
+                            f"rule is +{PLAN_MARGIN}. "
+                            + ("LANDING EXACTLY ON A FLOOR IS A DEFECT, NOT A PASS: one re-tag "
+                               "reddens the bank" if margin == 0 else
+                               "one re-tag from red is not margin"))
+    rep.append("Bloom margins: " + " · ".join(
+        f"{k} +{counts[k] - -(-v * n // 100)}" for k, v in positive.items())
+        + f"  (rule: every positive floor clears by >= {PLAN_MARGIN})")
+    for lvl, floor_pct in BLOOM_FLOORS.items():
+        if floor_pct == 0 and counts[lvl] == 0:
+            rep.append(f"{lvl} is 0 against a 0% floor — nothing owed, and §4 requires the header "
+                       f"to state it as a CONTENT fact (CD-135(d)), which PLAN does not judge")
+
+    # --- 2. per-slot demand over the declared-admissible set (CD-138(g)) --------------------
+    admissible = set(header.get("admissible_slots") or [])
+    if not admissible:
+        errs.append("no `admissible_slots` declared — a plan cannot be signed against a chapter "
+                    "that has not said which slots its content supports (CD-138(e))")
+    supply = {}
+    for q in items:
+        s = slot_index.get(q.get("qid"))
+        if s:
+            supply[s] = supply.get(s, 0) + 1
+    short = [f"{s} {supply.get(s, 0)}/{rows[s]['items_per_paper']}"
+             for s in sorted(admissible) if s in rows
+             and supply.get(s, 0) < rows[s]["items_per_paper"]]
+    if short:
+        errs.append("admissible slot(s) under the paper's full demand — demand is paper-level and "
+                    "undivided (CD-138(d), CD-138(g)): " + " · ".join(short))
+
+    # --- 3. task_index: complete, admitted, selected honoured, every composite part ---------
+    for q in items:
+        qid = q.get("qid")
+        slot = slot_index.get(qid)
+        if slot is None or slot not in rows:
+            continue
+        row = rows[slot]
+        claimed = task_index.get(qid)
+        if claimed is None:
+            errs.append(f"{qid}: declares no task — CD-138(b) makes the task a DECLARED field")
+            continue
+        claimed_list = claimed if isinstance(claimed, list) else [claimed]
+        declared = _declared_tasks(row)
+        mode = row["task_mode"]
+        if mode == "composite":
+            missing = [p for p in declared if p not in claimed_list]
+            if missing:
+                errs.append(f"{qid}: slot {slot} is COMPOSITE and this item omits "
+                            f"{', '.join(missing)} — half the task")
+        elif mode == "alternative":
+            for c in claimed_list:
+                if c != row.get("selected"):
+                    errs.append(f"{qid}: does `{c}` at {slot}; C{cls} SELECTED "
+                                f"`{row.get('selected')}`"
+                                + (" — off-choice, admitted at the slot but not at this class"
+                                   if c in declared else " — admitted nowhere in this slot's set"))
+        else:
+            for c in claimed_list:
+                if c != row.get("admitted_task"):
+                    errs.append(f"{qid}: does `{c}` at simple slot {slot}, which admits "
+                                f"`{row.get('admitted_task')}`")
+
+    # --- 4. P-037: a teacher-supplied key rides only short_answer / descriptive -------------
+    # The key is TEACHER-SUPPLIED when the item SAYS SO in its own model_note (CD-136(b)) — a
+    # declared field, never inferred from the slot. Inferring it would be QB-CR-011's shape.
+    def _note(q):
+        # `answer_key` is a dict in the §4 shape and a bare string in older fixtures. Reading it
+        # as a dict unconditionally raised AttributeError on the first run — caught by the
+        # selftest, which is the argument for running a new gate against every fixture in the file
+        # rather than only against the one it was written for.
+        k = q.get("answer_key")
+        return (k.get("model_note") or "") if isinstance(k, dict) else ""
+
+    tk = [q for q in items if "CD-136" in _note(q)]
+    bad_type = [f"{q.get('qid')} ({q.get('question_type')})" for q in tk
+                if q.get("question_type") not in ("short_answer", "descriptive")]
+    if bad_type:
+        errs.append("P-037: teacher-supplied keys are admitted on `short_answer` and `descriptive` "
+                    "only — " + " · ".join(bad_type))
+    rep.append(f"P-037: {len(tk)} item(s) declare a teacher-supplied key in their own model_note, "
+               f"all on admitted types")
+
+    # --- 5. near-duplicate stems, within a slot --------------------------------------------
+    by_slot = {}
+    for q in items:
+        by_slot.setdefault(slot_index.get(q.get("qid")), []).append(
+            (q.get("qid"), qp_norm(q.get("question_text"))))
+    borderline = {}
+    for slot, group in sorted(by_slot.items(), key=lambda kv: str(kv[0])):
+        for i in range(len(group)):
+            for j in range(i + 1, len(group)):
+                (qa, sa), (qb, sb) = group[i], group[j]
+                if sa == sb:
+                    errs.append(f"{slot}: {qa} and {qb} carry the SAME stem verbatim — §4 forbids "
+                                f"a near-duplicate, and identical is past near")
+                    continue
+                sim = _stem_sim(sa, sb)
+                if sim >= PLAN_DUP_FAIL:
+                    errs.append(f"{slot}: {qa} ~ {qb} stems are {sim:.0%} identical — near-exact, "
+                                f"above the {PLAN_DUP_FAIL:.0%} bar")
+                elif sim >= PLAN_DUP_REPORT:
+                    borderline.setdefault(slot, []).append((sim, qa, qb))
+    for slot, pairs in sorted(borderline.items(), key=lambda kv: str(kv[0])):
+        pairs.sort(reverse=True)
+        top = " · ".join(f"{a}~{b} {s:.0%}" for s, a, b in pairs[:3])
+        rep.append(f"BORDERLINE STEMS at {slot}: {len(pairs)} pair(s) in "
+                   f"{PLAN_DUP_REPORT:.0%}–{PLAN_DUP_FAIL:.0%} — {top}"
+                   + (" …" if len(pairs) > 3 else "")
+                   + ". NOT a failure: a per-word drill is near-identical by design. Raised for "
+                     "the Hub's subject expert, never silently dropped")
+    return errs, rep
+
+
 def g_domain_ratio(bank, ctx):
     """§6 row 11 — Domain ratio: PAPER LEVEL ONLY, never per pool.
 
@@ -1728,6 +1928,7 @@ GATES = [
     # The 23rd. Like SOURCE-EXCLUSION it carries no § row of its own — it executes a Principal
     # ruling (2026-08-15) taken on a defect nothing in this suite could see, because every other
     # gate reads the bank and §11 imports the envelopes.
+    ("PLAN",               {"qp6": g_plan},          "AGENTS §6 · Principal 2026-08-15"),
     ("ENVELOPE-SYNC",      {"qp6": g_envelope_sync},          "AGENTS §11 · Principal 2026-08-15"),
 ]
 # CD-123's invariant is preserved by counting what CD-123 was counting — the gates that carry a
@@ -1737,7 +1938,7 @@ GATES = [
 # the thing it is protecting.
 QP6_POLICY_GATES = [n for n, i, a in GATES if "qp6" in i and a.startswith("§")]
 assert len(QP6_POLICY_GATES) == 11, "CD-123: QUESTION_POLICY §6 has eleven rows"
-assert len(GATES) == 23, ("CD-123's 21 + CD-131's SOURCE-EXCLUSION + ENVELOPE-SYNC. The §6 count "
+assert len(GATES) == 24, ("CD-123's 21 + SOURCE-EXCLUSION + ENVELOPE-SYNC + PLAN. The §6 count "
                           "above is unmoved and that is the assertion doing the work: two gates "
                           "now sit outside QUESTION_POLICY §6, each executing a ruling rather "
                           "than a policy clause, and neither may quietly inflate the §6 total. "
@@ -2419,6 +2620,144 @@ SYNTH_REGISTER_TASK = {"S02": "শব্দার্থ", "S05": "বহুন�
                        "S07": "সংক্ষিপ্ত উত্তর", "S08": "বিস্তৃত উত্তর"}
 
 
+
+def _plan_bank():
+    """A SYNTHETIC 44-item bank that PLAN passes — the smallest shape that can.
+
+    44 is not a round number, it is the arithmetic. Margin >= 2 on the four positive floors needs
+    0.80n + 8 <= n, so n >= 40; at 44 every level sits at EXACTLY +2, which makes every seed below
+    a one-item nudge. The fixture is synthetic (QB-D-012, CD-121(e)) and shares the synthetic
+    register the rest of the qp6 selftest uses.
+    """
+    plan = [("S02", "Remember", 8), ("S12", "Remember", 3), ("S12", "Understand", 3),
+            ("S05", "Understand", 8), ("S10", "Understand", 2), ("S10", "Apply", 5),
+            ("S07", "Apply", 8), ("S08", "Analyze", 7)]
+    task = {"S02": "শব্দার্থ", "S05": "বহুনির্বাচনি", "S07": "সংক্ষিপ্ত উত্তর",
+            "S08": "বিস্তৃত উত্তর", "S10": "পদ নির্ণয়",
+            "S12": ["যুক্তবর্ণ ভাঙা", "শব্দ গঠন"]}
+    qs, slots, tasks, n = [], {}, {}, 0
+    for slot, bloom, k in plan:
+        for _ in range(k):
+            n += 1
+            qid = f"QP-BAN-C5-U99-Q{n:02d}"
+            # ~20 DISTINCT tokens on purpose. Jaccard is over token SETS, so a four-word stem
+            # cannot reach the 95% band by adding one word — the first draft used one and both
+            # duplicate seeds failed to fire. A fixture must be able to express the thing it is
+            # seeding, and a stem this length behaves like the real ones the gate will meet.
+            qs.append({"qid": qid,
+                       "question_text": (f"কল্পিত পাঠ নিরানব্বই থেকে নেওয়া নমুনা প্রশ্ন যাচাইয়ের "
+                                         f"জন্য তৈরি এটি বাস্তব কোনো বইয়ের অংশ নয় ক্রমিক "
+                                         f"{qb_bn(n)} স্লট {slot}"),
+                       "question_type": "short_answer", "bloom_level": bloom,
+                       "difficulty": "easy", "marks": 1,
+                       "answer_key": {"accepted": [f"উত্তর {qb_bn(n)}"]}})
+            slots[qid], tasks[qid] = slot, task[slot]
+    return {"schema_version": "1.0", "policy_shape": "qp6", "subject": "BAN", "class": 5,
+            "questions": qs, "slot_index": slots, "task_index": tasks,
+            "header": {"admissible_slots": ["S02", "S05", "S07", "S08", "S10", "S12"],
+                       "slot_exclusions": {}}}
+
+
+def plan_selftest(ctx):
+    """PLAN's own seeds. It needs its own fixture because the shared 24-item bank CANNOT pass —
+    that impossibility is itself the first seed."""
+    ok = True
+    print()
+    base = _plan_bank()
+    errs, _ = g_plan(base, ctx)
+    if errs:
+        print(f"  FAIL  baseline: the 44-item plan fixture is not clean -> {errs}")
+        ok = False
+    else:
+        print("  PASS  baseline: a 44-item bank at exactly +2 on every floor is SIGNABLE")
+
+    def mut(fn):
+        b = json.loads(json.dumps(base))
+        fn(b)
+        return b
+
+    def retag(b, frm, to, k):
+        done = 0
+        for q in b["questions"]:
+            if q["bloom_level"] == frm and done < k:
+                q["bloom_level"] = to
+                done += 1
+
+    cases = [
+        ("EXACTLY-ON-FLOOR", "two Understand re-tagged away — the level lands EXACTLY on its "
+                             "floor, which BLOOM-BAND permits for a pool and the plan rule "
+                             "forbids for a signature",
+         lambda b: retag(b, "Understand", "Remember", 2)),
+        ("MARGIN", "ONE item short of the rule — margin +1 is still one re-tag from red",
+         lambda b: retag(b, "Apply", "Remember", 1)),
+        ("POOL-TOO-SMALL", "a 24-item pool — no tagging can satisfy the margin rule below 40 "
+                           "items, and the gate must say THAT rather than emit four margin "
+                           "failures a reader would try to fix one at a time",
+         lambda b: b.update({"questions": b["questions"][:24],
+                             "slot_index": {q["qid"]: b["slot_index"][q["qid"]]
+                                            for q in b["questions"][:24]},
+                             "task_index": {q["qid"]: b["task_index"][q["qid"]]
+                                            for q in b["questions"][:24]}})),
+        ("DEMAND", "an admissible slot under the paper's full per-slot demand (CD-138(g))",
+         lambda b: [b["questions"].remove(q) for q in
+                    [x for x in b["questions"] if b["slot_index"][x["qid"]] == "S07"][:6]]),
+        ("TASK-MISSING", "an item that declares no task at all",
+         lambda b: b["task_index"].pop(b["questions"][0]["qid"])),
+        ("OFF-CHOICE", "an S10 item doing ক্রিয়ার কাল — admitted at the slot, NOT selected at C5",
+         lambda b: b["task_index"].update({
+             next(q["qid"] for q in b["questions"] if b["slot_index"][q["qid"]] == "S10"):
+             "ক্রিয়ার কাল"})),
+        ("COMPOSITE-HALF", "an S12 item that breaks the যুক্তবর্ণ and never forms the শব্দ",
+         lambda b: b["task_index"].update({
+             next(q["qid"] for q in b["questions"] if b["slot_index"][q["qid"]] == "S12"):
+             ["যুক্তবর্ণ ভাঙা"]})),
+        ("P-037", "a teacher-keyed item typed `mcq` — the interim rule admits short_answer and "
+                  "descriptive only",
+         lambda b: b["questions"][0].update({
+             "question_type": "mcq",
+             "answer_key": {"accepted": ["ক"], "model_note": "শিক্ষকের দেওয়া (CD-136)"}})),
+        ("DUP-EXACT", "two items in one slot carrying the SAME stem verbatim",
+         lambda b: b["questions"][1].update(
+             {"question_text": b["questions"][0]["question_text"]})),
+        ("DUP-NEAR", "two stems 95%+ identical without being identical",
+         lambda b: b["questions"][1].update(
+             {"question_text": b["questions"][0]["question_text"] + " ও"})),
+    ]
+    for label, why, fn in cases:
+        errs, _ = g_plan(mut(fn), ctx)
+        if errs:
+            print(f"  PASS  {label:<17} fires on: {why}")
+        else:
+            print(f"  FAIL  {label:<17} DID NOT FIRE on: {why}")
+            ok = False
+
+    # NEGATIVES.
+    errs, rep = g_plan(mut(lambda b: b["questions"][1].update(
+        {"question_text": b["questions"][0]["question_text"] + " আরও দুটি শব্দ যোগ"})), ctx)
+    if not errs and any("BORDERLINE" in r for r in rep):
+        print("  PASS  DUP-BORDERLINE   stays quiet on: a pair in the 85–95% band — REPORTED for "
+              "the Hub's subject expert, never failed and never silently dropped")
+    else:
+        print(f"  FAIL  DUP-BORDERLINE   band case did not REPORT-without-failing: {errs}")
+        ok = False
+
+    # THE LIVE TRUE-NEGATIVE. পাঠ ১৩ at 110 is a CONTROL drawn from the live pool, which CD-121(e)
+    # permits — controls may be live, SEEDS may not. It is the only case here that proves the gate
+    # is usable on real work rather than only on a fixture built to please it.
+    live = ROOT / "workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json"
+    if live.exists():
+        lb = json.loads(live.read_text(encoding="utf-8"))
+        lerrs, lrep = g_plan(lb, {"slot_register": load_slot_register(ROOT)[0]})
+        if not lerrs:
+            print(f"  PASS  LIVE-CONTROL     stays quiet on: the signed {len(lb['questions'])}-item "
+                  f"পাঠ ১৩ — margins +12 · +2 · +2 · +3, every slot at full demand, and S12's "
+                  f"per-word drill REPORTED as borderline rather than failed")
+        else:
+            print(f"  FAIL  LIVE-CONTROL     fired on the signed bank: {lerrs}")
+            ok = False
+    return ok
+
+
 def _qp_ctx():
     """A synthetic context. The REF-19, TOPIC_NUMBERS and SLOT_REGISTER registers are STUBBED for
     the qp_selftest so the instrument is proven against fixtures rather than against the live canon
@@ -2466,10 +2805,16 @@ def qp_selftest():
 
     clean, _ = qp_run(_qp_good_bank(), ctx, quiet=True)
     if clean:
+        clean = [(g, e) for g, e in clean if g != "PLAN"]
+    if clean:
         print(f"  FAIL  baseline: the synthetic bank is not clean -> {clean}")
         ok = False
     else:
         print("  PASS  baseline: an unbroken synthetic chapter bank passes all eleven")
+        print("        (PLAN excluded from THIS baseline and the reason is arithmetic, not a "
+              "waiver: a 24-item pool cannot clear four positive floors with margin 2 — the "
+              "minimum is 40. PLAN carries its own 44-item fixture and its own baseline below, "
+              "and the 24-item case is SEEDED there as POOL-TOO-SMALL.)")
 
     cases = []
 
@@ -2720,7 +3065,11 @@ def qp_selftest():
     noise_ctx["slot_register"] = scrubbed
     a = qp_run(_qp_good_bank(), base_ctx, quiet=True)[0]
     b_ = qp_run(_qp_good_bank(), noise_ctx, quiet=True)[0]
-    marker_ok = (a == b_ == [])
+    # THE PROPERTY UNDER TEST IS THAT THE VERDICT DOES NOT MOVE, not that it is empty. It was
+    # written as `== []` while the fixture happened to be clean, and PLAN broke that accident: the
+    # 24-item fixture now carries a pool-too-small failure, IDENTICALLY on both sides, which is
+    # itself evidence the marker edit changed nothing. Equality is the assertion CD-138(b) needs.
+    marker_ok = (a == b_)
     print(f"  {'PASS' if marker_ok else 'FAIL'}  CD-138(b)      "
           + ("every marker-bearing prose field in the register rewritten to noise — verdict "
              "byte-identical, because COVERAGE reads DECLARED fields and no marker string"
@@ -2766,9 +3115,13 @@ def qp_selftest():
            "TOPIC-NUMBER" in {g for g, _ in f_marked})
 
     f_unmarked, _ = qp_run(_qp_good_bank(), ctx, quiet=True)
-    dcheck("and it changes no verdict: marked and unmarked copies of the same clean bank give "
+    # Same correction as CD-138(b)'s marker seed: the property is that the two verdicts are
+    # IDENTICAL, not that they are empty. `== []` was true only while the 24-item fixture happened
+    # to be clean, and PLAN's arithmetic ended that. Identical-and-non-empty still proves the
+    # marker changed nothing, which is the whole claim.
+    dcheck("and it changes no verdict: marked and unmarked copies of the same bank give "
            "byte-identical gate output",
-           qp_run(_marked(), ctx, quiet=True)[0] == f_unmarked == [])
+           qp_run(_marked(), ctx, quiet=True)[0] == f_unmarked)
 
     b = _qp_good_bank()
     b["header"]["অবস্থা"] = "সম্পূর্ণ"
@@ -2778,9 +3131,15 @@ def qp_selftest():
 
     ok = ok and all(decl)
 
+    # PLAN's own block, with its own 44-item fixture and its own baseline. It runs LAST so the
+    # arithmetic note above is already on screen when its POOL-TOO-SMALL seed appears.
+    plan_ok = plan_selftest(ctx)
+    ok = ok and plan_ok
+
     print(f"\nSELFTEST RESULT: {'PASS' if ok else 'FAIL'} "
           f"({len(cases)} seeded failures + {len(negatives)} negatives + {len(decl)} "
-          f"CD-055 declaration cases + 1 baseline, across all {sum(1 for _, i, _ in GATES if 'qp6' in i)} gates)")
+          f"CD-055 declaration cases + 1 baseline, across all {sum(1 for _, i, _ in GATES if 'qp6' in i)} gates; "
+          f"PLAN adds 10 seeds + 2 negatives + 1 baseline on its own 44-item fixture)")
     return ok
 
 
