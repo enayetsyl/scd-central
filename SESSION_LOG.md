@@ -2464,3 +2464,50 @@ it. It shares `bank_content_digest()` with the signature row, so **what the Prin
 what the Hub receives are the same quantity.**
 
 **Nothing pushed since `388cf2e`.** Approval returns per commit.
+
+## 2026-08-15 · teacher-lane foundations — container clone, and the PLAN gate
+
+**The execution model moved off the mounted drive**, on the Principal's ruling, and the assumption
+was verified before anything was built on it. **Confirmed:** on the container filesystem no `*.lock`
+lingers after add or commit, `rm` inside `.git/` succeeds, a second write needs no aside, and **`git
+reset --hard` works** — the operation that fails outright on the mount with *`fatal: Could not reset
+index file`*. So no lock-asides, no `.git/lock-debris/`, no `GIT_INDEX_FILE`.
+
+**But the ruled procedure had to change on measurement, and that is reported rather than quietly
+adjusted.** Cloning from GitHub is impractical here: `.git` is **347 MB** at roughly **0.2 MB/s** —
+~30 minutes of continuous transfer against a bash call capped far below it — and **a backgrounded
+`git clone` does not survive between calls**, each call being an independent shell. A
+`--filter=blob:none` attempt died at 226 KB with nothing in its log. **What works is a local clone
+from the mount — 11 seconds — with `origin` then repointed at GitHub**, where a fetch takes 1
+second. Byte-identical history, different transport. `tools/session_bootstrap.md` records the
+sequence, the numbers, and the verbatim probe so a later agent can falsify it rather than trust it.
+
+**`PLAN`, the suite's 24th gate**, mechanises the plan-table countersign — margins, demand, task
+declarations, P-037, near-duplicate stems. **It disagrees with BLOOM-BAND on purpose:** CD-135 lets
+a pool sit exactly on a floor; a bank offered as finished may not.
+
+**Two things it forced into the open.** First, **the margin rule implies a 40-item minimum** —
+0.80n + 8 ≤ n — so a thin chapter bank is now structurally unable to be signed. That is a
+curriculum consequence of a gate rule and the Principal should rule on it knowingly. Second, **the
+shared 24-item fixture cannot pass PLAN by arithmetic**, so PLAN carries its own 44-item fixture and
+the 24-item case became the POOL-TOO-SMALL seed. The shared baseline excludes PLAN **with the reason
+written in, not waived.**
+
+**Thresholds were measured before they were set.** The live 110 has zero exact within-slot
+duplicates and a maximum similarity of **0.905**, at S12 where only the word changes and that is the
+task. FAIL at 0.95, REPORT at 0.85–0.95. **A gate that fired on S03's five per-word stems would
+teach authors to scroll past it.**
+
+**THREE DEFECTS FOUND BY RUNNING THE GATE, and two of them were pre-existing.** `answer_key` is a
+dict in one shape and a bare string in an older fixture. And **two long-standing assertions said
+`== []` where they meant `== each other`** — CD-138(b)'s marker seed and CD-055's declaration seed
+both proved *"the verdict does not MOVE"* by requiring it to be **empty**, which was true only while
+the fixture happened to be clean. **PLAN's arithmetic ended that accident and exposed both.** They
+now compare the two verdicts to each other, which is what they always claimed to test.
+
+**Two ruling rows drafted, not filed** (`_wip/RULING_DRAFTS_teacher-lane_2026-08-15.md`): the
+teacher-lane standing authorization, and §6's relocation of item-level review to Hub subject
+experts. **`CD-14x` is a placeholder — a number is verified at source at filing time, never carried
+from a draft.** Autonomy begins when the row is filed and not before.
+
+**Nothing pushed.** `origin/main` at `a105125`.

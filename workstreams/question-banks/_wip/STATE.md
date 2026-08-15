@@ -2,28 +2,39 @@
 
 | Field | Value |
 |---|---|
-| Current build | **পাঠ ১৩ is CLOSED, SIGNED and EXPORTED.** 110 items, suite CLEAN across 23 gates; the Subject Lead pass given 2026-08-15 and pinned to a content hash; `banks/envelopes/` regenerated to match and all 110 `PASS (0 warn, 0 advisory) — importable`. |
-| Phase | **REVIEWED and EXPORT-READY.** `reviewed → gold` remains OUTSTANDING and **is not a Git act** — it is the Principal's, in the Hub (CD-003, LOCAL.md *Operator workflow*). Nothing in this repo moves a bank to gold and no field here claims to. |
-| Last completed step | Seven commits pushed `4ec7b6f..388cf2e`. Then, unpushed and awaiting per-commit approval: `0ea6685` log (review sheet) · **a premature promotion commit, DROPPED by reset — see QB-CR-013** · `ab75f1e` promotion (signature) · `1b6cbaf` build (envelopes) · `3295989` gate (ENVELOPE-SYNC) · `488b805` corrections (QB-CR-013) · this log commit. |
-| Next step | Nothing is owed on পাঠ ১৩. The register's remaining columns — **ENG · MATH · SCI/BGS** — are next, added as **DATA ROWS**. The C1–C5 shape now carries D5 and D6; **if a new subject needs a code change, the shape is wrong.** |
-| Blockers / open PENDING-P tags | **`PENDING-P-038` RAISED** — nothing checks that a slot is admitted by ANY chapter, and S14 at C5 Bangla is down to one (পাঠ ৪). FLAGGED-not-OPEN, so it does not bar promotion (LOCAL.md); the bank's own `flags` block is empty. |
-| Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` · `U13_ADMISSIBILITY_DRAFT_2026-08-15.md` · `BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md` · `U13_REVIEW_SHEET_2026-08-15.md` |
+| Current build | **Teacher-lane foundations.** Agent work has moved OFF the mounted drive into a container clone (`tools/session_bootstrap.md`); the `PLAN` gate now holds the plan-table countersign; two ruling rows are DRAFTED and NOT filed. পাঠ ১৩ is unchanged — signed, 110 items, export in sync. |
+| Phase | **Awaiting the Principal on two drafts.** Autonomy does not begin until CD-14x(a) is filed; until then every push needs explicit approval with a per-commit range check. |
+| Last completed step | `649b37a` tools (session_bootstrap.md) · `78ccf4f` gate (PLAN + paired policy) · this log commit. Suite CLEAN across **24 gates**. **Nothing pushed** — `origin/main` at `a105125`. |
+| Next step | The Principal reads `_wip/RULING_DRAFTS_teacher-lane_2026-08-15.md` and rules. After filing: the register's remaining columns — ENG · MATH · SCI/BGS — as DATA ROWS. |
+| Blockers / open PENDING-P tags | **`PENDING-P-038` RAISED** (nothing checks a slot is admitted by ANY chapter; S14 at C5 Bangla is down to one). FLAGGED-not-OPEN. |
+| Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` · `U13_ADMISSIBILITY_DRAFT_2026-08-15.md` · `BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md` · `U13_REVIEW_SHEET_2026-08-15.md` · `RULING_DRAFTS_teacher-lane_2026-08-15.md` |
 
-## The one thing a later session must read before anything else — QB-CR-013
+## THE EXECUTION MODEL CHANGED — read `tools/session_bootstrap.md` before starting
 
-**An agent recorded a Principal act before it occurred.** The Principal said *"approve"* to a
-read-only task; the word was ambiguous; the agent asked via a multiple-choice question and got
-back *"Both, in two commits"* — **an answer about WHERE the signature should go, which the agent
-read as WHETHER it had been given.** A signature row went into the bank saying *"PASSED"* with no
-verdict from the Principal in it. His actual words arrived one message later.
+**Work happens in a container clone, not on `C:\scd-central`.** The mount is the Principal's
+pull-only working copy. Verified this session, and the verbatim probe is in the doc: no `*.lock`
+lingers, `rm` inside `.git/` succeeds, and **`git reset --hard` WORKS**, where on the mount it fails
+outright. **No lock-asides, no `.git/lock-debris/`, no `GIT_INDEX_FILE`.**
 
-**No gate caught it and none could.** The suite was CLEAN throughout, correctly — nothing
-structural was wrong. **The Principal caught it by stating an expected HEAD in his next brief**,
-the agent verified, found the mismatch and stopped. Nothing was pushed, so the cost was one local
-commit, dropped by reset.
+**Clone from the MOUNT, not from GitHub, and the reason is measured:** `.git` is 347 MB at ~0.2 MB/s
+to GitHub — roughly 30 minutes, against a bash call capped far below that, and **a backgrounded
+clone does not survive between calls.** A local clone takes **11 seconds**; `origin` is then
+repointed at GitHub, where a fetch takes 1 second. Same history, different transport.
 
-**The rule it mints: a signature row quotes the signer.** A row that cannot quote its signer is
-not a signature; it is the agent's summary of one, and no artifact may carry it.
+## `PLAN` — what it now decides, and the number it implies
+
+It replaces the plan table the Principal used to countersign: Bloom margins ≥ 2, full per-slot
+demand, task declarations, P-037 types, within-slot near-duplicate stems. **It deliberately
+disagrees with BLOOM-BAND:** a POOL may sit exactly on a floor (CD-135); a bank offered as FINISHED
+may not, because one re-tag reddens it.
+
+**THE CONSEQUENCE A LATER SESSION WILL MEET: no bank under 40 items can pass PLAN.** Margin ≥ 2 on
+four positive floors needs 0.80n + 8 ≤ n. পাঠ ১৩ at 110 is far clear; **a thin chapter must grow
+before it can be signed at all.** That is arithmetic, not tagging, and the gate says so in one
+failure rather than four.
+
+**Near-duplicate thresholds are measured, not guessed** — the live 110 has zero exact duplicates and
+a maximum of 0.905 at S12, so FAIL is 0.95 and 0.85–0.95 REPORTS for the Hub's subject expert.
 
 ## পাঠ ১৩ — the signed state
 
