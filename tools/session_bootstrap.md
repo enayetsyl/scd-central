@@ -71,6 +71,21 @@ git rev-parse origin/main
 git status --porcelain          # must be empty
 ```
 
+**THE CLONE SOURCE IS THE MOUNT, AND THE MOUNT CAN LAG ORIGIN. THIS IS THE FAILURE MODE STEP 4
+EXISTS FOR.** The Principal pulls his working copy by hand (§4), so it is behind `origin` from the
+moment any session pushes until he next runs `git pull`. **A clone taken from a lagging mount is a
+correct clone of the wrong commit** — it is internally consistent, its tree is clean, its history
+is valid, and every one of those facts is true of stale state. Nothing about the repo will look
+wrong. **`git fetch` then `HEAD == origin/main` is the only thing that catches it, and it must be
+run before any work, not before the push** — by push time a session has already built on the wrong
+base, and the damage is a merge conflict or, worse, a silent rebuild of something already fixed.
+
+**If they differ, STOP AND REPORT. Do not `git pull`, do not reset, do not re-clone and carry on.**
+A mismatch means the mount and `origin` disagree about the current state of the work, and which one
+is right is the Principal's to say — he may have pushed from elsewhere, or the mount may hold
+something not yet pushed. **An agent that silently reconciles them destroys the evidence of which
+was which.**
+
 **Verification is a stop condition, not a formality.** The brief states an expected HEAD; if
 `HEAD`, `origin/main` and the expected hash do not all agree, **report and stop**. This is not
 theoretical: on 2026-08-15 an expected-HEAD line in a brief was the only thing that caught a
