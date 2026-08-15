@@ -4,10 +4,9 @@
   "authority": "CD-138",
   "built": "2026-08-15",
   "scope_built": [
-    "BAN C5"
+    "BAN C1-C5"
   ],
   "scope_owed": [
-    "BAN C1-C4",
     "ENG C1-C5",
     "MATH C1-C5",
     "SCI C3-C5",
@@ -22,54 +21,1313 @@
     "CD-138(d) — demand is PAPER-LEVEL. items_per_paper and marks are separate facts: BAN C5 totals 56 items and 100 marks. Only the marks column totals 100.",
     "CD-138(f) — chapter_authorable is DERIVED from each chapter bank header's admissibility declaration. It is NOT authored in this file and no slot row carries it.",
     "CD-138(g) — an admissible chapter owes the full per-slot items_per_paper, capped by PENDING-P-036's min().",
-    "CD-139 — S14/S15 exclusion is a per-chapter content declaration, not a slot-level rule."
+    "CD-139 — S14/S15 exclusion is a per-chapter content declaration, not a slot-level rule.",
+    "CD-140 — BAN-S12 C2 (১০টি × ১) and BAN-S09 C3 (৫টি × ২) are RULED item splits, not derived. The spine gives those two cells a total and no ×n, and CD-138(d) forbids inventing a divisor.",
+    "Principal 2026-08-15 — D5 rows record ABSENCE and carry no task fields; D6 rows are the school's own questions, keyed (L-id, class) because L-ids repeat across classes at different marks. Both are skipped by COVERAGE: existence is a CLASS-level fact, admissibility a CHAPTER-level one, and they are never one field."
   ],
   "self_checks": {
     "I-1_marks_total": {
-      "class": 5,
       "expected": 100,
-      "school_own_D6": 0,
-      "note": "C5 carries no স্কুলের নিজস্ব প্রশ্ন row; C1=39 · C2=20 · C3=5 must be added when those columns are built or they cannot reach 100."
+      "per_class": {
+        "C1": "61 + D6 39",
+        "C2": "80 + D6 20",
+        "C3": "95 + D6 5",
+        "C4": "100 + D6 0",
+        "C5": "100 + D6 0"
+      },
+      "note": "Each class's L-rows are ALSO cross-read against that class's own স্কুলের নিজস্ব প্রশ্ন cell in the spine's নম্বরের ধাপ table — two independent statements in the spine, checked against each other. This replaces the arithmetic check D6 rows cannot have, because the spine states no item split for any of its eight L-rows."
     },
     "I-4_half_marks": {
       "expected": 0,
       "note": "BAN uses no half marks at any class. The sole half-mark site in the whole structure is ENG S10 (0.5×10), and it is not in this file."
     },
     "I-6_cause_codes": {
-      "expected": "every row carries a d_code"
+      "expected": "every row carries a d_code, D5 and D6 rows included"
     },
     "I-8_gap_rule": {
-      "status": "NOT TESTABLE ON THIS COLUMN",
-      "note": "C5 has no D5 (absent) cell, so no gap exists to test. I-8 binds when C1-C4 are built."
+      "status": "COMPUTED — no interior hole",
+      "note": "All five columns are built, so the rule is testable for the first time. Seven slots start late — S01 (C4) · S06 (C3) · S08 (C2) · S09 (C3) · S10 (C2) · S11 (C2) · S13 (C3) — and every one of them is a LEADING PREFIX, not a hole. C1's S11 absence is the one to read carefully: বিরামচিহ্ন is not missing at C1, it is inside S03's composite under যোগ্যতা ১৩.৩."
     }
   },
   "pending_row_constraints": {
-    "note": "Carried now so they are not lost when the C1-C4 rows are built (CD-138(b) row_constraints). Each attaches to the class row named, which does not exist yet. Gate-inert.",
-    "items": [
-      {
-        "slot": "BAN-S01",
-        "class": 4,
-        "id": "E-AUTHOR-ENDORSE",
-        "text": "প্রশ্নে কবির নাম শুধু তথ্য হিসেবে চাওয়া হবে। প্রশ্নে, নম্বর দেওয়ার নিয়মে বা পড়ানোর সময় কোনো সম্মানের বিশেষণ (মহান কবি / জাতীয় কবি / বিদ্রোহী কবি) ব্যবহার করা যাবে না।"
-      },
-      {
-        "slot": "BAN-S12",
-        "class": 1,
-        "id": "BAN-S12-C1-NO-BHENGE",
-        "text": "প্রথম শ্রেণির কোনো বাংলা প্রশ্নপত্রে \"ভেঙে\" শব্দটা থাকতে পারবে না। C1 is D3 — গোটা যুক্তবর্ণ দিয়ে শব্দ, ভেঙে নয় (নিয়ম B-1)."
-      },
-      {
-        "slot": "BAN-S15",
-        "class": [
-          1,
-          2
-        ],
-        "id": "BAN-S15-GUIDED",
-        "text": "শুধু পরীক্ষার প্রশ্নটাই নির্দেশিত; ক্লাসে লেখার কাজ খোলা থাকবে। শুধু একটা শিরোনাম দিয়ে দিলে সেটা নির্দেশনা নয় — ৫টি নির্দেশক প্রশ্ন বা একটা শব্দের তালিকা দিতেই হবে।"
-      }
-    ]
+    "note": "DISCHARGED 2026-08-15. All three constraints carried here now attach to real rows, and the fourth defect this block could not hold is why the L-row shape was ruled: E-AUTHOR-ENDORSE → (BAN-S01, C4) · BAN-S12-C1-NO-BHENGE → (BAN-S12, C1) · BAN-S15-GUIDED → (BAN-S15, C1) and (BAN-S15, C2) · BAN-L03-C1-NO-FOLA → (BAN-L03, C1), which had NO row to attach to until D6 rows existed. Kept as an empty list rather than deleted so a reader arriving from an older citation is not left looking for a block that vanished.",
+    "items": []
   },
   "rows": [
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S01",
+      "slot_task": "কবিতা মুখস্থ লেখা",
+      "nape_frame": "কবি ও কবিতার নামসহ প্রথম ৮ লাইন · 1+1+8 = 10",
+      "admitted_task": "একমাত্র ব্যতিক্রম — বৃত্তির প্রস্তুতির জন্য রাখা",
+      "task_mode": "composite",
+      "items_per_paper": 1,
+      "marks": 10,
+      "marks_per_item": 10,
+      "d_code": "D0",
+      "authority": "স্কুল কর্তৃপক্ষ",
+      "parts": [
+        {
+          "part": "কবির নাম",
+          "marks": 1
+        },
+        {
+          "part": "কবিতার নাম",
+          "marks": 1
+        },
+        {
+          "part": "প্রথম ৮ লাইন",
+          "marks": 8
+        }
+      ],
+      "row_constraints": [
+        {
+          "id": "E-AUTHOR-ENDORSE",
+          "scope": "C4 (এবং C5-এ কবিতার প্রশ্নে)",
+          "text": "প্রশ্নে কবির নাম শুধু তথ্য হিসেবে চাওয়া হবে। প্রশ্নে, নম্বর দেওয়ার নিয়মে বা পড়ানোর সময় কোনো সম্মানের বিশেষণ (মহান কবি / জাতীয় কবি / বিদ্রোহী কবি) ব্যবহার করা যাবে না।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S01 · স্থায়ী নিয়ম (চতুর্থ শ্রেণিতে প্রযোজ্য)"
+        }
+      ],
+      "evidence_note": "THE ONLY C1–C4 ROW WHOSE AUTHORITY IS NOT নেপ. The spine calls it এক বছরের প্রস্তুতির সেতু, a preparation decision and not a teaching one — C1–C3 carry no memorisation question at all, and the C4 ladder step exists so the বৃত্তি paper's 10-mark question is not first seen in the exam hall."
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S02",
+      "slot_task": "শব্দার্থ",
+      "nape_frame": "৫টি শব্দ · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ §২",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S03",
+      "slot_task": "বাক্য গঠন",
+      "nape_frame": "৫টি শব্দ · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ §৩",
+      "row_constraints": [
+        {
+          "id": "BAN-S03-NOJOIN",
+          "scope": "every class",
+          "text": "কোনো শ্রেণিতেই বাক্য বানানোর কাজ যুক্তবর্ণ বা কারচিহ্ন প্রশ্নের সঙ্গে জুড়ে দেওয়া যাবে না। বাক্য গঠন সবসময় নিজের আলাদা প্রশ্ন হিসেবে থাকবে।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S03 · স্থায়ী নিয়ম"
+        }
+      ]
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S04",
+      "slot_task": "শূন্যস্থান পূরণ",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ §৪",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S05",
+      "slot_task": "বহুনির্বাচনি",
+      "nape_frame": "৫টি প্রশ্ন, ৪টি করে বিকল্প · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ §৫",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S06",
+      "slot_task": "বিপরীত / সমার্থক শব্দ",
+      "nape_frame": "৫টি · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "মূল কাঠামো — বিপরীত শব্দ",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ §৬",
+      "admitted_set": [
+        "বিপরীত শব্দ",
+        "সমার্থক শব্দ"
+      ],
+      "selected": "বিপরীত শব্দ",
+      "row_constraints": [],
+      "evidence_note": "C4 স্টেবিলিটি রিপোর্ট — Era A/B-র অনুশীলনে বিপরীত শব্দ আছে. C3 selects the same, but splits: সমার্থক sits at C3's S13, not here."
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S07",
+      "slot_task": "সংক্ষিপ্ত উত্তর",
+      "nape_frame": "৪টি প্রশ্ন · 2×4 = 8",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 4,
+      "marks": 8,
+      "marks_per_item": 2,
+      "d_code": "D0",
+      "authority": "নেপ §৭",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S08",
+      "slot_task": "বিস্তৃত উত্তর",
+      "nape_frame": "৩টি প্রশ্ন · 5×3 = 15",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 3,
+      "marks": 15,
+      "marks_per_item": 5,
+      "d_code": "D0",
+      "authority": "নেপ §৮",
+      "row_constraints": [
+        {
+          "id": "BAN-S08-STRAND",
+          "scope": "C2→C5 ladder; C4 leg binding here",
+          "text": "ইসলামি মূল ধারা: C2 পাঠ ২৫ (খন্দক) → C3 পাঠ ২১ (হজরত আবু বকর রা) → C4 (উমর রা) → C5 (বিদায় হজ)। প্রতি শ্রেণিতে একটা বিস্তৃত প্রশ্ন এই ধাপ থেকেই আসতে হবে।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S08"
+        }
+      ]
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S09",
+      "slot_task": "মূলভাব",
+      "nape_frame": "১টি · 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 1,
+      "marks": 5,
+      "marks_per_item": 5,
+      "d_code": "D0",
+      "authority": "নেপ §৯",
+      "row_constraints": [],
+      "evidence_note": "আসল প্রশ্নটা এখান থেকে শুরু. C3 carries 10 because C1–C3 have no S01; the poem's marks move from one question to another rather than being lost."
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S10",
+      "slot_task": "ভাষারীতি / পদ / ক্রিয়ার কাল",
+      "nape_frame": "৫টি · 1×5 = 5 (তিনটার যেকোনো একটা)",
+      "admitted_task": "পদ নির্ণয়",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ §১০",
+      "admitted_set": [
+        "ভাষারীতি পরিবর্তন",
+        "পদ নির্ণয়",
+        "ক্রিয়ার কাল"
+      ],
+      "selected": "পদ নির্ণয়",
+      "row_constraints": [],
+      "evidence_note": "পদ নির্ণয় — শুধু সর্বনাম নয়, সব পদ."
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S11",
+      "slot_task": "প্রশ্ন তৈরি / বিরামচিহ্ন",
+      "nape_frame": "৫টি · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "বিরামচিহ্ন",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ §১১",
+      "admitted_set": [
+        "প্রশ্ন তৈরি",
+        "বিরামচিহ্ন বসানো"
+      ],
+      "selected": "বিরামচিহ্ন বসানো",
+      "row_constraints": [],
+      "evidence_note": "DECLARED বিরামচিহ্ন, AND THE OTHER MEMBER BECOMES AVAILABLE HERE FOR THE FIRST TIME — the spine's C4 কারণ reads বিরামচিহ্ন; প্রশ্ন তৈরি করাও এখান থেকে দেওয়া যাবে. C4 is the first class where প্রশ্ন তৈরি may be set as a written question at all. `selected` records what the paper does; a C4 paper substituting প্রশ্ন তৈরি is inside the admitted set and is a declaration change, not a defect. RAISED for the §6 countersignature rather than settled here."
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S12",
+      "slot_task": "যুক্তবর্ণ ও শব্দ গঠন",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "admitted_task": "যুক্তবর্ণ ভেঙে শব্দ",
+      "task_mode": "composite",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ §১২",
+      "parts": [
+        {
+          "part": "যুক্তবর্ণ ভাঙা",
+          "marks": null
+        },
+        {
+          "part": "শব্দ গঠন",
+          "marks": null
+        }
+      ],
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S13",
+      "slot_task": "এক কথায় প্রকাশ",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ §১৩",
+      "row_constraints": [],
+      "evidence_note": "আসল প্রশ্নটা এখান থেকে শুরু."
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S14",
+      "slot_task": "ছক / ফরম / আবেদনপত্র",
+      "nape_frame": "১টি · 5×1 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "আবেদনপত্র / চিঠি",
+      "task_mode": "alternative",
+      "items_per_paper": 1,
+      "marks": 5,
+      "marks_per_item": 5,
+      "d_code": "D0",
+      "authority": "নেপ §১৪",
+      "admitted_set": [
+        "ছক পূরণ",
+        "ফরম পূরণ",
+        "আবেদনপত্র"
+      ],
+      "selected": "আবেদনপত্র",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 4,
+      "slot": "BAN-S15",
+      "slot_task": "রচনা",
+      "nape_frame": "সূত্রসহ বা খোলা · 12×1 = 12",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 1,
+      "marks": 12,
+      "marks_per_item": 12,
+      "d_code": "D0",
+      "authority": "নেপ §১৫",
+      "row_constraints": [],
+      "evidence_note": "আসল প্রশ্নটা এখান থেকে শুরু."
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S01",
+      "slot_task": "কবিতা মুখস্থ লেখা",
+      "nape_frame": "কবি ও কবিতার নামসহ প্রথম ৮ লাইন · 1+1+8 = 10",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S01 · C3 সারি",
+      "absent_reason": "নেই — চতুর্থ শ্রেণিতে আসবে",
+      "row_constraints": [],
+      "evidence_note": "স্কুল কর্তৃপক্ষ মনে করেন কবিতা মুখস্থ করা দরকারি দক্ষতা নয়। তৃতীয় শ্রেণিতে কবিতার সঙ্গে পরীক্ষার যোগ S09-এর মাধ্যমে — কবিতা পরীক্ষায় আসে, তবে মুখস্থ করে নয়, বুঝে।"
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S02",
+      "slot_task": "শব্দার্থ",
+      "nape_frame": "৫টি শব্দ · 1×5 = 5",
+      "admitted_task": "১০টি শব্দ × ১",
+      "task_mode": "simple",
+      "items_per_paper": 10,
+      "marks": 10,
+      "marks_per_item": 1,
+      "d_code": "D1",
+      "authority": "`TOP-BAN-C3-04` + §১.২",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S03",
+      "slot_task": "বাক্য গঠন",
+      "nape_frame": "৫টি শব্দ · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "`TOP-BAN-C3-05`",
+      "row_constraints": [
+        {
+          "id": "BAN-S03-NOJOIN",
+          "scope": "every class",
+          "text": "কোনো শ্রেণিতেই বাক্য বানানোর কাজ যুক্তবর্ণ বা কারচিহ্ন প্রশ্নের সঙ্গে জুড়ে দেওয়া যাবে না। বাক্য গঠন সবসময় নিজের আলাদা প্রশ্ন হিসেবে থাকবে।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S03 · স্থায়ী নিয়ম"
+        }
+      ]
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S04",
+      "slot_task": "শূন্যস্থান পূরণ",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "`TOP-BAN-C3-04/-05`",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S05",
+      "slot_task": "বহুনির্বাচনি",
+      "nape_frame": "৫টি প্রশ্ন, ৪টি করে বিকল্প · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "প্রশ্নের ধরন",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S06",
+      "slot_task": "বিপরীত / সমার্থক শব্দ",
+      "nape_frame": "৫টি · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "বিপরীত শব্দ",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "C3 স্টেবিলিটি রিপোর্ট",
+      "admitted_set": [
+        "বিপরীত শব্দ",
+        "সমার্থক শব্দ"
+      ],
+      "selected": "বিপরীত শব্দ",
+      "row_constraints": [],
+      "evidence_note": "এখান থেকে শুরু — দুই যুগ, নয় বছরের অনুশীলনে আছে. DO NOT MERGE WITH S13: at C3 বিপরীত is here and সমার্থক is at S13, two separate 5-mark questions. Merging them loses a whole question."
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S07",
+      "slot_task": "সংক্ষিপ্ত উত্তর",
+      "nape_frame": "৪টি প্রশ্ন · 2×4 = 8",
+      "admitted_task": "৫টি প্রশ্ন × ২",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 10,
+      "marks_per_item": 2,
+      "d_code": "D1",
+      "authority": "`TOP-BAN-C3-07/-08/-09`",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S08",
+      "slot_task": "বিস্তৃত উত্তর",
+      "nape_frame": "৩টি প্রশ্ন · 5×3 = 15",
+      "admitted_task": "২টি প্রশ্ন × ৫",
+      "task_mode": "simple",
+      "items_per_paper": 2,
+      "marks": 10,
+      "marks_per_item": 5,
+      "d_code": "D1",
+      "authority": "`TOP-BAN-C3-08/-09/-10`",
+      "row_constraints": [
+        {
+          "id": "BAN-S08-STRAND",
+          "scope": "C2→C5 ladder; C3 leg binding here",
+          "text": "ইসলামি মূল ধারা: C2 পাঠ ২৫ (খন্দক) → C3 পাঠ ২১ (হজরত আবু বকর রা) → C4 (উমর রা) → C5 (বিদায় হজ)। প্রতি শ্রেণিতে একটা বিস্তৃত প্রশ্ন এই ধাপ থেকেই আসতে হবে।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S08"
+        }
+      ],
+      "evidence_note": "D1 ↓ against the base, and it is NOT a shortfall — লেখার ভার (S07 + S08 + L06) totals 25 at C3, which sits correctly between C2's 27 and C4's 23. Read this row alone and the ladder looks broken."
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S09",
+      "slot_task": "মূলভাব",
+      "nape_frame": "১টি · 5",
+      "admitted_task": "কবিতাংশ পড়ে প্রশ্নের উত্তর",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 10,
+      "marks_per_item": 2,
+      "d_code": "D4",
+      "authority": "`TOP-BAN-C3-07`; item split ruled at CD-140",
+      "row_constraints": [],
+      "evidence_note": "ITEM SPLIT RULED, NOT DERIVED — the spine gives 10 marks and no ×n. CD-140 rules ৫টি প্রশ্ন × ২, authority স্কুল কর্তৃপক্ষ. মূলভাব লেখা is a বিশ্লেষণ task above C3's reach, so the substituted question keeps the student inside one text."
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S10",
+      "slot_task": "ভাষারীতি / পদ / ক্রিয়ার কাল",
+      "nape_frame": "৫টি · 1×5 = 5 (তিনটার যেকোনো একটা)",
+      "admitted_task": "বাক্যের প্রকার",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D4",
+      "authority": "`TOP-BAN-C3-05`",
+      "row_constraints": [],
+      "evidence_note": "SIMPLE, NOT ALTERNATIVE, AND THE DIFFERENCE IS THE WHOLE POINT OF D4 vs D3. C3 does NONE of the slot's three admitted forms — পদ বিষয়টাই C3-এর §৩ পুনরালোচনার তালিকায় নেই — so the question itself is replaced. C2's ক্রিয়ার পুরুষ-সংগতি is D3 and stays INSIDE the set. D3 বদল বৃত্তির প্রশ্নপত্রের চোখে ধরাই পড়ে না; D4 বদল একটা আসল পার্থক্য।"
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S11",
+      "slot_task": "প্রশ্ন তৈরি / বিরামচিহ্ন",
+      "nape_frame": "৫টি · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "বিরামচিহ্ন",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "`TOP-BAN-C3-05`, পাঠ ১০",
+      "admitted_set": [
+        "প্রশ্ন তৈরি",
+        "বিরামচিহ্ন বসানো"
+      ],
+      "selected": "বিরামচিহ্ন বসানো",
+      "row_constraints": [
+        {
+          "id": "BAN-S11-NO-LEARNERQ",
+          "scope": "C1–C3",
+          "text": "চতুর্থ শ্রেণির নিচে লিখিত প্রশ্ন তৈরির প্রশ্ন দেওয়া যাবে না — এনসিএফ কাজটা চতুর্থ শ্রেণিতে শুরু করে; তার নিচে এটা ক্লাসে মুখে মুখে করার কাজ।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S11 + অনুমোদনের ছক"
+        }
+      ],
+      "evidence_note": "শুধু বিরামচিহ্ন."
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S12",
+      "slot_task": "যুক্তবর্ণ ও শব্দ গঠন",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "admitted_task": "যুক্তবর্ণ ভেঙে শব্দ",
+      "task_mode": "composite",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "`TOP-BAN-C3-03`, পাঠ ৫",
+      "parts": [
+        {
+          "part": "যুক্তবর্ণ ভাঙা",
+          "marks": null
+        },
+        {
+          "part": "শব্দ গঠন",
+          "marks": null
+        }
+      ],
+      "row_constraints": [],
+      "evidence_note": "পুরোপুরি যোগ্যতা হিসেবে (১.১/৫.১/৫.২/৯.১/১৩.১)."
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S13",
+      "slot_task": "এক কথায় প্রকাশ",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "admitted_task": "সমার্থক শব্দ",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D4",
+      "authority": "`TOP-BAN-C3-04`",
+      "row_constraints": [],
+      "evidence_note": "এক কথায় প্রকাশ তৃতীয় শ্রেণির বইতে একেবারেই নেই; সমার্থক শব্দ আছে আর কাজটাও একই রকম. DO NOT MERGE WITH S06 — both are 5 marks at 1 each and look identical."
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S14",
+      "slot_task": "ছক / ফরম / আবেদনপত্র",
+      "nape_frame": "১টি · 5×1 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "ফরম / তথ্যছক",
+      "task_mode": "alternative",
+      "items_per_paper": 1,
+      "marks": 5,
+      "marks_per_item": 5,
+      "d_code": "D3",
+      "authority": "`TOP-BAN-C3-12`, পাঠ ২৯, যোগ্যতা ১৪.২",
+      "admitted_set": [
+        "ছক পূরণ",
+        "ফরম পূরণ",
+        "আবেদনপত্র"
+      ],
+      "selected": "ফরম পূরণ",
+      "row_constraints": [],
+      "evidence_note": "তৃতীয় শ্রেণিতে কাজের লেখা মানে শুধু ফরম পূরণ; বইয়ের কোথাও চিঠি নেই।"
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-S15",
+      "slot_task": "রচনা",
+      "nape_frame": "সূত্রসহ বা খোলা · 12×1 = 12",
+      "admitted_task": "অনুচ্ছেদ",
+      "task_mode": "simple",
+      "items_per_paper": 1,
+      "marks": 10,
+      "marks_per_item": 10,
+      "d_code": "D4",
+      "authority": "`TOP-BAN-C3-11` 🟦",
+      "row_constraints": [],
+      "evidence_note": "চতুর্থ শ্রেণির রচনার জন্য পথ রাখতে ১০ নম্বর."
+    },
+    {
+      "subject": "BAN",
+      "class": 3,
+      "slot": "BAN-L06",
+      "slot_task": "এক বাক্যে উত্তর",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 5,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_BAN_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L06 C3",
+      "source_cited": "`TOP-BAN-C3-08/-09`",
+      "reason": "S07-এর আগের ধাপ; চতুর্থ শ্রেণিতে আর থাকে না। লেখার ভার হিসাবের তৃতীয় পদ.",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S01",
+      "slot_task": "কবিতা মুখস্থ লেখা",
+      "nape_frame": "কবি ও কবিতার নামসহ প্রথম ৮ লাইন · 1+1+8 = 10",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S01 · C2 সারি",
+      "absent_reason": "নেই",
+      "row_constraints": [],
+      "evidence_note": "স্কুল কর্তৃপক্ষ মনে করেন কবিতা মুখস্থ করা দরকারি দক্ষতা নয় — প্রথম থেকে তৃতীয় শ্রেণিতে বর্ণ, কারচিহ্ন, যুক্তবর্ণ ও শব্দভান্ডারের ভিতের কাজেই নম্বর দরকার।"
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S02",
+      "slot_task": "শব্দার্থ",
+      "nape_frame": "৫টি শব্দ · 1×5 = 5",
+      "admitted_task": "৭টি শব্দ × ১",
+      "task_mode": "simple",
+      "items_per_paper": 7,
+      "marks": 7,
+      "marks_per_item": 1,
+      "d_code": "D1",
+      "authority": "`TOP-BAN-C2-06`",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S03",
+      "slot_task": "বাক্য গঠন",
+      "nape_frame": "৫টি শব্দ · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "`TOP-BAN-C2-08`, যোগ্যতা ১৪.১",
+      "row_constraints": [
+        {
+          "id": "BAN-S03-NOJOIN",
+          "scope": "every class",
+          "text": "কোনো শ্রেণিতেই বাক্য বানানোর কাজ যুক্তবর্ণ বা কারচিহ্ন প্রশ্নের সঙ্গে জুড়ে দেওয়া যাবে না। বাক্য গঠন সবসময় নিজের আলাদা প্রশ্ন হিসেবে থাকবে।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S03 · স্থায়ী নিয়ম"
+        }
+      ]
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S04",
+      "slot_task": "শূন্যস্থান পূরণ",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "`TOP-BAN-C2-06`",
+      "row_constraints": [],
+      "evidence_note": "পুরো নম্বরে — আধা নম্বর চলবে না (I-4)."
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S05",
+      "slot_task": "বহুনির্বাচনি",
+      "nape_frame": "৫টি প্রশ্ন, ৪টি করে বিকল্প · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "প্রশ্নের ধরন",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S06",
+      "slot_task": "বিপরীত / সমার্থক শব্দ",
+      "nape_frame": "৫টি · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S06 · C2 সারি",
+      "absent_reason": "C2-র বইতে নেই; তৃতীয় শ্রেণিতে শুরু হবে",
+      "row_constraints": [],
+      "evidence_note": "প্রথম ও দ্বিতীয় শ্রেণিতে শব্দ নিয়ে কাজ মানে শব্দ গঠন, শব্দ শিখি, মিল করি আর শূন্যস্থান — বিপরীতার্থক শব্দ নয়। ধাপ — · — · 5 · 5 · 5-তে কোনো ফাঁক নেই (I-8)."
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S07",
+      "slot_task": "সংক্ষিপ্ত উত্তর",
+      "nape_frame": "৪টি প্রশ্ন · 2×4 = 8",
+      "admitted_task": "৬টি প্রশ্ন × ২",
+      "task_mode": "simple",
+      "items_per_paper": 6,
+      "marks": 12,
+      "marks_per_item": 2,
+      "d_code": "D1",
+      "authority": "`TOP-BAN-C2-11/12/13`",
+      "row_constraints": [],
+      "evidence_note": "THE HIGHEST S07 IN THE FILE, and it is not an error read against লেখার ভার: at C2 বিস্তৃত উত্তর does not yet carry the load, so সংক্ষিপ্ত উত্তর pulls it. S07 and S08 are always read together."
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S08",
+      "slot_task": "বিস্তৃত উত্তর",
+      "nape_frame": "৩টি প্রশ্ন · 5×3 = 15",
+      "admitted_task": "৩টি প্রশ্ন × ৫",
+      "task_mode": "simple",
+      "items_per_paper": 3,
+      "marks": 15,
+      "marks_per_item": 5,
+      "d_code": "D0",
+      "authority": "`TOP-BAN-C2-12`",
+      "row_constraints": [
+        {
+          "id": "BAN-S08-STRAND",
+          "scope": "C2→C5 ladder; C2 leg binding here",
+          "text": "ইসলামি মূল ধারা: C2 পাঠ ২৫ (খন্দক) → C3 পাঠ ২১ (হজরত আবু বকর রা) → C4 (উমর রা) → C5 (বিদায় হজ)। প্রতি শ্রেণিতে একটা বিস্তৃত প্রশ্ন এই ধাপ থেকেই আসতে হবে।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S08"
+        }
+      ],
+      "evidence_note": "🟦★ একটা প্রশ্ন পাঠ ২৫ (খন্দক) থেকে দিতেই হবে — সহিহ নববী বর্ণনা, KEEP-AS-IS ও PROTECTED: যেমন আছে তেমনই তুলে ধরতে হবে।"
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S09",
+      "slot_task": "মূলভাব",
+      "nape_frame": "১টি · 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S09 · C2 সারি",
+      "absent_reason": "বদলি রূপে তৃতীয় শ্রেণিতে শুরু",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S10",
+      "slot_task": "ভাষারীতি / পদ / ক্রিয়ার কাল",
+      "nape_frame": "৫টি · 1×5 = 5 (তিনটার যেকোনো একটা)",
+      "admitted_task": "ক্রিয়ার কাল",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D3",
+      "authority": "`TOP-BAN-C2-07`, পাঠ ৩",
+      "admitted_set": [
+        "ভাষারীতি পরিবর্তন",
+        "পদ নির্ণয়",
+        "ক্রিয়ার কাল"
+      ],
+      "selected": "ক্রিয়ার কাল",
+      "row_constraints": [],
+      "evidence_note": "D3, NOT D4 — the inner subject is ক্রিয়ার পুরুষ-সংগতি, which the spine calls ক্রিয়ার কালেরই একটা রূপ. `selected` therefore stays INSIDE the admitted set and only the subject moves; C3's বাক্যের প্রকার leaves the set entirely and is D4. Giving both the same code would hide which gap is still open before C4."
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S11",
+      "slot_task": "প্রশ্ন তৈরি / বিরামচিহ্ন",
+      "nape_frame": "৫টি · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "বিরামচিহ্ন",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "যোগ্যতা ১৩.২",
+      "admitted_set": [
+        "প্রশ্ন তৈরি",
+        "বিরামচিহ্ন বসানো"
+      ],
+      "selected": "বিরামচিহ্ন বসানো",
+      "row_constraints": [
+        {
+          "id": "BAN-S11-NO-LEARNERQ",
+          "scope": "C1–C3",
+          "text": "চতুর্থ শ্রেণির নিচে লিখিত প্রশ্ন তৈরির প্রশ্ন দেওয়া যাবে না — এনসিএফ কাজটা চতুর্থ শ্রেণিতে শুরু করে; তার নিচে এটা ক্লাসে মুখে মুখে করার কাজ।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S11 + অনুমোদনের ছক"
+        }
+      ],
+      "evidence_note": "দাঁড়ি, কমা, প্রশ্নবোধক যোগ্যতাতেই নাম ধরে লেখা আছে."
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S12",
+      "slot_task": "যুক্তবর্ণ ও শব্দ গঠন",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "admitted_task": "যুক্তবর্ণ ভেঙে শব্দ",
+      "task_mode": "composite",
+      "items_per_paper": 10,
+      "marks": 10,
+      "marks_per_item": 1,
+      "d_code": "D1",
+      "authority": "`TOP-BAN-C2-05` 🔴, পাঠ ১০; item split ruled at CD-140",
+      "parts": [
+        {
+          "part": "যুক্তবর্ণ ভাঙা",
+          "marks": null
+        },
+        {
+          "part": "শব্দ গঠন",
+          "marks": null
+        }
+      ],
+      "row_constraints": [],
+      "evidence_note": "ITEM SPLIT RULED, NOT DERIVED — the spine gives 10 marks and no ×n. CD-140 rules ১০টি × ১, authority স্কুল কর্তৃপক্ষ. \"ভেঙে লিখি\" — দ্বিতীয় শ্রেণির সবচেয়ে বড় ধাপ, and the highest S12 in the file because this is where the task is actually taught."
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S13",
+      "slot_task": "এক কথায় প্রকাশ",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S13 · C2 সারি",
+      "absent_reason": "বদলি রূপে তৃতীয় শ্রেণিতে শুরু",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S14",
+      "slot_task": "ছক / ফরম / আবেদনপত্র",
+      "nape_frame": "১টি · 5×1 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "ছক পূরণ",
+      "task_mode": "alternative",
+      "items_per_paper": 1,
+      "marks": 5,
+      "marks_per_item": 5,
+      "d_code": "D3",
+      "authority": "`TOP-BAN-C2-17`, পাঠ ২৮, যোগ্যতা ১৪.৩",
+      "admitted_set": [
+        "ছক পূরণ",
+        "ফরম পূরণ",
+        "আবেদনপত্র"
+      ],
+      "selected": "ছক পূরণ",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-S15",
+      "slot_task": "রচনা",
+      "nape_frame": "সূত্রসহ বা খোলা · 12×1 = 12",
+      "admitted_task": "নির্দেশিত অনুচ্ছেদ",
+      "task_mode": "simple",
+      "items_per_paper": 1,
+      "marks": 6,
+      "marks_per_item": 6,
+      "d_code": "D4",
+      "authority": "`TOP-BAN-C2-16` 🟦, যোগ্যতা ৭.১/১৫.১",
+      "row_constraints": [
+        {
+          "id": "BAN-S15-GUIDED",
+          "scope": "C1, C2",
+          "text": "শুধু পরীক্ষার প্রশ্নটাই নির্দেশিত; ক্লাসে লেখার কাজ খোলা থাকবে। শুধু একটা শিরোনাম দিয়ে দিলে সেটা নির্দেশনা নয় — ৫টি নির্দেশক প্রশ্ন বা একটা শব্দের তালিকা দিতেই হবে।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S15 · স্থায়ী নিয়ম"
+        }
+      ],
+      "evidence_note": "শিরোনাম + ৫টি নির্দেশক প্রশ্ন বা শব্দের তালিকা. 🟦 — সমৃদ্ধ করো, আগেভাগে নিয়মে বেঁধো না।"
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-L01",
+      "slot_task": "মিলকরণ",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 5,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_BAN_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L01 C2",
+      "source_cited": "C2 স্টেবিলিটি রিপোর্ট §৩.৩",
+      "reason": "Era B-তে \"মিল করি\" কাজটার গুরুত্ব বেশি; প্রথম আর তৃতীয় শ্রেণির মাঝখানে ধাপটা ধরে রাখে.",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-L03",
+      "slot_task": "কারচিহ্ন",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 10,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_BAN_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L03 C2",
+      "source_cited": "`TOP-BAN-C2-02` 🔴, পাঠ ৭",
+      "reason": "🔴 গুরুত্বপূর্ণ কাজ, S12-এর সরাসরি ভিত.",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 2,
+      "slot": "BAN-L05",
+      "slot_task": "ফলা ও রেফ",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 5,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_BAN_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L05 C2",
+      "source_cited": "`TOP-BAN-C2-03/-04`, পাঠ ১২/১৩",
+      "reason": "S12-এর ভিত তৈরি করে; ফলা ও রেফ এখান থেকেই শুরু — C1-এ নয় (BAN-L03-C1-NO-FOLA).",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S01",
+      "slot_task": "কবিতা মুখস্থ লেখা",
+      "nape_frame": "কবি ও কবিতার নামসহ প্রথম ৮ লাইন · 1+1+8 = 10",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S01 · C1 সারি",
+      "absent_reason": "নেই",
+      "row_constraints": [],
+      "evidence_note": "প্রথম থেকে তৃতীয় শ্রেণিতে কবিতা পড়ানো, আবৃত্তি, আলোচনা ও কবিতার শব্দ শেখানো আগের মতোই চলবে — শুধু মুখস্থ লিখে দেওয়ার নম্বরটা নেই।"
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S02",
+      "slot_task": "শব্দার্থ",
+      "nape_frame": "৫টি শব্দ · 1×5 = 5",
+      "admitted_task": "৬টি শব্দ × ২ — ৯৯ শব্দের মূল তালিকা",
+      "task_mode": "simple",
+      "items_per_paper": 6,
+      "marks": 12,
+      "marks_per_item": 2,
+      "d_code": "D1",
+      "authority": "`TOP-BAN-C1-05` 🔴",
+      "row_constraints": [],
+      "evidence_note": "THE HIGHEST S02 IN THE FILE and the ladder runs backwards on purpose: 12 → 7 → 10 → 5 → 5. শব্দভান্ডার is a 🔴 LEARNING target at C1 and only a RETENTION task above; after C1 it is never taught separately again."
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S03",
+      "slot_task": "বাক্য গঠন",
+      "nape_frame": "৫টি শব্দ · 1×5 = 5",
+      "admitted_task": "৫টি × ২ — বাক্য + সঠিক বিরামচিহ্ন",
+      "task_mode": "composite",
+      "items_per_paper": 5,
+      "marks": 10,
+      "marks_per_item": 2,
+      "d_code": "D1",
+      "authority": "`TOP-BAN-C1-06` 🔴, যোগ্যতা ১৩.৩",
+      "parts": [
+        {
+          "part": "বাক্য",
+          "marks": null
+        },
+        {
+          "part": "সঠিক বিরামচিহ্ন",
+          "marks": null
+        }
+      ],
+      "row_constraints": [
+        {
+          "id": "BAN-S03-NOJOIN",
+          "scope": "every class",
+          "text": "কোনো শ্রেণিতেই বাক্য বানানোর কাজ যুক্তবর্ণ বা কারচিহ্ন প্রশ্নের সঙ্গে জুড়ে দেওয়া যাবে না। বাক্য গঠন সবসময় নিজের আলাদা প্রশ্ন হিসেবে থাকবে।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S03 · স্থায়ী নিয়ম"
+        }
+      ],
+      "evidence_note": "COMPOSITE, AND THE PARTS ARE NOT THE C5 PARTS. যোগ্যতা ১৩.৩ is বিরামচিহ্নসহ বাক্য লেখা — one competency, not two — so an item scoring 1 would not test the punctuation half at all. This is ALSO where C1's punctuation lives: S11 does not start until C2, and the two facts are the same fact. The NOJOIN rule still binds: composite means বাক্য + বিরামচিহ্ন in one item, never বাক্য joined to a যুক্তবর্ণ or কারচিহ্ন question."
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S04",
+      "slot_task": "শূন্যস্থান পূরণ",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "`TOP-BAN-C1-05/-06`",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S05",
+      "slot_task": "বহুনির্বাচনি",
+      "nape_frame": "৫টি প্রশ্ন, ৪টি করে বিকল্প · 1×5 = 5",
+      "admitted_task": "মূল কাঠামো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "প্রশ্নের ধরন",
+      "row_constraints": [],
+      "evidence_note": "বহুনির্বাচনি হলো উত্তর দেওয়ার একটা পদ্ধতি, কোনো দক্ষতা নয় — so the mark is identical at every class and the slot carries no Bloom level of its own."
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S06",
+      "slot_task": "বিপরীত / সমার্থক শব্দ",
+      "nape_frame": "৫টি · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S06 · C1 সারি",
+      "absent_reason": "C1-র বইতে নেই",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S07",
+      "slot_task": "সংক্ষিপ্ত উত্তর",
+      "nape_frame": "৪টি প্রশ্ন · 2×4 = 8",
+      "admitted_task": "১০টি প্রশ্ন × ১ — শুধু এক লাইনের উত্তর",
+      "task_mode": "simple",
+      "items_per_paper": 10,
+      "marks": 10,
+      "marks_per_item": 1,
+      "d_code": "D1",
+      "authority": "`TOP-BAN-C1-10/-11`, যোগ্যতা ১২.১",
+      "row_constraints": [],
+      "evidence_note": "MARKS RAISED BY ITEM COUNT, NEVER BY PER-ITEM VALUE — C1 writing is one line, so a 2-mark question would ask for something the class cannot yet produce. This row carries ALL of C1's written answering: S08 does not exist here."
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S08",
+      "slot_task": "বিস্তৃত উত্তর",
+      "nape_frame": "৩টি প্রশ্ন · 5×3 = 15",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S08 · C1 সারি",
+      "absent_reason": "দ্বিতীয় শ্রেণিতে শুরু; প্রথম শ্রেণিতে সব লিখিত উত্তর S07-এ এক লাইনে",
+      "row_constraints": [],
+      "evidence_note": "লেখার ভার at C1 is 10 against C2's 27 — কম, কারণ সেখানে লেখার হাতই এখনো তৈরি হয়নি।"
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S09",
+      "slot_task": "মূলভাব",
+      "nape_frame": "১টি · 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S09 · C1 সারি",
+      "absent_reason": "নেই",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S10",
+      "slot_task": "ভাষারীতি / পদ / ক্রিয়ার কাল",
+      "nape_frame": "৫টি · 1×5 = 5 (তিনটার যেকোনো একটা)",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S10 · C1 সারি",
+      "absent_reason": "দ্বিতীয় শ্রেণিতে শুরু",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S11",
+      "slot_task": "প্রশ্ন তৈরি / বিরামচিহ্ন",
+      "nape_frame": "৫টি · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S11 · C1 সারি",
+      "absent_reason": "দ্বিতীয় শ্রেণিতে শুরু। প্রথম শ্রেণিতে বিরামচিহ্ন বাদ পড়েনি — S03-এর ভেতরে যোগ্যতা ১৩.৩ অনুযায়ী পরীক্ষা হয়",
+      "row_constraints": [
+        {
+          "id": "BAN-S11-NO-LEARNERQ",
+          "scope": "C1–C3",
+          "text": "চতুর্থ শ্রেণির নিচে লিখিত প্রশ্ন তৈরির প্রশ্ন দেওয়া যাবে না — এনসিএফ কাজটা চতুর্থ শ্রেণিতে শুরু করে; তার নিচে এটা ক্লাসে মুখে মুখে করার কাজ।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S11 + অনুমোদনের ছক"
+        }
+      ],
+      "evidence_note": "THE ONLY D5 IN THIS FILE WHOSE ABSENCE IS COVERED ELSEWHERE. Read alone this row says C1 has no punctuation question; read with C1's S03 composite it says the opposite. The absence is of the SLOT, not of the competency."
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S12",
+      "slot_task": "যুক্তবর্ণ ও শব্দ গঠন",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "admitted_task": "কাজটা আলাদা: গোটা যুক্তবর্ণ দিয়ে শব্দ, ভেঙে নয়",
+      "task_mode": "composite",
+      "items_per_paper": 4,
+      "marks": 8,
+      "marks_per_item": 2,
+      "d_code": "D3",
+      "authority": "`TOP-BAN-C1-03` 🔴, নিয়ম B-1",
+      "parts": [
+        {
+          "part": "গোটা যুক্তবর্ণ",
+          "marks": null
+        },
+        {
+          "part": "শব্দ গঠন",
+          "marks": null
+        }
+      ],
+      "row_constraints": [
+        {
+          "id": "BAN-S12-C1-NO-BHENGE",
+          "scope": "C1",
+          "text": "প্রথম শ্রেণির কোনো বাংলা প্রশ্নপত্রে \"ভেঙে\" শব্দটা থাকতে পারবে না। C1 is D3 — গোটা যুক্তবর্ণ দিয়ে শব্দ, ভেঙে নয় (নিয়ম B-1).",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S12 · সবসময় যাচাই করবেন + অনুমোদনের ছক"
+        }
+      ],
+      "evidence_note": "D3 — THE TASK DIFFERS, THE QUESTION DOES NOT. ৪টি যুক্তবর্ণ × ২টি করে শব্দ. The parts are গোটা যুক্তবর্ণ + শব্দ গঠন, NOT ভাঙা + শব্দ গঠন — নিয়ম B-1's ladder is C1 গোটা যুক্তবর্ণ → C2 পাঠ ১০ ভেঙে লিখি → C3 পাঠ ৫ পুরো যোগ্যতা → C4/C5 মূল কাঠামো. Asking C1 to break the conjunct collapses two rungs and erases the one C2 exists for. DO NOT COPY THE C5 PARTS LIST DOWN."
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S13",
+      "slot_task": "এক কথায় প্রকাশ",
+      "nape_frame": "৫টি · 1×5 = 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_BAN_Spine.md · S13 · C1 সারি",
+      "absent_reason": "নেই",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S14",
+      "slot_task": "ছক / ফরম / আবেদনপত্র",
+      "nape_frame": "১টি · 5×1 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "ছক পূরণ (সহজ)",
+      "task_mode": "alternative",
+      "items_per_paper": 1,
+      "marks": 5,
+      "marks_per_item": 5,
+      "d_code": "D3",
+      "authority": "`TOP-BAN-C1-14`, পাঠ ৫৪, যোগ্যতা ১৪.৩",
+      "admitted_set": [
+        "ছক পূরণ",
+        "ফরম পূরণ",
+        "আবেদনপত্র"
+      ],
+      "selected": "ছক পূরণ",
+      "row_constraints": [],
+      "evidence_note": "D3-র সবচেয়ে ভালো উদাহরণ — নম্বর পাঁচ শ্রেণিতেই ৫, শুধু ভেতরের কাজটা ধাপে ধাপে ওঠে: ছক → ছক → ফরম → আবেদনপত্র → আবেদনপত্র।"
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-S15",
+      "slot_task": "রচনা",
+      "nape_frame": "সূত্রসহ বা খোলা · 12×1 = 12",
+      "admitted_task": "নিজের মতো করে লেখ (নির্দেশিত)",
+      "task_mode": "simple",
+      "items_per_paper": 1,
+      "marks": 6,
+      "marks_per_item": 6,
+      "d_code": "D4",
+      "authority": "`TOP-BAN-C1-13` 🟦, যোগ্যতা ১৬.২",
+      "row_constraints": [
+        {
+          "id": "BAN-S15-GUIDED",
+          "scope": "C1, C2",
+          "text": "শুধু পরীক্ষার প্রশ্নটাই নির্দেশিত; ক্লাসে লেখার কাজ খোলা থাকবে। শুধু একটা শিরোনাম দিয়ে দিলে সেটা নির্দেশনা নয় — ৫টি নির্দেশক প্রশ্ন বা একটা শব্দের তালিকা দিতেই হবে।",
+          "source": "MarkLogic_BAN_Spine.md · BAN-S15 · স্থায়ী নিয়ম"
+        }
+      ],
+      "evidence_note": "ছবি বা শব্দের তালিকা + ৫টি বাক্য. প্রথম শ্রেণিতে লেখার সীমা যোগ্যতা ১৩.৩ — বিরামচিহ্নসহ বাক্য; শিরোনাম দিয়ে খোলা অনুচ্ছেদ তার চেয়ে দুই ধাপ উপরে।"
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-L01",
+      "slot_task": "মিলকরণ",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 7,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_BAN_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L01 C1",
+      "source_cited": "§২ ছবি দিয়ে উত্তর — মেলাবে",
+      "reason": "প্রথম শ্রেণির এমন একটা কাজ যা দেখেই বোঝা যায়; লেখার হাত তৈরি হওয়ার আগেই উত্তর দেওয়ার একটা পথ দেয়.",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-L02",
+      "slot_task": "বর্ণ দিয়ে শব্দ ও বাক্য",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 12,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_BAN_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L02 C1",
+      "source_cited": "`TOP-BAN-C1-01` 🔴, U10–U39",
+      "reason": "বর্ণমালা প্রথম শ্রেণিতেই পুরোপুরি শিখে ফেলার কাজ, দ্বিতীয় শ্রেণিতে আর পড়ানো হয় না — এখানেই বেশি নম্বর দিতে হবে, নাহলে আর কখনো নয়.",
+      "row_constraints": []
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-L03",
+      "slot_task": "কারচিহ্ন",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 10,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_BAN_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L03 C1",
+      "source_cited": "`TOP-BAN-C1-02` 🔴, U18",
+      "reason": "S12-এর ভিত তৈরি করে. প্রথম শ্রেণিতে ফলা থাকবে না — ফলা ও রেফ দ্বিতীয় শ্রেণির (BAN-L05).",
+      "row_constraints": [
+        {
+          "id": "BAN-L03-C1-NO-FOLA",
+          "scope": "C1",
+          "text": "প্রথম শ্রেণিতে ফলা থাকবে না — ফলা ও রেফ দ্বিতীয় শ্রেণির; কারচিহ্নের শিরোনামে যেন ভুলেও না আসে।",
+          "source": "MarkLogic_BAN_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · BAN-L03 C1 + অনুমোদনের ছক"
+        }
+      ]
+    },
+    {
+      "subject": "BAN",
+      "class": 1,
+      "slot": "BAN-L04",
+      "slot_task": "পাঠ্যবইয়ের শব্দভান্ডার",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 10,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_BAN_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L04 C1",
+      "source_cited": "`TOP-BAN-C1-11`, U43/45/47/49/50",
+      "reason": "শব্দগুলো বইয়ের তথ্যমূলক পাঠ থেকে নিতে হবে — তাহলে এটা সাধারণ জ্ঞানের প্রশ্ন না হয়ে ভাষার প্রশ্ন হয়.",
+      "row_constraints": []
+    },
     {
       "subject": "BAN",
       "class": 5,
