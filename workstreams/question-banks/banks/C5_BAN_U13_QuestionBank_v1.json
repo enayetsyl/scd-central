@@ -32,6 +32,26 @@
       "S12",
       "S13"
     ],
+    "admissible_slots": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13"
+    ],
+    "slot_exclusions": {
+      "S14": "পাঠ ১৩-এ কোনো আবেদনপত্র, ছক বা ফরম নেই এবং কোনো নমুনাও নেই — উৎসের নিজের ছক বলছে 'কোনো পাঠে সরাসরি নেই — বাইরের বিষয়'; এই কবিতা এমন কিছু ধরে রাখে না যার সঙ্গে কাজটি বাঁধা যায়।",
+      "S15": "পাঠ ১৩ একটি বিশ-পঙ্‌ক্তির গীতিকবিতা; রচনার কোনো সূত্র, শিরোনাম বা নির্দেশক এতে নেই, আর উত্তরটি সম্পূর্ণ শিক্ষার্থীর নিজের লেখা — পাঠে বাঁধার মতো কোনো কী নেই।"
+    },
+    "admissibility_declaration": "CD-138(e), countersigned by the Principal 2026-08-15 per AGENTS §6. Drafted from canon/marklogic/C5_Bangla_Source_13-23.md, পাঠ ১৩ only — পাঠ ১২ not consulted (CD-127(b) consumption exclusion). S14/S15 are excluded HERE, as a per-chapter content declaration under CD-139(c), not by a slot-level rule: CD-136(c)'s bar is scope-amended and makes no claim about any other chapter. CD-139(d) records পাঠ ৪ ADMITTING S14 on its own content, and this declaration does not reach it. The thirteen admitted slots owe 54 items (paper total 56 less S14's 1 and S15's 1) — demand is paper-level and undivided (CD-138(d), CD-138(g)).",
     "slot_counts": {
       "S01": 1,
       "S02": 7,
