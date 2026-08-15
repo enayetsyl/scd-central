@@ -163,6 +163,17 @@ and logged as CD-### rows. `archive/old-account/` is never cited as current auth
   internally consistent, so the suite prints CLEAN on a repo that has silently un-ruled its own
   decisions. **If it is used at all, `git reset` MUST follow the commit before any further
   staging.** The aside practice above has no such cost and is the one to use.
+- **`.git/lock-debris/` MUST BE CLEARED PERIODICALLY, AND IT IS THE PRINCIPAL'S JOB, NOT AN
+  AGENT'S (TOOLS-CR-004).** The aside practice above has no cleanup step and never had one; the
+  folder reached **145 entries across three sessions** before anyone looked. **The largest group
+  is `maintenance.lock`, written by git's own background maintenance — so the folder grows even
+  when no agent is working**, and an end-of-session trigger would miss the majority of it. The
+  sandbox cannot perform any of this: it cannot unlink inside `.git/`.
+  **Procedure, in this order — the order is the point:**
+  **1. `del /s /q .git\*.lock`  ·  2. `git gc --prune=now`  ·  3. `rmdir /s /q .git\lock-debris`.**
+  **`gc` itself fails on stale locks**, so a cleanup beginning with `gc` cannot begin at all. And
+  a *failed* `gc` leaves **`gc.pid`** and **`packed-refs.lock`** behind, so blockers surface **one
+  per attempt** — five had to be cleared serially on 2026-08-15. Expect to repeat step 1.
 - Workspace-boot stalls → fully quit Claude Desktop and retry.
 - Any deletion outside `.git/` requires the agent to state the reason in chat FIRST. Teacher's
   standing rule: Allow at task start; Deny+ask on unexpected deletes.
