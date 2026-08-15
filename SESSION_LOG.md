@@ -2267,3 +2267,57 @@ CD-136's `model_note` declaration is **unwritable on four of six question types*
 The judgement before it was 42. That is the number that sizes wave 2 of the programme.
 
 **Nothing promoted.** The Principal reviews all 88 items as Subject Lead before promotion.
+
+---
+
+## 2026-08-15 · question-banks session 6 — the slot register, and the day §4's successor clause fired
+
+**Commits:** `e1054c7` rulings · `5f95ce2` build · `8cec402` gate. **Nothing pushed** — sync waits on
+the Principal's explicit approval, range check pasted per commit (CD-083(b)).
+
+**Started on a HEAD mismatch and stopped, as the brief required.** Expected `dda7956`; found
+`39c6ad5`, tree clean, nothing unpushed. `39c6ad5` is the CD-137 handoffs-import commit the chain's
+own handoff describes, landed 32 minutes after the hash that handoff records. **The handoff was
+stale about its own session.** Reported and held for the Principal's go, which is the rule working:
+*do not carry repo state from a handoff; re-read it.*
+
+**Task 0(a) resolved the CD-136 question and the answer reversed the advisor.** `CD-136(c)` **does**
+rule S14/S15 out of chapter banks, verbatim and at source. The reported "conflict" came from reading
+a **one-line summary of the row in a handoff §2** instead of the row. **Advisor error 13**, and the
+fourth instance of `QB-CR-011`'s shape.
+
+**Then the book falsified the ruling.** `C5_BAN_Source_04.md` records `BAN-S14` as *সরাসরি বাঁধা —
+এই বইয়ের একমাত্র পাঠ যেখানে S14 বাঁধা*, with evidence crops already on disk, while
+`C5_Bangla_Source_13-23.md`'s *কোনো পাঠে সরাসরি নেই* covers **পাঠ ১৩–২৩ only**. CD-136(c) had
+generalised past the range it was verified over. → **CD-139**, which makes the exclusion a
+per-chapter content declaration and gives `PENDING-P-038` a live single-point-of-failure case:
+**S14 at C5 Bangla is admitted by exactly one chapter.**
+
+**CD-138 as amended** — `task_mode` DECLARED, demand paper-level and undivided, chapter obligation
+admissibility-gated, `chapter_authorable` derived and never authored. The drafted form of ruling 1
+derived mode from the presence of *যেকোনো একটা*; `ENG-S01` · `ENG-S06` · `ENG-S13` state alternatives
+**with no marker at all**, and `MATH-S01` carries the same token meaning a source range. **Instance 3.**
+`QB-CR-011` → **PATTERN** at four instances (`QB-CR-012`); **no gate proposed**, because a gate cannot
+read cognitive demand, cannot know which cell of a table a name belongs in, and cannot tell a summary
+from its source. The executable residue is CD-138(b)/(e) and is seeded there.
+
+**Built:** `canon/marklogic/SLOT_REGISTER.json` at **BAN C5** — 15 rows, **56 items · 100 marks**,
+4 alternative · 2 composite · 9 simple — and `tools/audits/slot_register_check.py`, which proves it
+**against the spine at build time** and is where the spine parse deliberately lives. **The gate suite
+opens no spine file at all**; that is the structural half of CD-138(b)'s guarantee, and the seeded
+half strips every marker from the spine, and every marker-bearing prose field from the register, and
+proves neither verdict moves.
+
+**COVERAGE converted.** It read slot-id PRESENCE; it now reads the ADMITTED TASK. The seed that
+matters: **ten items in S10 doing ভাব নির্ণয় — a task admitted at no class in the whole spine — now
+FAIL, and passed before, because the id was there.** Off-choice (`ক্রিয়ার কাল`, admitted but not
+selected) is reported as a **different failure** from a task admitted nowhere. Composite-by-halves —
+breaking the যুক্তবর্ণ without forming the শব্দ — fails for the first time.
+
+**The suite is RED on পাঠ ১৩ and was left that way.** `COVERAGE` FAILs for a missing
+`admissible_slots` declaration, which CD-138(e) minted today. **The bank was not edited to clear it**
+— the brief excluded পাঠ ১৩, and editing an artifact to green a gate is what §5 forbids. A read-only
+probe with a maximally favourable synthetic declaration measured the cost of the fix: **S06 3/5 ·
+S12 3/5 · S13 3/5**, three slots two items short **before** any task defect is counted.
+
+**Open to the Principal:** পাঠ ১৩ cannot be cleared without editing it. **Nothing promoted.**

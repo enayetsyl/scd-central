@@ -2,71 +2,63 @@
 
 | Field | Value |
 |---|---|
-| Current build | none — C5 BAN পাঠ ২১ wave 1 is **PROMOTED and final** in `banks/` |
-| Phase | Wave 1 closed. **Wave 2 does not start until production step ④** (CD-045). |
-| Last completed step | PENDING-P-007 ruled (**CD-044**): `TOP-BAN-C5-13` minted for বিরামচিহ্ন, chart seeded as canon, Q52 retagged, new **TOPIC-NUMBER** gate. Full chain re-run: **15 gates CLEAN** after a **27-error seeded selftest + 1 negative case**, **57/57 envelopes PASS** L1–L4 (0 warn / 0 advisory), `canon_check` CLEAN, `tools_check` CLEAN. Report: `reports/BAN_U21_GATES_2026-08-09-final.txt` (314 lines, unelided) |
-| Next step | **Nothing in this workstream.** Production sequence CD-045 puts NCTB source extraction first. |
-| Blockers / open PENDING-P tags | **none OPEN.** One **FLAGGED**, non-blocking: `⚑ PENDING-P-008`, carried in the promoted bank's `flags` block. |
-| Files in `_wip` awaiting "done" | none — this file only |
+| Current build | **The slot register (CD-138).** `canon/marklogic/SLOT_REGISTER.json` is built at **BAN C5 only**; C1–C4 and ENG · MATH · SCI/BGS are owed. পাঠ ১৩'s bank is untouched this session and is **NOT promoted**. |
+| Phase | Register built and proven; COVERAGE converted. **Next phase is পাঠ ১৩'s re-author, and it is Principal-gated** (see Blockers). |
+| Last completed step | CD-138 (amended), CD-139, `PENDING-P-038`, `QB-CR-012` filed → register built at BAN C5, proven against the spine by `tools/audits/slot_register_check.py` (**8 seeded + 1 negative + 1 baseline, PASS**) → COVERAGE converted to read the register (**27 seeded + 11 negatives + 6 declaration cases + 1 baseline, PASS**; suite 22 gates). `canon_check` CLEAN · `tools_check` CLEAN. Three commits: `e1054c7` rulings · `5f95ce2` build · `8cec402` gate. **Nothing pushed.** |
+| Next step | **BLOCKED — see below.** After that: BAN C1–C4, then ENG, MATH, SCI/BGS, **added as DATA ROWS, never as new gate code**. If a new subject needs a code change, the register's shape is wrong. |
+| Blockers / open PENDING-P tags | **`PENDING-P-038` RAISED** (register completeness across chapters; blocked on MarkLogic §৪'s syllabus split). **One OPEN question to the Principal: পাঠ ১৩ is RED under CD-138 and cannot be cleared without editing it**, which this session's brief excluded. |
+| Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` |
 
-## Production sequence — this workstream is step ④ (CD-045)
+## The suite is RED on পাঠ ১৩, deliberately, and the reason is one line
 
-**① NCTB sources to per-chapter markdown → ② C5 model papers and CTs, remaining subjects →
-③ C1–C4 → ④ question pools.**
+`COVERAGE` FAILs with: *bank header declares no `admissible_slots`*. CD-138(e) makes the
+admissibility declaration a required part of a chapter bank, and পাঠ ১৩ was authored before that
+ruling existed. **The bank was not edited to clear it** — the session brief excluded পাঠ ১৩, and
+editing an artifact to green a gate is the move AGENTS §5 forbids.
 
-**পাঠ ২১ wave 2 waits for step ④.** The wave-2 targets below are recorded so they are not
-re-derived, **not** so the next session starts them. The pilot existed to prove the step-④
-machinery before step ④ arrives.
+**A read-only probe measured what the fix costs**, with a synthetic declaration crediting **every
+item with the right task** — the most favourable possible reading:
 
-## Wave 1 as promoted — final
+```
+S06 3/5 · S12 3/5 · S13 3/5
+```
 
-57 items · HW 30 · AS 15 · CT 12 · 105 marks. CEILING reports **HW 70 · AS 35 · CT 18 owed**.
+**Three slots are two items short of the paper's own per-slot demand (CD-138(g)), before any of the
+known task defects are counted.** So the re-author owes **at least +6 items** on top of: the four
+re-tags, the ten mis-slotted S10 items, the S12 completion (শব্দ গঠন), and the S11 off-choice three.
+**Recompute the target after those, never on a carried number.**
 
-| | জ্ঞান | অনুধাবন | প্রয়োগ | উচ্চতর | verdict |
-|---|--:|--:|--:|--:|---|
-| HW (৩৯) | ৩০.৮% | ৩৩.৩% | ২৩.১% | ১২.৮% | enforced, PASS |
-| AS (৩৬) | ৩০.৬% | ৩০.৬% | ২৫.০% | ১৩.৯% | enforced, PASS |
-| CT (৩০) | ২৬.৭% | ৩৬.৭% | ২০.০% | ১৬.৭% | reported, not enforced (QB-D-006) |
-| chapter total (১০৫) | ২৯.৫% | ৩৩.৩% | ২২.৯% | ১৪.৩% | enforced, PASS |
+## What the register carries at BAN C5
 
-**Topic tags, all now charted and gate-checked** against `canon/topics/TOPIC_NUMBERS.md`:
-`-07` তথ্যমূলক গদ্য (42) · `-02` বাক্য-রচনা (8) · `-01` শব্দার্থ (6) · **`-13` বিরামচিহ্ন (1, minted CD-044)**.
+15 rows · **56 items · 100 marks** (the two are separate fields; only marks total 100).
+**task_mode: 4 alternative · 2 composite · 9 simple.**
 
-`QP-BAN-C5-U21-Q52` keeps `ref19_topic_id: BAN-SENTENCE` — REF-19 v1.10 carries no Bangla
-punctuation slug, and the harness hard-validates that field against the REF-19 registry. `topic_tag`
-and `ref19_topic_id` are different axes and it is correct for them to disagree in granularity here.
+| Slot | Mode | The fact that was invisible before |
+|---|---|---|
+| S01 | composite | কবির নাম · কবিতার নাম · ৮ লাইন — declared on the মূল কাঠামো line's own **1+1+8** split |
+| S06 | alternative | {বিপরীত, সমার্থক} → **বিপরীত**. C3 selects differently; S13 holds সমার্থক at C3 |
+| S10 | alternative | {ভাষারীতি, পদ নির্ণয়, ক্রিয়ার কাল} → **পদ নির্ণয়**. ভাব নির্ণয় is admitted at **no class** |
+| S11 | alternative | {প্রশ্ন তৈরি, বিরামচিহ্ন} → **বিরামচিহ্ন**. প্রশ্ন তৈরি is C4-and-above |
+| S12 | composite | ভাঙা **and** শব্দ গঠন. C1 is D3 with different parts — do not copy down |
+| S14 | alternative | cardinality **3** declared against a header saying দুটোর — declared, never counted off the string |
+| S15 | simple | *সূত্রসহ বা খোলা* varies the **stimulus**, not the task |
 
-## What this round cost, and what it bought
+## Two things a later session must not re-derive
 
-Three defects surfaced, each caught by something other than the thing that should have caught it:
+- **No gate reads a spine file.** The spine parse lives at build time in
+  `tools/audits/slot_register_check.py`. CD-138(b) makes mode DECLARED; the markers
+  (*যেকোনো একটা* · *অথবা* · *বা* · *ও* · *+* · *ভেঙে*) are authoring evidence only. Both halves are
+  seeded — strip the markers from the spine, and from the register's prose, and neither verdict moves.
+- **`chapter_authorable` is derived, never authored.** A register row carrying one FAILs, and the
+  check runs on the register **in hand** rather than only in the disk loader — the seed proved that
+  distinction the hard way.
 
-1. **`-11` was wrong** and survived a full chain and a promotion, because until the P04 register
-   arrived there was nothing to check a number against. Now there is: **TOPIC-NUMBER**.
-2. **FLAG-TRACE passed the bank before it failed it** — it matched the literal `**OPEN**` while the
-   row read `**OPEN — Principal-owed.**`. Fixed, plus a case exercising a real OPEN path.
-3. **That new case then went red on the next run** — because it named `PENDING-P-007`, which had
-   just been ruled. The fixture *was the live world*. Now the selftest injects a synthetic queue,
-   and a **negative case** proves FLAG-TRACE stays quiet on a FLAGGED row: a gate that fires on
-   everything is as useless as one that fires on nothing.
+## Carried forward, unchanged
 
-Selftest 14 → **27 seeded errors + 1 negative case**. Gates 11 → **15**.
-
-## Wave 2 — recorded, NOT to be started (step ④)
-
-HW 70 · AS 35 · CT 18 owed. Verified absent from wave 1: শান্তি ও সাম্যের বাণী · the ভাষণ's opening
-আল্লাহর প্রশংসা as a comprehension item · অনুশীলনী ২ (ঠিকমতো উচ্চারণ, 8 words) · অনুশীলনী ৫
-(প্রয়োজনীয় শব্দ বসিয়ে বাক্য পূর্ণ) · the remaining emphasis points as S07 items. Wave 2 must
-re-check ZERO-OVERLAP against the promoted wave 1, not a blank slate.
-
-## Open, carried forward
-
-- **PENDING-P-008 (FLAGGED)** — `canon/topics/TOPIC_NUMBERS.md` is a **C5-Bangla seed**; close
-  condition is *chart complete for all subjects*, and completion happens in that file. **Sub-item:**
-  REF-19 v1.10 has no Bangla punctuation slug, so `-13` has a number and no slug — owed as a
-  **REF-19 supersede authored at Project 00**. REF-19 is LOCKED here and never edited.
-- **Two contested numbers, recorded not resolved:** the P04 register's own flags table carries an
-  unruled **U14 Drama→Story re-home** — REF-03 maps U14 to `-09`, D-PROJ04-003 tagged it `-06`.
-  Both are attested; which one U14 carries is not settled.
-- **UP-002** — the LOCKED payload has no `pool` field; pool membership stays in `pool_index`.
-- **The gate suite measures structure, not truth** (QB-D-008, CD-041). It cannot tell you an answer
-  is wrong.
+- **PENDING-P-008 (FLAGGED)** — `TOPIC_NUMBERS.md` is a C5-Bangla seed; REF-19 has no Bangla
+  punctuation slug.
+- **UP-002** `pool` field · **UP-003** `ref19_topic_id` rejects `MATH-*-REL`, blocking every C5 Math bank.
+- **QB-CR-009** U14 `-09` re-tag, execution owed at wave 2.
+- **`QB-CR-011` is now PATTERN** (`QB-CR-012`, four instances). No gate is proposed; the executable
+  residue is CD-138(b)/(e) and it is seeded there.
+- **The gate suite measures structure, not truth.** It cannot tell you an answer is wrong.
