@@ -1,14 +1,15 @@
 # VENDOR.md — tools/hub-export
 
-Vendored 2026-08-09. **Supersede-only — never edited locally** (AGENTS.md §7, CD-003).
+Vendored 2026-08-09; **contract v1.1 superseded in whole 2026-08-15** (CD-143, upstream `D-#495`,
+scd-hub commit `7ad4903`). **Supersede-only — never edited locally** (AGENTS.md §7, CD-003).
 A change upstream arrives as a replacement file plus a decision row; it is never patched here.
 
 | Field | Value |
 |---|---|
 | Upstream | `scd-hub` (github.com/enayetsyl/scd-hub) |
-| Contract | Import contract **LOCKED v1.0**, locked 2026-06-09, D-PROJ04-005 |
-| Harness | `validate_import.py` v1.0 LOCKED 2026-06-09 |
-| `envelope_version` | `"1.0"` (const; question + stimulus were additive doc_types) |
+| Contract | Import contract **v1.1**, 2026-08-15, upstream `D-#495` — supersedes **LOCKED v1.0** (2026-06-09, D-PROJ04-005) |
+| Harness | `validate_import.py` **v1.1** 2026-08-15 — adds **L1b**, the `question_batch` wrapper check |
+| `envelope_version` | **still `"1.0"`** — the DOCUMENT is v1.1, the WIRE VALUE is not. `question_batch` is additive (new doc_type + branch), the same rule that kept question/stimulus at 1.0 |
 | Runtime | Python 3, `jsonschema >= 4.18` (Draft 2020-12) |
 | Proven | `SMOKE.md`, 2026-08-09 — pass path, fail path, exit codes |
 
@@ -16,7 +17,7 @@ A change upstream arrives as a replacement file plus a decision row; it is never
 
 | File | Role |
 |---|---|
-| `validate_import.py` | The conformance harness. L1 envelope schema · L2 payload schema by doc_type · L3 envelope↔payload consistency · L4 question semantics (marks sums, REF-19 registry, stimulus_ref form) · ADV REF-21 lexicon scan, plan surface only |
+| `validate_import.py` | The conformance harness. **L1b `question_batch` wrapper — item_count vs items length, and the 500-item size guard; both are WHOLE-BATCH rejects.** L1 envelope schema · L2 payload schema by doc_type · L3 envelope↔payload consistency · L4 question semantics (marks sums, REF-19 registry, stimulus_ref form) · ADV REF-21 lexicon scan, plan surface only |
 | `import-contract.schema.json` | The machine-readable outer contract — **the source of truth** |
 | `import-contract.md` | Human-readable orientation to the same contract |
 | `LOCKED_C5_PlanSchema_v1.json` | Payload schema, plan doc-types |
