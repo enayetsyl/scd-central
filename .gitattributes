@@ -1,0 +1,11 @@
+# CD-149 session, 2026-08-16 — Principal-approved (tools-class).
+#
+# The repo stores LF. Windows checkouts were writing CRLF back into the working tree, and with
+# core.autocrlf unset and no attributes file, git reported 216 files as modified with 54,628
+# insertions against 54,628 deletions and ZERO real content change. That noise BLOCKED a pull:
+# eight of the files an incoming commit touched were "locally modified", so git refused the merge.
+#
+# EXISTING CHECKOUTS NORMALIZE ON NEXT TOUCH, not on adding this file. A working tree that already
+# holds CRLF keeps holding it until each file is rewritten; `git add --renormalize .` does it in
+# one step if the noise reappears before then.
+* text=auto eol=lf
