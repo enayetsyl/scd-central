@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q31",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'যুগান্তরের ঘূর্ণিপাকে' বলতে কবিতায় কী বোঝানো হয়েছে?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "সময়ের আবর্তে",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "সাগরের ঢেউয়ে",
+        "is_correct": false,
+        "why_wrong": "ঢেউয়ের কথা কবিতায় আলাদা চরণে আছে; এখানে কথাটি সময় নিয়ে।"
+      },
+      {
+        "option_id": "গ",
+        "text": "ঝড়ের বাতাসে",
+        "is_correct": false,
+        "why_wrong": "ঘূর্ণিপাক শব্দটির আভিধানিক অর্থ ঘূর্ণন হলেও এখানে তা যুগের সঙ্গে যুক্ত।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "যুদ্ধের মাঠে",
+        "is_correct": false,
+        "why_wrong": "যুদ্ধ-জাহাজের কথা আলাদা চরণে আছে, এই চরণে নয়।"
+      }
+    ]
+  }
+}

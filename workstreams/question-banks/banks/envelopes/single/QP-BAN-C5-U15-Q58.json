@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q58",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'সংকল্প' কবিতায় কবির জানার আগ্রহ কীভাবে ধাপে ধাপে বেড়েছে — কবিতার চরণ দিয়ে বিশ্লেষণ করে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "চরণের ক্রম ধরে আগ্রহ বেড়ে ওঠার ধাপগুলো দেখানো — জ্ঞান অর্জনের আগ্রহকে ভালো গুণ হিসেবে দেখানো, আর তাকে পড়াশোনা বা বড়দের নির্দেশের বিরোধী করে না তোলা",
+          "band_descriptors": {
+            "সম্পূর্ণ": "ঘর থেকে দেশ, দেশ থেকে সাগর ও আকাশ, শেষে গোটা বিশ্ব — অন্তত তিনটি ধাপ চরণসহ দেখানো হয়েছে; জানার আগ্রহকে ইতিবাচকভাবে উপস্থাপন করা হয়েছে।",
+            "আংশিক": "কেবল একটি-দুটি চরণ তুলে দেওয়া হয়েছে, ধাপ দেখানো হয়নি; অথবা জানার আগ্রহকে পড়াশোনা বা বড়দের কথার বিপরীতে দাঁড় করানো হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

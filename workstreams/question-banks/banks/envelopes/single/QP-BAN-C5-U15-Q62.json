@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q62",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'কীসের নেশায়' ও 'কীসের আশায়' — পাশাপাশি বসা এই দুই প্রশ্ন কবিতার ভাবকে কীভাবে এগিয়ে নিয়েছে, বিশ্লেষণ করে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "দুই প্রশ্নের পার্থক্য ও একসঙ্গে বসার কারণ ব্যাখ্যা করা — মানুষের আত্মত্যাগকে শ্রদ্ধার সঙ্গে দেখা, মৃত্যুকে হালকা করে না দেখানো",
+          "band_descriptors": {
+            "সম্পূর্ণ": "দুই প্রশ্নের অর্থ আলাদা করে বোঝানো হয়েছে এবং দেখানো হয়েছে কীভাবে তারা মিলে কৌতূহলকে গভীর করে; ভাষা শালীন ও মৃত্যুপ্রসঙ্গে সংযত।",
+            "আংশিক": "কেবল একটি প্রশ্ন নিয়ে লেখা হয়েছে, বা দুটির পার্থক্য দেখানো হয়নি; অথবা মৃত্যুপ্রসঙ্গে অসংযত ভাষা এসেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

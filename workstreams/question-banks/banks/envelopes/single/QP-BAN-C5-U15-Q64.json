@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q64",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "জানার আগ্রহ আর সাহস — 'সংকল্প' কবিতায় কোনটিকে কবি বড় করে দেখিয়েছেন বলে তোমার মনে হয়? কবিতার কথা দিয়ে নিজের মত যাচাই করে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "নিজের মত স্পষ্ট করে জানানো এবং পাঠ থেকে প্রমাণ দিয়ে তা যাচাই করা — মত যা-ই হোক, জ্ঞান ও সাহস দুটিকেই ভালো গুণ হিসেবে সম্মান করা",
+          "band_descriptors": {
+            "সম্পূর্ণ": "একটি স্পষ্ট মত নেওয়া হয়েছে এবং অন্তত দুটি চরণ দিয়ে তা যাচাই করা হয়েছে; বিপরীত দিকটিও স্বীকার করা হয়েছে এবং ভাষা শালীন।",
+            "আংশিক": "মত আছে কিন্তু পাঠ থেকে প্রমাণ নেই, বা প্রমাণ আছে মত নেই; অথবা কোনো একটি গুণকে খাটো করে দেখানো হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

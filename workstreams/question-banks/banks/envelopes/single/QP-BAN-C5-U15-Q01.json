@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q01",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "কবি ও কবিতার নাম লিখে 'সংকল্প' কবিতার 'থাকব না কো বদ্ধ ঘরে…' থেকে '…বরণ মরণ-যন্ত্রণাকে।' পর্যন্ত অংশটুকু মুখস্থ লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "structured",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 10,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "answer_key": {
+      "accepted": [
+        "কবিতা: সংকল্প; কবি: কাজী নজরুল ইসলাম। থাকব না কো বদ্ধ ঘরে, দেখব এবার জগৎটাকে— কেমন করে ঘুরছে মানুষ যুগান্তরের ঘূর্ণিপাকে। দেশ হতে দেশ দেশান্তরে ছুটছে তারা কেমন করে, কীসের নেশায় কেমন করে মরছে যে বীর লাখে লাখে, কীসের আশায় করছে তারা বরণ মরণ-যন্ত্রণাকে।"
+      ],
+      "model_note": "নম্বর ভাগ SLOT_REGISTER BAN-S01-এর ঘোষিত অংশ অনুযায়ী: কবির নাম ১ + কবিতার নাম ১ + প্রথম ৮ লাইন ৮ = ১০। চরণ হুবহু পাঠের মতো হতে হবে; বানান ও যতিচিহ্নে ছাড় দেওয়া যাবে। কবির নাম কেবল তথ্য হিসেবে — কোনো সম্মানসূচক বিশেষণ লেখা যাবে না বা চাওয়া যাবে না (E-AUTHOR-ENDORSE)।"
+    }
+  }
+}

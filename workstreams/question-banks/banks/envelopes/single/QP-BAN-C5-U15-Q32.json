@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q32",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'আকাশ ফুঁড়ে' কথাটির অর্থ কী?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "আকাশ ভেদ করে",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "আকাশের দিকে তাকিয়ে",
+        "is_correct": false,
+        "why_wrong": "তাকানোর কথা নয় — ফুঁড়ে মানে ভেদ করে এগিয়ে যাওয়া।"
+      },
+      {
+        "option_id": "গ",
+        "text": "আকাশ ঢেকে",
+        "is_correct": false,
+        "why_wrong": "ঢাকা আর ভেদ করা এক নয়; অর্থ জেনে নিই তালিকা ভেদ করা বলেছে।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "আকাশ থেকে নেমে",
+        "is_correct": false,
+        "why_wrong": "চরণটিতে কবি উঠছেন, নামছেন না — 'উঠব আবার আকাশ ফুঁড়ে'।"
+      }
+    ]
+  }
+}

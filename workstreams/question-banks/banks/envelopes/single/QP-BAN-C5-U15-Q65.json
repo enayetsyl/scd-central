@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q65",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'বিশ্ব-জগৎ দেখব আমি আপন হাতের মুঠায় পুরে' — একজন শিক্ষার্থীর জীবনে এই সংকল্পের কোন দিকটি সবচেয়ে কাজে লাগে বলে তুমি মনে করো? যুক্তি দিয়ে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "নিজের জীবনের সঙ্গে মিলিয়ে যুক্তি দেওয়া — জ্ঞান অর্জনের চেষ্টাকে ইতিবাচকভাবে দেখানো এবং পড়াশোনা, শিক্ষক ও পিতামাতার প্রতি সম্মান অটুট রাখা",
+          "band_descriptors": {
+            "সম্পূর্ণ": "একটি দিক বেছে নিয়ে অন্তত দুটি যুক্তি দেওয়া হয়েছে এবং কবিতার সঙ্গে যোগ দেখানো হয়েছে; পড়াশোনা ও বড়দের প্রতি সম্মান বজায় আছে।",
+            "আংশিক": "কেবল মত লেখা হয়েছে, যুক্তি নেই; অথবা পড়াশোনা বা বড়দের নির্দেশকে খাটো করে এমন কথা এসেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

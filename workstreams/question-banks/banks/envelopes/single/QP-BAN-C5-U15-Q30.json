@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-01",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q30",
+    "topic_tag": "TOP-BAN-C5-01",
+    "ref19_topic_id": "BAN-VOCAB",
+    "question_text": "'সংকল্প' কবিতায় ব্যবহৃত 'সিন্ধু' শব্দটির অর্থ কী?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "সাগর",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "নদী",
+        "is_correct": false,
+        "why_wrong": "অর্থ জেনে নিই তালিকায় সিন্ধুর অর্থ সাগর, নদী নয়।"
+      },
+      {
+        "option_id": "গ",
+        "text": "পাহাড়",
+        "is_correct": false,
+        "why_wrong": "পাহাড়ের কথা কবিতায় আলাদা করে আছে — 'পাহাড়-চূড়ে'।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "আকাশ",
+        "is_correct": false,
+        "why_wrong": "আকাশের কথা কবিতায় আলাদা চরণে এসেছে, সিন্ধু তার অর্থ নয়।"
+      }
+    ]
+  }
+}

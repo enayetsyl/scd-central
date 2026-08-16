@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q60",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'বদ্ধ ঘর' ও 'বদ্ধ খাঁচা' — এই দুই চিত্রকল্প কবিতার ভাব ফোটাতে কীভাবে কাজ করেছে, বিশ্লেষণ করে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "দুই চিত্রকল্পের অর্থ ও কাজ ব্যাখ্যা করা — ঘর ও পরিবারকে খাটো না করে বোঝানো যে চিত্রকল্প দুটি সীমাবদ্ধতার প্রতীক, নিজের ঘরের প্রতি অবজ্ঞা নয়",
+          "band_descriptors": {
+            "সম্পূর্ণ": "দুটি চিত্রকল্পই ব্যাখ্যা করা হয়েছে এবং দেখানো হয়েছে কীভাবে তারা মুক্তির আকাঙ্ক্ষা ফোটায়; ঘর-পরিবারের প্রতি কোনো অসম্মান আসেনি।",
+            "আংশিক": "একটি চিত্রকল্প ব্যাখ্যা করা হয়েছে, বা ব্যাখ্যা ছাড়াই নাম করা হয়েছে; অথবা ঘর ও পরিবারকে হেয় করে এমন কথা এসেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

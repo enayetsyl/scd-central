@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q36",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'দশ দিকেতে পড়ব লুটে' — এখানে 'লুটে' শব্দটি কোন অর্থে এসেছে?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "ছড়িয়ে",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "কেড়ে নিয়ে",
+        "is_correct": false,
+        "why_wrong": "অর্থ জেনে নিই তালিকা এখানে 'ছড়িয়ে' অর্থ দিয়েছে, কেড়ে নেওয়া নয়।"
+      },
+      {
+        "option_id": "গ",
+        "text": "লুকিয়ে",
+        "is_correct": false,
+        "why_wrong": "লুকানোর কোনো অর্থ এই শব্দে নেই।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "গড়িয়ে",
+        "is_correct": false,
+        "why_wrong": "গড়ানো আর ছড়ানো এক নয়; তালিকার অর্থ ছড়িয়ে।"
+      }
+    ]
+  }
+}

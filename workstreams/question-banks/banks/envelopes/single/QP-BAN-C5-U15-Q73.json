@@ -1,0 +1,46 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-01",
+    "bloom_level": "Understand",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q73",
+    "topic_tag": "TOP-BAN-C5-01",
+    "ref19_topic_id": "BAN-PARTSPEECH",
+    "question_text": "'দশ দিকেতে পড়ব লুটে;' — এখানে 'পড়ব' শব্দটি কোন পদ? নির্ণয় করো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "answer_key": {
+      "accepted": [
+        "ক্রিয়া",
+        "ক্রিয়া পদ",
+        "কাজ-শব্দ"
+      ],
+      "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৫ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। পদ নির্ণয় C5-এর BAN-S10 স্লটে নির্বাচিত কাজ — ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়, যদিও এই পাঠে অনুশীলনী ৮ ক্রিয়ার কালেরও উৎস।"
+    }
+  }
+}

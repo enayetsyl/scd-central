@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q66",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'সংকল্প' কবিতার মূলভাব নিজের ভাষায় লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "পুরো কবিতা থেকে মূল ভাব বের করে আনা — অজানাকে জানার দুর্বার ইচ্ছা ও সীমা ছাড়িয়ে যাওয়ার সংকল্প; আর সেই ইচ্ছাকে পড়াশোনা, শিক্ষক বা পিতামাতার নির্দেশের বিরোধী করে না দেখানো",
+          "band_descriptors": {
+            "সম্পূর্ণ": "মূলভাব নিজের ভাষায় লেখা হয়েছে, কবিতার চরণ হুবহু না তুলে; জানার আগ্রহ ও সীমাহীন সংকল্প — দুটোই এসেছে, এবং তা ইতিবাচক ভাষায় উপস্থাপিত।",
+            "আংশিক": "কবিতার চরণ তুলে দেওয়া হয়েছে, বা কেবল একটি দিক এসেছে; অথবা ঘরবাড়ি ছেড়ে চলে যাওয়াই কবিতার শিক্ষা — এমন ভুল ভাব এসেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

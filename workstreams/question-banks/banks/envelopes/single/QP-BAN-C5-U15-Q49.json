@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q49",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'জাপটে ধরে ঢেউয়ের ঝুঁটি / যুদ্ধ-জাহাজ চলছে ছুটি' — চরণ দুটিতে জাহাজের চলা কেমন করে দেখানো হয়েছে?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "answer_key": {
+      "accepted": [
+        "ঢেউকে যেন চুল ধরে জাপটে ধরা হয়েছে — এমন ছবি এঁকে বোঝানো হয়েছে, বড় ঢেউকেও পরোয়া না করে জাহাজ দুরন্ত গতিতে ছুটে চলছে।"
+      ],
+      "model_note": "মূল ভাবটি ধরা পড়লেই পূর্ণ নম্বর; শব্দে শব্দে মিল থাকা জরুরি নয়।"
+    }
+  }
+}

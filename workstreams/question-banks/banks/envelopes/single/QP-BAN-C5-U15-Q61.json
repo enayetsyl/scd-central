@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 15,
+    "title": "পাঠ ১৫ — সংকল্প"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U15_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U15-Q61",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "কবিতায় জল, স্থল ও আকাশ — তিন জগতেরই ছবি আছে। প্রতিটির উদাহরণ কবিতা থেকে তুলে এনে বিশ্লেষণ করে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৫ — সংকল্প",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "তিন জগতের উদাহরণ পাঠ থেকে আলাদা করে তোলা ও ব্যাখ্যা করা — সৃষ্টিজগতের বিশালতাকে বিস্ময়ের সঙ্গে দেখা, কোনো কল্পিত বা পাঠ-বহির্ভূত কিছু না জুড়ে",
+          "band_descriptors": {
+            "সম্পূর্ণ": "তিন জগতেরই অন্তত একটি করে উদাহরণ চরণসহ এসেছে এবং প্রতিটির ব্যাখ্যা আছে; ভাষা শালীন ও পাঠ-নির্ভর।",
+            "আংশিক": "দুই জগতের উদাহরণ এসেছে, বা উদাহরণ আছে ব্যাখ্যা নেই; অথবা পাঠে নেই এমন উদাহরণ ঢুকেছে।"
+          }
+        }
+      ]
+    }
+  }
+}
