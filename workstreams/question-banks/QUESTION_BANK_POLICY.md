@@ -143,8 +143,11 @@ every item.
   **BOUNDARY, load-bearing.** This admits **language facts ABOUT chapter material**. It does
   **not** admit new content, new facts, or prompts with no chapter anchor. The test is the
   stimulus: *the word is in the chapter; its synonym is a fact about Bangla.* **S14 আবেদনপত্র and
-  S15 রচনা stay OUT of chapter banks** — they anchor to nothing in the chapter and carry no key at
-  all, so neither half of the rule is in play. Their home is paper-level authoring
+  S15 রচনা stay OUT of chapter banks** — **categorically, per CD-147**, and no longer on the
+  content reasoning this sentence originally gave. **The reason matters because the content reason
+  turned out to be falsifiable**: পাঠ ৪ anchors S14 and পাঠ ১৮ anchors S15, and **both are still
+  excluded** — the bar is on the PIPELINE, not on whether the chapter happens to hold an anchor.
+  A chapter owes **no content reason** for either slot. Their home is paper-level authoring
   (`workstreams/scholarship/MODEL_PAPERS_POLICY.md`).
 
   **No gate enforces this, deliberately.** `SOURCE-TRACE` never read keys — both implementations

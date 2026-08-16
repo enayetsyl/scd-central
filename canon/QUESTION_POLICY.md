@@ -1,4 +1,6 @@
-# QUESTION_POLICY — v1.8 (canon)
+# QUESTION_POLICY — v1.9 (canon)
+
+**v1.9 — 2026-08-16.** §4's S14/S15 clause is superseded: they are **paper-level for every chapter, categorically** (**CD-147**), not per-chapter content declarations. CD-139's admission of S14 at পাঠ ৪ is reversed by name; no chapter owes a content reason for either slot.
 
 **v1.8 — 2026-08-15.** §6's Export sync row extends to contract v1.1's `question_batch` wrapper (**CD-143**), including the digest check that nothing downstream repeats.
 
@@ -46,6 +48,7 @@ stale — re-read, not carried.
 | §4 coverage | the **header-stated target** binds, because no slot-mapping existed as data | **`canon/marklogic/SLOT_REGISTER.json` binds** — declared `task_mode`, per-chapter admissibility, paper-level undivided demand | **CD-138** |
 | §6 row 10 | *"every topic and every spine slot-type supplied"* | **admitted TASK, not slot-id presence** | **CD-138** |
 | §4 S14/S15 | out of chapter banks as a slot-level bar (CD-136(c)) | a **per-chapter content declaration**; পাঠ ৪ admits S14 | **CD-139** |
+| §4 S14/S15 | a **per-chapter content declaration**; পাঠ ৪ admits S14 (CD-139) | **PAPER-LEVEL for every chapter, categorically** — never in a chapter bank, no content reason owed, পাঠ ৪ reversed by name | **CD-147** |
 
 **Status: ADOPTED. This file is canon and is cited, never copied (AGENTS.md §8).**
 
@@ -158,8 +161,14 @@ declarations above; the register carries no authored copy, and a register row th
 **No gate reads a spine file.** CD-138(b) makes `task_mode` and its sets **declared**, and the markers
 that evidence them — *যেকোনো একটা* · *অথবা* · *বা* · *ও* · *+* · *ভেঙে* — are **authoring evidence,
 never gate inputs**; the spine parse lives at build time in `tools/audits/slot_register_check.py`.
-**S14/S15 are not slot-level exclusions** — per **CD-139** they are per-chapter content declarations
-like any other slot.
+**S14/S15 ARE NOT DECLARED BY A CHAPTER AT ALL — CD-147 supersedes CD-139 here.** S14 আবেদনপত্র and
+S15 রচনা are **paper-level for EVERY chapter, categorically**: authored in the paper/exam pipeline,
+never in a chapter bank, **whatever the chapter's content anchors**. **CD-139's admission of S14 at
+পাঠ ৪ is reversed by name.** A chapter therefore **owes no content reason** for them — CD-138(e)'s
+one-line-per-excluded-slot rule does not reach them, and **a bank silent about S14/S15 is correct,
+not incomplete**. Their register rows stay: the paper still owes 1 item / 5 marks at S14 and
+1 item / 12 marks at S15, and `chapter_authorable` derives false for them everywhere without any
+chapter having said so.
 
 **A chapter's own *কোন প্রশ্নে কাজে লাগবে* line is ADVISORY and caps nothing (CD-134, applying
 CD-122(b)).** That line is the book describing its own likely uses. **CD-122(b) already ruled it

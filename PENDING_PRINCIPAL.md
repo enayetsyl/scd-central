@@ -1252,6 +1252,14 @@ one job: check floors over the declared set, and FAIL on an item in a slot decla
 each with a perfectly good one-line content reason — **fails nothing, and the paper it belongs to is
 silently unfillable.** The gate is right at every chapter and wrong about the year.
 
+**AMENDED 2026-08-16 by CD-147 — the S14 instance dissolves, the general question does not.**
+S14 and S15 are now **paper-level for every chapter, categorically**, so S14 at C5 Bangla is
+**zero-admitted BY RULE**. That is not the defect this row describes and needs no single-point-of-
+failure report: nothing was lost when পাঠ ৪'s admission was reversed, because no chapter was ever
+supposed to carry it. **The row's general question stands unchanged and stays RAISED** — nothing in
+the suite checks that a slot which SHOULD be admitted by some chapter actually is, and the worked
+example below should now be read on any slot other than S14/S15.
+
 **It is no longer hypothetical (CD-139(f)).** At C5 Bangla, **S14 is admitted by exactly one chapter
 — পাঠ ৪** — on নমুনা আবেদনপত্র (ছাপা ২৪), the সাত-অংশের ছক (২৫) and অনুশীলনী ২ ও ৪, with evidence
 crops on disk. **Retire or exclude that one chapter and the slot has no chapter at all**, and no gate
