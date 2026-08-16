@@ -2,12 +2,65 @@
 
 | Field | Value |
 |---|---|
-| Current build | **পাঠ ১৪ (কুপোকাত) 84 items, digest `831c54c1aa7d` · পাঠ ১৩ 110 items, digest `22ae7c4f299a` after `QB-CR-014`'s eight-tag correction.** Both suites CLEAN, both exports in sync across array · `single/` · `.batch.json`. পাঠ ২১ CLEAN, untouched. |
-| Phase | **`CD-141` dry run COMPLETE and its one defect ruled (`CD-144`).** Handover to unattended use remains the Principal's call, not the agent's. |
-| Last completed step | `677cc62` ruling (CD-144) · `775b5cd` log (পাঠ ১৪ block appended) · `21f3445` corrections (QB-CR-014, eight tags + export) · `c1a3ccc` build (signature re-pinned) · this file. Session run OUTSIDE the teacher lane on normal approval. |
-| Next step | The Principal's call on `CD-141` handover. Then the next chapter, or পাঠ ১৪ wave 2 against the content named in that bank's `gaps`. |
-| Blockers / open PENDING-P tags | **None outstanding from this session** — the CD-141 contradiction is ruled at `CD-144`. · **`PENDING-P-038` RAISED** (nothing checks a slot is admitted by ANY chapter) — FLAGGED-not-OPEN. · **`PENDING-P-008` FLAGGED** — REF-19 has no punctuation slug; পাঠ ১৪'s six S11 items ride `BAN-SENTENCE` under `TOP-BAN-C5-13`, the established choice. |
+| Current build | **পাঠ ১৫ (সংকল্প) 96 items, digest `d86c5e99bac3` · পাঠ ১৪ (কুপোকাত) 84 items, digest `831c54c1aa7d` · পাঠ ১৩ 110 items, digest `22ae7c4f299a` after `QB-CR-014`'s eight-tag correction.** All three suites CLEAN, all three exports in sync across array · `single/` · `.batch.json`. পাঠ ২১ CLEAN, untouched. **The full sweep over all four banks is CLEAN.** |
+| Phase | **`CD-141` teacher lane run end to end on পাঠ ১৫ under a Principal-issued brief — declaration · PLAN · authoring · suite · export · log · push — with no stop and no ruling needed.** First run after `CD-144` closed the `log`-class path defect: **root `SESSION_LOG.md` was reachable this time and AGENTS §3's End clause completed from inside the lane**, which is the thing the পাঠ ১৪ run could not do. **Whether the lane is handed over to UNATTENDED use is still the Principal's call, not the agent's, and this row does not claim it.** |
+| Last completed step | পাঠ ১৫ build (bank · `author_U15_wave1.py` · array · `single/` · `.batch.json` · gates report) then log (root `SESSION_LOG.md` + this file). Two commits, both teacher-lane classes, both inside `CD-141(b)` as amended by `CD-144`. Previous session: `677cc62` ruling (CD-144) · `775b5cd` log · `21f3445` corrections (QB-CR-014) · `c1a3ccc` build. |
+| Next step | **The Principal's ruling on পাঠ ১৫'s S01 span** (below) — it does not block the bank, which is authored from the delimiters. Then the next কবিতা chapter (পাঠ ১৮ ইচ্ছামতী or পাঠ ২০ শিক্ষাগুরুর মর্যাদা, both S01/S09-bearing), or a wave 2 against the `gaps` of পাঠ ১৪ or পাঠ ১৫. |
+| Blockers / open PENDING-P tags | **Nothing BLOCKS.** · **RAISED, needs a ruling, no number minted (minting is not a teacher-lane act): পাঠ ১৫'s S01 span** — the extraction says *"প্রথম ৮ পঙ্‌ক্তি"* and delimits *"'থাকব না কো বদ্ধ ঘরে…' থেকে '…বরণ মরণ-যন্ত্রণাকে।' পর্যন্ত"*, and the delimited span **counts to ten পঙ্‌ক্তি over six printed lines**. Q01 is authored from the delimiters and states no count to any student, so the item stands either way. · **`PENDING-P-038` RAISED** (nothing checks a slot is admitted by ANY chapter) — FLAGGED-not-OPEN. · **`PENDING-P-008` FLAGGED** — REF-19 has no punctuation slug; পাঠ ১৪'s six and পাঠ ১৫'s eight S11 items ride `BAN-SENTENCE` under `TOP-BAN-C5-13`, the established choice. |
 | Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` · `U13_ADMISSIBILITY_DRAFT_2026-08-15.md` · `BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md` · `U13_REVIEW_SHEET_2026-08-15.md` · `RULING_DRAFTS_teacher-lane_2026-08-15.md` |
+
+## পাঠ ১৫ — the authored state, and the one thing it hands the Principal
+
+**96 items, digest `d86c5e99bac3`** over the `questions` array alone, sorted by qid, header
+excluded — the same quantity `ENVELOPE-SYNC` checks and the batch wrapper carries at
+`item_count` 96.
+
+| level | count | % | floor | margin |
+|---|--:|--:|--:|--:|
+| Remember | 26 | 27.1% | 20% (20) | **+6** |
+| Understand | 28 | 29.2% | 25% (24) | **+4** |
+| Apply | 27 | 28.1% | 25% (24) | **+3** |
+| Analyze | 13 | 13.5% | 10% (10) | **+3** |
+| Evaluate | 2 | 2.1% | 0% | +2 |
+| Create | 0 | 0.0% | 0% | content fact, CD-135(d) |
+
+Slots: S01 1 · S02 8 · S03 13 · S04 6 · S05 8 · S06 6 · S07 14 · S08 9 · S09 1 · S10 8 · S11 8 ·
+S12 6 · S13 8. Every one clears its CD-138(g) demand; **the thirteen admitted slots owe 54 and the
+bank supplies 96.**
+
+**ONLY TWO SLOTS ARE INADMISSIBLE HERE — S14 AND S15 — AND THE REASON THE OTHER TWO CAME BACK IS
+THE SAME SENTENCE THAT TOOK THEM AWAY AT পাঠ ১৪.** The extraction reads *"কবিতা চারটি: পাঠ ১৩, ১৫,
+১৮, ২০ — এগুলোই S01 (কবিতা মুখস্থ) ও S09 (মূলভাব) প্রশ্নের উৎস।"* পাঠ ১৪ was not on the list and
+lost both; **পাঠ ১৫ is on it and gains both.** CD-138(e) forbids inferring admissibility from
+content **in both directions**, and this pair is the clean demonstration: one sentence, two
+chapters, opposite verdicts, neither inferred.
+
+## What a later session must not re-derive from this chapter
+
+- **THE S01 SPAN IS AN OPEN QUESTION AND Q01 DOES NOT DEPEND ON THE ANSWER.** The extraction calls
+  the span *"প্রথম ৮ পঙ্‌ক্তি"* and also delimits it by its endpoints. **Counted — not read — the
+  delimited span runs to ten পঙ্‌ক্তি across six printed lines**, because the book prints two
+  পঙ্‌ক্তি per line for four of the six. `SLOT_REGISTER` `BAN-S01` names the part *"প্রথম ৮ লাইন"*
+  at 8 marks. **Q01 quotes the endpoints and states no number to any student**, so the item is
+  correct on either reading and nothing needs re-authoring once the Principal rules. **The lesson
+  is CD-145(e) applied one row over: a count inside a SOURCE is no more readable than a count
+  inside a ruling.**
+- **TWO ADMITTED-SET MEMBERS ARE UNAUTHORED BY SELECTION, NOT BY ABSENCE, AND THIS CHAPTER IS THE
+  RICHEST SOURCE OF BOTH.** অনুশীলনী ৪ is **সমার্থক শব্দ** (`BAN-S06` set; C5 selected বিপরীত শব্দ)
+  and অনুশীলনী ৮ is **ক্রিয়ার কাল** (`BAN-S10` set; C5 selected পদ নির্ণয়). Either would be an
+  off-choice task and COVERAGE reddens it (CD-138(b)). **The extraction calls this chapter S10's
+  *"সবচেয়ে নিরাপদ উৎস"* because two of the বৃত্তি forms sit here** — so if the C5 selection is ever
+  revisited, this is the chapter that pays for it, and `header.gaps` says so.
+- **`-13` IS THE PUNCTUATION TAG AND পাঠ ১৫ CARRIED IT FROM THE FIRST ITEM.** Eight S11 items,
+  `topic_tag` `TOP-BAN-C5-13`, `ref19_topic_id` `BAN-SENTENCE` (REF-19 has no punctuation slug —
+  `PENDING-P-008`). **This is `QB-CR-014` costing nothing because it was known before authoring
+  began**, the same shape as `QB-CR-009` at পাঠ ১৪: a correction discharged by writing it right,
+  not by editing live items.
+- **E-AUTHOR-ENDORSE AND THE 'স্বর্গপানে' CAUTION ARE BOTH HELD, AND HOLDING THE SECOND ONE COST A
+  DESIGN CHOICE.** The poet is named কাজী নজরুল ইসলাম with no epithet anywhere. **No item asks what
+  'স্বর্গপানে' means** — the extraction warns its sense here is *"আকাশের দিকে", ধর্মীয় অর্থে নয়*,
+  so the word appears once only, at S12, where the task is breaking স্ব into স + ব and the formed
+  word is স্বাধীন. A শব্দার্থ item on it would have been admissible and was declined.
 
 ## RESOLVED — `CD-144` amends `CD-141(b)`, and the dry run is what found the defect
 

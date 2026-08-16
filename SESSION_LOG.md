@@ -2677,3 +2677,90 @@ third raises them under §12.7.
 **Standing:** the bank is `draft` for Hub import and awaits subject-expert review (CD-142(a)).
 Nothing here is promotion. **`CD-141` handover to unattended use is the Principal's call** — (h)
 required one attended run end to end, and this was it.
+
+## 2026-08-16 · question-banks (পাঠ ১৫ প্রশ্নব্যাংক, wave 1) · teacher · cowork
+- Did: Authored **`C5_BAN_U15_QuestionBank_v1.json` — পাঠ ১৫ (সংকল্প), 96 items, digest
+  `d86c5e99bac3`** end to end inside the CD-141 teacher lane. Bootstrap per
+  `tools/session_bootstrap.md`: container clone from the mount, `origin` repointed at GitHub,
+  `git fetch` then **`HEAD == origin/main == 55f7144`, worktree clean** — the mount was level with
+  `origin` this time, unlike the পাঠ ১৪ session. Suite CLEAN, export regenerated whole, pushed
+  under CD-141's standing authorization.
+- Decisions logged: none. **No ruling, gate, tools or canon file was touched** — the lane forbids
+  all four (CD-141(a)/(f)) and nothing in this chapter required one.
+- Gates run + result: `gates.py` selftest **PASS** (29 seeded failures + 14 negatives + 6 CD-055
+  declaration cases + 1 baseline across all 14 qp6 gates; PLAN adds 10 seeds + 2 negatives + 1
+  baseline on its own 44-item fixture). Bank verdict **CLEAN (0 failures)**; the full sweep over
+  all four banks — পাঠ ১৩ · ১৪ · ১৫ · ২১ — also **CLEAN**, no regression from writing into the
+  shared `single/`. All 96 envelopes PASS `validate_import.py` L1–L4 (0 warn, 0 advisory, zero
+  non-zero exits), recorded unelided in `reports/BAN_U15_GATES_2026-08-16.txt`.
+- Open items / PENDING-P raised: **one source discrepancy raised for the Principal at S01** (below);
+  two admitted-set members left unauthored by register selection, named in `header.gaps`. No
+  PENDING-P number minted — minting is not a teacher-lane act.
+
+**THE SAME SENTENCE THAT EXCLUDED TWO SLOTS AT পাঠ ১৪ ADMITS THEM HERE, AND THAT IS THE POINT OF
+DECLARING RATHER THAN INFERRING.** `canon/marklogic/C5_Bangla_Source_13-23.md` reads *"কবিতা চারটি:
+পাঠ ১৩, ১৫, ১৮, ২০ — এগুলোই S01 (কবিতা মুখস্থ) ও S09 (মূলভাব) প্রশ্নের উৎস।"* পাঠ ১৪ is not on that
+list and lost both slots; **পাঠ ১৫ is on it and gains both.** Neither reading is an inference from
+content — CD-138(e) forbids that in both directions — and the mirror pair is worth recording
+because it shows the declaration doing work a slot-level rule could not.
+
+**THE DECLARATION (CD-138(e)).** **Thirteen slots admitted — S01–S13 — owing 54 items; two
+excluded**, S14 and S15, each with a one-line content reason. S14/S15 go out as a per-chapter
+content declaration (CD-139(c)), not a slot-level rule; CD-139(d)'s পাঠ ৪ admission is untouched
+by it. Every admissible slot clears its full paper demand: S01 1/1 · S02 8/5 · S03 13/5 · S04 6/5 ·
+S05 8/5 · S06 6/5 · S07 14/4 · S08 9/3 · S09 1/1 · S10 8/5 · S11 8/5 · S12 6/5 · S13 8/5.
+
+**PLAN margins:** Remember +6 · Understand +4 · Apply +3 · Analyze +3. Create 0 against a 0% floor,
+stated in the header as a content fact (CD-135(d)): the chapter is an eighteen-line poem and not
+one of its eight অনুশীলনী tasks asks for original construction. **Ten gates reported `N/A` and they
+are exactly the ten CD-145 names — counted from this run's output, not read off the row**
+(CD-145(e)/(f)): POOL-MEMBERSHIP · ZERO-OVERLAP · ANSWER-SHAPE · RUBRIC-SPECIFICITY · FLAG-TRACE ·
+QUOTE-VERBATIM · HONORIFIC · AS-MIX · NUMERALS · CEILING. **PLAN and ENVELOPE-SYNC both judged and
+both passed**, so CD-141(c)'s operative test — *no gate that SHOULD judge returned `N/A`* — holds.
+
+**RAISED FOR THE PRINCIPAL — A DISCREPANCY INSIDE THE EXTRACTION AT S01, NOT RESOLVED HERE.** The
+extraction calls the memorisation span **"প্রথম ৮ পঙ্‌ক্তি"** and delimits it *"'থাকব না কো বদ্ধ
+ঘরে…' থেকে '…বরণ মরণ-যন্ত্রণাকে।' পর্যন্ত"*. **Counted against the book's own
+two-পঙ্‌ক্তি-per-printed-line layout, that span holds ten পঙ্‌ক্তি across six printed lines, not
+eight.** `SLOT_REGISTER` `BAN-S01` names its part *"প্রথম ৮ লাইন"* at 8 marks. **Q01 is authored
+from the DELIMITERS and states no count in any student-facing string**, so nothing turns on which
+number is right; the item is correct either way. **The count is not smoothed and not chosen** —
+CD-145(e) is explicit that a count is counted, not read, and CD-145(f) that an illustrative figure
+inside an authority is verified by running the thing it counts. **Which of the two the book means
+is the Principal's to say**, and the question is narrow: does the S01 span run to the delimiter, or
+to eight পঙ্‌ক্তি short of it? Carried in `header.gaps` so it travels with the bank.
+
+**TWO ADMITTED-SET MEMBERS LEFT UNAUTHORED BY SELECTION, AND THE CHAPTER IS RICH IN BOTH.**
+অনুশীলনী ৪ is **সমার্থক শব্দ** — a member of `BAN-S06`'s admitted set whose C5 `selected` is
+**বিপরীত শব্দ**; অনুশীলনী ৮ is **ক্রিয়ার কাল** — a member of `BAN-S10`'s set whose C5 `selected` is
+**পদ নির্ণয়**. Authoring either would be an off-choice task and COVERAGE would redden it
+(CD-138(b)). **The extraction calls this chapter S10's *"সবচেয়ে নিরাপদ উৎস"* precisely because two
+of the বৃত্তি forms sit here**, so the unauthored half is a selection consequence, not a content
+gap, and it is named as such rather than left silent (CD-134(c)). অনুশীলনী ১ and ৬ are also
+unauthored: which register slot's declared task they answer to is not settled, and settling it is
+not a teacher-lane act.
+
+**E-AUTHOR-ENDORSE AND THE 'স্বর্গপানে' CAUTION ARE BOTH LIVE HERE AND BOTH HELD.** The poet is
+named কাজী নজরুল ইসলাম and nothing else in every stem, option, key and rubric row — no honorific
+epithet anywhere, which the register carries as a `BAN-S01` row constraint and the extraction
+states in its own ⚠. **No item asks what 'স্বর্গপানে' means.** The word appears once, at S12, where
+the task is orthographic — breaking স্ব into স + ব — and the formed word is স্বাধীন, so the
+religious sense the extraction warns about is never in play.
+
+**Export:** array · `single/` · v1.1 batch wrapper built whole, **one digest `d86c5e99bac3`** across
+signature, export and import, `item_count` 96. `envelope_version` stays `"1.0"` and the wrapper is
+exactly four keys (CD-143(c)).
+
+**`_inbox/` at session close (AGENTS §12.7):** **EMPTY on the mount — and the পাঠ ১৪ block's
+carried claim is corrected here rather than copied forward.** That block listed three superseded
+contract-v1.1 originals plus a redundant v1.0 `import-contract.md` as still staged. **They are
+gone**: `ls -a` on the mount's `_inbox/` at session close returns nothing at all. **This was
+LOOKED AT, not inherited** — restating the previous session's list would have been `QB-CR-012`'s
+pattern one more time, and §12.7 asks for a line per file *still there*, which is now none.
+**One thing IS reported and not touched: the tracked `_inbox/README.md` is absent from the mount's
+working tree** while `git ls-files` carries it at `55f7144`. The mount is the Principal's
+pull-only working copy (AGENTS §12.4/§12.5, `session_bootstrap.md` §4), so an agent neither
+restores it nor explains it away. **Owner: the Principal.**
+
+**Standing:** the bank is `draft` for Hub import and awaits subject-expert review (CD-142(a)).
+**Nothing here is promotion**, which is a Hub act and not a Git state (CD-003).
