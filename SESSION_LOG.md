@@ -2764,3 +2764,80 @@ restores it nor explains it away. **Owner: the Principal.**
 
 **Standing:** the bank is `draft` for Hub import and awaits subject-expert review (CD-142(a)).
 **Nothing here is promotion**, which is a Hub act and not a Git state (CD-003).
+
+## 2026-08-16 · question-banks (পাঠ ১৬ bank, wave 1) · Principal-briefed · cowork
+- Did: **Authored the পাঠ ১৬ (স্মরণীয় যাঁরা বরণীয় যাঁরা) C5 Bangla question bank, 96 items,
+  digest `337e0461239e`** — declaration · PLAN · authoring · suite · export · verification · log,
+  end to end in the `CD-141` teacher lane under a Principal-issued brief, **with no stop and no
+  ruling needed.** Bootstrap per `tools/session_bootstrap.md`: clone from the mount, origin
+  repointed at GitHub, `git fetch`, and **`HEAD` verified equal to `origin/main` at `d92c46e`
+  with a clean tree BEFORE any work** — the mount was current this time, which is what step 4
+  exists to establish rather than assume.
+  **`CD-138(e)` declaration, written from the source at source.** Fifteen register slots for BAN
+  C5. **Two are outside the declaration entirely** — S14 আবেদনপত্র and S15 রচনা are paper-level
+  for every chapter under `CD-147`, so this bank says nothing about them, which `CD-147(c)` makes
+  CORRECT rather than incomplete. Of the remaining thirteen, **eleven ADMITTED and two EXCLUDED
+  with a one-line content reason: S01 and S09.** The basis is the source's own sentence —
+  *"কবিতা চারটি: পাঠ ১৩, ১৫, ১৮, ২০ — এগুলোই S01 (কবিতা মুখস্থ) ও S09 (মূলভাব) প্রশ্নের উৎস।"*
+  পাঠ ১৬ is গদ্য (ইতিহাস) and is not among them. **This is the third chapter that sentence has
+  decided and the second time it has excluded**: it took the pair from পাঠ ১৪, gave it to পাঠ ১৫,
+  and takes it again here. Quoting the source's designation is not the inference `CD-138(e)`
+  forbids; inferring from the chapter's content would be.
+  **The eleven admitted slots owe 52 items (CD-138(g), paper-level and undivided); the bank
+  supplies 96.** Slots: S02 8 · S03 14 · S04 7 · S05 9 · S06 6 · S07 16 · S08 9 · S10 6 · S11 7 ·
+  S12 7 · S13 7.
+- Decisions logged: **none, and none was owed.** No question arose that needed a ruling; nothing
+  outside the lane's class and path boundary was touched. `PENDING_PRINCIPAL.md` unchanged.
+- Gates run + result: **`RESULT: CLEAN (0 failures)`** on the U16 bank, verbatim output at
+  `workstreams/question-banks/reports/BAN_U16_GATES_2026-08-16.txt`. **`SELFTEST: PASS` first**
+  (CD-025), before any bank verdict was believed. **`PLAN` and `ENVELOPE-SYNC` both JUDGED and
+  both PASSED**, which is the condition `CD-141(c)` actually turns on. **TEN gates reported
+  `N/A`, and the ten were COUNTED from this run rather than read from `CD-141(c)`'s figure** —
+  `POOL-MEMBERSHIP · ZERO-OVERLAP · ANSWER-SHAPE · RUBRIC-SPECIFICITY · FLAG-TRACE ·
+  QUOTE-VERBATIM · HONORIFIC · AS-MIX · NUMERALS · CEILING`, all of them the qp6-shape gates
+  `CD-145` names. `CD-145(f)`: an illustrative count is verified by running the thing it counts.
+  **`PLAN` margins: Remember +6 · Understand +3 · Apply +4 · Analyze +3**, every positive REF-06
+  §3.6 floor clear by at least three against a rule of two. `CD-141(g)`'s 40-item minimum is
+  cleared by arithmetic. **Export regenerated whole and in sync** — array · `single/` ·
+  `.batch.json`, one digest `337e0461239e`, `item_count` 96. **Vendored harness (AGENTS §11):
+  96/96 `single/` envelopes PASS and the v1.1 batch wrapper PASS.** **Full sweep: U13 · U14 ·
+  U15 · U16 all CLEAN.**
+- Verification pass, and it is the part worth reading: **an independent read of all 96 items
+  against the source — the thing no gate can do — returned FIFTEEN defects, none structural and
+  none a factual contradiction of the source.** All were fixed in the authoring script and the
+  bank rebuilt from it, **before anything was committed**; a second independent read confirmed
+  fourteen and **rejected one**, which was then fixed too. The table is in
+  `_wip/U16_ADMISSIBILITY_AND_PLAN_2026-08-16.md`. **Both policy-critical checks came back clean
+  on the FIRST read** and are worth stating for the Principal directly: **every occurrence of
+  শহিদ in the bank sits inside a proper name the book itself prints** — শহিদ সাবের and
+  'শহিদ বুদ্ধিজীবী দিবস' — and **no item asks what the word means, who counts as one, or invites
+  a student to apply it**, which is exactly what the chapter's ⚠ block requires. C-03 (গান ও
+  সুরকার), C-18 (শহিদ মিনারে ফুল দেওয়া) and C-05 (ব্যক্তির ছবি) are untouched, and no invented
+  personal name appears anywhere.
+  **The transferable defect is `QB-CR-011`'s shape in a new place, and no gate could see it.**
+  Every S12 stem said *যুক্তবর্ণটি* — the definite singular — as though each stimulus word carried
+  exactly one conjunct. Five of the seven do. **`প্রতিষ্ঠাতা` carries প্র AND ষ্ঠ; `বিশ্ববিদ্যালয়`
+  carries শ্ব AND দ্য** — so a student answering correctly on the other conjunct was unmarkable,
+  and `COVERAGE` was quiet throughout because both declared halves of the composite task WERE
+  claimed. **The stem's grammar made a claim about the WORD, and only a reader of the word can
+  check it.** Every S12 stem now names its conjunct; both halves of the task are untouched.
+  **A second one repeated across two slots: a drill item whose stimulus does not support the task
+  asked of it.** One S11 item needed nothing but a terminal দাঁড়ি and another required a
+  সেমিকোলন, which is outside the C5 বিরামচিহ্ন set; one S06 antonym item used গভীর, whose only
+  chapter use is *গভীর রাতে*, which অগভীর does not oppose. **The first replacement for it was
+  REJECTED on re-check for the identical fault** — নতুন occurs only as the adverbial *নতুন করে* —
+  so the stimulus is now নিষ্ঠুর, used adjectivally in the chapter's own gloss of পাষণ্ড.
+  **Both classes of defect passed every gate, because a gate counts items and cannot ask whether
+  an item is worth asking.**
+- Open items / PENDING-P raised: **none raised, nothing BLOCKS.** Carried unchanged:
+  `PENDING-P-038` RAISED (nothing checks a slot is admitted by ANY chapter) · `PENDING-P-008`
+  FLAGGED (REF-19 has no punctuation slug, so S11's seven items ride `BAN-SENTENCE` under
+  `TOP-BAN-C5-13` — the established choice). Named in `header.gaps` rather than left implied:
+  **অনুশীলনী ৫ (ক্রিয়ার রূপ) is unauthored by SELECTION** — it is BAN-S10's other admitted task
+  and C5 selected পদ নির্ণয়, so `COVERAGE` would read it off-choice — and **অনুশীলনী ৭ (ঘটনা
+  সাজিয়ে অনুচ্ছেদ, বকের বাসার গল্প) is unauthored by EVIDENCE**: the source prints the exercise's
+  name and not one sentence of the story, so no three-token anchor exists and `SOURCE-TRACE` could
+  bind nothing to it. **The bank is at its Bloom limit, not its content limit**, and the header
+  says so — the source itself calls this chapter *"প্রশ্নের ভালো উৎস অনেক"*.
+- Pushed: build class (`6cd9229`) and log class, per `CD-141`'s standing authorization. The bank
+  awaits Hub import and subject-expert review (`CD-142(a)`); **nothing here is promotion.**
