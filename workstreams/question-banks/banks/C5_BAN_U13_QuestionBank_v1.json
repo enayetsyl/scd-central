@@ -108,8 +108,8 @@
    "date": "2026-08-15",
    "evidence": "workstreams/question-banks/_wip/U13_REVIEW_SHEET_2026-08-15.md, committed at `0ea6685` — all 110 items rendered verbatim from this file, grouped S01–S13 in register order.",
    "scope_items": 110,
-   "scope_commit": "1b9e83d",
-   "scope_content_sha256": "e76631e34fa0d2048feef351b4346b04adf27c64fb54a917115998c016eaffce",
+   "scope_commit": "21f3445",
+   "scope_content_sha256": "22ae7c4f299a423afec6c97bdab67b5b6a46ec45df7b09b8720e1474fd5c900d",
    "scope_note": "THE SIGNATURE IS PINNED TO A CONTENT HASH, NOT TO A FILE. The digest is sha256 over this bank's `questions` array alone, sorted by qid — header excluded, so adding this very row does not move it. It is identical at `1b9e83d` and at signing time, verified before this row was written. **Any later item edit changes the digest and this signature no longer covers the bank**, which is the point: a signature that silently stretches to cover work the signer never saw is worse than no signature.",
    "what_it_covers": "32 teacher-supplied keys across S02 · S06 · S10 · S12 · S13, each declaring its own provenance in its own `model_note` (CD-136(b)). This is the §6 human review gate CD-136(g) names, and the only thing that can close it — the suite's `RESULT: CLEAN` is not a substitute. CD-136(e) refused to build key-resolution into SOURCE-TRACE precisely because a gate cannot see the thing it judges: *writing a gate that cannot see the thing it judges is worse than naming the human who can*.",
    "what_it_does_not_do": "IT DOES NOT MOVE THIS BANK TO GOLD. Promotion `reviewed → gold` is the Principal's act IN THE HUB (CD-003; `workstreams/question-banks/LOCAL.md`, Operator workflow), not a Git state. No field in this repo moves a bank to gold and this one does not pretend to. It records that the review happened, what it read, and exactly which bytes it covers.",
@@ -117,6 +117,18 @@
     "S14/S15 render as `বাদ — নিচে কারণ` rather than 0 — a declared exclusion is not a shortfall, and a sheet that makes a correct bank look short is worse than no sheet.",
     "Bloom values stay in English — translating them into জ্ঞান / অনুধাবন / প্রয়োগ would collide with MarkLogic §৩'s DOMAIN axis, which uses those exact Bengali words for a different thing. Two axes, one vocabulary; conflating them is QB-CR-011's shape.",
     "The re-tag arithmetic is carried in the sheet's review notes — one re-tag returned to `Understand` leaves 29/110 = 26.4% and stays green; two turns the bank red at the 28-item floor. A reviewer is told the cost of overruling before being asked to."
+   ],
+   "amendments": [
+    {
+     "date": "2026-08-16",
+     "row": "QB-CR-014",
+     "commit": "21f3445",
+     "what_changed": "topic_tag on EIGHT S11 বিরামচিহ্ন items — QP-BAN-C5-U13-Q57, Q58, Q59, Q60, Q61, Q89, Q90, Q91 — from TOP-BAN-C5-02 to TOP-BAN-C5-13. header.topics gains -13. Nothing else.",
+     "why_the_sign_off_STANDS": "THE SIGNATURE COVERS THE QUESTIONS, AND NOT ONE QUESTION MOVED. The verdict quoted above is 'i checked the questions and they are ok.' — a judgement about stems, keys and whether the Bengali reads right. This amendment changed a REGISTRY TAG and no stem, key, rubric, bloom_level, difficulty, marks, paper_role or ref19_topic_id. The proof is not an assertion: authoring/correct_U13_S11_tags.py asserts per item that topic_tag is the only field that moved and refuses otherwise, and PLAN's margins are identical before and after at Remember +12 · Understand +2 · Apply +2 · Analyze +3 — a Bloom re-tag would have moved them. Ruled by the Principal 2026-08-16.",
+     "why_the_pin_MOVED_ANYWAY": "THE DIGEST IS OVER THE questions ARRAY, SO A METADATA EDIT MOVES IT — and it must be allowed to. scope_note above says any later item edit changes the digest and the signature then no longer covers the bank; that mechanism is working exactly as designed and is NOT waived here. What happens instead is that the pin is RE-STATED against the corrected bytes, in the open, with the reason and the correcting commit named. e76631e34fa0… covered the 110 items the Principal read; 22ae7c4f299a… covers the same 110 items with eight registry tags corrected. A signature that silently stretched would be the failure; a signature that says where it moved and why is the record.",
+     "previous_scope_content_sha256": "e76631e34fa0d2048feef351b4346b04adf27c64fb54a917115998c016eaffce",
+     "previous_scope_commit": "1b9e83d"
+    }
    ]
   }
  },
