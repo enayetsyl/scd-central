@@ -2554,3 +2554,48 @@ this repo** — no server code here, and `validate_import.py` is vendored supers
 LOCKED contract v1.0, so it is Principal-gated and **outside CD-141 by both class and path.**
 
 **Nothing pushed.** `origin/main` at `090871b`.
+
+## 2026-08-15 · import contract v1.1 folded in — CD-143, and the batch export
+
+**Two stop conditions fired before any work and both were right.** The mount lagged origin by two
+commits — the failure mode `session_bootstrap.md` was amended to name last session, catching it on
+its first real occurrence; the mount's tree was *clean*, which is exactly what makes stale state
+invisible. And the v1.1 file was not in `_inbox/`: what sat there was **byte-identical to the
+vendored v1.0** (`md5 e3e16c82…` both sides), mtime **June 9**, declaring *"LOCKED v1.0"* with
+**zero** occurrences of `question_batch`. **Reported rather than reconstructed from the brief**, per
+the brief's own instruction — and the second delivery arrived correct.
+
+**Superseded whole, never patched.** All three files scd-hub `7ad4903` touched. **No regression,
+measured before the commit:** the v1.1 harness against the 110 existing single envelopes gave
+**110 × PASS, regressions none** — a bump that quietly moved the single path would have shown there.
+
+**TWO THINGS THE FILE SAYS THAT THE PROSE DID NOT, and they are the argument for supersede-only.**
+`envelope_version` **stays `"1.0"`** — the document is v1.1, the wire value is a `const`, because
+`question_batch` is additive. And **the wrapper is exactly four keys**: the batch branch sets ten
+fields to `false` and root `additionalProperties` is `false`, so anything helpfully added is a
+validation failure. **Built from the schema, an export stamping `"1.1"` would have been rejected at
+the boundary.**
+
+**The series was ruled rather than followed.** The brief said a D-PROJ04 row; `D-PROJ04-###` is the
+**upstream's** series, which this repo cites and has never minted in. **Minting `D-PROJ04-018` here
+would collide with whatever `scd-hub` mints next.** Filed as **`CD-143` citing `D-#495`**, which is
+how `D-PROJ04-005` is already treated at VENDOR.md.
+
+**And a vendored file was asked for.** The brief put the batch emitter inside
+`build_question_envelopes.py` — **which VENDOR.md lists, and which may never be edited locally**. A
+local patch is silently un-superseded the next time upstream ships. **`build_batch.py` is the join**,
+second of its kind after `split_envelopes.py`, for the identical reason.
+
+**`ENVELOPE-SYNC` now covers the wrapper**, and the check worth naming is the **digest**: the
+contract calls it an audit field and *does not recompute it at import*, so **a wrapper describing a
+different bank passes the Hub and lands in the audit row as truth.** Caught here or nowhere. Seeded
+both ways, with the behind-seed made **self-consistent** so only comparison against the bank can
+catch it.
+
+**One number across three places:** signature `e76631e34fa0…`, export digest, gate report.
+
+**Left for the Principal:** `_inbox/` still holds the three superseded originals and a redundant
+v1.0 `import-contract.md`. §12.5 says a classified file leaves `_inbox/` completely — but the mount
+is **pull-only for agents**, so the removal is his.
+
+**Nothing pushed.** `origin/main` at `7aafd89`.

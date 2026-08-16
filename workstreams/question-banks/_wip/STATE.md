@@ -2,12 +2,40 @@
 
 | Field | Value |
 |---|---|
-| Current build | **The teacher-lane rulings are FILED — `CD-141` (standing authorization) and `CD-142` (§6 relocation).** পাঠ ১৩ unchanged: signed, 110 items, export in sync, suite CLEAN across 24 gates. |
-| Phase | **Autonomy is filed but NOT YET LIVE.** CD-141(h) requires a **DRY RUN before handover** — one full teacher-lane session end to end with the Principal watching. Until these rows are on `origin` AND that run passes, every push still needs explicit approval. |
-| Last completed step | `7cc4458` ruling (CD-141 + CD-142 + the §-amendments that execute them) · this log commit. `canon_check` CLEAN · `ledger_check` CLEAN. **Nothing pushed** — `origin/main` at `090871b`. |
-| Next step | The Principal's dry run. **HELD, NOT FORGOTTEN:** the batch-envelope import contract — a top-level array at the Hub's import endpoint. **That work is in `scd-hub`, not this repo**, and it changes LOCKED contract v1.0, so it is Principal-gated and outside CD-141's boundary by both class and path. |
-| Blockers / open PENDING-P tags | **`PENDING-P-038` RAISED** (nothing checks a slot is admitted by ANY chapter; S14 at C5 Bangla is down to one). FLAGGED-not-OPEN. |
-| Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` · `U13_ADMISSIBILITY_DRAFT_2026-08-15.md` · `BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md` · `U13_REVIEW_SHEET_2026-08-15.md` · `RULING_DRAFTS_teacher-lane_2026-08-15.md` (**drafts now FILED — kept as the review trail, superseded by the rows**) |
+| Current build | **Import contract v1.1 folded in (`CD-143`) and the batch export is live.** পাঠ ১৩: 110 items, signed, four export artifacts in sync — array · `single/` · **`.batch.json`** — all carrying digest `e76631e34fa0`. Suite CLEAN across 24 gates. |
+| Phase | Contract work done. **`CD-141` autonomy still NOT live** — the dry run is still owed. |
+| Last completed step | `e26fcd0` tools (v1.1 vendored whole) · `11beca9` ruling (CD-143) · `0b0e478` build (`build_batch.py` + পাঠ ১৩ wrapper) · `bdd8ae3` gate (ENVELOPE-SYNC + policy) · this log. **Nothing pushed** — `origin/main` at `7aafd89`. |
+| Next step | The Principal's `CD-141` dry run. **`_inbox/` still holds the three superseded v1.1 originals plus a redundant v1.0 `import-contract.md`** — the mount is pull-only for agents, so removing them is the Principal's (AGENTS §12.4/§12.5). |
+| Blockers / open PENDING-P tags | **`PENDING-P-038` RAISED** (nothing checks a slot is admitted by ANY chapter). FLAGGED-not-OPEN. |
+| Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` · `U13_ADMISSIBILITY_DRAFT_2026-08-15.md` · `BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md` · `U13_REVIEW_SHEET_2026-08-15.md` · `RULING_DRAFTS_teacher-lane_2026-08-15.md` |
+
+## Contract v1.1 — the four things that bite
+
+**`envelope_version` STAYS `"1.0"`.** The DOCUMENT is v1.1; the wire value is a `const`. Stamping
+`"1.1"` fails validation. This is the easiest thing to get wrong from a description.
+
+**The wrapper is EXACTLY FOUR KEYS** — `envelope_version`, `doc_type`, `batch`, `items`. The batch
+branch sets `subject`, `class_level`, `address`, `curation_tag`, `pinned_to`, `provenance`, `tags`,
+`review_status`, `rendered_markdown`, `payload` to **false**, and root `additionalProperties` is
+**false**. Anything helpfully added is a failure.
+
+**`digest` IS AN AUDIT FIELD, NOT AN INTEGRITY CHECK.** The contract says it is *"recorded on the
+batch audit row; not recomputed at import"*. **A wrong digest is caught NOWHERE downstream** —
+which is why `ENVELOPE-SYNC` checks it here. Do not build on the assumption the Hub would notice.
+
+**`items` is the loosest gate in the contract, deliberately.** Its only structural bar is nesting;
+everything else is left to the per-element pass **so one bad element fails alone**. That is why the
+repo side needed no new validation: the single path is still the contract.
+
+**Whole-batch rejects are exactly three, plus nesting:** `items` absent/empty · `item_count` ≠
+`items.length` · >500 items.
+
+## Two vendored files may NOT be edited, and one of them was asked for
+
+`build_question_envelopes.py` is **vendored** (VENDOR.md, AGENTS §7, CD-003). The brief asked for
+the batch emitter to live inside it; it cannot. **`build_batch.py` in `authoring/` is the join**,
+exactly as `split_envelopes.py` was for the same reason. A local patch to a vendored file is
+silently un-superseded the next time upstream ships.
 
 ## CD-141 in one screen — what an agent may do without asking
 
