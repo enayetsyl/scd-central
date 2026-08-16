@@ -56,14 +56,22 @@ the ruling as given**. One added word the Principal did not rule makes it an ord
 **Everything else still waits:** extraction work, gate and tooling changes, and new
 governance text not yet ruled sync **only on explicit Principal approval**.
 
-**SECOND CARVE-OUT — THE TEACHER LANE (CD-141, 2026-08-15).** An agent working the bank-authoring
-lane may push without per-commit approval, but only where **class AND path both fall inside the
-boundary** (build · corrections · log · promotion, under `workstreams/question-banks/` and its
-`banks/envelopes/`) **and the full suite is CLEAN including `PLAN` and `ENVELOPE-SYNC`, with `N/A`
-excluded from CLEAN**. Anything else — any FAIL, any file outside scope, any question that needs a
-ruling — **stops and reports, and is never put to the teacher**, who cannot rule (§2). The row
-carries the rest, including the 40-item consequence and the dry run required before handover.
-**Read CD-141 before relying on this sentence; this pointer is not the authority.**
+**SECOND CARVE-OUT — THE TEACHER LANE (CD-141, 2026-08-15; path boundary amended by CD-144,
+2026-08-16).** An agent working the bank-authoring lane may push without per-commit approval, but
+only where **class AND path both fall inside the boundary** (build · corrections · log · promotion,
+under `workstreams/question-banks/` and its `banks/envelopes/`) **and the full suite is CLEAN
+including `PLAN` and `ENVELOPE-SYNC`, with `N/A` excluded from CLEAN**. Anything else — any FAIL,
+any file outside scope, any question that needs a ruling — **stops and reports, and is never put to
+the teacher**, who cannot rule (§2). The row carries the rest, including the 40-item consequence
+and the dry run required before handover.
+
+**THE `log` CLASS HAS TWO NAMED PATH EXCEPTIONS, AND ONLY THE `log` CLASS (CD-144).** Root
+**`SESSION_LOG.md`** and **`workstreams/question-banks/_wip/STATE.md`** may be committed in this
+lane. **Without the first of those, §3's End clause is unreachable from inside the lane it
+governs** — which is exactly what the CD-141(h) dry run hit, and it hit it at session close rather
+than on reading. **The exception does not travel to another class:** a `build`, `corrections` or
+`promotion` commit touching a root file is still unauthorized, and both tests still have to hold.
+**Read CD-141 and CD-144 before relying on these sentences; this pointer is not the authority.**
 
 **Why:** a ruling-only commit created *after* a named-commit approval was correctly held
 under the base rule, costing a round-trip to release text the Principal had already given.
