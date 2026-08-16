@@ -2599,3 +2599,81 @@ v1.0 `import-contract.md`. §12.5 says a classified file leaves `_inbox/` comple
 is **pull-only for agents**, so the removal is his.
 
 **Nothing pushed.** `origin/main` at `7aafd89`.
+
+## 2026-08-16 — পাঠ ১৪ (কুপোকাত) authored · the CD-141 dry run · one clause caught
+
+**Bank:** `C5_BAN_U14_QuestionBank_v1.json` — 84 items, digest `831c54c1aa7d`, suite CLEAN across
+24 gates. Pushed `d7b1f82..fe60e25` in two commits, build then log, both inside CD-141's boundary
+on class and path. Post-push verified against the server with `git ls-remote`.
+
+**THE BOOTSTRAP STOPPED THE SESSION ONCE, BEFORE ANY WORK, AND THAT IS THE FIRST THING WORTH
+RECORDING.** The clone from the mount came up at `7aafd89` against `origin/main` at `d7b1f82` —
+**the mount was five commits behind, strictly, no divergence, nothing unpushed.** Exactly the
+stale-mount case `tools/session_bootstrap.md` §1 step 4 was written for. Reported and stopped; no
+pull, no reset, no carrying on. **What those five commits held is why it mattered:** contract v1.1
+(`CD-143`), `build_batch.py`, `ENVELOPE-SYNC`'s wrapper coverage, and 144 changed lines of
+`gates.py`. **Authoring পাঠ ১৪ at `7aafd89` would have built the bank against contract v1.0 with
+no batch wrapper and an ENVELOPE-SYNC that could not see the digest — and reported CLEAN.** The
+brief's step 6 asks for an artifact whose builder does not exist at that commit.
+
+**AND THE BOOTSTRAP CORRECTED A CLAIM CARRIED IN FROM PROJECT MEMORY.** The stop-report noted, as
+advisory, that পাঠ ১৪ might be unextracted. **It is extracted** — `canon/marklogic/
+C5_Bangla_Source_13-23.md` line 101 — and the file's own header designates it the question-authoring
+source. The claim was flagged advisory and verified at source before anything was built on it,
+which is the only reason it cost nothing.
+
+**THE DECLARATION (CD-138(e)).** Eleven slots admitted, owing 52 items; **four excluded, and two of
+them are new to this chapter.** S14/S15 as at পাঠ ১৩. **S01 and S09 excluded because পাঠ ১৪ is a
+নাটক** — on the source's own sentence, *"কবিতা চারটি: পাঠ ১৩, ১৫, ১৮, ২০ — এগুলোই S01 (কবিতা মুখস্থ)
+ও S09 (মূলভাব) প্রশ্নের উৎস"* — not on an inference from content, which CD-138(e) forbids by name.
+The file says which chapters feed those two slots and this chapter is not among them.
+
+**PLAN margins:** Remember +5 · Understand +3 · Apply +3 · Analyze +3. Create 0 against a 0% floor,
+stated in the header as a content fact (CD-135(d)): the chapter is an allegorical drama and C-19
+bars acting, so the natural Create tasks are not open here.
+
+**`QB-CR-009` DISCHARGED AT ZERO COST.** Ruled 2026-08-14 (U14 is Drama `TOP-BAN-C5-09`, not Story
+`-06`), execution owed "when the U14 bank is next opened". **No U14 item existed on disk** —
+verified by grep across `banks/`, not assumed — so authoring `-09` from the start discharges it
+without editing anything. **A re-tag of live items would have been the expensive version of the
+same fix**, and catching it before the first item was written is the whole value of reading the
+ledger before drafting (AGENTS §6).
+
+**WHAT THE DRY RUN CAUGHT, AND IT IS A CONTRADICTION INSIDE `CD-141` ITSELF.** **`CD-141(a)`
+pre-approves the `log` class. `CD-141(b)` confines every authorized commit to
+`workstreams/question-banks/`. Root `SESSION_LOG.md` is `log` class at a root path**, and (b) is
+imperative about precisely that shape: *"A commit whose CLASS is pre-approved but whose PATH is not
+— or the reverse — is NOT authorized and the agent stops."*
+
+**The draft the row was reviewed from names the class members in a parenthesis —
+`log` (STATE.md, SESSION_LOG.md)** (`_wip/RULING_DRAFTS_teacher-lane_2026-08-15.md`, line 18) —
+**and the filed row carries the class list without it.** Both readings survive in the row as filed.
+**So the agent stopped rather than picking one**, and this block is handed over instead of pushed.
+
+**The consequence is structural, not cosmetic: no teacher-lane session can complete AGENTS §3's End
+clause**, which requires exactly this file. Every session under CD-141 meets the same wall.
+**The narrow question for the Principal:** does `CD-141(b)`'s path list gain root `SESSION_LOG.md`
+as a named exception, or does the lane stop short of §3's End clause and hand its block over each
+time? An amendment is ruling class and is never pre-approved (CD-141(f)).
+
+**A SECOND THING THE RUN SURFACED, REPORTED AND NOT FIXED.** পাঠ ১৪'s six S11 items carry
+`TOP-BAN-C5-13`; পাঠ ১৩'s eight carry `TOP-BAN-C5-02`. `TOPIC_NUMBERS.md`'s own *"Why `-13` was
+minted rather than folded into `-02`"* says the spine keeps `S03 বাক্য গঠন` and `S11 বিরামচিহ্ন` as
+separate mark slots at C5 and that folding would erase a distinction canon makes — so `-13` is the
+right tag and পাঠ ১৩ is the one out of step. **Both banks pass TOPIC-NUMBER because both numbers
+are charted, and no gate can see the disagreement.** Not corrected here: পাঠ ১৩ is signed and
+outside this chapter's scope.
+
+**Export:** array · `single/` · v1.1 batch wrapper regenerated whole, one digest `831c54c1aa7d`
+across signature, export and import. All 84 singles plus the wrapper PASS `validate_import.py`
+(0 warn, 0 advisory), recorded unelided in `reports/BAN_U14_GATES_2026-08-16.txt`. পাঠ ১৩ (110,
+`e76631e34fa0`) and পাঠ ২১ re-run CLEAN — no regression from writing into the shared `single/`.
+
+**`_inbox/` at session close:** unchanged from 2026-08-15 — three superseded contract-v1.1
+originals plus a redundant v1.0 `import-contract.md`. **Owner: the Principal**, because the mount
+is pull-only for agents (AGENTS §12.4/§12.5). This is the second session they are carried; the
+third raises them under §12.7.
+
+**Standing:** the bank is `draft` for Hub import and awaits subject-expert review (CD-142(a)).
+Nothing here is promotion. **`CD-141` handover to unattended use is the Principal's call** — (h)
+required one attended run end to end, and this was it.
