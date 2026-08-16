@@ -219,7 +219,8 @@ every item.
    > 2026-08-15 — Bloom margins ≥ 2, full per-slot demand, task declarations, P-037 types,
    > within-slot near-duplicate stems; replaces the plan-table countersign, not the
    > item-level human read)** · **export sync against
-   > `banks/envelopes/` (added 2026-08-15 — the export ran two waves behind the bank and no gate
+   > `banks/envelopes/` **including contract v1.1's `question_batch` wrapper (CD-143)**
+   > (added 2026-08-15 — the export ran two waves behind the bank and no gate
    > could see it, because every gate reads the bank and §11 imports the envelopes)** ·
    > difficulty easy ≥30% /
    > hard ≤25% with the Pool *able to supply* · repetition (no verbatim reuse above `Remember`) ·

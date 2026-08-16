@@ -1521,13 +1521,13 @@ def load_envelope_index(bank_path, qids):
         return None, None, "no bank path in context — the export directory cannot be located"
     prefix = envelope_prefix(qids)
     if prefix is None:
-        return None, None, ("this bank's qids do not share one QP-SUBJ-Cn-Uu prefix — the export "
+        return None, None, None, ("this bank's qids do not share one QP-SUBJ-Cn-Uu prefix — the export "
                             "cannot be scoped, and a mixed bank is refused upstream anyway")
     envdir = Path(bank_path).parent / "envelopes"
     array = envdir / (Path(bank_path).stem + ".envelopes.json")
     single = envdir / "single"
     if not array.exists() and not single.exists():
-        return None, None, (f"no export exists at {envdir.as_posix()} — this bank has never been "
+        return None, None, None, (f"no export exists at {envdir.as_posix()} — this bank has never been "
                             f"fanned out. That is not drift and is not judged; §11's flow has "
                             f"simply not been run. Reported, not passed")
     arr = {}
@@ -1536,7 +1536,17 @@ def load_envelope_index(bank_path, qids):
             for e in json.loads(array.read_text(encoding="utf-8")):
                 arr[(e.get("payload") or {}).get("qid")] = e.get("payload")
         except Exception as e:  # noqa: BLE001 — the reason must reach the report
-            return None, None, f"{array.as_posix()} is unreadable: {e}"
+            return None, None, None, f"{array.as_posix()} is unreadable: {e}"
+    # contract v1.1 (CD-143): the batch wrapper is a THIRD export artifact and drifts like the
+    # other two. It is read here rather than in a separate gate because "the export matches the
+    # bank" is one question, and splitting it across two gates is how two answers appear.
+    batch_path = envdir / (Path(bank_path).stem + ".batch.json")
+    batch = None
+    if batch_path.exists():
+        try:
+            batch = json.loads(batch_path.read_text(encoding="utf-8"))
+        except Exception as e:  # noqa: BLE001
+            return None, None, f"{batch_path.as_posix()} is unreadable: {e}"
     sing = {}
     if single.exists():
         for f in sorted(single.glob(prefix + "*.json")):
@@ -1547,7 +1557,7 @@ def load_envelope_index(bank_path, qids):
             qid = (e.get("payload") or {}).get("qid")
             if qid:
                 sing[qid] = e.get("payload")
-    return sing, arr, None
+    return sing, arr, batch, None
 
 
 def g_envelope_sync(bank, ctx):
@@ -1586,9 +1596,10 @@ def g_envelope_sync(bank, ctx):
     errs, rep = [], []
     items = {q.get("qid"): q for q in bank.get("questions", [])}
     if "envelope_index" in ctx:
-        sing, arr, note = ctx["envelope_index"]
+        idx = ctx["envelope_index"]
+        sing, arr, batch, note = idx if len(idx) == 4 else (idx[0], idx[1], None, idx[2])
     else:
-        sing, arr, note = load_envelope_index(ctx.get("bank_path"), set(items))
+        sing, arr, batch, note = load_envelope_index(ctx.get("bank_path"), set(items))
     if note:
         return [], [note]
 
@@ -1616,10 +1627,53 @@ def g_envelope_sync(bank, ctx):
         errs.append(f"the array and single/ disagree with EACH OTHER — array {len(arr)}, "
                     f"single/ {len(sing)}. They are written by different scripts and one was "
                     f"regenerated without the other")
+    # --- the v1.1 batch wrapper (CD-143) ------------------------------------------------
+    if batch is None:
+        rep.append("no `.batch.json` beside this export — contract v1.1's wrapper has not been "
+                   "built for this bank. REPORTED, not failed: an unrun step is not drift "
+                   "(SOURCE_POLICY §7.17)")
+    else:
+        b = batch.get("batch") or {}
+        bitems = batch.get("items")
+        if not isinstance(bitems, list):
+            errs.append("batch: `items` is absent or not an array — the wrapper carries no payload "
+                        "and the Hub rejects it whole (contract v1.1)")
+            bitems = []
+        bq = [(e.get("payload") or {}).get("qid") for e in bitems if isinstance(e, dict)]
+        missing = sorted(set(items) - set(bq))
+        orphan = sorted(set(bq) - set(items))
+        if missing:
+            errs.append(f"batch: {len(missing)} bank item(s) absent from the wrapper — the batch "
+                        f"is BEHIND the bank: {', '.join(missing[:8])}"
+                        + (f" … +{len(missing)-8} more" if len(missing) > 8 else ""))
+        if orphan:
+            errs.append(f"batch: {len(orphan)} wrapper item(s) have no bank item — RETIRED content "
+                        f"in the export: {', '.join(orphan[:8])}"
+                        + (f" … +{len(orphan)-8} more" if len(orphan) > 8 else ""))
+        declared = b.get("item_count")
+        if declared != len(bitems):
+            errs.append(f"batch: `item_count` {declared} != items length {len(bitems)} — the Hub "
+                        f"rejects this WHOLE and imports nothing (harness L1b). A wrapper that "
+                        f"misdescribes itself is worse than a missing one: it looks importable")
+        want = bank_content_digest(list(items.values()))
+        got = b.get("digest")
+        if got is not None and got != want:
+            errs.append(f"batch: `digest` {str(got)[:12]} != the bank's {want[:12]} — the wrapper "
+                        f"describes a DIFFERENT bank than the one on disk. The contract does not "
+                        f"recompute this at import (it is an audit field), so NOTHING DOWNSTREAM "
+                        f"CATCHES IT — which is exactly why it is checked here")
+        if batch.get("doc_type") != "question_batch":
+            errs.append(f"batch: doc_type is {batch.get('doc_type')!r}, not `question_batch`")
+        if batch.get("envelope_version") != "1.0":
+            errs.append(f"batch: envelope_version is {batch.get('envelope_version')!r}; the "
+                        f"contract's const is \"1.0\" — the DOCUMENT is v1.1, the WIRE VALUE is not")
+
     if not errs:
         rep.append(f"export in sync: {len(sing or arr)} envelope(s) == {len(items)} bank item(s), "
-                   f"ids and payloads, array and single/ (digest "
-                   f"{bank_content_digest(list(items.values()))[:12]})")
+                   f"ids and payloads, array and single/"
+                   + (f", and the v1.1 batch wrapper at item_count "
+                      f"{(batch.get('batch') or {}).get('item_count')}" if batch else "")
+                   + f" (digest {bank_content_digest(list(items.values()))[:12]})")
     return errs, rep
 
 
@@ -2771,7 +2825,17 @@ def _qp_ctx():
             # in sync by construction. Every seed then mutates the BANK and the drift appears by
             # itself — which is the real failure mode. Nobody edits an envelope by hand; the bank
             # moves and the export is left behind.
-            "envelope_index": (_qp_envelopes(), _qp_envelopes(), None)}
+            "envelope_index": (_qp_envelopes(), _qp_envelopes(), _qp_batch(), None)}
+
+
+def _qp_batch():
+    """A contract-v1.1 wrapper over the fixture bank — in sync by construction, exactly as
+    `build_batch.py` would emit it. Four keys, `envelope_version` "1.0" not "1.1"."""
+    qs = _qp_good_bank()["questions"]
+    return {"envelope_version": "1.0", "doc_type": "question_batch",
+            "batch": {"bank_id": "SYNTH_Bank", "bank_version": "v1", "item_count": len(qs),
+                      "digest": bank_content_digest(qs)},
+            "items": [{"payload": json.loads(json.dumps(q))} for q in qs]}
 
 
 def _qp_envelopes():
@@ -3044,6 +3108,68 @@ def qp_selftest():
              "tables are gone and nothing else is being read"
              if moved else "a register edit did NOT move the verdict — a second mark source survives"))
     ok = ok and moved
+
+    # --- the two batch failures that a BANK mutation cannot express, because they live in the
+    # --- WRAPPER's own self-description rather than in its items. Both are asserted directly.
+    print()
+    import copy as _copy
+    good = _qp_good_bank()
+
+    bad_count = _copy.deepcopy(_qp_batch())
+    bad_count["batch"]["item_count"] = 99
+    c1 = dict(ctx); c1["envelope_index"] = (_qp_envelopes(), _qp_envelopes(), bad_count, None)
+    e1, _ = g_envelope_sync(good, c1)
+    ok_count = any("item_count" in e for e in e1)
+    print(f"  {'PASS' if ok_count else 'FAIL'}  ENVELOPE-SYNC  "
+          + ("fires on: a wrapper whose item_count misdescribes its own items — the Hub rejects "
+             "that WHOLE and imports nothing, so a wrapper that lies about itself is worse than a "
+             "missing one: it looks importable" if ok_count else f"item_count seed did not fire: {e1}"))
+    ok = ok and ok_count
+
+    behind = _copy.deepcopy(_qp_batch())
+    behind["items"].pop()
+    behind["batch"]["item_count"] = len(behind["items"])   # self-consistent, still behind the bank
+    c0 = dict(ctx); c0["envelope_index"] = (_qp_envelopes(), _qp_envelopes(), behind, None)
+    e0, _ = g_envelope_sync(good, c0)
+    ok_behind = any("absent from the wrapper" in e for e in e0)
+    print(f"  {'PASS' if ok_behind else 'FAIL'}  ENVELOPE-SYNC  "
+          + ("fires on: a wrapper BEHIND the bank while array and single/ are current — the third "
+             "artifact drifts on its own, and it is internally consistent while doing so"
+             if ok_behind else f"behind-batch seed did not fire: {e0}"))
+    ok = ok and ok_behind
+
+    orphaned = _copy.deepcopy(_qp_batch())
+    orphaned["items"].append({"payload": {"qid": "QP-BAN-C5-U99-Q95"}})
+    orphaned["batch"]["item_count"] = len(orphaned["items"])
+    cO = dict(ctx); cO["envelope_index"] = (_qp_envelopes(), _qp_envelopes(), orphaned, None)
+    eO, _ = g_envelope_sync(good, cO)
+    ok_orphan = any("RETIRED content" in e for e in eO)
+    print(f"  {'PASS' if ok_orphan else 'FAIL'}  ENVELOPE-SYNC  "
+          + ("fires on: a wrapper carrying an item the bank no longer has — the silent half of the "
+             "wave-2 defect, now in the file the Hub actually reads"
+             if ok_orphan else f"orphan-batch seed did not fire: {eO}"))
+    ok = ok and ok_orphan
+
+    bad_digest = _copy.deepcopy(_qp_batch())
+    bad_digest["batch"]["digest"] = "0" * 64
+    c2 = dict(ctx); c2["envelope_index"] = (_qp_envelopes(), _qp_envelopes(), bad_digest, None)
+    e2, _ = g_envelope_sync(good, c2)
+    ok_digest = any("digest" in e for e in e2)
+    print(f"  {'PASS' if ok_digest else 'FAIL'}  ENVELOPE-SYNC  "
+          + ("fires on: a wrapper describing a DIFFERENT bank than the one on disk. The contract "
+             "does NOT recompute digest at import — it is an audit field — so nothing downstream "
+             "catches this, which is precisely why it is caught here"
+             if ok_digest else f"digest seed did not fire: {e2}"))
+    ok = ok and ok_digest
+
+    c3 = dict(ctx); c3["envelope_index"] = (_qp_envelopes(), _qp_envelopes(), None, None)
+    e3, r3 = g_envelope_sync(good, c3)
+    ok_absent = (not e3) and any("has not been built" in r for r in r3)
+    print(f"  {'PASS' if ok_absent else 'FAIL'}  ENVELOPE-SYNC  "
+          + ("stays quiet on: no `.batch.json` at all — an unrun step is not drift, and failing "
+             "there would fire on every bank exported before v1.1 (SOURCE_POLICY §7.17)"
+             if ok_absent else f"absent-batch case wrong: errs={e3}"))
+    ok = ok and ok_absent
 
     # --- CD-138(b): THE MARKER-EDIT SEED. A gate whose verdict moves when a marker string is
     # --- edited is non-conformant. Here the whole of the register's PROSE — the fields that
