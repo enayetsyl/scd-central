@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-09",
+    "bloom_level": "Analyze",
+    "difficulty": "medium",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q52",
+    "topic_tag": "TOP-BAN-C5-09",
+    "ref19_topic_id": "BAN-DRAMA",
+    "question_text": "নাটকটিতে বাঘের অত্যাচার ও তার পরিণতি বর্ণনা করো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "অন্যায় ও তার পরিণতিকে কার্যকারণে যুক্ত করে দেখানো, এবং প্রতিশোধস্পৃহা নয় বরং অন্যায়ের স্বাভাবিক পরিণতি হিসেবে ঘটনাটি পড়া",
+          "band_descriptors": {
+            "সম্পূর্ণ": "বাঘের নির্বিচার হত্যা ও তার লোভের কথা এসেছে, আর শেষে নিজের ছায়ার পেছনে ছুটে ডুবে মরার পরিণতি এসেছে; ভাষায় হিংসা বা উল্লাস প্রকাশ পায়নি।",
+            "আংশিক": "কেবল অত্যাচারের বর্ণনা বা কেবল পরিণতি এসেছে; অথবা মৃত্যুকে উপভোগের সুরে লেখা হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-09",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q58",
+    "topic_tag": "TOP-BAN-C5-09",
+    "ref19_topic_id": "BAN-DRAMA",
+    "question_text": "খরগোশের কাজ থেকে তুমি কী শিক্ষা নেবে? যুক্তি দিয়ে নিজের কথায় লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "নিজের জীবন রক্ষার অধিকার ও বুদ্ধির সদ্ব্যবহার — দুটিকেই ইতিবাচকভাবে ধরা, এবং ছলনাকে সাধারণ অভ্যাস হিসেবে গ্রহণ না করা",
+          "band_descriptors": {
+            "সম্পূর্ণ": "অন্তত দুটি শিক্ষা নিজের ভাষায় লেখা হয়েছে — যেমন বুদ্ধির সদ্ব্যবহার ও নিজের প্রাণ রক্ষার অধিকার — এবং প্রতিটির পক্ষে পাঠ থেকে যুক্তি দেওয়া হয়েছে।",
+            "আংশিক": "একটিমাত্র শিক্ষা যুক্তি ছাড়া লেখা হয়েছে; অথবা ঠকানোই বুদ্ধি জাতীয় ভুল সিদ্ধান্ত এসেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

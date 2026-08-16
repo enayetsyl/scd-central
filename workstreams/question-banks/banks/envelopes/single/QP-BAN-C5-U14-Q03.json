@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-01",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q03",
+    "topic_tag": "TOP-BAN-C5-01",
+    "ref19_topic_id": "BAN-VOCAB",
+    "question_text": "'কুপোকাত' নাটকে ব্যবহৃত 'উল্লসিত' শব্দের অর্থ লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "answer_key": {
+      "accepted": [
+        "খুশি",
+        "আনন্দিত"
+      ]
+    }
+  }
+}

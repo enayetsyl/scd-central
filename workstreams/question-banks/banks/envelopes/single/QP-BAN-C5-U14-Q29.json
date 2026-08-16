@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-09",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q29",
+    "topic_tag": "TOP-BAN-C5-09",
+    "ref19_topic_id": "BAN-DRAMA",
+    "question_text": "বাঘের সঙ্গে আপস-রফা কে করেছিল?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "শেয়াল",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "খরগোশ",
+        "is_correct": false,
+        "why_wrong": "খরগোশ পরে বুদ্ধি খাটায়, কিন্তু আপস-রফা সে করেনি।"
+      },
+      {
+        "option_id": "গ",
+        "text": "শজারু",
+        "is_correct": false,
+        "why_wrong": "শজারু নিজের কাঁটার অজুহাত দিয়েছিল, রফা করেনি।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "ময়ূর",
+        "is_correct": false,
+        "why_wrong": "ময়ূর নিজের সৌন্দর্যের অজুহাত দিয়েছিল, রফা করেনি।"
+      }
+    ]
+  }
+}

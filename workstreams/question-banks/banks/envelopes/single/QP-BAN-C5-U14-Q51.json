@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-09",
+    "bloom_level": "Analyze",
+    "difficulty": "medium",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q51",
+    "topic_tag": "TOP-BAN-C5-09",
+    "ref19_topic_id": "BAN-DRAMA",
+    "question_text": "'কুপোকাত' নাটকের কাহিনি নিজের ভাষায় সংক্ষেপে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "পাঠের ঘটনাগুলো ক্রম অনুযায়ী নিজের ভাষায় সাজানো, এবং কাহিনিকে রূপক গল্প হিসেবেই উপস্থাপন করা — পশুকে মানুষের মতো করে দেখানো হলেও তা যেন বাস্তব দাবি হিসেবে না লেখা হয়",
+          "band_descriptors": {
+            "সম্পূর্ণ": "বাঘের অত্যাচার, শেয়ালের রফা, খরগোশের অস্বীকার, বুদ্ধি খাটানো ও বাঘের কুয়ায় ঝাঁপ — অন্তত পাঁচটি ধাপ ক্রমে এসেছে, নিজের ভাষায়, পাঠে নেই এমন কিছু যোগ করা হয়নি।",
+            "আংশিক": "দু-তিনটি ধাপ এসেছে বা ক্রম উল্টে গেছে; অথবা পাঠে নেই এমন ঘটনা ঢুকেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

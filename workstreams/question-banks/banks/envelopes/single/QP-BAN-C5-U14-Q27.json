@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-01",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q27",
+    "topic_tag": "TOP-BAN-C5-01",
+    "ref19_topic_id": "BAN-VOCAB",
+    "question_text": "'কুপোকাত' শব্দের অর্থ কী?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "পরাজিত",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "বিজয়ী",
+        "is_correct": false,
+        "why_wrong": "নাটকে বাঘই পরাজিত হয়, তাই শব্দটি বিজয়ের অর্থ বহন করে না।"
+      },
+      {
+        "option_id": "গ",
+        "text": "সুরভিত",
+        "is_correct": false,
+        "why_wrong": "'সুরভি' মানে সুবাস — সেটি আলাদা শব্দ, অর্থ জেনে নিই তালিকায় আছে।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "ক্ষুদ্রকায়",
+        "is_correct": false,
+        "why_wrong": "'ক্ষুদ্রকায়' মানে ছোটো আকৃতির, পরাজয়ের সঙ্গে এর সম্পর্ক নেই।"
+      }
+    ]
+  }
+}

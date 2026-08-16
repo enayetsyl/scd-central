@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-09",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q57",
+    "topic_tag": "TOP-BAN-C5-09",
+    "ref19_topic_id": "BAN-DRAMA",
+    "question_text": "শেয়ালের করা আপস-রফা কি ঠিক ছিল? তোমার নিজের মত যুক্তিসহ লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "নিজের মত যুক্তি দিয়ে দাঁড় করানো, আর নিরপরাধ প্রাণ বিসর্জনের প্রশ্নটিকে হালকা করে না দেখা — প্রাণের মর্যাদা যুক্তির কেন্দ্রে থাকা চাই",
+          "band_descriptors": {
+            "সম্পূর্ণ": "একটি স্পষ্ট অবস্থান নেওয়া হয়েছে এবং অন্তত দুটি যুক্তি পাঠ থেকে দেওয়া হয়েছে; নিরপরাধের প্রাণহানির দিকটি বিবেচনায় এসেছে।",
+            "আংশিক": "অবস্থান আছে কিন্তু যুক্তি নেই, বা যুক্তি পাঠের বাইরে থেকে বানানো; অথবা প্রাণহানিকে তুচ্ছ করে দেখানো হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

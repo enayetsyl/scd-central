@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-09",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q34",
+    "topic_tag": "TOP-BAN-C5-09",
+    "ref19_topic_id": "BAN-DRAMA",
+    "question_text": "নাটকটি থেকে যে শিক্ষা সবচেয়ে স্পষ্টভাবে পাওয়া যায়, তা কোনটি?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "বুদ্ধির জোরে অন্যায়ের পরাজয় ঘটে",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "শক্তিমানের সঙ্গে কখনো কথা বলতে নেই",
+        "is_correct": false,
+        "why_wrong": "খরগোশ বাঘের সঙ্গে কথা বলেই কাজ হাসিল করে।"
+      },
+      {
+        "option_id": "গ",
+        "text": "দল বেঁধে থাকলেই বিপদ কাটে",
+        "is_correct": false,
+        "why_wrong": "দল বেঁধে থাকা সত্ত্বেও সভা কোনো সমাধান দিতে পারেনি।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "সুন্দর চেহারাই বড় রক্ষাকবচ",
+        "is_correct": false,
+        "why_wrong": "ময়ূরের সৌন্দর্য তাকে কোনো রক্ষা দেয়নি, সেটি ছিল অজুহাত।"
+      }
+    ]
+  }
+}

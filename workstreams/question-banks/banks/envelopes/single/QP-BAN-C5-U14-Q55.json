@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-09",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q55",
+    "topic_tag": "TOP-BAN-C5-09",
+    "ref19_topic_id": "BAN-DRAMA",
+    "question_text": "নাটকটির নাম 'কুপোকাত' কেন যথার্থ হয়েছে — ব্যাখ্যা করো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "শিরোনামের শব্দার্থকে কাহিনির পরিণতির সঙ্গে মিলিয়ে দেখা, এবং পরাজয়কে অন্যায়ের পরিণতি হিসেবে পড়া — কারও ব্যক্তিগত হার হিসেবে নয়",
+          "band_descriptors": {
+            "সম্পূর্ণ": "কুপোকাত মানে পরাজিত বা ধরাশায়ী — এই অর্থ ধরে বাঘের পতনের সঙ্গে শিরোনাম মিলিয়ে দেখানো হয়েছে, এবং শেষ ছড়াটির প্রসঙ্গ এসেছে।",
+            "আংশিক": "কেবল শব্দের অর্থ লেখা হয়েছে, কাহিনির সঙ্গে যোগ করা হয়নি; অথবা যোগটি ভাসা-ভাসা।"
+          }
+        }
+      ]
+    }
+  }
+}

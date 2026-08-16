@@ -1,0 +1,43 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-09",
+    "bloom_level": "Analyze",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q47",
+    "topic_tag": "TOP-BAN-C5-09",
+    "ref19_topic_id": "BAN-DRAMA",
+    "question_text": "খরগোশ কীসের জোরে বাঘের হাত থেকে রক্ষা পেল? বুঝিয়ে লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Analyze",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "answer_key": {
+      "accepted": [
+        "বুদ্ধির জোরে — সে বাঘকে অন্য বাঘের কথা বলে কুয়ার কাছে নিয়ে গিয়ে নিজের ছায়ায় ঝাঁপ দেওয়ায়"
+      ]
+    }
+  }
+}

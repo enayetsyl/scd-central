@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 14,
+    "title": "পাঠ ১৪ — কুপোকাত"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-09",
+    "bloom_level": "Analyze",
+    "difficulty": "medium",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U14_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U14-Q53",
+    "topic_tag": "TOP-BAN-C5-09",
+    "ref19_topic_id": "BAN-DRAMA",
+    "question_text": "'কুপোকাত' নাটকে খরগোশের বুদ্ধির পরিচয় দাও।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৪ — কুপোকাত",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "বুদ্ধিকে দুর্বলের আত্মরক্ষার উপায় হিসেবে দেখা, আর ছলনাকে সাধারণ নিয়ম হিসেবে প্রশংসা না করা — এটি বিপন্ন প্রাণ বাঁচানোর একটি কাহিনি-কৌশল",
+          "band_descriptors": {
+            "সম্পূর্ণ": "খরগোশের তিনটি ধাপ — দেরি করা, কান্নার ছুতোয় অন্য বাঘের কথা বলা, কুয়ার কাছে নিয়ে যাওয়া — স্পষ্টভাবে এসেছে এবং বুদ্ধির ভূমিকা ব্যাখ্যা করা হয়েছে।",
+            "আংশিক": "কেবল ঘটনা বলা হয়েছে, বুদ্ধির ভূমিকা ব্যাখ্যা হয়নি; অথবা ছলনাকে সাধারণভাবে ভালো বলে উপস্থাপন করা হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}
