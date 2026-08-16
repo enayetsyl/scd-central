@@ -11,7 +11,7 @@
   "curation_tag": "FLEXIBLE",
   "review_status": "draft",
   "tags": {
-    "topic_tag": "TOP-BAN-C5-02",
+    "topic_tag": "TOP-BAN-C5-13",
     "bloom_level": "Apply",
     "difficulty": "easy",
     "paper_role": "short"
@@ -24,7 +24,7 @@
   },
   "payload": {
     "qid": "QP-BAN-C5-U13-Q90",
-    "topic_tag": "TOP-BAN-C5-02",
+    "topic_tag": "TOP-BAN-C5-13",
     "ref19_topic_id": "BAN-SENTENCE",
     "question_text": "'পাঠে আমার মন বসে না কাঁঠালচাঁপার গন্ধে' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
     "question_type": "short_answer",

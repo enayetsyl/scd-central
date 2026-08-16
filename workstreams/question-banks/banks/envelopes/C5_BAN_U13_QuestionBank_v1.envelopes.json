@@ -2368,7 +2368,7 @@
     "curation_tag": "FLEXIBLE",
     "review_status": "draft",
     "tags": {
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "bloom_level": "Apply",
       "difficulty": "medium",
       "paper_role": "short"
@@ -2381,7 +2381,7 @@
     },
     "payload": {
       "qid": "QP-BAN-C5-U13-Q57",
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "ref19_topic_id": "BAN-SENTENCE",
       "question_text": "'আব্বা বলেন মন দে' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
       "question_type": "short_answer",
@@ -2412,7 +2412,7 @@
     "curation_tag": "FLEXIBLE",
     "review_status": "draft",
     "tags": {
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "bloom_level": "Apply",
       "difficulty": "medium",
       "paper_role": "short"
@@ -2425,7 +2425,7 @@
     },
     "payload": {
       "qid": "QP-BAN-C5-U13-Q58",
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "ref19_topic_id": "BAN-SENTENCE",
       "question_text": "'সবাই যখন ঘুমিয়ে পড়ে কর্ণফুলীর কূলটায়' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
       "question_type": "short_answer",
@@ -2456,7 +2456,7 @@
     "curation_tag": "FLEXIBLE",
     "review_status": "draft",
     "tags": {
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "bloom_level": "Apply",
       "difficulty": "medium",
       "paper_role": "short"
@@ -2469,7 +2469,7 @@
     },
     "payload": {
       "qid": "QP-BAN-C5-U13-Q59",
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "ref19_topic_id": "BAN-SENTENCE",
       "question_text": "'আমি না হয় পাখিই হব পাখির মতো বন্য' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
       "question_type": "short_answer",
@@ -2500,7 +2500,7 @@
     "curation_tag": "FLEXIBLE",
     "review_status": "draft",
     "tags": {
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "bloom_level": "Apply",
       "difficulty": "medium",
       "paper_role": "short"
@@ -2513,7 +2513,7 @@
     },
     "payload": {
       "qid": "QP-BAN-C5-U13-Q60",
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "ref19_topic_id": "BAN-SENTENCE",
       "question_text": "'আম্মা বলেন পড়রে সোনা' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
       "question_type": "short_answer",
@@ -2545,7 +2545,7 @@
     "curation_tag": "FLEXIBLE",
     "review_status": "draft",
     "tags": {
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "bloom_level": "Apply",
       "difficulty": "medium",
       "paper_role": "short"
@@ -2558,7 +2558,7 @@
     },
     "payload": {
       "qid": "QP-BAN-C5-U13-Q61",
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "ref19_topic_id": "BAN-SENTENCE",
       "question_text": "'কেমন করে শহর ছেড়ে সবুজ গাঁয়ে ঘুরব' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
       "question_type": "short_answer",
@@ -3681,7 +3681,7 @@
     "curation_tag": "FLEXIBLE",
     "review_status": "draft",
     "tags": {
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "bloom_level": "Apply",
       "difficulty": "medium",
       "paper_role": "short"
@@ -3694,7 +3694,7 @@
     },
     "payload": {
       "qid": "QP-BAN-C5-U13-Q89",
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "ref19_topic_id": "BAN-SENTENCE",
       "question_text": "'তোমরা যখন শিখছ পড়া মানুষ হওয়ার জন্য' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
       "question_type": "short_answer",
@@ -3725,7 +3725,7 @@
     "curation_tag": "FLEXIBLE",
     "review_status": "draft",
     "tags": {
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "bloom_level": "Apply",
       "difficulty": "easy",
       "paper_role": "short"
@@ -3738,7 +3738,7 @@
     },
     "payload": {
       "qid": "QP-BAN-C5-U13-Q90",
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "ref19_topic_id": "BAN-SENTENCE",
       "question_text": "'পাঠে আমার মন বসে না কাঁঠালচাঁপার গন্ধে' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
       "question_type": "short_answer",
@@ -3769,7 +3769,7 @@
     "curation_tag": "FLEXIBLE",
     "review_status": "draft",
     "tags": {
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "bloom_level": "Apply",
       "difficulty": "easy",
       "paper_role": "short"
@@ -3782,7 +3782,7 @@
     },
     "payload": {
       "qid": "QP-BAN-C5-U13-Q91",
-      "topic_tag": "TOP-BAN-C5-02",
+      "topic_tag": "TOP-BAN-C5-13",
       "ref19_topic_id": "BAN-SENTENCE",
       "question_text": "'কবি কোথায় লুকিয়ে থাকতে চান' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো।",
       "question_type": "short_answer",
