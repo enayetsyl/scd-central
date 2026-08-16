@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 16,
+    "title": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-14",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U16_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U16-Q38",
+    "topic_tag": "TOP-BAN-C5-14",
+    "ref19_topic_id": "BAN-BIOGRAPHY",
+    "question_text": "২৫শে মার্চ রাতে যেসব জায়গায় আক্রমণ চালানো হয়, সেগুলো সম্পর্কে কোন কথাটি ঠিক?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "তিনটিই ঢাকার ভেতরের জায়গা, কোনোটিই যুদ্ধক্ষেত্র নয়",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "সবই ছিল যুদ্ধক্ষেত্র",
+        "is_correct": false,
+        "why_wrong": "পাঠে নাম করা জায়গাগুলো যুদ্ধক্ষেত্র নয়, মানুষের বসবাস ও পড়ার জায়গা।"
+      },
+      {
+        "option_id": "গ",
+        "text": "সবই ছিল শহরের বাইরে",
+        "is_correct": false,
+        "why_wrong": "জায়গাগুলো ঢাকার ভেতরেই।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "কেবল বিশ্ববিদ্যালয়ে আক্রমণ হয়",
+        "is_correct": false,
+        "why_wrong": "পুলিশ ব্যারাক ও আবাসিক এলাকার কথাও পাঠে আছে।"
+      }
+    ]
+  }
+}

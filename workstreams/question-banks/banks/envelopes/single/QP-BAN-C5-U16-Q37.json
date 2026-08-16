@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 16,
+    "title": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-14",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U16_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U16-Q37",
+    "topic_tag": "TOP-BAN-C5-14",
+    "ref19_topic_id": "BAN-BIOGRAPHY",
+    "question_text": "মিরপুর ও রায়ের বাজারের বধ্যভূমির কথা পাঠে কেন এসেছে?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "দেশ স্বাধীন হওয়ার পর সেখানে অনেকের লাশ পাওয়া যায়",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "সেখানে ২৫শে মার্চের আক্রমণ শুরু হয়",
+        "is_correct": false,
+        "why_wrong": "আক্রমণ শুরু হয় ছাত্রাবাস, পুলিশ ব্যারাক ও আবাসিক এলাকায়।"
+      },
+      {
+        "option_id": "গ",
+        "text": "সেখানে সাধনা ঔষধালয় ছিল",
+        "is_correct": false,
+        "why_wrong": "ঔষধালয়ের অবস্থান পাঠে বলা হয়নি।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "সেখানে ভাষার দাবি তোলা হয়",
+        "is_correct": false,
+        "why_wrong": "ভাষার দাবি তোলা হয় পাকিস্তান গণপরিষদে।"
+      }
+    ]
+  }
+}

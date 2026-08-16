@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 16,
+    "title": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-13",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U16_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U16-Q81",
+    "topic_tag": "TOP-BAN-C5-13",
+    "ref19_topic_id": "BAN-SENTENCE",
+    "question_text": "'কী ভয়ংকর রাত ছিল সেটি' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে আবার লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা",
+    "answer_key": {
+      "accepted": [
+        "কী ভয়ংকর রাত ছিল সেটি!"
+      ],
+      "model_note": "বিস্ময় প্রকাশ পেয়েছে, তাই শেষে বিস্ময়চিহ্ন।"
+    }
+  }
+}

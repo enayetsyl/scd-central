@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 16,
+    "title": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-14",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U16_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U16-Q36",
+    "topic_tag": "TOP-BAN-C5-14",
+    "ref19_topic_id": "BAN-BIOGRAPHY",
+    "question_text": "পাঠে বলা হয়েছে প্রাণ দিয়েছেন 'সর্বস্তরের মানুষ' — এই কথায় কী বোঝানো হয়েছে?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "কৃষক-শ্রমিক থেকে শিক্ষক-ছাত্র পর্যন্ত সব শ্রেণি-পেশার মানুষ",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "কেবল সৈনিক ও পুলিশ",
+        "is_correct": false,
+        "why_wrong": "সৈনিক ও পুলিশ তালিকার অংশ মাত্র, পুরো তালিকা নয়।"
+      },
+      {
+        "option_id": "গ",
+        "text": "কেবল ঢাকা শহরের মানুষ",
+        "is_correct": false,
+        "why_wrong": "কথাটি স্তরের, এলাকার নয়।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "কেবল শিক্ষক ও ছাত্র",
+        "is_correct": false,
+        "why_wrong": "তালিকায় কৃষক, শ্রমিক, নারী ও শিশুর কথাও আছে।"
+      }
+    ]
+  }
+}

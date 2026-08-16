@@ -1,0 +1,46 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 16,
+    "title": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-14",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U16_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U16-Q27",
+    "topic_tag": "TOP-BAN-C5-14",
+    "ref19_topic_id": "BAN-BIOGRAPHY",
+    "question_text": "'নূতনচন্দ্র সিংহ ছিলেন চট্টগ্রামের বিখ্যাত ______।' — শূন্যস্থান পূরণ করো।",
+    "question_type": "fill_blank",
+    "paper_role": "short",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা",
+    "blanks": [
+      {
+        "blank_no": 1,
+        "accepted": [
+          "সমাজসেবক"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 16,
+    "title": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-14",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U16_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U16-Q56",
+    "topic_tag": "TOP-BAN-C5-14",
+    "ref19_topic_id": "BAN-BIOGRAPHY",
+    "question_text": "২৫শে মার্চ রাতে বেছে নেওয়া জায়গাগুলো — ছাত্রাবাস, পুলিশ ব্যারাক, আবাসিক এলাকা — বিশ্লেষণ করে দেখাও আক্রমণটি কাদের ওপর ছিল।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা",
+    "answer_key": {
+      "accepted": [
+        "তিনটিই ঢাকার ভেতরের জায়গা — পড়ার, কাজের ও বসবাসের — কোনোটিই যুদ্ধক্ষেত্র নয়। উৎস বলছে আক্রমণ চলেছে নিরস্ত্র ও ঘুমন্ত মানুষের ওপর, কোনো লড়াইয়ের ময়দানে নয়।"
+      ],
+      "model_note": "মূল তথ্য ও ভাবটি ধরা পড়লেই পূর্ণ নম্বর; শব্দে শব্দে মিল থাকা জরুরি নয়।"
+    }
+  }
+}

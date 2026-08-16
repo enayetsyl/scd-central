@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 16,
+    "title": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-14",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U16_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U16-Q64",
+    "topic_tag": "TOP-BAN-C5-14",
+    "ref19_topic_id": "BAN-BIOGRAPHY",
+    "question_text": "যোগেশচন্দ্র ঘোষ, রণদাপ্রসাদ সাহা ও নূতনচন্দ্র সিংহ — তিনজনের সমাজসেবার পরিচয় লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "তিনজনের অবদান আলাদা করে চেনা ও মিলটি দেখানো — সেবাকে মানুষের উপকার হিসেবে দেখানো, ব্যক্তিপূজার সুরে নয়",
+          "band_descriptors": {
+            "সম্পূর্ণ": "ঔষধালয় প্রতিষ্ঠা, দানশীলতা ও সমাজসেবা — তিনটি অবদানই আলাদা করে লেখা হয়েছে এবং তিনজনের কাজের মিল দেখানো হয়েছে; ভাষা সংযত ও তথ্যনিষ্ঠ।",
+            "আংশিক": "একজন বা দুজনের কথা লেখা হয়েছে; অথবা অবদান না লিখে কেবল পরিচয় দেওয়া হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

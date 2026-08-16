@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 16,
+    "title": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-14",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "v1",
+    "source_filename": "C5_BAN_U16_QuestionBank_v1.json"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U16-Q61",
+    "topic_tag": "TOP-BAN-C5-14",
+    "ref19_topic_id": "BAN-BIOGRAPHY",
+    "question_text": "১৯৭১ সালের ২৫শে মার্চ রাতের ঘটনা ধারাবাহিকভাবে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "ঘটনার ক্রম ও স্থান পাঠ থেকে ঠিকভাবে তুলে আনা — তথ্য হিসেবে ইতিহাস লেখা, কোনো আচার-অনুষ্ঠান বা শ্রদ্ধা নিবেদনের বর্ণনায় না গিয়ে",
+          "band_descriptors": {
+            "সম্পূর্ণ": "রাত, আক্রমণকারী, আক্রান্ত জায়গা (ছাত্রাবাস · পুলিশ ব্যারাক · আবাসিক এলাকা) ও নয় মাস ধরে চলা হত্যাকাণ্ড — সব কটি ধাপ ক্রম মেনে লেখা হয়েছে; ভাষা সংযত এবং কেবল পাঠের তথ্যই ব্যবহৃত হয়েছে।",
+            "আংশিক": "দু-একটি ধাপ বাদ পড়েছে বা ক্রম গুলিয়ে গেছে; অথবা পাঠে নেই এমন তথ্য যোগ হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}
