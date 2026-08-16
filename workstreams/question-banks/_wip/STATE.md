@@ -2,34 +2,34 @@
 
 | Field | Value |
 |---|---|
-| Current build | **পাঠ ১৪ (কুপোকাত) authored, 84 items, suite CLEAN.** First bank authored end-to-end under `CD-141`. Four export artifacts in sync — array · `single/` · **`.batch.json`** — all carrying digest `831c54c1aa7d`. পাঠ ১৩ (110, digest `e76631e34fa0`) and পাঠ ২১ re-run CLEAN, no regression. |
-| Phase | **`CD-141`'s DRY RUN — this session IS it**, run with the Principal in the loop per (h). Handover to unattended use is his call, not the agent's. |
-| Last completed step | Build + log commits pushed under `CD-141`. **The root `SESSION_LOG.md` block is NOT pushed — see the blocker row.** |
-| Next step | The Principal rules on the two items in the blocker row, and on whether `CD-141` handover opens. |
-| Blockers / open PENDING-P tags | **`CD-141(a)` vs `CD-141(b)` CONTRADICT EACH OTHER ON ROOT `SESSION_LOG.md`** — see below, STOPPED and reported, nothing pushed. · **`PENDING-P-038` RAISED** (nothing checks a slot is admitted by ANY chapter) — FLAGGED-not-OPEN. · **`PENDING-P-008` FLAGGED** — REF-19 has no punctuation slug; পাঠ ১৪'s six S11 items ride `BAN-SENTENCE` under `TOP-BAN-C5-13`, the established choice. |
+| Current build | **পাঠ ১৪ (কুপোকাত) 84 items, digest `831c54c1aa7d` · পাঠ ১৩ 110 items, digest `22ae7c4f299a` after `QB-CR-014`'s eight-tag correction.** Both suites CLEAN, both exports in sync across array · `single/` · `.batch.json`. পাঠ ২১ CLEAN, untouched. |
+| Phase | **`CD-141` dry run COMPLETE and its one defect ruled (`CD-144`).** Handover to unattended use remains the Principal's call, not the agent's. |
+| Last completed step | `677cc62` ruling (CD-144) · `775b5cd` log (পাঠ ১৪ block appended) · `21f3445` corrections (QB-CR-014, eight tags + export) · `c1a3ccc` build (signature re-pinned) · this file. Session run OUTSIDE the teacher lane on normal approval. |
+| Next step | The Principal's call on `CD-141` handover. Then the next chapter, or পাঠ ১৪ wave 2 against the content named in that bank's `gaps`. |
+| Blockers / open PENDING-P tags | **None outstanding from this session** — the CD-141 contradiction is ruled at `CD-144`. · **`PENDING-P-038` RAISED** (nothing checks a slot is admitted by ANY chapter) — FLAGGED-not-OPEN. · **`PENDING-P-008` FLAGGED** — REF-19 has no punctuation slug; পাঠ ১৪'s six S11 items ride `BAN-SENTENCE` under `TOP-BAN-C5-13`, the established choice. |
 | Files in `_wip` awaiting "done" | this file · `U13_BLOOM_PROBE_2026-08-15.md` · `U13_ADMISSIBILITY_DRAFT_2026-08-15.md` · `BAN_C1-C4_REGISTER_BLOCKED_2026-08-15.md` · `U13_REVIEW_SHEET_2026-08-15.md` · `RULING_DRAFTS_teacher-lane_2026-08-15.md` |
 
-## THE BLOCKER — `CD-141` cannot log its own session, and the row contradicts itself saying so
+## RESOLVED — `CD-144` amends `CD-141(b)`, and the dry run is what found the defect
 
-**`CD-141(a)` pre-approves the `log` class. `CD-141(b)` confines every authorized commit to
-`workstreams/question-banks/`. Root `SESSION_LOG.md` is `log` class at a root path** — class
-pre-approved, path not — and **(b) is imperative about exactly that case**: *"A commit whose CLASS
-is pre-approved but whose PATH is not — or the reverse — is NOT authorized and the agent stops."*
+**The blocker this file carried on 2026-08-16 is closed.** `CD-141(a)` pre-approved the `log`
+class while `CD-141(b)` confined every authorized commit to `workstreams/question-banks/`, leaving
+root `SESSION_LOG.md` — `log` class at a root path — unreachable, and with it **AGENTS §3's End
+clause, from inside the lane it governs**.
 
-**This is not a reading the agent chose; the draft makes the intent explicit and the filed row
-dropped it.** `_wip/RULING_DRAFTS_teacher-lane_2026-08-15.md` line 18 names the class members in a
-parenthesis — **`log` (STATE.md, SESSION_LOG.md)** — so SESSION_LOG.md was meant to be inside. The
-filed `CD-141(a)` carries the class list **without the parenthesis**, and (b) then excludes the
-file the parenthesis named. **Both readings are available from the row as filed, which is why this
-stops rather than picks one.**
+**`CD-144` (2026-08-16) names two path exceptions, `log` class ONLY:** root `SESSION_LOG.md` and
+this file. **No other root file, no other class** — a `build`, `corrections` or `promotion` commit
+touching a root file is still unauthorized and CD-141(b)'s two tests both still have to hold.
+`CD-141`'s text is unedited; the amendment is a new row with a forward-only pointer, and AGENTS
+§3.1's carve-out paragraph is updated to match.
 
-**Consequence, and it is not cosmetic: a teacher-lane session cannot complete AGENTS §3's End
-clause.** That clause requires a root `SESSION_LOG.md` block, and every session under this row will
-hit the same wall. **This session's block is written and handed to the Principal, not committed.**
+**The held পাঠ ১৪ block is appended** — handed over as a file, staged in `_inbox/` by the
+Principal, read from the mount, and verified byte-identical to the handed-over text with only its
+scaffolding comment stripped.
 
-**The narrow question:** does `CD-141(b)`'s path list gain root `SESSION_LOG.md` as a named
-exception, or does the teacher lane stop short of §3's End clause and hand its log block over each
-time? An amendment is a ruling-class change and is never pre-approved (CD-141(f)).
+**What is worth carrying forward is not the fix but how it surfaced.** `CD-141(h)` required one
+attended run before handover, and it was filed knowingly on a single ledger instance. That run
+produced a CLEAN 84-item bank **and** this defect — and **the clause reads correctly right up
+until a session tries to close under it**. Reading the row could not have found it.
 
 ## পাঠ ১৪ — the authored state
 
@@ -64,12 +64,15 @@ version of the same fix.**
 
 ## Three things a later session must not re-derive
 
-- **`-13` IS THE PUNCTUATION TAG AND `-02` IS NOT, EVEN THOUGH পাঠ ১৩ USED `-02`.**
-  `TOPIC_NUMBERS.md`'s own "Why `-13` was minted rather than folded into `-02`" says the spine keeps
-  `S03 বাক্য গঠন` and `S11 বিরামচিহ্ন` as separate mark slots at C5 and that folding would erase a
-  distinction canon makes. পাঠ ১৪'s six S11 items carry `-13`; পাঠ ১৩'s eight carry `-02`.
-  **The two banks disagree, both pass TOPIC-NUMBER because both numbers are charted, and no gate
-  can see it.** Not corrected here — পাঠ ১৩ is signed and outside this chapter's scope.
+- **`-13` IS THE PUNCTUATION TAG AND পাঠ ১৩ NOW CARRIES IT — corrected, `QB-CR-014`.**
+  `TOPIC_NUMBERS.md`'s own *"Why `-13` was minted rather than folded into `-02`"* says the spine
+  keeps `S03 বাক্য গঠন` and `S11 বিরামচিহ্ন` as separate mark slots at C5. পাঠ ১৩'s eight S11 items
+  carried `-02`; they now carry `-13`, digest `e76631e34fa0` → `22ae7c4f299a`, signature re-pinned
+  with the sign-off standing. **The lesson outlives the fix: `TOPIC-NUMBER` proves a tag EXISTS,
+  never that it is the RIGHT one for its slot** — both numbers are charted, so both banks passed
+  and would have gone on passing. **A number minted for a slot must be checked INTO USE, and
+  nothing does that today.** `ref19_topic_id` stays `BAN-SENTENCE` everywhere: REF-19 has no
+  punctuation slug at all (PENDING-P-008).
 - **THE BANK IS AT ITS BLOOM LIMIT, NOT ITS CONTENT LIMIT, AND THE HEADER NAMES WHAT IS LEFT.**
   The অর্থ জেনে নিই list carries about thirty glossed words and S02 took eight; thirteen are named
   unextracted in `header.gaps`. **A content limit is a claim about how far the book was read**
