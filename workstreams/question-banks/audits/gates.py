@@ -170,7 +170,53 @@ HONORIFIC_WINDOW = 30
 #     unable to see its own slots.
 # Supersedes CD-139's per-chapter reading of S14, পাঠ ৪ included, and restores CD-136(c)'s
 # categorical form on wider ground than CD-136(c) itself claimed.
-PAPER_LEVEL_SLOTS = {"S14", "S15"}
+# CD-150 re-keys this constant to **(subject, class, slot)** and the reason is measured, not
+# stylistic. The old form was a flat set of bare slot SHORTS — `{"S14", "S15"}` — tested as
+# `slot in PAPER_LEVEL_SLOTS` with no subject and no class in hand. Three things were wrong with
+# it the moment a second subject arrived:
+#   · SUBJECT-BLIND. ENG's paper-level set is S05 · S13 · S14. `BAN-S05` is বহুনির্বাচনি (live D0,
+#     5 marks, all five classes) and `BAN-S13` is এক কথায় প্রকাশ (live C3–C5). Adding those shorts
+#     to a flat set would have barred BAN's MCQ slot and এক কথায় প্রকাশ from every chapter bank in
+#     the repo — a categorical bar on two live teaching slots, on the strength of a ruling about
+#     English.
+#   · CLASS-BLIND. The ENG bar does not run the whole ladder: ENG-S05 is paper-level at C3–C5 and
+#     ENG-S13/S14 only at C4–C5. Below those the class's admitted task is a **D4 substitute** —
+#     C1 greeting fill-in-blanks, C2 self-introduction, C3 dialogue, C2/C3 guided paragraph — and a
+#     D4 substitute is a DIFFERENT TASK, not a junior version of the paper's task. A flat set
+#     cannot say that.
+#   · SILENTLY WRONG ON ENG ALREADY. ENG has **no S15**; its রচনা is **S14** and its
+#     চিঠি/আবেদনপত্র is **S13**. Run against an ENG bank, the old set would have barred ENG-S14
+#     correctly BY COINCIDENCE, hunted an ENG-S15 that does not exist, and left ENG-S05 and
+#     ENG-S13 wide open. Nothing would have failed; the bar would simply have missed.
+# The pairs are ENUMERATED and are never inferred from `d_code` or `admitted_task` (Principal
+# ruling 2026-08-16). A derived bar would move whenever a spine cell was re-coded, and the whole
+# point of CD-147/CD-150 is that **a slot's pipeline is not a fact about content.**
+PAPER_LEVEL_SLOTS = frozenset({
+    # BAN — CD-147, unchanged in behaviour: S14 আবেদনপত্র and S15 রচনা at every class.
+    ("BAN", 1, "S14"), ("BAN", 2, "S14"), ("BAN", 3, "S14"), ("BAN", 4, "S14"), ("BAN", 5, "S14"),
+    ("BAN", 1, "S15"), ("BAN", 2, "S15"), ("BAN", 3, "S15"), ("BAN", 4, "S15"), ("BAN", 5, "S15"),
+    # ENG — CD-150. S05 is the unseen passage and is textbook-EXTERNAL by the spine's own
+    # statement, so no chapter can source it; C1/C2 carry no S05 at all (D5).
+    ("ENG", 3, "S05"), ("ENG", 4, "S05"), ("ENG", 5, "S05"),
+    # ENG-S13 চিঠি / আবেদনপত্র / ইমেইল and ENG-S14 রচনা — paper-level where the class's admitted
+    # task IS the paper-level task. C1/C2/C3 S13 and C2/C3 S14 stay in the chapter lane.
+    ("ENG", 4, "S13"), ("ENG", 5, "S13"),
+    ("ENG", 4, "S14"), ("ENG", 5, "S14"),
+})
+
+
+def is_paper_level(subject, cls, slot):
+    """Is THIS slot paper-level for THIS (subject, class)? The only way to ask the question.
+
+    Replaces eight bare `slot in PAPER_LEVEL_SLOTS` membership tests. Every one of them had a
+    subject and a class already in hand and threw both away.
+    """
+    return (subject, cls, slot) in PAPER_LEVEL_SLOTS
+
+
+def paper_level_slots(subject, cls):
+    """→ {slot shorts} barred for this (subject, class). For the set-algebra call sites."""
+    return {s for (sub, c, s) in PAPER_LEVEL_SLOTS if sub == subject and c == cls}
 
 NEAR_DUP_JACCARD = 0.80
 
@@ -1414,13 +1460,15 @@ def g_coverage(bank, ctx):
     # CD-147: S14/S15 are paper-level for every chapter. They are exempt from the completeness
     # test — a chapter that says nothing about them is CORRECT, not incomplete — and barred from
     # the admissible set outright.
-    admitted_paper_level = sorted(admissible & PAPER_LEVEL_SLOTS)
+    barred = paper_level_slots(subject, cls)
+    admitted_paper_level = sorted(admissible & barred)
     if admitted_paper_level:
-        errs.append("bank header ADMITS paper-level slot(s) " + ", ".join(admitted_paper_level)
-                    + " — CD-147 makes S14 আবেদনপত্র and S15 রচনা paper-level for EVERY chapter, "
-                      "categorically. No chapter admits them on any content, and this is not a "
-                      "CD-138(e) declaration the chapter is entitled to make")
-    stale_reasons = sorted(set(exclusions) & PAPER_LEVEL_SLOTS)
+        errs.append(f"bank header ADMITS paper-level slot(s) " + ", ".join(admitted_paper_level)
+                    + f" — paper-level for {subject} C{cls} (CD-147 for BAN S14/S15; CD-150 for "
+                      f"ENG S05 at C3–C5 and S13/S14 at C4–C5), categorically. No chapter admits "
+                      f"them on any content, and this is not a CD-138(e) declaration the chapter "
+                      f"is entitled to make")
+    stale_reasons = sorted(set(exclusions) & barred)
     if stale_reasons:
         rep.append("exclusion reason(s) carried for " + ", ".join(stale_reasons)
                    + " — no longer owed under CD-147 (the bar is categorical, not a per-chapter "
@@ -1428,7 +1476,7 @@ def g_coverage(bank, ctx):
                      "correct history, and the ledger is where it is simplified")
     undeclared = [s for s in sorted(slots_for_class)
                   if s not in admissible and s not in exclusions
-                  and s not in PAPER_LEVEL_SLOTS]
+                  and s not in barred]
     if undeclared:
         errs.append("the admissibility declaration is INCOMPLETE — neither admitted nor excluded "
                     "with a reason: " + ", ".join(undeclared)
@@ -1454,9 +1502,9 @@ def g_coverage(bank, ctx):
             errs.append(f"{qid}: no slot_index entry — coverage cannot read its slot")
             continue
         supply[slot] = supply.get(slot, 0) + 1
-        if slot in PAPER_LEVEL_SLOTS:
-            errs.append(f"{qid}: sits in slot {slot}, which is PAPER-LEVEL for every chapter "
-                        f"(CD-147) — S14 আবেদনপত্র and S15 রচনা are authored in the paper/exam "
+        if is_paper_level(subject, cls, slot):
+            errs.append(f"{qid}: sits in slot {slot}, which is PAPER-LEVEL for {subject} C{cls} at "
+                        f"EVERY chapter (CD-147 · CD-150) — it is authored in the paper/exam "
                         f"pipeline and never in a chapter bank. This is categorical and does not "
                         f"depend on what this chapter's content anchors")
             continue
@@ -1521,8 +1569,8 @@ def g_coverage(bank, ctx):
     # a content exclusion is the chapter's own declaration and revisable on evidence; a paper-level
     # slot is neither. Summing them would print a number that reads as "declarations made" and
     # over-counts by however many paper-level rows the class carries.
-    n_content_excl = len(set(exclusions) - PAPER_LEVEL_SLOTS)
-    n_paper_level = len(set(slots_for_class) & PAPER_LEVEL_SLOTS)
+    n_content_excl = len(set(exclusions) - barred)
+    n_paper_level = len(set(slots_for_class) & barred)
     rep.append(f"coverage read against THE REGISTER (CD-138 — this replaces the header-stated "
                f"target, §4's own successor clause): {len(slots_for_class)} slot(s) for {subject} "
                f"C{cls}, {len(admissible)} declared admissible, {n_content_excl} excluded with a "
@@ -1830,11 +1878,11 @@ def g_plan(bank, ctx):
     # CD-147 — a plan that admits a paper-level slot is not signable, and PLAN says so in its own
     # voice rather than leaning on COVERAGE. The two gates ask different questions (conformant vs
     # signable) and a bank is offered as FINISHED on PLAN's verdict.
-    plan_paper_level = sorted(admissible & PAPER_LEVEL_SLOTS)
+    plan_paper_level = sorted(admissible & paper_level_slots(subject, cls))
     if plan_paper_level:
         errs.append("the plan admits paper-level slot(s) " + ", ".join(plan_paper_level)
-                    + " — CD-147: S14/S15 belong to the paper/exam pipeline for EVERY chapter and "
-                      "no chapter plan may claim them")
+                    + f" — paper-level for {subject} C{cls} (CD-147 · CD-150): they belong to the "
+                      f"paper/exam pipeline for EVERY chapter and no chapter plan may claim them")
     supply = {}
     for q in items:
         s = slot_index.get(q.get("qid"))
@@ -3364,6 +3412,148 @@ def qp_selftest():
     return ok
 
 
+def cd150_selftest():
+    """CD-150's re-key, both directions, on the ENUMERATION and on a real gate run.
+
+    Two halves, and the second is the one that could not be faked. The first asserts
+    `is_paper_level` pair by pair — cheap, exhaustive over the boundary, and it is what catches a
+    fat-fingered class number in the constant. The second pushes SYNTHETIC ENG banks through
+    `g_coverage` itself, because a constant can be right while the eight call sites that read it
+    are wrong, and the old flat set is proof that call sites are where this breaks.
+
+    All fixtures are synthetic (QB-D-012, CD-121(e)). No `canon/marklogic` file is read here; the
+    live register carries no ENG rows at this commit and reading it would make the ENG half of this
+    block vacuous rather than green.
+    """
+    print("\n--- CD-150 · paper-level re-keyed to (subject, class, slot) "
+          + "-" * 19)
+    ok = True
+
+    # ── half one: the enumeration, at and around every boundary ──────────────────────────
+    pairs = [
+        # ENG-S05 — the unseen passage. Textbook-EXTERNAL by the spine's own statement, so no
+        # chapter can source it. C1/C2 carry no S05 at all (D5), hence quiet there.
+        ("ENG", 5, "S05", True), ("ENG", 4, "S05", True), ("ENG", 3, "S05", True),
+        ("ENG", 2, "S05", False), ("ENG", 1, "S05", False),
+        # ENG-S13 চিঠি/আবেদনপত্র/ইমেইল — barred at C4/C5 where the class's admitted task IS the
+        # letter. C3 dialogue · C2 self-introduction · C1 greeting fill-in are D4 SUBSTITUTES, a
+        # different task, and they stay in the chapter lane.
+        ("ENG", 5, "S13", True), ("ENG", 4, "S13", True),
+        ("ENG", 3, "S13", False), ("ENG", 2, "S13", False), ("ENG", 1, "S13", False),
+        # ENG-S14 রচনা — barred at C4/C5 where composition is open. C2/C3 guided paragraph is a
+        # D4 substitute and stays. C1 has no S14 at all.
+        ("ENG", 5, "S14", True), ("ENG", 4, "S14", True),
+        ("ENG", 3, "S14", False), ("ENG", 2, "S14", False), ("ENG", 1, "S14", False),
+        # ENG has NO S15. Nothing is to look for one, at any class (CD-150).
+        ("ENG", 5, "S15", False), ("ENG", 4, "S15", False),
+        # BAN — CD-147 behaviour preserved byte-for-byte by the re-key.
+        ("BAN", 5, "S14", True), ("BAN", 1, "S14", True),
+        ("BAN", 5, "S15", True), ("BAN", 1, "S15", True),
+        # THE REGRESSION THAT MADE THE RE-KEY NECESSARY. `BAN-S05` is বহুনির্বাচনি and `BAN-S13` is
+        # এক কথায় প্রকাশ — live teaching slots. A flat set holding the SHORTS `S05`/`S13` for ENG's
+        # sake would have barred both from every chapter bank in the repo.
+        ("BAN", 5, "S05", False), ("BAN", 4, "S05", False), ("BAN", 3, "S05", False),
+        ("BAN", 2, "S05", False), ("BAN", 1, "S05", False),
+        ("BAN", 5, "S13", False), ("BAN", 4, "S13", False), ("BAN", 3, "S13", False),
+    ]
+    bad = [(sub, c, sl, want, is_paper_level(sub, c, sl))
+           for sub, c, sl, want in pairs if is_paper_level(sub, c, sl) != want]
+    if bad:
+        for sub, c, sl, want, got in bad:
+            print(f"  FAIL  ENUMERATION  {sub} C{c} {sl}: expected {want}, got {got}")
+        ok = False
+    else:
+        n_bar = sum(1 for *_, w in pairs if w)
+        print(f"  PASS  ENUMERATION  {len(pairs)} (subject, class, slot) assertions — {n_bar} "
+              f"barred, {len(pairs) - n_bar} chapter-lane, boundary classes asserted on BOTH sides")
+        print(f"  PASS  REGRESSION   BAN-S05 (বহুনির্বাচনি) and BAN-S13 (এক কথায় প্রকাশ) remain "
+              f"chapter-admissible at EVERY class — the collision a flat set of slot shorts would "
+              f"have caused, asserted rather than argued")
+
+    # ── half two: the same rule through g_coverage, on synthetic ENG banks ────────────────
+    def eng_register(cls):
+        """A synthetic ENG register slice: the three barred slots plus one ordinary one."""
+        def r(slot, items, mpi, task):
+            return {"subject": "ENG", "class": cls, "slot": f"ENG-{slot}", "task_mode": "simple",
+                    "slot_task": f"synthetic {slot}", "nape_frame": f"synthetic {slot}",
+                    "admitted_task": task, "items_per_paper": items, "marks": items * mpi,
+                    "marks_per_item": mpi, "d_code": "D0", "authority": "SYNTHETIC — not NAPE",
+                    "row_constraints": []}
+        rows = [r("S02", 5, 1, "make sentences"), r("S05", 3, 3, "unseen passage"),
+                r("S13", 1, 10, "letter"), r("S14", 1, 10, "composition")]
+        return {(x["subject"], x["class"], x["slot"].split("-")[-1]): x for x in rows}
+
+    def eng_bank(cls, admissible, slots, tasks):
+        qs = [{"qid": f"SY-ENG-C{cls}-Q{i:02d}", "question_text": f"synthetic stem {i}",
+               "marks": 1, "bloom_level": "Remember", "question_type": "short_answer",
+               "topic_tag": "SY-TOPIC", "difficulty": "easy"} for i in range(1, 21)]
+        return {"subject": "ENG", "class": cls, "questions": qs, "topics": ["SY-TOPIC"],
+                "header": {"admissible_slots": list(admissible), "slot_exclusions": {},
+                           "topics": ["SY-TOPIC"]},
+                "slot_index": {q["qid"]: slots.get(q["qid"], "S02") for q in qs},
+                "task_index": {q["qid"]: tasks.get(q["qid"], "make sentences") for q in qs}}
+
+    def cov(cls, admissible, put=None):
+        b = eng_bank(cls, admissible, {}, {})
+        if put:
+            qid = b["questions"][0]["qid"]
+            b["slot_index"][qid], b["task_index"][qid] = put
+        e, _ = g_coverage(b, {"slot_register": eng_register(cls), "slot_register_error": []})
+        return e
+
+    runs = [
+        ("C5 bank with an item IN S05", 5, ["S02"], ("S05", "unseen passage"), True,
+         "the unseen passage is textbook-EXTERNAL — no chapter can source it, so an item there is "
+         "categorical, not a mis-declaration"),
+        ("C5 bank with an item IN S13", 5, ["S02"], ("S13", "letter"), True, "চিঠি at C5"),
+        ("C5 bank with an item IN S14", 5, ["S02"], ("S14", "composition"), True, "রচনা at C5"),
+        ("C5 header ADMITTING S13", 5, ["S02", "S13"], None, True,
+         "admitting is a failure even with no item in it"),
+        ("C5 bank omitting all three", 5, ["S02"], None, False,
+         "OWES NO REASON — the obligation CD-150 removes. A gate that only gained the FAIL would "
+         "redden every conformant ENG bank on its first run"),
+        ("C3 bank with an item IN S13", 3, ["S02", "S13"], ("S13", "letter"), False,
+         "C3's S13 is DIALOGUE, a D4 substitute — chapter lane, and the bar must not reach it"),
+        ("C3 bank with an item IN S14", 3, ["S02", "S14"], ("S14", "composition"), False,
+         "C3's S14 is the guided paragraph — chapter lane"),
+    ]
+    for label, cls, adm, put, want_fail, why in runs:
+        errs = cov(cls, adm, put)
+        hit = [e for e in errs if "PAPER-LEVEL" in e or "paper-level" in e]
+        got_fail = bool(hit)
+        if got_fail == want_fail:
+            print(f"  PASS  {'FAIL-SEED ' if want_fail else 'NEGATIVE  '} {label:<32} "
+                  f"{'fires' if got_fail else 'quiet'}: {why}")
+        else:
+            print(f"  FAIL  {'FAIL-SEED ' if want_fail else 'NEGATIVE  '} {label:<32} "
+                  f"expected {'a paper-level failure' if want_fail else 'silence'}; got {errs}")
+            ok = False
+
+    # MARK-VALUE and the half mark: 0.5 is admitted at ENG-S10 as DATA, and the gate needed no
+    # change for it. The I-4 INVARIANT lives in tools/audits/slot_register_check.py as a closed
+    # literal (Principal ruling 2026-08-16) — MARK-VALUE's job is only that an item matches the
+    # register cell, and this proves 0.5 survives that comparison rather than being coerced.
+    reg10 = {("ENG", 5, "S10"): {"subject": "ENG", "class": 5, "slot": "ENG-S10",
+                                 "task_mode": "simple", "slot_task": "capitals & punctuation",
+                                 "nape_frame": "0.5x10", "admitted_task": "capitals",
+                                 "items_per_paper": 10, "marks": 5, "marks_per_item": 0.5,
+                                 "d_code": "D0", "authority": "SYNTHETIC", "row_constraints": []}}
+    b10 = {"subject": "ENG", "class": 5,
+           "questions": [{"qid": "SY-ENG-S10-Q01", "marks": 0.5}],
+           "slot_index": {"SY-ENG-S10-Q01": "S10"}}
+    e_ok, _ = g_mark_value(b10, {"slot_register": reg10, "slot_register_error": []})
+    b10_bad = json.loads(json.dumps(b10))
+    b10_bad["questions"][0]["marks"] = 1
+    e_bad, _ = g_mark_value(b10_bad, {"slot_register": reg10, "slot_register_error": []})
+    if not e_ok and e_bad:
+        print("  PASS  MARK-VALUE   ENG-S10 at 0.5 is quiet and the same item at 1 FAILs — the "
+              "half mark rides through as DATA, and no gate code was changed to admit it")
+    else:
+        print(f"  FAIL  MARK-VALUE   0.5 handling wrong: quiet-case {e_ok}, must-fail case {e_bad}")
+        ok = False
+    return ok
+
+
 def main():
     print("SELFTEST — both families, before any verdict (CD-025). Synthetic fixtures only; no "
           "canon/sources or canon/marklogic file is read as fixture data.\n")
@@ -3373,7 +3563,8 @@ def main():
     print("\n--- canon/QUESTION_POLICY §6 family "
           + "-" * 43)
     b = qp_selftest()
-    if not (a and b):
+    c = cd150_selftest()
+    if not (a and b and c):
         print("\nRESULT: FAIL (selftest red — no bank verdict is believable, nothing was judged)")
         sys.exit(1)
     print(f"\nSUITE: {len(GATES)} gates "

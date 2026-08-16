@@ -51,7 +51,10 @@ WHAT IT CHECKS
   3. I-1        — the marks column totals 100 **per class**, D6 (স্কুলের নিজস্ব প্রশ্ন) included,
                   and the class's own L-rows must sum to the spine's D6 cell for that class.
                   Items are totalled SEPARATELY and are NOT expected to reach 100 (CD-138(d)).
-  4. I-4        — no half marks in this file (the sole site in the whole structure is ENG S10).
+  4. I-4        — no half marks EXCEPT `HALF_MARK_ADMITTED`, a closed literal in this file:
+                  `{("ENG", "S10")}` only, per Rules I-4 / §৪ and CD-150. The exception is keyed
+                  (subject, slot) and is NOT readable from the register — a data row must not be
+                  able to silence an invariant.
   5. I-6        — no row without a cause-code (`d_code`).
   6. I-8        — gap rule, **computed from the register**: a slot present at class X and again at
                   X+2 must be present at X+1. A leading absence that ends once the slot starts is a
@@ -86,8 +89,28 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 REGISTER = ROOT / "canon" / "marklogic" / "SLOT_REGISTER.json"
-SPINES = {"BAN": ROOT / "canon" / "marklogic" / "MarkLogic_BAN_Spine.md"}
+SPINES = {"BAN": ROOT / "canon" / "marklogic" / "MarkLogic_BAN_Spine.md",
+          "ENG": ROOT / "canon" / "marklogic" / "MarkLogic_ENG_Spine.md"}
 CLASSES = (1, 2, 3, 4, 5)
+
+# I-4's ONLY exception, as a CLOSED LITERAL IN THE PROVER — deliberately NOT a register field.
+#
+# `MarkLogic_Rules.md` I-4: আধা নম্বর (০.৫) ব্যবহার করা যাবে না — একমাত্র ব্যতিক্রম যেখানে নেপের
+# কাঠামো নিজেই আধা নম্বর ব্যবহার করে … বর্তমানে এমন জায়গা একটাই: ইংরেজির S10. §৪ carries the
+# reason the exception exists at all: আমাদের নিয়মগুলো নেপ থেকে আসে — নেপের বিরুদ্ধে যেতে পারে না …
+# এই কারণেই I-4-তে আধা নম্বরের ব্যতিক্রমটা আছে. Enumerated at CD-150.
+#
+# WHY A LITERAL AND NOT A REGISTER FIELD (Principal ruling 2026-08-16). A `half_mark_admitted` key
+# in `SLOT_REGISTER.json` would let the file under examination name its own exemptions: the row
+# carrying the half mark would also carry the permission for it, and **I-4 would be unfalsifiable
+# by construction.** A data row must not be able to silence an invariant. Same class of finding as
+# CD-137 — there a frozen baseline was allowed to admit imported HISTORY the check cannot see,
+# while the agent's own NEW writing was FIXED rather than exempted, and that distinction was the
+# whole of the row. Widening this set is a Principal decision and takes a CD row, exactly as
+# re-freezing `SB_CITATION_BASELINE.md` does.
+#
+# Keyed (subject, slot-short), never slot-short alone — see `half_mark_offenders`.
+HALF_MARK_ADMITTED = {("ENG", "S10")}
 
 CELL_NUM = re.compile(r"^\**\s*([\d.]+)\s*\**$")
 SLOT_ID = re.compile(r"^S\d\d$")
@@ -163,6 +186,28 @@ def spine_columns(text):
     return marks, own
 
 
+def half_mark_offenders(rows, subject):
+    """→ [slot ids] carrying a half mark that `HALF_MARK_ADMITTED` does not admit.
+
+    **Keyed on (subject, slot-short), not on the slot short alone.** `S10` is admitted for ENG and
+    barred for BAN, and the two subjects\' S10 are different questions entirely — ENG-S10 is
+    Capitals & punctuation at 0.5×10=5, BAN-S10 is পদ নির্ণয় at 1×5=5. A slot-only test would
+    admit a half mark into BAN-S10 on the strength of a ruling about English, and the register
+    would carry an I-4 breach that no check could see.
+
+    Both `marks` and `marks_per_item` are tested. ENG-S10 is exactly the shape that makes the
+    second one necessary: its `marks` is the whole number 5 and the 0.5 lives only in
+    `marks_per_item`, so a test that read `marks` alone would call it integral and move on.
+    """
+    out = []
+    for r in rows:
+        short = str(r.get("slot", "")).split("-")[-1]
+        half = (float(r.get("marks") or 0) % 1) or (float(r.get("marks_per_item") or 0) % 1)
+        if half and (subject, short) not in HALF_MARK_ADMITTED:
+            out.append(r["slot"])
+    return out
+
+
 def check(reg, spine_text, cls, subject="BAN"):
     """Every check, for ONE class column — and the column it reads is the one it is asked for."""
     errs, rep = [], []
@@ -235,12 +280,13 @@ def check(reg, spine_text, cls, subject="BAN"):
     rep.append(f"C{cls} items total {total_items} — a SEPARATE fact, and correctly not 100 "
                f"(CD-138(d))")
 
-    # 4 — I-4
-    halves = [r["slot"] for r in rows
-              if float(r["marks"] or 0) % 1 or float(r.get("marks_per_item") or 0) % 1]
-    if halves:
-        errs.append(f"I-4: half marks at C{cls} {', '.join(halves)} — BAN uses none at any class; "
-                    f"the sole site in the structure is ENG S10")
+    # 4 — I-4, with its one admitted exception (HALF_MARK_ADMITTED, closed literal above)
+    offenders = half_mark_offenders(rows, subject)
+    if offenders:
+        errs.append(f"I-4: half mark(s) at C{cls} {', '.join(offenders)} — আধা নম্বর is barred "
+                    f"except where NAPE\'s own structure uses it (Rules I-4, §৪). The admitted "
+                    f"set is {sorted(HALF_MARK_ADMITTED)} and nothing else, and it is a literal "
+                    f"in this file: widening it takes a CD row, never a register field")
 
     # 5 — I-6
     for r in rows:
@@ -322,6 +368,51 @@ def check_i8(reg, subject="BAN"):
     return errs, rep
 
 
+def subjects_built(reg):
+    """The SUBJECTS the register declares built, from its own `scope_built`.
+
+    The sibling of `built_classes`, one dimension up, and it exists for the same reason. The
+    C1–C4 repair recorded in the module docstring was a checker that read ONE COLUMN and could not
+    say so. Adding ENG re-created that defect one axis over: `main()` read the BAN spine at the
+    `subject="BAN"` default, so ENG rows would have been filtered out of every check and the
+    script would have printed `RESULT: CLEAN` over a subject it never opened. **A register whose
+    new SUBJECT was never read, reported as clean.** This function is what makes that impossible;
+    the `SUBJECT-BLIND` seed is what keeps it impossible.
+    """
+    out = []
+    for entry in reg.get("scope_built", []):
+        m = SCOPE.match(entry.strip())
+        if m and m.group(1) not in out:
+            out.append(m.group(1))
+    return out
+
+
+def run_everything(reg):
+    """Every subject `scope_built` declares, each against its OWN spine. Refuses, never skips."""
+    errs, rep = [], []
+    subs = subjects_built(reg)
+    if not subs:
+        return (["the register declares no subject in `scope_built` — nothing here is provable, "
+                 "and an unprovable register is not a clean one"], rep)
+    rep.append(f"SUBJECTS read from the register\'s own `scope_built`: {', '.join(subs)}")
+    for sub in subs:
+        path = SPINES.get(sub)
+        if path is None:
+            errs.append(f"{sub} is declared built in `scope_built`, but this file knows no spine "
+                        f"for it. REFUSED rather than skipped — an unread subject must never be "
+                        f"reported clean (SOURCE_POLICY §7.17)")
+            continue
+        if not path.exists():
+            errs.append(f"{sub}: spine {path} not found — declared built against a file that is "
+                        f"not there")
+            continue
+        rep.append(f"----- {sub}  [spine {path.relative_to(ROOT)}]")
+        e, r = run_all(reg, path.read_text(encoding="utf-8"), sub)
+        errs += e
+        rep += r
+    return errs, rep
+
+
 def run_all(reg, spine, subject="BAN"):
     errs, rep = [], []
     built = built_classes(reg, subject)
@@ -337,7 +428,16 @@ def run_all(reg, spine, subject="BAN"):
     e, r = check_i8(reg, subject)
     errs += e
     rep += r
-    rep.append("I-4 half marks: none ✓ (sole structural site is ENG S10, not in this file)")
+    subj_rows = [r for r in reg["rows"] if r["subject"] == subject]
+    admitted = [r for r in subj_rows
+                if ((float(r.get("marks") or 0) % 1) or (float(r.get("marks_per_item") or 0) % 1))
+                and (subject, str(r["slot"]).split("-")[-1]) in HALF_MARK_ADMITTED]
+    admitted_slots = sorted({r["slot"] for r in admitted})
+    rep.append(f"I-4 {subject}: {len(half_mark_offenders(subj_rows, subject))} UNADMITTED "
+               f"half-mark row(s) ✓ · {len(admitted)} row(s) carrying the admitted exception"
+               + (f" at {', '.join(admitted_slots)} (C"
+                  + ", C".join(str(r["class"]) for r in sorted(admitted, key=lambda x: -x["class"]))
+                  + ")" if admitted else " — none in this subject"))
     rep.append("I-6 cause-codes: present on every row ✓")
     rep.append("chapter_authorable: absent from every row ✓ (CD-138(f) — derived, never authored)")
     return errs, rep
@@ -352,7 +452,7 @@ def selftest():
     spine = SPINES["BAN"].read_text(encoding="utf-8")
     ok = True
 
-    errs, _ = run_all(reg, spine)
+    errs, _ = run_everything(reg)
     if errs:
         print(f"  FAIL  baseline: the live register is not clean -> {errs}")
         ok = False
@@ -425,6 +525,16 @@ def selftest():
          lambda r: r["rows"].remove(row(r, 2, "BAN-S04"))),
     ]
 
+    # ── the SUBJECT axis — the C1–C4 repair\'s defect one dimension up ─────────────────────
+    cases += [
+        ("SUBJECT-BLIND", "a subject DECLARED built in scope_built with not one row to its name — "
+                          "the shape of `a column that was never read, reported clean`",
+         lambda r: r["scope_built"].append("ENG C1-C5")),
+        ("SUBJECT-REFUSAL", "a subject declared built for which this file knows NO spine — must "
+                            "refuse by name, never skip",
+         lambda r: r["scope_built"].append("MATH C1-C5")),
+    ]
+
     # A seed whose target row is not built yet is HELD, and named. It is not a pass — nothing was
     # proved — and it is not a failure — nothing is wrong. Counting it either way would be a lie
     # about the instrument, and silently dropping it is how a seed disappears and never comes back.
@@ -441,7 +551,7 @@ def selftest():
             print(f"  HELD  {label:<12} not exercisable yet: {why}  [needs {e}]")
             continue
         exercised += 1
-        errs, _ = run_all(mutated, spine)
+        errs, _ = run_everything(mutated)
         if errs:
             print(f"  PASS  {label:<12} fires on: {why}")
         else:
@@ -488,9 +598,59 @@ def selftest():
             print(f"  FAIL  COLUMN-LABEL a C1 error did not quote C1's spine value: {msg!r}")
             ok = False
 
+    # ── I-4's ADMITTED EXCEPTION, both directions ───────────────────────────────────────
+    # Asserted on `half_mark_offenders` DIRECTLY as well as through the run, and the direct half is
+    # the one that is not vacuous today: ENG is not in `scope_built` at this commit, so a synthetic
+    # ENG row pushed through `run_everything` would be filtered out before any check saw it and a
+    # "stayed quiet" verdict would mean nothing at all. The rows below are SYNTHETIC (CD-121(e) —
+    # seeds may not be drawn from live data).
+    print()
+    eng_s10 = [{"slot": "ENG-S10", "marks": 5, "marks_per_item": 0.5}]
+    i4_cases = [
+        ("ENG-S10 0.5 under ENG", eng_s10, "ENG", [],
+         "the admitted exception — quiet, and this is the whole point of the row"),
+        ("ENG-S10 0.5 under BAN", eng_s10, "BAN", ["ENG-S10"],
+         "SAME slot short, WRONG subject — the pair is keyed (subject, slot), so a ruling about "
+         "English cannot admit a half mark into BAN-S10 (পদ নির্ণয়, 1x5)"),
+        ("BAN-S10 0.5 under BAN", [{"slot": "BAN-S10", "marks": 5, "marks_per_item": 0.5}], "BAN",
+         ["BAN-S10"], "BAN\'s own S10 — barred, and it is the case a slot-only test would miss"),
+        ("ENG-S09 0.5 under ENG", [{"slot": "ENG-S09", "marks": 4.5, "marks_per_item": 0.5}], "ENG",
+         ["ENG-S09"], "right subject, WRONG slot — the exception is one slot wide, not one "
+                      "subject wide"),
+        ("ENG-S10 whole under ENG", [{"slot": "ENG-S10", "marks": 5, "marks_per_item": 1}], "ENG",
+         [], "no half mark present at all — admitted does not mean expected"),
+        ("marks whole, per-item half", [{"slot": "MATH-S03", "marks": 5, "marks_per_item": 0.5}],
+         "MATH", ["MATH-S03"], "`marks` is integral and the 0.5 hides in `marks_per_item` — "
+                               "exactly ENG-S10\'s shape, which is why both fields are read"),
+    ]
+    for label, rows, subj, want, why in i4_cases:
+        got = half_mark_offenders(rows, subj)
+        if got == want:
+            print(f"  PASS  I-4-EXC      {label:<24} -> {got if got else 'quiet'}: {why}")
+        else:
+            print(f"  FAIL  I-4-EXC      {label:<24} -> {got}, expected {want}: {why}")
+            ok = False
+
+    # and the WIRING, not only the helper: a half mark on a live BAN row must reach the verdict
+    # carrying the I-4 label, because an error that fires under a different name teaches the wrong
+    # remedy (the COLUMN-LABEL lesson, one check over).
+    try:
+        mut = mutate(lambda r: row(r, 5, "BAN-S04").update({"marks": 4.5, "marks_per_item": 0.9}))
+    except RowNotBuilt as e:
+        print(f"  HELD  I-4-WIRING   not exercisable yet  [needs {e}]")
+    else:
+        e2, _ = run_everything(mut)
+        if any(m.startswith("I-4:") for m in e2):
+            print("  PASS  I-4-WIRING   a live half mark reaches the verdict labelled I-4, naming "
+                  "the admitted set and saying it is a literal, not a register field")
+        else:
+            print(f"  FAIL  I-4-WIRING   half mark did not surface as an I-4 failure: {e2}")
+            ok = False
+
     print(f"\nSELFTEST RESULT: {'PASS' if ok else 'FAIL'} "
-          f"({exercised} of {len(cases)} seeded failures exercised + 3 negatives + 1 baseline, "
-          f"across 5 class columns)")
+          f"({exercised} of {len(cases)} seeded failures exercised + 3 negatives + 1 baseline "
+          f"+ {len(i4_cases)} I-4-exception assertions + 1 I-4 wiring check, across 5 class "
+          f"columns and {len(subjects_built(reg))} subject(s))")
     if held:
         print(f"  {len(held)} seed(s) HELD — targets not built yet, reported rather than dropped:")
         for h in held:
@@ -506,10 +666,9 @@ def main():
         print("\nRESULT: FAIL (selftest red — no register verdict is believable)")
         sys.exit(1)
     reg = json.loads(REGISTER.read_text(encoding="utf-8"))
-    spine = SPINES["BAN"].read_text(encoding="utf-8")
     print(f"\nREGISTER: {REGISTER.relative_to(ROOT)}  [authority {reg['authority']}, "
           f"built {reg['built']}, scope {', '.join(reg['scope_built'])}]")
-    errs, rep = run_all(reg, spine)
+    errs, rep = run_everything(reg)
     for line in rep:
         print(f"  REPORT  {line}")
     for e in errs:
