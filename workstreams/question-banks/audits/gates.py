@@ -157,6 +157,21 @@ PROPHET = re.compile(r"(মহানবি|মুহাম্মদ|মোহা
 
 HONORIFIC_WINDOW = 30
 
+# CD-147 — S14 আবেদনপত্র and S15 রচনা are PAPER-LEVEL for EVERY chapter, categorically. They are
+# authored only in the paper/exam pipeline and never enter a chapter bank, whatever the chapter's
+# content happens to anchor. Two consequences the gate implements and one it deliberately does not:
+#   · a chapter owes NO content reason for them — the exclusion is not a per-chapter declaration
+#     any more, so COVERAGE stops requiring one and stops calling their absence INCOMPLETE;
+#   · an item sitting in one, or a header ADMITTING one, FAILs categorically — a different error
+#     from CD-138(e)'s "this chapter declared it inadmissible", because the chapter's declaration
+#     is no longer what decides it;
+#   · the register rows STAY. S14/S15 are real paper slots with real demand; what changed is which
+#     pipeline authors them, not whether they exist. Deleting the rows would make the paper lane
+#     unable to see its own slots.
+# Supersedes CD-139's per-chapter reading of S14, পাঠ ৪ included, and restores CD-136(c)'s
+# categorical form on wider ground than CD-136(c) itself claimed.
+PAPER_LEVEL_SLOTS = {"S14", "S15"}
+
 NEAR_DUP_JACCARD = 0.80
 
 MIN_ANCHOR_TOKENS = 3
@@ -1396,7 +1411,24 @@ def g_coverage(bank, ctx):
                     "reason per excluded slot. The gate never infers this from content")
         return errs, rep
     admissible = set(admissible)
-    undeclared = [s for s in sorted(slots_for_class) if s not in admissible and s not in exclusions]
+    # CD-147: S14/S15 are paper-level for every chapter. They are exempt from the completeness
+    # test — a chapter that says nothing about them is CORRECT, not incomplete — and barred from
+    # the admissible set outright.
+    admitted_paper_level = sorted(admissible & PAPER_LEVEL_SLOTS)
+    if admitted_paper_level:
+        errs.append("bank header ADMITS paper-level slot(s) " + ", ".join(admitted_paper_level)
+                    + " — CD-147 makes S14 আবেদনপত্র and S15 রচনা paper-level for EVERY chapter, "
+                      "categorically. No chapter admits them on any content, and this is not a "
+                      "CD-138(e) declaration the chapter is entitled to make")
+    stale_reasons = sorted(set(exclusions) & PAPER_LEVEL_SLOTS)
+    if stale_reasons:
+        rep.append("exclusion reason(s) carried for " + ", ".join(stale_reasons)
+                   + " — no longer owed under CD-147 (the bar is categorical, not a per-chapter "
+                     "content declaration). Accepted, not failed: a bank that still records one is "
+                     "correct history, and the ledger is where it is simplified")
+    undeclared = [s for s in sorted(slots_for_class)
+                  if s not in admissible and s not in exclusions
+                  and s not in PAPER_LEVEL_SLOTS]
     if undeclared:
         errs.append("the admissibility declaration is INCOMPLETE — neither admitted nor excluded "
                     "with a reason: " + ", ".join(undeclared)
@@ -1422,6 +1454,12 @@ def g_coverage(bank, ctx):
             errs.append(f"{qid}: no slot_index entry — coverage cannot read its slot")
             continue
         supply[slot] = supply.get(slot, 0) + 1
+        if slot in PAPER_LEVEL_SLOTS:
+            errs.append(f"{qid}: sits in slot {slot}, which is PAPER-LEVEL for every chapter "
+                        f"(CD-147) — S14 আবেদনপত্র and S15 রচনা are authored in the paper/exam "
+                        f"pipeline and never in a chapter bank. This is categorical and does not "
+                        f"depend on what this chapter's content anchors")
+            continue
         if slot not in admissible:
             errs.append(f"{qid}: sits in slot {slot}, which this chapter declared INADMISSIBLE"
                         + (f" — {exclusions[slot]}" if slot in exclusions else "")
@@ -1479,10 +1517,17 @@ def g_coverage(bank, ctx):
         errs.append(f"pool holds {len(bank['questions'])} items — REF-09 §4.3's floor is 20 per "
                     f"chapter (cite §4.3, not REF-08 §4.1, for the chapter reading)")
 
+    # CD-147 — the two counts are reported SEPARATELY because they are different kinds of thing:
+    # a content exclusion is the chapter's own declaration and revisable on evidence; a paper-level
+    # slot is neither. Summing them would print a number that reads as "declarations made" and
+    # over-counts by however many paper-level rows the class carries.
+    n_content_excl = len(set(exclusions) - PAPER_LEVEL_SLOTS)
+    n_paper_level = len(set(slots_for_class) & PAPER_LEVEL_SLOTS)
     rep.append(f"coverage read against THE REGISTER (CD-138 — this replaces the header-stated "
                f"target, §4's own successor clause): {len(slots_for_class)} slot(s) for {subject} "
-               f"C{cls}, {len(admissible)} declared admissible, {len(exclusions)} excluded with a "
-               f"content reason")
+               f"C{cls}, {len(admissible)} declared admissible, {n_content_excl} excluded with a "
+               f"content reason (CD-138(e)), {n_paper_level} paper-level and outside the "
+               f"declaration entirely (CD-147)")
     rep.append("per-slot demand is PAPER-LEVEL and undivided (CD-138(d)); P-036's `min()` has no "
                "second term at slot granularity — its other half is a Bloom-axis quantity, and no "
                "ruling maps slots to Bloom (QB-CR-011 forbids the inference). Reported, not applied")
@@ -1782,6 +1827,14 @@ def g_plan(bank, ctx):
     if not admissible:
         errs.append("no `admissible_slots` declared — a plan cannot be signed against a chapter "
                     "that has not said which slots its content supports (CD-138(e))")
+    # CD-147 — a plan that admits a paper-level slot is not signable, and PLAN says so in its own
+    # voice rather than leaning on COVERAGE. The two gates ask different questions (conformant vs
+    # signable) and a bank is offered as FINISHED on PLAN's verdict.
+    plan_paper_level = sorted(admissible & PAPER_LEVEL_SLOTS)
+    if plan_paper_level:
+        errs.append("the plan admits paper-level slot(s) " + ", ".join(plan_paper_level)
+                    + " — CD-147: S14/S15 belong to the paper/exam pipeline for EVERY chapter and "
+                      "no chapter plan may claim them")
     supply = {}
     for q in items:
         s = slot_index.get(q.get("qid"))
@@ -2656,6 +2709,11 @@ def _synth_register():
             admitted=["ভাষারীতি পরিবর্তন", "পদ নির্ণয়", "ক্রিয়ার কাল"], selected="পদ নির্ণয়"),
         row("S12", "composite", 5, 1, task="যুক্তবর্ণ ভেঙে শব্দ",
             parts=["যুক্তবর্ণ ভাঙা", "শব্দ গঠন"]),
+        # CD-147 — a LIVE (D0) paper-level row, so the categorical bar is exercised on a slot the
+        # register really carries rather than on one the D5 filter would have skipped anyway. The
+        # base fixture declares nothing about it and must stay CLEAN: that is the rule, seeded.
+        row("S14", "alternative", 1, 5, task="আবেদনপত্র",
+            admitted=["আবেদনপত্র", "ফরম পূরণ"], selected="আবেদনপত্র"),
     ]
     # One D5 and one D6 row, so the skip is exercised on the IN-HAND path rather than only in the
     # disk loader. These are supplied UNFILTERED on purpose — they simulate a caller that did not
@@ -2744,6 +2802,11 @@ def plan_selftest(ctx):
          lambda b: retag(b, "Understand", "Remember", 2)),
         ("MARGIN", "ONE item short of the rule — margin +1 is still one re-tag from red",
          lambda b: retag(b, "Apply", "Remember", 1)),
+        ("PAPER-LEVEL", "a plan ADMITTING S15 — CD-147 puts S14/S15 in the paper/exam pipeline for "
+                        "EVERY chapter, and PLAN refuses it in its own voice rather than leaning "
+                        "on COVERAGE: the two gates ask different questions and a bank is offered "
+                        "as FINISHED on this one's verdict",
+         lambda b: b["header"]["admissible_slots"].append("S15")),
         ("POOL-TOO-SMALL", "a 24-item pool — no tagging can satisfy the margin rule below 40 "
                            "items, and the gate must say THAT rather than emit four margin "
                            "failures a reader would try to fix one at a time",
@@ -2927,6 +2990,24 @@ def qp_selftest():
         b["header"]["slot_exclusions"]["S05"] = "কল্পিত পাঠ ৯৯-এ বহুনির্বাচনির উপাদান নেই"
         return b
 
+    # --- CD-147, the categorical paper-level bar. Two failing seeds and two negatives below, and
+    # --- the negatives are the half that matters: the rule REMOVES an obligation as well as adding
+    # --- one, and a gate that only gained the FAIL would go red on every conformant bank.
+    def _put_in_s14(b):
+        qid = b["questions"][0]["qid"]
+        b["slot_index"][qid] = "S14"
+        b["task_index"][qid] = "আবেদনপত্র"
+        return b
+
+    add("COVERAGE", "an item sitting in S14 — paper-level for EVERY chapter (CD-147), so this is "
+                    "categorical and NOT the CD-138(e) 'this chapter declared it inadmissible' "
+                    "failure. The two are reported as different things because they have different "
+                    "remedies: one re-declares, the other moves the item to the paper pipeline",
+        _put_in_s14)
+    add("COVERAGE", "a header that ADMITS S14 — CD-147 puts it outside what a chapter declaration "
+                    "is entitled to say at all, so admitting it is a failure even with no item in "
+                    "it",
+        lambda b: b["header"]["admissible_slots"].append("S14"))
     add("ENVELOPE-SYNC", "the bank gains an item and the export does not — the export is BEHIND, "
                          "which is exactly the wave-2 shape: 36 envelopes against 88 then 110 "
                          "bank items, for two waves, seen by nothing",
@@ -3059,6 +3140,20 @@ def qp_selftest():
                      "chapter could owe, and would key as `L01` against a declaration that has "
                      "never named it",
          lambda b: None),
+        # CD-147's negatives. The rule REMOVED an obligation as well as adding a bar, and a gate
+        # that only gained the FAIL would redden every conformant bank in the repo on its first run.
+        ("COVERAGE", "a bank that declares NOTHING about S14/S15 — neither admitted nor excluded "
+                     "with a reason. Under CD-138(e) that was INCOMPLETE; under CD-147 it is "
+                     "CORRECT, because the bar is categorical and a chapter owes no content reason "
+                     "for a slot its declaration does not reach. This is the base fixture, and it "
+                     "is asserted rather than assumed",
+         lambda b: None),
+        ("COVERAGE", "a bank still carrying a CD-139-era content reason for S14 — accepted, not "
+                     "failed. The reason is no longer owed, but a bank that records one is correct "
+                     "history (AGENTS §4), and forcing a same-commit edit of three signed banks to "
+                     "quiet a gate is how a correction becomes a rewrite",
+         lambda b: b["header"]["slot_exclusions"].update(
+             {"S14": "কল্পিত পাঠ ৯৯-এ আবেদনপত্রের কোনো নমুনা নেই"})),
         ("DIFFICULTY", "a pool at 70% easy — CAN-SUPPLY, not equality, so this passes",
          lambda b: [q.update({"difficulty": "easy"}) for q in b["questions"][:17]]),
         ("DIFFICULTY", "a pool that is 67% HARD while still holding easy ≥30% — CD-122: a pool "
