@@ -103,7 +103,24 @@ where a distractor is arguably also correct; and **any model answer that asserts
 source section does not state** — a key that reaches beyond the section is a defect even when the
 claim is true in the world, because the student is being marked against the section.
 
-**2 · THE CHAPTER'S CONTENT BARS.** For each token in `CONTENT BARS`, search **every
+**FOR EACH CLAIM YOU FLAG, LIST EVERY ITEM THAT CARRIES IT — with its qid and the field it sits in
+— and say which occurrences are the same claim.** Search the whole bank for the claim, not for the
+item you found it in: `question_text`, option `text`, `why_wrong`, `answer_key.accepted`,
+`answer_key.model_note`, `blanks.accepted`, rubric `criterion` and rubric `band_descriptors`.
+**A single flagged qid with siblings left unnamed is an incomplete finding**, even when the qid is
+right.
+
+**Why this check enumerates (TOOLS-CR-008).** A report is organised by ITEM, because that is what
+you read; **a factual defect is organised by CLAIM**, because one claim can sit in a stem, a key, a
+`why_wrong` and a rubric band across four qids. A session that fixes the qid you name and stops has
+left the defect standing — and this happened twice in one session: a moonlight claim removed from
+one item survived in another, so the bank then **forbade in one item what it keyed in another**; and
+a causal link removed from an answer key went on being **required for full marks** in a rubric band.
+**Check 2 has enumerated from the start and produced no such recurrence; this check did not and
+produced two.** The difference was never diligence — it was that one check was asked to enumerate
+and the other was not.
+
+**2 · THE CHAPTER'S CONTENT BARS.** For each STRING in `CONTENT BARS`, search **every
 student-facing string**: `question_text`, MCQ option `text`, `why_wrong`, `answer_key.accepted`,
 `answer_key.model_note`, rubric `criterion`, and rubric `band_descriptors`. List **every**
 occurrence with its qid and field. For each, say whether it is one of the strings declared in
