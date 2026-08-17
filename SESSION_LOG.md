@@ -3126,3 +3126,58 @@ restores it nor explains it away. **Owner: the Principal.**
   the interpretive-keys group ruling, list now in the artifact · and the four deferred classes.**
   **U14 has two consecutive CLEAN runs and so satisfies CD-161(b)'s promotion condition; U15 and U16
   have one each and need a second before promotion.**
+
+## 2026-08-17 (cont.) · CD-162 retracts CD-158 · CD-163 the held-after-approval gap · cowork
+- Bootstrap: `HEAD` == `origin/main` == **`8798c16`**, clean — step 4's first clause, no branch
+  computation needed. **The 26-commit hold is gone; the mount is the only stale copy left.**
+- **TASK 1 — THE EIGHTH U13 RUN STILL COULD NOT BE OBTAINED.** Three attempts across two sessions,
+  all three ending `529 Overloaded`, server-side. **U13's verdict of record remains run 7's
+  `VERDICT: 1 DEFECT(S)`**, and the `Q49` re-key plus the `Q103`/`Q104` retirements that answer it
+  remain **UNVERIFIED — the পাঠ ১৬ situation, named again rather than allowed to pass.** No verdict
+  is claimed that was not obtained, and no report is committed for a run that did not happen.
+- **`CD-162` — CD-158's exception RETRACTED FORWARD; inert, not wrong.** At n = 107 the `Understand`
+  requirement is 27 and the bank carries 29, so it clears at **+2 on the ordinary rule**; PLAN has
+  been printing *"margin +2 against a REDUCED requirement of +1"* against itself every run. **Why it
+  dissolved is the part worth keeping: the four items that left — `Q122`, `Q123`, `Q103`, `Q104` —
+  were every one a false-premise or duplicate item, and removing them RAISED every margin, because
+  the floor is a percentage and the denominator fell faster than the numerator. The margin problem
+  was an artefact of the defects, not of the chapter.** Arithmetic, not argument, supporting the
+  ruling that keeping known-bad items to hold a number was the wrong trade. **CD-158's text unedited;
+  pointer added to Forward-only amendments.** On the gate key: **recommended KEEP, inert** — it is the
+  only live data proving an unexercised exception is REPORTED not silent, and `cd158_selftest`'s
+  negative case exercises it, so dropping it would delete a seed's target and re-create
+  `TOOLS-CR-007`'s shape.
+- **TASK 3 — STOPPED, as the brief's own condition requires, and the measurement is why.**
+  Retiring all 13 takes the pool to 94 and `Understand` to **19 against a requirement of 24 — margin
+  −5, BELOW THE FLOOR ITSELF**, not merely below the +2 margin. **Per-item split, reported before
+  acting:** **RE-KEYABLE (11)** — `Q45` (the গাঁ choice is অনুশীলনী ২(খ) verbatim) · `Q73` · `Q74`
+  (drop the unstated *ছেলেটি*) · `Q76` · `Q77` (re-key to the section's OWN ভাব list, which includes
+  ইচ্ছা) · `Q78` · `Q80` (glossary + the poem's কূল line, without the biography) · `Q85` (drop the
+  unstated *দিনের*) · `Q87` (key the three real পাখি uses, none of them a literal bird) · `Q105` ·
+  `Q106`. **NOT RE-KEYABLE (2)** — `Q79`, whose stem asks what picture *সবুজ* paints while the
+  section prints only *সবুজ গাঁ*, and `Q121`, an এক কথায় প্রকাশ whose definition phrase the section
+  never supplies. **And the two cannot both go:** retiring `Q121` alone is clear at every floor;
+  retiring `Q79` — Understand — puts Understand at **+1 with CD-158's cover being retracted in the
+  same session.** So `Q79` can be neither retired nor honestly re-keyed within its own shape, and
+  that is a Principal decision, not an agent's.
+- **Nothing was acted on for TASK 3**, and the second reason is as strong as the first: **with reviews
+  unavailable, eleven re-keys could not have been verified**, which is the exact situation this whole
+  chain exists to stop.
+- **`CD-163` — nothing in the repo asks why work is still held AFTER approval.** Every session ended
+  *nothing pushed, awaiting approval*; approval came in chat; the next bootstrap read the hold as
+  routine under branch (c) — **which is precisely what (c) was built to do. (c) asks whether a session
+  can ACCOUNT for what it holds, never how long, never whether the reason has expired. The mechanism
+  that made the hold safe is the one that made it invisible.** Cost: 26 commits in a disposable clone,
+  **including `CD-157` — the row ruling that findings must be committed because transcript-only
+  findings are unrecoverable. A durability ruling that was not durable, for six sessions.** Caught by
+  the Principal opening a folder; **not by a gate, not by a branch, and not by the agent, which
+  reported the hold accurately every time. Accurate reporting of a dangerous state is not detection
+  of it.** The asymmetry: the entire push discipline guards against pushing too EARLY and nothing
+  guards against too LATE, and the loss modes are not symmetric.
+  **Proposed, not built:** step 4 prints the oldest unpushed commit's date beside the enumeration
+  (c) already produces, with a WARNING above a threshold and deliberately **not** a stop, per
+  CD-152(d). **Recorded as the real gap: the repo cannot see approval at all**, so age is a proxy; a
+  durable form of approval would let step 4 compare *authorised* against *pushed*.
+- Digests unchanged this sitting: U13 `b629e2289c14` (107) · U14 `509a1b0091d8` (84) · U15
+  `7e541fe6559a` (96) · U16 `51d1be1efbe8` (96). No bank was touched.
+- Gates: all eight in-condition gates CLEAN.
