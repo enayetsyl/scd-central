@@ -1,0 +1,75 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৩ section
+PROMPT : tools/bank_factual_review_prompt.md (step 5b, CD-151), check 1 enumerating per CD-160
+RUN    : 2026-08-17 — NINTH run, after the eleven claim-strips, Q121's retirement, Q79's reshape,
+         run 8's three defects and TASK 5's two. VERDICT OF RECORD.
+METHOD : Seven checks + claim sweep completed in full BEFORE RUN8 was opened; then RUN8
+         dispositioned (CD-161(a) with its anti-anchoring ordering).
+STATUS : Contemporaneous. Committed under step 3a (CD-157(d)).
+
+--------------------------------------------------------------------------------------------------
+
+106 items read in full. slot_index = 106 keys, exact 1:1 with the qids, matching header.slot_counts
+(S01 1 · S02 7 · S03 16 · S04 5 · S05 7 · S06 5 · S07 21 · S08 15 · S09 1 · S10 10 · S11 8 · S12 5 ·
+S13 5). task_index 106, source_index 106, envelopes/single 106 — none extra, none missing.
+
+1 · FACTUAL ACCURACY — 6 defects
+
+1. CLAIM CLASS "the poem expresses a desire for মুক্তি/স্বাধীনতা" — NOT CLOSED. The section states no such thing (its only relevant gloss is বন্য — বুনো), and THE BANK HAS NOW RULED IT UNSUPPORTED: Q73 and Q78's new model_notes read "মুক্তি বা স্বাধীনতার কথা পাঠে নেই, তাই তা দাবি করা যাবে না" and "'স্বাধীনতার প্রতীক' … পাঠে নেই". I am not judging the claim — the ruling of record is in the artifact, and these carriers contradict it. THE BANK NOW FORBIDS IN Q73/Q78 WHAT IT KEYS IN Q32/Q46 AND REQUIRES FOR FULL MARKS IN FOUR RUBRICS. Every surviving carrier, swept bank-wide:
+   · Q16  rubric.criterion — "প্রকৃতির টান বেশি, তাই মুক্তভাবে উড়তে চান". COUNTED.
+   · Q19  rubric.criterion — "শিশুমনের প্রকৃতির টান ও মুক্তির কল্পনা, পড়ার টেবিলের বাঁধনের বিপরীতে". COUNTED.
+   · Q32  answer_key.accepted — "কবি পাখির মতো মুক্ত হতে চেয়েছেন". COUNTED.
+   · Q46  option[2].text, THE is_correct OPTION — "কারও চোখে না পড়ে পাখির মতো স্বাধীনভাবে থাকতে চান বলে". COUNTED. Aggravated: the poem gives NO reason for the hiding, so the keyed option also supplies a motive the section never prints, and the other three options are excluded only on grounds the poem does state — the key is the one unsupported string in the item.
+   · Q84  question_text ("বাঁধন ও স্বাধীনতার ভাব কোন কোন চরণে"), rubric.criterion, rubric.band[সম্পূর্ণ]. COUNTED — the whole item is built on the claim; unlike the other six it CANNOT BE STRIPPED, only retired or re-stemmed.
+   · Q88  rubric.criterion — "প্রতিটিকে কবির মুক্তির ইচ্ছার সঙ্গে মিলিয়ে দেখানো". COUNTED.
+   · Q108 rubric.criterion — "কীভাবে ওড়া ও মুক্তির ভাব তৈরি করে". COUNTED.
+   Not occurrences: Q73 and Q78's model_notes, which forbid it. NONE of the seven is on the deferral list. THE BANK'S OWN RECORD IS ALSO STILL SHORT: the gaps entry names Q16 · Q19 · Q32 · Q46 · Q84 · Q88 as the missing carriers but DOES NOT NAME Q108, so the re-derived list it demands is itself incomplete by one.
+
+2. Q100 option[1].why_wrong — "'দুধভরা' চাঁদের রং ও উজ্জ্বলতার তুলনা, সত্যিকারের দুধ নয়।" The section says only "দুধভরা ওই চাঁদের বাটি — পূর্ণিমার চাঁদকে বোঝানো হয়েছে". This is the moonlight claim in new words, and Q71 and Q75's model_notes explicitly bar it. Sole carrier of রং/উজ্জ্বল bank-wide — আলো · ছড়ি · সরে · জ্যোৎস্না survive only inside those two forbidding notes. COUNTED.
+
+3. Q85 — the দিনের strip STOPPED AT THE STEM. rubric.criterion still reads "ঘরের কাজ ও কল্পনা দুটোরই মূল্য রেখে" (the first stanza prints parents telling the speaker to read; no ঘরের কাজ anywhere in the section) and rubric.band[আংশিক] still reads "একটি সময়ের ছবি লেখা হয়েছে", which presupposes the two stanzas depict two times — the section fixes a time for the third stanza only. Sole carrier of each string. COUNTED.
+
+4. Q87 — question_text "'পাখি' শব্দটি কত রকম অর্থে এসেছে" and rubric.band[সম্পূর্ণ] "প্রতিটির অর্থ আলাদা করে বলা হয়েছে" require the student to assert that the three occurrences carry different MEANINGS. The section distinguishes none, AND Q78's new model_note asserts the opposite — "কবিতার তিনটি ব্যবহারই তুলনা". সত্যিকারের পাখি was removed from the criterion; the claim it served was not. COUNTED.
+
+5. Q73 — মুক্তি is out of the key (confirmed), but the replacement key DOES NOT ANSWER ITS OWN STEM. The stem asks "কবির এই ইচ্ছার পিছনে কী আছে"; the key is "কবিতায় বলা হয়েছে তাঁর ইচ্ছে নদীর কাছে থাকা, আর বকুল ডালে লুকিয়ে থেকে পাখির মতো ডাকা" — a restatement of the stimulus plus the next two চরণ, i.e. FULL MARKS FOR COPYING OUT OF THE STEM'S OWN STANZA. That is the exact defect Q122 was retired for. The section states no cause, so no key that answers this stem is derivable from it. COUNTED.
+
+6. Q101 — STALE ANCHOR, third carrier of the class fixed at Q49/Q54. source_index is "আমার কেবল ইচ্ছে জাগে"; the item's stimulus is ইচ্ছা, which that anchor does not contain (the poem prints ইচ্ছে; standalone ইচ্ছা is printed only in অনুশীলনী ১, whose line is already Q28's anchor). Every S02/S06/S12/S13 item mechanically tested: Q101 is the only one whose anchor lacks the word its item is about. Q119 and Q120 anchor the other cell of the same অর্থ জেনে নিই row and are traceable — reported, not counted. COUNTED.
+
+Swept and NOT counted, with reason: "শিশুমন" (Q19) is not the ছেলেটি claim stripped from Q74 — ছেলে/বালক are zero bank-wide and the section supports a school-age speaker. "রাত" (Q31, Q47, Q99, Q71, Q75) is glossary-backed via পূর্ণিমার চাঁদ and mutually consistent. Q82's thin শহর evidence is answerable from the printed lines. Q76's key hedges every clause with "কবিতায় বলা হয়েছে".
+
+2 · CHAPTER CONTENT BARS — PASS. All bars zero; গান's single hit is inside লাগানোর (Q18 band). "আল মাহমুদ" once, bare. C-05: every ছবি/চিত্রকল্প hit is verbal imagery; the two আঁক forms take the কবি as subject and demand a written answer.
+
+3 · STANDING CURATION BARS — PASS. C-03 zero; C-05 no picture requested; C-18 zero. Q84's স্বাধীনতা is personal, not national — counted under check 1 as an unsupported claim, not as C-18.
+
+4 · INVENTED NAMES — PASS.
+
+5 · NUMERALS — PASS. Zero ASCII digits in any student-facing string, mechanically tested across every field including rubric rows.
+
+6 · SLOT-SPECIFIC CORRECTNESS — PASS on items in scope. S12 Q51 র্ণ = র + ণ · Q52 · Q53 · Q92 · Q93 all right, every new word carries its conjunct and none is in the section, each stimulus carries one conjunct. S10 Q110–Q116, Q118 right as used. S13 Q54, Q55, Q119, Q120 match their definitions. S06's five stimuli are distinct and each antonym holds in the chapter's sense. S11 Q57, Q59 require two marks each.
+DEFERRED, reported not counted: Q117 · Q56 · Q109 · Q58, Q61, Q90, Q91 · Q89.
+
+7 · LANGUAGE — PASS on items in scope. Q79's stem, Q45's two repaired why_wrong, Q77's ভাব key and Q108's চরণ ২/৪ stem all read naturally and at class level.
+DEFERRED, reported not counted: Q62–Q66 · Q94–Q98 · Q60 · Q27 and the internal-code class.
+
+STEP 3 — THE LANDED EDIT, VERIFIED CLAIM BY CLAIM (grep on the claim, not the qid)
+- Q45 STANDS, key supported. Q74 STANDS. Q76 STANDS. Q77 STANDS — ইচ্ছা is on অনুশীলনী ৫'s printed list. Q78 STANDS. Q80 STANDS. Q105 STANDS. Q106 STANDS.
+- Q73 does NOT stand: defect 5. Q85 stem clean but band/criterion not: defect 3. Q87 criterion clean but stem/band carry a new claim: defect 4.
+- মুক্তি/স্বাধীনতা CLASS: seven surviving carriers (defect 1). Run 8's five list-members are clean at Q45 · Q73 · Q76 · Q78; Q108 WAS NEVER FIXED, and none of the six off-list carriers was.
+- "কবিতা uses word X" CLASS — CLOSED. All six stems now read "পাঠে/পাঠের", which is true. Every remaining "কবিতায় ব্যবহৃত" stem tested against the poem text alone: Q02/Q42 কর্ণফুলী · Q03 কাঁঠালচাঁপা · Q04/Q50/Q52/Q55 বন্য · Q48 শহর · Q102 মানুষ · Q51 কর্ণফুলী · Q53 ইচ্ছে · Q93 উল্টায় · Q120 কাঁঠালচাঁপা — all present. No carrier survives.
+- Q121 RETIRED — CONFIRMED absent from all five indexes and from envelopes/single/. Its only bank strings are two header.gaps records; nothing depends on it.
+- Q79 RESHAPED — key construes two printed clauses of stanza 4 and asserts nothing outside it; শান্ত zero bank-wide. Understand IS EARNED: the answer is not copyable from the quoted stimulus, which is the line Q122's retirement set. No duplication of Q75, Q105, Q106 or Q76. Minor, not counted: the stem says "এই স্তবকে" while quoting three of the stanza's four চরণ.
+- Q49 and Q54 ANCHORS — CONFIRMED, both contain কূল. Same-class sweep found one unfixed carrier, Q101 (defect 6), and two traceable-by-row cases, Q119/Q120.
+- Q51 CONFIRMED. Q108 stem CONFIRMED against all five stanzas (দে–গন্ধে · থাকতে–ডাকতে · কূলটায়–উল্টায় · উড়ব–ঘুরব · জন্য–বন্য); its rubric still carries the মুক্তি claim (defect 1).
+- header.gaps PARTLY CONFIRMED — "S06 7 → 5 … met EXACTLY" matches slot_counts and the items present; the false "7 → 6" is gone and the false closure is retracted in place with its reason. But the record is incomplete: Q108 is named nowhere as a মুক্তি carrier.
+
+RUN 8 FINDINGS — DISPOSITION (opened only after all of the above)
+- Defect 1, "the কবিতা uses word X" class — FIXED, and fixed AS A CLASS: an independent sweep of every quoted stimulus against the poem closes it.
+- Defect 2, stale anchor at Q49 + Q54 — FIXED at both; STILL PRESENT as a class at Q101, which run 8 did not name.
+- Defect 3, the false retirement record — FIXED, corrected in place with the correction recorded rather than the error erased.
+- Run 8's deferred মুক্তি enumeration — STILL PRESENT at seven of eleven, and now COUNTED: it was deferred while unruled, and this session's strip of Q45/Q73/Q76/Q78 plus the new forbidding notes IS the ruling.
+- Run 8's other deferred items — FIXED (Q121 by retirement, Q79 by reshape, the rest by strip), EXCEPT Q85 and Q87, where the strip reached the stem but not the rubric.
+- Moonlight claim "STILL DEAD" — WAS NEVER FULLY DEAD: run 8 grepped আলো · ছড়িয়ে · সরে but not রং · উজ্জ্বল, and Q100 carries it (defect 2).
+- Run 8's checks 2–5 PASS — CONFIRMED, re-derived independently.
+- "107 items / 107 envelopes" — superseded: 106/106, verified 1:1.
+
+VERDICT: 6 DEFECT(S)
