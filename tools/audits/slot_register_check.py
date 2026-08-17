@@ -127,6 +127,26 @@ CLASSES = (1, 2, 3, 4, 5)
 # Keyed (subject, slot-short), never slot-short alone — see `half_mark_offenders`.
 HALF_MARK_ADMITTED = {("ENG", "S10")}
 
+# THE ONLY (subject, class, slot) THAT MAY DECLARE A `taught_set`, AND IT IS A LITERAL HERE FOR
+# EXACTLY THE REASON ABOVE (Principal ruling 2026-08-17, CD-165).
+#
+# `taught_set` names the বিরামচিহ্ন a class is TAUGHT — দাঁড়ি · কমা · প্রশ্নচিহ্ন · বিস্ময়চিহ্ন at
+# C5, with ড্যাশ and সেমিকোলন excluded. It is DATA, correctly: the marks are a fact about the C5
+# book, they change per class, and CD-155's UNSELECTED precedent gives the form (a declaration
+# carries its own source, or it is indistinguishable from an unfilled field).
+#
+# WHAT IS *NOT* DATA IS WHICH ROWS MAY DECLARE ONE. Left open, any row could mint itself a mark set
+# — and the one place a wrong mark set is invisible is the row that also grants itself permission
+# to have one. The set is C5-only because THE SPINE ITSELF DOES NOT TRANSFER IT DOWNWARD: its C2
+# row names দাঁড়ি, কমা, প্রশ্নবোধক from যোগ্যতা ১৩.২, and its C3, C4 and C5 rows name NO mark at
+# all. A C4 row carrying C5's four would therefore be an invention with a data row's authority,
+# which is the CD-137 laundering shape one more time.
+#
+# ABSENCE IS NOT PERMISSION. A row with no `taught_set` has declared NOTHING, and the bank gate
+# reads that as "no mark is admitted here yet", never as "every mark is". That half is enforced in
+# `workstreams/question-banks/audits/gates.py`, where the items are.
+TAUGHT_SET_DECLARABLE = {("BAN", 5, "BAN-S11")}
+
 CELL_NUM = re.compile(r"^\**\s*([\d.]+)\s*\**$")
 SLOT_ID = re.compile(r"^S\d\d$")
 L_ID = re.compile(r"^[A-Z]+-L\d\d$")
@@ -334,6 +354,39 @@ def check(reg, spine_text, cls, subject="BAN"):
                             f"admitted_set")
         if r["task_mode"] == "composite" and not r.get("parts"):
             errs.append(f"C{cls} {r['slot']}: composite row without parts")
+
+    # 10 — TAUGHT SET shape (CD-165). Three failures, and each is a different lie:
+    #   * a row declaring a mark set where no ruling admits one  → permission minted by data
+    #   * a set with no `taught_set_source`                      → an untraceable declaration
+    #   * an empty set                                           → "taught nothing", which is what
+    #     ABSENCE already says, so an empty list is a filled-in field carrying no claim
+    for r in rows:
+        key = (subject, cls, r["slot"])
+        has_set = "taught_set" in r
+        has_src = str(r.get("taught_set_source", "")).strip()
+        if has_set and key not in TAUGHT_SET_DECLARABLE:
+            errs.append(f"C{cls} {r['slot']}: carries a `taught_set`, and only "
+                        f"{sorted(TAUGHT_SET_DECLARABLE)} may — the set of marks a class is taught "
+                        f"is data, but WHICH ROW MAY DECLARE ONE is a literal in this prover "
+                        f"(CD-165). The spine names marks at C2 only and names none at C3–C5, so a "
+                        f"set on any other row is an invention wearing a data row's authority")
+        if has_set:
+            ts = r["taught_set"]
+            if not isinstance(ts, list) or not ts or not all(
+                    isinstance(m, str) and m.strip() for m in ts):
+                errs.append(f"C{cls} {r['slot']}: `taught_set` must be a non-empty list of "
+                            f"non-empty mark names — an EMPTY set claims the class is taught no "
+                            f"mark, which is what ABSENCE of the field already declares (CD-165)")
+            if len(set(ts)) != len(ts):
+                errs.append(f"C{cls} {r['slot']}: `taught_set` repeats a mark name")
+            if not has_src:
+                errs.append(f"C{cls} {r['slot']}: `taught_set` with no `taught_set_source` — the "
+                            f"UNSELECTED precedent (CD-155) governs the form: a declaration that "
+                            f"cannot be traced to where it comes from is indistinguishable from an "
+                            f"unfilled field")
+        elif has_src:
+            errs.append(f"C{cls} {r['slot']}: carries `taught_set_source` with no `taught_set` — a "
+                        f"citation for a declaration that was never made")
     for r in rows:
         if "chapter_authorable" in r:
             errs.append(f"C{cls} {r['slot']}: carries an AUTHORED chapter_authorable — CD-138(f) "
@@ -524,6 +577,22 @@ def selftest():
          lambda r: row(r, 5, "BAN-S12").pop("parts")),
         ("CD-138(f)", "an AUTHORED chapter_authorable on a slot row",
          lambda r: row(r, 5, "BAN-S14").update({"chapter_authorable": False})),
+        # ── CD-165, seeded BOTH ways: the three lies above, and the negatives below ────
+        ("TAUGHT SET", "a `taught_set` on a row no ruling admits one for — C4 S11 helping itself "
+                       "to C5's four marks, which the spine names at neither class",
+         lambda r: row(r, 4, "BAN-S11").update({"taught_set": ["দাঁড়ি", "কমা"],
+                                                "taught_set_source": "C5-এর সারি থেকে"})),
+        ("TAUGHT SET", "the C5 set emptied — 'taught no mark' is what ABSENCE already says, so an "
+                       "empty list is a filled field carrying no claim",
+         lambda r: row(r, 5, "BAN-S11").update({"taught_set": []})),
+        ("TAUGHT SET", "the C5 set with its `taught_set_source` removed — an untraceable "
+                       "declaration, barred on CD-155's precedent",
+         lambda r: row(r, 5, "BAN-S11").pop("taught_set_source")),
+        ("TAUGHT SET", "a `taught_set_source` left behind after the set it cites was removed",
+         lambda r: row(r, 5, "BAN-S11").pop("taught_set")),
+        ("TAUGHT SET", "the C5 set repeating a mark",
+         lambda r: row(r, 5, "BAN-S11").update({"taught_set": ["দাঁড়ি", "কমা", "কমা",
+                                                              "প্রশ্নচিহ্ন", "বিস্ময়চিহ্ন"]})),
     ]
 
     # ── the C1–C4 repair's own seeds — every one of these passed silently before it ──────
