@@ -4,17 +4,18 @@
   "authority": "CD-138",
   "built": "2026-08-15",
   "scope_built": [
-    "BAN C1-C5"
+    "BAN C1-C5",
+    "ENG C1-C5"
   ],
   "scope_owed": [
-    "ENG C1-C5",
     "MATH C1-C5",
     "SCI C3-C5",
     "BGS C3-C5"
   ],
   "source_of_record": {
     "BAN": "canon/marklogic/MarkLogic_BAN_Spine.md",
-    "invariants": "canon/marklogic/MarkLogic_Rules.md"
+    "invariants": "canon/marklogic/MarkLogic_Rules.md",
+    "ENG": "canon/marklogic/MarkLogic_ENG_Spine.md"
   },
   "reading_rules": [
     "CD-138(b) — task_mode, admitted_set, selected and parts are DECLARED. No gate derives them from a header marker string (যেকোনো একটা · অথবা · বা · ও · + · ভেঙে). Those tokens are authoring evidence only.",
@@ -23,7 +24,8 @@
     "CD-138(g) — an admissible chapter owes the full per-slot items_per_paper, capped by PENDING-P-036's min().",
     "CD-139 — S14/S15 exclusion is a per-chapter content declaration, not a slot-level rule.",
     "CD-140 — BAN-S12 C2 (১০টি × ১) and BAN-S09 C3 (৫টি × ২) are RULED item splits, not derived. The spine gives those two cells a total and no ×n, and CD-138(d) forbids inventing a divisor.",
-    "Principal 2026-08-15 — D5 rows record ABSENCE and carry no task fields; D6 rows are the school's own questions, keyed (L-id, class) because L-ids repeat across classes at different marks. Both are skipped by COVERAGE: existence is a CLASS-level fact, admissibility a CHAPTER-level one, and they are never one field."
+    "Principal 2026-08-15 — D5 rows record ABSENCE and carry no task fields; D6 rows are the school's own questions, keyed (L-id, class) because L-ids repeat across classes at different marks. Both are skipped by COVERAGE: existence is a CLASS-level fact, admissibility a CHAPTER-level one, and they are never one field.",
+    "CD-150 / Principal 2026-08-16 — ENG. `task_mode` is DECLARED per (class, slot) by this test, applied cell by cell: ALTERNATIVE iff the class's admitted task(s) are drawn from the NAPE frame's own set (with `selected`, or the UNSELECTED state where no source narrowed); SIMPLE iff the class does one task, whether NAPE's or a D3/D4 substitute that sits OUTSIDE the set; COMPOSITE iff one question carries more than one part (ENG-S11 C1 only). No gate derives any of this from a marker string (CD-138(b))."
   ],
   "self_checks": {
     "I-1_marks_total": {
@@ -38,8 +40,11 @@
       "note": "Each class's L-rows are ALSO cross-read against that class's own স্কুলের নিজস্ব প্রশ্ন cell in the spine's নম্বরের ধাপ table — two independent statements in the spine, checked against each other. This replaces the arithmetic check D6 rows cannot have, because the spine states no item split for any of its eight L-rows."
     },
     "I-4_half_marks": {
-      "expected": 0,
-      "note": "BAN uses no half marks at any class. The sole half-mark site in the whole structure is ENG S10 (0.5×10), and it is not in this file."
+      "expected": "0 UNADMITTED",
+      "admitted": [
+        "ENG-S10"
+      ],
+      "note": "BAN uses no half marks at any class. The sole half-mark site in the whole structure is ENG-S10 (0.5×10 = 5) at C3, C4 and C5 — NAPE's own form, admitted by Rules I-4 whose text names it, and by §৪ (নেপই ঠিক). ENG-S10 at C2 is 1×6 = 6 and is NOT a half-mark row: the C2 task is different. THE ADMITTED SET IS NOT READ FROM THIS FILE — it is a closed literal HALF_MARK_ADMITTED in tools/audits/slot_register_check.py, so a data row cannot silence the invariant. This block DECLARES; the prover DECIDES."
     },
     "I-6_cause_codes": {
       "expected": "every row carries a d_code, D5 and D6 rows included"
@@ -47,6 +52,24 @@
     "I-8_gap_rule": {
       "status": "COMPUTED — no interior hole",
       "note": "All five columns are built, so the rule is testable for the first time. Seven slots start late — S01 (C4) · S06 (C3) · S08 (C2) · S09 (C3) · S10 (C2) · S11 (C2) · S13 (C3) — and every one of them is a LEADING PREFIX, not a hole. C1's S11 absence is the one to read carefully: বিরামচিহ্ন is not missing at C1, it is inside S03's composite under যোগ্যতা ১৩.৩."
+    },
+    "UNSELECTED_alternatives": {
+      "state": "`selected: null` plus a REQUIRED non-empty `unselected_reason`, on an alternative row whose class narrowed to no single form. A bare null FAILs — it is indistinguishable from an unfilled field. Mirrors D5/`absent_reason` exactly.",
+      "reason_of_record": "Recording a selection where no source made one would MINT A SCHOOL NARROWING — the CR-007 / QB-CR-011 pattern, a slot read as carrying a property it does not carry. The test is not the (যেকোনো একটা) marker but whether any source narrowed the choice; the marker is one way a source declines to narrow, not the only one.",
+      "authority": "Principal ruling 2026-08-16. Declared here, same handling as I-4_half_marks.",
+      "consequence": "Every member of `admitted_set` is admitted and none is off-choice — implemented at BOTH off-choice sites in workstreams/question-banks/audits/gates.py (COVERAGE and PLAN), seeded both directions.",
+      "cells": [
+        "ENG-S01 C5",
+        "ENG-S06 C5",
+        "ENG-S06 C4",
+        "ENG-S09 C5",
+        "ENG-S09 C4",
+        "ENG-S09 C3",
+        "ENG-S11 C5",
+        "ENG-S13 C5",
+        "ENG-S13 C4",
+        "ENG-S14 C5"
+      ]
     }
   },
   "pending_row_constraints": {
@@ -1619,6 +1642,1484 @@
       "authority": "NAPE §১৫",
       "row_constraints": [],
       "evidence_note": "SIMPLE, not alternative: সূত্রসহ বা খোলা varies the STIMULUS form, not the task. The task is রচনা either way. Recorded because বা appears here and CD-138(b) forbids reading the token as the test."
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S01",
+      "slot_task": "Match / True-False",
+      "nape_frame": "৫টি শব্দের অর্থ মেলানো, অথবা সত্য-মিথ্যা · 1×5 = 5",
+      "admitted_task": null,
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [],
+      "admitted_set": [
+        "শব্দের অর্থ মেলানো",
+        "সত্য-মিথ্যা"
+      ],
+      "selected": null,
+      "unselected_reason": "নেপের কাঠামো একাধিক রূপ মানে আর C5-এর কারণ ঘর কোনো একটিকে বেছে নেয়নি; C5-এর কর্তৃত্ব নেপ, তাই এখানে একটি রূপ লিখলে সেটা এমন সংকীর্ণতা হতো যা কোনো সূত্র করেনি — C5 কারণ ঘর: 'মূল কাঠামো' — কোনো রূপের নাম নেই",
+      "evidence_note": "C4 D0 এবং C4 মেলানো বেছে নেয় — D0-অনুবাদে C5-ও মেলানো হতো; Principal 2026-08-16 সেই যুক্তি বিবেচনা করে (A) রায় দিয়েছেন: C5 UNSELECTED."
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S01",
+      "slot_task": "Match / True-False",
+      "nape_frame": "৫টি শব্দের অর্থ মেলানো, অথবা সত্য-মিথ্যা · 1×5 = 5",
+      "admitted_task": "শব্দের অর্থ মেলানো",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S01 · C4 · Vocabulary 8.1 / 8.3",
+      "row_constraints": [],
+      "admitted_set": [
+        "শব্দের অর্থ মেলানো",
+        "সত্য-মিথ্যা"
+      ],
+      "selected": "শব্দের অর্থ মেলানো",
+      "evidence_note": "কারণ ঘর '৫টি শব্দ, ৭টি অর্থ (২টি বাড়তি)' — বাড়তি অর্থ কেবল মেলানোর প্রশ্নেই থাকে; সত্য-মিথ্যায় নয়।"
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S01",
+      "slot_task": "Match / True-False",
+      "nape_frame": "৫টি শব্দের অর্থ মেলানো, অথবা সত্য-মিথ্যা · 1×5 = 5",
+      "admitted_task": "শব্দের অর্থ মেলানো",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S01 · C3 · `TOP-ENG-C3-03`, 8.1.1 / 8.1.2",
+      "row_constraints": [],
+      "admitted_set": [
+        "শব্দের অর্থ মেলানো",
+        "সত্য-মিথ্যা"
+      ],
+      "selected": "শব্দের অর্থ মেলানো"
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S01",
+      "slot_task": "Match / True-False",
+      "nape_frame": "৫টি শব্দের অর্থ মেলানো, অথবা সত্য-মিথ্যা · 1×5 = 5",
+      "admitted_task": "শব্দের অর্থ মেলানো",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S01 · C2 · `TOP-ENG-C2-04` 🔴, 8.1.x",
+      "row_constraints": [],
+      "admitted_set": [
+        "শব্দের অর্থ মেলানো",
+        "সত্য-মিথ্যা"
+      ],
+      "selected": "শব্দের অর্থ মেলানো",
+      "evidence_note": "কারণ ঘর '৫ জোড়া' — জোড়া মানে মেলানো।"
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S01",
+      "slot_task": "Match / True-False",
+      "nape_frame": "৫টি শব্দের অর্থ মেলানো, অথবা সত্য-মিথ্যা · 1×5 = 5",
+      "admitted_task": "শব্দের সঙ্গে ছবি মেলানো",
+      "task_mode": "simple",
+      "items_per_paper": 8,
+      "marks": 8,
+      "marks_per_item": 1,
+      "d_code": "D3",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S01 · C1 · `TOP-ENG-C1-04` 🔴",
+      "row_constraints": [
+        {
+          "id": "E-C1-PICTURE-OBJECTS",
+          "scope": "C1",
+          "text": "ছবিতে জিনিস থাকবে, প্রাণী বা মানুষ নয় (C-05)।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S01 · ছবি নিয়ে সাবধানতা"
+        }
+      ],
+      "evidence_note": "D3 — ভেতরের বিষয় বদলানো: ছবি মেলানো নেপের অনুমোদিত সেটের সদস্য নয়, তাই simple, alternative নয়। ৮ জোড়া।"
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S02",
+      "slot_task": "Make meaningful sentences",
+      "nape_frame": "পড়া অংশ থেকে ৫টি শব্দ দিয়ে বাক্য · 1×5 = 5",
+      "admitted_task": "পড়া অংশ থেকে ৫টি শব্দ দিয়ে বাক্য",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S02",
+      "slot_task": "Make meaningful sentences",
+      "nape_frame": "পড়া অংশ থেকে ৫টি শব্দ দিয়ে বাক্য · 1×5 = 5",
+      "admitted_task": "পড়া অংশ থেকে ৫টি শব্দ দিয়ে বাক্য",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S02 · C4 · 7.4",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S02",
+      "slot_task": "Make meaningful sentences",
+      "nape_frame": "পড়া অংশ থেকে ৫টি শব্দ দিয়ে বাক্য · 1×5 = 5",
+      "admitted_task": "পড়া অংশ থেকে ৫টি শব্দ দিয়ে বাক্য",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S02 · C3 · `TOP-ENG-C3-04`, 7.4.1 / 7.4.2",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S02",
+      "slot_task": "Make meaningful sentences",
+      "nape_frame": "পড়া অংশ থেকে ৫টি শব্দ দিয়ে বাক্য · 1×5 = 5",
+      "admitted_task": "পড়া অংশ থেকে ৬টি শব্দ দিয়ে বাক্য",
+      "task_mode": "simple",
+      "items_per_paper": 6,
+      "marks": 6,
+      "marks_per_item": 1,
+      "d_code": "D1",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S02 · C2 · `TOP-ENG-C2-05` 🔴, 4.2.1 / 7.4.2 / 9.5.1",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S02",
+      "slot_task": "Make meaningful sentences",
+      "nape_frame": "পড়া অংশ থেকে ৫টি শব্দ দিয়ে বাক্য · 1×5 = 5",
+      "admitted_task": "ছবি দেখে বাক্য লেখা",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 10,
+      "marks_per_item": 2,
+      "d_code": "D3",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S02 · C1 · `TOP-ENG-C1-05` 🔴",
+      "row_constraints": [],
+      "evidence_note": "৫টি বাক্য × ২ — প্রথম শ্রেণিতে একটা পুরো বাক্য লেখাই বড় কাজ, তাই প্রতি বাক্যে ২।"
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S03",
+      "slot_task": "Answer the questions (passage 1)",
+      "nape_frame": "পাঠ্যবই থেকে নেওয়া অংশ, ৬টি প্রশ্ন · 3×6 = 18",
+      "admitted_task": "পাঠ্যবই থেকে নেওয়া অংশে ৬টি প্রশ্নের উত্তর",
+      "task_mode": "simple",
+      "items_per_paper": 6,
+      "marks": 18,
+      "marks_per_item": 3,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [
+        {
+          "id": "E-OWN-WORDS",
+          "scope": "C2–C5 (S03 ও S05)",
+          "text": "প্রতিটি পড়া অংশে অন্তত একটা প্রশ্ন নিজের ভাষায় উত্তর দেওয়ার হতে হবে; লাইন টুকে দেওয়ার প্রশ্ন নয়।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S03 · একটা সতর্কতা"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S03",
+      "slot_task": "Answer the questions (passage 1)",
+      "nape_frame": "পাঠ্যবই থেকে নেওয়া অংশ, ৬টি প্রশ্ন · 3×6 = 18",
+      "admitted_task": "পাঠ্যবই থেকে নেওয়া অংশে ৬টি প্রশ্নের উত্তর",
+      "task_mode": "simple",
+      "items_per_paper": 6,
+      "marks": 18,
+      "marks_per_item": 3,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S03 · C4 · Comprehension 5.1 🔴",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S03",
+      "slot_task": "Answer the questions (passage 1)",
+      "nape_frame": "পাঠ্যবই থেকে নেওয়া অংশ, ৬টি প্রশ্ন · 3×6 = 18",
+      "admitted_task": "পাঠ্যবই থেকে নেওয়া অংশে ৬টি প্রশ্নের উত্তর",
+      "task_mode": "simple",
+      "items_per_paper": 6,
+      "marks": 12,
+      "marks_per_item": 2,
+      "d_code": "D1",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S03 · C3 · `TOP-ENG-C3-05` 🔴, 5.1.1 / 5.1.2",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S03",
+      "slot_task": "Answer the questions (passage 1)",
+      "nape_frame": "পাঠ্যবই থেকে নেওয়া অংশ, ৬টি প্রশ্ন · 3×6 = 18",
+      "admitted_task": "পাঠ্যবই থেকে নেওয়া অংশে ৬টি প্রশ্নের উত্তর",
+      "task_mode": "simple",
+      "items_per_paper": 6,
+      "marks": 12,
+      "marks_per_item": 2,
+      "d_code": "D1",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S03 · C2 · `TOP-ENG-C2-13`, 5.1.1 / 5.1.2",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S03",
+      "slot_task": "Answer the questions (passage 1)",
+      "nape_frame": "পাঠ্যবই থেকে নেওয়া অংশ, ৬টি প্রশ্ন · 3×6 = 18",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S03 · C1 সারি",
+      "absent_reason": "পড়ে বোঝা প্রথম শ্রেণির কাজ নয়; দ্বিতীয় শ্রেণিতে শুরু",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S04",
+      "slot_task": "Fill in the blanks from the box",
+      "nape_frame": "শব্দের বাক্স থেকে বেছে ফাঁকা পূরণ · 1×5 = 5",
+      "admitted_task": "শব্দের বাক্স থেকে বেছে ফাঁকা পূরণ",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [
+        {
+          "id": "E-BOX-SURPLUS",
+          "scope": "C2–C5",
+          "text": "বাক্সে বাড়তি শব্দ রাখতেই হবে — ঠিক সমান সংখ্যক শব্দ দিলে শেষেরটা এমনিতেই মিলে যায়।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S04 · বাক্সে বাড়তি শব্দ"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S04",
+      "slot_task": "Fill in the blanks from the box",
+      "nape_frame": "শব্দের বাক্স থেকে বেছে ফাঁকা পূরণ · 1×5 = 5",
+      "admitted_task": "শব্দের বাক্স থেকে বেছে ফাঁকা পূরণ",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S04 · C4 · Vocabulary 8.1",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S04",
+      "slot_task": "Fill in the blanks from the box",
+      "nape_frame": "শব্দের বাক্স থেকে বেছে ফাঁকা পূরণ · 1×5 = 5",
+      "admitted_task": "শব্দের বাক্স থেকে বেছে ফাঁকা পূরণ",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S04 · C3 · `TOP-ENG-C3-03`, 8.1.1 / 8.1.2",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S04",
+      "slot_task": "Fill in the blanks from the box",
+      "nape_frame": "শব্দের বাক্স থেকে বেছে ফাঁকা পূরণ · 1×5 = 5",
+      "admitted_task": "শব্দের বাক্স থেকে বেছে ফাঁকা পূরণ",
+      "task_mode": "simple",
+      "items_per_paper": 6,
+      "marks": 6,
+      "marks_per_item": 1,
+      "d_code": "D1",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S04 · C2 · 5.1.2",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S04",
+      "slot_task": "Fill in the blanks from the box",
+      "nape_frame": "শব্দের বাক্স থেকে বেছে ফাঁকা পূরণ · 1×5 = 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S04 · C1 সারি",
+      "absent_reason": "দ্বিতীয় শ্রেণিতে শুরু; পড়া অংশ ছাড়া এই প্রশ্ন হয় না",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S05",
+      "slot_task": "Answer the questions (passage 2)",
+      "nape_frame": "পাঠ্যবইয়ের বাইরের অংশ, ৩টি প্রশ্ন · 3×3 = 9",
+      "admitted_task": "পাঠ্যবইয়ের বাইরের অংশে ৩টি প্রশ্নের উত্তর",
+      "task_mode": "simple",
+      "items_per_paper": 3,
+      "marks": 9,
+      "marks_per_item": 3,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [
+        {
+          "id": "E-S05-EXTERNAL",
+          "scope": "C3 · C4 · C5",
+          "text": "দ্বিতীয় পড়া অংশটা পাঠ্যবইয়ের বাইরের — পাঠ্যবই থেকে নিলে এটা মুখস্থের পরীক্ষা হয়ে যায়। কোনো অধ্যায় এই স্লট জোগাতে পারে না (CD-150(b))।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S05 · দ্বিতীয় পড়া অংশটা পাঠ্যবইয়ের বাইরের"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S05",
+      "slot_task": "Answer the questions (passage 2)",
+      "nape_frame": "পাঠ্যবইয়ের বাইরের অংশ, ৩টি প্রশ্ন · 3×3 = 9",
+      "admitted_task": "পাঠ্যবইয়ের বাইরের অংশে ৩টি প্রশ্নের উত্তর",
+      "task_mode": "simple",
+      "items_per_paper": 3,
+      "marks": 9,
+      "marks_per_item": 3,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S05 · C4 · Comprehension 5.1 🔴",
+      "row_constraints": [
+        {
+          "id": "E-S05-EXTERNAL",
+          "scope": "C3 · C4 · C5",
+          "text": "দ্বিতীয় পড়া অংশটা পাঠ্যবইয়ের বাইরের — পাঠ্যবই থেকে নিলে এটা মুখস্থের পরীক্ষা হয়ে যায়। কোনো অধ্যায় এই স্লট জোগাতে পারে না (CD-150(b))।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S05 · দ্বিতীয় পড়া অংশটা পাঠ্যবইয়ের বাইরের"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S05",
+      "slot_task": "Answer the questions (passage 2)",
+      "nape_frame": "পাঠ্যবইয়ের বাইরের অংশ, ৩টি প্রশ্ন · 3×3 = 9",
+      "admitted_task": "পাঠ্যবইয়ের বাইরের অংশে ৫টি প্রশ্নের উত্তর",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 10,
+      "marks_per_item": 2,
+      "d_code": "D1",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S05 · C3 · `TOP-ENG-C3-05` 🔴",
+      "row_constraints": [
+        {
+          "id": "E-S05-EXTERNAL",
+          "scope": "C3 · C4 · C5",
+          "text": "দ্বিতীয় পড়া অংশটা পাঠ্যবইয়ের বাইরের — পাঠ্যবই থেকে নিলে এটা মুখস্থের পরীক্ষা হয়ে যায়। কোনো অধ্যায় এই স্লট জোগাতে পারে না (CD-150(b))।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S05 · দ্বিতীয় পড়া অংশটা পাঠ্যবইয়ের বাইরের"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S05",
+      "slot_task": "Answer the questions (passage 2)",
+      "nape_frame": "পাঠ্যবইয়ের বাইরের অংশ, ৩টি প্রশ্ন · 3×3 = 9",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S05 · C2 সারি",
+      "absent_reason": "দ্বিতীয় শ্রেণিতে একটাই পড়া অংশ; তৃতীয় শ্রেণিতে দ্বিতীয়টা আসে",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S05",
+      "slot_task": "Answer the questions (passage 2)",
+      "nape_frame": "পাঠ্যবইয়ের বাইরের অংশ, ৩টি প্রশ্ন · 3×3 = 9",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S05 · C1 সারি",
+      "absent_reason": "নেই",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S06",
+      "slot_task": "Parts of Speech / change the tense",
+      "nape_frame": "দাগানো শব্দের Parts of Speech, অথবা নির্দেশমতো কাল পরিবর্তন · 1×5 = 5",
+      "admitted_task": null,
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [],
+      "admitted_set": [
+        "দাগানো শব্দের Parts of Speech",
+        "নির্দেশমতো কাল পরিবর্তন"
+      ],
+      "selected": null,
+      "unselected_reason": "নেপের কাঠামো একাধিক রূপ মানে আর C5-এর কারণ ঘর কোনো একটিকে বেছে নেয়নি; C5-এর কর্তৃত্ব নেপ, তাই এখানে একটি রূপ লিখলে সেটা এমন সংকীর্ণতা হতো যা কোনো সূত্র করেনি — C5 কারণ ঘর: 'মূল কাঠামো' — কোনো রূপের নাম নেই"
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S06",
+      "slot_task": "Parts of Speech / change the tense",
+      "nape_frame": "দাগানো শব্দের Parts of Speech, অথবা নির্দেশমতো কাল পরিবর্তন · 1×5 = 5",
+      "admitted_task": null,
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S06 · C4 · নিয়ম E-2, 9.5",
+      "row_constraints": [],
+      "admitted_set": [
+        "দাগানো শব্দের Parts of Speech",
+        "নির্দেশমতো কাল পরিবর্তন"
+      ],
+      "selected": null,
+      "unselected_reason": "C4 কারণ ঘর 'নাম ধরে ব্যাকরণ এখান থেকেই শুরু' — কোনো রূপের নাম নেই, আর স্লটের গদ্য বলছে 'প্রশ্নের দুটো রূপই নাম বলার কাজ', অর্থাৎ দুটোই সমান অনুমোদিত",
+      "evidence_note": "প্রধান শিক্ষকের ২০২৬-০৮-১৬ রায়ে গোনা ছয়টি C5 ঘরের বাইরে — একই পরীক্ষা, একই ফল। রিপোর্টে আলাদা করে জানানো হয়েছে।"
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S06",
+      "slot_task": "Parts of Speech / change the tense",
+      "nape_frame": "দাগানো শব্দের Parts of Speech, অথবা নির্দেশমতো কাল পরিবর্তন · 1×5 = 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S06 · C3 সারি · নিয়ম E-2",
+      "absent_reason": "নেই — চতুর্থ শ্রেণিতে আসবে",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S06",
+      "slot_task": "Parts of Speech / change the tense",
+      "nape_frame": "দাগানো শব্দের Parts of Speech, অথবা নির্দেশমতো কাল পরিবর্তন · 1×5 = 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S06 · C2 সারি · নিয়ম E-2",
+      "absent_reason": "নেই",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S06",
+      "slot_task": "Parts of Speech / change the tense",
+      "nape_frame": "দাগানো শব্দের Parts of Speech, অথবা নির্দেশমতো কাল পরিবর্তন · 1×5 = 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S06 · C1 সারি · নিয়ম E-2",
+      "absent_reason": "নেই",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S07",
+      "slot_task": "Suffix-prefix / a, an, the",
+      "nape_frame": "suffix ও prefix যোগ করে লেখা পূরণ, অথবা a / an / the বসানো · 1×6 = 6 (দুটোর যেকোনো একটা)",
+      "admitted_task": "suffix ও prefix যোগ করে লেখা পূরণ",
+      "task_mode": "alternative",
+      "items_per_paper": 6,
+      "marks": 6,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [],
+      "admitted_set": [
+        "suffix ও prefix যোগ করে লেখা পূরণ",
+        "a / an / the বসানো"
+      ],
+      "selected": "suffix ও prefix যোগ করে লেখা পূরণ",
+      "evidence_note": "C5 কারণ ঘর 'suffix-prefix রূপ' — সূত্র স্পষ্টভাবে একটি রূপ বেছেছে, তাই UNSELECTED নয়।"
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S07",
+      "slot_task": "Suffix-prefix / a, an, the",
+      "nape_frame": "suffix ও prefix যোগ করে লেখা পূরণ, অথবা a / an / the বসানো · 1×6 = 6 (দুটোর যেকোনো একটা)",
+      "admitted_task": "a / an / the বসানো",
+      "task_mode": "alternative",
+      "items_per_paper": 6,
+      "marks": 6,
+      "marks_per_item": 1,
+      "d_code": "D3",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S07 · C4 · Articles, 9.2.x",
+      "row_constraints": [],
+      "admitted_set": [
+        "suffix ও prefix যোগ করে লেখা পূরণ",
+        "a / an / the বসানো"
+      ],
+      "selected": "a / an / the বসানো",
+      "evidence_note": "D3 কিন্তু অনুমোদিত সেটের ভেতরেই — স্লটের গদ্য: 'মূল কাঠামো এই প্রশ্নের দ্বিতীয় রূপ নিজেই মানে'।"
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S07",
+      "slot_task": "Suffix-prefix / a, an, the",
+      "nape_frame": "suffix ও prefix যোগ করে লেখা পূরণ, অথবা a / an / the বসানো · 1×6 = 6 (দুটোর যেকোনো একটা)",
+      "admitted_task": "a / an / the বসানো",
+      "task_mode": "alternative",
+      "items_per_paper": 6,
+      "marks": 6,
+      "marks_per_item": 1,
+      "d_code": "D3",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S07 · C3 · 9.3.x ব্যবহারের মধ্য দিয়ে",
+      "row_constraints": [],
+      "admitted_set": [
+        "suffix ও prefix যোগ করে লেখা পূরণ",
+        "a / an / the বসানো"
+      ],
+      "selected": "a / an / the বসানো"
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S07",
+      "slot_task": "Suffix-prefix / a, an, the",
+      "nape_frame": "suffix ও prefix যোগ করে লেখা পূরণ, অথবা a / an / the বসানো · 1×6 = 6 (দুটোর যেকোনো একটা)",
+      "admitted_task": "a / an / the বসানো",
+      "task_mode": "alternative",
+      "items_per_paper": 6,
+      "marks": 6,
+      "marks_per_item": 1,
+      "d_code": "D3",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S07 · C2 · 9.2.2, U08 L4",
+      "row_constraints": [],
+      "admitted_set": [
+        "suffix ও prefix যোগ করে লেখা পূরণ",
+        "a / an / the বসানো"
+      ],
+      "selected": "a / an / the বসানো"
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S07",
+      "slot_task": "Suffix-prefix / a, an, the",
+      "nape_frame": "suffix ও prefix যোগ করে লেখা পূরণ, অথবা a / an / the বসানো · 1×6 = 6 (দুটোর যেকোনো একটা)",
+      "admitted_task": "a / an বসানো (the ছাড়া)",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D3",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S07 · C1 · ব্যবহারের মধ্য দিয়ে",
+      "row_constraints": [],
+      "evidence_note": "simple — 'a / an, the ছাড়া' নেপের সেটের সদস্য নয়, সেটির সংকীর্ণ রূপ। Articles আনুষ্ঠানিকভাবে C2-তে (9.2.2)।"
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S08",
+      "slot_task": "Make WH questions",
+      "nape_frame": "দাগানো শব্দ ধরে প্রশ্ন তৈরি · 1×5 = 5",
+      "admitted_task": "দাগানো শব্দ ধরে প্রশ্ন তৈরি",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S08",
+      "slot_task": "Make WH questions",
+      "nape_frame": "দাগানো শব্দ ধরে প্রশ্ন তৈরি · 1×5 = 5",
+      "admitted_task": "দাগানো শব্দ ধরে প্রশ্ন তৈরি",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S08 · C4 · Interrogatives 9.4 (U16)",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S08",
+      "slot_task": "Make WH questions",
+      "nape_frame": "দাগানো শব্দ ধরে প্রশ্ন তৈরি · 1×5 = 5",
+      "admitted_task": "প্রশ্নবোধক শব্দ বসানো",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D4",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S08 · C3 · 3.4 বলার ভিত",
+      "row_constraints": [],
+      "evidence_note": "D4 — what / who / where / when / how বসানো; বাক্য ভাঙতে হয় না, তাই নিয়ম E-2 ভাঙে না।"
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S08",
+      "slot_task": "Make WH questions",
+      "nape_frame": "দাগানো শব্দ ধরে প্রশ্ন তৈরি · 1×5 = 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S08 · C2 সারি · নিয়ম E-2",
+      "absent_reason": "নেই — তৃতীয় শ্রেণিতে বদলি রূপে আসবে",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S08",
+      "slot_task": "Make WH questions",
+      "nape_frame": "দাগানো শব্দ ধরে প্রশ্ন তৈরি · 1×5 = 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S08 · C1 সারি · নিয়ম E-2",
+      "absent_reason": "নেই",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S09",
+      "slot_task": "Rearrange",
+      "nape_frame": "এলোমেলো শব্দ সাজিয়ে বাক্য, অথবা এলোমেলো বাক্য সাজিয়ে লেখা · 1×7 = 7",
+      "admitted_task": null,
+      "task_mode": "alternative",
+      "items_per_paper": 7,
+      "marks": 7,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [],
+      "admitted_set": [
+        "এলোমেলো শব্দ সাজিয়ে বাক্য",
+        "এলোমেলো বাক্য সাজিয়ে লেখা"
+      ],
+      "selected": null,
+      "unselected_reason": "নেপের কাঠামো একাধিক রূপ মানে আর C5-এর কারণ ঘর কোনো একটিকে বেছে নেয়নি; C5-এর কর্তৃত্ব নেপ, তাই এখানে একটি রূপ লিখলে সেটা এমন সংকীর্ণতা হতো যা কোনো সূত্র করেনি — C5 কারণ ঘর: 'মূল কাঠামো' — কোনো রূপের নাম নেই"
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S09",
+      "slot_task": "Rearrange",
+      "nape_frame": "এলোমেলো শব্দ সাজিয়ে বাক্য, অথবা এলোমেলো বাক্য সাজিয়ে লেখা · 1×7 = 7",
+      "admitted_task": null,
+      "task_mode": "alternative",
+      "items_per_paper": 7,
+      "marks": 7,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S09 · C4 · 7.4",
+      "row_constraints": [],
+      "admitted_set": [
+        "এলোমেলো শব্দ সাজিয়ে বাক্য",
+        "এলোমেলো বাক্য সাজিয়ে লেখা"
+      ],
+      "selected": null,
+      "unselected_reason": "কারণ ঘর কেবল সংখ্যা বলে ('৭টি বাক্য'), কোনো রূপের নাম বলে না; নেপের কাঠামো দুটো রূপকেই 1×n ধরে, তাই আইটেম-ভাগ দিয়েও রূপ বেছে নেওয়া যায় না",
+      "evidence_note": "প্রধান শিক্ষকের গোনা ছয়টি C5 ঘরের বাইরে — রিপোর্টে আলাদা করে জানানো হয়েছে।"
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S09",
+      "slot_task": "Rearrange",
+      "nape_frame": "এলোমেলো শব্দ সাজিয়ে বাক্য, অথবা এলোমেলো বাক্য সাজিয়ে লেখা · 1×7 = 7",
+      "admitted_task": null,
+      "task_mode": "alternative",
+      "items_per_paper": 6,
+      "marks": 6,
+      "marks_per_item": 1,
+      "d_code": "D1",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S09 · C3 · `TOP-ENG-C3-04`, 7.4.1 / 7.4.2",
+      "row_constraints": [],
+      "admitted_set": [
+        "এলোমেলো শব্দ সাজিয়ে বাক্য",
+        "এলোমেলো বাক্য সাজিয়ে লেখা"
+      ],
+      "selected": null,
+      "unselected_reason": "কারণ ঘর কেবল সংখ্যা বলে ('৬টি বাক্য'), কোনো রূপের নাম বলে না; নেপের কাঠামো দুটো রূপকেই 1×n ধরে, তাই আইটেম-ভাগ দিয়েও রূপ বেছে নেওয়া যায় না",
+      "evidence_note": "প্রধান শিক্ষকের গোনা ছয়টি C5 ঘরের বাইরে — রিপোর্টে আলাদা করে জানানো হয়েছে।"
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S09",
+      "slot_task": "Rearrange",
+      "nape_frame": "এলোমেলো শব্দ সাজিয়ে বাক্য, অথবা এলোমেলো বাক্য সাজিয়ে লেখা · 1×7 = 7",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S09 · C2 সারি",
+      "absent_reason": "নেই — তৃতীয় শ্রেণিতে শুরু",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S09",
+      "slot_task": "Rearrange",
+      "nape_frame": "এলোমেলো শব্দ সাজিয়ে বাক্য, অথবা এলোমেলো বাক্য সাজিয়ে লেখা · 1×7 = 7",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S09 · C1 সারি",
+      "absent_reason": "নেই",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S10",
+      "slot_task": "Capitals & punctuation",
+      "nape_frame": "বড় হাতের অক্ষর ও যতিচিহ্ন ঠিক করে লেখা · 0.5×10 = 5",
+      "admitted_task": "বড় হাতের অক্ষর ও যতিচিহ্ন ঠিক করে লেখা",
+      "task_mode": "simple",
+      "items_per_paper": 10,
+      "marks": 5,
+      "marks_per_item": 0.5,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [
+        {
+          "id": "E-S10-NO-ROUNDING",
+          "scope": "C3 · C4 · C5",
+          "text": "১০টি সংশোধন, প্রতিটির জন্য ০.৫। অর্ধেক নম্বরকে উপরে বা নিচে গোল করা যাবে না — তাতে বৃত্তির সঙ্গে হিসাব মেলে না।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S10 · নম্বর দেওয়ার সময়"
+        }
+      ],
+      "evidence_note": "I-4-এর একমাত্র ব্যতিক্রম — নেপের কাঠামো নিজেই ০.৫ × ১০ = ৫ দিয়েছে (Rules I-4, §৪)। register-এর self_checks.I-4_half_marks এই সাইটটিকেই একমাত্র বলে ঘোষণা করে; prover-এ HALF_MARK_ADMITTED literal।"
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S10",
+      "slot_task": "Capitals & punctuation",
+      "nape_frame": "বড় হাতের অক্ষর ও যতিচিহ্ন ঠিক করে লেখা · 0.5×10 = 5",
+      "admitted_task": "বড় হাতের অক্ষর ও যতিচিহ্ন ঠিক করে লেখা",
+      "task_mode": "simple",
+      "items_per_paper": 10,
+      "marks": 5,
+      "marks_per_item": 0.5,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S10 · C4 · Capitalization & punctuation 9.1 (U17)",
+      "row_constraints": [
+        {
+          "id": "E-S10-NO-ROUNDING",
+          "scope": "C3 · C4 · C5",
+          "text": "১০টি সংশোধন, প্রতিটির জন্য ০.৫। অর্ধেক নম্বরকে উপরে বা নিচে গোল করা যাবে না — তাতে বৃত্তির সঙ্গে হিসাব মেলে না।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S10 · নম্বর দেওয়ার সময়"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S10",
+      "slot_task": "Capitals & punctuation",
+      "nape_frame": "বড় হাতের অক্ষর ও যতিচিহ্ন ঠিক করে লেখা · 0.5×10 = 5",
+      "admitted_task": "বড় হাতের অক্ষর ও যতিচিহ্ন ঠিক করে লেখা",
+      "task_mode": "simple",
+      "items_per_paper": 10,
+      "marks": 5,
+      "marks_per_item": 0.5,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S10 · C3 · 9.1.1 · 9.1.2 / 9.1.3 (U5 / U6 / U8)",
+      "row_constraints": [
+        {
+          "id": "E-S10-NO-ROUNDING",
+          "scope": "C3 · C4 · C5",
+          "text": "১০টি সংশোধন, প্রতিটির জন্য ০.৫। অর্ধেক নম্বরকে উপরে বা নিচে গোল করা যাবে না — তাতে বৃত্তির সঙ্গে হিসাব মেলে না।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S10 · নম্বর দেওয়ার সময়"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S10",
+      "slot_task": "Capitals & punctuation",
+      "nape_frame": "বড় হাতের অক্ষর ও যতিচিহ্ন ঠিক করে লেখা · 0.5×10 = 5",
+      "admitted_task": "৬টি আলাদা বাক্যে যতিচিহ্ন বসানো",
+      "task_mode": "simple",
+      "items_per_paper": 6,
+      "marks": 6,
+      "marks_per_item": 1,
+      "d_code": "D1",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S10 · C2 · 9.1.2, U08 L4",
+      "row_constraints": [],
+      "evidence_note": "আধা নম্বর নয় — ১ × ৬ = ৬। কাজটাই আলাদা: অনুচ্ছেদ ঠিক করা নয়, প্রতিটি বাক্য একটা পূর্ণ কাজ।"
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S10",
+      "slot_task": "Capitals & punctuation",
+      "nape_frame": "বড় হাতের অক্ষর ও যতিচিহ্ন ঠিক করে লেখা · 0.5×10 = 5",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S10 · C1 সারি",
+      "absent_reason": "দ্বিতীয় শ্রেণিতে শুরু",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S11",
+      "slot_task": "Form fill / numbers",
+      "nape_frame": "ফরম পূরণ, অথবা সময় ও সংখ্যা (cardinal, ordinal) বসানো · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": null,
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [],
+      "admitted_set": [
+        "ফরম পূরণ",
+        "সময় ও সংখ্যা (cardinal, ordinal) বসানো"
+      ],
+      "selected": null,
+      "unselected_reason": "নেপের কাঠামো একাধিক রূপ মানে আর C5-এর কারণ ঘর কোনো একটিকে বেছে নেয়নি; C5-এর কর্তৃত্ব নেপ, তাই এখানে একটি রূপ লিখলে সেটা এমন সংকীর্ণতা হতো যা কোনো সূত্র করেনি — C5 কারণ ঘর: 'ফরম বা সংখ্যা' — দুটোই নাম করে, একটিও বাছে না; নেপের কাঠামো নিজেই '(দুটোর যেকোনো একটা)'",
+      "evidence_note": "প্রধান শিক্ষকের রায় ২০২৬-০৮-১৬ (১)। তুলনা: BAN C5-এর alternative সারিগুলো নিজেদের নির্বাচন স্পষ্ট করে বলে (S06 বিপরীত শব্দ · S10 পদ নির্ণয় · S14 আবেদনপত্র) — ইংরেজিরটা বলে না।"
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S11",
+      "slot_task": "Form fill / numbers",
+      "nape_frame": "ফরম পূরণ, অথবা সময় ও সংখ্যা (cardinal, ordinal) বসানো · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "সময় ও সংখ্যা (cardinal, ordinal) বসানো",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S11 · C4 · Numeracy 7.2 (U06/U07)",
+      "row_constraints": [],
+      "admitted_set": [
+        "ফরম পূরণ",
+        "সময় ও সংখ্যা (cardinal, ordinal) বসানো"
+      ],
+      "selected": "সময় ও সংখ্যা (cardinal, ordinal) বসানো",
+      "evidence_note": "প্রধান শিক্ষকের রায় ২০২৬-০৮-১৬ (২): কারণ ঘরই কর্তৃত্বসম্পন্ন per-class task field, আর তা যোগ্যতা-সূত্রসহ সংখ্যা বেছেছে। সিঁড়ির গদ্য যোগ্যতা 7.3 — পড়ানোর সিঁড়ি, প্রশ্নপত্রের নির্বাচন নয়। PENDING-P-041 দেখুন।"
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S11",
+      "slot_task": "Form fill / numbers",
+      "nape_frame": "ফরম পূরণ, অথবা সময় ও সংখ্যা (cardinal, ordinal) বসানো · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "সময় ও সংখ্যা (cardinal, ordinal) বসানো",
+      "task_mode": "alternative",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S11 · C3 · `TOP-ENG-C3-02`, 7.2.1 / 7.2.2 · ordinal 7.2.3 (U4L6)",
+      "row_constraints": [],
+      "admitted_set": [
+        "ফরম পূরণ",
+        "সময় ও সংখ্যা (cardinal, ordinal) বসানো"
+      ],
+      "selected": "সময় ও সংখ্যা (cardinal, ordinal) বসানো"
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S11",
+      "slot_task": "Form fill / numbers",
+      "nape_frame": "ফরম পূরণ, অথবা সময় ও সংখ্যা (cardinal, ordinal) বসানো · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "সময় ও সংখ্যা (cardinal, ordinal) বসানো",
+      "task_mode": "alternative",
+      "items_per_paper": 6,
+      "marks": 6,
+      "marks_per_item": 1,
+      "d_code": "D1",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S11 · C2 · `TOP-ENG-C2-03`, 4.1.2 / 4.1.3, U02",
+      "row_constraints": [],
+      "admitted_set": [
+        "ফরম পূরণ",
+        "সময় ও সংখ্যা (cardinal, ordinal) বসানো"
+      ],
+      "selected": "সময় ও সংখ্যা (cardinal, ordinal) বসানো",
+      "evidence_note": "১–৩০ পর্যন্ত সংখ্যা, ৬টি।"
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S11",
+      "slot_task": "Form fill / numbers",
+      "nape_frame": "ফরম পূরণ, অথবা সময় ও সংখ্যা (cardinal, ordinal) বসানো · 1×5 = 5 (দুটোর যেকোনো একটা)",
+      "admitted_task": "দুটো অংশ — সংখ্যা কথায় আর সহজ ফরম পূরণ",
+      "task_mode": "composite",
+      "items_per_paper": 1,
+      "marks": 11,
+      "marks_per_item": 11,
+      "d_code": "D1",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S11 · C1 · `TOP-ENG-C1-03` U02 · 7.3",
+      "row_constraints": [
+        {
+          "id": "E-C1-FORM-FIELDS",
+          "scope": "C1",
+          "text": "ফরমে নিজের নাম, শ্রেণি, রোল, বয়স — যা ছাত্র জানে। বাবার পেশা বা ঠিকানা নয়।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S11 · ফরমে কী থাকবে"
+        }
+      ],
+      "parts": [
+        {
+          "part": "সংখ্যা কথায় (১–২০)",
+          "marks": 6
+        },
+        {
+          "part": "সহজ ফরম পূরণ",
+          "marks": 5
+        }
+      ],
+      "evidence_note": "composite, alternative নয় — নেপের দুটো রূপই C1-এ দরকার (স্পাইন দুবার বলে)। ১১ সমান ভাগে ভাঙে না, তাই BAN-S01 C4-এর নজির: items_per_paper 1 × marks_per_item 11, ভাগটা parts-এ। I-4 ভাঙে না।"
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S12",
+      "slot_task": "Correct form of the verb",
+      "nape_frame": "ঠিক ক্রিয়ারূপ দিয়ে বাক্য পূরণ · 1×5 = 5",
+      "admitted_task": "ঠিক ক্রিয়ারূপ দিয়ে বাক্য পূরণ",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S12",
+      "slot_task": "Correct form of the verb",
+      "nape_frame": "ঠিক ক্রিয়ারূপ দিয়ে বাক্য পূরণ · 1×5 = 5",
+      "admitted_task": "ঠিক ক্রিয়ারূপ দিয়ে বাক্য পূরণ",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S12 · C4 · Past tense 9.5 (U09/U11), past continuous 9.5.2 (U18)",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S12",
+      "slot_task": "Correct form of the verb",
+      "nape_frame": "ঠিক ক্রিয়ারূপ দিয়ে বাক্য পূরণ · 1×5 = 5",
+      "admitted_task": "ঠিক ক্রিয়ারূপ দিয়ে বাক্য পূরণ",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S12 · C3 · 9.5.1 / 9.5.2 ব্যবহারের মধ্য দিয়ে",
+      "row_constraints": [
+        {
+          "id": "E-C3-NO-PAST",
+          "scope": "C3",
+          "text": "শুধু present simple ও present continuous — অতীত কাল চতুর্থ শ্রেণির বিষয়।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S12 · তৃতীয় শ্রেণিতে অতীত কাল দেওয়া যাবে না"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S12",
+      "slot_task": "Correct form of the verb",
+      "nape_frame": "ঠিক ক্রিয়ারূপ দিয়ে বাক্য পূরণ · 1×5 = 5",
+      "admitted_task": "ঠিক ক্রিয়ারূপ দিয়ে বাক্য পূরণ",
+      "task_mode": "simple",
+      "items_per_paper": 6,
+      "marks": 6,
+      "marks_per_item": 1,
+      "d_code": "D1",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S12 · C2 · ৩৬টি ক্রিয়ার তালিকা · 7.4.2",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S12",
+      "slot_task": "Correct form of the verb",
+      "nape_frame": "ঠিক ক্রিয়ারূপ দিয়ে বাক্য পূরণ · 1×5 = 5",
+      "admitted_task": "ঠিক শব্দটা বেছে বাক্য লেখা",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D3",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S12 · C1 · ব্যবহারের মধ্য দিয়ে",
+      "row_constraints": [],
+      "evidence_note": "D3 — দুটো শব্দ দিয়ে ঠিকটা বেছে পুরো বাক্য লেখা; ফাঁকা রেখে ক্রিয়ারূপ চাওয়া নয়।"
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S13",
+      "slot_task": "Letter / application / email",
+      "nape_frame": "চিঠি, আবেদনপত্র বা ইমেইল · 10",
+      "admitted_task": null,
+      "task_mode": "alternative",
+      "items_per_paper": 1,
+      "marks": 10,
+      "marks_per_item": 10,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [],
+      "admitted_set": [
+        "চিঠি",
+        "আবেদনপত্র",
+        "ইমেইল"
+      ],
+      "selected": null,
+      "unselected_reason": "নেপের কাঠামো একাধিক রূপ মানে আর C5-এর কারণ ঘর কোনো একটিকে বেছে নেয়নি; C5-এর কর্তৃত্ব নেপ, তাই এখানে একটি রূপ লিখলে সেটা এমন সংকীর্ণতা হতো যা কোনো সূত্র করেনি — C5 কারণ ঘর: 'চিঠি / আবেদন / ইমেইল' — তিনটিই নাম করে, একটিও বাছে না"
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S13",
+      "slot_task": "Letter / application / email",
+      "nape_frame": "চিঠি, আবেদনপত্র বা ইমেইল · 10",
+      "admitted_task": null,
+      "task_mode": "alternative",
+      "items_per_paper": 1,
+      "marks": 10,
+      "marks_per_item": 10,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S13 · C4 · 7.4 — চিঠি U10 → আবেদন U11",
+      "row_constraints": [],
+      "admitted_set": [
+        "চিঠি",
+        "ইমেইল"
+      ],
+      "selected": null,
+      "unselected_reason": "C4 কারণ ঘর 'চিঠি বা ইমেইল' — সূত্র তিন থেকে দুইয়ে নামিয়েছে কিন্তু একটিও বাছেনি; admitted_set তাই এই শ্রেণির নিজস্ব দুই সদস্য",
+      "evidence_note": "প্রধান শিক্ষকের গোনা ছয়টি C5 ঘরের বাইরে — রিপোর্টে আলাদা করে জানানো হয়েছে। CD-150-এ C4/C5 দুটোই paper-level।"
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S13",
+      "slot_task": "Letter / application / email",
+      "nape_frame": "চিঠি, আবেদনপত্র বা ইমেইল · 10",
+      "admitted_task": "কথোপকথন (dialogue)",
+      "task_mode": "simple",
+      "items_per_paper": 1,
+      "marks": 10,
+      "marks_per_item": 10,
+      "d_code": "D4",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S13 · C3 · `TOP-ENG-C3-06` / `-08` 🟦",
+      "row_constraints": [
+        {
+          "id": "SR-4",
+          "scope": "C2 · C3",
+          "text": "পরিচয় ও কথোপকথন সালাম দিয়ে শুরু হবে — এটা নিয়ম, পছন্দ নয়।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S13 · সালাম দিয়ে শুরু"
+        },
+        {
+          "id": "SR3-C-19",
+          "scope": "C3",
+          "text": "কথোপকথনে অভিনয় নয় — 'X সেজে কথা বল' নয়; ছাত্র নিজের পরিচয়েই লিখবে।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S13 · কথোপকথনে অভিনয় নয়"
+        }
+      ],
+      "evidence_note": "D4 — নেপের সেটের বাইরে, তাই simple।"
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S13",
+      "slot_task": "Letter / application / email",
+      "nape_frame": "চিঠি, আবেদনপত্র বা ইমেইল · 10",
+      "admitted_task": "নিজের পরিচয় পাঁচ বাক্যে",
+      "task_mode": "simple",
+      "items_per_paper": 1,
+      "marks": 5,
+      "marks_per_item": 5,
+      "d_code": "D4",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S13 · C2 · `TOP-ENG-C2-07` U01",
+      "row_constraints": [
+        {
+          "id": "SR-4",
+          "scope": "C2 · C3",
+          "text": "পরিচয় ও কথোপকথন সালাম দিয়ে শুরু হবে — এটা নিয়ম, পছন্দ নয়।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S13 · সালাম দিয়ে শুরু"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S13",
+      "slot_task": "Letter / application / email",
+      "nape_frame": "চিঠি, আবেদনপত্র বা ইমেইল · 10",
+      "admitted_task": "শুভেচ্ছা বিনিময়ের ফাঁকা পূরণ",
+      "task_mode": "simple",
+      "items_per_paper": 5,
+      "marks": 5,
+      "marks_per_item": 1,
+      "d_code": "D4",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S13 · C1 · `TOP-ENG-C1-06` U01",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 5,
+      "slot": "ENG-S14",
+      "slot_task": "Composition",
+      "nape_frame": "ছোট রচনা — খোলা, অথবা কয়েকটি প্রশ্নের উত্তর দিয়ে · 10",
+      "admitted_task": null,
+      "task_mode": "alternative",
+      "items_per_paper": 1,
+      "marks": 10,
+      "marks_per_item": 10,
+      "d_code": "D0",
+      "authority": "নেপ ২০২৬ কাঠামো (Primary Scholarship Examination 2026, Class V, English)",
+      "row_constraints": [],
+      "admitted_set": [
+        "খোলা রচনা",
+        "কয়েকটি প্রশ্নের উত্তর দিয়ে রচনা"
+      ],
+      "selected": null,
+      "unselected_reason": "নেপের কাঠামো একাধিক রূপ মানে আর C5-এর কারণ ঘর কোনো একটিকে বেছে নেয়নি; C5-এর কর্তৃত্ব নেপ, তাই এখানে একটি রূপ লিখলে সেটা এমন সংকীর্ণতা হতো যা কোনো সূত্র করেনি — C5 কারণ ঘর: 'ছোট রচনা' — এটা স্লটের নাম, কোনো রূপের নাম নয়",
+      "evidence_note": "C4 D0 এবং C4 'খোলা' বেছে নেয় — D0-অনুবাদে C5-ও খোলা হতো; Principal 2026-08-16 সেই যুক্তি বিবেচনা করে (A) রায় দিয়েছেন।"
+    },
+    {
+      "subject": "ENG",
+      "class": 4,
+      "slot": "ENG-S14",
+      "slot_task": "Composition",
+      "nape_frame": "ছোট রচনা — খোলা, অথবা কয়েকটি প্রশ্নের উত্তর দিয়ে · 10",
+      "admitted_task": "খোলা রচনা",
+      "task_mode": "alternative",
+      "items_per_paper": 1,
+      "marks": 10,
+      "marks_per_item": 10,
+      "d_code": "D0",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S14 · C4 · 7.4",
+      "row_constraints": [],
+      "admitted_set": [
+        "খোলা রচনা",
+        "কয়েকটি প্রশ্নের উত্তর দিয়ে রচনা"
+      ],
+      "selected": "খোলা রচনা",
+      "evidence_note": "কারণ ঘর 'ছোট রচনা — খোলা লেখা এখান থেকেই শুরু' — 'খোলা' স্পষ্টভাবে নাম করা।"
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-S14",
+      "slot_task": "Composition",
+      "nape_frame": "ছোট রচনা — খোলা, অথবা কয়েকটি প্রশ্নের উত্তর দিয়ে · 10",
+      "admitted_task": "নির্দেশিত অনুচ্ছেদ",
+      "task_mode": "simple",
+      "items_per_paper": 1,
+      "marks": 10,
+      "marks_per_item": 10,
+      "d_code": "D4",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S14 · C3 · `TOP-ENG-C3-13` 🟦, 7.4.1 / 7.4.2",
+      "row_constraints": [
+        {
+          "id": "E-GUIDED-EXAM-ONLY",
+          "scope": "C2 · C3",
+          "text": "শুধু পরীক্ষার প্রশ্নটাই নির্দেশিত; ক্লাসে লেখার কাজ খোলা থাকবে। শুধু একটা শিরোনাম দিলে সেটা নির্দেশনা নয় — ৫টি নির্দেশক প্রশ্ন বা একটা শব্দের তালিকা দিতেই হবে।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S14 · স্থায়ী নিয়ম"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-S14",
+      "slot_task": "Composition",
+      "nape_frame": "ছোট রচনা — খোলা, অথবা কয়েকটি প্রশ্নের উত্তর দিয়ে · 10",
+      "admitted_task": "নির্দেশিত অনুচ্ছেদ",
+      "task_mode": "simple",
+      "items_per_paper": 1,
+      "marks": 10,
+      "marks_per_item": 10,
+      "d_code": "D4",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S14 · C2 · `TOP-ENG-C2-16` 🟦, 7.4.2",
+      "row_constraints": [
+        {
+          "id": "E-GUIDED-EXAM-ONLY",
+          "scope": "C2 · C3",
+          "text": "শুধু পরীক্ষার প্রশ্নটাই নির্দেশিত; ক্লাসে লেখার কাজ খোলা থাকবে। শুধু একটা শিরোনাম দিলে সেটা নির্দেশনা নয় — ৫টি নির্দেশক প্রশ্ন বা একটা শব্দের তালিকা দিতেই হবে।",
+          "source": "MarkLogic_ENG_Spine.md · ENG-S14 · স্থায়ী নিয়ম"
+        }
+      ]
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-S14",
+      "slot_task": "Composition",
+      "nape_frame": "ছোট রচনা — খোলা, অথবা কয়েকটি প্রশ্নের উত্তর দিয়ে · 10",
+      "items_per_paper": 0,
+      "marks": 0,
+      "marks_per_item": 0,
+      "d_code": "D5",
+      "authority": "MarkLogic_ENG_Spine.md · ENG-S14 · C1 সারি · `TOP-ENG-C1-13` 🟦",
+      "absent_reason": "নেই — দ্বিতীয় শ্রেণিতে শুরু",
+      "row_constraints": [],
+      "evidence_note": "ইংরেজিতে প্রথম শ্রেণিতে নিজের মতো প্রকাশ করা কেবল মুখের কাজ; লিখিত ধাপটাই নেই।"
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-L01",
+      "slot_task": "বড় হাতের / ছোট হাতের অক্ষর লেখা",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 12,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L01 C1",
+      "source_cited": "`TOP-ENG-C1-01` 🔴 U02",
+      "reason": "২৬টা অক্ষর প্রথম শ্রেণিতেই পুরোপুরি শিখে ফেলতে হবে; দ্বিতীয় শ্রেণিতে এটা শুধু ঝালাই",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-L02",
+      "slot_task": "অক্ষর দিয়ে দুটো করে শব্দ",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 12,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L02 C1",
+      "source_cited": "`TOP-ENG-C1-01` 🔴 + `-02`",
+      "reason": "অক্ষর আর ধ্বনি জোড়া লাগানোর একমাত্র প্রশ্ন। শুধু শব্দের শুরুর অক্ষর (নিয়ম E-1)",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-L03",
+      "slot_task": "শব্দের বাংলা অর্থ",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 12,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L03 C1",
+      "source_cited": "`TOP-ENG-C1-04` 🔴",
+      "reason": "৩০ শব্দের মূল তালিকা। প্রথম শ্রেণিতে ইংরেজি অর্থ লেখা সম্ভব নয়, তাই বাংলায়",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-L03",
+      "slot_task": "শব্দের অর্থ",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 10,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L03 C2",
+      "source_cited": "`TOP-ENG-C2-04` 🔴, 8.1.1 / 8.1.2",
+      "reason": "শব্দভান্ডার দ্বিতীয় শ্রেণিতেও 🔴 — পড়ে বোঝার ভিত এটাই",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-L04",
+      "slot_task": "বাক্যের মধ্যে বহুবচন",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 4,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L04 C1",
+      "source_cited": "8.1.2 ব্যবহারের মধ্য দিয়ে",
+      "reason": "বাক্যের ভেতরে, খালি তালিকা নয় — তালিকা করলে নাম বলার কাজ হয়ে যায় আর নিয়ম E-2 ভাঙে",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-L04",
+      "slot_task": "বাক্যের মধ্যে বহুবচন",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 5,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L04 C2",
+      "source_cited": "8.1.2 ব্যবহারের মধ্য দিয়ে",
+      "reason": "বাক্যের ভেতরে, খালি তালিকা নয়",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-L04",
+      "slot_task": "বাক্যের মধ্যে বহুবচন",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 6,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L04 C3",
+      "source_cited": "8.1.2 ব্যবহারের মধ্য দিয়ে",
+      "reason": "বাক্যের ভেতরে, খালি তালিকা নয়",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-L05",
+      "slot_task": "মাসের নাম",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 12,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L05 C1",
+      "source_cited": "পঞ্জিকা শব্দভান্ডার",
+      "reason": "বারো মাসই — পূর্ণ তালিকা, ভাগ করে শেখার জিনিস নয়। শব্দভান্ডারের মোট ভার ৩১-এই আছে, শুধু ভাগ বদলেছে",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 1,
+      "slot": "ENG-L06",
+      "slot_task": "ছড়ার ফাঁকা পূরণ",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 4,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L06 C1",
+      "source_cited": "`TOP-ENG-C1-11` U05",
+      "reason": "ছন্দ ধরে ধ্বনি চেনার একমাত্র প্রশ্ন। ছড়া বলা হবে, গাওয়া হবে না",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-L07",
+      "slot_task": "শুরুর ও শেষের ধ্বনি",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 12,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L07 C2",
+      "source_cited": "`TOP-ENG-C2-02` 🔴 U06",
+      "reason": "দ্বিতীয় শ্রেণির সবচেয়ে বড় প্রশ্ন — 'এখানেই ঠিক হয় ছাত্র পড়তে পারবে কি না'। মাঝের ধ্বনি নয় (নিয়ম E-1)",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 2,
+      "slot": "ENG-L08",
+      "slot_task": "ভালো ও মন্দ অভ্যাস আলাদা করা",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 5,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L08 C2",
+      "source_cited": "8.1.x + আখলাক",
+      "reason": "শব্দভান্ডারের প্রশ্ন, সঙ্গে আচরণের শিক্ষা",
+      "row_constraints": []
+    },
+    {
+      "subject": "ENG",
+      "class": 3,
+      "slot": "ENG-L09",
+      "slot_task": "মাঝের ধ্বনি",
+      "nape_frame": null,
+      "items_per_paper": null,
+      "marks": 5,
+      "marks_per_item": null,
+      "d_code": "D6",
+      "authority": "MarkLogic_ENG_Spine.md · স্কুলের নিজস্ব প্রশ্ন (D6) · L09 C3",
+      "source_cited": "`TOP-ENG-C3-01` 🔴 U04",
+      "reason": "তৃতীয় শ্রেণিতে নতুন, আর ধ্বনির শেষ ধাপ",
+      "row_constraints": []
     }
   ]
 }
