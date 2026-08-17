@@ -10,7 +10,7 @@
   "source_extraction": "canon/marklogic/C5_Bangla_Source_13-23.md",
   "curation": "FLEXIBLE · C-03 respected — অনুশীলনী ৫-এর বারণ করা বাক্যটি ব্যবহার করা হয়নি, আর তার বদলি বহনকারী Q23 এই ঢেউয়ে অবসরে গেছে",
   "header": {
-    "target": 110,
+    "target": 109,
     "reason": "110 is the RE-AUTHORED pool, recomputed in session and carrying no number from wave 3 — the Principal ruled 'extract to content limit, balanced' and required every REF-06 §3.6 floor to clear WITH MARGIN, a plan landing exactly on a floor being a defect rather than a pass. The binding constraint is not the pool's size but its Apply base: retiring the ten S10 ভাব নির্ণয় items cost 7 `Apply`, and retiring Q34 cost the eighth, so S03 · S11 · S12 are all authored to their content limits and one S10 item is `Apply` on its own merit. Under CD-135 a pool has no ceiling, so the only thing this size costs is authoring.",
     "topics": [
       "TOP-BAN-C5-05",
@@ -58,7 +58,7 @@
       "S02": 7,
       "S03": 16,
       "S04": 5,
-      "S05": 8,
+      "S05": 7,
       "S06": 7,
       "S07": 21,
       "S08": 15,
@@ -78,17 +78,18 @@
       "মিল-শব্দ (অনুশীলনী ৩) HAS NO C5 SPINE SLOT AND NO LONGER RIDES ONE. Q34 carried it at S07 as an acknowledged workaround through waves 2 and 3. CD-138(b) makes the task a DECLARED field, and Q34 would have had to declare S07's `মূল কাঠামো` — a declaration that is convenient and false. The Principal rejected it and Q34 is RETIRED. The chapter's মিল-শব্দ content is now unserved, and that is the honest state: the gap is in the spine, not in the bank, and it is raised here rather than papered over. Q108 uses the same অন্ত্যমিল material legitimately, as S08 analysis rather than as a slot claim.",
       "TEN S10 ITEMS RETIRED — Q20 · Q21 · Q22 · Q23 · Q24 · Q35 · Q67 · Q68 · Q69 · Q70, all ভাব নির্ণয়. Not re-slotted, because ভাব নির্ণয় is admitted at NO class in MarkLogic_BAN_Spine.md: C3's S10 is বাক্যের প্রকার, C2's is ক্রিয়ার পুরুষ-সংগতি. Wave 3 authored them on this chapter's own use-line, which CD-134 rules ADVISORY and which cannot admit a task the spine admits nowhere. S10 is re-authored as পদ নির্ণয় — the task C5 SELECTED from the slot's three.",
       "Not authored, judged too weak rather than overlooked: অনুশীলনী ৭'s গাছের তালিকা (the answer is wholly the student's own and traces to nothing) and অনুশীলনী ২'s line-ordering task (re-uses Q01's eight lines).",
-      "HELD FOR THE SUBJECT LEAD PASS (Principal, REF-09 §9) — nothing in this bank is promoted. CD-136(g) puts the teacher-key rule's enforcement at the §6 human review gate, and 24 items across S02 · S06 · S10 · S12 · S13 carry teacher-supplied keys declaring themselves in their own model_note."
+      "HELD FOR THE SUBJECT LEAD PASS (Principal, REF-09 §9) — nothing in this bank is promoted. CD-136(g) puts the teacher-key rule's enforcement at the §6 human review gate, and 24 items across S02 · S06 · S10 · S12 · S13 carry teacher-supplied keys declaring themselves in their own model_note.",
+      "Q44 RETIRED 2026-08-17 (Principal ruling, PENDING-P-039 in-lane fixes). The item asked what the poet MEANT by 'বন্য' and keyed 'নিয়মের বাঁধন ছেড়ে স্বাধীন', which the পাঠ ১৩ section does not state; worse, its own why_wrong called the section's OWN gloss (বন্য — বুনো) 'অভিধানিক অর্থে থেমে যাওয়া' — it marked the source as a mistake. The section gives the word's meaning and says nothing about the poet's intent, so NO replacement key is derivable from it, and re-keying under the same qid was REFUSED: that authors a new item wearing an old identity, breaks the digest→Hub trace and hides the change from item history. Q50 (S06, বন্য → পোষা/গৃহপালিত) is CORRECT and untouched — it keys the section's own gloss. CONSEQUENCE, measured and reported rather than routed around: 110 → 109 items, Understand 30 → 29. PLAN needs ceil(25% × 109) = 28, so the margin is +1 against the +2 rule and U13 is NO LONGER SIGNABLE. U13 sat EXACTLY on the Understand margin at 110, so retiring any Understand item breaks it. Restoring the margin needs one new Understand item — authoring, which is outside the brief that ordered this retirement."
     ],
     "bloom_floors": {
       "rule": "CD-135 — POOL level is REF-06 §3.6's LOWER BOUNDS ONLY. No upper bound binds a pool. The band, both bounds, applies at PAPER level.",
       "observed": {
-        "Remember": "34/110 = 30.9%",
-        "Understand": "30/110 = 27.3%",
-        "Apply": "30/110 = 27.3%",
-        "Analyze": "14/110 = 12.7%",
-        "Evaluate": "2/110 = 1.8%",
-        "Create": "0/110 = 0.0%"
+        "Remember": "34/109 = 31.2%",
+        "Understand": "29/109 = 26.6%",
+        "Apply": "30/109 = 27.5%",
+        "Analyze": "14/109 = 12.8%",
+        "Evaluate": "2/109 = 1.8%",
+        "Create": "0/109 = 0.0%"
       },
       "margin_over_floor": {
         "Remember": 12,
@@ -258,7 +259,6 @@
     "QP-BAN-C5-U13-Q41": "S04",
     "QP-BAN-C5-U13-Q42": "S05",
     "QP-BAN-C5-U13-Q43": "S05",
-    "QP-BAN-C5-U13-Q44": "S05",
     "QP-BAN-C5-U13-Q45": "S05",
     "QP-BAN-C5-U13-Q46": "S05",
     "QP-BAN-C5-U13-Q47": "S05",
@@ -370,7 +370,6 @@
     "QP-BAN-C5-U13-Q41": "আমি না হয় পাখিই হব",
     "QP-BAN-C5-U13-Q42": "একটি নদীর নাম",
     "QP-BAN-C5-U13-Q43": "আম্মা বলেন পড়রে সোনা",
-    "QP-BAN-C5-U13-Q44": "আমি না হয় পাখিই হব",
     "QP-BAN-C5-U13-Q45": "কেমন করে শহর ছেড়ে",
     "QP-BAN-C5-U13-Q46": "বকুল ডালে লুকিয়ে থেকে",
     "QP-BAN-C5-U13-Q47": "সবাই যখন ঘুমিয়ে পড়ে",
@@ -1241,44 +1240,6 @@
           "text": "প্রতিবেশীরা",
           "is_correct": false,
           "why_wrong": "কবিতায় প্রতিবেশীদের কথা নেই।"
-        }
-      ]
-    },
-    {
-      "qid": "QP-BAN-C5-U13-Q44",
-      "topic_tag": "TOP-BAN-C5-05",
-      "ref19_topic_id": "BAN-POEM",
-      "question_text": "'আমি না হয় পাখিই হব, / পাখির মতো বন্য।' — এখানে কবি 'বন্য' হতে চান বলতে কী বোঝাচ্ছেন?",
-      "question_type": "mcq",
-      "paper_role": "mcq",
-      "bloom_level": "Understand",
-      "difficulty": "medium",
-      "tier": "tier1",
-      "marks": 1,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "options": [
-        {
-          "option_id": "ক",
-          "text": "তিনি হিংস্র হতে চান",
-          "is_correct": false,
-          "why_wrong": "'বন্য'-র অভিধানিক অর্থ ধরে থেমে গেলে এই ভুলটি হয়; কবিতায় হিংস্রতার কোনো ছবি নেই।"
-        },
-        {
-          "option_id": "খ",
-          "text": "তিনি বনের ভিতরে বাস করতে চান",
-          "is_correct": false,
-          "why_wrong": "কবি গাঁয়ের কথা বলেছেন, বনের নয়; এটিও অভিধানিক অর্থে থেমে যাওয়া।"
-        },
-        {
-          "option_id": "গ",
-          "text": "তিনি নিয়মের বাঁধন ছেড়ে স্বাধীন হতে চান",
-          "is_correct": true
-        },
-        {
-          "option_id": "ঘ",
-          "text": "তিনি পড়াশোনা একেবারে ছেড়ে দিতে চান",
-          "is_correct": false,
-          "why_wrong": "প্রথম স্তবকের উপরের ছবিটুকু দেখলে এমন মনে হয়; কবি পড়া ছাড়ার কথা বলেননি, মুক্তির ইচ্ছার কথা বলেছেন।"
         }
       ]
     },
@@ -2944,7 +2905,6 @@
     "QP-BAN-C5-U13-Q41": "মূল কাঠামো",
     "QP-BAN-C5-U13-Q42": "মূল কাঠামো",
     "QP-BAN-C5-U13-Q43": "মূল কাঠামো",
-    "QP-BAN-C5-U13-Q44": "মূল কাঠামো",
     "QP-BAN-C5-U13-Q45": "মূল কাঠামো",
     "QP-BAN-C5-U13-Q46": "মূল কাঠামো",
     "QP-BAN-C5-U13-Q47": "মূল কাঠামো",
