@@ -2942,3 +2942,46 @@ restores it nor explains it away. **Owner: the Principal.**
   done, but defects remain — two of them this session's own — and the canon-class stops are
   untouched. Next: the Principal's ruling on the U13 Understand margin, then the two incomplete
   fixes and the introduced one.
+
+## 2026-08-17 (cont.) · U13 authoring extension · the two incomplete fixes closed · cowork
+- **Scope extended by the Principal**: author the Understand items rather than hold seven sound
+  commits on a red gate. **TWO, not one** — one item restores exactly the fragile state that let a
+  single retirement break the floor.
+- **`Q122` and `Q123` authored** (S07, 2 marks). Suite went **CLEAN**, `LIVE-CONTROL` green on the
+  111-item bank, `PLAN` margins **Remember +11 · Understand +3 · Apply +2 · Analyze +2`.
+- **The two incomplete fixes closed.** `U13 Q75` still keyed the claim removed from `Q71`, so the
+  bank **forbade in one item what it keyed in another**; `U16 Q67`'s rubric still **required** the
+  link removed from `Q58`, in a `band_descriptors` string. **A third defect was nearly introduced
+  fixing the second**: the first `Q67` edit dropped the **C-18 guard clause**, restored on
+  re-reading the diff — no gate would have caught it, which is what 5b is for.
+- **`TOOLS-CR-008` filed** for the pattern: a report is organised by ITEM, a factual defect by
+  CLAIM, and acting on the report's organisation leaves the claim standing in siblings. **The
+  durable half already exists in the prompt, applied to the wrong check** — check 2 enumerates
+  (*list every occurrence with its qid and field*) and produced no recurrence; check 1 is per-item
+  and produced two. Proposed, not written, per instruction.
+- **THEN THE REVIEWS KEPT FINDING MY OWN WORK.** Run 4 found three defects, all three in items I
+  had just authored or edited: `Q122` asserted an identification the section does not make;
+  `Q123` had a person-agreement error (শিখছে for the poem's শিখছ); **`Q75`'s new note cited another
+  qid in marker-facing text — the exact fault I had just removed from `Q30`.** Run 5, after those
+  repairs, found three more: `Q123` duplicates `Q106`; **`Q122`'s `Understand` tag was not earned**;
+  and **`Q52` keys জন্য as a word "not in the poem" while the poem prints it** — a PRE-EXISTING
+  defect two earlier runs had positively declared sound.
+- **The authoring loop was stopped, not hidden.** `Q52` re-keyed. **`Q122` RE-TAGGED to `Remember`
+  rather than re-written a third time** — the label moves instead of the item pretending upward.
+  **Two attempts at an interpretive Understand item in this chapter each drew a defect, and the
+  honest reading is that পাঠ ১৩'s Understand surface is at its content limit**, which is what wave
+  3's header already said of S03/S11/S12. **Consequence: Understand 30/111, margin +2 — the rule is
+  met and the suite is CLEAN, but U13 is back at the margin two items were ordered to avoid. One
+  genuinely interpretive Understand item is still OWED, reported and not manufactured.**
+- **`Q123`/`Q106` duplication is NOT fixed** and is reported for a ruling: it passes every gate and
+  is a pool-quality judgement, and after two failed attempts a third unbidden edit is not the move.
+- **Verdicts of record: U16 `VERDICT: CLEAN`** — the first clean verdict any of the four has had,
+  with a claim-level grep confirming the causal link is gone bank-wide — **and U13 `VERDICT: 3
+  DEFECT(S)` with a SIXTH RUN OWED**, stated in the report's own header so no reader mistakes the
+  file for a clearance.
+- **Digests, final — re-import from THIS list:** U13 `f7c6e78452a5` (111) · U14 `a7198969b108` (84)
+  · U15 `a8d2cd38fe7e` (96) · U16 `51d1be1efbe8` (96).
+- Gates: **all eight in-condition gates CLEAN** — `CD-153` repo-wide green is met for the first time
+  this session. Two standing warns only.
+- **PENDING-P-039 still cannot close**: U13 owes a sixth run and an Understand item, U14/U15 keep
+  their reported defects, and the canon-class stops are untouched.
