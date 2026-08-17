@@ -1779,6 +1779,45 @@ def g_envelope_sync(bank, ctx):
 
 
 PLAN_MARGIN = 2
+
+# PER-CHAPTER MARGIN EXCEPTIONS — a CLOSED LITERAL, keyed (subject, class, chapter, level).
+#
+# CD-158: পাঠ ১৩ runs at `Understand` +1 because the chapter's Understand surface is EXHAUSTED,
+# measured and not asserted — two authoring attempts each drew a defect, and wave 3's own header had
+# already named S03/S11/S12 as the content limit. The margin could have been held at +2 by keeping
+# Q122 or Q123, and both were independently defective: keeping either would be keeping a known-bad
+# item so a number looks right.
+#
+# WHY A LITERAL AND NOT A BANK FIELD, for the third time in this repo and the same reason each time
+# (CD-155(a), HALF_MARK_ADMITTED, CD-137): a bank that could declare its own exception would carry
+# the PERMISSION beside the SHORTFALL, and the rule would be unfalsifiable by construction. The bank
+# whose margin is short is the last artifact entitled to say the shortfall is fine.
+#
+# RULED PER CHAPTER, BY THE PRINCIPAL, NEVER SELF-SELECTED BY AN AGENT. An agent that finds a floor
+# short REPORTS it; it does not add a key here. Widening this dict is a CD row.
+# The key is exact: one subject, one class, one chapter, one level, one value. A chapter holding an
+# exception at one level still FAILs a shortfall at any other.
+PLAN_MARGIN_EXCEPTIONS = {
+    ("BAN", 5, 13, "Understand"): 1,   # CD-158
+}
+
+
+def _chapter_number(bank):
+    """The chapter number a bank belongs to, from its own `bank_id` — e.g. QB-BAN-C5-U13 -> 13.
+
+    Read from `bank_id` rather than the `chapter` title, because the title is Bengali prose that a
+    later session may reword and the id is the thing the export and the Hub key on.
+    """
+    m = re.search(r"-U(\d+)\b", str(bank.get("bank_id") or ""))
+    return int(m.group(1)) if m else None
+
+
+def plan_margin_for(bank, subject, cls, level):
+    """→ (required margin, the exception's key or None). PLAN_MARGIN unless CD-158-class row says."""
+    key = (subject, cls, _chapter_number(bank), level)
+    if key in PLAN_MARGIN_EXCEPTIONS:
+        return PLAN_MARGIN_EXCEPTIONS[key], key
+    return PLAN_MARGIN, None
 PLAN_DUP_FAIL = 0.95
 PLAN_DUP_REPORT = 0.85
 
@@ -1851,7 +1890,8 @@ def g_plan(bank, ctx):
     # --- 1. Bloom floors, margin >= 2 ------------------------------------------------------
     counts = {lvl: sum(1 for q in items if q.get("bloom_level") == lvl) for lvl in BLOOM_FLOORS}
     positive = {k: v for k, v in BLOOM_FLOORS.items() if v > 0}
-    required = sum(-(-p * n // 100) + PLAN_MARGIN for p in positive.values())
+    required = sum(-(-p * n // 100) + plan_margin_for(bank, subject, cls, k)[0]
+                   for k, p in positive.items())
     if required > n:
         errs.append(f"POOL TOO SMALL TO BE SIGNABLE: {n} items cannot clear every positive floor "
                     f"with margin {PLAN_MARGIN} — the four floors "
@@ -1862,16 +1902,29 @@ def g_plan(bank, ctx):
         for lvl, floor_pct in positive.items():
             need = -(-floor_pct * n // 100)
             margin = counts[lvl] - need
-            if margin < PLAN_MARGIN:
+            want, exc = plan_margin_for(bank, subject, cls, lvl)
+            if margin < want:
                 errs.append(f"{lvl} {counts[lvl]}/{n} = {100*counts[lvl]/n:.1f}% against a "
                             f"{floor_pct}% floor ({need} items) — margin +{margin}, and the plan "
-                            f"rule is +{PLAN_MARGIN}. "
+                            f"rule is +{want}"
+                            + (f" (CD-158 exception for this chapter and level)" if exc else "")
+                            + ". "
                             + ("LANDING EXACTLY ON A FLOOR IS A DEFECT, NOT A PASS: one re-tag "
                                "reddens the bank" if margin == 0 else
                                "one re-tag from red is not margin"))
+            elif exc:
+                # A honoured exception is REPORTED every run, pass or fail. An exception that goes
+                # unmentioned is an exception nobody re-examines, and the reduced margin would look
+                # like the ordinary rule to anyone reading a clean verdict.
+                rep.append(f"{lvl} margin +{margin} against a REDUCED requirement of +{want} — "
+                           f"per-chapter exception {exc} (CD-158), ruled by the Principal on "
+                           f"measured evidence and never self-selected. PLAN_MARGIN is "
+                           f"+{PLAN_MARGIN} for every level and chapter this key does not name")
     rep.append("Bloom margins: " + " · ".join(
         f"{k} +{counts[k] - -(-v * n // 100)}" for k, v in positive.items())
-        + f"  (rule: every positive floor clears by >= {PLAN_MARGIN})")
+        + f"  (rule: every positive floor clears by >= {PLAN_MARGIN}"
+        + (f", except where PLAN_MARGIN_EXCEPTIONS names this chapter and level)"
+           if any(plan_margin_for(bank, subject, cls, k)[1] for k in positive) else ")"))
     for lvl, floor_pct in BLOOM_FLOORS.items():
         if floor_pct == 0 and counts[lvl] == 0:
             rep.append(f"{lvl} is 0 against a 0% floor — nothing owed, and §4 requires the header "
@@ -3418,6 +3471,9 @@ def qp_selftest():
     plan_ok = plan_selftest(ctx)
     ok = ok and plan_ok
 
+    cd158_ok = cd158_selftest(ctx)
+    ok = ok and cd158_ok
+
     print(f"\nSELFTEST RESULT: {'PASS' if ok else 'FAIL'} "
           f"({len(cases)} seeded failures + {len(negatives)} negatives + {len(decl)} "
           f"CD-055 declaration cases + 1 baseline, across all {sum(1 for _, i, _ in GATES if 'qp6' in i)} gates; "
@@ -3655,6 +3711,101 @@ def unselected_selftest():
             print(f"  FAIL  PLAN       {label:<38} expected "
                   f"{'a failure' if want else 'silence'}; got {errs}")
             ok = False
+    return ok
+
+
+def cd158_selftest(ctx):
+    """CD-158's per-chapter margin exception, both directions.
+
+    **The FAILING direction is the load-bearing one.** An exception mechanism whose only proof is
+    that the exception works has proved the wrong half: what matters is that a bank at a reduced
+    margin WITHOUT a row still FAILs, or the mechanism is a hole rather than a carve-out.
+
+    The fixture is the synthetic 44-item PLAN bank (QB-D-012, CD-121(e)), which sits at EXACTLY +2
+    on all four positive floors, so one item moved is one margin reduced.
+    """
+    print("\n--- CD-158 · per-chapter PLAN margin exceptions "
+          + "-" * 30)
+    ok = True
+
+    def bank_at(bank_id, level, short_by=1):
+        """The 44-item bank with `level` pushed `short_by` under its floor, under a given bank_id."""
+        b = json.loads(json.dumps(_plan_bank()))
+        b["bank_id"] = bank_id
+        moved = 0
+        for q in b["questions"]:
+            if q.get("bloom_level") == level and moved < short_by:
+                q["bloom_level"] = "Remember"     # Remember has +12 of room; it absorbs the move
+                moved += 1
+        return b
+
+    def margins(b):
+        e, r = g_plan(b, ctx)
+        return [x for x in e if "against a" in x and "floor" in x]
+
+    # ── the enumeration, direct on the resolver ───────────────────────────────────────────
+    pairs = [
+        ("QB-BAN-C5-U13", "Understand", 1, "the row's own key — CD-158"),
+        ("QB-BAN-C5-U13", "Apply",      2, "SAME chapter, DIFFERENT level — no exception"),
+        ("QB-BAN-C5-U13", "Remember",   2, "same chapter, another level — no exception"),
+        ("QB-BAN-C5-U13", "Analyze",    2, "same chapter, another level — no exception"),
+        ("QB-BAN-C5-U14", "Understand", 2, "SAME level, DIFFERENT chapter — no exception"),
+        ("QB-BAN-C5-U16", "Understand", 2, "another chapter entirely — no exception"),
+        ("QB-BAN-C4-U13", "Understand", 2, "same chapter NUMBER, different CLASS — no exception"),
+        ("QB-ENG-C5-U13", "Understand", 2, "same chapter and class, different SUBJECT — no exception"),
+    ]
+    bad = []
+    for bank_id, lvl, want, why in pairs:
+        b = {"bank_id": bank_id}
+        subject = bank_id.split("-")[1]
+        cls = int(bank_id.split("-")[2][1:])
+        got, _ = plan_margin_for(b, subject, cls, lvl)
+        if got != want:
+            bad.append((bank_id, lvl, want, got, why))
+    if bad:
+        for bank_id, lvl, want, got, why in bad:
+            print(f"  FAIL  KEY-EXACTNESS {bank_id} {lvl}: required +{got}, expected +{want} — {why}")
+        ok = False
+    else:
+        print(f"  PASS  KEY-EXACTNESS  {len(pairs)} (subject, class, chapter, level) lookups — the "
+              f"exception is honoured for its OWN key and for nothing else: not another level of "
+              f"the same chapter, not the same level of another chapter, not the same chapter "
+              f"number at another class, not another subject")
+
+    # ── through the gate: the FAILING direction first ─────────────────────────────────────
+    cases = [
+        ("no exception, Understand short by 1", "QB-BAN-C5-U99", "Understand", True,
+         "THE LOAD-BEARING SEED — a reduced margin with NO row must FAIL, or the mechanism is a "
+         "hole and not a carve-out"),
+        ("no exception, Apply short by 1", "QB-BAN-C5-U99", "Apply", True,
+         "the same, on a second level, so the seed is not passing on one accident"),
+        ("CD-158's chapter, Understand short by 1", "QB-BAN-C5-U13", "Understand", False,
+         "the exception honoured — +1 is the requirement for THIS chapter and level"),
+        ("CD-158's chapter, APPLY short by 1", "QB-BAN-C5-U13", "Apply", True,
+         "AN EXCEPTION AT ONE LEVEL IS NOT AN EXCEPTION AT ANOTHER — a chapter holding a row for "
+         "Understand still FAILs a shortfall in Apply"),
+        ("a DIFFERENT chapter, Understand short by 1", "QB-BAN-C5-U14", "Understand", True,
+         "the exception does not travel to another chapter"),
+    ]
+    for label, bank_id, lvl, want_fail, why in cases:
+        errs = margins(bank_at(bank_id, lvl))
+        got_fail = bool(errs)
+        if got_fail == want_fail:
+            print(f"  PASS  {'FAIL-SEED ' if want_fail else 'NEGATIVE  '} {label:<42} "
+                  f"{'fires' if got_fail else 'quiet'}: {why}")
+        else:
+            print(f"  FAIL  {'FAIL-SEED ' if want_fail else 'NEGATIVE  '} {label:<42} "
+                  f"expected {'a failure' if want_fail else 'silence'}; got {errs}")
+            ok = False
+
+    # ── and the honoured exception must SAY SO on a passing run ───────────────────────────
+    _, rep = g_plan(bank_at("QB-BAN-C5-U13", "Understand"), ctx)
+    if any("per-chapter exception" in r and "CD-158" in r for r in rep):
+        print("  PASS  REPORTED     an honoured exception is printed on a PASSING run — an "
+              "exception nobody re-examines is how a reduced margin comes to look like the rule")
+    else:
+        print(f"  FAIL  REPORTED     honoured exception not reported: {rep}")
+        ok = False
     return ok
 
 
