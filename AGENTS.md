@@ -83,7 +83,18 @@ under the base rule, costing a round-trip to release text the Principal had alre
 - Each workstream keeps its native series (PD-### for english-drive, D-### for support-books,
   etc. — see REGISTRY.md). Cross-cutting/canon decisions are **CD-###** in `canon/DECISIONS.md`.
 - The agent assigns the next free number itself (verify at source, never from memory) and never
-  asks the Principal for a number.
+  asks the Principal for a number. **"At source" means AGAINST A FRESHLY FETCHED `origin`,
+  IMMEDIATELY BEFORE THE COMMIT THAT FILES IT — `git fetch`, then check — not once at the start of
+  the session and not against the local clone (CD-154).** This applies to **every repo-wide scarce
+  resource claimed by number**: `CD-###`, `PENDING-P-###`, `CR-###`, `QB-CR-###`, every
+  workstream's native series, and any successor series minted later. **If the number moved between
+  verification and commit, STOP AND REPORT — do not reconcile by taking the next one.** Sliding
+  quietly to the next free number is what makes a collision invisible: the row lands, nothing is
+  duplicated, and the evidence that two sessions raced is destroyed by the fix.
+  **Why this sentence exists:** on 2026-08-16 `CD-150` was claimed twice, and **neither session
+  broke the rule as it then read** — each verified at source, each was correct when it looked, and
+  they looked at different moments. CD-141 made concurrent unattended sessions normal; this clause
+  predates that and had not noticed.
 - **Files-over-memory, always.** Before citing any decision, verify it exists at source.
   A citation that cannot be resolved is treated as phantom and flagged, even if the Principal
   supplied it.
