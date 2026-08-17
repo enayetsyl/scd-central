@@ -1,0 +1,26 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U16_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৬ section
+PROMPT : tools/bank_factual_review_prompt.md (teacher-lane step 5b, CD-151)
+RUN    : 2026-08-17 — THIRD run, after Q67. VERDICT OF RECORD for this bank.
+STATUS : Contemporaneous. Committed under step 3a (CD-157(d)).
+
+-----
+
+STEP 3 CHANGED-ITEM CHECK — Q67: FIXED. criterion is now "তিনটি সময়ের ঘটনা আলাদা করে চেনা ও ঠিকভাবে লেখা — তারিখগুলোকে ইতিহাসের তথ্য হিসেবে ব্যবহার করা": (a) no claim exceeds the section — each of ১৯৪৮ = ভাষার দাবি · ২৫শে মার্চ = নিরস্ত্র মানুষের ওপর আক্রমণ · ১৪ই ডিসেম্বর = নতুন হত্যাযজ্ঞ ও পরে দিবস is printed there; সম্পূর্ণ demands only that the three be told apart, no link; আংশিক penalises only omission or date-event mismatch — and (b) the C-18 guard clause "তারিখগুলোকে ইতিহাসের তথ্য হিসেবে ব্যবহার করা" IS present.
+CLAIM-LEVEL GREP (whole bank, every question_text / option text / why_wrong / accepted / blanks.accepted / model_note / rubric criterion / band_descriptors; field inventory confirmed exhaustive): the ১৯৪৮→১৯৭১ causal link is ABSENT. Only three strings pair ১৯৪৮ with ১৯৭১, all in Q58 — the stem asks for a যোগসূত্র, accepted supplies only the same-person link the section prints, and model_note explicitly BARS the causal reading, which is a prohibitive clause and not an assertion. Q62 keeps the ১৯৪৮ demand on its own significance; Q65's যোগসূত্র is ১৪ই ডিসেম্বর → the day, which the section states. Broader sweeps (এক সূত্রে · দাবি থেকে · পথ পেরিয়ে · ধারাবাহিকতা · পরিণতি · এগিয়েছে · ভিত্তি · আন্দোলন · সেই দাবি) return no surviving causal claim.
+
+1 · FACTUAL ACCURACY — PASS. Every date, name, role, age and attribute checked against the section (২৫শে মার্চ ১৯৭১ / নয় মাস · এম. মুনিরুজ্জামান বিজ্ঞান+পবিত্র কুরআন · মেহেরুন্নেসা কবি-সাংবাদিক পঁচিশ · শহিদ সাবের ও সেলিনা পারভীন সংবাদপত্র অফিস · ধীরেন্দ্রনাথ দত্ত ৮৫ / ১৯৪৮ গণপরিষদে প্রথম · যোগেশচন্দ্র ঘোষ সাধনা ঔষধালয় চুরাশি · রণদাপ্রসাদ সাহা 'দানবীর' · নূতনচন্দ্র সিংহ চট্টগ্রাম সমাজসেবক · ১৪ই ডিসেম্বর list incl. সিরাজুদ্দীন হোসেন ও শহীদুল্লা কায়সার · মিরপুর ও রায়ের বাজার বধ্যভূমি · শহিদ বুদ্ধিজীবী দিবস · পাষণ্ড gloss). No swap between people, no distractor arguably also correct, every Q30–Q38 why_wrong accurate. No key reaches beyond the section. Out of scope, previously reported: Q29.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS. "শহিদ": Q31 question_text, Q47 accepted, Q51 accepted, Q65 question_text, Q66 band[সম্পূর্ণ], Q79 question_text + accepted — 7 occurrences across 6 items, every one inside a declared PERMITTED string; no definitional or "শহিদ কারা" item anywhere; elsewhere the bank writes প্রাণ দেন / প্রাণ হারান / হত্যা করা হয় / বুদ্ধিজীবী. "শহীদুল্লা কায়সার" at Q66 — permitted. Song/composer paragraph — zero occurrences; the সুর hits (Q64, Q68, Q69 criteria) are "tone". "ফুল দেওয়া" — zero; "শহিদ মিনার"/মিনার — zero; "শ্রদ্ধা নিবেদন" — Q61 and Q65 criteria only, both prohibitive rows. ছবি — only as a substring of বাছবিচার (Q05, Q28, Q94).
+
+3 · STANDING CURATION BARS — PASS. C-03 nothing from music/dance/percussion. C-05 no picture shown or requested. C-18 no flag salute, wreath, flower, monument ritual or ritual silence; Q61/Q65/Q68 rubrics affirmatively forbid the ritual and hold answers to dates, events and contributions. Q69's criterion bars the জাতি-শ্রেষ্ঠত্ব register.
+
+4 · INVENTED NAMES — PASS. All personal names are figures the section records; Q19's "একজন শিক্ষানুরাগী" is unnamed.
+
+5 · NUMERALS — PASS. Mechanical [0-9] scan: zero ASCII digits in any student-facing string; all hits are inside teacher-facing model_note.
+
+6 · SLOT-SPECIFIC CORRECTNESS — PASS. S12 (Q83–Q89) decompositions all right and each new word carries its conjunct; both multi-conjunct stimuli name the target conjunct in the stem. S10 (Q70–Q75) correct পদ as used, standard terms, none a super-class. S13 (Q90–Q96) each answer matches its definition phrase and class. S06 (Q39–Q44) antonyms hold in the chapter's sense; Q44's প্রথম is ordinal, so শেষ is supported. S11 (Q76–Q82) marks all inside the class-5 set. Out of scope, previously reported: Q81, Q78.
+
+7 · LANGUAGE — PASS. Stems, keys and rubric rows natural, grammatical, class-appropriate; no policy code in student-facing text.
+
+VERDICT: CLEAN

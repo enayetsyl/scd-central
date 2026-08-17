@@ -1,0 +1,41 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৩ section
+PROMPT : tools/bank_factual_review_prompt.md (teacher-lane step 5b, CD-151)
+RUN    : 2026-08-17 — FIFTH run. VERDICT OF RECORD for this bank at the time it was taken.
+STATUS : Contemporaneous. Committed under step 3a (CD-157(d)).
+NOTE   : Two of its three findings were acted on AFTER this run and are therefore NOT reflected in
+         the verdict line below — Q52 re-keyed, Q122 re-tagged Remember. Q123/Q106 duplication is
+         reported to the Principal and NOT fixed. A sixth run is owed before this bank can be
+         called clean; this file is the evidence for what was found, not a claim that it is fixed.
+
+-----
+
+All 111 items read (missing tails Q20–Q24, Q34, Q35, Q44, Q67–Q70 confirmed absent everywhere).
+
+1 · FACTUAL ACCURACY — PASS on items in scope. Poem lines, blanks (Q37–Q41), glossary keys (Q02–Q04, Q12, Q120), MCQ keys (Q42, Q43, Q46, Q47, Q99, Q100) all check against the section. Q75's key no longer carries the moonlight claim. Out of scope, previously reported: Q80, Q87, Q121, Q45, Q85, Q74.
+Noted, not counted: Q76's key attributes গাছ · নদী · খোলা আকাশ to the গাঁ where the section prints only "সবুজ গাঁ"; Q77's key attributes অভিমান, which the section does not state. Both are pre-existing interpretive keys of the same family as Q73/Q78/Q106.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS. "আর একটা গান গাও না!" 0 occurrences; no item is ABOUT music, song, dance or percussion. গান occurs once as a substring inside লাগানোর (Q18) — not an occurrence. "জাতীয় কবি" / "বিদ্রোহী কবি" / "মহান কবি" 0 occurrences; "আল মাহমুদ" once, Q01 accepted, bare. C-05: ছবি/চিত্র at Q31, Q36, Q45, Q46, Q47, Q71, Q78, Q79, Q80, Q82, Q83, Q85, Q88, Q100, Q119 all figurative; আঁক only at Q31 and Q79 with the POET as subject and written-prose answers. Q122 and Q123 contain no barred string.
+
+3 · STANDING CURATION BARS — PASS. No C-03. No C-18 (পতাকা · শহিদ · স্মৃতি · মিনার · মৌন · জাতি: 0 hits). Q83's rubric row requiring respectful language about ফেরেস্তা is a forbidding row.
+
+4 · INVENTED NAMES — PASS. Only আল মাহমুদ; আম্মা · আব্বা · কবি · ফেরেস্তা are roles.
+
+5 · NUMERALS — PASS. Zero ASCII digits in any student-facing string.
+
+6 · SLOT-SPECIFIC CORRECTNESS — 1 defect
+1. Q52 (S12) — third accepted is "ন্য — ন ও য; জন্য", but জন্য IS in the poem ("মানুষ হওয়ার জন্য"), so the keyed answer contradicts the stem's own condition "কবিতায় নেই এমন নতুন একটি শব্দ". A student answering জন্য is keyed correct for breaking the instruction. Q51/Q53/Q92/Q93 checked for the same fault: clean. NOTE: the RERUN report of record explicitly declared Q52 "verified sound this run", so this stands as a live finding the earlier runs MISSED.
+All five S12 stimulus words carry exactly one conjunct. S06 Q48/Q50/Q101/Q102, S13 Q54/Q55/Q119/Q120, S10 Q110–Q116/Q118, S11 Q57/Q59 sound. Out of scope: Q49, Q103, Q104, Q51, Q117, Q56, Q109, Q58, Q61, Q89, Q90, Q91.
+
+7 · LANGUAGE — 2 defects
+1. Q122 — bloom_level "Understand" is NOT earned, and the item is redundant against Q04. Both required elements are lookups: element one is the অর্থ জেনে নিই row (বন্য — বুনো), which is already the entire task of Q04; element two is answered by the word "পাখির" printed inside the stem's own quoted চরণ. The rewrite replaced one pair of lookups with a different pair. No construing, inferring or relating is demanded, and the model_note correctly forbids the only element that would have demanded it. Two marks are paid for one glossary row and one word already visible in the stem.
+2. Q123 — near-duplicate of Q106. Same stimulus চরণ, same subject (the poet setting himself apart from 'তোমরা'), same question_type, paper_role, bloom_level, marks and slot; only কেন/কীভাবে differs. Each item's accepted would be marked correct against the other's stem, so the pool now pays twice for one answer.
+Cleared this run: zero cross-qid references survive in any marker-facing string (Q30 and Q75 both clean).
+
+CHANGED-ITEM VERIFICATION
+- Q123 — SELF-CONTAINED: CONFIRMED. The stem names the poem, locates the stanza and prints the চরণ. accepted corrected শিখছে → শিখছ, matching the printed line. model_note correctly declines to identify 'তোমরা'. But self-containment was bought by importing Q106's stimulus verbatim (check 7 defect 2).
+- Q122 — (a) both elements printed: CONFIRMED. (b) does NOT ask or assert what the poet MEANT by being বন্য: CONFIRMED — the Q44 fault is gone. (c) model_note bars that interpretation: CONFIRMED. (d) not a near-duplicate of Q50 or Q87 — but IS half-redundant with Q04.
+- BLOOM LEVEL, asked directly: NOT EARNED. Reclassifying to Remember leaves Understand at 30, so the floor holds either way, but the declaration is false as it stands.
+- UNDECLARED THIRD CHANGE — Q75's model_note lost its cross-qid reference. The edit is CORRECT and closes a check-7 finding, but a review told two items changed and finding three has to say so.
+
+VERDICT: 3 DEFECT(S)
