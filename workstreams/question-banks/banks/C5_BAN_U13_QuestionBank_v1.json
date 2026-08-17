@@ -10,7 +10,7 @@
   "source_extraction": "canon/marklogic/C5_Bangla_Source_13-23.md",
   "curation": "FLEXIBLE · C-03 respected — অনুশীলনী ৫-এর বারণ করা বাক্যটি ব্যবহার করা হয়নি, আর তার বদলি বহনকারী Q23 এই ঢেউয়ে অবসরে গেছে",
   "header": {
-    "target": 111,
+    "target": 109,
     "reason": "110 is the RE-AUTHORED pool, recomputed in session and carrying no number from wave 3 — the Principal ruled 'extract to content limit, balanced' and required every REF-06 §3.6 floor to clear WITH MARGIN, a plan landing exactly on a floor being a defect rather than a pass. The binding constraint is not the pool's size but its Apply base: retiring the ten S10 ভাব নির্ণয় items cost 7 `Apply`, and retiring Q34 cost the eighth, so S03 · S11 · S12 are all authored to their content limits and one S10 item is `Apply` on its own merit. Under CD-135 a pool has no ceiling, so the only thing this size costs is authoring.",
     "topics": [
       "TOP-BAN-C5-05",
@@ -60,7 +60,7 @@
       "S04": 5,
       "S05": 7,
       "S06": 7,
-      "S07": 23,
+      "S07": 21,
       "S08": 15,
       "S09": 1,
       "S10": 10,
@@ -81,17 +81,18 @@
       "HELD FOR THE SUBJECT LEAD PASS (Principal, REF-09 §9) — nothing in this bank is promoted. CD-136(g) puts the teacher-key rule's enforcement at the §6 human review gate, and 24 items across S02 · S06 · S10 · S12 · S13 carry teacher-supplied keys declaring themselves in their own model_note.",
       "Q44 RETIRED 2026-08-17 (Principal ruling, PENDING-P-039 in-lane fixes). The item asked what the poet MEANT by 'বন্য' and keyed 'নিয়মের বাঁধন ছেড়ে স্বাধীন', which the পাঠ ১৩ section does not state; worse, its own why_wrong called the section's OWN gloss (বন্য — বুনো) 'অভিধানিক অর্থে থেমে যাওয়া' — it marked the source as a mistake. The section gives the word's meaning and says nothing about the poet's intent, so NO replacement key is derivable from it, and re-keying under the same qid was REFUSED: that authors a new item wearing an old identity, breaks the digest→Hub trace and hides the change from item history. Q50 (S06, বন্য → পোষা/গৃহপালিত) is CORRECT and untouched — it keys the section's own gloss. CONSEQUENCE, measured and reported rather than routed around: 110 → 109 items, Understand 30 → 29. PLAN needs ceil(25% × 109) = 28, so the margin is +1 against the +2 rule and U13 is NO LONGER SIGNABLE. U13 sat EXACTLY on the Understand margin at 110, so retiring any Understand item breaks it. Restoring the margin needs one new Understand item — authoring, which is outside the brief that ordered this retirement.",
       "TWO UNDERSTAND ITEMS AUTHORED 2026-08-17 — Q122 · Q123, S07, marks 2 each (Principal ruling, scope extension). Q44's retirement left Understand at margin +1 against PLAN's +2 rule, and gates.py carries this bank as its LIVE-CONTROL, so the whole suite could not judge any bank. TWO were authored rather than one deliberately: one item restores exactly the fragile state that let a single retirement break the floor (30/110, need 28, margin +2). At 111 items Understand is 31, need 28, margin +3. Both are grounded ONLY in the পাঠ ১৩ section — Q122 joins the 'অর্থ জেনে নিই' gloss 'কর্ণফুলী — একটি নদীর নাম' to the poem's own 'ইচ্ছে জাগে নদীর কাছে থাকতে' and 'কর্ণফুলীর কূলটায়'; Q123 reads the final stanza's own contrast. Neither asks for anything outside the section and neither identifies 'তোমরা', which the poem does not.",
-      "Q122's bloom_level was declared `Understand` when authored and is CORRECTED to `Remember` in the same session, on the reviewer's finding. Both its elements are lookups — one অর্থ জেনে নিই row (which is already Q04's whole task) and one word printed inside the stem's own quoted চরণ — so the declaration was false. IT IS RE-TAGGED RATHER THAN RE-WRITTEN A THIRD TIME: two attempts at an interpretive Understand item in this chapter each drew a defect, and the honest reading is that পাঠ ১৩'s Understand surface is at its content limit, exactly as wave 3's header said of S03/S11/S12. CONSEQUENCE: Understand 31 → 30 of 111, need 28, margin +2 — the PLAN rule is met but U13 is back at the margin the Principal ordered two items to avoid. One genuinely interpretive Understand item is still OWED and is reported, not manufactured."
+      "Q122's bloom_level was declared `Understand` when authored and is CORRECTED to `Remember` in the same session, on the reviewer's finding. Both its elements are lookups — one অর্থ জেনে নিই row (which is already Q04's whole task) and one word printed inside the stem's own quoted চরণ — so the declaration was false. IT IS RE-TAGGED RATHER THAN RE-WRITTEN A THIRD TIME: two attempts at an interpretive Understand item in this chapter each drew a defect, and the honest reading is that পাঠ ১৩'s Understand surface is at its content limit, exactly as wave 3's header said of S03/S11/S12. CONSEQUENCE: Understand 31 → 30 of 111, need 28, margin +2 — the PLAN rule is met but U13 is back at the margin the Principal ordered two items to avoid. One genuinely interpretive Understand item is still OWED and is reported, not manufactured.",
+      "Q122 AND Q123 BOTH RETIRED 2026-08-17 (Principal ruling). Each was independently defective and neither was kept to hold a number: Q122 was Q04 entire (same word, same অর্থ জেনে নিই row, same accepted বুনো) plus a second element answerable by copying from the stem's own quoted চরণ — the reviewer's own recommendation was to retire it; Q123 duplicated Q106 (same stimulus চরণ, same subject, same type, role, bloom, marks and slot, differing only কেন/কীভাবে) and had carried a person-agreement error against the printed line. KEEPING EITHER TO HOLD A MARGIN WOULD BE KEEPING A KNOWN-BAD ITEM SO A NUMBER LOOKS RIGHT. No replacements authored, per the ruling. CONSEQUENCE: 111 → 109 items; Remember 35 → 34, Understand 30 → 29. Understand's PLAN margin is +1 against the +2 rule, and that reduced margin is AUTHORIZED FOR THIS CHAPTER ONLY by the per-chapter exception row filed the same session — never self-selected. The chapter's Understand surface is exhausted at +1, measured rather than asserted: two authoring attempts each drew a defect, and wave 3's own header already named S03/S11/S12 as the content limit."
     ],
     "bloom_floors": {
       "rule": "CD-135 — POOL level is REF-06 §3.6's LOWER BOUNDS ONLY. No upper bound binds a pool. The band, both bounds, applies at PAPER level.",
       "observed": {
-        "Remember": "35/111 = 31.5%",
-        "Understand": "30/111 = 27.0%",
-        "Apply": "30/111 = 27.0%",
-        "Analyze": "14/111 = 12.6%",
-        "Evaluate": "2/111 = 1.8%",
-        "Create": "0/111 = 0.0%"
+        "Remember": "34/109 = 31.2%",
+        "Understand": "29/109 = 26.6%",
+        "Apply": "30/109 = 27.5%",
+        "Analyze": "14/109 = 12.8%",
+        "Evaluate": "2/109 = 1.8%",
+        "Create": "0/109 = 0.0%"
       },
       "margin_over_floor": {
         "Remember": 12,
@@ -179,9 +180,7 @@
       "QP-BAN-C5-U13-Q98",
       "QP-BAN-C5-U13-Q100",
       "QP-BAN-C5-U13-Q106",
-      "QP-BAN-C5-U13-Q108",
-      "QP-BAN-C5-U13-Q122",
-      "QP-BAN-C5-U13-Q123"
+      "QP-BAN-C5-U13-Q108"
     ],
     "AS": [
       "QP-BAN-C5-U13-Q02",
@@ -335,9 +334,7 @@
     "QP-BAN-C5-U13-Q105": "S07",
     "QP-BAN-C5-U13-Q106": "S07",
     "QP-BAN-C5-U13-Q107": "S08",
-    "QP-BAN-C5-U13-Q108": "S08",
-    "QP-BAN-C5-U13-Q122": "S07",
-    "QP-BAN-C5-U13-Q123": "S07"
+    "QP-BAN-C5-U13-Q108": "S08"
   },
   "source_index": {
     "QP-BAN-C5-U13-Q01": "আম্মা বলেন পড়রে সোনা আব্বা বলেন মন দে",
@@ -448,9 +445,7 @@
     "QP-BAN-C5-U13-Q105": "তখন কেবল ভাবতে থাকি",
     "QP-BAN-C5-U13-Q106": "তোমরা যখন শিখছ পড়া",
     "QP-BAN-C5-U13-Q107": "আম্মা বলেন পড়রে সোনা",
-    "QP-BAN-C5-U13-Q108": "মিল-শব্দ খুঁজে বের করা",
-    "QP-BAN-C5-U13-Q122": "আমি না হয় পাখিই হব",
-    "QP-BAN-C5-U13-Q123": "তোমরা যখন শিখছ পড়া"
+    "QP-BAN-C5-U13-Q108": "মিল-শব্দ খুঁজে বের করা"
   },
   "questions": [
     {
@@ -2864,44 +2859,6 @@
         ],
         "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
       }
-    },
-    {
-      "qid": "QP-BAN-C5-U13-Q122",
-      "topic_tag": "TOP-BAN-C5-05",
-      "ref19_topic_id": "BAN-POEM",
-      "question_text": "'আমি না হয় পাখিই হব, / পাখির মতো বন্য।' — পাঠ অনুযায়ী 'বন্য' শব্দের অর্থ কী, আর এখানে কবি কার সঙ্গে নিজের তুলনা করছেন?",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Remember",
-      "difficulty": "medium",
-      "tier": "tier1",
-      "marks": 2,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "পাঠের অর্থ-তালিকা অনুযায়ী 'বন্য' মানে বুনো; আর কবি এখানে নিজের তুলনা করছেন পাখির সঙ্গে — তিনি বলছেন পাখির মতো বন্য হবেন।"
-        ],
-        "model_note": "দুটো জিনিস মিলিয়ে লিখতে হবে — 'অর্থ জেনে নিই' ছকের অর্থ (বন্য — বুনো) আর কবিতার চরণে করা তুলনা (পাখির মতো)। দুটোই পাঠে ছাপা আছে। কবি 'বন্য' হয়ে ঠিক কী বোঝাতে চেয়েছেন — সে বিষয়ে পাঠ কিছু বলেনি, তাই তেমন কোনো ব্যাখ্যা চাওয়া হচ্ছে না এবং লিখলেও তার জন্য নম্বর নেই।"
-      }
-    },
-    {
-      "qid": "QP-BAN-C5-U13-Q123",
-      "topic_tag": "TOP-BAN-C5-05",
-      "ref19_topic_id": "BAN-POEM",
-      "question_text": "'পাখির মতো' কবিতার শেষ স্তবকে — 'তোমরা যখন শিখছ পড়া' — কবি নিজেকে 'তোমরা'র থেকে আলাদা করছেন কীভাবে?",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Understand",
-      "difficulty": "medium",
-      "tier": "tier1",
-      "marks": 2,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "তোমরা পড়া শিখছ মানুষ হওয়ার জন্য, আর কবি বলছেন তিনি না হয় পাখিই হবেন — এই তুলনাতেই তিনি নিজেকে আলাদা করছেন।"
-        ],
-        "model_note": "স্তবকের দুই দিক — অন্যদের পড়া শেখা আর কবির পাখি হতে চাওয়া — ধরা পড়লেই পূর্ণ নম্বর। 'তোমরা' কারা তা কবিতা নাম ধরে বলেনি, তাই তাদের পরিচয় লেখার দরকার নেই।"
-      }
     }
   ],
   "waves": {
@@ -3038,8 +2995,6 @@
     "QP-BAN-C5-U13-Q118": "পদ নির্ণয়",
     "QP-BAN-C5-U13-Q119": "মূল কাঠামো",
     "QP-BAN-C5-U13-Q120": "মূল কাঠামো",
-    "QP-BAN-C5-U13-Q121": "মূল কাঠামো",
-    "QP-BAN-C5-U13-Q122": "মূল কাঠামো",
-    "QP-BAN-C5-U13-Q123": "মূল কাঠামো"
+    "QP-BAN-C5-U13-Q121": "মূল কাঠামো"
   }
 }
