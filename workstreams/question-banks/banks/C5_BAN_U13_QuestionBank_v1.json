@@ -10,7 +10,7 @@
   "source_extraction": "canon/marklogic/C5_Bangla_Source_13-23.md",
   "curation": "FLEXIBLE · C-03 respected — অনুশীলনী ৫-এর বারণ করা বাক্যটি ব্যবহার করা হয়নি, আর তার বদলি বহনকারী Q23 এই ঢেউয়ে অবসরে গেছে",
   "header": {
-    "target": 107,
+    "target": 106,
     "reason": "110 is the RE-AUTHORED pool, recomputed in session and carrying no number from wave 3 — the Principal ruled 'extract to content limit, balanced' and required every REF-06 §3.6 floor to clear WITH MARGIN, a plan landing exactly on a floor being a defect rather than a pass. The binding constraint is not the pool's size but its Apply base: retiring the ten S10 ভাব নির্ণয় items cost 7 `Apply`, and retiring Q34 cost the eighth, so S03 · S11 · S12 are all authored to their content limits and one S10 item is `Apply` on its own merit. Under CD-135 a pool has no ceiling, so the only thing this size costs is authoring.",
     "topics": [
       "TOP-BAN-C5-05",
@@ -66,7 +66,7 @@
       "S10": 10,
       "S11": 8,
       "S12": 5,
-      "S13": 6
+      "S13": 5
     },
     "teacher_gloss_ruling": "PRINCIPAL RULING 2026-08-14 — a TEACHER-SUPPLIED GLOSS is an acceptable key for a শব্দার্থ item. **Q25 গন্ধ · Q26 কূল · Q27 গাঁ · Q28 ইচ্ছা carry keys that are NOT in the extraction.** অনুশীলনী ১ sets these four as tasks and the chapter glosses none of them; every other key in this bank resolves to পাঠ ১৩ and these four resolve to the teacher. Each says so in its own `model_note`, so the provenance travels with the item and not only with this header. Their `source_index` anchors point at the word's OCCURRENCE in the poem, which is what the item is about — there is no gloss in the file to anchor to, and SOURCE-TRACE would be satisfied either way, which is precisely why the difference is written down rather than left to the gate.",
     "remember_cap": "THE CAP IS RECOMPUTED FROM THIS POOL, not carried. Under CD-135 a pool has no upper bound, so the ceiling wave 3 computed from REF-06's 20–30% band no longer binds — what binds is the FLOORS, and each one caps the pool from below: max pool = level ÷ floor. At Remember 34 the cap is 100, at Understand 30 it is 120, at Apply 30 it is 120 and at Analyze 14 it is 140. The smallest is the real cap and it is Apply's — which is why the five held-back Remember items below are held rather than taken: they raise the pool without raising Apply.",
@@ -83,18 +83,20 @@
       "TWO UNDERSTAND ITEMS AUTHORED 2026-08-17 — Q122 · Q123, S07, marks 2 each (Principal ruling, scope extension). Q44's retirement left Understand at margin +1 against PLAN's +2 rule, and gates.py carries this bank as its LIVE-CONTROL, so the whole suite could not judge any bank. TWO were authored rather than one deliberately: one item restores exactly the fragile state that let a single retirement break the floor (30/110, need 28, margin +2). At 111 items Understand is 31, need 28, margin +3. Both are grounded ONLY in the পাঠ ১৩ section — Q122 joins the 'অর্থ জেনে নিই' gloss 'কর্ণফুলী — একটি নদীর নাম' to the poem's own 'ইচ্ছে জাগে নদীর কাছে থাকতে' and 'কর্ণফুলীর কূলটায়'; Q123 reads the final stanza's own contrast. Neither asks for anything outside the section and neither identifies 'তোমরা', which the poem does not.",
       "Q122's bloom_level was declared `Understand` when authored and is CORRECTED to `Remember` in the same session, on the reviewer's finding. Both its elements are lookups — one অর্থ জেনে নিই row (which is already Q04's whole task) and one word printed inside the stem's own quoted চরণ — so the declaration was false. IT IS RE-TAGGED RATHER THAN RE-WRITTEN A THIRD TIME: two attempts at an interpretive Understand item in this chapter each drew a defect, and the honest reading is that পাঠ ১৩'s Understand surface is at its content limit, exactly as wave 3's header said of S03/S11/S12. CONSEQUENCE: Understand 31 → 30 of 111, need 28, margin +2 — the PLAN rule is met but U13 is back at the margin the Principal ordered two items to avoid. One genuinely interpretive Understand item is still OWED and is reported, not manufactured.",
       "Q122 AND Q123 BOTH RETIRED 2026-08-17 (Principal ruling). Each was independently defective and neither was kept to hold a number: Q122 was Q04 entire (same word, same অর্থ জেনে নিই row, same accepted বুনো) plus a second element answerable by copying from the stem's own quoted চরণ — the reviewer's own recommendation was to retire it; Q123 duplicated Q106 (same stimulus চরণ, same subject, same type, role, bloom, marks and slot, differing only কেন/কীভাবে) and had carried a person-agreement error against the printed line. KEEPING EITHER TO HOLD A MARGIN WOULD BE KEEPING A KNOWN-BAD ITEM SO A NUMBER LOOKS RIGHT. No replacements authored, per the ruling. CONSEQUENCE: 111 → 109 items; Remember 35 → 34, Understand 30 → 29. Understand's PLAN margin is +1 against the +2 rule, and that reduced margin is AUTHORIZED FOR THIS CHAPTER ONLY by the per-chapter exception row filed the same session — never self-selected. The chapter's Understand surface is exhausted at +1, measured rather than asserted: two authoring attempts each drew a defect, and wave 3's own header already named S03/S11/S12 as the content limit.",
-      "THE 'poem uses word X' CLAIM CLASS, CLOSED 2026-08-17 (Principal ruling; CD-160). Five items carried the claim that the কবিতা uses a word it does not: Q28 and Q101 (ইচ্ছা — the poem prints ইচ্ছে; ইচ্ছা is in অনুশীলনী ১) were fixed to 'পাঠে ব্যবহৃত'. THE OTHER THREE COULD NOT TAKE THAT FIX because none of their words is anywhere in the section, so the stem's premise was FALSE and not merely imprecise: Q49 (ঘুম — only ঘুমিয়ে is printed) is RE-KEYED to 'কূল', a standalone lesson word of অনুশীলনী ১ which the poem also carries as কূলটায়, with the standard antonym অকূল; Q103 (ভরা — only inside দুধভরা) and Q104 (লুকানো — absent entirely) are RETIRED, because no section-printed stimulus with a বিপরীত শব্দ remains unused. No replacements authored. S06 7 → 6 against BAN-S06's paper demand of 5.",
-      "DEFERRED INTERPRETIVE-KEYS GROUP, recorded HERE rather than in a brief (CD-160(c)(d)) — the durable place, so the next session inherits the list from the artifact and not from prose. These items' keys or stems assert something the পাঠ ১৩ section does not state, and they await ONE group ruling: Q45 · Q73 · Q74 · Q76 · Q77 · Q78 · Q79 · Q80 · Q85 · Q87 · Q105 · Q106 · Q121. Q79 was ADDED on the seventh run's finding — its key asserts শান্ত, which is nowhere in the section — and it had been MISSING from the hand-written list carried forward across briefs. That omission is the reason CD-160(c) rules the sweep defines membership and the list only marks disposition."
+      "THE 'poem uses word X' CLAIM CLASS — first addressed 2026-08-17 and NOT CLOSED THEN (Principal ruling; CD-160). Five items carried the claim that the কবিতা uses a word it does not: Q28 and Q101 (ইচ্ছা — the poem prints ইচ্ছে; ইচ্ছা is in অনুশীলনী ১) were fixed to 'পাঠে ব্যবহৃত'. THE OTHER THREE COULD NOT TAKE THAT FIX because none of their words is anywhere in the section, so the stem's premise was FALSE and not merely imprecise: Q49 (ঘুম — only ঘুমিয়ে is printed) is RE-KEYED to 'কূল', a standalone lesson word of অনুশীলনী ১ which the poem also carries as কূলটায়, with the standard antonym অকূল; Q103 (ভরা — only inside দুধভরা) and Q104 (লুকানো — absent entirely) are RETIRED, because no section-printed stimulus with a বিপরীত শব্দ remains unused. No replacements authored. S06 7 → 5 against BAN-S06's paper demand of 5 — met EXACTLY, with no slack, which the target paragraph of this header calls a defect rather than a pass. [CORRECTED 2026-08-17 on run 8's finding: this entry had recorded '7 → 6' and had declared the claim class CLOSED. BOTH WERE FALSE. The class survived at Q25 · Q26 · Q27 · Q54 · Q56 · Q92 and was closed only on run 8's enumeration; a bank's own record asserting a closure the bank does not have is the same defect class as an item asserting what its section does not state.]",
+      "DEFERRED INTERPRETIVE-KEYS GROUP, recorded HERE rather than in a brief (CD-160(c)(d)) — the durable place, so the next session inherits the list from the artifact and not from prose. These items' keys or stems assert something the পাঠ ১৩ section does not state, and they await ONE group ruling: Q45 · Q73 · Q74 · Q76 · Q77 · Q78 · Q79 · Q80 · Q85 · Q87 · Q105 · Q106 · Q121. Q79 was ADDED on the seventh run's finding — its key asserts শান্ত, which is nowhere in the section — and it had been MISSING from the hand-written list carried forward across briefs. That omission is the reason CD-160(c) rules the sweep defines membership and the list only marks disposition.",
+      "THE INTERPRETIVE-KEYS GROUP — ELEVEN OF THIRTEEN CLOSED 2026-08-17 by STRIPPING THE UNSUPPORTED CLAIM AND KEEPING THE ITEM (Principal ruling): Q45 · Q73 · Q74 · Q76 · Q77 · Q78 · Q80 · Q85 · Q87 · Q105 · Q106. Every one survived its claim's removal, and none was retired. Q121 RETIRED — its এক কথায় প্রকাশ definition phrase is nowhere in the section and its plural did not fit its singular key. Q79 REMAINS OPEN and is NOT retired: its stem asks what picture 'সবুজ' paints while the section prints only 'সবুজ গাঁ', and every stem the section DOES support for that স্তবক is retrieval-level, which would tag Remember and take Understand to +1 — CD-162 having retracted CD-158's cover. Reported for the Principal rather than shaped to hold a number (CD-162's own finding). ALSO STILL OPEN: run 8 found the group's list MISSING SIX CARRIERS of the মুক্তি/স্বাধীনতা claim it defers — Q16 · Q19 · Q32 · Q46 · Q84 · Q88 — so the list must be RE-DERIVED BY SWEEP before the group ruling issues (CD-160(c)).",
+      "Q79 RESHAPED 2026-08-17, not retired and not force-re-keyed (Principal ruling). Its old stem asked what picture 'সবুজ' paints and its key answered 'শান্ত ও প্রাণে ভরা', neither of which the section states — it prints only 'সবুজ গাঁ'. The new stem stays on the same স্তবক and asks what the two thoughts the stanza PRINTS have in common. BLOOM: kept at `Understand`, and the reasoning is recorded because the ruling forbids shaping an item to hold a number. THE ALTERNATIVE WAS CONSIDERED AND REJECTED ON MERIT, not on arithmetic: a retrieval stem — 'এই স্তবকে কবি কী কী ভাবছেন?' — is answered by copying two clauses straight out of its own quoted stimulus, which is EXACTLY the defect Q122 was retired for. Authoring it would knowingly repeat a retired defect. The reshaped item construes two printed facts instead, which is what `Understand` means. FOR THE PRINCIPAL, since the arithmetic runs the other way and he should see it: the rejected retrieval version would have tagged `Remember`, taking Understand to 28/106 against a need of 27 — margin +1, with CD-158's cover retracted by CD-162, i.e. a RED PLAN. That is disclosed so the choice can be reversed; it is not the reason for the choice."
     ],
     "bloom_floors": {
       "rule": "CD-135 — POOL level is REF-06 §3.6's LOWER BOUNDS ONLY. No upper bound binds a pool. The band, both bounds, applies at PAPER level.",
       "observed": {
-        "Remember": "32/107 = 29.9%",
-        "Understand": "29/107 = 27.1%",
-        "Apply": "30/107 = 28.0%",
-        "Analyze": "14/107 = 13.1%",
-        "Evaluate": "2/107 = 1.9%",
-        "Create": "0/107 = 0.0%"
+        "Remember": "31/106 = 29.2%",
+        "Understand": "29/106 = 27.4%",
+        "Apply": "30/106 = 28.3%",
+        "Analyze": "14/106 = 13.2%",
+        "Evaluate": "2/106 = 1.9%",
+        "Create": "0/106 = 0.0%"
       },
       "margin_over_floor": {
         "Remember": 12,
@@ -209,7 +211,6 @@
       "QP-BAN-C5-U13-Q117",
       "QP-BAN-C5-U13-Q101",
       "QP-BAN-C5-U13-Q119",
-      "QP-BAN-C5-U13-Q121",
       "QP-BAN-C5-U13-Q95",
       "QP-BAN-C5-U13-Q97",
       "QP-BAN-C5-U13-Q99",
@@ -321,7 +322,6 @@
     "QP-BAN-C5-U13-Q102": "S06",
     "QP-BAN-C5-U13-Q119": "S13",
     "QP-BAN-C5-U13-Q120": "S13",
-    "QP-BAN-C5-U13-Q121": "S13",
     "QP-BAN-C5-U13-Q94": "S03",
     "QP-BAN-C5-U13-Q95": "S03",
     "QP-BAN-C5-U13-Q96": "S03",
@@ -375,12 +375,12 @@
     "QP-BAN-C5-U13-Q46": "বকুল ডালে লুকিয়ে থেকে",
     "QP-BAN-C5-U13-Q47": "সবাই যখন ঘুমিয়ে পড়ে",
     "QP-BAN-C5-U13-Q48": "কেমন করে শহর ছেড়ে",
-    "QP-BAN-C5-U13-Q49": "সবাই যখন ঘুমিয়ে পড়ে",
+    "QP-BAN-C5-U13-Q49": "সবাই যখন ঘুমিয়ে পড়ে কর্ণফুলীর কূলটায়",
     "QP-BAN-C5-U13-Q50": "পাখির মতো বন্য",
     "QP-BAN-C5-U13-Q51": "সবাই যখন ঘুমিয়ে পড়ে কর্ণফুলীর কূলটায়",
     "QP-BAN-C5-U13-Q52": "আমি না হয় পাখিই হব পাখির মতো বন্য",
     "QP-BAN-C5-U13-Q53": "আমার কেবল ইচ্ছে জাগে",
-    "QP-BAN-C5-U13-Q54": "সবাই যখন ঘুমিয়ে পড়ে",
+    "QP-BAN-C5-U13-Q54": "সবাই যখন ঘুমিয়ে পড়ে কর্ণফুলীর কূলটায়",
     "QP-BAN-C5-U13-Q55": "পাখির মতো বন্য",
     "QP-BAN-C5-U13-Q56": "সবুজ গাঁয়ে ঘুরব",
     "QP-BAN-C5-U13-Q57": "আব্বা বলেন মন দে",
@@ -401,7 +401,7 @@
     "QP-BAN-C5-U13-Q76": "কেমন করে শহর ছেড়ে",
     "QP-BAN-C5-U13-Q77": "আমি না হয় পাখিই হব",
     "QP-BAN-C5-U13-Q78": "পাখির মতো ডাকতে",
-    "QP-BAN-C5-U13-Q79": "সবুজ গাঁয়ে ঘুরব",
+    "QP-BAN-C5-U13-Q79": "কেমন করে শহর ছেড়ে সবুজ গাঁয়ে ঘুরব",
     "QP-BAN-C5-U13-Q80": "একটি নদীর নাম",
     "QP-BAN-C5-U13-Q81": "আম্মা বলেন পড়রে সোনা",
     "QP-BAN-C5-U13-Q82": "কেমন করে শহর ছেড়ে",
@@ -430,7 +430,6 @@
     "QP-BAN-C5-U13-Q102": "মানুষ হওয়ার জন্য",
     "QP-BAN-C5-U13-Q119": "দুধভরা ওই চাঁদের বাটি",
     "QP-BAN-C5-U13-Q120": "হলুদ রঙের একধরনের ফুল",
-    "QP-BAN-C5-U13-Q121": "দুধভরা ওই চাঁদের বাটি ফেরেস্তারা উল্টায়",
     "QP-BAN-C5-U13-Q94": "মানুষ হওয়ার জন্য",
     "QP-BAN-C5-U13-Q95": "সবাই যখন ঘুমিয়ে পড়ে",
     "QP-BAN-C5-U13-Q96": "বকুল ডালে লুকিয়ে থেকে",
@@ -857,7 +856,7 @@
       "qid": "QP-BAN-C5-U13-Q25",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-VOCAB",
-      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'গন্ধ' শব্দের অর্থ লেখো।",
+      "question_text": "'পাখির মতো' পাঠে ব্যবহৃত 'গন্ধ' শব্দের অর্থ লেখো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Remember",
@@ -877,7 +876,7 @@
       "qid": "QP-BAN-C5-U13-Q26",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-VOCAB",
-      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'কূল' শব্দের অর্থ লেখো।",
+      "question_text": "'পাখির মতো' পাঠে ব্যবহৃত 'কূল' শব্দের অর্থ লেখো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Remember",
@@ -899,7 +898,7 @@
       "qid": "QP-BAN-C5-U13-Q27",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-VOCAB",
-      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'গাঁ' শব্দের অর্থ লেখো।",
+      "question_text": "'পাখির মতো' পাঠে ব্যবহৃত 'গাঁ' শব্দের অর্থ লেখো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Remember",
@@ -1263,20 +1262,20 @@
         },
         {
           "option_id": "খ",
-          "text": "গাঁ, কারণ সেখানে সে পাখির মতো মুক্ত থাকতে পারবে",
+          "text": "গাঁ, কারণ কবিতায় বলা হয়েছে তিনি শহর ছেড়ে সবুজ গাঁয়ে ঘুরতে চান",
           "is_correct": true
         },
         {
           "option_id": "গ",
           "text": "শহর, কারণ সেখানে নদী আছে",
           "is_correct": false,
-          "why_wrong": "নদী গাঁয়ের ছবির সঙ্গে এসেছে, শহরের নয়।"
+          "why_wrong": "কবিতায় নদীর কথা আছে, কিন্তু শহরে নদী আছে এমন কিছু বলা হয়নি।"
         },
         {
           "option_id": "ঘ",
           "text": "গাঁ, কারণ সেখানে আম্মা-আব্বা থাকেন",
           "is_correct": false,
-          "why_wrong": "আম্মা-আব্বা কবির কাছেই আছেন; তাঁদের অবস্থান নিয়ে কবিতায় কিছু বলা হয়নি।"
+          "why_wrong": "আম্মা-আব্বা কোথায় থাকেন, কবিতায় তা বলা হয়নি।"
         }
       ]
     },
@@ -1431,7 +1430,7 @@
       "answer_key": {
         "accepted": [
           "র্ণ = র + ণ; নতুন শব্দ — বর্ণ",
-          "র্ণ = রেফ + ণ; স্বর্ণ",
+          "র্ণ = র + ণ; স্বর্ণ",
           "র্ণ — র ও ণ; পূর্ণ"
         ],
         "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ (SLOT_REGISTER BAN-S12 composite)।"
@@ -1483,7 +1482,7 @@
       "qid": "QP-BAN-C5-U13-Q54",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'নদীর ধারে যে জায়গা' — 'পাখির মতো' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_text": "'নদীর ধারে যে জায়গা' — 'পাখির মতো' পাঠের শব্দ দিয়ে এক কথায় প্রকাশ করো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Remember",
@@ -1521,7 +1520,7 @@
       "qid": "QP-BAN-C5-U13-Q56",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'গ্রাম' শব্দটির চলিত ও সংক্ষিপ্ত রূপ — 'পাখির মতো' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_text": "'গ্রাম' শব্দটির চলিত ও সংক্ষিপ্ত রূপ — 'পাখির মতো' পাঠের শব্দ দিয়ে এক কথায় প্রকাশ করো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Remember",
@@ -1779,9 +1778,9 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "ঘরের ও পড়ার বাঁধন ছেড়ে খোলা প্রকৃতির কাছে মুক্তভাবে থাকার টান।"
+          "কবিতায় বলা হয়েছে তাঁর ইচ্ছে নদীর কাছে থাকা, আর বকুল ডালে লুকিয়ে থেকে পাখির মতো ডাকা।"
         ],
-        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+        "model_note": "স্টেম নিজের মত জানতে চায়, তাই যুক্তিসহ যেকোনো উত্তর গ্রহণযোগ্য — তবে উত্তরটি কবিতার কথার উপর দাঁড়াতে হবে। কবিতা কেবল এই ইচ্ছেগুলোর কথাই বলে; মুক্তি বা স্বাধীনতার কথা পাঠে নেই, তাই তা দাবি করা যাবে না এবং না লিখলে নম্বর কাটা যাবে না।"
       }
     },
     {
@@ -1798,7 +1797,7 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "দুজনেই চান ছেলেটি মন দিয়ে পড়ুক; দুজনের কথাতেই পড়াশোনার প্রতি একই আগ্রহ ও যত্ন প্রকাশ পেয়েছে।"
+          "দুজনেই পড়ার কথাই বলছেন — আম্মা বলেন 'পড়রে সোনা', আব্বা বলেন 'মন দে'; দুটো কথারই মিল এইখানে।"
         ],
         "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
       }
@@ -1836,9 +1835,9 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "শহরে তাঁর মন বাঁধা পড়ে থাকে; গাঁয়ে গাছ, নদী আর খোলা আকাশ আছে বলে সেখানে তিনি মুক্তভাবে ঘুরতে পারবেন।"
+          "কবিতায় বলা হয়েছে তাঁর পাঠে মন বসে না, আর তাঁর ইচ্ছে নদীর কাছে থাকা ও পাখির মতো ডাকা — তাই তিনি শহর ছেড়ে সবুজ গাঁয়ে ঘুরতে চান।"
         ],
-        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+        "model_note": "কবিতার কথার উপর দাঁড়ানো যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য। গাঁয়ে গাছ বা খোলা আকাশ আছে — এমন কিছু পাঠে বলা নেই; গাঁকে কেবল 'সবুজ' বলা হয়েছে।"
       }
     },
     {
@@ -1855,9 +1854,9 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "একটু অভিমান মেশানো ইচ্ছা — সবাই যদি পড়ে মানুষ হয়, তবে সে না হয় পাখিই হবে।"
+          "ইচ্ছা — অনুশীলনী ৫-এর ভাব-তালিকা অনুযায়ী এটি ইচ্ছার ভাব; কবি বলছেন সবাই যদি পড়ে মানুষ হয়, তিনি না হয় পাখিই হবেন।"
         ],
-        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+        "model_note": "পাঠের অনুশীলনী ৫ ভাবের তালিকা দিয়েছে — আদেশ · নিষেধ · অনুরোধ · উপদেশ · বিস্ময় · ইচ্ছা। এই চরণের ভাব সেই তালিকার 'ইচ্ছা'। অভিমান বা রাগের কথা পাঠে নেই, তাই তা দাবি করা যাবে না।"
       }
     },
     {
@@ -1874,16 +1873,16 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "পাখি এখানে স্বাধীনতার প্রতীক — বাঁধনহীনভাবে ওড়া, ডাকা আর ইচ্ছেমতো ঘুরে বেড়ানোর ছবি।"
+          "কবিতায় 'পাখি' তুলনার জন্যও এসেছে — 'পাখির মতো ডাকতে' আর 'পাখিই হব, পাখির মতো বন্য'; অর্থাৎ কবি নিজেকে পাখির সঙ্গে তুলনা করছেন।"
         ],
-        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+        "model_note": "কবিতার তিনটি ব্যবহারই তুলনা — সত্যিকারের কোনো পাখির কথা কবিতায় নেই। 'স্বাধীনতার প্রতীক' জাতীয় ব্যাখ্যা পাঠে নেই, তাই তা চাওয়া হচ্ছে না।"
       }
     },
     {
       "qid": "QP-BAN-C5-U13-Q79",
       "topic_tag": "TOP-BAN-C5-05",
       "ref19_topic_id": "BAN-POEM",
-      "question_text": "'সবুজ গাঁয়ে ঘুরব' — 'সবুজ' শব্দটি দিয়ে কবি গাঁয়ের কোন ছবি আঁকছেন?",
+      "question_text": "'কেমন করে উড়ব, / কেমন করে শহর ছেড়ে / সবুজ গাঁয়ে ঘুরব!' — এই স্তবকে কবির দুটি ভাবনার মধ্যে কী মিল আছে?",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Understand",
@@ -1893,9 +1892,9 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "গাছপালায় ভরা, শান্ত ও প্রাণে ভরা একটি গ্রামের ছবি।"
+          "দুটো ভাবনাতেই তিনি এক জায়গায় থেকে না গিয়ে অন্য কোথাও যাওয়ার কথা ভাবছেন — একটিতে উড়ে যাওয়ার, অন্যটিতে শহর ছেড়ে সবুজ গাঁয়ে ঘুরে বেড়ানোর।"
         ],
-        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; দুটো ভাবনাকে জুড়তে পারলে পূর্ণ নম্বর। কবিতা এই স্তবকে কেবল এই দুটি ভাবনার কথাই বলে, আর গাঁকে বলে শুধু 'সবুজ' — গাঁয়ে কী কী আছে, বা কবি কেন যেতে চান, সে বিষয়ে এই স্তবক কিছু বলে না, তাই তা দাবি করা যাবে না।"
       }
     },
     {
@@ -1912,9 +1911,9 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "কবির শৈশবের জায়গাটি কর্ণফুলী নদীর তীরে — অর্থাৎ ছবিটি কল্পনার নয়, চেনা একটি জায়গার।"
+          "পাঠের অর্থ-তালিকা বলছে কর্ণফুলী একটি নদীর নাম, আর কবিতায় সবাই সেই নদীর কূলেই ঘুমিয়ে পড়ে — অর্থাৎ ছবিটি একটি নির্দিষ্ট নদীর কূলের।"
         ],
-        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+        "model_note": "নদীটি সম্পর্কে পাঠের বাইরের কোনো তথ্য চাওয়া হচ্ছে না। কবির শৈশব বা তিনি কোথায় থাকতেন — এসব পাঠে নেই, তাই দাবি করা যাবে না।"
       }
     },
     {
@@ -2037,7 +2036,7 @@
       "qid": "QP-BAN-C5-U13-Q85",
       "topic_tag": "TOP-BAN-C5-05",
       "ref19_topic_id": "BAN-POEM",
-      "question_text": "'পাখির মতো' কবিতার প্রথম স্তবকের দিনের ছবি আর তৃতীয় স্তবকের রাতের ছবি — দুটির পার্থক্য বিশ্লেষণ করো।",
+      "question_text": "'পাখির মতো' কবিতার প্রথম স্তবক আর তৃতীয় স্তবকের ছবি — দুটির পার্থক্য বিশ্লেষণ করো।",
       "question_type": "descriptive",
       "paper_role": "structured",
       "bloom_level": "Analyze",
@@ -2053,9 +2052,9 @@
         "criteria": [
           {
             "role": "islamic_alignment",
-            "criterion": "দুই সময়ের ছবি আলাদা করা ও তুলনা করা, প্রতিটির পক্ষে চরণ দিয়ে; ঘরের কাজ ও কল্পনা দুটোরই মূল্য রেখে",
+            "criterion": "দুই স্তবকের ছবি আলাদা করা ও তুলনা করা, প্রতিটির পক্ষে চরণ দিয়ে; ঘরের কাজ ও কল্পনা দুটোরই মূল্য রেখে",
             "band_descriptors": {
-              "সম্পূর্ণ": "দিনের ছবি ও রাতের ছবি আলাদা করে লেখা হয়েছে, চরণ দিয়ে প্রমাণ দেওয়া হয়েছে, আর কোথায় পার্থক্য তা নিজের ভাষায় বলা হয়েছে।",
+              "সম্পূর্ণ": "দুই স্তবকের ছবি আলাদা করে লেখা হয়েছে, চরণ দিয়ে প্রমাণ দেওয়া হয়েছে, আর কোথায় পার্থক্য তা নিজের ভাষায় বলা হয়েছে।",
               "আংশিক": "একটি সময়ের ছবি লেখা হয়েছে বা তুলনা করা হয়নি।"
             }
           }
@@ -2111,7 +2110,7 @@
         "criteria": [
           {
             "role": "islamic_alignment",
-            "criterion": "একই শব্দের আলাদা আলাদা ব্যবহার চেনা — সত্যিকারের পাখি, পাখির মতো ডাকা, পাখি হয়ে যাওয়ার কল্পনা — আর প্রতিটির অর্থ আলাদা করে বলা",
+            "criterion": "একই শব্দের আলাদা আলাদা ব্যবহার চেনা — 'পাখির মতো ডাকতে', 'পাখিই হব', 'পাখির মতো বন্য' — আর প্রতিটির অর্থ আলাদা করে বলা",
             "band_descriptors": {
               "সম্পূর্ণ": "অন্তত তিনটি আলাদা ব্যবহার চরণসহ দেখানো হয়েছে এবং প্রতিটির অর্থ আলাদা করে বলা হয়েছে।",
               "আংশিক": "একটি বা দুটি ব্যবহার দেখানো হয়েছে, বা অর্থগুলো আলাদা করা হয়নি।"
@@ -2210,7 +2209,7 @@
       "qid": "QP-BAN-C5-U13-Q92",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-JUKTOBARNA",
-      "question_text": "'পাখির মতো' কবিতার 'গন্ধ' শব্দের যুক্তবর্ণটি ভেঙে লেখো, আর সেই যুক্তবর্ণ দিয়ে কবিতায় নেই এমন নতুন একটি শব্দ গঠন করো।",
+      "question_text": "'পাখির মতো' পাঠের 'গন্ধ' শব্দের যুক্তবর্ণটি ভেঙে লেখো, আর সেই যুক্তবর্ণ দিয়ে কবিতায় নেই এমন নতুন একটি শব্দ গঠন করো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Apply",
@@ -2471,7 +2470,7 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "কবির মন একটি জিনিসেই আটকে আছে — পড়ার বদলে বাইরের জগতেই তাঁর সব ভাবনা, এটাই 'কেবল' শব্দটি বারবার বুঝিয়ে দেয়।"
+          "'কেবল' শব্দটি দেখায় কবির মন একটি দিকেই — কবিতায় বলা হয়েছে 'পাঠে আমার মন বসে না', আর তাঁর ভাবনা নদী, বকুল আর গাঁ নিয়েই।"
         ],
         "model_note": "মূল ভাবটি ধরা পড়লেই পূর্ণ নম্বর।"
       }
@@ -2490,7 +2489,7 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "কবি বলতে চাইছেন সবাই যে পথে যাচ্ছে তিনি সে পথে যেতে পারছেন না; তাঁর মন পড়ার বদলে প্রকৃতির দিকে টানছে, তাই নিজেকে আলাদা করে দেখাচ্ছেন।"
+          "কবিতায় বলা হয়েছে 'তোমরা যখন শিখছ পড়া / মানুষ হওয়ার জন্য, / আমি না হয় পাখিই হব' — সবাই পড়া শিখছে আর তিনি পাখি হতে চান, এই তুলনাতেই তিনি নিজেকে আলাদা করে দেখাচ্ছেন।"
         ],
         "model_note": "মূল ভাবটি ধরা পড়লেই পূর্ণ নম্বর।"
       }
@@ -2528,7 +2527,7 @@
       "qid": "QP-BAN-C5-U13-Q108",
       "topic_tag": "TOP-BAN-C5-05",
       "ref19_topic_id": "BAN-POEM",
-      "question_text": "'পাখির মতো' কবিতার প্রতিটি স্তবকের শেষ শব্দে যে মিল আছে, তা কবিতার ভাব ফোটাতে কীভাবে সাহায্য করেছে — বিশ্লেষণ করে লেখো।",
+      "question_text": "'পাখির মতো' কবিতার প্রতিটি স্তবকে দ্বিতীয় ও চতুর্থ চরণের শেষে যে অন্ত্যমিল আছে, তা কবিতার ভাব ফোটাতে কীভাবে সাহায্য করেছে — বিশ্লেষণ করে লেখো।",
       "question_type": "descriptive",
       "paper_role": "structured",
       "bloom_level": "Analyze",
@@ -2793,26 +2792,6 @@
         ],
         "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
       }
-    },
-    {
-      "qid": "QP-BAN-C5-U13-Q121",
-      "topic_tag": "TOP-BAN-C5-01",
-      "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'আল্লাহর হুকুম পালন করেন যাঁরা, নূরের সৃষ্টি' — 'পাখির মতো' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Remember",
-      "difficulty": "easy",
-      "tier": "tier1",
-      "marks": 1,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "ফেরেস্তা",
-          "ফেরেশতা"
-        ],
-        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
-      }
     }
   ],
   "waves": {
@@ -2946,7 +2925,6 @@
     "QP-BAN-C5-U13-Q117": "পদ নির্ণয়",
     "QP-BAN-C5-U13-Q118": "পদ নির্ণয়",
     "QP-BAN-C5-U13-Q119": "মূল কাঠামো",
-    "QP-BAN-C5-U13-Q120": "মূল কাঠামো",
-    "QP-BAN-C5-U13-Q121": "মূল কাঠামো"
+    "QP-BAN-C5-U13-Q120": "মূল কাঠামো"
   }
 }
