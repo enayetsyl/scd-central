@@ -10,7 +10,7 @@
   "source_extraction": "canon/marklogic/C5_Bangla_Source_13-23.md",
   "curation": "FLEXIBLE · C-03 respected — অনুশীলনী ৫-এর বারণ করা বাক্যটি ব্যবহার করা হয়নি, আর তার বদলি বহনকারী Q23 এই ঢেউয়ে অবসরে গেছে",
   "header": {
-    "target": 109,
+    "target": 107,
     "reason": "110 is the RE-AUTHORED pool, recomputed in session and carrying no number from wave 3 — the Principal ruled 'extract to content limit, balanced' and required every REF-06 §3.6 floor to clear WITH MARGIN, a plan landing exactly on a floor being a defect rather than a pass. The binding constraint is not the pool's size but its Apply base: retiring the ten S10 ভাব নির্ণয় items cost 7 `Apply`, and retiring Q34 cost the eighth, so S03 · S11 · S12 are all authored to their content limits and one S10 item is `Apply` on its own merit. Under CD-135 a pool has no ceiling, so the only thing this size costs is authoring.",
     "topics": [
       "TOP-BAN-C5-05",
@@ -59,7 +59,7 @@
       "S03": 16,
       "S04": 5,
       "S05": 7,
-      "S06": 7,
+      "S06": 5,
       "S07": 21,
       "S08": 15,
       "S09": 1,
@@ -82,17 +82,19 @@
       "Q44 RETIRED 2026-08-17 (Principal ruling, PENDING-P-039 in-lane fixes). The item asked what the poet MEANT by 'বন্য' and keyed 'নিয়মের বাঁধন ছেড়ে স্বাধীন', which the পাঠ ১৩ section does not state; worse, its own why_wrong called the section's OWN gloss (বন্য — বুনো) 'অভিধানিক অর্থে থেমে যাওয়া' — it marked the source as a mistake. The section gives the word's meaning and says nothing about the poet's intent, so NO replacement key is derivable from it, and re-keying under the same qid was REFUSED: that authors a new item wearing an old identity, breaks the digest→Hub trace and hides the change from item history. Q50 (S06, বন্য → পোষা/গৃহপালিত) is CORRECT and untouched — it keys the section's own gloss. CONSEQUENCE, measured and reported rather than routed around: 110 → 109 items, Understand 30 → 29. PLAN needs ceil(25% × 109) = 28, so the margin is +1 against the +2 rule and U13 is NO LONGER SIGNABLE. U13 sat EXACTLY on the Understand margin at 110, so retiring any Understand item breaks it. Restoring the margin needs one new Understand item — authoring, which is outside the brief that ordered this retirement.",
       "TWO UNDERSTAND ITEMS AUTHORED 2026-08-17 — Q122 · Q123, S07, marks 2 each (Principal ruling, scope extension). Q44's retirement left Understand at margin +1 against PLAN's +2 rule, and gates.py carries this bank as its LIVE-CONTROL, so the whole suite could not judge any bank. TWO were authored rather than one deliberately: one item restores exactly the fragile state that let a single retirement break the floor (30/110, need 28, margin +2). At 111 items Understand is 31, need 28, margin +3. Both are grounded ONLY in the পাঠ ১৩ section — Q122 joins the 'অর্থ জেনে নিই' gloss 'কর্ণফুলী — একটি নদীর নাম' to the poem's own 'ইচ্ছে জাগে নদীর কাছে থাকতে' and 'কর্ণফুলীর কূলটায়'; Q123 reads the final stanza's own contrast. Neither asks for anything outside the section and neither identifies 'তোমরা', which the poem does not.",
       "Q122's bloom_level was declared `Understand` when authored and is CORRECTED to `Remember` in the same session, on the reviewer's finding. Both its elements are lookups — one অর্থ জেনে নিই row (which is already Q04's whole task) and one word printed inside the stem's own quoted চরণ — so the declaration was false. IT IS RE-TAGGED RATHER THAN RE-WRITTEN A THIRD TIME: two attempts at an interpretive Understand item in this chapter each drew a defect, and the honest reading is that পাঠ ১৩'s Understand surface is at its content limit, exactly as wave 3's header said of S03/S11/S12. CONSEQUENCE: Understand 31 → 30 of 111, need 28, margin +2 — the PLAN rule is met but U13 is back at the margin the Principal ordered two items to avoid. One genuinely interpretive Understand item is still OWED and is reported, not manufactured.",
-      "Q122 AND Q123 BOTH RETIRED 2026-08-17 (Principal ruling). Each was independently defective and neither was kept to hold a number: Q122 was Q04 entire (same word, same অর্থ জেনে নিই row, same accepted বুনো) plus a second element answerable by copying from the stem's own quoted চরণ — the reviewer's own recommendation was to retire it; Q123 duplicated Q106 (same stimulus চরণ, same subject, same type, role, bloom, marks and slot, differing only কেন/কীভাবে) and had carried a person-agreement error against the printed line. KEEPING EITHER TO HOLD A MARGIN WOULD BE KEEPING A KNOWN-BAD ITEM SO A NUMBER LOOKS RIGHT. No replacements authored, per the ruling. CONSEQUENCE: 111 → 109 items; Remember 35 → 34, Understand 30 → 29. Understand's PLAN margin is +1 against the +2 rule, and that reduced margin is AUTHORIZED FOR THIS CHAPTER ONLY by the per-chapter exception row filed the same session — never self-selected. The chapter's Understand surface is exhausted at +1, measured rather than asserted: two authoring attempts each drew a defect, and wave 3's own header already named S03/S11/S12 as the content limit."
+      "Q122 AND Q123 BOTH RETIRED 2026-08-17 (Principal ruling). Each was independently defective and neither was kept to hold a number: Q122 was Q04 entire (same word, same অর্থ জেনে নিই row, same accepted বুনো) plus a second element answerable by copying from the stem's own quoted চরণ — the reviewer's own recommendation was to retire it; Q123 duplicated Q106 (same stimulus চরণ, same subject, same type, role, bloom, marks and slot, differing only কেন/কীভাবে) and had carried a person-agreement error against the printed line. KEEPING EITHER TO HOLD A MARGIN WOULD BE KEEPING A KNOWN-BAD ITEM SO A NUMBER LOOKS RIGHT. No replacements authored, per the ruling. CONSEQUENCE: 111 → 109 items; Remember 35 → 34, Understand 30 → 29. Understand's PLAN margin is +1 against the +2 rule, and that reduced margin is AUTHORIZED FOR THIS CHAPTER ONLY by the per-chapter exception row filed the same session — never self-selected. The chapter's Understand surface is exhausted at +1, measured rather than asserted: two authoring attempts each drew a defect, and wave 3's own header already named S03/S11/S12 as the content limit.",
+      "THE 'poem uses word X' CLAIM CLASS, CLOSED 2026-08-17 (Principal ruling; CD-160). Five items carried the claim that the কবিতা uses a word it does not: Q28 and Q101 (ইচ্ছা — the poem prints ইচ্ছে; ইচ্ছা is in অনুশীলনী ১) were fixed to 'পাঠে ব্যবহৃত'. THE OTHER THREE COULD NOT TAKE THAT FIX because none of their words is anywhere in the section, so the stem's premise was FALSE and not merely imprecise: Q49 (ঘুম — only ঘুমিয়ে is printed) is RE-KEYED to 'কূল', a standalone lesson word of অনুশীলনী ১ which the poem also carries as কূলটায়, with the standard antonym অকূল; Q103 (ভরা — only inside দুধভরা) and Q104 (লুকানো — absent entirely) are RETIRED, because no section-printed stimulus with a বিপরীত শব্দ remains unused. No replacements authored. S06 7 → 6 against BAN-S06's paper demand of 5.",
+      "DEFERRED INTERPRETIVE-KEYS GROUP, recorded HERE rather than in a brief (CD-160(c)(d)) — the durable place, so the next session inherits the list from the artifact and not from prose. These items' keys or stems assert something the পাঠ ১৩ section does not state, and they await ONE group ruling: Q45 · Q73 · Q74 · Q76 · Q77 · Q78 · Q79 · Q80 · Q85 · Q87 · Q105 · Q106 · Q121. Q79 was ADDED on the seventh run's finding — its key asserts শান্ত, which is nowhere in the section — and it had been MISSING from the hand-written list carried forward across briefs. That omission is the reason CD-160(c) rules the sweep defines membership and the list only marks disposition."
     ],
     "bloom_floors": {
       "rule": "CD-135 — POOL level is REF-06 §3.6's LOWER BOUNDS ONLY. No upper bound binds a pool. The band, both bounds, applies at PAPER level.",
       "observed": {
-        "Remember": "34/109 = 31.2%",
-        "Understand": "29/109 = 26.6%",
-        "Apply": "30/109 = 27.5%",
-        "Analyze": "14/109 = 12.8%",
-        "Evaluate": "2/109 = 1.8%",
-        "Create": "0/109 = 0.0%"
+        "Remember": "32/107 = 29.9%",
+        "Understand": "29/107 = 27.1%",
+        "Apply": "30/107 = 28.0%",
+        "Analyze": "14/107 = 13.1%",
+        "Evaluate": "2/107 = 1.9%",
+        "Create": "0/107 = 0.0%"
       },
       "margin_over_floor": {
         "Remember": 12,
@@ -173,7 +175,6 @@
       "QP-BAN-C5-U13-Q116",
       "QP-BAN-C5-U13-Q118",
       "QP-BAN-C5-U13-Q102",
-      "QP-BAN-C5-U13-Q104",
       "QP-BAN-C5-U13-Q120",
       "QP-BAN-C5-U13-Q94",
       "QP-BAN-C5-U13-Q96",
@@ -207,7 +208,6 @@
       "QP-BAN-C5-U13-Q115",
       "QP-BAN-C5-U13-Q117",
       "QP-BAN-C5-U13-Q101",
-      "QP-BAN-C5-U13-Q103",
       "QP-BAN-C5-U13-Q119",
       "QP-BAN-C5-U13-Q121",
       "QP-BAN-C5-U13-Q95",
@@ -319,8 +319,6 @@
     "QP-BAN-C5-U13-Q118": "S10",
     "QP-BAN-C5-U13-Q101": "S06",
     "QP-BAN-C5-U13-Q102": "S06",
-    "QP-BAN-C5-U13-Q103": "S06",
-    "QP-BAN-C5-U13-Q104": "S06",
     "QP-BAN-C5-U13-Q119": "S13",
     "QP-BAN-C5-U13-Q120": "S13",
     "QP-BAN-C5-U13-Q121": "S13",
@@ -430,8 +428,6 @@
     "QP-BAN-C5-U13-Q118": "আম্মা বলেন পড়রে সোনা",
     "QP-BAN-C5-U13-Q101": "আমার কেবল ইচ্ছে জাগে",
     "QP-BAN-C5-U13-Q102": "মানুষ হওয়ার জন্য",
-    "QP-BAN-C5-U13-Q103": "দুধভরা ওই চাঁদের বাটি",
-    "QP-BAN-C5-U13-Q104": "বকুল ডালে লুকিয়ে থেকে",
     "QP-BAN-C5-U13-Q119": "দুধভরা ওই চাঁদের বাটি",
     "QP-BAN-C5-U13-Q120": "হলুদ রঙের একধরনের ফুল",
     "QP-BAN-C5-U13-Q121": "দুধভরা ওই চাঁদের বাটি ফেরেস্তারা উল্টায়",
@@ -1385,7 +1381,7 @@
       "qid": "QP-BAN-C5-U13-Q49",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'ঘুম' শব্দের বিপরীত শব্দ লেখো।",
+      "question_text": "'পাখির মতো' পাঠে ব্যবহৃত 'কূল' শব্দের বিপরীত শব্দ লেখো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Remember",
@@ -1395,10 +1391,9 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "জাগরণ",
-          "জাগা"
+          "অকূল"
         ],
-        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক শব্দটি পাঠেরই — অনুশীলনী ১-এর শব্দতালিকায় 'কূল' আছে, আর কবিতায় আছে 'কর্ণফুলীর কূলটায়'। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
       }
     },
     {
@@ -2463,47 +2458,6 @@
       }
     },
     {
-      "qid": "QP-BAN-C5-U13-Q103",
-      "topic_tag": "TOP-BAN-C5-01",
-      "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'ভরা' শব্দের বিপরীত শব্দ লেখো।",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Remember",
-      "difficulty": "medium",
-      "tier": "tier1",
-      "marks": 1,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "খালি",
-          "শূন্য"
-        ],
-        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
-      }
-    },
-    {
-      "qid": "QP-BAN-C5-U13-Q104",
-      "topic_tag": "TOP-BAN-C5-01",
-      "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'পাখির মতো' কবিতায় ব্যবহৃত 'লুকানো' শব্দের বিপরীত শব্দ লেখো।",
-      "question_type": "short_answer",
-      "paper_role": "short",
-      "bloom_level": "Remember",
-      "difficulty": "medium",
-      "tier": "tier1",
-      "marks": 1,
-      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
-      "answer_key": {
-        "accepted": [
-          "প্রকাশ করা",
-          "প্রকাশ",
-          "বেরিয়ে আসা"
-        ],
-        "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
-      }
-    },
-    {
       "qid": "QP-BAN-C5-U13-Q105",
       "topic_tag": "TOP-BAN-C5-05",
       "ref19_topic_id": "BAN-POEM",
@@ -2977,8 +2931,6 @@
     "QP-BAN-C5-U13-Q100": "মূল কাঠামো",
     "QP-BAN-C5-U13-Q101": "বিপরীত শব্দ",
     "QP-BAN-C5-U13-Q102": "বিপরীত শব্দ",
-    "QP-BAN-C5-U13-Q103": "বিপরীত শব্দ",
-    "QP-BAN-C5-U13-Q104": "বিপরীত শব্দ",
     "QP-BAN-C5-U13-Q105": "মূল কাঠামো",
     "QP-BAN-C5-U13-Q106": "মূল কাঠামো",
     "QP-BAN-C5-U13-Q107": "মূল কাঠামো",
