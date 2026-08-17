@@ -3229,3 +3229,58 @@ restores it nor explains it away. **Owner: the Principal.**
 - **Digest: U13 `b629e2289c14` → `5c302eba9b80`** (107 → 106 items). U14 `509a1b0091d8` · U15
   `7e541fe6559a` · U16 `51d1be1efbe8` untouched.
 - Gates: all eight in-condition gates CLEAN.
+
+## 2026-08-17 (cont.) · U13 closeout · CR-003 · CD-164 · run 10 · two stops · cowork
+- Bootstrap: `HEAD` == `origin/main` == **`53f9ac6`**, clean — step 4's first clause. Four commits
+  now held ahead: `d658517` · `2208fc2` · `1fcf586` · `2ab3b70`, branch **(c) BENIGN AHEAD** with
+  every commit accounted for by hash and subject. **UNPUSHED, awaiting approval.**
+- **PART A — U13 closeout, `d658517`. Every edit with its qid, per CD-151(b).** `Q73`
+  `answer_key.model_note` — the sentence "মুক্তি বা স্বাধীনতার কথা পাঠে নেই, তাই তা দাবি করা যাবে না"
+  REMOVED, the note re-cast to say the stem asks the student's own view and any reasoned answer
+  standing on the poem's words is acceptable. `Q78` `model_note` — the "'স্বাধীনতার প্রতীক' … পাঠে
+  নেই" clause REMOVED, the তুলনা statement kept. Both on the Principal's ruling, verified at the
+  TEXTBOOK, that the reading IS supported; both sentences then confirmed **0 occurrences bank-wide.**
+  `Q85` — the strip COMPLETED where run 9 found it stopped at the stem: `rubric.criterion` "ঘরের কাজ ও
+  কল্পনা দুটোরই মূল্য রেখে" → "পড়ার কথা ও কল্পনা দুটোরই মূল্য রেখে", `band[আংশিক]` "একটি সময়ের ছবি"
+  → "একটি স্তবকের ছবি". `Q100` `why_wrong[খ]` — the restated moonlight claim "রং ও উজ্জ্বলতার তুলনা"
+  REPLACED by "এটি একটি চিত্রকল্প — আকাশে সত্যিকারের কোনো বাটি নেই।", and the whole class swept after:
+  **রং · উজ্জ্বল · জ্যোৎস্না · দ্যুতি · ঝলমল all 0.** `Q101` `source_index` — anchor moved to
+  অনুশীলনী ১'s line, which contains its ইচ্ছা stimulus. **Digest `5c302eba9b80` → `325633f7d8e5`,
+  106 items, floors UNCHANGED: Remember +9 · Understand +2 · Apply +3 · Analyze +3.** Exports rebuilt
+  in the same commit; all seven মুক্তি carriers verified untouched.
+- **PART E — `2208fc2`, and its own finding, `1fcf586`.** পাঠ ১৫'s S01 delimiter corrected to CD-149's
+  ruled span on both counts the row names — the unit label (পঙ্‌ক্তি → লাইন) and the endpoint — with
+  the prior text preserved in place, following CR-002's precedent in the same lane. **`CR-003` filed
+  in `canon/_wip/c5-bangla/CORRECTIONS.md`**, which is my reading of the ledger and is reported as
+  such: the corrected file is a C5 Bangla extraction by content and sits in `canon/marklogic/` only
+  because CD-004 grandfathered it. Collision checked FIRST: bare `CR-003` is already minted in three
+  other lanes, and **CD-124(c) makes next-free per-lane**, so `ledger_check` prints a fourth deferral
+  and stays CLEAN. **CD-164 files the class: UNPROPAGATED SUPERSEDE.** CD-149 located this exact
+  defect, corrected the BANK, and never touched the FILE — and the stale file later fed a facts block
+  and **manufactured a false defect against the very item CD-149 had fixed.** The audit found ONE
+  instance: CD-127(e)/CR-002 propagated, CD-146 only flagged, eight rows cite a source and rule no
+  edit, PENDING-P-041 is deliberately unpropagated and says so. Reported and NOT fixed, out of scope:
+  পাঠ ১৩ · ১৮ · ২০ still carry the old পঙ্‌ক্তি label though CD-149(b)/(e) confirm their endpoints.
+- **RUN 10 — `VERDICT: 4 DEFECT(S)`, `2ab3b70`, committed before anything was decided about it.** It
+  is not a confirmation run: the seven checks and the sweep ran before RUN9 was opened, and findings
+  moved BOTH ways — **four of RUN9's six verified FIXED at the string** (`Q100` · `Q85` · `Q73` ·
+  `Q101`), and **two of its PASS lines REVERSED into counted defects** (`Q82` · `Q80`) on unchanged
+  items. CD-159, precisely as written.
+- **AND THE FINDING IS CD-164'S SHAPE, ONE COMMIT LATER, RUNNING THE OTHER WAY.** The Principal's
+  ruling was applied to the BANK and not to the SOURCE, and the extraction is the reviewer's ONLY
+  authority. So run 10 re-derived all seven মুক্তি carriers as unsupported and recorded my note
+  removal as a **REGRESSION — "the counter-evidence was deleted, not the carriers."** It is right on
+  its own terms. **This chapter will fail this defect on every future run until the extraction records
+  what the textbook prints.** CD-164 was a correction that never reached its source; this is a
+  SUPPORT ruling that never reached its source. **Neither direction has machinery.**
+- **PART B — STOPPED AT B1, AT SOURCE, BEFORE ANY EDIT, as the brief required.** The C5 source never
+  prints **বিশেষ্য** — 0 occurrences, as are সর্বনাম · অব্যয় · নামপদ. It prints **নাম-শব্দ** (4) and
+  **কাজ-শব্দ** (2); the 4 বিশেষণ hits are editorial, not exercise text. **The re-key would install an
+  untaught term**, and the finding is WIDER than the seven নামপদ items, because the same gap covers
+  every pronoun and particle item in the S10 group.
+- **PART D HELD at D1** (the field and shape are owed to the Principal BEFORE writing, and CD-155's
+  UNSELECTED precedent governs the form), **and D2 is why it cannot be written blind: the C5
+  four-mark set DOES NOT TRANSFER DOWNWARD** — C2 is attested at three marks and C3/C4/C5 name none.
+  **PART C HELD in consequence**, because C3 reads the register field D1 would create.
+- Gates: all eight in-condition suites CLEAN, before and after every commit. `int_id_check` 20 untyped
+  sites reported and not judged; `canon_check`/`tools_check` one standing warn each.
