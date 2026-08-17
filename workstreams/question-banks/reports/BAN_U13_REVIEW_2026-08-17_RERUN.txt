@@ -1,0 +1,61 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৩ section
+PROMPT : tools/bank_factual_review_prompt.md (teacher-lane step 5b, CD-151)
+RUN    : 2026-08-17 — RE-RUN after the in-lane fixes. Per prompt step 5 THIS IS THE VERDICT OF
+         RECORD for this bank, superseding BAN_U13_REVIEW_2026-08-17.txt.
+STATUS : Contemporaneous. Written and committed under step 3a (CD-157(d)).
+
+--------------------------------------------------------------------------------------------------
+
+All 109 items read. qid prefix `QP-BAN-C5-U13-` stated once, abbreviated to its tail below.
+
+**1 · FACTUAL ACCURACY** — 7 defects
+
+1. **Q75** — `accepted` "রাতের বেলা, যখন সবাই ঘুমিয়ে পড়ে আর চাঁদের আলো ছড়িয়ে থাকে।" The section states only that the bowl means পূর্ণিমার চাঁদ; spreading moonlight is not in it. This is the same claim just removed from Q71, and Q71's own new `model_note` says "আলো সরে যাওয়া বা ছড়িয়ে পড়া পাঠে নেই, তাই তা দাবি করা যাবে না" — the bank now forbids in one item what it keys in another. THE FIX WAS INCOMPLETE.
+2. **Q80** — `accepted` "কবির শৈশবের জায়গাটি কর্ণফুলী নদীর তীরে — অর্থাৎ ছবিটি কল্পনার নয়, চেনা একটি জায়গার।" Section gives only "কর্ণফুলী — একটি নদীর নাম". Biographical claim beyond the section.
+3. **Q87** — rubric `criterion` and `band_descriptors` assert one use of পাখি is "সত্যিকারের পাখি". No actual bird occurs; all three uses are comparative/imaginative.
+4. **Q121** — stem defines the answer as "আল্লাহর হুকুম পালন করেন যাঁরা, নূরের সৃষ্টি". The section prints only the poem line plus the note that the word is acceptable. Number-mismatched too: plural "যাঁরা" against singular key ফেরেস্তা.
+5. **Q45** — option (ঘ) `why_wrong` self-contradicts and its first clause is beyond the section.
+6. **Q85** — stem and rubric assert the first stanza is a "দিনের ছবি". The section fixes no time of day for stanza 1.
+7. **Q74** — `accepted` "দুজনেই চান ছেলেটি মন দিয়ে পড়ুক" attributes a gender. The section addresses only "সোনা" and states no gender.
+
+**2 · THE CHAPTER'S CONTENT BARS** — PASS. "আর একটা গান গাও না!" 0 occurrences; no music/song/dance/percussion item. গান appears once as a substring inside লাগানোর (Q18) — declared not an occurrence. "জাতীয় কবি"/"বিদ্রোহী কবি"/"মহান কবি" 0 occurrences; আল মাহমুদ appears once, bare, as information. C-05: ছবি/চিত্রকল্প occur at Q31, Q36, Q45, Q46, Q47, Q71, Q78, Q79, Q80, Q82, Q83, Q85, Q88, Q100, Q119, all verbal imagery; no item requests or supplies a depiction.
+
+**3 · STANDING CURATION BARS** — PASS. No C-03 material; no drawing of a person or animal requested; no C-18 material. Q83's rubric row requiring respectful language about ফেরেস্তা is a forbidding row, not an occurrence.
+
+**4 · INVENTED NAMES** — PASS. Only আল মাহমুদ; আম্মা · আব্বা · কবি are roles.
+
+**5 · NUMERALS** — PASS. Zero ASCII digits in any student-facing string.
+
+**6 · SLOT-SPECIFIC CORRECTNESS** — 6 defects
+
+1. **Q49** — stem says "কবিতায় ব্যবহৃত 'ঘুম'"; the poem carries only the verbal ঘুমিয়ে পড়ে.
+2. **Q103** — stem says "কবিতায় ব্যবহৃত 'ভরা'"; ভরা occurs only bound inside দুধভরা.
+3. **Q104** — the poem's form is the intransitive participle লুকিয়ে; primary accepted প্রকাশ করা is transitive.
+4. **Q51** — second `accepted` "র্ণ = রেফ + ণ" decomposes into a diacritic name rather than the letter র.
+5. **Q117** — stem targets 'কর্ণফুলী' but the quoted line has কর্ণফুলীর (genitive).
+6. **Q56** — not an এক কথায় প্রকাশ item; it asks for a word-form with no definition phrase.
+
+Out of scope, previously reported: Q109 (নামপদ super-class); Q58 · Q61 · Q90 · Q91 · Q89 (S11 single-mark). Verified sound this run: Q52, Q53, Q92, Q93 (S12); Q48, Q50, Q101, Q102 (S06); Q54, Q55, Q119, Q120 (S13); Q110–Q116, Q118 (S10).
+
+**7 · LANGUAGE** — 7 defects
+
+1. **Q94–Q98** — `accepted` is a marking instruction and `model_note` claims a sample answer that does not exist.
+2. **Q62–Q66** — `accepted` holds a marking instruction rather than an answer, inconsistent with Q05–Q09 and Q33 in the same slot.
+3. **Q60, Q61** — punctuation items carry sentence-writing boilerplate that licenses anything.
+4. **Q108** — stem "প্রতিটি স্তবকের শেষ শব্দে যে মিল আছে" is false; the rhyme is line 2 with line 4 inside each stanza.
+5. **Q27** — `accepted` lists "গ্রাম" twice.
+6. **Internal codes in marker-facing text** — CD-136 in Q48–Q56, Q92, Q93, Q101–Q104, Q109–Q121; SLOT_REGISTER BAN-S12 composite in Q51–Q53, Q92, Q93; BAN-S10 in Q109–Q118; MarkLogic §৭ in Q14; নেপ §১ in Q01; slot code (S09) in Q32.
+7. **Q30** — the NEW `model_note` bars 'শিক্ষার্থী' as an answer while the `accepted` key is its paraphrase, so a semantically identical answer is marked wrong; the note also cites another item by qid ("Q43 ঠিকই বলে") in marker-facing text. INTRODUCED BY THIS SESSION'S FIX.
+
+Not counted, noted: Q93's three `accepted` variants offer the same new word পাল্টা twice.
+
+CHANGED-ITEM VERIFICATION (exactly Q100, Q30, Q71, Q93 edited and Q44 removed; no other item moved):
+- Q100 — CORRECT. is_correct is the section's own gloss; option খ's why_wrong no longer prints the sourced reading as a wrong answer's explanation.
+- Q71 — CORRECT. The light claim is gone and the model_note bars it. But see check 1 defect 1: the identical claim survives in Q75.
+- Q30 — CORRECT ON THE KEY. সহপাঠী/শিক্ষার্থী identification is gone. The model_note added with the fix carries its own defect (check 7 defect 7).
+- Q93 — CORRECT. ফল্টু and উল্টো are gone; all offered words are real Bengali, contain ল্ট, and are absent from the poem.
+- Q44 — CONFIRMED RETIRED. Absent from questions, slot_index, task_index, source_index and pool_index; zero occurrences of "U13-Q44" in the bank; no export envelope exists; header target 109 and slot_counts sum 109 (S05 now 7). No surviving item depends on it, and its retirement removes the sense-conflict that stood against Q50.
+- Q43 — STILL CORRECT. Q50 — STILL CORRECT; with Q44 gone no item marks the opposite sense.
+
+VERDICT: 20 DEFECT(S)

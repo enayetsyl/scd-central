@@ -1,0 +1,39 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U15_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৫ section
+PROMPT : tools/bank_factual_review_prompt.md (teacher-lane step 5b, CD-151)
+RUN    : 2026-08-17 — RE-RUN after the in-lane fixes. Per prompt step 5 THIS IS THE VERDICT OF
+         RECORD for this bank, superseding BAN_U15_REVIEW_2026-08-17.txt.
+STATUS : Contemporaneous. Written and committed under step 3a (CD-157(d)).
+
+--------------------------------------------------------------------------------------------------
+
+96 items, all read. Source: পাঠ ১৫ section only.
+
+**1 · FACTUAL ACCURACY** — 1 defect
+1. **Q29** — the three distractor `why_wrong` strings assert attributions the পাঠ ১৫ section does not state: আল মাহমুদ → 'পাখির মতো'; রবীন্দ্রনাথ ঠাকুর → 'ইচ্ছামতী'; কাজী কাদের নেওয়াজ → 'শিক্ষাগুরুর মর্যাদা'. True in the book's other chapters and its contents table, but outside the section under review. The is_correct option (কাজী নজরুল ইসলাম) is right.
+Everything else checks: Q02–Q09 and Q30/Q32/Q35/Q36 match the অর্থ জেনে নিই glossary verbatim; Q23–Q28 blanks match the printed poem; Q33, Q34, Q43–Q56 keys and Q57–Q66 band descriptors all stay inside the two stanzas. Not counted: Q19's sample sentence is a close paraphrase of the poem's own line rather than an independent sentence — permissible for S03, worth an author's eye.
+
+**2 · THE CHAPTER'S CONTENT BARS** — PASS
+"জাতীয় কবি" / "বিদ্রোহী কবি" / "মহান কবি" — zero occurrences; no other honorific anywhere. "স্বর্গপানে" — Q01 (question_text, accepted, model_note), Q71, Q88: all quoted with NO gloss of any kind, no religious sense anywhere in the bank; PERMITTED. "কাজী নজরুল ইসলাম" — Q01, Q29 option ক, bare and informational. গান as a substring of যুগান্তর/যুগান্তরের (Q16, Q24, Q31, Q43, Q44, Q67, Q76, Q84, Q92) — not occurrences per declaration.
+
+**3 · STANDING CURATION BARS** — PASS
+No C-03: the only hits are figurative সুর ("দুই চরণের এক সুর" Q52, "অহংকারের সুরে" Q57) — tone, not music. No C-05: ছবি at Q49/Q54/Q61 and এঁকে at Q49 are verbal imagery, declared not occurrences; no item requests or supplies a picture of a living being. No C-18: Q17's sample "নতুন শিক্ষার্থীদের ফুল দিয়ে বরণ করা হলো" is a school welcome, not flowers at a monument; no flag salute, no ritual silence, no nation-over-ummah framing. Rubric rows at Q57–Q66 that forbid arrogance, disrespect to parents or levity about death are correct and not occurrences.
+
+**4 · INVENTED NAMES** — PASS. No invented character in 96 items; the only personal names are কাজী নজরুল ইসলাম and the three real poets at Q29 (counted at check 1, not inventions).
+
+**5 · NUMERALS** — PASS. No ASCII digit in any student-facing string; every hit is an internal code inside a teacher-facing model_note.
+
+**6 · SLOT-SPECIFIC CORRECTNESS** — 2 defects
+2. **Q88 (S12)** — stimulus স্বর্গপানে carries TWO conjuncts, স্ব (স+ব) and র্গ (র+গ), but the stem says "যুক্তবর্ণটি" — definite singular — and all three accepted strings key স্ব only. A student who decomposes র্গ and forms a valid new word is unmarkable. Sole multi-conjunct stimulus in the slot: Q83 সিন্ধু, Q84 যুগান্তর, Q85 ঘূর্ণিপাক, Q86 চন্দ্র-তারায়, Q87 বিশ্ব-জগৎ each carry exactly one. All six decompositions are orthographically right and every keyed new word contains its conjunct and is absent from the poem.
+3. **Q71 (S10)** — in "কেমন করে দুঃসাহসী চলছে উড়ে স্বর্গপানে।" দুঃসাহসী is the SUBJECT of চলছে — an adjective used substantively, i.e. বিশেষ্য / the chapter's own নাম-শব্দ. The key accepts only বিশেষণ. Wrong পদ as used in the given sentence, and it contradicts the অনুশীলনী ৭ framing Q67/Q68/Q70 rely on.
+Otherwise: S10 Q69/Q73 (ক্রিয়া) and Q72/Q74 (সর্বনাম) correct. S13 Q89–Q96 all match. S06 Q37–Q42 supported by the chapter's use, including adverbial জোরে. S04 blanks unique and poem-exact.
+Out of scope, previously reported: Q01's S01 span (CD-149); Q67/Q68/Q70 নামপদ super-class; Q76, Q77, Q78, Q79, Q82 S11 single-mark; Q75/Q80/Q81 ড্যাশ · সেমিকোলন mark set.
+
+**7 · LANGUAGE** — 1 defect
+4. **Q80** — the stimulus is two printed lines presented as one চরণ ("চরণটিতে"), which the item's own model_note then contradicts ("দুই চরণ এক বাক্য"). With the line break gone, a comma after টুটে is defensible — and Q81 keys exactly that comma at the analogous internal break — yet Q80's key admits no comma. Ambiguous stimulus with an inconsistent key. Distinct from the out-of-scope mark-set question.
+No internal policy code leaks into any student-facing or rubric string. Not counted: Q38 accepts "জনম" but not the standard "জন্ম" — covered by that item's blanket near-answer clause.
+
+STEP 3 — CHANGED ITEM: Q19 is now CORRECT. The sample key "আমি দশ দিকে লুটে পড়ব — কোথাও থেমে থাকব না।" reads in the glossary's ছড়িয়ে sense (the trailing clause forecloses the collapse reading), and the model_note explicitly requires ছড়িয়ে and bars "লুটে পড়া = ভেঙে পড়া". It no longer contradicts Q36.
+STEP 3 — UNCHANGED ITEM: Q36 is still CORRECT — is_correct is ছড়িয়ে and all three why_wrong strings are grounded in the printed gloss.
+
+VERDICT: 4 DEFECT(S)

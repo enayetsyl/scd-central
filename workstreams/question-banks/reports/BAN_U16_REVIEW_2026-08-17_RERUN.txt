@@ -1,0 +1,40 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U16_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৬ section
+PROMPT : tools/bank_factual_review_prompt.md (teacher-lane step 5b, CD-151)
+RUN    : 2026-08-17 — RE-RUN after the in-lane fixes. Per prompt step 5 THIS IS THE VERDICT OF
+         RECORD for this bank, superseding BAN_U16_REVIEW_2026-08-17.txt.
+STATUS : Contemporaneous. Written and committed under step 3a (CD-157(d)).
+
+--------------------------------------------------------------------------------------------------
+
+96 items read, all fields.
+
+CHANGED-ITEM CHECK — Q58: NOW CORRECT. accepted states only the two facts the section prints about one person ("১৯৪৮ সালে পাকিস্তান গণপরিষদে ধীরেন্দ্রনাথ দত্তই প্রথম বাংলাকে রাষ্ট্রভাষা করার দাবি তোলেন, আর ১৯৭১ সালে ৮৫ বছর বয়সে তাঁকেও প্রাণ দিতে হয়"). No causal claim survives in either direction: the model_note names "ভাষার দাবি থেকে স্বাধীনতার লড়াই এগিয়েছে — এমন কারণ-সম্পর্ক পাঠে বলা নেই" and bars it, and asserts no reverse link. Repo-wide scan for the retired strings returns zero hits. No claim exceeds the section.
+
+**1 · FACTUAL ACCURACY** — 2 defects
+All dates, names, roles, ages and attributes checked item by item and correct (২৫শে মার্চ ১৯৭১ · নয় মাস · এম. মুনিরুজ্জামান বিজ্ঞান+কুরআন · মেহেরুন্নেসা ২৫ · ধীরেন্দ্রনাথ দত্ত ৮৫/১৯৪৮ প্রথম দাবি · যোগেশচন্দ্র ঘোষ ৮৪ · রণদাপ্রসাদ সাহা দানবীর · নূতনচন্দ্র সিংহ চট্টগ্রাম · ১৪ই ডিসেম্বর list · মিরপুর ও রায়ের বাজার · শহিদ বুদ্ধিজীবী দিবস). No swap; every why_wrong in Q30–Q38 accurate, including the three "এই তারিখটি পাঠে নেই" claims.
+1. **Q67** — the rubric requires the exact link the section does not draw. criterion: "তিনটি সময়ের ঘটনা আলাদা করে চেনা ও তাদের যোগসূত্র দেখানো"; band সম্পূর্ণ: "…একটির সঙ্গে অন্যটির যোগ দেখানো হয়েছে." The section states the ১৯৪৮ demand and the ১৯৭১ killings as separate facts and draws no link. Full marks are withheld unless the student supplies a connection outside the authority — THE SAME DEFECT CLASS AS THE FIXED Q58, surviving in a band_descriptors string.
+2. **Q29** — the stem asserts unstated history as chapter fact: "'নয় মাস ধরে সারা দেশ ছিল ______ — মানুষ নিশ্চিন্তে ঘর থেকে বেরোতে পারত না।'" The section says only "নয় মাস ধরে হত্যাকাণ্ড চলে". True in the world, outside the section. (Contrast Q28, whose carrier sentence IS supported — not flagged.)
+
+**2 · THE CHAPTER'S CONTENT BARS** — PASS
+"শহিদ" — Q31, Q47, Q51, Q65, Q66, Q79: six items, seven occurrences, ALL inside declared PERMITTED strings. No definitional item anywhere; every item is about individuals' events and contributions; elsewhere the bank writes প্রাণ দেন / প্রাণ হারান / হত্যা করা হয় / বুদ্ধিজীবী. "শহীদুল্লা কায়সার" at Q66 — permitted, the book's own name. Song/composer — zero occurrences; the three hits on সুর (Q64, Q68, Q69) are "tone", declared not the music bar. "ফুল দেওয়া"/"শ্রদ্ধা নিবেদন"/শহিদ মিনার — no ফুল, no মিনার; শ্রদ্ধা নিবেদন occurs twice, both PROHIBITIVE rubric rows (Q61, Q65), declared not occurrences. C-05 — no picture shown or requested; the only ছবি sequences are the substring inside বাছবিচার (Q05, Q28, Q94), declared not an occurrence.
+
+**3 · STANDING CURATION BARS** — PASS. C-03 nothing drawn from music/dance/percussion. C-05 no depiction. C-18 no flag salute, wreath, flower, monument ritual or ritual silence; Q61/Q65/Q68 rubrics affirmatively bar the ritual and hold answers to dates, events and contributions — the carve-out working.
+
+**4 · INVENTED NAMES** — PASS. Every personal name is a figure the section records; Q19's "একজন শিক্ষানুরাগী" is unnamed.
+
+**5 · NUMERALS** — PASS. Zero ASCII digits in any student-facing string on a mechanical scan; every ASCII hit is inside a teacher-facing model_note.
+
+**6 · SLOT-SPECIFIC CORRECTNESS** — 1 defect
+S12 (Q83–Q89) — decompositions orthographically right; every new word contains its conjunct; both multi-conjunct stimuli name the target conjunct in the stem. PASS.
+S10 (Q70–Q75) — correct for each word as used; standard terms; none a super-class. PASS.
+S13 (Q90–Q96) — each answer matches its definition phrase and class. PASS.
+S06 (Q39–Q44) — antonyms hold in the chapter's sense; Q44's প্রথম is ordinal, so শেষ is supported. PASS.
+3. **Q78 (S11)** — the single accepted answer forces an OPTIONAL mark, so a fully correct response is marked wrong: only "কৃষক, শ্রমিক, ছাত্র, শিক্ষক — সবাই প্রাণ দিয়েছেন।" is accepted and the model_note states "তালিকার পরে ড্যাশ" as a rule. The comma-only form is equally correct, and the section itself prints this very list with commas and no dash. Fix is a variant in accepted, not a new stem.
+Q81 — single terminal mark only. OUT OF SCOPE, previously reported; not counted here.
+
+**7 · LANGUAGE** — PASS. Stems, keys and rubric rows natural, grammatical and class-appropriate; no policy code in student-facing text. Not counted: Q94 accepts only নির্বিচার while the chapter prints নির্বিচারে — covered by that item's near-answer clause.
+
+CONFIRMATION — Q06 ('পাষণ্ড' শব্দের অর্থ): accepts "নিষ্ঠুর" / "নির্মম ব্যক্তি" / "নিষ্ঠুর; নির্মম ব্যক্তি", exact against the glossary line. No trace of the earlier wrong gloss.
+
+VERDICT: 3 DEFECT(S)

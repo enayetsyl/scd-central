@@ -1,0 +1,38 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U14_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৪ section
+PROMPT : tools/bank_factual_review_prompt.md (teacher-lane step 5b, CD-151)
+RUN    : 2026-08-17 — RE-RUN after the in-lane fixes. Per prompt step 5 THIS IS THE VERDICT OF
+         RECORD for this bank, superseding BAN_U14_REVIEW_2026-08-17.txt.
+STATUS : Contemporaneous. Written and committed under step 3a (CD-157(d)).
+
+--------------------------------------------------------------------------------------------------
+
+Vendored prompt read; source section read as sole authority; all 84 items read.
+
+**STEP 3 — the four changed items**
+- Q71 — CORRECT. ণ্য = ণ + য is the orthographically right decomposition and is the conjunct অরণ্য actually carries (অরণ্য has no second conjunct). পুণ্য and গণ্য both contain ণ্য; both occur zero times in the section.
+- Q81 — CORRECT. Stem is now "'রাগ বেশি যার' — এক কথায় প্রকাশ করো।" with no claim that the answer is a word of the play; রাগী / ক্রোধী are the right class.
+- Q82 — CORRECT. Same fix; তেজি / তেজস্বী fit "তেজ বেশি যার".
+- Q54 — CORRECT. The সম্পূর্ণ band now names only the two excuses the section states and asks হরিণ to be noted as having given one the section does not specify. Attainable without invention; আংশিক correctly penalises invented excuses.
+
+**1 · FACTUAL ACCURACY** — 2 defects
+1. **Q25** — `blanks.accepted` holds only উল্লসিত, but the source exercise supplies a five-word bank and this item does not, so আনন্দিত fits the frame and is marked wrong — while the same bank accepts আনন্দিত as the gloss of উল্লসিত at Q03.
+2. **Q26** — same fault, sharper: only পরিতাপ accepted; অনুশোচনা fits at least as well and is itself accepted as the gloss of পরিতাপ at Q04.
+Everything else checks: every শব্দার্থ key (Q01–Q08, Q30) matches the printed glossary exactly; সভাপতি মোষ, শেয়াল's আপস-রফা, খরগোশ's refusal quote, সেজ আপা / আরেকটা বাঘ, নিজের ছায়া, the ছড়া and the assembly's dissolution are all as printed; no distractor why_wrong contradicts the section.
+
+**2 · THE CHAPTER'S CONTENT BARS** — PASS. অভিনয় zero occurrences in any student-facing field; exercise 6 unused. সেজে / সাজো / সেজে নাও zero occurrences; সেজ আপা at Q49/Q64 is the section's own kinship term. সাজানো / সাজিয়ে (to arrange) at Q51 and Q54 — declared NOT an occurrence, NOT repeated as defects. চরিত্র at Q54 permitted. No dialogue item exists, so the own-identity condition has no target to violate.
+
+**3 · STANDING CURATION BARS** — PASS. No picture requested anywhere; no music, song or percussion; no nationalism ritual.
+
+**4 · INVENTED NAMES** — PASS. Only the seven cast animals plus unnamed generics.
+
+**5 · NUMERALS** — PASS. No ASCII digit in any student-facing string.
+
+**6 · SLOT-SPECIFIC CORRECTNESS** — 1 defect
+3. **Q74 (S12)** — stimulus ক্ষিপ্ত carries TWO conjuncts, ক্ষ (ক + ষ) and প্ত (প + ত), and the stem says only "যুক্তবর্ণটি ভেঙে লেখো" without saying which. A student decomposing ক্ষ with e.g. লক্ষ is right and unmarkable.
+Other S12 clean: Q71 ণ্য, Q72 ন্ন, Q73 দ্ধ, Q75 ল্ল, Q76 ষ্ট — all decompositions right, all new words carry the conjunct and are absent from the section. S10 — Q61, Q62, Q64 right for the given sentence. S11 — Q66, Q67, Q69, Q70 each require more than one mark, all inside the class-5 set. S13 — Q77–Q84 all match their definitions. S06 — Q37–Q40 antonyms hold in the chapter's sense.
+Out of scope, previously reported: Q59, Q60, Q63 (নামপদ/বিশেষণ super-class); Q65, Q68 (S11 single-mark); Q35/Q36 (stem over-claim on সুবিধা/সুন্দর).
+
+**7 · LANGUAGE** — PASS. Stems, keys and rubric rows natural, grammatical, at class level; no policy code in any student-facing or rubric string.
+
+VERDICT: 3 DEFECT(S)
