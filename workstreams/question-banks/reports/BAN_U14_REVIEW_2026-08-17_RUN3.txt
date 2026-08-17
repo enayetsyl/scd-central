@@ -1,0 +1,33 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U14_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৪ section
+PROMPT : tools/bank_factual_review_prompt.md (step 5b, CD-151) — check 1 AMENDED to enumerate every
+         item carrying a flagged claim (TOOLS-CR-008, applied this session)
+RUN    : 2026-08-17 — THIRD run, after the three in-lane fixes. VERDICT OF RECORD.
+STATUS : Contemporaneous. Committed under step 3a (CD-157(d)).
+
+-----
+
+All 84 items read, every field.
+
+STEP 3 — the three changed items
+- Q25 — CORRECT. Stem now prints the section's own five-word bank verbatim and instructs selection from it. Of the five only উল্লসিত fits "খরগোশ ______ হয়ে উঠল"; আনন্দিত (accepted at Q03 as the gloss) is now outside the frame, so the conflict between Q03's key and Q25's blank is gone.
+- Q26 — CORRECT. Same bank, same instruction; only পরিতাপ fits "মনে ______ জাগে", so অনুশোচনা is no longer a defensible alternative.
+- CLAIM-LEVEL SWEEP for the same fault: the bank holds exactly six fill_blank items, Q21–Q26. Q22 already supplies two accepteds; Q23/Q24 are cast names with no synonym; Q21 is verbatim recall of the printed ছড়া, rhyme-locked and framed as a quotation. NO OTHER fill_blank item carries the fault.
+- Q74 — CORRECT. Stem names both conjuncts of ক্ষিপ্ত and designates প্ত; প্ত = প + ত is right, and সুপ্ত / তৃপ্ত / গুপ্ত each carry প্ত and occur zero times in the section.
+- EVERY OTHER S12 STIMULUS, conjunct-counted: অরণ্য ণ্য · বিপন্ন ন্ন · বুদ্ধি দ্ধ · উল্লসিত ল্ল — one each. Q76 হৃষ্টপুষ্ট carries two OCCURRENCES of ষ্ট but one distinct conjunct, so "যুক্তবর্ণটি" is determinate — not a defect (হৃ is হ + ঋ-কার, a vowel sign, not a conjunct). No unnamed multi-conjunct stimulus remains.
+
+1 · FACTUAL ACCURACY — PASS. All ten শব্দার্থ keys match the printed অর্থ জেনে নিই list exactly. সভাপতি মোষ, শেয়াল's আপস-রফা and its terms, খরগোশ's refusal in its own words, শজারুর কাঁটা and ময়ূরের সৌন্দর্য as the only two excuses the section names, হরিণ's excuse left unspecified, মোষ dissolving the assembly at বাঘের গর্জন, সেজ আপা / আরেকটা বাঘ, নিজের ছায়া → ঝাঁপ → death, and the closing ছড়া are all as printed. No distractor arguably also correct; no why_wrong contradicts the section; no rubric band requires anything the section does not state.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS. "অভিনয়" zero occurrences; exercise 6 unused; no item instructs or invites acting. "সেজে"/"সাজো"/"সেজে নাও" zero. Declared-permitted occurrences listed for completeness: সাজানো at Q51 and Q54 criterion (to arrange); সেজ আপা at Q49 and Q64 (the section's kinship term); চরিত্র at Q54 criterion. Nothing undeclared.
+
+3 · STANDING CURATION BARS — PASS. C-05 no picture requested or supplied. C-03 none. C-18 none.
+
+4 · INVENTED NAMES — PASS. Only the seven cast animals plus unnamed generics and the section's own সেজ আপা.
+
+5 · NUMERALS — PASS. No ASCII digit in any student-facing string.
+
+6 · SLOT-SPECIFIC CORRECTNESS — PASS. S12 decompositions all right, every new word carries its conjunct and is absent from the section. S10 Q61/Q62/Q64 right as used. S11 Q66/Q67/Q69/Q70 each require more than one mark, all inside the class-5 set. S13 Q77–Q84 match their definitions and classes. S06 Q37–Q40 antonyms hold in the chapter's sense. Out of scope: Q59/Q60/Q63 (নামপদ), Q65/Q68 (S11 single-mark), Q35/Q36 (stem over-claim).
+
+7 · LANGUAGE — PASS. The new inline word bank at Q25/Q26 reads cleanly. No policy code in any student-facing or rubric string.
+
+VERDICT: CLEAN

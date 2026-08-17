@@ -1,0 +1,40 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৩ section
+PROMPT : tools/bank_factual_review_prompt.md (step 5b, CD-151) — check 1 AMENDED to enumerate every
+         item carrying a flagged claim (TOOLS-CR-008, applied this session)
+RUN    : 2026-08-17 — SIXTH run, then FIXED — see the note below.
+STATUS : Contemporaneous. Committed under step 3a (CD-157(d)).
+NOTE   : Its two findings (Q28/Q101's ইচ্ছা claim, Q122's model_note) were fixed AFTER this run, in\n         commit 8a27cfc. A seventh run is owed before U13 can be called clean.
+-----
+
+All 111 items read; absent tails Q20–Q24, Q34, Q35, Q44, Q67–Q70 confirmed absent from questions, slot_index, task_index, source_index and pool_index.
+
+1 · FACTUAL ACCURACY — 1 defect
+1. CLAIM: "the poem uses the word ইচ্ছা". The poem prints only ইচ্ছে ("আমার কেবল ইচ্ছে জাগে"); ইচ্ছা occurs in the section only in অনুশীলনী ১, never in the কবিতা. EVERY ITEM CARRYING THE CLAIM, ENUMERATED:
+   · Q28 question_text — "কবিতায় ব্যবহৃত 'ইচ্ছা' শব্দের অর্থ লেখো" (S02)
+   · Q101 question_text — "কবিতায় ব্যবহৃত 'ইচ্ছা' শব্দের বিপরীত শব্দ লেখো" (S06)
+   Same claim in both, stem field only; the keys (বাসনা / অনিচ্ছা) are sound. Q53 correctly uses the poem's own ইচ্ছে, so the bank is inconsistent with itself on one word. Cheapest honest fix: "কবিতায়" → "পাঠে", not a re-key, because অনুশীলনী ১ of this same section does print ইচ্ছা.
+THE MOONLIGHT CLAIM IS FULLY DEAD — আলো/ছড়িয়ে/সরে survive only inside the FORBIDDING model_notes of Q71 and Q75; Q75's accepted is now supported by the glossary row.
+Out of scope: Q80, Q87, Q121, Q45, Q85, Q74, Q76, Q77.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS. "আর একটা গান গাও না!" 0 occurrences; no item is about music, song, dance or percussion. গান once as a substring inside লাগানোর (Q18). "জাতীয় কবি"/"বিদ্রোহী কবি"/"মহান কবি" 0. "আল মাহমুদ" exactly once, Q01 accepted, bare. C-05: all ছবি/চিত্রকল্প occurrences are verbal imagery; আঁক only at Q31 and Q79 with the poet as subject. Q122 and Q123 carry no barred string.
+
+3 · STANDING CURATION BARS — PASS. No C-03. No C-18 (পতাকা · স্মৃতি · মিনার · শহিদ · মৌন · জাতি · পুষ্প · মাল্য · স্যালুট: 0).
+
+4 · INVENTED NAMES — PASS. আল মাহমুদ only.
+
+5 · NUMERALS — PASS. Zero ASCII digits in any student-facing string.
+
+6 · SLOT-SPECIFIC CORRECTNESS — PASS on items in scope.
+Q52 IS NOW SOUND. ন্য = ন + য is right; ধন্য · মান্য · অনন্য each carry ন্য and none occurs anywhere in the section. THE CLAIM WAS THEN GREPPED RATHER THAN THE QID: every S12 item's keyed "new word" was tested against the poem — Q51, Q53, Q92, Q93 — none appears in it, so জন্য was the only instance and it is gone. All five stimulus words carry exactly one conjunct.
+Out of scope: Q109; Q58, Q61, Q89, Q90, Q91; Q49, Q103, Q104, Q51, Q117, Q56.
+
+7 · LANGUAGE — 1 defect
+1. Q122 — the re-tag was bought with a new leak. model_note now argues its own Bloom tag to the marker in English metadata and cites the review process. It is the ONLY item whose marker-facing text carries English Bloom vocabulary or any reference to a review run, and it is not part of the reported CD-136/SLOT_REGISTER family. A marker note should say how to mark, not defend a tag against a reviewer.
+
+CHANGED-ITEM VERIFICATION (the two never-reviewed changes)
+- Q52 — CORRECT, and the current key is sound. Two earlier runs called this item "verified sound" while জন্য stood; the difference now is not assertion but a mechanical test of every S12 offered word against the poem, recorded above and reproducible.
+- Q122 — `Remember` is the honest tag: CONFIRMED. Both elements are lookups. ON RETIREMENT: YES, it is redundant enough to retire — element one IS Q04 entire (same word, same glossary row, same accepted বুনো) and element two is answerable by copying from the stem. Retiring it and leaving Q04 loses no coverage. If kept, element two must be replaced with something the stem does not print. Ruling is the Hub's under CD-142(a); flagged, not decided.
+- Q123 — noted as RULED FOR RETIREMENT with the retirement blocked on a floor; not reported as a defect.
+
+VERDICT: 2 DEFECT(S)

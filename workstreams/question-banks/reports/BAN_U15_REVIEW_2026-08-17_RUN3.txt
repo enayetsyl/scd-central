@@ -1,0 +1,37 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U15_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৫ section
+PROMPT : tools/bank_factual_review_prompt.md (step 5b, CD-151) — check 1 AMENDED to enumerate every
+         item carrying a flagged claim (TOOLS-CR-008, applied this session)
+RUN    : 2026-08-17 — THIRD run, then FIXED — see the note below.
+STATUS : Contemporaneous. Committed under step 3a (CD-157(d)).
+NOTE   : All four findings were fixed AFTER this run, in commit 8a27cfc. FOUR OF THEM WERE RAISED IN\n         THE FIRST RUN AND MISSED BY THE SECOND. A fourth run is owed.
+-----
+
+96 items, all read.
+
+STEP 3 — the three changed items
+- Q29 — CONFIRMED FIXED. All three why_wrong strings now say only what the section supports; is_correct correct. CLAIM GREPPED, NOT THE QID: whole-bank scan for পাখির মতো (0), ইচ্ছামতী (0), শিক্ষাগুরু (0), লিখেছেন (1 = Q29 stem), রচনা করেছেন (0) — NO item anywhere attributes a poem to any poet. The three other poets appear only as bare distractor option text.
+- Q88 — CONFIRMED FIXED. Stem names স্ব as the target; all three accepted key স্ব = স + ব. Every other S12 stimulus checked: Q83 সিন্ধু, Q84 যুগান্তর, Q85 ঘূর্ণিপাক, Q86 চন্দ্র-তারায়, Q87 বিশ্ব-জগৎ — one conjunct each.
+- Q71 — CONFIRMED FIXED. accepted = বিশেষ্য / বিশেষ্য পদ / নাম-শব্দ; বিশেষণ-only is gone, and the model_note explains the as-used reasoning. Every other S10 item checked for as-used mismatch: Q67, Q68, Q70 বিশেষ্য · Q69, Q73 ক্রিয়া · Q72, Q74 সর্বনাম — no further mismatch.
+
+1 · FACTUAL ACCURACY — PASS. Glossary keys, poem blanks, MCQ keys and all ten band_descriptors stay inside the two stanzas and the অনুশীলনী ৩ questions.
+
+2 · THE CHAPTER'S CONTENT BARS — 1 defect
+"জাতীয় কবি"/"বিদ্রোহী কবি"/"মহান কবি" zero occurrences; no other honorific. "স্বর্গপানে" 5 occurrences across 3 items (Q01 three fields, Q71, Q88), all quoted as the poem's own word with NO gloss of any kind. গান only as a substring of যুগান্তর. ছবি/চিত্রকল্প/এঁকে all figurative.
+1. DEFECT — bank-level `curation` field. It certifies "শব্দটি একবারই এসেছে S12-তে, যেখানে … গঠিত শব্দ 'স্বাধীন'". FALSE against the bank it certifies: স্বর্গপানে occurs in THREE items, only one of them S12. The compliance conclusion holds; the statement grounding it does not. Raised as defect 3 in the first run, NEVER FIXED, not on the out-of-scope list.
+
+3 · STANDING CURATION BARS — PASS. Only সুর hits are figurative tone. Q17's "নতুন শিক্ষার্থীদের ফুল দিয়ে বরণ" is a school welcome; Q62's "আত্মত্যাগকে শ্রদ্ধার সঙ্গে দেখা" is generic human respect, not nationalist veneration.
+
+4 · INVENTED NAMES — PASS. Four personal names, all real authors; no invented character.
+
+5 · NUMERALS — PASS. Zero ASCII digits in any student-facing string, rubric rows scanned separately.
+
+6 · SLOT-SPECIFIC CORRECTNESS — PASS. All six S12 decompositions right, every keyed new word carries its conjunct and is absent from the poem. All eight S10 right as used. S13 Q89–Q96 match. S06 supported by the chapter's use.
+Out of scope: Q67/Q68/Q70 নামপদ; Q76–Q79, Q82 S11 single-mark; Q75/Q80/Q81 mark set and Q80's চরণ-labelling; Q01 S01 span.
+
+7 · LANGUAGE — 3 defects
+2. Q93 and Q95 — stem and key contradict: the stems require "'সংকল্প' কবিতার শব্দ দিয়ে" but accepted adds মনোবাসনা (Q93) and নির্ভীক (Q95), which occur only in the গ্লস line. Third occurrence borderline: Q96 accepts জাহাজ, which the poem carries only inside যুদ্ধ-জাহাজ. Raised as defect 13 in the first run, never fixed.
+3. Q50 — stem asks "কোন কোন জায়গার নাম" but the key answers with বাতাস (not a place) and lists আকাশ TWICE in one two-mark key. Raised as defect 15 in the first run, never fixed.
+4. Q52 — "কবির মনের কোন একই টান" is unnatural and reads at first pass as "কোনো একটি", asking the opposite of what the item wants. Raised as defect 14 in the first run, never fixed.
+
+VERDICT: 4 DEFECT(S)
