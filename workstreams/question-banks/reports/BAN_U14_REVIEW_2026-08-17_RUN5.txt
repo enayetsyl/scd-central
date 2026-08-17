@@ -1,0 +1,62 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U14_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৪ — কুপোকাত section (to পাঠ ১৫ exclusive)
+RUN    : 2026-08-17 — FIFTH run. Independent verification review.
+METHOD : CD-161(a) ordering honoured. All seven checks plus the check-1 claim sweep were completed
+         and written before RUN4 (or any *_REVIEW_* file) was opened. 84 items, every field read.
+
+-----
+
+1 · FACTUAL ACCURACY — 4 DEFECTS.
+
+Cast/role/plot facts were swept claim-by-claim and are internally consistent and correct against the section: সভাপতি = মোষ (Q23 blank · Q28 opt ক · Q32 why_wrong ঘ · Q43 accepted · Q50 accepted); আপস-রফা = শেয়াল (Q24 blank · Q29 opt ক · Q42 accepted · Q44 accepted · Q28 why_wrong গ · Q57 stem); excuses named only for শজারু (কাঁটা) and ময়ূর (সৌন্দর্য), হরিণ's left unspecified (Q29 why_wrong গ/ঘ · Q34 why_wrong ঘ · Q48 accepted · Q54 band সম্পূর্ণ); নিজের ছায়া → ঝাঁপ → ডুবে মরা (Q22 blank · Q31 opt ক · Q46 accepted · Q47 accepted · Q52 band · Q53 band); সেজ আপা / আরেকটা বাঘ (Q49 accepted · Q64 stem); closing ছড়া (Q21 blank · Q69 accepted). All S02/S13 glosses match অর্থ জেনে নিই verbatim. No distractor is arguably also correct.
+
+1. **Marker note asserts the section gives no answer where the section does give it** — the boilerplate string "পাঠে এর উত্তর দেওয়া নেই (CD-136)" in `answer_key.model_note`. Same claim, eight occurrences, all false:
+   Q77 (আত্মত্যাগ), Q78 (অবুঝ), Q79 (হৃষ্টপুষ্ট), Q80 (বজ্রনির্ঘোষ), Q83 (কদাকার), Q84 (রাক্ষস) — each answer is a printed অর্থ জেনে নিই headword whose gloss IS the question stem; Q35 (সুবিধা→অসুবিধা) and Q36 (সুন্দর→অসুন্দর) — the pair is printed in অনুশীলনী ৫, and Q36's second key কদাকার is a glossary headword. The identical string is TRUE and not a defect at Q37 · Q38 · Q39 · Q40 · Q59–Q64 · Q71–Q76 · Q81 · Q82.
+2. **Stem asserts a word is used in the play when the section shows it only in an exercise list** — same claim, two occurrences: Q35 `question_text` "'কুপোকাত' নাটকে ব্যবহৃত 'সুবিধা'" and Q36 `question_text` "…'সুন্দর'". সুবিধা/সুন্দর appear only inside the জোড়াশব্দ list of অনুশীলনী ৫; the section never states they occur in the নাটক. (Swept: the same "নাটকে ব্যবহৃত / নাটকের শব্দ" frame at Q01–Q08 · Q37–Q40 · Q71–Q76 · Q77–Q80 · Q83 · Q84 is sound — every one of those words is a printed glossary headword.)
+3. **Quotation fidelity — quoted stimulus not as the section prints it.** Two occurrences, same claim (a quoted string presented as the text's own):
+   Q60 `question_text` prints "'অরণ্য, এক পাশে মাটির টিবি'"; the section prints "অরণ্য। এক পাশে মাটির টিবি, দেখতে কুয়ার মতো।" — the দাঁড়ি has been silently turned into a কমা, splicing two sentences, in a bank that elsewhere (Q65 · Q70) marks exactly that as wrong.
+   Q61 `question_text` quotes "'ক্ষুদ্রকায় প্রাণী'" — that phrase is nowhere in the section; ক্ষুদ্রকায় occurs only as a glossary headword and the section attaches the attribute to no character.
+4. **Q59** `question_text` — the sentence quoted is "বাঘের অত্যাচারে পশুদের জীবন বিপন্ন" but the target is given as 'বাঘ', a form that does not occur in it (the sentence has the inflected বাঘের). The keyed পদ is right; the target-word identification is not. No sibling: Q60 · Q62 · Q63 · Q64 all name a token that really appears.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS.
+Every student-facing and marker-facing string searched for all declared strings. অভিনয় · অভিনয় করি · সেজে · সাজো · সেজে নাও · চরিত্র সাজ — ZERO occurrences; অনুশীলনী ৬ is unused and no সংলাপ / role-play item exists in the bank at all. ছবি · আঁক · আঁকো · আঁকা · এঁকে — ZERO occurrences (নেপথ্যে/চিত্রিত glossary entries are not carried into any item).
+Complete inventory of near-hits, all inside PERMITTED NAMES: সাজানো (arrange) — Q51 criterion, Q54 criterion; সেজ আপা (kinship) — Q49 accepted, Q64 question_text; চরিত্র meaning a character of the play — Q54 criterion. Nothing undeclared.
+
+3 · STANDING CURATION BARS — PASS. C-03: no music, song, dance or percussion; the সুর-substring hits are সুরভি/সুরভিত (fragrance, Q27 why_wrong গ) and the idiom "উপভোগের সুরে"/"উল্লাসের সুরে". C-05: no item requests or supplies a picture. C-18: no nationalism, no veneration ritual; Q58's "জাতীয়" is the classifier "of that kind" ("ঠকানোই বুদ্ধি জাতীয় ভুল সিদ্ধান্ত"), not nationhood. The rubric rows at Q52 · Q53 · Q56 · Q57 · Q58 restrain rather than invite.
+
+4 · INVENTED NAMES — PASS. Only the section's seven cast animals, its own সেজ আপা, and unnamed generics (শিক্ষক, ছেলেটি, গরুগুলো). মুনীর চৌধুরী appears nowhere and so is nowhere misattributed.
+
+5 · NUMERALS — PASS. No ASCII digit in any student-facing string. The ASCII strings that exist sit only in teacher-facing `model_note` (see check 7, defect 6).
+
+6 · SLOT-SPECIFIC CORRECTNESS — PASS on S12 · S13 · S06; S10 and S11 findings below, deferred items reported.
+S12 (Q71–Q76): all six decompositions orthographically right — ণ্য=ণ+য · ন্ন=ন+ন · দ্ধ=দ+ধ · প্ত=প+ত · ল্ল=ল+ল · ষ্ট=ষ+ট; all 18 new words genuinely carry the named conjunct and none appears in the section. Multi-conjunct scan of all six stimuli: only ক্ষিপ্ত carries two distinct conjuncts (ক্ষ, প্ত) and Q74's stem names both and designates প্ত. Q76 হৃষ্টপুষ্ট has two occurrences of one and the same conjunct ষ্ট, so "যুক্তবর্ণটি" is determinate — not a defect.
+S13 (Q77–Q84): every answer matches its definition phrase; প্রাণ বিসর্জন is glossed without "পরের জন্য" so it does not compete with আত্মত্যাগ at Q77; রাগী/ক্রোধী and তেজি/তেজস্বী answer the অনুশীলনী ৪ phrases as printed.
+S06 (Q35–Q40): each antonym holds in the chapter's own sense of the stimulus (see defect 2 for the Q35/Q36 stem claim, which is a check-1 matter, not an antonym error). Q40's বুদ্ধিমান agrees with Q30's own why_wrong খ.
+S10: Q59 নাম-শব্দ/বিশেষ্য · Q60 নাম-শব্দ/বিশেষ্য · Q61 বিশেষণ · Q62 কাজ-শব্দ/ক্রিয়া are each right for their own sentence; no key is a super-class of the actual পদ; নামপদ appears only in a forbidding clause, never as an accepted key. নাম-শব্দ/কাজ-শব্দ not reported, per the 2026-08-17 ruling. **Q63** (দ্রুত → ক্রিয়া-বিশেষণ · ক্রিয়াবিশেষণ · বিশেষণ) and **Q64** (তার → সর্বনাম) — REPORTED, MARKED DEFERRED (book names no term; re-key stopped here). Note within the deferral: Q63 accepts both ক্রিয়া-বিশেষণ and the plain super-class বিশেষণ, which is the very super-class problem check 6 names.
+S11: Q67 · Q69 · Q70 each require more than one mark and every required mark is inside the taught four (কমা+দাঁড়ি · কমা+বিস্ময়চিহ্ন · কমা+দাঁড়ি). Q67's first-listed key prints a ড্যাশ, mirroring the section's own line, but the second accepted key is comma-only, so no ড্যাশ is *required* — not a defect under the ruling, noted. **Q66** requires উদ্ধৃতিচিহ্ন (model_note: "উক্তির দুপাশে উদ্ধৃতিচিহ্ন") — **UNRULED**, reported, not counted. **Q65** (দাঁড়ি only) and **Q68** (প্রশ্নচিহ্ন only) — single terminal mark, REPORTED, MARKED DEFERRED.
+
+7 · LANGUAGE — 3 DEFECTS.
+
+5. **Marker instruction contradicts the task it marks** — "কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য" in `answer_key.model_note`, i.e. accept any answer close in MEANING, on twelve items whose answers are exact and have no meaning-neighbours: Q59 · Q60 · Q61 · Q62 · **Q63 (DEFERRED item)** · **Q64 (DEFERRED item)** (পদ নির্ণয়) and Q71 · Q72 · Q73 · Q74 · Q75 · Q76 (যুক্তবর্ণ decomposition + word formation). The same string is appropriate and not a defect at Q35–Q40 and Q77–Q84.
+6. **Internal policy codes leaked into marker-facing text.** Same claim, three code families, every occurrence named:
+   `CD-136` — Q35 · Q36 · Q37 · Q38 · Q39 · Q40 · Q59 · Q60 · Q61 · Q62 · **Q63 (DEFERRED)** · **Q64 (DEFERRED)** · Q71 · Q72 · Q73 · Q74 · Q75 · Q76 · Q77 · Q78 · Q79 · Q80 · Q81 · Q82 · Q83 · Q84 (26 items).
+   `BAN-S10` with "C5-এর … স্লটে নির্বাচিত কাজ", plus the irrelevant slot-inventory aside "ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়" — Q59 · Q60 · Q61 · Q62 · **Q63 (DEFERRED)** · **Q64 (DEFERRED)** (6 items).
+   `SLOT_REGISTER BAN-S12 composite` — Q71 · Q72 · Q73 · Q74 · Q75 · Q76 (6 items).
+   These sit in `model_note`, which is exactly the marker-facing text check 7 protects; the numeral carve-out at check 5 exempts them from check 5, not from check 7.
+7. **Q59 · Q60 · Q62** `model_note` additionally cite the C5 book's own পাঠ ১৫ / পাঠ ১৮ exercises to justify নাম-শব্দ/কাজ-শব্দ. The ruling is sound and not in question, but a marker of পাঠ ১৪ is being handed cross-chapter provenance argument in place of marking guidance; and **Q14** accepted "সময় নষ্ট করে এখন তার ভারি পরিতাপ হচ্ছে।" is clumsy for class 5 — পরিতাপ does not idiomatically take হচ্ছে with a possessor; the model sentence is the one thing the student copies.
+
+STEP 5a — RUN4 DISPOSITIONED
+
+- RUN4 check 1 "PASS": **STILL PRESENT** as a defect — its own sweep was sound on cast/role/plot, but it did not sweep the two boilerplate `model_note` claims (my defects 1 and 5), which are the largest claim families in the bank.
+- RUN4 note, Q52 "তার লোভের কথা" beyond the printed "কিছু খায়, কিছু ফেলে রাখে": **WAS NEVER A DEFECT** — I reached the same reading independently; it is an inference from a printed fact, not a new fact.
+- RUN4 note, Q33 why_wrong[খ] calling খরগোশ ক্ষুদ্রকায়: **WAS NEVER A DEFECT** as written (the section's সতর্কতা frames খরগোশ as the দুর্বল party), but the same attribute IS a defect one item over, at Q61, where it is put inside quotation marks as text (my defect 3) — RUN4's sweep of the ক্ষুদ্রকায় claim stopped one item short.
+- RUN4 check 2 "PASS" with permitted inventory সাজানো Q51/Q54 · সেজ আপা Q49/Q64 · চরিত্র Q54: **FIXED/CORRECT** — identical inventory reached independently, complete.
+- RUN4 check 3 "PASS", incl. সুর → সুরভি and তালি → তালিকা substring reasoning: **WAS NEVER A DEFECT** — confirmed independently.
+- RUN4 check 4 "PASS": **WAS NEVER A DEFECT** — confirmed; no invented name.
+- RUN4 check 5 "PASS": **WAS NEVER A DEFECT** — confirmed; zero ASCII digits student-facing.
+- RUN4 check 6 "PASS", incl. Q76 হৃষ্টপুষ্ট determinacy and the ক্ষিপ্ত two-conjunct reasoning: **WAS NEVER A DEFECT** — reached independently, same conclusion. But its S10/S11 lines are silent on Q59's target-token mismatch (my defect 4) and on Q63's super-class key inside the deferral — sweeping gaps, not verdict errors.
+- RUN4 check 7 "PASS", "No policy code in any student-facing or rubric string": **STILL PRESENT** — the scope is drawn so as to exclude `model_note`, but check 7 protects marker-facing text, and RUN4's own step-3 paragraph concedes RUN3 "leave[s] the marker-facing model_note codes unmentioned" while itself repeating the omission. My defect 6.
+- RUN4 step 3 agreement with RUN3, and its two notes on RUN3: **CORRECT** as far as they go — the RUN3 "all ten শব্দার্থ keys" wording slip is real (S02 holds eight; Q27/Q30 are the MCQ gloss items).
+- RUN4 "SECOND CONSECUTIVE CLEAN": **STILL PRESENT** as an error of record — two consecutive CLEAN verdicts were reached by two runs that both declined to sweep `model_note`, which is precisely the failure mode CD-159 anticipates.
+
+VERDICT: 7 DEFECT(S)
