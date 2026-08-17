@@ -2887,3 +2887,58 @@ restores it nor explains it away. **Owner: the Principal.**
   baseline), both named in `CD-153(e)`.
 - Next: the Principal's direction on the 61 — which are fixed in lane, which need a ruling, and
   whether the two `CD-151(c)` stops are taken as separate rows.
+
+## 2026-08-17 · PENDING-P-039 in-lane fixes · both stops cleared · cowork
+- Bootstrap: `HEAD` == `origin/main` == `816fc58` after the approved push, clean tree. **The
+  session opened on CD-152 branch (b) and stopped**, on one held `log-class` commit of its own —
+  which is the finding `CD-156` now fixes with **branch (c) BENIGN AHEAD**.
+- **Two stops cleared before any fix, both by Principal ruling.**
+  **CD-156** — step 4 had (a) strictly behind and (b) everything else, and no branch for *strictly
+  ahead by commits this clone itself made and is holding*. Since push needs approval, that is the
+  NORMAL opening state, so (b) fired on the routine case — `CD-152(d)`'s own finding on the
+  opposite axis. (c) requires `--is-ancestor origin/main HEAD` **and** every commit accounted for
+  by hash and subject; **the enumeration is the load-bearing half**, because *ahead* is equally
+  true of debris.
+  **CD-157** — `CD-151` step 3's *paste into the session* resolved to the conversation, not the
+  repo, so **61 per-qid findings against four PUSHED banks existed only in a transcript.** The
+  next session was briefed to read them at source and could not. Step 3a now makes the report a
+  committed artifact: **a 5b run without a committed report is not a run, and a verdict line is
+  not a report.** Recorded: **the ১৬ case and this one are the same shape one level apart** — an
+  unverified FIX there, an unrecoverable VERIFICATION here.
+- **The four first-run reports are committed**, transcript-recovered and marked as such, ALONE
+  rather than riding a fix commit — every prior report in that directory rode its `Build:` commit,
+  and attaching these to this session's fixes would date them wrong.
+- **Ten plain-factual fixes**, each logged with its qid in `1c43483`'s message: U13 `Q100` `Q71`
+  `Q30` `Q93` · U14 `Q71` `Q81` `Q82` `Q54` · U15 `Q19` · U16 `Q58`. `Q43`, `Q50` and `Q36` were
+  checked and left alone because they were the CORRECT half of their pairs.
+- **`U13 Q44` RETIRED** (`cc7581b`, alone). Re-keying was refused: it authors a new item wearing
+  an old identity, breaks the digest→Hub trace and hides the change from item history. Its own
+  `why_wrong` had called the section's own gloss an error.
+  **CONSEQUENCE, reported not routed around: 110 → 109, Understand 30 → 29, PLAN margin +1
+  against the +2 rule. U13 sat EXACTLY on that margin, so retiring any Understand item breaks
+  it** — and because `gates.py`'s selftest carries U13 as its `LIVE-CONTROL`, the **whole suite is
+  red and NO bank verdict is produced for any of the four.** The control is not malfunctioning; it
+  is correctly reporting that a bank it was told to treat as signable is not. One new Understand
+  item restores it, and that is authoring.
+- **Re-run verdicts of record** (`14f93ee`), each from the vendored prompt with a STRINGS facts
+  block: **U13 28 → 20 · U14 16 → 3 · U15 15 → 4 · U16 2 → 3.** All eleven changed items verified
+  CORRECT; `Q44` confirmed retired with no surviving dependency; **`U16 Q06` re-confirmed — the ১৬
+  item P-039 was raised for is now closed on fact by a reviewer, twice.**
+- **THREE FINDINGS THIS SESSION OWNS.** (i) **Two fixes were INCOMPLETE** — `U13 Q75` still keys
+  the claim removed from `Q71`, so the bank now forbids in one item what it keys in another, and
+  `U16 Q67`'s rubric still demands the link removed from `Q58`. **Fixing the item a report names
+  is not the same as fixing the defect it found.** (ii) **One defect was INTRODUCED by a fix** —
+  `U13 Q30`'s new `model_note` bars a paraphrase of its own key. (iii) **U16 went UP, 2 → 3, and
+  that is the review working**: the first run missed `Q67` and `Q29`, and the STRINGS facts block
+  removed three false positives, so the counts are not comparable line for line.
+- **Digests changed — the Principal must RE-IMPORT all four:** U13 `22ae7c4f299a` → `5804283a6dfc`
+  (109 items) · U14 `831c54c1aa7d` → `a7198969b108` · U15 `4ab1626a4b75` → `a8d2cd38fe7e` ·
+  U16 `337e0461239e` → `801bb7f98e42`. `single/QP-BAN-C5-U13-Q44.json` deleted so no orphan
+  envelope can reach the Hub.
+- Gates: seven of eight in-condition gates CLEAN; **`question-banks/audits/gates.py` RED** for the
+  reason above. `CD-153` repo-wide green is therefore NOT met and nothing may be pushed until the
+  U13 margin is resolved.
+- **PENDING-P-039 still cannot close.** Four verdicts of record now exist and the in-lane fixes are
+  done, but defects remain — two of them this session's own — and the canon-class stops are
+  untouched. Next: the Principal's ruling on the U13 Understand margin, then the two incomplete
+  fixes and the introduced one.
