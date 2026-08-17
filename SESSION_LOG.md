@@ -3284,3 +3284,73 @@ restores it nor explains it away. **Owner: the Principal.**
   **PART C HELD in consequence**, because C3 reads the register field D1 would create.
 - Gates: all eight in-condition suites CLEAN, before and after every commit. `int_id_check` 20 untyped
   sites reported and not judged; `canon_check`/`tools_check` one standing warn each.
+
+## 2026-08-17 (cont.) · rebase onto dd40a93 · CD-165 · S10 re-keys · four review runs · cowork
+- **PART 0 — REBASED, and the patch-ids are the proof.** The five held commits went onto `dd40a93`
+  with **every patch-id byte-identical**: `eb2d4ae761472102` · `b1e9dce2aa19d26a` ·
+  `95d87f2e5b98f740` · `4f33eabee1452fdc` · `5a9194a06fb4b6f3`, before and after. `HEAD` is now
+  **(c) BENIGN AHEAD** — `origin/main` is an ancestor, 11 commits ahead, 0 behind. `CD-164` was
+  RE-VERIFIED free against the freshly fetched `dd40a93` before the rebase replayed the row, per
+  CD-154; the incoming commit was a 96-file `canon/sources/` slotting with **zero overlap** with my
+  twelve files. All eight in-condition suites CLEAN on the new base.
+- **PART 1 — READ ONLY, AND THE READING FOUND A GAP I CANNOT CLOSE.** The pdf/page evidence in
+  `canon/sources/c5/bangla/evidence/` covers **P01–P12 ONLY**; পাঠ ১৩–২৩ have NO page images anywhere
+  in the repo. So the extraction IS the whole of the repo-resident textbook for this chapter, and the
+  candidate lines are exactly the twenty-line poem, the four-row glossary and the অনুশীলনী list — all
+  quoted with line numbers in the session report. **মুক্তি · স্বাধীনতা · বাঁধন: 0 occurrences in the
+  section. উড়ব: line 54.** The strongest printed hook is **অনুশীলনী ৪(ঘ) at line 83 — "কবি পাখির মতো
+  বন্য হতে চান কেন?"** — the book ASKS the why-question and prints no answer. **Also found: the
+  অনুশীলনী list jumps ৫ → ৭, so exercise ৬ exists in the book and is absent from the extraction.**
+  Nothing was written to canon. Wording is the Principal's.
+- **PART 2 — reported, not touched.** `Q82`'s four rubric strings and `Q80`'s stem are quoted verbatim
+  beside the run-10 findings in the session report. `Q87` untouched per the ruling.
+- **PART 3 — 18 items re-keyed, `aa9106e`, every qid logged.** 3a's enumeration first, and it is why
+  the commit is 18 and not 7: **the S10 group is THIRTY items** (U13 Q109–Q118 · U14 Q59–Q64 ·
+  U15 Q67–Q74 · U16 Q70–Q75) and all thirty keyed a term the C5 book never prints. **নাম-শব্দ →**
+  U13 `Q109` `Q117` · U14 `Q59` `Q60` · U15 `Q67` `Q68` `Q70` `Q71` · U16 `Q70` `Q75`. **কাজ-শব্দ →**
+  U13 `Q112` `Q116` · U14 `Q62` · U15 `Q69` `Q73` · U16 `Q72` `Q74`. **BOTH →** U13 `Q118`. `নামপদ`
+  removed from all seven that carried it; **verified by CLAIM GREP, not qid grep: `নামপদ` survives 18
+  times and ZERO as an accepted key** — every survivor is the new forbidding clause. `নাম-পদ` and
+  `কাজপদ` are 0.
+- **3b — SEVEN STOPPED, no third term invented:** সর্বনাম at U13 `Q111` `Q115` · U14 `Q64` ·
+  U15 `Q72` `Q74`; অব্যয় at U13 `Q113`; ক্রিয়া-বিশেষণ at U14 `Q63`. **সর্বনাম and অব্যয় are printed
+  ZERO times in the whole of C5 বাংলা** — the items ask for a distinction the book does not draw.
+- **AND I CORRECTED MY OWN B1 REPORT IN THE SAME COMMIT.** I had called বিশেষণ's four source hits
+  "editorial, not exercise text". **Wrong.** পাঠ ১৯ prints it as exercise material — row 2 *গুণ ও
+  বৈশিষ্ট্য বসানো (বিশেষণ)* mapped to **S10** · S04, and its slot line reads *S10 ক্রিয়ার কাল ও
+  বিশেষণ*. So U13 `Q110` `Q114` · U14 `Q61` · U16 `Q71` `Q73` were already on a taught term and needed
+  nothing. The Principal's premise that the ক্রিয়া items already accept কাজ-শব্দ held for **two of
+  eight** (U15 Q69 · Q73).
+- **PART 4 — `CD-165` `54a423f`, register data `b0863f4`, prover `0e109ae`. 4d IS HELD AND THAT IS THE
+  SESSION'S SECOND REAL FINDING.** The item-side enforcement was written, run, and **FAILS SEVEN
+  ITEMS**: the three ruled U15 re-keys plus **four outside the ruling — `U16 Q78` needs ড্যাশ, which
+  the ruling bars by name, and `U14 Q66` · `U16 Q79` · `U16 Q82` need উদ্ধরণ চিহ্ন, which the ruling
+  NEITHER admits NOR bars.** Committing it would have put the suite red against items no ruling
+  covers, so it is reported in `CD-165(g)` and reverted from the tree rather than landed.
+- **4e IS ALSO STOPPED, and the reason is the poem.** কাজী নজরুল's printed lines carry the
+  non-admitted marks THEMSELVES: line 1 ends `—`, `দশ দিকেতে পড়ব লুটে;` and `…আকাশ ফুঁড়ে;` end in
+  semicolons. So `Q75`/`Q81` can only be re-keyed down to a SINGLE admitted mark — the very defect
+  QB-CR-017 exists to remove — and **`Q80`'s printed line contains NO admitted mark at all**, so no
+  admitted-mark key is derivable from it. A pure re-key cannot satisfy both rulings; re-stemming is a
+  different act and not mine to choose.
+- **PART 5 — `QB-CR-017` filed (`3639dc0`), the thirteen items HELD.** The row records the finding the
+  Principal named as the finding: **PLAN and COVERAGE were both RIGHT about all thirteen** — slot
+  present, full demand, admitted task declared, marks matching the register, Bloom floor clear — and
+  the defect lives in the item's PROSE, a quantity no gate computes. Sixth instance of `QB-CR-012`'s
+  family. Feasibility measured per chapter so the next session executes rather than explores.
+- **THE FOUR OWED RUNS, `22cd328`: U13 RUN11 4 · U14 RUN5 7 · U15 RUN5 CLEAN · U16 RUN4 2.**
+  **U14 HAD TWO CONSECUTIVE CLEAN RUNS AND THIS ONE FOUND SEVEN**, including the bank's two largest
+  claim families — eight `model_note`s asserting *পাঠে এর উত্তর দেওয়া নেই* where the section DOES
+  answer, and twelve accepting *কাছাকাছি অর্থের যেকোনো* on items with exact answers. Both were
+  invisible to RUN3 and RUN4 because both drew check 7's scope to exclude `model_note`. **That is
+  CD-161(b)'s warning measured: two runs agreed wrongly.** U16's CLEAN fell the same way (Q64's stem
+  presupposes সমাজসেবা for three men where the section assigns it to one).
+- **MY OWN PART 3 EDIT IS AMONG THE FINDINGS AND I DID NOT FILTER IT OUT.** U14 RUN5 defect 7 holds
+  that the পাঠ ১৫/১৮ citation I appended to eighteen `model_note`s hands a পাঠ ১৪ marker cross-chapter
+  provenance argument instead of marking guidance; U15's run makes the same observation uncounted.
+  Left in place for the Principal to rule — the citation is what makes the key checkable.
+- Floors measured before and after every bank and **NOTHING MOVED**: U13 106 · 31/29/30/14/2, margins
+  **+12 · +2 · +2 · +3** (the gate's own LIVE-CONTROL line — my earlier "+9 · +2 · +3 · +3" was wrong
+  and is corrected here) · U14 84 · 22/24/24/12/2 · U15 96 · 26/28/27/13/2 · U16 96 · 26/27/28/13/2.
+  Exports rebuilt for all four: `e1d94f63e411` · `bc2180bb43e2` · `bef277859b14` · `0fc084015201`.
+- Gates: all eight in-condition suites CLEAN, before and after every one of the six commits.
