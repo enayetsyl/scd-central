@@ -2841,3 +2841,49 @@ restores it nor explains it away. **Owner: the Principal.**
   says so — the source itself calls this chapter *"প্রশ্নের ভালো উৎস অনেক"*.
 - Pushed: build class (`6cd9229`) and log class, per `CD-141`'s standing authorization. The bank
   awaits Hub import and subject-expert review (`CD-142(a)`); **nothing here is promotion.**
+
+## 2026-08-17 · PENDING-P-039 retro · four vendored review runs · cowork
+- Did: **Ran `tools/bank_factual_review_prompt.md` once against each of পাঠ ১৩ · ১৪ · ১৫ · ১৬**,
+  the retro P-039 owes. Bootstrap per `tools/session_bootstrap.md` as amended by `CD-152`:
+  `HEAD` == `origin/main` == `cec7600`, clean tree, both step-4 commands run and pasted. **The
+  mount lagged 7 commits at `3ff2a53` and is named here because a lagging mount is the only thing
+  the Principal is not otherwise told about** (§4, pull-only for agents).
+  **All four ran against the SAME artifact and it was NOT adapted per chapter.** Each reviewer was
+  handed the repo path and read the PROMPT BODY at source rather than a transcription of it, so
+  uniformity is a property of the run and not a claim about it. Only the facts block differed, and
+  each was filled from that chapter's own `CD-138(e)` declaration plus the source's own ⚠ block —
+  `ADMITTED SLOTS` from the bank header, `CONTENT BARS` and `PERMITTED NAMES` declared by the
+  session, never judged by the reviewer.
+- **VERDICT LINES, verbatim, one per bank:**
+  - পাঠ ১৩ — `VERDICT: 28 DEFECT(S)`
+  - পাঠ ১৪ — `VERDICT: 16 DEFECT(S)`
+  - পাঠ ১৫ — `VERDICT: 15 DEFECT(S)`
+  - পাঠ ১৬ — `VERDICT: 2 DEFECT(S)`
+- **পাঠ ১৬'s open item is CONFIRMED CLOSED on fact, which was the point of putting ১৬ on the
+  list.** `QP-BAN-C5-U16-Q06` accepts নিষ্ঠুর / নির্মম ব্যক্তি and is correct against the glossary
+  line *পাষণ্ড — নিষ্ঠুর; নির্মম ব্যক্তি*; no trace of the earlier নতুন remains, and its
+  `source_index` cites that glossary line. **The fix that stood unverified in the pushed repo is
+  now verified by a reviewer, not by a gate re-run** — which is the distinction `CD-151(b)` exists
+  for and the reason a gate pass could not have closed it.
+- **NOTHING WAS FIXED, and that is the brief's instruction, not a stall.** 61 defects across four
+  banks, several of them systemic across three of the four, and two classes of them cannot be
+  fixed inside the bank lane at all (`CD-151(c)`). The census and the lane split are in the
+  session report to the Principal; fixes await his direction.
+- **THREE OF THE 61 ARE NOT BANK DEFECTS AND ARE OWNED HERE.** পাঠ ১৪ items 8–9 (`Q51`, `Q54`)
+  and one পাঠ ১৫ observation are substring hits on সাজা inside সাজানো (*to arrange*) and on ছবি
+  used figuratively — the reviewer reported them correctly under the prompt's own mechanical rule
+  (*report any occurrence that is not a declared string*), and the fault is in **this session's
+  `PERMITTED NAMES` declaration**, which named a token where it should have named strings. **The
+  prompt is right to make the reviewer mechanical; the declaration is where judgement belongs, and
+  this is what a bad declaration looks like from the other side.**
+- **PENDING-P-039 CANNOT CLOSE** and its own terms say why: four verdicts logged is half of what
+  it asks; the other half is *any defect found is fixed inside the teacher lane*, and a defect
+  needing a ruling leaves the row open until that is resolved. **Two are exactly that** — পাঠ ১৫'s
+  ড্যাশ / সেমিকোলন mark-set question, and পাঠ ১৫ `Q01`'s span, where the reviewer's own finding is
+  that the SOURCE delimiter is the stale artefact and `CD-149` already ruled the item correct. The
+  row stays **OPEN**, now with four verdicts of record where before it had none.
+- Gates: repo-wide green per `CD-153`, all eight in-condition gates reported per gate in the
+  session report. Two standing warns (`pick_placements.py` VENDORED-UNPROVEN · `REF-CITE` UD-60(b)
+  baseline), both named in `CD-153(e)`.
+- Next: the Principal's direction on the 61 — which are fixed in lane, which need a ruling, and
+  whether the two `CD-151(c)` stops are taken as separate rows.
