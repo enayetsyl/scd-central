@@ -1278,3 +1278,41 @@ syllabus**. At C5 Bangla today that would read S14 as zero-admitted, because প
 
 **Blocks:** nothing today. **Becomes owed** when the first full-year C5 Bangla paper is assembled
 from chapter banks — the first moment the year, rather than the chapter, is the unit being checked.
+
+---
+
+## ⚑ PENDING-P-039 — four pushed banks predate teacher-lane step 5b and owe a retro review run
+
+**Raised:** 2026-08-16, by the governance session that filed **CD-151**. **Status: RAISED.
+Blocks nothing.** No bank is withdrawn, no promotion is affected, and nothing on disk changes on
+account of this row.
+
+**What is owed.** পাঠ **১৩ · ১৪ · ১৫ · ১৬** were authored and pushed before CD-151 existed. Each
+owes **one run of `tools/bank_factual_review_prompt.md`**, from that path, with its facts block
+filled from that chapter's own declaration and the source's ⚠ block.
+
+**Why ১৬ is on the list even though it had a review.** পাঠ ১৬ is the session that invented the
+step, and it ran the review twice — `VERDICT: 15 DEFECT(S)`, then `VERDICT: 1 REMAINING` after the
+fixes. **The last remaining defect was then fixed and the gate suite re-passed, and the reviewer
+was never re-run.** So the correction that closed ১৬'s review stands **unverified in the repo
+today**: the gates that re-passed check STRUCTURE, and the thing under review was FACT. **A gate
+re-run is not a review re-run**, and treating it as one is precisely the gap CD-151(b) exists to
+close. ১৬'s state of record is therefore *reviewed, one defect outstanding, fix unverified* — not
+clean.
+
+**Why none of the four is re-run before the others, and why none was re-run at filing.** A retro
+run under the **agent-composed prompt CD-151 retires** produces a verdict of unknown standing — it
+would be the same artifact grading itself, in a different session. **All four are re-run once
+against the vendored prompt, or the retro is not uniform**, and a partial retro is worse than
+none: it would leave four banks in three different states of verification with nothing recording
+which was which.
+
+**What closes this row.** Four verdicts, one per bank, each from the vendored prompt and each
+logged in `SESSION_LOG.md` with its verdict line. Any defect found is fixed **inside the teacher
+lane** under CD-151(b), with the qid and the change logged. A defect needing a ruling or a change
+outside the lane is CD-151(c) — stop and report, and this row stays open until that is resolved.
+
+**Owner:** the next teacher-lane session that is not authoring a new chapter, or a session the
+Principal directs to it. **Needed by:** before the first full-year C5 Bangla paper is assembled
+from these banks — the same trigger `PENDING-P-038` names, because that is the first moment the
+four are read together as a set rather than one at a time.
