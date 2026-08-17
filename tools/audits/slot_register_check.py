@@ -93,11 +93,19 @@ ROOT = Path(__file__).resolve().parents[2]
 REGISTER = ROOT / "canon" / "marklogic" / "SLOT_REGISTER.json"
 SPINES = {"BAN": ROOT / "canon" / "marklogic" / "MarkLogic_BAN_Spine.md",
           "ENG": ROOT / "canon" / "marklogic" / "MarkLogic_ENG_Spine.md",
-          # MATH is listed with no rows yet ON PURPOSE. `run_everything` loops `scope_built`, so an
-          # unbuilt subject is never read — but the SUBJECT-BLIND seed needs a subject this file
-          # KNOWS and the register has NOT built, and once ENG landed there was none left. A seed
-          # that cannot be pointed at anything is a seed that quietly stops testing.
-          "MATH": ROOT / "canon" / "marklogic" / "MarkLogic_MATH_Spine.md"}
+          # MATH is listed ahead of its rows. `run_everything` loops `scope_built`, so an unbuilt
+          # subject is never read; listing it early costs nothing and means the day MATH rows land
+          # they are proven rather than skipped.
+          "MATH": ROOT / "canon" / "marklogic" / "MarkLogic_MATH_Spine.md",
+          # ── SEED-ONLY, and it must stay fictional ──────────────────────────────────────────
+          # `SYN` is not a subject. It exists so `SUBJECT-BLIND` has a target that is KNOWN to this
+          # file and that the register can NEVER build, and it is pointed at BAN's spine only
+          # because the seed never gets far enough to parse it.
+          # WHY IT IS NOT A REAL SUBJECT (TOOLS-CR-007): the seed first targeted ENG, then MATH.
+          # Both are in `scope_owed` — subjects the repo is SCHEDULED to build — so each target
+          # was a lie with an expiry date, and the seed passes the moment the lie comes true.
+          # A fixture premise the repo can satisfy is not a fixture (QB-D-012 / CD-121(e)).
+          "SYN": ROOT / "canon" / "marklogic" / "MarkLogic_BAN_Spine.md"}
 CLASSES = (1, 2, 3, 4, 5)
 
 # I-4's ONLY exception, as a CLOSED LITERAL IN THE PROVER — deliberately NOT a register field.
@@ -554,14 +562,15 @@ def selftest():
     # ── the SUBJECT axis — the C1–C4 repair\'s defect one dimension up ─────────────────────
     cases += [
         ("SUBJECT-BLIND", "a subject DECLARED built in scope_built with not one row to its name — "
-                          "the shape of `a column that was never read, reported clean`. Re-pointed "
-                          "from ENG to MATH when ENG was actually built: the old target had become "
-                          "a real subject and the seed had gone VACUOUS, passing because it could "
-                          "no longer fail",
-         lambda r: r["scope_built"].append("MATH C1-C5")),
+                          "the shape of `a column that was never read, reported clean`. Targets "
+                          "the FICTIONAL subject `SYN`, never a scope_owed one: pointed at ENG it "
+                          "died the day ENG was built, and pointed at MATH it would die again "
+                          "(TOOLS-CR-007)",
+         lambda r: r["scope_built"].append("SYN C1-C5")),
         ("SUBJECT-REFUSAL", "a subject declared built for which this file knows NO spine — must "
-                            "refuse by name, never skip",
-         lambda r: r["scope_built"].append("SCI C3-C5")),
+                            "refuse by name, never skip. Targets `ZZZ`, which is in no spine map "
+                            "and on no roadmap, for the same reason",
+         lambda r: r["scope_built"].append("ZZZ C1-C5")),
     ]
 
     # A seed whose target row is not built yet is HELD, and named. It is not a pass — nothing was
