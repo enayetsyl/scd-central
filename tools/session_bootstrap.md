@@ -129,6 +129,26 @@ did.**
 
 ## 2. Working
 
+**BEFORE ANYTHING ELSE — THE SESSION HAS TWO FILE SURFACES AND ONLY ONE REACHES THE CLONE.**
+This is the trap §4's rule does not defend against on its own, and it is written here because
+everything below is in bash and a reader can finish §1 believing the mount is behind them
+(TOOLS-CR-006).
+
+| Surface | Reaches the CLONE | Reaches the MOUNT |
+|---|---|---|
+| `bash` | `~/work/scd-central` — **all work happens here** | `/sessions/<session>/mnt/scd-central` |
+| Read / Write / Edit file tools | **NEVER — there is no path to it** | `C:\scd-central` — **yes, and it is writable** |
+
+**Every repo write goes through bash.** `C:\scd-central` in a Write or Edit call is the
+Principal's working copy, not the clone, and it will accept the write: the mount is `drwx`, and
+FACT 1 blocks only unlink inside `.git/`, not ordinary tracked files. The editing tools are the
+natural instrument for editing a file and they are the wrong one here.
+
+**If a write does land on the mount:** revert it by writing the original bytes back, **not with
+git** — `reset --hard` and `checkout --` do not work there (FACT 1), and `git status` leaves an
+`index.lock` that then blocks the Principal's next pull. Verify from inside the container clone,
+and report it.
+
 Work normally. **No lock-asides. No `.git/lock-debris/`. No `GIT_INDEX_FILE` tricks.** All three
 exist for the mount, and the third is worse than dead weight — TOOLS-CR-003 records that
 `GIT_INDEX_FILE` leaves `.git/index` describing the pre-commit tree, so the next ordinary `git add`
