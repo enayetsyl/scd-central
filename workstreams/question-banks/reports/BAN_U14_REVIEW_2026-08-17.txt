@@ -1,0 +1,77 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U14_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৪ section (lines 101–155)
+PROMPT : tools/bank_factual_review_prompt.md (teacher-lane step 5b, CD-151)
+RUN    : 2026-08-17 — the PENDING-P-039 retro, one run per bank
+STATUS : TRANSCRIPT-RECOVERED, committed 2026-08-17 under CD-157(e). The original run pasted its
+         report into the session and not into the repo; only the verdict line reached
+         SESSION_LOG.md. This file is that report, verbatim, recovered from the session
+         transcript. It is NOT a re-run and must not be read as contemporaneous evidence of one.
+
+--------------------------------------------------------------------------------------------------
+
+## 1 · FACTUAL ACCURACY
+
+1. **QP-BAN-C5-U14-Q81** — stem asserts the answer is a word of the play (`'কুপোকাত' নাটকের শব্দ দিয়ে এক কথায় প্রকাশ করো`), but the accepted keys `রাগী` / `ক্রোধী` occur nowhere in the section — not in the play summary, not in the printed glossary. The section's exercise 4 poses `রাগ বেশি যার` but supplies no answer.
+2. **QP-BAN-C5-U14-Q82** — same defect: `তেজি` / `তেজস্বী` are not in the section; the stem claims they are words of the নাটক.
+3. **QP-BAN-C5-U14-Q54** — `সম্পূর্ণ` band requires `শজারুর কাঁটা, ময়ূরের সৌন্দর্য এবং হরিণসহ অন্যদের অজুহাত আলাদা করে তালিকা` while simultaneously requiring `সবই পাঠের, বানানো নয়`. The section states that হরিণ gave an excuse but never says what it was; the band is unattainable without inventing content it forbids.
+4. **QP-BAN-C5-U14-Q61** — stimulus `'ক্ষুদ্রকায় প্রাণী'` is presented in quotation marks and the model_note asserts `উদ্দীপক পাঠ ১৪ থেকেই নেওয়া`, but that phrase is not in the section; only the glossary entry `ক্ষুদ্রকায়` is. It is also not a sentence, so the S10 "as used in the sentence" judgement has no basis.
+5. **QP-BAN-C5-U14-Q60** — misquotation: stem prints `'অরণ্য, এক পাশে মাটির টিবি'`; the section reads `অরণ্য। এক পাশে মাটির টিবি` (দাঁড়ি, not কমা).
+6. **QP-BAN-C5-U14-Q35** — stem asserts `'কুপোকাত' নাটকে ব্যবহৃত 'সুবিধা' শব্দ`. `সুবিধা` appears in the section only inside the জোড়াশব্দ exercise list (`সুবিধা-অসুবিধা`), not as a word used in the play.
+7. **QP-BAN-C5-U14-Q36** — same over-claim for `সুন্দর` (section has it only in `সুন্দর-অসুন্দর`, exercise 5; the play text speaks of `ময়ূরের সৌন্দর্য`).
+
+Otherwise clean: every MCQ `is_correct` (Q27–Q34) and every `why_wrong` checks out against the section; the reflection/drowning chain (Q22, Q31, Q46, Q47), শেয়াল's আপস-রফা (Q24, Q29, Q42, Q44), মোষ as সভাপতি (Q23, Q28, Q43), সেজ আপা / আরেকটা বাঘ (Q49), সভা dissolution at the গর্জন (Q50), and the closing ছড়া (Q21, Q69) are all as printed. No distractor is arguably also correct.
+
+## 2 · THE CHAPTER'S CONTENT BARS
+
+`অভিনয়` — **zero occurrences** in any field of the bank. Exercise 6 is not used, and no item instructs or invites acting. Correct.
+`ছবি` — **zero occurrences**. No animal or person is depicted or requested. Correct.
+`সেজে / সাজা / চরিত্র` — occurrences:
+
+- **QP-BAN-C5-U14-Q54**, `rubric.criterion`: `কোনো চরিত্রকে ব্যক্তিগতভাবে হেয় বা উপহাস না করা` — `চরিত্র` naming the play's cast as information, in a row that restrains the student. **PERMITTED** per the declaration.
+- 8. **QP-BAN-C5-U14-Q51**, `rubric.criterion`: `পাঠের ঘটনাগুলো ক্রম অনুযায়ী নিজের ভাষায় সাজানো` — the token `সাজা` occurs as a substring of `সাজানো`. Not a string declared in PERMITTED NAMES → reported as **DEFECT** per the mechanical rule. (Lexeme is "arrange", not "dress as"; no acting or costume instruction is present — a wording-level fix.)
+- 9. **QP-BAN-C5-U14-Q54**, `rubric.criterion`: `পাঠ থেকে তথ্য আলাদা করে সাজানো` — same substring occurrence, same disposition: **DEFECT** as undeclared.
+
+Non-occurrences noted for transparency: `সেজ আপা` in Q49 `answer_key.accepted` and Q64 `question_text` is the section's own kinship term, not the barred token `সেজে`. No dialogue-writing item exists in the bank at all, so the C-19 dialogue risk is untouched.
+
+## 3 · STANDING CURATION BARS
+
+PASS. No music, dance, singing or percussion (C-03) — no `গান` / `নাচ` / `সংগীত` / `ঢোল` anywhere; no depiction of any living being and no item requests a picture of a person or animal (C-05); no flag, monument, wreath or ritual silence (C-18). The rubric rows in Q52, Q53, Q56 and Q58 that *restrain* violence-relish and glorification of deceit are correct and are not occurrences.
+
+## 4 · INVENTED NAMES
+
+PASS. The only names in the bank are the seven cast animals the section records (খরগোশ, বাঘ, শেয়াল, মোষ, শজারু, হরিণ, ময়ূর). No personal names, no invented characters.
+
+## 5 · NUMERALS
+
+PASS. Zero ASCII digits in any student-facing string (`question_text`, option `text`, `why_wrong`, `answer_key.accepted`, `blanks.accepted`, rubric `criterion`, `band_descriptors`). ASCII digits occur only in teacher-facing `model_note` internal codes (`CD-136`, `BAN-S10`, `BAN-S12`), expressly carved out.
+
+## 6 · SLOT-SPECIFIC CORRECTNESS
+
+**S12:**
+10. **QP-BAN-C5-U14-Q71** — orthographically wrong. `অরণ্য` is অ + র + ণ্য; its conjunct is **ণ্য (ণ + য)**, not `র্ণ`. All three accepted answers decompose `র্ণ = র + ণ` and build `বর্ণ` / `স্বর্ণ` / `পূর্ণ`, none of which relate to the stimulus word's actual conjunct.
+11. **QP-BAN-C5-U14-Q74** — `ক্ষিপ্ত` carries **two** conjuncts (`ক্ষ` and `প্ত`), but the stem says `যুক্তবর্ণটি` (singular) without saying which is meant; the key silently assumes `প্ত`.
+
+Q72 (`ন্ন`), Q73 (`দ্ধ`), Q75 (`ল্ল`), Q76 (`ষ্ট`, twice but the same conjunct, so no ambiguity) are correct, and every newly formed word does contain its conjunct and is absent from the section.
+
+**S10:**
+12. **QP-BAN-C5-U14-Q59** — accepts `নামপদ`, a super-class (the non-verb পদ as a group) rather than the পদ itself; the answer for `বাঘ` is বিশেষ্য.
+13. **QP-BAN-C5-U14-Q60** — same: `নামপদ` accepted for `অরণ্য`.
+14. **QP-BAN-C5-U14-Q63** — accepts bare `বিশেষণ` alongside `ক্রিয়াবিশেষণ`. In `সবাই দ্রুত প্রস্থান করে`, `দ্রুত` modifies the verb, so the পদ is ক্রিয়াবিশেষণ; `বিশেষণ` is the super-class.
+
+Q61 defective on its stimulus (item 4 above). Q62 (`করে` → ক্রিয়া) and Q64 (`তার` → সর্বনাম) are right for the given sentences.
+
+**S11:**
+15. **QP-BAN-C5-U14-Q65** — requires a single terminal mark only (`বাক্যের শেষে দাঁড়ি বসবে`).
+16. **QP-BAN-C5-U14-Q68** — requires a single terminal mark only (প্রশ্নবোধক চিহ্ন).
+
+Q66 (কমা + উদ্ধৃতিচিহ্ন + দাঁড়ি), Q67, Q69 (কমা + বিস্ময়চিহ্ন), Q70 each require more than one mark, all inside the class set. Observation, not counted: Q67 `accepted[0]` uses a ড্যাশ that its `model_note` does not mention; `accepted[1]` matches the note.
+
+**S13:** the definition-to-answer match is right in Q77–Q80, Q83, Q84; no accepted form's grammatical class is off. Q81 and Q82 are defective on source-membership (items 1–2). The `কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য` note covers `প্রাণ বিসর্জন` as an alternative to `আত্মত্যাগ` in Q77, so no additional flag.
+
+**S06:** the chapter's use of each stimulus supports its antonym (Q37–Q40 from the glossary senses; Q35–Q36 from the জোড়াশব্দ pairs). No adverbial/idiomatic mismatch. Stem-wording defects at Q35, Q36 already counted.
+
+## 7 · LANGUAGE
+
+PASS on register — stems, keys and rubric rows are natural, grammatical and at class level; the S08 rubrics are readable and the S03 model_note is consistent across Q09–Q20. Two observations, not counted as defects: (a) Q57's `সম্পূর্ণ` band demands `অন্তত দুটি যুক্তি পাঠ থেকে` for an item that asks for the student's own opinion while `আংশিক` penalises reasoning `পাঠের বাইরে থেকে` — the intent (text-grounded opinion) is legible but the pairing is tight for Class 5; (b) internal codes `CD-136`, `SLOT_REGISTER BAN-S12 composite`, `BAN-S10` sit in marker-facing `model_note` on Q35–Q40, Q59–Q64, Q71–Q84 — reported for the session's attention, but check 5's own carve-out ("Internal codes inside a teacher-facing `model_note` ... are not defects") governs, so not counted. No policy code has leaked into any student-facing string or into any rubric `criterion` / `band_descriptors`.
+
+VERDICT: 16 DEFECT(S)

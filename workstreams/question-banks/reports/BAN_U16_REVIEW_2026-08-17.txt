@@ -1,0 +1,59 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U16_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৬ section (lines 216–261)
+PROMPT : tools/bank_factual_review_prompt.md (teacher-lane step 5b, CD-151)
+RUN    : 2026-08-17 — the PENDING-P-039 retro, one run per bank
+STATUS : TRANSCRIPT-RECOVERED, committed 2026-08-17 under CD-157(e). The original run pasted its
+         report into the session and not into the repo; only the verdict line reached
+         SESSION_LOG.md. This file is that report, verbatim, recovered from the session
+         transcript. It is NOT a re-run and must not be read as contemporaneous evidence of one.
+
+--------------------------------------------------------------------------------------------------
+
+## 1 · FACTUAL ACCURACY
+
+All dates, names, roles, ages and attributes checked item by item against the section (২৫শে মার্চ ১৯৭১ · ১৪ই ডিসেম্বর ১৯৭১ · ১৯৪৮ গণপরিষদ · এম. মুনিরুজ্জামান বিজ্ঞান/কুরআন · জ্যোতির্ময় গুহঠাকুরতা ইংরেজি · গোবিন্দচন্দ্র দেব দর্শন · মেহেরুন্নেসা ২৫ · ধীরেন্দ্রনাথ দত্ত ৮৫/প্রথম দাবি · যোগেশচন্দ্র ঘোষ সাধনা ঔষধালয়/৮৪ · রণদাপ্রসাদ সাহা দানবীর · নূতনচন্দ্র সিংহ চট্টগ্রাম সমাজসেবক · মিরপুর ও রায়ের বাজার বধ্যভূমি · নয় মাস). No swap, no wrong attribute, no distractor that is also arguably correct. Every `why_wrong` in Q30–Q38 is accurate, including the three "এই তারিখটি পাঠে নেই" claims (১৬ই ডিসেম্বর, একুশে ফেব্রুয়ারি, ছাব্বিশে মার্চ are genuinely absent from the range). One defect:
+
+1. **QP-BAN-C5-U16-Q58** — the model answer asserts a causal chain the section does not state: "ভাষার সেই দাবি থেকেই দীর্ঘ পথ পেরিয়ে স্বাধীনতার লড়াই এগোয়" and "দাবি আর মূল্য দুটোই এক সূত্রে বাঁধা". The section records the ১৯৪৮ demand and the ১৯৭১ killings as separate facts and draws no link between them. True in the world, outside the section — a key reaching beyond the authority.
+
+## 2 · THE CHAPTER'S CONTENT BARS
+
+Complete occurrence list (full-file scan of question_text, option text, why_wrong, accepted, model_note, blanks.accepted, rubric criterion, band_descriptors):
+
+- শহিদ — Q31 `question_text` "'শহিদ বুদ্ধিজীবী দিবস'" · Q47 `answer_key.accepted` "শহিদ সাবের" · Q51 `answer_key.accepted` "'শহিদ বুদ্ধিজীবী দিবস'" · Q65 `question_text` "'শহিদ বুদ্ধিজীবী দিবস'" · Q66 `rubric.band_descriptors.সম্পূর্ণ` "শহিদ সাবের" · Q79 `question_text` and `answer_key.accepted` "শহিদ বুদ্ধিজীবী দিবস". All six are declared PERMITTED strings. No definitional or honorific use anywhere; the bank writes প্রাণ দেন / প্রাণ হারান / হত্যা করা হয় / বুদ্ধিজীবী elsewhere. No "শহিদ কারা"-type item.
+- শহীদ (ী-spelling) — Q66 `rubric.band_descriptors.সম্পূর্ণ` "শহীদুল্লা কায়সার": the book's own personal name for a লেখক, as printed in the section.
+- গান — zero occurrences. (The three hits on the substring সুর are "ব্যক্তিপূজার সুরে নয়", "বন্দনার সুরে নয়", "জাতি-শ্রেষ্ঠত্বের সুরে নয়" in Q64/Q68/Q69 criteria — the Bengali word for "tone", not সুরকার/music.)
+- ফুল / শহিদ মিনার — zero occurrences.
+- শ্রদ্ধা — Q61 `rubric.criterion` "…শ্রদ্ধা নিবেদনের বর্ণনায় না গিয়ে" · Q65 `rubric.criterion` "…স্মৃতিসৌধে শ্রদ্ধা নিবেদনের বর্ণনা নয়". Both are prohibitive rubric rows; per the prompt's own rule a rubric row that forbids barred content is not an occurrence. Not defects.
+- ছবি — zero occurrences as a word. (Substring hits are inside বাছবিচার in Q05, Q28, Q94.)
+
+PASS.
+
+## 3 · STANDING CURATION BARS
+
+PASS. No item draws on the song/composer paragraph (C-03); no item requests or supplies a picture of a person (C-05); no flower-offering, wreath, salute or ritual silence anywhere (C-18) — Q61/Q65/Q68 rubrics affirmatively bar the ritual and keep the answer on dates, events and contributions, which is the carve-out working as intended.
+
+## 4 · INVENTED NAMES
+
+PASS. Every personal name is a figure the section records: এম. মুনিরুজ্জামান, ধীরেন্দ্রনাথ দত্ত, যোগেশচন্দ্র ঘোষ, রণদাপ্রসাদ সাহা, নূতনচন্দ্র সিংহ, শহিদ সাবের, সেলিনা পারভীন, মেহেরুন্নেসা, সিরাজুদ্দীন হোসেন, শহীদুল্লা কায়সার. No invented characters.
+
+## 5 · NUMERALS
+
+PASS. Zero ASCII digits in any student-facing string. ASCII appears only inside teacher-facing `model_note` (CD-136, BAN-S10, BAN-S12, SLOT_REGISTER) — carved out by this check.
+
+## 6 · SLOT-SPECIFIC CORRECTNESS
+
+- **S12 (Q83–Q89)** — decompositions all orthographically right (দ্ধ=দ+ধ · ষ্ঠ=ষ+ঠ · ত্র=ত+র · ধ্য=ধ+য · শ্ব=শ+ব · স্ত্র=স+ত+র · ণ্ড=ণ+ড) and every new word contains its conjunct (যুদ্ধ · শ্রেষ্ঠ · পাত্র · অধ্যায় · বিশ্বাস · অস্ত্র · দণ্ড). The two multi-conjunct stimuli (প্রতিষ্ঠাতা, বিশ্ববিদ্যালয়) both name the target conjunct in the stem. PASS.
+- **S10 (Q70–Q75)** — বিশেষ্য / বিশেষণ / ক্রিয়া are correct for each word as used in its given sentence, all standard terms, none a super-class. PASS.
+- **S13 (Q90–Q96)** — each answer matches its definition phrase and its grammatical class (আত্মদানকারী · বরেণ্য/বরণীয় · মেধাবী · নিরহংকার · নির্বিচার · অপূরণীয় · দানবীর). PASS.
+- **S06 (Q39–Q44)** — antonyms hold in the sense the chapter uses each word (পরাধীনতা · সশস্ত্র · মুক্ত · অখ্যাত · দয়ালু · শেষ); প্রথম is ordinal here, so শেষ is supported. PASS.
+- **S11 (Q76–Q82)** — marks used (দাঁড়ি, কমা, প্রশ্নচিহ্ন, বিস্ময়চিহ্ন, উদ্ধরণ-চিহ্ন, ড্যাশ) are inside the class-5 set. One defect:
+
+1. **QP-BAN-C5-U16-Q81** — 'কী ভয়ংকর রাত ছিল সেটি' requires a single terminal mark only (বিস্ময়চিহ্ন). Every other S11 item in the bank requires two or more; this one does not, which the slot check bars.
+
+## 7 · LANGUAGE
+
+PASS. Stems, keys and rubric rows are natural, grammatical and class-appropriate; no policy code in student-facing text. Observation (not counted): CD-136 / BAN-S10 / `SLOT_REGISTER BAN-S12 composite` sit in marker-facing `model_note` on Q39–Q44, Q70–Q75, Q83–Q89, Q92–Q96 — check 5 declares codes in a teacher-facing model_note not to be defects, so I do not count them here.
+
+CONFIRMATION OF EARLIER FIX: `QP-BAN-C5-U16-Q06` ('পাষণ্ড' শব্দের অর্থ) now accepts "নিষ্ঠুর" / "নির্মম ব্যক্তি" / "নিষ্ঠুর; নির্মম ব্যক্তি" and is factually correct against the glossary line "পাষণ্ড — নিষ্ঠুর; নির্মম ব্যক্তি"; no trace of the earlier "নতুন" remains anywhere in the item (its `source_index` entry also cites that glossary line).
+
+VERDICT: 2 DEFECT(S)

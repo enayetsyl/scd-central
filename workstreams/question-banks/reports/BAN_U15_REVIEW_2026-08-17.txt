@@ -1,0 +1,72 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U15_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৫ section (lines 155–216)
+PROMPT : tools/bank_factual_review_prompt.md (teacher-lane step 5b, CD-151)
+RUN    : 2026-08-17 — the PENDING-P-039 retro, one run per bank
+STATUS : TRANSCRIPT-RECOVERED, committed 2026-08-17 under CD-157(e). The original run pasted its
+         report into the session and not into the repo; only the verdict line reached
+         SESSION_LOG.md. This file is that report, verbatim, recovered from the session
+         transcript. It is NOT a re-run and must not be read as contemporaneous evidence of one.
+
+--------------------------------------------------------------------------------------------------
+
+## 1 · FACTUAL ACCURACY
+
+1. **QP-BAN-C5-U15-Q01** — stem and `answer_key.accepted` run the S01 span to *"…কেমন করে দুঃসাহসী চলছে উড়ে স্বর্গপানে।"* (8 printed lines). The source section's own S01 delimiter, and the facts block's NAMED CONTENT, end at *"…বরণ মরণ-যন্ত্রণাকে।"* — the item carries two lines the declared range does not. **Reported, not fixable in the bank lane (CD-151(c)):** `canon/DECISIONS.md` CD-149 rules the printed-line reading and names *পাঠ ১৫*'s delimiter as the defective one, ordering exactly the span the bank holds, and CD-149(e) records this qid as corrected to it. The stale artefact is the source line / facts block, not Q01. Do not revert the item on this report.
+2. **QP-BAN-C5-U15-Q29** — three `why_wrong` strings assert facts absent from the source section: আল মাহমুদ → 'পাখির মতো'; রবীন্দ্রনাথ ঠাকুর → 'ইচ্ছামতী'; কাজী কাদের নেওয়াজ → 'শিক্ষাগুরুর মর্যাদা'. All three come from the file's chapter table at lines 17–24, outside 155–216. The `is_correct` option (কাজী নজরুল ইসলাম) is right.
+
+All other `accepted`, `blanks.accepted`, MCQ keys and `band_descriptors` check out against the section, including the eight পঙ্‌ক্তি keys at Q23–Q28 and Q75–Q82 (punctuation restored exactly as printed) and the first-stanza inventory in Q57's band.
+
+## 2 · THE CHAPTER'S CONTENT BARS
+
+- **জাতীয় কবি / বিদ্রোহী কবি / মহান কবি** — zero occurrences in any field. The poet's name appears bare at Q01 (`question_text`, `accepted`) and Q29 (option `text`), with no epithet. Clean.
+- **স্বর্গ / স্বর্গপানে** — 4 occurrences: Q01 `question_text`, Q01 `accepted`, Q71 `question_text`, Q88 `question_text`. All are the poem's own word carried as quoted text; no item asks its meaning and no gloss is given anywhere, religious or otherwise. All PERMITTED per the declaration.
+3. **DEFECT — `curation` block, bank-level.** It declares *"শব্দটি একবারই এসেছে S12-তে"*. The bank's own items contradict it (4 occurrences above, three of them outside S12). The bar's declaration does not match the bank it certifies.
+- **গান** — no occurrence as a word. Every regex hit (Q16, Q24, Q31, Q43, Q44, Q67, Q76, Q84, Q92, Q01) is the substring গ+া+ন inside যুগান্তর / যুগান্তরে / যুগান্তরের. Not occurrences. No music, song or percussion content anywhere.
+- **ছবি** — 3 occurrences: Q49 `accepted` (*"এমন ছবি এঁকে"*), Q54 `question_text` (*"সাহসের ছবি"*), Q61 `question_text` (*"তিন জগতেরই ছবি আছে"*). All are figurative word-imagery; none depicts, requests or supplies a living being, so none falls inside the declared scope *"NONE as a depiction of a living being"*. Reported for the session's visibility rather than counted: if ছবি was intended as a bare token bar, these three are undeclared uses and the declaration needs the wording.
+
+## 3 · STANDING CURATION BARS
+
+PASS. No C-03 material. No item requests a picture of any person or animal (C-05); the only drawing verb is metaphorical (Q49). No C-18 ritual — no flag, monument, wreath or silence. Considered and cleared: Q17's sample sentence *"নতুন শিক্ষার্থীদের ফুল দিয়ে বরণ করা হলো"* — flowers in a school welcome, not at a monument or national symbol, so outside REF-01 C-18 §4.1(a). Rubric rows at Q60, Q63, Q66 that forbid content are correctly not occurrences.
+
+## 4 · INVENTED NAMES
+
+PASS. Only four personal names appear, all real authors: কাজী নজরুল ইসলাম (chapter's own), and আল মাহমুদ / রবীন্দ্রনাথ ঠাকুর / কাজী কাদের নেওয়াজ at Q29. No invented character. (The out-of-section sourcing of the latter three is defect 2, not an invention.)
+
+## 5 · NUMERALS
+
+PASS. Zero ASCII digits in any student-facing string. Digits appear only inside teacher-facing `model_note` provenance codes (CD-136, CD-149, SLOT_REGISTER), which the check excludes.
+
+## 6 · SLOT-SPECIFIC CORRECTNESS
+
+**S12 যুক্তবর্ণ** — decompositions are orthographically right and every newly formed word does carry the conjunct claimed, verified one by one: Q83 ন্ধ → বন্ধু/অন্ধ/গন্ধ ✓ · Q84 ন্ত → শান্ত/দিগন্ত/বসন্ত ✓ · Q85 র্ণ → বর্ণ/স্বর্ণ/পূর্ণ ✓ · Q86 ন্দ্র → কেন্দ্র/ইন্দ্রিয়/চন্দ্রিমা ✓ · Q87 শ্ব → অশ্ব/বিশ্বাস/আশ্বাস ✓ · Q88 স্ব → স্বাধীন/স্বদেশ/স্বজন ✓.
+
+4. **Q88** — the stimulus **স্বর্গপানে carries TWO conjuncts**, স্ব and র্গ (two viramas: স্‌ব and র্‌গ), and রেফ-forms count as যুক্তবর্ণ in this very chapter (র্ণ is item 3 of its printed eight). The stem says *"যুক্তবর্ণটি"* — singular, unnamed. A student who answers *র্গ = র + ণ… গর্জন* has done the task correctly and scores zero. This is the exact defect class the check names. Q83–Q87 stimuli each carry one conjunct only and are clean.
+5. **Q86, Q87** — the "new word" accepted is built on the stimulus's own stem (চন্দ্র-তারায় → চন্দ্রিমা; বিশ্ব-জগৎ → বিশ্বাস), which weakens *"কবিতায় নেই এমন নতুন একটি শব্দ"*. Minor, but the first accepted variant in each (কেন্দ্র, অশ্ব) shows the intended form.
+
+**S10 পদ নির্ণয়**
+
+6. **Q67, Q68, Q70** — `accepted` includes **নামপদ** alongside বিশেষ্য. নামপদ is a **super-class** (বিশেষ্য + বিশেষণ + সর্বনাম, everything against ক্রিয়াপদ), so it is not the পদ itself. The chapter's own class-level term is **নাম-শব্দ** (অনুশীলনী ৭), which is what the parallel ক্রিয়া items correctly accept as কাজ-শব্দ (Q69, Q73).
+7. **Q71** — target word **দুঃসাহসী** in *"কেমন করে দুঃসাহসী চলছে উড়ে স্বর্গপানে।"* is the **subject of চলছে** — a বিশেষণ standing in for a বিশেষ্য. As used in the given sentence the answer is বিশেষ্য (or বিশেষণ-in-noun-function); the key accepts বিশেষণ only. Q72/Q74 (সর্বনাম) and Q69/Q73 (ক্রিয়া) are right as used.
+
+**S13 এক কথায় প্রকাশ** — every definition matches its word and every accepted form fits the definition's grammatical class (Q89–Q96). No definition is left with an unaccepted chapter word that also satisfies it. The stem/key mismatch at Q93 and Q95 is reported at check 7.
+
+**S06 বিপরীত শব্দ**
+
+8. **Q42** — the chapter uses **জোরে** in *"কেমন জোরে টানলে সাগর উথলে ওঠে জোয়ার-বানে"* = with what **force**. The accepted antonyms আস্তে / ধীরে are **speed** antonyms and do not oppose the sense the chapter uses. Same entry, lesser: **Q38** declares *"কবিতায় ব্যবহৃত 'মরণ'"*, but মরণ occurs only bound inside মরণ-যন্ত্রণা (the free form in the poem is মরছে). Q37, Q39, Q40, Q41 are supported by the chapter's use.
+
+**S11 বিরামচিহ্ন** — every one of the eight items fails one prong of this check.
+
+9. **Q76, Q78, Q82** — require **a single terminal দাঁড়ি** and nothing else.
+10. **Q77, Q79** — require **a single comma** and nothing else; the "answer" is a fragment ending in a comma, which is less than a single terminal mark, not more.
+11. **Q75, Q80, Q81** — require **ড্যাশ (—)** and **সেমিকোলন (;)**. Neither mark is attested as taught at this class anywhere in canon: `MarkLogic_BAN_Spine.md` BAN-S11's C5 row says only *বিরামচিহ্ন*; the named sets in the C5 sources are দাঁড়ি / কমা / প্রশ্নচিহ্ন / বিস্ময়চিহ্ন (`C5_BAN_Source_09.md` line 232, `C5_BAN_Source_05.md` line 197 — `!` `?` `।`); and this chapter has no punctuation exercise at all to supply one. The keys reproduce the printed text correctly — the objection is the mark set, not the answer.
+
+## 7 · LANGUAGE
+
+12. **Q19** — sample key *"বাতাসে গাছের পাতা চারদিকে লুটে পড়ছে।"* uses the idiom **লুটে পড়া** (to collapse / slump), not the chapter's glossed sense **ছড়িয়ে**. The item teaches the word in the wrong sense, and Q36 marks that same sense wrong. (Q16's *"যুগান্তরে…"* is loose for অন্য যুগ but tolerable.)
+13. **Q93, Q95** — stem requires *"'সংকল্প' কবিতার শব্দ দিয়ে"*, but `accepted` adds **মনোবাসনা** (Q93) and **নির্ভীক** (Q95), which occur only in the অর্থ জেনে নিই gloss line, never in the poem. Stem and key contradict each other. Q96's **জাহাজ** is borderline on the same ground — it occurs in the poem only inside যুদ্ধ-জাহাজ.
+14. **Q52** — *"কবির মনের কোন একই টান ধরা পড়ে?"* is ungrammatical/clumsy; *"একই কোন টান"* or *"অভিন্ন কোন টান"*.
+15. **Q50** — stem asks *"কোন কোন জায়গার নাম"*, but the key answers with **বাতাস** and **চন্দ্র-তারা**, which are not জায়গা. Either the stem wants জিনিস/প্রসঙ্গ or the key should be স্থান-only (সাগর-জল, পাহাড়-চূড়া, পাতাল, আকাশ).
+
+Otherwise stems, keys and all ten rubric criterion rows read naturally and at class level; no internal policy code appears in any student-facing string, and codes in `model_note` fall inside check 5's teacher-facing carve-out.
+
+VERDICT: 15 DEFECT(S)
