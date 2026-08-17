@@ -1,0 +1,34 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U14_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৪ section
+PROMPT : tools/bank_factual_review_prompt.md (step 5b, CD-151) — check 1 enumerates every item
+         carrying a flagged claim (TOOLS-CR-008)
+RUN    : 2026-08-17 — FOURTH run. VERDICT OF RECORD, and the SECOND CONSECUTIVE CLEAN run on this bank.
+METHOD : The mechanical seven-check sweep was completed BEFORE any prior report was opened, then
+         each prior finding was dispositioned FIXED / STILL PRESENT / WAS NEVER A DEFECT. This is
+         CD-159(d)-recommended remedy (ii) with its anti-anchoring addition, trialled here.
+STATUS : Contemporaneous. Committed under step 3a (CD-157(d)).
+
+-----
+
+84 items, all fields read. Run deliberately as if the bank had never been reviewed, because a single CLEAN verdict is not evidence a bank is clean (CD-159).
+
+1 · FACTUAL ACCURACY — PASS. All eight S02 keys and the two MCQ gloss items match the printed অর্থ জেনে নিই list. Cast/role facts checked for SWAPS across every field carrying them: সভাপতি = মোষ (Q23 blank, Q28 opt ক, Q43 key, Q32 why_wrong ঘ, Q50 key) consistent; আপস-রফা = শেয়াল (Q24, Q29, Q42, Q44, Q28 why_wrong গ, Q57 stem) consistent; excuses named only for শজারু and ময়ূর with হরিণ's left unspecified (Q29 why_wrong গ/ঘ, Q48, Q54 band, Q34 why_wrong ঘ, Q28 why_wrong ঘ) — no invented third excuse anywhere; নিজের ছায়া → ঝাঁপ → drowning (Q22, Q31, Q46, Q47, Q52 band, Q53 band) consistent; সেজ আপা / আরেকটা বাঘ as printed; closing ছড়া verbatim. No distractor arguably also correct.
+Two marginal reach-beyond notes, NOT counted, with claim-level sweeps finding no sibling: Q52's সম্পূর্ণ band requires "তার লোভের কথা" where the section prints "কিছু খায়, কিছু ফেলে রাখে" (an interpretation of a printed fact, no new fact); Q33's why_wrong[খ] calls খরগোশ ক্ষুদ্রকায়, an attribute the section attaches to no character.
+
+2 · CONTENT BARS — PASS. "অভিনয়" zero in any student-facing field; exercise 6 unused; no সংলাপ or role item exists at all. "সেজে"/"সাজো"/"সেজে নাও" zero. Declared-permitted occurrences, complete: সাজানো (arrange) Q51 and Q54 criterion; সেজ আপা Q49 accepted and Q64 stem; চরিত্র Q54 criterion. Nothing undeclared. ছবি/আঁক/চিত্র zero.
+
+3 · STANDING CURATION BARS — PASS. C-05 no picture. C-03 none — the সুর hits are সুরভি/সুরভিত (fragrance) and the idiom "…সুরে লেখা"; the তালি hits are substrings of তালিকা. C-18 nothing. Restraining rubric rows at Q52/Q53/Q56/Q57/Q58 forbid rather than invite.
+
+4 · INVENTED NAMES — PASS. Only the seven cast animals, the section's own সেজ আপা, and unnamed generics. মুনীর চৌধুরী is not misattributed anywhere.
+
+5 · NUMERALS — PASS. No ASCII digit in any student-facing string.
+
+6 · SLOT-SPECIFIC — PASS. S12: all six decompositions right, all 18 new words carry the named conjunct and none occurs in the section. Multi-conjunct scan of all six stimuli: only ক্ষিপ্ত has two DISTINCT conjuncts and Q74's stem names both and designates প্ত. Q76 হৃষ্টপুষ্ট has two occurrences of ONE conjunct (হৃ is হ + ঋ-কার, not a conjunct), so "যুক্তবর্ণটি" is determinate — noted, not a defect. S10 in scope Q61/Q62/Q64 right as used. S11 in scope Q66/Q67/Q69/Q70 each require more than a terminal mark, all inside the class set, and Q67/Q69 mirror the source's own printing. S13 Q77–Q84 match, and প্রাণ বিসর্জন is glossed without "পরের জন্য" so it does not compete for Q77. S06 Q37–Q40 hold in the chapter's sense; Q40's বুদ্ধিমান agrees with Q30's own why_wrong.
+
+7 · LANGUAGE — PASS. Q25/Q26 print the five-word bank inline and each blank admits exactly one bank word. No policy code in any student-facing or rubric string.
+
+STEP 3 — AGREEMENT WITH RUN 3
+I AGREE with RUN3's CLEAN verdict. An independent sweep reached the same result on all seven checks, including the same reasoning on Q76 হৃষ্টপুষ্ট and the same permitted-string inventory. Nothing RUN3 missed rises to a defect.
+Two differences of emphasis, raised as notes rather than defects: RUN3's blanket "no rubric band requires anything the section does not state" glosses over Q52's লোভ requirement; and its check-7 line is scoped so as to leave the marker-facing model_note codes unmentioned. One wording slip in RUN3: it says "all ten শব্দার্থ keys" where the S02 slot holds eight, the other two being the MCQ gloss items Q27 and Q30 — correct either way.
+
+VERDICT: CLEAN

@@ -1,0 +1,44 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U15_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৫ section
+PROMPT : tools/bank_factual_review_prompt.md (step 5b, CD-151) — check 1 enumerates every item
+         carrying a flagged claim (TOOLS-CR-008)
+RUN    : 2026-08-17 — FOURTH run. VERDICT OF RECORD.
+METHOD : The mechanical seven-check sweep was completed BEFORE any prior report was opened, then
+         each prior finding was dispositioned FIXED / STILL PRESENT / WAS NEVER A DEFECT. This is
+         CD-159(d)-recommended remedy (ii) with its anti-anchoring addition, trialled here.
+STATUS : Contemporaneous. Committed under step 3a (CD-157(d)).
+
+-----
+
+96 items, all fields read.
+
+1 · FACTUAL ACCURACY — PASS. Verified mechanically: Q01's accepted is byte-identical to the printed first eight lines; all six S04 blanks when filled are exact substrings of the printed poem; every quoted segment of 12+ chars in every stem/option/why_wrong/accepted/rubric string was matched against the poem — the only non-matches are the blanks themselves, the S11 punctuation-stripped stimuli, the chapter's own অনুশীলনী ৩ wording (Q44), glossary definitions (Q89, Q90, Q94) and declared paraphrases (Q54, Q95, Q96). Q02–Q09, Q30, Q31, Q32, Q35, Q36 match অর্থ জেনে নিই verbatim. Q29's is_correct is কাজী নজরুল ইসলাম and all three why_wrong strings confine their claim to the section. All ten rubric band_descriptors stay inside the two stanzas. No distractor arguably also correct.
+Considered and cleared, not counted: Q45's key answers অনুশীলনী ৩(গ), which the section poses without answering — the inference stays inside the poem's own imagery; Q05 accepts সমুদ্র, which the section's অনুশীলনী ৪ synonym list carries.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS. "জাতীয় কবি" 0 · "বিদ্রোহী কবি" 0 · "মহান কবি" 0; no other honorific (নজরুল ×5, কাজী ×7, all bare). "স্বর্গপানে" 5 occurrences in 3 items (Q01 three fields, Q71, Q88), every one the poem's own word quoted with NO gloss anywhere. গান: 12 regex hits, every one the substring inside যুগান্তর/যুগান্তরে/যুগান্তরের. ছবি: Q49, Q54, Q61, all figurative.
+
+3 · STANDING CURATION BARS — PASS. C-03 zero; সুর at Q52/Q57 is figurative tone. C-05 no depiction requested or supplied; the only drawing verb is metaphorical. C-18 স্মৃতিসৌধ 0, শহিদ 0, পতাকা 0, মালা 0; the single ফুল hit is Q17's school welcome, outside C-18 §4.1(a). Forbidding rubric rows at Q57, Q60, Q62, Q63, Q65, Q66 are not occurrences.
+
+4 · INVENTED NAMES — PASS. Four personal names, all real poets printed in the same extraction; the why_wrong strings make no claim about them beyond "not this section's poet".
+
+5 · NUMERALS — PASS. Zero ASCII digits in any student-facing string, rubric rows scanned separately.
+
+6 · SLOT-SPECIFIC CORRECTNESS — PASS. S12: all six decompositions right; all eighteen keyed new words carry their conjunct and none is in the poem; স্বর্গপানে is the only multi-conjunct stimulus and Q88's stem names স্ব (the other five verified codepoint by codepoint — জগৎ's ৎ is not a conjunct). S10 in scope: Q69/Q73 ক্রিয়া, Q72/Q74 সর্বনাম, Q71 বিশেষ্য/নাম-শব্দ as subject of চলছে. S13 Q89–Q96 all match; the three stems accepting a gloss-only word no longer restrict to poem words, and the four that do restrict key words the poem carries. S06 Q37–Q42 supported; Q42's জোরে is adverbial "with force" and আস্তে is its force-antonym; Q38's মরণ is free in the section's own অনুশীলনী ৩(গ).
+
+7 · LANGUAGE — PASS. No internal policy code in any student-facing string or rubric row. Observations, not counted: Q19's sample reuses the poem's line and the collocation লুটে পড়া whose everyday sense its own model_note bars — the note controls the marking and agrees with Q36; Q29 repeats one why_wrong sentence across all three distractors; Q52's অভিন্ন and Q60's চিত্রকল্প sit at the top of the class register.
+
+STEP 3 — the six changes, each verified by GREPPING THE CLAIM
+1. Q29 why_wrong — VERIFIED, no sibling. পাখির মতো 0, ইচ্ছামতী 0, শিক্ষাগুরু 0, লিখেছেন 1 (Q29 stem), রচনা 0. No item anywhere attributes a poem to any poet.
+2. Q88 stem naming স্ব — VERIFIED, no sibling; স্বর্গপানে is the only multi-conjunct S12 stimulus.
+3. Q71 key as-used — VERIFIED, no sibling; all eight S10 targets re-derived. The only remaining as-used question is the out-of-scope নামপদ trio.
+4. curation field — VERIFIED against the bank rather than against its own wording. Independent grep returns exactly Q01, Q71, Q88; the field names those three with their slots and states no gloss is given anywhere. Both halves true.
+5. Q93/Q95/Q96 stems — VERIFIED, no sibling. All eight S13 stems checked: the four that still restrict to poem words accept only poem words.
+6. Q50 key — VERIFIED, no sibling. আকাশ once. Q47 lists আকাশ-বাতাস and চন্দ্র-তারা but its stem asks কোথায় কোথায় যেতে চান, not জায়গার নাম; no item forbids what another keys.
+7. Q52 stem — VERIFIED present; grep for the old "কোন একই" returns 0.
+
+COMPARISON WITH THE PRIOR RUNS (opened only after the above)
+RUN3's four: curation false statement FIXED · Q93/Q95/Q96 FIXED · Q50 FIXED · Q52 FIXED.
+RERUN's four: Q29 FIXED · Q88 FIXED · Q71 FIXED · Q80 STILL PRESENT, now out of scope.
+Run-1 findings not carried by RUN3/RERUN: Q01 span STILL PRESENT, out of scope (CD-149 orders the span the bank holds). Q86/Q87 new word built on the stimulus stem STILL PRESENT — on the check's own terms both pass, so WAS NEVER A DEFECT. Q42 জোরে and Q38 মরণ STILL PRESENT — cleared on this run's own sweep, WAS NEVER A DEFECT. Q67/Q68/Q70 and the eight S11 items STILL PRESENT, out of scope. Q19 wrong sense FIXED.
+
+VERDICT: CLEAN

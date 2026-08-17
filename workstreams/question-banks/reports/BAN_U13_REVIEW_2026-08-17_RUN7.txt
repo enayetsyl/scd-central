@@ -1,0 +1,44 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৩ section
+PROMPT : tools/bank_factual_review_prompt.md (step 5b, CD-151) — check 1 enumerates every item
+         carrying a flagged claim (TOOLS-CR-008)
+RUN    : 2026-08-17 — SEVENTH run. VERDICT OF RECORD.
+METHOD : The mechanical seven-check sweep was completed BEFORE any prior report was opened, then
+         each prior finding was dispositioned FIXED / STILL PRESENT / WAS NEVER A DEFECT. This is
+         CD-159(d)-recommended remedy (ii) with its anti-anchoring addition, trialled here.
+STATUS : Contemporaneous. Committed under step 3a (CD-157(d)).
+
+-----
+
+109 items read in full. Absent tails Q20–Q24, Q34, Q35, Q44, Q67–Q70, Q122, Q123 confirmed absent from questions, slot_index, task_index, source_index, pool_index AND banks/envelopes/single/ (109 U13 envelopes, exact 1:1 with questions; none missing, none extra). Every QP-BAN-C5-U13-Q… string in the file resolves to a live item; Q122/Q123 survive only as retirement prose in header.gaps, which is a record and not a dependency. No surviving item references either. Q04 (which Q122 duplicated) and Q106 (which Q123 duplicated) stand intact and self-contained.
+
+1 · FACTUAL ACCURACY — 1 defect
+1. CLAIM CLASS: "the poem uses word X", where the poem in fact prints only a different form of X. THIS IS THE SAME CLAIM CLASS run 6 raised for ইচ্ছা and the session fixed at Q28/Q101 — THREE SIBLINGS WERE LEFT STANDING. Every item carrying it, enumerated (all question_text):
+   · Q49 — "কবিতায় ব্যবহৃত 'ঘুম'". The poem prints only ঘুমিয়ে; the noun ঘুম occurs nowhere in the section, not even in অনুশীলনী ১.
+   · Q104 — "কবিতায় ব্যবহৃত 'লুকানো'". The poem prints only লুকিয়ে; লুকানো occurs nowhere in the section.
+   · Q103 — "কবিতায় ব্যবহৃত 'ভরা'". ভরা occurs only inside the compound দুধভরা, never independently. (Weakest of the three — the string is present, the standalone word is not.)
+   Keys (জাগরণ/জাগা · প্রকাশ করা · খালি/শূন্য) are sound; the defect is stem-field only. THE Q28/Q101 FIX IS NOT AVAILABLE HERE: unlike ইচ্ছা, none of these three appears anywhere in the section, so "পাঠে" would be equally false. These need a form change (ঘুমিয়ে / লুকিয়ে / দুধভরা) or a re-key. Counted as ONE claim-class defect, matching run 6's per-claim counting; per word it is three.
+   Q53 uses the poem's own ইচ্ছে and Q92/Q93 use verbatim গন্ধ/উল্টায় — the bank is inconsistent with itself, not uniformly loose.
+Listed, NOT counted (ruled out as interpretive check-1 keys, group ruling owed): Q80, Q74, Q45, Q85, Q121, Q87, Q76, Q77, Q73, Q78, Q105, Q106.
+ADDITION TO THAT GROUP, also not counted: Q79 accepted[0] "গাছপালায় ভরা, শান্ত ও প্রাণে ভরা একটি গ্রামের ছবি" — শান্ত is nowhere in the section. Q79 sits squarely in the ruled-out interpretive class but is MISSING from the list; the group ruling should name it.
+THE MOONLIGHT CLAIM IS STILL DEAD: আলো · ছড়িয়ে · সরে survive only inside the forbidding model_notes of Q71 and Q75. The পূর্ণিমা claims at Q12/Q31/Q71/Q75/Q83/Q100/Q119 are all glossary-backed and mutually consistent.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS. "আর একটা গান গাও না!" 0; no item about music, song, dance or percussion (গাও · গাই · গেয়ে · সুর · নাচ · নৃত্য · সংগীত · ঢোল · তবলা · বাদ্য · বাঁশি · ঢাক · গীত all 0). গান once only as a substring of লাগানোর (Q18 band). "জাতীয় কবি"/"বিদ্রোহী কবি"/"মহান কবি" 0. "আল মাহমুদ" exactly once, Q01 accepted, bare. ফেরেস্তা throughout — source-permitted. C-05: all 27 ছবি and 5 চিত্রকল্প occurrences are verbal imagery, and the only two আঁক forms take কবি as subject with a written answer demanded.
+
+3 · STANDING CURATION BARS — PASS. C-03 nothing. C-18: পতাকা · শহিদ · সৌধ · মিনার · মাল্য · পুষ্প · স্যালুট · মৌন · নীরবতা · প্রণাম · জাতীয় · মূর্তি · প্রতিকৃতি · প্রতিমা · পূজা all 0. স্বাধীন-forms are personal freedom in a bird metaphor; every দেশ hit is the substring inside নির্দেশ.
+
+4 · INVENTED NAMES — PASS. Only আল মাহমুদ, the poem's own আম্মা · আব্বা · ফেরেস্তা, and আল্লাহ.
+
+5 · NUMERALS — PASS. Zero ASCII digits in any student- or marker-facing string; all 29 hits are internal codes inside teacher-facing model_note.
+
+6 · SLOT-SPECIFIC CORRECTNESS — PASS on items in scope. S12 (Q52, Q53, Q92, Q93): decompositions right, and every offered new word was GREPPED against the whole section rather than eyeballed — ধন্য · মান্য · অনন্য · স্বচ্ছ · ইচ্ছুক · উচ্ছ্বাস · বন্ধু · অন্ধ · সন্ধি · পাল্টা · পাল্টানো, each carrying its conjunct, none in the section. Every S12 stimulus carries exactly one conjunct. S10 Q110–Q116, Q118 right as used, including Q118's ক্রিয়া/বিশেষ্য split for পড়রে vs পড়া. S13 Q54, Q55, Q119, Q120 match. S06 Q48, Q50, Q102 supported.
+Observation, not counted: the bank applies two conventions to line-final punctuation — Q58/Q89 refuse a দাঁড়ি because "কথাটি এখানে শেষ হয়নি" while Q57/Q59/Q60/Q90 treat the quoted line as a complete sentence. Under the majority convention Q60 is right and the out-of-scope Q58/Q89 are the outliers, so nothing countable falls out of it.
+
+7 · LANGUAGE — PASS on items in scope. Q118's "একই পদ হয়নি" is slightly stiff but unambiguous — not filed.
+
+RUN 6 FINDINGS — DISPOSITION (opened only after the sweep above)
+- The ইচ্ছা claim at Q28 + Q101 — FIXED. Both stems now read "পাঠে ব্যবহৃত"; keys unchanged and sound. BUT THE FIX STOPPED AT THE TWO QIDS NAMED — see defect 1.
+- Q122's model_note Bloom-defence leak — MOOT BY RETIREMENT. No English Bloom vocabulary and no reference to a review run survives in any marker-facing string in the bank.
+- Run 6's flagged-not-decided notes on Q122 and Q123 retirement — EXECUTED, and the header records both rulings and the authorised Understand margin.
+
+VERDICT: 1 DEFECT(S)
