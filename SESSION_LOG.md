@@ -3181,3 +3181,51 @@ restores it nor explains it away. **Owner: the Principal.**
 - Digests unchanged this sitting: U13 `b629e2289c14` (107) · U14 `509a1b0091d8` (84) · U15
   `7e541fe6559a` (96) · U16 `51d1be1efbe8` (96). No bank was touched.
 - Gates: all eight in-condition gates CLEAN.
+
+## 2026-08-17 (cont.) · U13 interpretive-keys group · runs 8 and 9 · cowork
+- Bootstrap: `HEAD` == `origin/main` == **`42d01ff`**, clean — step 4's first clause.
+- **TASK 0 — THE PROBE WORKED.** The owed eighth run ran after three prior attempts died on 529.
+  **`VERDICT: 3 DEFECT(S)`**, committed BEFORE any edit, as the brief required. It found the *"the
+  কবিতা uses word X"* class **still open at four counted carriers** (`Q25`, `Q92` — গন্ধ; `Q26`,
+  `Q54` — কূল) plus two deferred (`Q27`, `Q56`), so **the bank asserted in `Q26` what it had
+  corrected in `Q49`, four items apart, for the same word**; that **run 7's own sentence "Q92/Q93 use
+  verbatim গন্ধ/উল্টায়" was WRONG as to গন্ধ**, which is how a run hunting that class cleared two of
+  its carriers; that **my `Q49` re-key left a stale anchor** pointing at the retired ঘুম stimulus,
+  with `Q54` carrying the same; and that **the bank's own retirement record was false on two points**
+  — it declared the class closed and recorded "S06 7 → 6" where the bank holds 5, exactly on demand.
+- **Everything landed:** eleven claims stripped and every item kept (`Q45` `Q73` `Q74` `Q76` `Q77`
+  `Q78` `Q80` `Q85` `Q87` `Q105` `Q106`) · `Q121` retired · `Q79` reshaped · run 8's three defects ·
+  `Q51`'s রেফ and `Q108`'s rhyme stem. **All six carriers of the word-class were swept including the
+  two the deferral list held (CD-160).** Floors all clear at 106: R +9 · U +2 · A +3 · An +3.
+- **`Q79`'s Bloom reasoning is on the record** because the ruling forbids shaping to a number. Kept
+  `Understand`; the retrieval alternative was **rejected on merit** — it is answered by copying two
+  clauses out of its own quoted stimulus, which is exactly what `Q122` was retired for — and the
+  arithmetic that ran the other way (Remember would have meant Understand +1 and a RED PLAN) was
+  **disclosed rather than used as the reason.**
+- **TASK 6 — run 9: `VERDICT: 6 DEFECT(S)`. What closed:** the word-class, verified **as a class**
+  by an independent sweep of every quoted stimulus — third attempt, first complete one — plus
+  `Q121`, `Q79`, `Q51`, `Q108`'s stem, the anchors, and **eight of the eleven strips standing with
+  supported keys.**
+- **THE FINDING OF THE SESSION, AND IT IS MINE: STRIPPING A CLAIM FROM SOME CARRIERS WHILE LEAVING IT
+  IN OTHERS, AND ADDING NOTES FORBIDDING IT, CONVERTS A DEFERRED AMBIGUITY INTO AN ACTIVE
+  SELF-CONTRADICTION.** `Q73`/`Q78`'s new notes say the মুক্তি/স্বাধীনতা claim is not in the section,
+  so **the bank now forbids in `Q73`/`Q78` what it keys in `Q32`/`Q46` and requires for full marks in
+  the rubrics of `Q16` · `Q19` · `Q84` · `Q88` · `Q108`.** The reviewer does not judge the claim — it
+  observes that **the ruling of record is now in the artifact** and seven items contradict it.
+  **Before the strip the class was a deferred question; after it, seven items are wrong by the bank's
+  own statement. That is `TOOLS-CR-008` one order up — not "the fix left a sibling" but "the fix made
+  the sibling a defect".**
+- Three more of mine: `Q85`'s strip reached the stem and not the criterion (*ঘরের কাজ*, never
+  printed) or the আংশিক band; `Q87`'s removed *সত্যিকারের পাখি* but left a stem demanding three
+  **different meanings** the section does not distinguish — which `Q78`'s new note now contradicts;
+  `Q73`'s replacement key does not answer its own stem and is copyable from the stimulus, `Q122`'s
+  retired defect, **with no derivable key available because the section states no cause.** Plus
+  `Q100`, carrying the moonlight claim in new words (*রং ও উজ্জ্বলতার তুলনা*) — run 8 grepped আলো ·
+  ছড়িয়ে · সরে and not রং · উজ্জ্বল — and `Q101`, a third stale-anchor carrier run 8 did not name.
+- **THREE OF THE SIX NEED RULINGS AND WERE NOT TOUCHED, which is why no second fix round was started:
+  `Q84` cannot be stripped (the whole item is built on the claim — retire or re-stem), `Q87`'s stem
+  needs the same, and `Q73` has no derivable key. The মুক্তি class cannot be closed by stripping
+  alone.**
+- **Digest: U13 `b629e2289c14` → `5c302eba9b80`** (107 → 106 items). U14 `509a1b0091d8` · U15
+  `7e541fe6559a` · U16 `51d1be1efbe8` untouched.
+- Gates: all eight in-condition gates CLEAN.
