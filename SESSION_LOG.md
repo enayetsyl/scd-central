@@ -3079,3 +3079,50 @@ restores it nor explains it away. **Owner: the Principal.**
   four classes stand (নামপদ terminology · S11 single-mark · U15 `Q75`/`Q80`/`Q81` mark set · U15
   `Q01`'s delimiter); the interpretive-keys group needs its ruling and its list corrected to include
   `Q79`. **U14, U15 and U16 are CLEAN on their verdicts of record; U13 is one claim class away.**
+
+## 2026-08-17 (cont.) · CD-160 · CD-161 · U13 re-key and two retirements · cowork
+- Bootstrap: **branch (c) BENIGN AHEAD**, both conditions pasted, all 22 held commits accounted for.
+- **`CD-160` — an out-of-scope list SUPPRESSES COUNTING, NEVER SWEEPING.** A deferral list partitions
+  a bank **by ITEM**; `TOOLS-CR-008` established a factual defect lives **by CLAIM**; the two
+  carvings cut across each other. **Measured: `Q49`/`Q103`/`Q104` carried the flagged claim, sat on
+  the deferred list as check-6 items, and were not swept.** The enumerating check found the class and
+  the out-of-scope list is what stopped the fix reaching it. Second half, the more general one:
+  **a hand-maintained list is the wrong instrument for membership in a claim class** — that is how
+  `Q79` fell out of its own group. **The sweep defines membership; the list only marks disposition.**
+- **`CD-161` — CD-159's two remedies adopted and NOT as alternatives.** **(ii)** prior report as an
+  input, with the enumerating sweep run **FRESH before it is opened**, becomes the standing form of
+  every 5b run. **(i)** two consecutive CLEAN runs becomes the **PROMOTION** condition, not the
+  review condition — the expensive guarantee is spent where irreversibility lives, because a review
+  is repeatable and promotion `reviewed → gold` is a Hub act the repo cannot undo. **U14 is the first
+  bank to satisfy (i)**, recorded as evidence and not proof: `CD-159(c)(i)`'s warning is preserved,
+  two runs can agree wrongly, so (i) is necessary and not sufficient.
+- Both rules written into the vendored prompt (steps 5, 5a, 5b and check 1); diff in the report.
+- **`U13 Q49` RE-KEYED, `Q103` and `Q104` RETIRED.** No form patch would do: the stems claimed the
+  কবিতা uses words it does not — ঘুম only inside ঘুমিয়ে, ভরা only inside দুধভরা, লুকানো nowhere at
+  all — so **the premise was FALSE, not imprecise.** `Q49`'s stimulus moved to **কূল**, a standalone
+  word of the section's own অনুশীলনী ১ which the poem also carries as কূলটায়, keyed অকূল. The other
+  two had no section-printed stimulus left with an unused antonym. **S06 7 → 5 against a paper demand
+  of 5 — met exactly, no slack.**
+- **THE FLOORS IMPROVED RATHER THAN MOVED, and it is the finding of the sitting.** At **107 items**
+  the Understand requirement falls to 27, so **Understand clears at +2 on the ORDINARY rule and
+  `CD-158`'s per-chapter exception is now UNEXERCISED** — PLAN prints exactly that, *"margin +2
+  against a REDUCED requirement of +1"*, which is why an honoured exception is reported on passing
+  runs. `CD-158` is **not edited or retracted**; it is append-only canon and was correct when made.
+  **That the margin problem dissolved once the false-premise items came out is retrospective support
+  for the ruling that keeping known-bad items to hold a number was the wrong trade.**
+- **`Q79` added to the deferred interpretive-keys group, and the WHOLE group is now recorded in the
+  BANK's own `header.gaps`** rather than in a brief — the durable place, so the next session inherits
+  it from the artifact and not from prose.
+- **THE EIGHTH U13 RUN COULD NOT BE COMPLETED — TWO CONSECUTIVE `529 Overloaded` FAILURES**, a
+  server-side fault and nothing to do with the repo. **It is OWED, and U13's verdict of record
+  therefore remains run 7's `VERDICT: 1 DEFECT(S)`.** The three items that defect named have been
+  re-keyed or retired, **but that work is UNVERIFIED — which is precisely the পাঠ ১৬ situation
+  `PENDING-P-039` exists to close, and it is named as such rather than allowed to pass.** No verdict
+  is claimed that was not obtained.
+- **Digests, final — re-import from THIS list:** U13 `b629e2289c14` (107) · U14 `509a1b0091d8` (84)
+  · U15 `7e541fe6559a` (96) · U16 `51d1be1efbe8` (96).
+- Gates: **all eight in-condition gates CLEAN.**
+- **PENDING-P-039 cannot close, and the remainder is now: U13's eighth run (owed, infrastructure) ·
+  the interpretive-keys group ruling, list now in the artifact · and the four deferred classes.**
+  **U14 has two consecutive CLEAN runs and so satisfies CD-161(b)'s promotion condition; U15 and U16
+  have one each and need a second before promotion.**
