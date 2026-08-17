@@ -10,7 +10,7 @@
   "source_extraction": "canon/marklogic/C5_Bangla_Source_13-23.md",
   "curation": "FLEXIBLE · C-03 respected — অনুশীলনী ৫-এর বারণ করা বাক্যটি ব্যবহার করা হয়নি, আর তার বদলি বহনকারী Q23 এই ঢেউয়ে অবসরে গেছে",
   "header": {
-    "target": 109,
+    "target": 111,
     "reason": "110 is the RE-AUTHORED pool, recomputed in session and carrying no number from wave 3 — the Principal ruled 'extract to content limit, balanced' and required every REF-06 §3.6 floor to clear WITH MARGIN, a plan landing exactly on a floor being a defect rather than a pass. The binding constraint is not the pool's size but its Apply base: retiring the ten S10 ভাব নির্ণয় items cost 7 `Apply`, and retiring Q34 cost the eighth, so S03 · S11 · S12 are all authored to their content limits and one S10 item is `Apply` on its own merit. Under CD-135 a pool has no ceiling, so the only thing this size costs is authoring.",
     "topics": [
       "TOP-BAN-C5-05",
@@ -60,7 +60,7 @@
       "S04": 5,
       "S05": 7,
       "S06": 7,
-      "S07": 21,
+      "S07": 23,
       "S08": 15,
       "S09": 1,
       "S10": 10,
@@ -79,17 +79,18 @@
       "TEN S10 ITEMS RETIRED — Q20 · Q21 · Q22 · Q23 · Q24 · Q35 · Q67 · Q68 · Q69 · Q70, all ভাব নির্ণয়. Not re-slotted, because ভাব নির্ণয় is admitted at NO class in MarkLogic_BAN_Spine.md: C3's S10 is বাক্যের প্রকার, C2's is ক্রিয়ার পুরুষ-সংগতি. Wave 3 authored them on this chapter's own use-line, which CD-134 rules ADVISORY and which cannot admit a task the spine admits nowhere. S10 is re-authored as পদ নির্ণয় — the task C5 SELECTED from the slot's three.",
       "Not authored, judged too weak rather than overlooked: অনুশীলনী ৭'s গাছের তালিকা (the answer is wholly the student's own and traces to nothing) and অনুশীলনী ২'s line-ordering task (re-uses Q01's eight lines).",
       "HELD FOR THE SUBJECT LEAD PASS (Principal, REF-09 §9) — nothing in this bank is promoted. CD-136(g) puts the teacher-key rule's enforcement at the §6 human review gate, and 24 items across S02 · S06 · S10 · S12 · S13 carry teacher-supplied keys declaring themselves in their own model_note.",
-      "Q44 RETIRED 2026-08-17 (Principal ruling, PENDING-P-039 in-lane fixes). The item asked what the poet MEANT by 'বন্য' and keyed 'নিয়মের বাঁধন ছেড়ে স্বাধীন', which the পাঠ ১৩ section does not state; worse, its own why_wrong called the section's OWN gloss (বন্য — বুনো) 'অভিধানিক অর্থে থেমে যাওয়া' — it marked the source as a mistake. The section gives the word's meaning and says nothing about the poet's intent, so NO replacement key is derivable from it, and re-keying under the same qid was REFUSED: that authors a new item wearing an old identity, breaks the digest→Hub trace and hides the change from item history. Q50 (S06, বন্য → পোষা/গৃহপালিত) is CORRECT and untouched — it keys the section's own gloss. CONSEQUENCE, measured and reported rather than routed around: 110 → 109 items, Understand 30 → 29. PLAN needs ceil(25% × 109) = 28, so the margin is +1 against the +2 rule and U13 is NO LONGER SIGNABLE. U13 sat EXACTLY on the Understand margin at 110, so retiring any Understand item breaks it. Restoring the margin needs one new Understand item — authoring, which is outside the brief that ordered this retirement."
+      "Q44 RETIRED 2026-08-17 (Principal ruling, PENDING-P-039 in-lane fixes). The item asked what the poet MEANT by 'বন্য' and keyed 'নিয়মের বাঁধন ছেড়ে স্বাধীন', which the পাঠ ১৩ section does not state; worse, its own why_wrong called the section's OWN gloss (বন্য — বুনো) 'অভিধানিক অর্থে থেমে যাওয়া' — it marked the source as a mistake. The section gives the word's meaning and says nothing about the poet's intent, so NO replacement key is derivable from it, and re-keying under the same qid was REFUSED: that authors a new item wearing an old identity, breaks the digest→Hub trace and hides the change from item history. Q50 (S06, বন্য → পোষা/গৃহপালিত) is CORRECT and untouched — it keys the section's own gloss. CONSEQUENCE, measured and reported rather than routed around: 110 → 109 items, Understand 30 → 29. PLAN needs ceil(25% × 109) = 28, so the margin is +1 against the +2 rule and U13 is NO LONGER SIGNABLE. U13 sat EXACTLY on the Understand margin at 110, so retiring any Understand item breaks it. Restoring the margin needs one new Understand item — authoring, which is outside the brief that ordered this retirement.",
+      "TWO UNDERSTAND ITEMS AUTHORED 2026-08-17 — Q122 · Q123, S07, marks 2 each (Principal ruling, scope extension). Q44's retirement left Understand at margin +1 against PLAN's +2 rule, and gates.py carries this bank as its LIVE-CONTROL, so the whole suite could not judge any bank. TWO were authored rather than one deliberately: one item restores exactly the fragile state that let a single retirement break the floor (30/110, need 28, margin +2). At 111 items Understand is 31, need 28, margin +3. Both are grounded ONLY in the পাঠ ১৩ section — Q122 joins the 'অর্থ জেনে নিই' gloss 'কর্ণফুলী — একটি নদীর নাম' to the poem's own 'ইচ্ছে জাগে নদীর কাছে থাকতে' and 'কর্ণফুলীর কূলটায়'; Q123 reads the final stanza's own contrast. Neither asks for anything outside the section and neither identifies 'তোমরা', which the poem does not."
     ],
     "bloom_floors": {
       "rule": "CD-135 — POOL level is REF-06 §3.6's LOWER BOUNDS ONLY. No upper bound binds a pool. The band, both bounds, applies at PAPER level.",
       "observed": {
-        "Remember": "34/109 = 31.2%",
-        "Understand": "29/109 = 26.6%",
-        "Apply": "30/109 = 27.5%",
-        "Analyze": "14/109 = 12.8%",
-        "Evaluate": "2/109 = 1.8%",
-        "Create": "0/109 = 0.0%"
+        "Remember": "34/111 = 30.6%",
+        "Understand": "31/111 = 27.9%",
+        "Apply": "30/111 = 27.0%",
+        "Analyze": "14/111 = 12.6%",
+        "Evaluate": "2/111 = 1.8%",
+        "Create": "0/111 = 0.0%"
       },
       "margin_over_floor": {
         "Remember": 12,
@@ -177,7 +178,9 @@
       "QP-BAN-C5-U13-Q98",
       "QP-BAN-C5-U13-Q100",
       "QP-BAN-C5-U13-Q106",
-      "QP-BAN-C5-U13-Q108"
+      "QP-BAN-C5-U13-Q108",
+      "QP-BAN-C5-U13-Q122",
+      "QP-BAN-C5-U13-Q123"
     ],
     "AS": [
       "QP-BAN-C5-U13-Q02",
@@ -331,7 +334,9 @@
     "QP-BAN-C5-U13-Q105": "S07",
     "QP-BAN-C5-U13-Q106": "S07",
     "QP-BAN-C5-U13-Q107": "S08",
-    "QP-BAN-C5-U13-Q108": "S08"
+    "QP-BAN-C5-U13-Q108": "S08",
+    "QP-BAN-C5-U13-Q122": "S07",
+    "QP-BAN-C5-U13-Q123": "S07"
   },
   "source_index": {
     "QP-BAN-C5-U13-Q01": "আম্মা বলেন পড়রে সোনা আব্বা বলেন মন দে",
@@ -442,7 +447,9 @@
     "QP-BAN-C5-U13-Q105": "তখন কেবল ভাবতে থাকি",
     "QP-BAN-C5-U13-Q106": "তোমরা যখন শিখছ পড়া",
     "QP-BAN-C5-U13-Q107": "আম্মা বলেন পড়রে সোনা",
-    "QP-BAN-C5-U13-Q108": "মিল-শব্দ খুঁজে বের করা"
+    "QP-BAN-C5-U13-Q108": "মিল-শব্দ খুঁজে বের করা",
+    "QP-BAN-C5-U13-Q122": "ইচ্ছে জাগে নদীর কাছে থাকতে",
+    "QP-BAN-C5-U13-Q123": "তোমরা যখন শিখছ পড়া"
   },
   "questions": [
     {
@@ -973,7 +980,7 @@
         "accepted": [
           "যারা মানুষ হওয়ার জন্য পড়াশোনা করছে"
         ],
-        "model_note": "'পাঠক' বা 'আমরা যারা পড়ছি' — কাছাকাছি উত্তরও গ্রহণযোগ্য। শুধু 'পাখিরা' লিখলে নম্বর হবে না। কবিতা 'তোমরা' কারা তা নাম ধরে বলেনি, তাই 'সহপাঠী' বা 'শিক্ষার্থী' হিসেবে চিহ্নিত করা যাবে না — Q43 ঠিকই বলে, কবিতায় শিক্ষক বা সহপাঠীর কথা নেই।"
+        "model_note": "'পাঠক', 'শিক্ষার্থী' বা 'আমরা যারা পড়ছি' — কাছাকাছি যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য, কারণ সবগুলোই 'যারা পড়াশোনা করছে' বোঝায়। শুধু 'পাখিরা' লিখলে নম্বর হবে না। কবিতা 'তোমরা' কারা তা নাম ধরে বলেনি, তাই কবির সহপাঠী বা শ্রেণির বন্ধু হিসেবে নির্দিষ্ট করে লেখা যাবে না — সেটি পাঠের বাইরের দাবি।"
       }
     },
     {
@@ -1819,9 +1826,9 @@
       "chapter_ref": "পাঠ ১৩ — পাখির মতো",
       "answer_key": {
         "accepted": [
-          "রাতের বেলা, যখন সবাই ঘুমিয়ে পড়ে আর চাঁদের আলো ছড়িয়ে থাকে।"
+          "রাতের বেলা, যখন সবাই কর্ণফুলীর কূলে ঘুমিয়ে পড়ে আর আকাশে পূর্ণিমার চাঁদ থাকে।"
         ],
-        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো।"
+        "model_note": "নিজের ভাষায় লেখা হলেই হবে; মূল ভাবটি ধরা পড়লে পূর্ণ নম্বর। নমুনা উত্তর দেওয়া হলো। পাঠের 'অর্থ জেনে নিই' ছক কেবল বলে — 'দুধভরা ওই চাঁদের বাটি' মানে পূর্ণিমার চাঁদ। চাঁদের আলো ছড়িয়ে থাকা বা সরে যাওয়া পাঠে নেই, তাই তা উত্তরে দাবি করা যাবে না (Q71-এর সঙ্গে একই নিয়ম)।"
       }
     },
     {
@@ -2856,6 +2863,44 @@
         ],
         "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৩ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
       }
+    },
+    {
+      "qid": "QP-BAN-C5-U13-Q122",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "'পাখির মতো' কবিতায় 'কর্ণফুলী' কী, আর কবির ইচ্ছার সঙ্গে তার সম্পর্ক কোথায়?",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "কর্ণফুলী একটি নদীর নাম; কবির ইচ্ছে নদীর কাছে থাকতে, আর কবিতায় সবাই ঘুমিয়ে পড়ে সেই কর্ণফুলীর কূলেই — তাই নদীটিই কবির ইচ্ছার জায়গা।"
+        ],
+        "model_note": "পাঠের 'অর্থ জেনে নিই' ছক বলছে কর্ণফুলী একটি নদীর নাম; কবিতা বলছে 'ইচ্ছে জাগে নদীর কাছে থাকতে' আর 'কর্ণফুলীর কূলটায়'। দুটি তথ্য জুড়তে পারলেই পূর্ণ নম্বর। নদীটি সম্পর্কে পাঠের বাইরের কোনো তথ্য চাওয়া হচ্ছে না এবং লিখলে বাড়তি নম্বর নেই।"
+      }
+    },
+    {
+      "qid": "QP-BAN-C5-U13-Q123",
+      "topic_tag": "TOP-BAN-C5-05",
+      "ref19_topic_id": "BAN-POEM",
+      "question_text": "শেষ স্তবকে কবি নিজেকে 'তোমরা'র থেকে আলাদা করছেন কীভাবে?",
+      "question_type": "short_answer",
+      "paper_role": "short",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "tier": "tier1",
+      "marks": 2,
+      "chapter_ref": "পাঠ ১৩ — পাখির মতো",
+      "answer_key": {
+        "accepted": [
+          "তোমরা পড়া শিখছে মানুষ হওয়ার জন্য, আর কবি বলছেন তিনি না হয় পাখিই হবেন — এই তুলনাতেই তিনি নিজেকে আলাদা করছেন।"
+        ],
+        "model_note": "স্তবকের দুই দিক — অন্যদের পড়া শেখা আর কবির পাখি হতে চাওয়া — ধরা পড়লেই পূর্ণ নম্বর। 'তোমরা' কারা তা কবিতা নাম ধরে বলেনি, তাই তাদের পরিচয় লেখার দরকার নেই।"
+      }
     }
   ],
   "waves": {
@@ -2992,6 +3037,8 @@
     "QP-BAN-C5-U13-Q118": "পদ নির্ণয়",
     "QP-BAN-C5-U13-Q119": "মূল কাঠামো",
     "QP-BAN-C5-U13-Q120": "মূল কাঠামো",
-    "QP-BAN-C5-U13-Q121": "মূল কাঠামো"
+    "QP-BAN-C5-U13-Q121": "মূল কাঠামো",
+    "QP-BAN-C5-U13-Q122": "মূল কাঠামো",
+    "QP-BAN-C5-U13-Q123": "মূল কাঠামো"
   }
 }
