@@ -1539,6 +1539,13 @@ def g_coverage(bank, ctx):
             for c in claimed_list:
                 if c == row.get("selected") or (mode == "simple" and c == row.get("admitted_task")):
                     continue
+                # UNSELECTED (Principal ruling 2026-08-16) — when the register declares
+                # `selected: null`, NO form was narrowed to, so EVERY member of `admitted_set` is
+                # admitted and none of them is off-choice. Without this branch a correct register
+                # would redden conformant items: the row would say "either form" and the gate
+                # would fail both, because `c == row["selected"]` can never hold against null.
+                if mode == "alternative" and row.get("selected") is None and c in declared:
+                    continue
                 if mode == "alternative" and c in declared:
                     errs.append(f"{qid}: does `{c}` at slot {slot}. That task IS admitted at this "
                                 f"slot, but C{cls} SELECTED `{row['selected']}` — an off-choice "
@@ -1915,7 +1922,13 @@ def g_plan(bank, ctx):
                 errs.append(f"{qid}: slot {slot} is COMPOSITE and this item omits "
                             f"{', '.join(missing)} — half the task")
         elif mode == "alternative":
+            # UNSELECTED — same rule as COVERAGE's, and PLAN needs its own copy for the same
+            # reason it has its own off-choice check: it asks whether a bank is SIGNABLE and is
+            # not entitled to lean on another gate's verdict.
+            unselected = row.get("selected") is None
             for c in claimed_list:
+                if unselected and c in declared:
+                    continue
                 if c != row.get("selected"):
                     errs.append(f"{qid}: does `{c}` at {slot}; C{cls} SELECTED "
                                 f"`{row.get('selected')}`"
@@ -3554,6 +3567,97 @@ def cd150_selftest():
     return ok
 
 
+def unselected_selftest():
+    """The UNSELECTED state, both directions, at BOTH off-choice sites (COVERAGE and PLAN).
+
+    Principal ruling 2026-08-16. A register row whose class narrowed to no form declares
+    `selected: null` plus a required `unselected_reason`; every member of `admitted_set` is then
+    admitted and none of them is off-choice.
+
+    **The load-bearing half is the NEGATIVE**, and it is why this block exists rather than a
+    single seed: a correct register with a gate that reddens conformant items is worse than not
+    landing the rows at all, because the register would say "either form" while the gate failed
+    both — `c == row["selected"]` can never hold against null. **The regression seed is the other
+    half**: a row that DOES carry a real selection must still fail off-choice items, or the fix
+    would have bought silence everywhere by turning every alternative row into a free-for-all.
+
+    Fixtures synthetic (QB-D-012, CD-121(e)).
+    """
+    print("\n--- UNSELECTED · alternative rows the source declined to narrow "
+          + "-" * 14)
+    ok = True
+    SET = ["ফরম পূরণ", "সময় ও সংখ্যা"]
+
+    def reg(selected, reason=None):
+        r = {"subject": "ENG", "class": 5, "slot": "ENG-S11", "task_mode": "alternative",
+             "slot_task": "synthetic S11", "nape_frame": "synthetic", "admitted_set": SET,
+             "selected": selected, "items_per_paper": 5, "marks": 5, "marks_per_item": 1,
+             "d_code": "D0", "authority": "SYNTHETIC — not NAPE", "row_constraints": []}
+        if reason:
+            r["unselected_reason"] = reason
+        return {("ENG", 5, "S11"): r}
+
+    def bank(task):
+        qs = [{"qid": f"SY-Q{i:02d}", "question_text": f"synthetic stem {i}", "marks": 1,
+               "bloom_level": "Remember", "question_type": "short_answer",
+               "topic_tag": "SY-TOPIC", "difficulty": "easy"} for i in range(1, 21)]
+        return {"subject": "ENG", "class": 5, "questions": qs, "topics": ["SY-TOPIC"],
+                "header": {"admissible_slots": ["S11"], "slot_exclusions": {},
+                           "topics": ["SY-TOPIC"]},
+                "slot_index": {q["qid"]: "S11" for q in qs},
+                "task_index": {q["qid"]: task for q in qs}}
+
+    def cov_task_errs(selected, task, reason="কোনো সূত্র সংকীর্ণ করেনি"):
+        e, _ = g_coverage(bank(task), {"slot_register": reg(selected, reason),
+                                       "slot_register_error": []})
+        return [x for x in e if "does `" in x or "SELECTED" in x]
+
+    cases = [
+        ("UNSELECTED, item does form A", None, SET[0], [],
+         "admitted — the register narrowed to nothing, so this is not off-choice"),
+        ("UNSELECTED, item does form B", None, SET[1], [],
+         "the OTHER form, equally admitted — this is the half a naive fix would have broken"),
+        ("UNSELECTED, item does neither", None, "বিপরীত শব্দ", ["fires"],
+         "UNSELECTED widens the set to all of admitted_set, NOT to anything at all"),
+        ("SELECTED, item does the selection", SET[1], SET[1], [],
+         "ordinary selected behaviour, unchanged"),
+        ("SELECTED, item does the OTHER admitted form", SET[1], SET[0], ["fires"],
+         "THE REGRESSION SEED — a row with a real selection still FAILs off-choice items; the "
+         "UNSELECTED branch must not have turned every alternative row into a free-for-all"),
+    ]
+    for label, sel, task, want, why in cases:
+        errs = cov_task_errs(sel, task)
+        got = ["fires"] if errs else []
+        if got == want:
+            print(f"  PASS  COVERAGE   {label:<38} {'fires' if got else 'quiet'}: {why}")
+        else:
+            print(f"  FAIL  COVERAGE   {label:<38} expected "
+                  f"{'a failure' if want else 'silence'}; got {errs}")
+            ok = False
+
+    # PLAN carries its OWN copy of the off-choice check (it asks whether a bank is SIGNABLE and
+    # does not lean on COVERAGE's verdict), so it is asserted separately at both directions.
+    def plan_task_errs(selected, task):
+        b = bank(task)
+        e, _ = g_plan(b, {"slot_register": reg(selected, "কোনো সূত্র সংকীর্ণ করেনি")})
+        return [x for x in e if "SELECTED" in x]
+
+    for label, sel, task, want, why in [
+        ("UNSELECTED, item does form B", None, SET[1], [], "admitted at PLAN too"),
+        ("SELECTED, item does the OTHER form", SET[1], SET[0], ["fires"],
+         "PLAN's own off-choice check survives the change"),
+    ]:
+        errs = plan_task_errs(sel, task)
+        got = ["fires"] if errs else []
+        if got == want:
+            print(f"  PASS  PLAN       {label:<38} {'fires' if got else 'quiet'}: {why}")
+        else:
+            print(f"  FAIL  PLAN       {label:<38} expected "
+                  f"{'a failure' if want else 'silence'}; got {errs}")
+            ok = False
+    return ok
+
+
 def main():
     print("SELFTEST — both families, before any verdict (CD-025). Synthetic fixtures only; no "
           "canon/sources or canon/marklogic file is read as fixture data.\n")
@@ -3564,7 +3668,8 @@ def main():
           + "-" * 43)
     b = qp_selftest()
     c = cd150_selftest()
-    if not (a and b and c):
+    d = unselected_selftest()
+    if not (a and b and c and d):
         print("\nRESULT: FAIL (selftest red — no bank verdict is believable, nothing was judged)")
         sys.exit(1)
     print(f"\nSUITE: {len(GATES)} gates "

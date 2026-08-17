@@ -60,7 +60,9 @@ WHAT IT CHECKS
                   X+2 must be present at X+1. A leading absence that ends once the slot starts is a
                   prefix, not a gap, and must not fire.
   7. SHAPE      — `task_mode` ∈ {alternative, composite, simple}; alternative rows carry
-                  `admitted_set` + `selected` and `selected` ∈ `admitted_set`; composite rows
+                  `admitted_set` and either `selected` ∈ `admitted_set` OR the declared
+                  UNSELECTED state (`selected: null` + a non-empty `unselected_reason`);
+                  composite rows
                   carry `parts`; NO row carries an authored `chapter_authorable` (CD-138(f)).
   8. D5 SHAPE   — an absent slot carries `d_code: "D5"`, zero marks and zero items, an
                   `absent_reason` quoted from the spine, and **no task fields at all**. A D5 row
@@ -90,7 +92,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 REGISTER = ROOT / "canon" / "marklogic" / "SLOT_REGISTER.json"
 SPINES = {"BAN": ROOT / "canon" / "marklogic" / "MarkLogic_BAN_Spine.md",
-          "ENG": ROOT / "canon" / "marklogic" / "MarkLogic_ENG_Spine.md"}
+          "ENG": ROOT / "canon" / "marklogic" / "MarkLogic_ENG_Spine.md",
+          # MATH is listed with no rows yet ON PURPOSE. `run_everything` loops `scope_built`, so an
+          # unbuilt subject is never read — but the SUBJECT-BLIND seed needs a subject this file
+          # KNOWS and the register has NOT built, and once ENG landed there was none left. A seed
+          # that cannot be pointed at anything is a seed that quietly stops testing.
+          "MATH": ROOT / "canon" / "marklogic" / "MarkLogic_MATH_Spine.md"}
 CLASSES = (1, 2, 3, 4, 5)
 
 # I-4's ONLY exception, as a CLOSED LITERAL IN THE PROVER — deliberately NOT a register field.
@@ -299,8 +306,21 @@ def check(reg, spine_text, cls, subject="BAN"):
             errs.append(f"C{cls} {r['slot']}: task_mode {r['task_mode']!r} is not one of "
                         f"{sorted(MODES)}")
         if r["task_mode"] == "alternative":
-            if not r.get("admitted_set") or not r.get("selected"):
-                errs.append(f"C{cls} {r['slot']}: alternative row without admitted_set/selected")
+            # UNSELECTED (Principal ruling 2026-08-16) — `selected: null` plus a REQUIRED
+            # `unselected_reason`, for a class whose source names more than one form and narrows
+            # to none. The reason is not decoration: it is the ONLY thing distinguishing "no
+            # source narrowed this" from "the author forgot to fill the field in", and a bare
+            # null therefore FAILs. This mirrors D5/`absent_reason` exactly — the register already
+            # holds that an assertion of nothing must still say why.
+            if not r.get("admitted_set"):
+                errs.append(f"C{cls} {r['slot']}: alternative row without admitted_set")
+            elif r.get("selected") is None:
+                if not str(r.get("unselected_reason", "")).strip():
+                    errs.append(f"C{cls} {r['slot']}: `selected` is null with no "
+                                f"`unselected_reason` — UNSELECTED is a DECLARATION that no "
+                                f"source narrowed the choice, and a bare null is "
+                                f"indistinguishable from an unfilled field (same rule as D5's "
+                                f"`absent_reason`)")
             elif r["selected"] not in r["admitted_set"]:
                 errs.append(f"C{cls} {r['slot']}: selected {r['selected']!r} is not in its own "
                             f"admitted_set")
@@ -486,6 +506,12 @@ def selftest():
          lambda r: row(r, 5, "BAN-S01").pop("d_code")),
         ("SHAPE", "an alternative row whose `selected` is not in its own admitted_set",
          lambda r: row(r, 5, "BAN-S10").update({"selected": "ভাব নির্ণয়"})),
+        ("UNSELECTED", "`selected` nulled with NO `unselected_reason` — a bare null is an "
+                       "unfilled field, not a declaration",
+         lambda r: row(r, 5, "BAN-S10").update({"selected": None})),
+        ("UNSELECTED", "`selected` nulled with an EMPTY-STRING reason — whitespace is not a "
+                       "reason either",
+         lambda r: row(r, 5, "BAN-S10").update({"selected": None, "unselected_reason": "   "})),
         ("SHAPE", "a composite row with no parts",
          lambda r: row(r, 5, "BAN-S12").pop("parts")),
         ("CD-138(f)", "an AUTHORED chapter_authorable on a slot row",
@@ -528,11 +554,14 @@ def selftest():
     # ── the SUBJECT axis — the C1–C4 repair\'s defect one dimension up ─────────────────────
     cases += [
         ("SUBJECT-BLIND", "a subject DECLARED built in scope_built with not one row to its name — "
-                          "the shape of `a column that was never read, reported clean`",
-         lambda r: r["scope_built"].append("ENG C1-C5")),
+                          "the shape of `a column that was never read, reported clean`. Re-pointed "
+                          "from ENG to MATH when ENG was actually built: the old target had become "
+                          "a real subject and the seed had gone VACUOUS, passing because it could "
+                          "no longer fail",
+         lambda r: r["scope_built"].append("MATH C1-C5")),
         ("SUBJECT-REFUSAL", "a subject declared built for which this file knows NO spine — must "
                             "refuse by name, never skip",
-         lambda r: r["scope_built"].append("MATH C1-C5")),
+         lambda r: r["scope_built"].append("SCI C3-C5")),
     ]
 
     # A seed whose target row is not built yet is HELD, and named. It is not a pass — nothing was
@@ -570,6 +599,23 @@ def selftest():
     else:
         print(f"  FAIL  CD-138(b)    marker edit moved the verdict: {a} -> {b}")
         ok = False
+
+    # UNSELECTED, the QUIET direction — a nulled `selected` WITH a reason is accepted, and the
+    # rest of the row is still checked. Asserted on the live register so it is not vacuous.
+    try:
+        mut = mutate(lambda r: row(r, 5, "BAN-S10").update(
+            {"selected": None, "unselected_reason": "কল্পিত — কোনো সূত্র সংকীর্ণ করেনি"}))
+    except RowNotBuilt as e:
+        print(f"  HELD  UNSELECTED   quiet-direction not exercisable yet  [needs {e}]")
+    else:
+        eu, _ = run_everything(mut)
+        if not eu:
+            print("  PASS  UNSELECTED   stays quiet on: `selected: null` WITH an "
+                  "`unselected_reason` — the declared state, accepted, and every other check on "
+                  "the row still ran")
+        else:
+            print(f"  FAIL  UNSELECTED   a properly declared UNSELECTED row was not accepted: {eu}")
+            ok = False
 
     e, _ = check_i8(reg)
     if not e:
