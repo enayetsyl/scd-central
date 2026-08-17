@@ -3026,3 +3026,56 @@ restores it nor explains it away. **Owner: the Principal.**
   blocked on the Understand floor · a seventh U13 run and a fourth U15 run owed · Q122 recommended
   for retirement by the reviewer · and the four deferred classes (নামপদ terminology · S11
   single-mark · U15 Q75/Q80/Q81 mark set · U15 Q01's delimiter), none of which is bank-lane.
+
+## 2026-08-17 (cont.) · Q122/Q123 retired · CD-158 exception · CD-159 non-determinism · cowork
+- Bootstrap: **branch (c) BENIGN AHEAD**, both conditions pasted, all **17** held commits accounted
+  for. Nothing new from origin.
+- **Both authored items RETIRED, and neither was kept to hold a number.** `Q122` was `Q04` entire
+  plus a stem-copy — the sixth run's own recommendation was retirement; `Q123` duplicated `Q106`
+  and had carried a person-agreement error. 111 → 109 items.
+- **`CD-158` — পাঠ ১৩ runs at `Understand` +1, per chapter, ruled by the Principal.** Measured:
+  Remember +12 · **Understand +1** · Apply +2 · Analyze +3. **Reason of record is two failed
+  authoring attempts plus wave 3's own header naming S03/S11/S12 as the content limit** — not an
+  agent's sense that it felt hard. **The Principal's earlier "+2 by content limit" is corrected on
+  the record: it read a margin PROPPED BY `Q123`**, an item the same brief had already ruled for
+  retirement. A margin measured before a known retirement is not a measurement of the chapter.
+- **Executable as `PLAN_MARGIN_EXCEPTIONS`, a CLOSED LITERAL keyed (subject, class, chapter,
+  level)** — never a bank field, for the third time in this repo and the same reason each time: a
+  bank that could declare its own exception would carry the permission beside the shortfall.
+  **Seeded with the FAILING direction as the load-bearing one** — a reduced margin with no row
+  FAILs, on two levels; the exception is honoured for its own key and for nothing else (8
+  key-exactness lookups); **a chapter holding a row for `Understand` still FAILs a shortfall in
+  `Apply`**; and an honoured exception is PRINTED on every passing run, because an exception nobody
+  re-examines is how a reduced margin comes to look like the rule.
+- **`CD-159` — reviewer runs are non-deterministic, measured from this session's own runs.** Misses:
+  all four U15 defects raised in run 1, unlisted in run 2, re-found in run 3. False clearances:
+  `U13 Q52` declared *verified sound* by TWO runs while its key offered জন্য as a word not in a poem
+  that prints জন্য. **Conclusion recorded both ways — a PASS on an item is not evidence the item is
+  clean, and a CLEAN verdict is not evidence the bank is clean.** Step 5's *verdict of record is the
+  LAST run* is kept as a CONVENTION, because it stops a fixer citing whichever run flatters the
+  bank, but it implies a convergence the measurements do not show. Two remedies recorded, **neither
+  built**; the agent recommends **(ii) prior report as an input, plus run the enumerating sweep
+  FRESH before opening it** — `Q52` is the proof that the mechanical sweep finds what assertion
+  misses. **`CD-157` vindicated: this was only detectable because the reports are committed
+  artifacts. Under the practice it retired, run 2's silence would have ERASED run 1's findings.**
+- **The owed runs, remedy (ii) trialled on all three:** **`U14: VERDICT: CLEAN` — the SECOND
+  CONSECUTIVE clean run on that bank**, reached independently and then agreeing with run 3 while
+  naming two places run 3 glossed. **`U15: VERDICT: CLEAN`**, every prior finding dispositioned.
+  **`U13: VERDICT: 1 DEFECT(S)`.**
+- **U13's one defect is TOOLS-CR-008 again and it is mine.** Run 6 flagged the claim *"the poem uses
+  word X"* for ইচ্ছা; I fixed the two qids the report NAMED and left **three siblings carrying the
+  same claim** — `Q49` (ঘুম), `Q104` (লুকানো), `Q103` (ভরা). **They sat on the deferred list as
+  check-6 items, so the deferral itself hid them from the claim sweep**: the enumerating check found
+  the class, and my own out-of-scope list is what stopped the fix reaching it. The Q28/Q101 fix does
+  not transfer — none of the three is anywhere in the section, so *পাঠে* would be equally false.
+  Reported, not touched: a form change or a re-key is a ruling.
+- Also surfaced: **`Q79`'s key asserts শান্ত, nowhere in the section.** It belongs to the deferred
+  interpretive-keys group and is MISSING from that group's list; the group ruling should name it.
+- **Digests, final — re-import from THIS list:** U13 `cbd7566a5493` (109) · U14 `509a1b0091d8` (84)
+  · U15 `7e541fe6559a` (96) · U16 `51d1be1efbe8` (96).
+- Gates: **all eight in-condition gates CLEAN.**
+- **PENDING-P-039 still cannot close, and the remainder is now entirely NON-BANK-LANE except one
+  item:** U13's `Q49`/`Q103`/`Q104` claim class needs a form-change-or-re-key ruling; the deferred
+  four classes stand (নামপদ terminology · S11 single-mark · U15 `Q75`/`Q80`/`Q81` mark set · U15
+  `Q01`'s delimiter); the interpretive-keys group needs its ruling and its list corrected to include
+  `Q79`. **U14, U15 and U16 are CLEAN on their verdicts of record; U13 is one claim class away.**
