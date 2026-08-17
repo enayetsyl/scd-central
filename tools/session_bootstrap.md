@@ -80,15 +80,50 @@ wrong. **`git fetch` then `HEAD == origin/main` is the only thing that catches i
 run before any work, not before the push** — by push time a session has already built on the wrong
 base, and the damage is a merge conflict or, worse, a silent rebuild of something already fixed.
 
-**If they differ, STOP AND REPORT. Do not `git pull`, do not reset, do not re-clone and carry on.**
-A mismatch means the mount and `origin` disagree about the current state of the work, and which one
-is right is the Principal's to say — he may have pushed from elsewhere, or the mount may hold
-something not yet pushed. **An agent that silently reconciles them destroys the evidence of which
-was which.**
+### Step 4 branches, and the branch is DECIDED BY COMPUTATION, NEVER BY JUDGEMENT (CD-152)
 
-**Verification is a stop condition, not a formality.** The brief states an expected HEAD; if
-`HEAD`, `origin/main` and the expected hash do not all agree, **report and stop**. This is not
-theoretical: on 2026-08-15 an expected-HEAD line in a brief was the only thing that caught a
+If `HEAD` and `origin/main` are equal, proceed. If they differ, run **both** of these and **paste
+both, verbatim, in the session report**:
+
+```bash
+git merge-base --is-ancestor HEAD origin/main    # → true
+git rev-list --count origin/main..HEAD           # → 0
+```
+
+**(a) BENIGN — the mount is strictly behind. BOTH results must hold.** The clone then moves to
+`origin/main` and proceeds. **This is not reconciliation**: the clone holds nothing origin lacks,
+so nothing can be lost, and **`origin/main` is the authority every session already works from —
+the mount clone is a speed cache, not an authority.** §0 FACT 2 is why it exists: a GitHub clone
+takes thirty minutes. It was never the canonical copy.
+
+**The report must state HOW FAR the mount lags and NAME the commits.** Losing the stop must not
+lose the notification — this is the only signal the Principal gets that his working copy is stale,
+because the mount is pull-only for agents (§4) and nothing else tells him.
+
+**(b) DIVERGENT, OR ANYTHING ELSE — STOP AND REPORT, unconditionally.** Do not `git pull`, do not
+reset, do not re-clone and carry on. This branch covers **any** case that is not (a): the two
+commands cannot be run cleanly, or `origin/main..HEAD` is non-empty **by even one commit**. A
+mismatch of that shape means the mount and `origin` disagree about the current state of the work,
+and which one is right is the Principal's to say — he may have pushed from elsewhere, or the mount
+may hold something not yet pushed. **An agent that silently reconciles them destroys the evidence
+of which was which.**
+
+**THE AGENT DOES NOT DIAGNOSE ITS WAY PAST (b).** The whole value of (a) is that it is a
+computation with no room for a judgement call; an agent permitted to reason about (b) would import
+exactly the discretion (a) was built to exclude. Two commands decide it, and nothing else does.
+
+**Why the split exists (CD-152(d)).** CD-141's lane **pushes unattended** and the mount is
+pull-only for agents, so **a lagging mount is now the NORMAL opening state after every lane push,
+not an anomaly.** The undivided stop fired on the routine case — two consecutive sessions stopped
+on it, both strictly behind, both benign. **A stop rule that fires on the routine case trains the
+operator to wave stops through**, and a stop waved through by habit is not protecting the case it
+was written for.
+
+**Verification is a stop condition, not a formality, and the (a) branch does NOT soften this.**
+The brief states an expected HEAD; if `HEAD`, `origin/main` and the expected hash do not all agree,
+**report and stop** — an expected hash is a statement about which commit the Principal believes the
+work starts from, and (a) says nothing about it. **This is not
+theoretical:** on 2026-08-15 an expected-HEAD line in a brief was the only thing that caught a
 signature recorded before it was given (`QB-CR-013`). **No gate caught it. The expected-HEAD line
 did.**
 
