@@ -2360,9 +2360,9 @@
       "chapter_ref": "পাঠ ১৫ — সংকল্প",
       "answer_key": {
         "accepted": [
-          "আকাশ, বাতাস, চন্দ্র-তারা, সাগর-জল ও পাহাড়-চূড়া — এবং পাতাল ও আকাশের কথাও এসেছে।"
+          "সাগর-জল, পাহাড়-চূড়া, পাতাল ও আকাশ — কবি এই জায়গাগুলোর কথা বলেছেন।"
         ],
-        "model_note": "মূল ভাবটি ধরা পড়লেই পূর্ণ নম্বর; শব্দে শব্দে মিল থাকা জরুরি নয়।"
+        "model_note": "মূল ভাবটি ধরা পড়লেই পূর্ণ নম্বর; শব্দে শব্দে মিল থাকা জরুরি নয়। কেবল জায়গার নামই ধরা হবে; বাতাস বা চন্দ্র-তারা জায়গা নয়, তাই তা না লিখলে নম্বর কাটা যাবে না।"
       }
     }
   },
@@ -2438,7 +2438,7 @@
       "qid": "QP-BAN-C5-U15-Q52",
       "topic_tag": "TOP-BAN-C5-05",
       "ref19_topic_id": "BAN-POEM",
-      "question_text": "'থাকব না কো বদ্ধ ঘরে' আর 'রইব না কো বদ্ধ খাঁচায়' — দুই স্তবকের এই দুই শুরুতে কবির মনের কোন একই টান ধরা পড়ে?",
+      "question_text": "'থাকব না কো বদ্ধ ঘরে' আর 'রইব না কো বদ্ধ খাঁচায়' — দুই স্তবকের এই দুই শুরুতে কবির মনের কোন অভিন্ন টান ধরা পড়ে?",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Analyze",
@@ -4369,7 +4369,7 @@
       "qid": "QP-BAN-C5-U15-Q93",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'মনের ইচ্ছা' — 'সংকল্প' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_text": "'মনের ইচ্ছা' — এক কথায় প্রকাশ করো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Understand",
@@ -4458,7 +4458,7 @@
       "qid": "QP-BAN-C5-U15-Q95",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'অত্যধিক সাহসী' — 'সংকল্প' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_text": "'অত্যধিক সাহসী' — এক কথায় প্রকাশ করো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Understand",
@@ -4503,7 +4503,7 @@
       "qid": "QP-BAN-C5-U15-Q96",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'সাগরে চলাচল করে এমন যান' — 'সংকল্প' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_text": "'সাগরে চলাচল করে এমন যান' — এক কথায় প্রকাশ করো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Understand",
