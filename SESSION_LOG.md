@@ -2985,3 +2985,44 @@ restores it nor explains it away. **Owner: the Principal.**
   this session. Two standing warns only.
 - **PENDING-P-039 still cannot close**: U13 owes a sixth run and an Understand item, U14/U15 keep
   their reported defects, and the canon-class stops are untouched.
+
+## 2026-08-17 (cont.) · P-039: U14/U15 closed, U13 sixth run, Q123 retirement BLOCKED · cowork
+- Bootstrap: **CD-152 step 4 branch (c) BENIGN AHEAD (CD-156)**, qualified and both conditions
+  pasted — `--is-ancestor origin/main HEAD` **true**, and all **12** commits in
+  `origin/main..HEAD` accounted for by hash and subject as the two prior sessions' held work.
+- **TASK 1 — Q123's retirement is BLOCKED, and the brief's own stop condition is why.** Retiring
+  it takes U13 to 110 items and **Understand 30 → 29 against a need of 28 — margin +1 against the
+  +2 rule.** The brief said report the counts and STOP rather than authoring to restore them, so
+  **nothing was retired and nothing was authored.** The interaction is worth naming: `Q122` was
+  re-tagged to `Remember` last session, which left **`Q123` as the sole Understand item of the two**
+  — so the ruling's premise that the margin "stands at +2" was true only with Q123 in place.
+- **TASK 2 — U14's three and U15's three in-lane defects closed**, read at source from the
+  committed reports rather than a transcript. Word banks restored to `U14 Q25/Q26` from the
+  section's own অনুশীলনী ১; target conjuncts NAMED in `U14 Q74` and `U15 Q88`; `U15 Q29`'s
+  out-of-section attributions removed; `U15 Q71` re-keyed to the পদ **as used** (দুঃসাহসী is the
+  subject of চলছে). Deferred classes untouched.
+- **TASK 3 — check 1 of the vendored prompt now ENUMERATES**, which is TOOLS-CR-008's own proposed
+  fix written on the Principal's ruling: *for each claim you flag, list every item that carries it,
+  with qid and field*. **It earned its keep on its first outing** — at U13 it flagged the *"the poem
+  uses ইচ্ছা"* claim and **named both carriers, `Q28` and `Q101`, in one finding.** Under the old
+  per-item shape that arrives as one qid, gets fixed, and leaves the sibling standing.
+- **TASK 4 — three runs. `U14: VERDICT: CLEAN`** (second bank to reach clean, after U16).
+  **`U13: VERDICT: 2 DEFECT(S)`** and **`U15: VERDICT: 4 DEFECT(S)`**, both fixed afterwards, so a
+  **seventh** run is owed on U13 and a **fourth** on U15.
+- **THE FINDING OF THIS SITTING: all four of U15's defects were RAISED IN ITS FIRST RUN AND MISSED
+  BY ITS SECOND.** The second run's verdict of 4 did not carry the curation-field defect, `Q93/Q95`,
+  `Q50` or `Q52`; a third run re-found them. **A review that drops a finding is the same hazard as
+  a fix that drops a sibling** — TOOLS-CR-008 one turn over — and it is why *the verdict of record
+  is the LAST run* only works if the reports are kept, which is what `CD-157` bought.
+- Two more of my own: `U13 Q122`'s `model_note` had been left **arguing its own Bloom tag to the
+  marker and citing the review run** — the only marker-facing text in the bank doing either;
+  stripped. And `U15`'s bank-level `curation` field **certified a false count** of its own bank
+  (*স্বর্গপানে একবারই এসেছে S12-তে* against three items), so the certificate could not be falsified
+  in the direction that mattered.
+- **Digests, final — re-import from THIS list:** U13 `ba31eadc7ef8` (111) · U14 `509a1b0091d8` (84)
+  · U15 `7e541fe6559a` (96) · U16 `51d1be1efbe8` (96).
+- Gates: **all eight in-condition gates CLEAN**, two standing warns only.
+- **PENDING-P-039 STILL CANNOT CLOSE**, and the list is now short and specific: Q123's retirement
+  blocked on the Understand floor · a seventh U13 run and a fourth U15 run owed · Q122 recommended
+  for retirement by the reviewer · and the four deferred classes (নামপদ terminology · S11
+  single-mark · U15 Q75/Q80/Q81 mark set · U15 Q01's delimiter), none of which is bank-lane.
