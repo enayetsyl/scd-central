@@ -70,7 +70,8 @@
         "ENG-S13 C4",
         "ENG-S14 C5"
       ]
-    }
+    },
+    "TAUGHT_SET_C5_S11": "TAUGHT SET (Principal ruling 2026-08-17, CD-165). `taught_set` names the বিরামচিহ্ন a class is TAUGHT, and it is declared at (BAN, C5, BAN-S11) ONLY — one enumerated key, held as a closed literal in `tools/audits/slot_register_check.py` so a data row cannot mint itself a mark set for another class. ABSENCE READS AS NOT DECLARED, NEVER AS PERMISSIVE: a row without `taught_set` does not admit every mark, it admits none until the Principal declares them, and the bank gate must FAIL rather than pass an S11 item at such a class. THE SET DOES NOT TRANSFER DOWNWARD — the spine names দাঁড়ি · কমা · প্রশ্নবোধক at C2 (যোগ্যতা ১৩.২) and names NO mark at C3, C4 or C5, which is exactly why the key is C5-only and why a C4 row inheriting C5's four would be an invention. `taught_set_source` is required beside it and carries where the set comes from, on the UNSELECTED precedent (CD-155): a declaration that cannot be traced is indistinguishable from an unfilled field."
   },
   "pending_row_constraints": {
     "note": "DISCHARGED 2026-08-15. All three constraints carried here now attach to real rows, and the fourth defect this block could not hold is why the L-row shape was ruled: E-AUTHOR-ENDORSE → (BAN-S01, C4) · BAN-S12-C1-NO-BHENGE → (BAN-S12, C1) · BAN-S15-GUIDED → (BAN-S15, C1) and (BAN-S15, C2) · BAN-L03-C1-NO-FOLA → (BAN-L03, C1), which had NO row to attach to until D6 rows existed. Kept as an empty list rather than deleted so a reader arriving from an older citation is not left looking for a block that vanished.",
@@ -1561,6 +1562,13 @@
         "বিরামচিহ্ন বসানো"
       ],
       "selected": "বিরামচিহ্ন বসানো",
+      "taught_set": [
+        "দাঁড়ি",
+        "কমা",
+        "প্রশ্নচিহ্ন",
+        "বিস্ময়চিহ্ন"
+      ],
+      "taught_set_source": "MarkLogic_BAN_Spine.md · `BAN-S11` · C5 সারি (নেপ §১১ · বিরামচিহ্ন) — স্পাইন স্লটটির নাম দেয়, কিন্তু C5-এ কোন কোন চিহ্ন পড়ানো হয় তার তালিকা দেয় না; এই চারটির তালিকা অধ্যক্ষের রুলিং (CD-165)। ড্যাশ ও সেমিকোলন পঞ্চম শ্রেণিতে স্বীকৃত নয়। স্পাইনের C2 সারিই একমাত্র সারি যা চিহ্নের নাম ধরে লেখে — দাঁড়ি, কমা, প্রশ্নবোধক (যোগ্যতা ১৩.২) — আর C3/C4/C5 কোনো নাম লেখে না, তাই এই তালিকা নিচের শ্রেণিতে নামে না।",
       "row_constraints": [],
       "evidence_note": "প্রশ্ন তৈরি is permitted at C4 and above only — C1–C3 may not carry it as a written question."
     },
