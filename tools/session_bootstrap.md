@@ -100,10 +100,32 @@ takes thirty minutes. It was never the canonical copy.
 lose the notification — this is the only signal the Principal gets that his working copy is stale,
 because the mount is pull-only for agents (§4) and nothing else tells him.
 
+**(c) BENIGN AHEAD — the clone holds its OWN unpushed commits and nothing else (CD-156).** BOTH
+of these must hold, and **both go in the session report**:
+
+```bash
+git merge-base --is-ancestor origin/main HEAD    # → true: origin is an ANCESTOR, nothing can be lost
+git log --oneline origin/main..HEAD              # → every commit accounted for, BY HASH AND SUBJECT
+```
+
+**Why this branch exists.** Push needs the Principal's approval (§3, AGENTS §3.1, CD-083(b)) and
+approval may not arrive in the same session, so **a session that finishes work and holds it ends
+with `origin/main..HEAD` non-empty by design.** The next session resuming that clone would trip (b)
+on the most routine state the workflow produces. **CD-152(d)'s own warning applies on this axis: a
+stop rule that fires on the routine case trains the operator to wave stops through.** Requiring a
+push to clear step 4 would put the approval gate and this gate in contradiction.
+
+**THE ENUMERATION IS THE LOAD-BEARING HALF, not the `--is-ancestor` check.** *Ahead* is equally
+true of a commit some earlier agent left behind, of a half-finished experiment, of anything at all.
+Only **naming each commit and accounting for it** separates held work from debris, and no command
+can do that — which is why (c) is one command plus one enumeration rather than two commands. **A
+session that cannot account for every commit in the range has NOT qualified for (c) and is in (b).**
+
 **(b) DIVERGENT, OR ANYTHING ELSE — STOP AND REPORT, unconditionally.** Do not `git pull`, do not
-reset, do not re-clone and carry on. This branch covers **any** case that is not (a): the two
-commands cannot be run cleanly, or `origin/main..HEAD` is non-empty **by even one commit**. A
-mismatch of that shape means the mount and `origin` disagree about the current state of the work,
+reset, do not re-clone and carry on. This branch covers **any** case that is not (a) or (c): the
+commands cannot be run cleanly, the clone is both ahead AND behind, or `origin/main..HEAD` holds
+**even one commit this session cannot account for**.
+A mismatch of that shape means the mount and `origin` disagree about the current state of the work,
 and which one is right is the Principal's to say — he may have pushed from elsewhere, or the mount
 may hold something not yet pushed. **An agent that silently reconciles them destroys the evidence
 of which was which.**
@@ -111,6 +133,8 @@ of which was which.**
 **THE AGENT DOES NOT DIAGNOSE ITS WAY PAST (b).** The whole value of (a) is that it is a
 computation with no room for a judgement call; an agent permitted to reason about (b) would import
 exactly the discretion (a) was built to exclude. Two commands decide it, and nothing else does.
+**(c) does not soften this.** It is a NARROW, ENUMERATED exit, not a judgement call: it asks the
+session to name what it is holding, and a session that cannot name it has not qualified.
 
 **Why the split exists (CD-152(d)).** CD-141's lane **pushes unattended** and the mount is
 pull-only for agents, so **a lagging mount is now the NORMAL opening state after every lane push,

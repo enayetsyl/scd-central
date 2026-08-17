@@ -26,6 +26,16 @@ is not promotion.** It means the bank is fit to be offered for import, nothing f
 1. Fill the facts block. Nothing else in the body is edited, ever.
 2. Hand the filled body to a reviewer with read access to the repo and no write access.
 3. Paste the reviewer's report into the session, verbatim.
+3a. **WRITE THE REPORT TO `workstreams/question-banks/reports/` AND COMMIT IT** —
+   `BAN_U<NN>_REVIEW_<YYYY-MM-DD>.txt`, verbatim, with the bank path and the run date at the top.
+   **A 5b run without a committed report is NOT A RUN, and a verdict line is not a report**
+   (CD-157). The verdict is a claim; the report is the evidence for it. Keeping the claim and
+   discarding the evidence leaves a bank marked *reviewed, N defects* with **nothing in the repo
+   saying which N** — no later session can act on it, audit it, or tell a fixed defect from an
+   unfixed one. **This happened:** the 2026-08-17 retro logged four verdict lines and no bodies,
+   and 61 per-qid findings against four PUSHED banks survived only in a transcript. **A report
+   recovered from a transcript is admissible and must be marked as recovered, carrying the date of
+   the ORIGINAL run.**
 4. Fix every defect **inside the lane**, and log each fix in `SESSION_LOG.md` with its qid and
    what changed (CD-151(b) — unlogged self-correction after a self-run review is barred).
 5. Re-run this prompt against the rebuilt bank. **The verdict of record is the LAST run**, and a
@@ -43,12 +53,22 @@ SOURCE SECTION : <the heading that opens this chapter's section, and the heading
 ADMITTED SLOTS : <the slot ids this chapter's header declares admissible>
 NAMED CONTENT  : <the people, events, dates, places and titles the chapter section states as
                   fact — the things an answer key can be checked against>
-CONTENT BARS   : <each ⚠ bar from the source's own block, one per line, as a TOKEN to search
-                  plus one line on what the bar forbids>
-PERMITTED NAMES: <for each barred token, the exact strings in which it is PERMITTED because the
+CONTENT BARS   : <each ⚠ bar from the source's own block, one per line, as the EXACT STRINGS to
+                  search — NEVER a bare token — plus one line on what the bar forbids>
+PERMITTED NAMES: <for each barred STRING, the exact strings in which it is PERMITTED because the
                   book itself prints them as a proper name — declared here, never judged by the
-                  reviewer in-session. If a barred token has no permitted form, write NONE.>
+                  reviewer in-session. If a barred string has no permitted form, write NONE.>
 ```
+
+**STRINGS, NEVER TOKENS — CD-157(f), and it cost three false positives to learn.** A bare token
+matches inside unrelated words. The 2026-08-17 retro declared `সাজা` and it matched inside
+**সাজানো** (*to arrange* — a different lexeme) at পাঠ ১৪ `Q51`/`Q54`; it declared `ছবি` and it
+matched figurative word-imagery at পাঠ ১৫. **The reviewer was right to report all three** — it is
+told to report any occurrence that is not a declared string and forbidden from deciding for itself
+which uses look harmless. **The fault was the declaration.** The fix is that declaring a bar now
+costs the session real work: enumerate the forms the bar actually reaches, and enumerate every
+permitted string beside them. **A token is one word to write; a string set makes the session do the
+thinking the reviewer is barred from doing.**
 
 **`PERMITTED NAMES` is declared, not judged, and that is the point.** A reviewer deciding
 in-session which uses of a barred word are acceptable is making a curation ruling. The session
