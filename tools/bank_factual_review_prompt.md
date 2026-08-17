@@ -39,7 +39,24 @@ is not promotion.** It means the bank is fit to be offered for import, nothing f
 4. Fix every defect **inside the lane**, and log each fix in `SESSION_LOG.md` with its qid and
    what changed (CD-151(b) — unlogged self-correction after a self-run review is barred).
 5. Re-run this prompt against the rebuilt bank. **The verdict of record is the LAST run**, and a
-   fix that has never been re-reviewed leaves the bank without a clean verdict.
+   fix that has never been re-reviewed leaves the bank without a clean verdict. **Read that as a
+   CONVENTION, not a convergence claim (CD-159(b)): it settles which report to cite and stops a
+   fixer citing whichever run flatters the bank. It is not evidence the bank is clean.**
+5a. **EVERY RUN TAKES THE PRIOR REPORT AS AN INPUT (CD-161(a)) — and in this order.** First complete
+   the seven checks and the check-1 claim sweep **FRESH, before opening any prior report.** Only then
+   open it, and disposition each previous finding **FIXED · STILL PRESENT · WAS NEVER A DEFECT**,
+   with its reason. **The ordering is the point:** a reviewer told what was found may confirm it
+   rather than re-see the bank, and the mechanical sweep is what finds what assertion misses — one
+   item was declared *verified sound* by two runs while a mechanical test of every offered word
+   against the source found it wrong.
+5b. **TWO CONSECUTIVE CLEAN RUNS ARE THE PROMOTION CONDITION, NOT THE REVIEW CONDITION
+   (CD-161(b)).** A single CLEAN verdict is **not** evidence a bank is clean — runs are
+   non-deterministic in both directions (CD-159). Before a bank is offered for Hub promotion it
+   needs **two consecutive CLEAN runs**; a review does not. The expensive guarantee is spent where
+   irreversibility lives: a review is repeatable and its verdict revisable, and promotion
+   `reviewed → gold` is a Hub act the repo cannot undo. **Two clean runs are NECESSARY, not
+   sufficient — two runs can agree wrongly — and they are not a review waiver: the next run still
+   does 5a.**
 6. Anything not fixable inside the lane → **STOP and report** (CD-151(c)).
 
 ---
@@ -109,6 +126,18 @@ item you found it in: `question_text`, option `text`, `why_wrong`, `answer_key.a
 `answer_key.model_note`, `blanks.accepted`, rubric `criterion` and rubric `band_descriptors`.
 **A single flagged qid with siblings left unnamed is an incomplete finding**, even when the qid is
 right.
+
+**AN OUT-OF-SCOPE LIST SUPPRESSES COUNTING, NEVER SWEEPING (CD-160).** If the run hands you a list
+of deferred or out-of-scope items, **it does not narrow the sweep.** The sweep runs across the whole
+bank; a deferred item carrying a swept claim is **REPORTED UNDER THE CLAIM AND MARKED DEFERRED** —
+never omitted, never silently dropped from the enumeration. **Deferral decides whether a finding is
+COUNTED against the verdict; it never decides whether the finding is LOOKED FOR.**
+**Why, measured:** a deferral list partitions the bank BY ITEM, and a factual defect lives BY CLAIM
+(TOOLS-CR-008). The two carvings cut across each other. Three items once carried a flagged claim,
+sat on a deferral list as slot-check items, and were not swept — the enumerating requirement above
+had found the class and the list is what stopped the fix reaching it. **The sweep defines membership
+in a claim class; the list only marks disposition.** A list that decides who is IN a class will
+drift from the class — that is how one item came to be missing from its own group's list.
 
 **Why this check enumerates (TOOLS-CR-008).** A report is organised by ITEM, because that is what
 you read; **a factual defect is organised by CLAIM**, because one claim can sit in a stem, a key, a
