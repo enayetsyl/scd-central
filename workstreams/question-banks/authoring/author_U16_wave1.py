@@ -34,8 +34,8 @@ THE ⚠ BLOCK ON THIS CHAPTER IS THE HEAVIEST IN THE SOURCE AND EVERY CLAUSE OF 
   · C-05 — no item carries or asks for a picture of any person.
 
 NO INVENTED PERSONAL NAME APPEARS ANYWHERE. The only personal names are the historical figures the
-chapter itself records; they are content facts, not characters, so QB-CR-005's REF-2 substitution
-rule (which is about characters standing in an exercise) is not in play and no REF-2 name is
+chapter itself records; they are content facts, not characters, so QB-CR-005's REF-20 substitution
+rule (which is about characters standing in an exercise) is not in play and no REF-20 name is
 needed. Every S03 model sentence is written without a personal name for the same reason.
 """
 import json

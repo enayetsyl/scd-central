@@ -97,7 +97,7 @@ answers are glossed verbatim in অর্থ জেনে নিই, five are no
   homage. REF-01 §4.1 C-18's own carve-out is what this bank uses: **factual history — dates,
   events, contributions — is taught.**
 - **C-05 images.** No item carries or requests a picture of any person.
-- **REF-2 names.** No invented personal name appears in any stem, option, key or rubric row; the
+- **REF-20 names.** No invented personal name appears in any stem, option, key or rubric row; the
   only personal names are the historical figures the chapter itself records, which are content
   facts and not characters (QB-CR-005 is about substituted characters, not about history).
 
