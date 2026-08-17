@@ -1,0 +1,57 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৩ section
+PROMPT : tools/bank_factual_review_prompt.md (step 5b, CD-151), check 1 enumerating per CD-160
+RUN    : 2026-08-17 — EIGHTH run. The run owed since 2026-08-17; three prior attempts died on
+         529 Overloaded (infrastructure). VERDICT OF RECORD.
+METHOD : Seven checks + claim sweep completed BEFORE the RUN7 report was opened, then each RUN7
+         finding dispositioned — CD-161(a)'s standing form with its anti-anchoring ordering.
+STATUS : Contemporaneous. Committed under step 3a (CD-157(d)).
+
+--------------------------------------------------------------------------------------------------
+
+107 items read in full. Q103 and Q104 RETIRED — CONFIRMED. Absent from questions, slot_index (107 keys, exactly the 107 qids), task_index, source_index, pool_index and banks/envelopes/single/ (107 U13 envelopes, exact 1:1, none extra, none missing). The only Q103/Q104 strings are inside the header.gaps retirement prose — a record, not a dependency. slot_index matches header.slot_counts exactly and sums to 107.
+
+1 · FACTUAL ACCURACY — 3 defects
+
+1. CLAIM CLASS "the কবিতা uses word X", where the কবিতা prints only an inflected form and standalone X sits elsewhere in the পাঠ — NOT CLOSED. This is the exact claim the session fixed at Q28/Q101 (ইচ্ছা) and Q49 (কূল). The fix again stopped at the named qids. Every carrier, enumerated:
+   · Q25  question_text — "কবিতায় ব্যবহৃত 'গন্ধ'". The কবিতা prints only গন্ধে; standalone গন্ধ occurs only in অনুশীলনী ১. Its own model_note says so — stem and note contradict each other. COUNTED.
+   · Q92  question_text — "কবিতার 'গন্ধ' শব্দের যুক্তবর্ণ". Same word, same claim. RUN7 explicitly cleared this as "Q92/Q93 use verbatim গন্ধ/উল্টায়" — উল্টায় is verbatim, গন্ধ is not. COUNTED.
+   · Q26  question_text — "কবিতায় ব্যবহৃত 'কূল'". The কবিতা prints only কূলটায়. The bank now ASSERTS IN Q26 WHAT IT CORRECTED IN Q49, four items apart, for the same word. COUNTED.
+   · Q54  question_text — "'পাখির মতো' কবিতার শব্দ দিয়ে এক কথায় প্রকাশ", accepted = কূল. Same claim, stem+key. COUNTED.
+   · Q27  question_text — "কবিতায় ব্যবহৃত 'গাঁ'" (কবিতা prints গাঁয়ে). DEFERRED — reported, not counted.
+   · Q56  question_text — "কবিতার শব্দ দিয়ে", key গাঁ. DEFERRED — reported, not counted.
+   Ruled OUT of the class, with reason: Q02/Q03/Q42/Q51/Q117/Q120 (কর্ণফুলী · কাঁঠালচাঁপা — the অর্থ জেনে নিই table prints these standalone as the poem's words); Q121 (ফেরেস্তা — the ⚠ block states the word is in the কবিতা); Q04/Q50/Q52/Q55 (বন্য), Q53 (ইচ্ছে), Q93 (উল্টায়), Q48 (শহর), Q102 (মানুষ) — verbatim in the poem; Q118 — the stem quotes both চরণ and the key names the printed forms. Q05–Q09, Q33, Q62–Q66, Q94–Q98 make no claim about the পাঠ at all.
+   THE CLASS IS NOT CLOSED: 4 counted + 2 deferred carriers survive.
+
+2. STALE source_index ANCHOR AFTER THE Q49 RE-KEY. Q49's anchor is still "সবাই যখন ঘুমিয়ে পড়ে" — the anchor of the RETIRED ঘুম stimulus. It contains no কূল and contradicts the item's own model_note, which cites অনুশীলনী ১ and "কর্ণফুলীর কূলটায়". Sibling carrying the identical defect: Q54 (key কূল, same anchor). Contrast Q26, whose কূল anchor correctly reads "…কর্ণফুলীর কূলটায়". Under the header's own teacher_gloss_ruling the anchor must point at the word's occurrence; these two do not. COUNTED (one claim, two qids).
+
+3. THE BANK'S OWN RETIREMENT RECORD IS FALSE ON TWO POINTS — header.gaps, the "poem uses word X CLAIM CLASS, CLOSED 2026-08-17" entry. (a) It declares the class CLOSED; defect 1 falsifies that. (b) It records "S06 7 → 6 against BAN-S06's paper demand of 5". S06 held 7, two were retired, the bank has 5 — and header.slot_counts.S06 says 5. The arithmetic is not clerical: it records a +1 margin where the slot sits EXACTLY ON demand, the state the header's own target paragraph calls a defect rather than a pass. COUNTED.
+
+Listed, NOT counted — the deferred interpretive-keys class, swept fresh and found WIDER THAN THE RECORDED LIST: the claim "the poem expresses a desire for মুক্তি/স্বাধীনতা", which the section never states (its only gloss is বন্য — বুনো), is carried by Q45 option.text, Q73 accepted, Q76 accepted, Q78 accepted, Q108 rubric.criterion (all on the list) AND by Q16 rubric.criterion, Q19 rubric.criterion, Q32 accepted, Q46 option.text, Q84 question_text + band, Q88 rubric.criterion (NONE on the list). I do not count the six: on my reading the framing paraphrases the section's own printed images (উড়ব · ঘুরব · পাখির মতো ডাকতে · বন্য), and whether it is more than that is the group ruling's to make (CD-142(a)). BUT THE LIST MUST BE RE-DERIVED BY SWEEP BEFORE THAT RULING ISSUES — it is missing six carriers of the claim it defers, the same drift that hid Q79.
+Also deferred and unchanged: Q79 ("শান্ত", still nowhere in the section, now on the list), Q80 (biography), Q77 (অভিমান), Q105/Q106 (motive), Q74, Q85 ("প্রথম স্তবকের দিনের ছবি" — the section never says day), Q87, Q121 (definition absent from the section; its plural যাঁরা does not fit the singular key ফেরেস্তা), Q45 why_wrong গ (links নদী to গাঁ, a link the section does not make).
+THE MOONLIGHT CLAIM IS STILL DEAD: আলো · ছড়িয়ে · সরে survive only inside the forbidding model_notes of Q71 and Q75. All পূর্ণিমা claims are glossary-backed and mutually consistent.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS. "আর একটা গান গাও না!" 0. "জাতীয় কবি"/"বিদ্রোহী কবি"/"মহান কবি" 0 (মহান 0 anywhere). "আল মাহমুদ" exactly once, Q01 accepted, bare. গান: one hit, Q18 band, inside লাগানোর. C-05: all 27 ছবি and 5 চিত্রকল্প occurrences are verbal imagery; the only two আঁক forms take the কবি as subject and demand a written answer. ফেরেস্তা source-permitted.
+
+3 · STANDING CURATION BARS — PASS. C-03 all zero. C-05 no picture requested. C-18 all zero; every দেশ hit is inside নির্দেশ/উপদেশ. Forbidding rubric rows are not occurrences.
+
+4 · INVENTED NAMES — PASS. Only আল মাহমুদ, the poem's own আম্মা · আব্বা · ফেরেস্তা · কর্ণফুলী, and আল্লাহ.
+
+5 · NUMERALS — PASS. Zero ASCII digits in any student-facing string; all 27 hits are internal codes in teacher-facing model_note.
+
+6 · SLOT-SPECIFIC CORRECTNESS — PASS on items in scope. S12 (Q51, Q52, Q53, Q92, Q93) decompositions right; every offered new word carries its conjunct and none appears in the section; each stimulus carries one conjunct. S10 (Q110–Q116, Q118) right পদ as used; কেবল → অব্যয় is a পদ, not a super-class. S13 (Q54, Q55, Q119, Q120) keys match their definitions.
+Q49's RE-KEY VERIFIED IN FULL — কূল IS printed standalone in অনুশীলনী ১ and as কূলটায় in the poem, so the "পাঠে ব্যবহৃত" premise is TRUE; অকূল (কূলহীন) is a defensible standard বিপরীত in the chapter's shore sense; it duplicates neither Q48 nor any other S06 item — the five S06 stimuli শহর · কূল · বন্য · ইচ্ছা · মানুষ are distinct, and কূল's other appearances (Q26 শব্দার্থ, Q06 বাক্য গঠন, Q54 এক কথায়) are different tasks.
+S11: Q57 and Q59 each require two marks; the single-mark items and Q89's invented comma are deferred.
+
+7 · LANGUAGE — PASS on items in scope. The internal-code class is deferred. Q56's stem is a form-change question wearing an এক কথায় প্রকাশ instruction, Q60's boilerplate is wrong for a single-answer punctuation item, and Q108's "প্রতিটি স্তবকের শেষ শব্দে যে মিল" is loose — the rhyme is between চরণ ২ and ৪ within each stanza; the stanza-final words গন্ধে · ডাকতে · উল্টায় · ঘুরব · বন্য do not rhyme with each other. All three deferred, reported, not counted.
+
+RUN 7 FINDINGS — DISPOSITION (opened only after the above)
+- Defect 1, the claim class at Q49/Q103/Q104 — FIXED AT THOSE THREE QIDS but THE CLASS IS STILL PRESENT at Q25, Q26, Q92, Q54 (+ deferred Q27, Q56). Run 7's own sentence "Q92/Q93 use verbatim গন্ধ/উল্টায়" was WRONG AS TO গন্ধ, and that is what let two carriers through a run looking for exactly this class.
+- Q79 "শান্ত" — STILL PRESENT, now recorded in header.gaps, correctly deferred. Its lesson is unlearned: six further carriers of the same class are still off the list.
+- Q80, Q74, Q45, Q85, Q121, Q87, Q76, Q77, Q73, Q78, Q105, Q106 — STILL PRESENT, still deferred, one group ruling still owed.
+- Moonlight claim — CONFIRMED STILL DEAD by fresh grep.
+- Checks 2–5 PASS — CONFIRMED, re-derived independently.
+- The punctuation-convention observation — WAS NEVER A DEFECT as filed; still true of the bank.
+- "109 items / 109 envelopes" — superseded: 107/107, verified 1:1.
+
+VERDICT: 3 DEFECT(S)
