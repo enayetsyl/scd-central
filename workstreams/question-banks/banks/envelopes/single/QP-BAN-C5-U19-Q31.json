@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 19,
+    "title": "পাঠ ১৯ — ভাষার খেলা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-15",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U19-Q31",
+    "topic_tag": "TOP-BAN-C5-15",
+    "ref19_topic_id": "BAN-FUNCWRITE",
+    "question_text": "পাঠ ১৯-এর অনুশীলনীতে দৈনিক পত্রিকা নিয়ে কোন কাজটি করতে বলা হয়েছে?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৯ — ভাষার খেলা",
+    "answer_key": {
+      "accepted": [
+        "দৈনিক পত্রিকা থেকে তিনটি খবরের শিরোনাম বেছে নিয়ে লিখতে বলা হয়েছে।"
+      ],
+      "model_note": "'পত্রিকা থেকে খবরের শিরোনাম' এবং 'তিনটি' — এই দুটি তথ্য থাকলেই পূর্ণ নম্বর।"
+    }
+  }
+}

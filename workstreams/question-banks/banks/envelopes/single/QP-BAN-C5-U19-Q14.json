@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 19,
+    "title": "পাঠ ১৯ — ভাষার খেলা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-02",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U19-Q14",
+    "topic_tag": "TOP-BAN-C5-02",
+    "ref19_topic_id": "BAN-SENTENCE",
+    "question_text": "'জননী রান্না করছেন এবং কন্যা তাঁকে সাহায্য করছে।' — বাক্যটি ভেঙে দুটি বাক্য লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৯ — ভাষার খেলা",
+    "answer_key": {
+      "accepted": [
+        "জননী রান্না করছেন। কন্যা তাঁকে সাহায্য করছে।"
+      ],
+      "model_note": "দুটি ভাগই আলাদা পূর্ণ বাক্য হতে হবে এবং প্রতিটির শেষে দাঁড়ি বসবে; যোগ-শব্দটি বাদ যাবে।"
+    }
+  }
+}

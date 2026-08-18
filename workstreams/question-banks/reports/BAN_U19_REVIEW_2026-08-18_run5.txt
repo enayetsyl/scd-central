@@ -1,0 +1,351 @@
+BANK  : workstreams/question-banks/banks/C5_BAN_U19_QuestionBank_v1.json
+SOURCE: canon/marklogic/C5_Bangla_Source_13-23.md (section `# পাঠ ১৯ — ভাষার খেলা`, lines 412–443)
+RUN   : 2026-08-18 · RUN 5 · teacher-lane STEP 5b, tools/bank_factual_review_prompt.md
+        Prompt body run verbatim; only the facts block was supplied. Reviewer: independent
+        read-only agent. No file was created, modified, moved or deleted.
+
+CD-161(a) ORDERING DECLARATION. All seven checks below, and the check-1 enumerating claim sweep,
+were performed and written from the bank JSON and the source section alone. None of the four prior
+reports (RUN 1, RUN 2, RUN 3, RUN 4) was opened until the seven checks were finished and written
+out. The disposition section at the end was written afterwards, is additional, and amends nothing
+above it. Where a judgement below rests on evidence outside the section (attested class-level
+terminology, sibling-bank house form, the repo's own S10 re-key record), that evidence was gathered
+by my own greps before any prior report was opened.
+
+STRUCTURE NOTE. 46 items, Q01–Q46. No item carries a `rubric` block — the item key set is exactly
+{qid, topic_tag, ref19_topic_id, question_text, question_type, paper_role, options, answer_key,
+blanks, bloom_level, difficulty, tier, marks, chapter_ref} — so every rubric `criterion` and
+`band_descriptors` sweep below is vacuous BY ABSENCE, not by omission. Four items are `mcq`
+(Q19–Q22) and three are `fill_blank` (Q16–Q18); these carry no `model_note` (P-037). Slot spread
+read from `slot_index`: S02 Q01–Q05 · S03 Q06–Q15 · S04 Q16–Q18 · S05 Q19–Q22 · S06 Q23–Q27 ·
+S07 Q28–Q31 · S10 Q32–Q36 · S12 Q37–Q41 · S13 Q42–Q46. Every slot used is in ADMITTED SLOTS. No
+deferral or out-of-scope list was handed to this run, so CD-160's suppression clause never fires:
+every sweep below ran across all 46 items and nothing is marked deferred.
+
+--------------------------------------------------------------------------------
+1 · FACTUAL ACCURACY — 1 DEFECT
+--------------------------------------------------------------------------------
+
+Everything the section states as fact is keyed correctly, checked item by item:
+
+- Chapter kind — Q20 option ক "ব্যাকরণ-অনুশীলন" is the section's own bolded line; কবিতা · নাটক ·
+  গল্প are each excluded by it, and Q20 option ঘ's why_wrong ("পাঠটি নিজেই বলছে এখানে কোনো কাহিনি
+  নেই") restates the ✅ block correctly.
+- The twelve synonym pairs — Q01 রজনী→রাত · Q02 প্রভাত→সকাল · Q03 পুস্তক→বই · Q04 ললাট→কপাল ·
+  Q05 দিবস→দিন · Q17 (রজনী→প্রভাত/সকাল/দিন/দিবস) · Q19 ঘর→বাড়ি · Q29 (রজনী/রাত, পুস্তক/বই) ·
+  Q42 ঘর/বাড়ি · Q43 জননী/মাতা · Q44 কন্যা/মেয়ে · Q45 পুত্র/ছেলে · Q46 সাগর/সমুদ্র. The source
+  table was re-counted independently: 12 rows, every keyed pair present, none invented.
+- The count — Q18 `blanks[1].accepted` "বারো"/"১২" matches "(১২ জোড়া তালিকাভুক্ত)" and the table.
+- The five words of অনুশীলনী ৩ — Q06–Q10 use দিয়ে · উপর · কাছে · থেকে · পক্ষে, exactly the printed
+  five; Q21 keys their task as "বাক্য তৈরি করতে", which is the row's own wording.
+- Exercise names — Q22 (একটি বাক্য ভেঙে দুটি → বাক্য গঠন, the section's own "S03 বাক্য গঠন (চার রকম
+  কাজ)"), Q28 (কাহিনি নেই + the exercise list), Q30 (join vs split), Q31 (দৈনিক পত্রিকা থেকে তিনটি
+  খবরের শিরোনাম — both load-bearing facts, "তিনটি" and "শিরোনাম", required by the model_note).
+- No date, person, place or role occurs anywhere in the bank, so nothing can be wrong or swapped
+  between people. No MCQ distractor is arguably also correct (Q19 মাঠ/পথ/নদী; Q20 কবিতা/নাটক/গল্প;
+  Q21 and Q22 name only tasks the section does not contain).
+
+1. THE ITEM'S DESIGNATED MODEL ANSWER IS THE ONE FORM IN ITS OWN ACCEPTED LIST THAT NEITHER THE
+   SECTION NOR THE CLASS'S TEXTBOOK PRINTS, WHILE THE ATTESTED TERM IS DEMOTED TO THIRD. SAME
+   CLAIM, TWO ITEMS:
+     - QP-BAN-C5-U19-Q33 · `answer_key.accepted[0]` "বিশেষ্য" and `accepted[1]` "বিশেষ্য পদ"
+       (target 'জননী'; `accepted[2]` is "নাম-শব্দ")
+     - QP-BAN-C5-U19-Q36 · `answer_key.accepted[0]` "বিশেষ্য" and `accepted[1]` "বিশেষ্য পদ"
+       (target 'সাগর'; `accepted[2]` is "নাম-শব্দ")
+   The claim is made load-bearing by the sentence carried in the `model_note` of all five S10
+   items — "এই আইটেমের গৃহীত তালিকার প্রথম রূপটিই আদর্শ উত্তর" — which designates `accepted[0]` as
+   the model answer, sitting beside the same note's order "গৃহীত তালিকার বাইরে কিছু নেওয়া যাবে না".
+   Evidence: "বিশেষ্য" is printed ZERO times in the whole of C5 Bangla — my grep across
+   canon/sources/c5/ and canon/marklogic/ returns one hit and it is in C5_BGS_Source_15.md, an
+   editorial line in a different subject; "নাম-শব্দ" is printed four times, including
+   C5_Bangla_Source_13-23.md line 212 ("S10 পদ নির্ণয় (নাম-শব্দ/কাজ-শব্দ)") and lines 395/401. The
+   sibling banks order it the other way for exactly this reason: U15 Q67/Q68/Q70/Q71 and U16
+   Q70/Q75 all key ["নাম-শব্দ", "বিশেষ্য", "বিশেষ্য পদ"].
+   ENUMERATION OF THE CLAIM CLASS, all five S10 items, so no sibling is left unnamed. The
+   designating sentence "প্রথম রূপটিই আদর্শ উত্তর" occurs in `answer_key.model_note` of Q32, Q33,
+   Q34, Q35 and Q36 — five carriers. It is HARMLESS on three and DEFECTIVE on two:
+     - Q32 `accepted[0]` "বিশেষণ" — NOT a defect. The section itself prints বিশেষণ (অনুশীলনী ২
+       "গুণ ও বৈশিষ্ট্য বসানো (বিশেষণ)" and the slot line "S10 ক্রিয়ার কাল ও বিশেষণ").
+     - Q35 `accepted[0]` "বিশেষণ" — NOT a defect, same reason.
+     - Q34 `accepted[0]` "ক্রিয়া" — NOT a defect. The section prints ক্রিয়া (অনুশীলনী ১ "ক্রিয়ার
+       কাল"). Its `accepted[2]` "কাজ-শব্দ" is attested and is correctly not the designated form.
+     - Q33, Q36 — DEFECTIVE, as above: for the noun items the section prints no term at all, and
+       the form the note elevates is the untaught one.
+   FULL SWEEP of the claim's strings across all 46 items in `question_text`, option `text`,
+   `why_wrong`, `answer_key.accepted`, `answer_key.model_note`, `blanks.accepted`, rubric
+   `criterion`, rubric `band_descriptors` (last two vacuous): "বিশেষ্য" — 4 occurrences, Q33
+   accepted[0] and accepted[1], Q36 accepted[0] and accepted[1], and nowhere else. "নাম-শব্দ" — 2,
+   Q33 accepted[2] and Q36 accepted[2]. "কাজ-শব্দ" — 1, Q34 accepted[2]. "নামপদ" — 0. No stem, no
+   option, no why_wrong and no blank anywhere in the bank carries any of these terms.
+   SEVERITY: LOW, and the counter-argument is recorded — no script is misgraded, because
+   "নাম-শব্দ" remains in the accepted list and earns full marks. The defect is confined to which
+   form the marker is told is the ideal one, and the fix is to swap the order on two items.
+
+RECORDED JUDGEMENTS, so the absence of a finding elsewhere reads as a decision and not an oversight:
+
+(a) Keys that go beyond the section on the admitted SKILL slots are not flagged as such. S06
+    (Q23–Q27), S10 (Q32–Q36) and S12 (Q37–Q41) carry general-Bangla keys the section does not
+    print; in every one the STIMULUS word IS printed by the section, and every item declares the
+    provenance in its own `model_note`. That is the admitted shape for a chapter whose own ✅ block
+    calls it "দক্ষতার প্রশ্নের সবচেয়ে বড় উৎস". Defect 1 is not "this key goes beyond the section" —
+    it is "of the forms already inside one key, the elevated one is the untaught one".
+(b) S02 (Q01–Q05) asks "এই শব্দটির অর্থ লেখো" and keys the pair-mate. The section states pairs, not
+    glosses, but labels the row "একই রকম শব্দ (সমার্থক)", which is the statement that the two words
+    share a meaning, and in each of the five the mate is the plain everyday word. Not flagged.
+    Carriers of the pair-as-gloss shape, enumerated: Q01–Q05 `answer_key.accepted[0]`, Q17
+    `blanks[1].accepted`, Q19 option ক, Q29 `accepted[0]`.
+(c) Q29's definitional key ("যে শব্দগুলোর অর্থ এক বা প্রায় এক...") is not flagged: the section's own
+    parenthesis "(সমার্থক)" is that definition in one word, so it is recoverable, not imported.
+(d) Q15's `model_note` (চর · বর rhyme with ঘর) is not flagged: the item is productive, the note
+    states the accepted list is a sample, and no script can be misgraded by it.
+(e) Q21 option খ's why_wrong ("যুক্তবর্ণ ভাঙা এই পাঠের কোনো অনুশীলনী নয়") and option গ's ("এই
+    শব্দগুলো দিয়ে বিপরীত শব্দ লেখার কথা পাঠে নেই") were deliberately tested for the
+    forbids-here / keys-there pattern against the bank's own S12 items (Q37–Q41) and S06 items
+    (Q23–Q27, of which Q27 takes 'উপর', one of the five words named in Q21's stem). NOT a defect:
+    both why_wrongs deny that these are among the ten EXERCISES — true, the table has no such
+    row — while the S12 and S06 items claim only that their stimulus WORDS are printed by পাঠ ১৯,
+    which they are. Carriers examined: Q21 options খ and গ why_wrong, Q22 option গ why_wrong, all
+    five S12 stems and keys, all five S06 stems and keys. No contradiction of truth-value. Recorded
+    because it is the closest thing in this bank to the pattern check 1 warns about.
+
+--------------------------------------------------------------------------------
+2 · THE CHAPTER'S CONTENT BARS — PASS
+--------------------------------------------------------------------------------
+
+All sixteen exact strings searched individually, as substrings, across every student-facing field
+of every item (`question_text`, option `text`, `why_wrong`, `answer_key.accepted`,
+`answer_key.model_note`, `blanks.accepted`; rubric fields absent from the bank):
+
+BAR 1 — "আমরা সবাই মিলে মেলায় যাচ্ছি" 0 · "মেলায় যাচ্ছি" 0 · "মেলায়" 0 · "মেলার" 0 · "মেলা " 0 ·
+"মেলা।" 0 · "উৎসব" 0 · "উৎসবে" 0 · "উৎসবের" 0 · "পার্বণ" 0.
+BAR 2 — "রাজা-তরমুজ" 0 · "রাজা" 0 · "রাজার" 0 · "তরমুজ" 0 · "তরমুজের" 0 · "ধারাবাহিক গল্প" 0.
+
+No item reaches অনুশীলনী ১ or অনুশীলনী ১০; neither is referenced even by name in any item field.
+Checked that no near-miss substring produces a false clear: Q37 `accepted[1]` "প্রজাপতি" does not
+contain "রাজা" (the sequence is প ্ র জ া, with no া after র), and no item contains "মেলা" in any
+inflected or compound form.
+
+DECLARED-PERMITTED STRINGS, reported for the record and NOT as defects (the section's third ⚠
+clause): "রজনী" — QP-BAN-C5-U19-Q01 `question_text` · QP-BAN-C5-U19-Q17 `question_text` ·
+QP-BAN-C5-U19-Q24 `answer_key.accepted[1]` · QP-BAN-C5-U19-Q29 `answer_key.accepted[0]`. Four
+occurrences, all permitted. "অরুণ" — 0 occurrences in any item field. "রবি" — 0 occurrences in any
+item field.
+
+Reconciliation note, outside this check's fields and listed only so the greps agree: the bank's
+top-level `curation` string and `header.slot_exclusions` quote the section's ⚠ lines ("মেলায়
+যাচ্ছি", "রাজা-তরমুজের গল্প", "অরুণ · রবি · রজনী") as compliance prose, and `source_index` carries
+the section's synonym row verbatim for several qids. None of these is a question, option, key or
+note.
+
+--------------------------------------------------------------------------------
+3 · STANDING CURATION BARS — PASS
+--------------------------------------------------------------------------------
+
+C-03 (music, dance, all percussion): swept গান · গায় · গাও · সংগীত · সুর · নাচ · নৃত্য · ঢোল ·
+তবলা · বাদ্য · বাঁশি across all item fields — 0. No item draws on song, dance or instrument
+material; the section prints none.
+
+C-05 (depictions of living beings): no item supplies, describes or requests a picture. The single
+"ছবি" token in the bank is QP-BAN-C5-U19-Q21 option ঘ "ছবি দেখে নাম লিখতে", a DISTRACTOR whose
+why_wrong states no such task exists in this lesson — a denial, not a request, and no living being
+is named. Not an occurrence. No item asks for a picture of a person. Living beings occur only as
+ordinary text nouns (পিঁপড়া in Q16/Q32, পাখি in Q13/Q15), which C-05 does not reach.
+
+C-18 (nationalism over ummah, veneration rituals): swept পতাকা · শহিদ · স্মৃতিসৌধ · মিনার · জাতীয় ·
+দেশ · নীরবতা · মাল্য · ফুল দ · সালাম · মূর্তি — 0. No salute, wreath, flower-laying or ritual
+silence anywhere, and no factual-history content either, so the carve-out is not exercised. Q31
+(newspaper headlines) asks only what অনুশীলনী ৮ names and requires no content of its own.
+
+No rubric row exists in this bank, so the "a rubric that forbids barred content is not an
+occurrence" clause has nothing to apply to.
+
+--------------------------------------------------------------------------------
+4 · INVENTED NAMES — PASS
+--------------------------------------------------------------------------------
+
+The bank contains no personal name at all, so nothing needs matching against the chapter (which
+names no person) or against canon/names/REF-20_Approved_Names_Pool.md. Every human-referring word
+is a common noun printed by the section or an ordinary kinship/age term: জননী · মাতা · কন্যা ·
+মেয়ে · ছেলে · পুত্র · পিতা · বালক · বালিকা (the last two attested in canon/sources/c5/, 6 and 3
+occurrences). "রজনী" occurs only as the section's own synonym-list word, never as a character. The
+S12 sample words (প্রদীপ, প্রজাপতি, বস্তু, হস্ত, ক্ষমা, পক্ষ, দ্রুত, ভদ্র, ছাত্র, পত্র) are common
+nouns or ordinary adjectives; none reads as a personal name. No invented character exists to flag.
+
+--------------------------------------------------------------------------------
+5 · NUMERALS — PASS
+--------------------------------------------------------------------------------
+
+No ASCII digit `0-9` occurs in any student-facing string. Every `question_text`, option `text`,
+`why_wrong`, `answer_key.accepted` and `blanks.accepted` in the bank is clean — programmatic sweep
+over all 46 items and all fields, not spot-check. Q18 `blanks[1].accepted` uses "১২" and "বারো",
+both correct Bengali.
+
+The only `[0-9]` matches in the entire question set are the string "(CD-136(b))" inside
+`answer_key.model_note` of fifteen items — Q23, Q24, Q25, Q26, Q27, Q32, Q33, Q34, Q35, Q36, Q37,
+Q38, Q39, Q40, Q41 — teacher-facing and exempt by this check's own carve-out. The same fifteen
+occurrences are examined on different grounds at check 7.
+
+--------------------------------------------------------------------------------
+6 · SLOT-SPECIFIC CORRECTNESS — no additional defect
+--------------------------------------------------------------------------------
+
+S12 যুক্তবর্ণ (Q37–Q41) — clean. Decompositions are orthographically right in all five: প্র = প্ + র
+· স্ত = স্ + ত · ক্ষ = ক্ + ষ · দ্র = দ্ + র · ত্র = ত্ + র. Every newly formed word actually
+carries the conjunct named, checked letter by letter, with no sample hiding the target inside a
+larger three-consonant cluster: প্রদীপ · প্রজাপতি (প্র) · বস্তু · হস্ত (স্ত) · ক্ষমা · পক্ষ (ক্ষ) ·
+দ্রুত · ভদ্র (দ্র) · ছাত্র · পত্র (ত্র). Multiple-conjunct stimuli: only Q39's 'ক্ষুদ্র' carries two
+(ক্ষ and দ্র), and its stem names 'ক্ষ' explicitly, so the ambiguity trigger does not fire; প্রভাত,
+পুস্তক, সমুদ্র and পত্রিকা each carry exactly one, and every stem names its conjunct. All five
+stimulus words are printed by the section (সমুদ্র from the সাগর/সমুদ্র row, পত্রিকা from
+অনুশীলনী ৮).
+
+S10 পদ নির্ণয় (Q32–Q36) — the পদ is right for every target word as used in its own sentence:
+ক্ষুদ্র (Q32) and নোনতা (Q35) are বিশেষণ; জননী (Q33) and সাগর (Q36) are বিশেষ্য; পড়ে (Q34) is a
+finite ক্রিয়া. No accepted answer is a super-class of the পদ, and "নামপদ" occurs 0 times. On
+terminology: "নাম-শব্দ" (Q33, Q36 `accepted[2]`) and "কাজ-শব্দ" (Q34 `accepted[2]`) are NOT
+non-standard coinages at this class — my grep found both printed by this very source file
+(C5_Bangla_Source_13-23.md lines 207, 212, 395, 401) and by canon/sources/c5/bangla/
+C5_BAN_Source_07.md and canon/sources/c4/bangla/C4_BAN_Source_04.md, used as the noun/verb binary
+rather than as the traditional super-class. They are attested taught vocabulary and are not
+flagged. The ORDER in which they sit, on the two noun items only, is defect 1 at check 1 and is not
+double-counted here.
+
+S13 এক কথায় প্রকাশ (Q42–Q46) — answers match their definition phrases and every accepted form's
+grammatical class fits: ঘর/বাড়ি and সাগর/সমুদ্র are place/thing nouns for place/thing definitions;
+জননী/মাতা, কন্যা/মেয়ে and পুত্র/ছেলে are person nouns for person definitions. All five items accept
+BOTH words of their pair, so no chapter word satisfying a definition is refused, and the
+`model_note` rule ("জোড়ার যেকোনো একটি শব্দই পূর্ণ নম্বর পাবে") is uniform across all five and
+consistent with every key (5 occurrences, one per item, no contradicting sibling). No unaccepted
+chapter word satisfies any of the five definitions. Q43's "যিনি জন্ম দিয়েছেন" is gender-neutral in
+form while its keys are feminine; not counted, because the stem restricts the answer to the পাঠ ১৯
+list and that list holds no masculine competitor (জনক/পিতা are not in it).
+
+S06 বিপরীত শব্দ (Q23–Q27) — clean. ক্ষুদ্র → বৃহৎ/বিশাল/বড়ো (the section pairs ক্ষুদ্র with ছোটো, an
+adjective of size, so the antonym holds in the chapter's own sense) · দিন → রাত/রজনী · মাতা → পিতা ·
+ছেলে → মেয়ে · উপর → নিচ/নিচে. উপর is a bare অনুশীলনী ৩ list entry with no use printed by the
+section; it is a spatial/relational word, not an adverbial or idiomatic use, and the bank's own Q07
+model sentence ("টেবিলের উপর...") fixes that sense, so নিচ holds. The other four words of that same
+row (দিয়ে · কাছে · থেকে · পক্ষে) have no antonym in their chapter sense and none was used. No
+stimulus is used in a sense that voids its antonym.
+
+S11 বিরামচিহ্ন — not in ADMITTED SLOTS for this chapter; check not applied.
+
+--------------------------------------------------------------------------------
+7 · LANGUAGE — PASS
+--------------------------------------------------------------------------------
+
+Stems, options and keys are natural, grammatical and at class level. Honorific agreement is correct
+(Q14 "জননী রান্না করছেন ... তাঁকে"); the joining and splitting models are idiomatic (Q11 "কিন্তু",
+Q12 "এবং এর জল", Q13/Q14 clean two-sentence splits); the fill-blank stems are closed to the
+chapter's own list (Q16 "পাঠ ১৯-এর শব্দতালিকা থেকে আকার বোঝায় এমন একটি বিশেষণ", Q17 "পাঠ ১৯-এর
+শব্দতালিকার একটি শব্দ", Q18 chapter-specific), so no open stem sits against a closed key; the S13
+stems are relative-clause definitions in house form ("মানুষ যেখানে বসবাস করে", "যিনি জন্ম
+দিয়েছেন", "যে সন্তান বালিকা", "যে সন্তান বালক", "নোনা জলের বিশাল জলরাশি"), and বালক/বালিকা are
+attested in the C5 corpus. Nothing is above class level. No slot id (S02–S13) and no curation code
+(C-03/C-04/C-05/C-18) appears in any student-facing or marker-facing string.
+
+OCCURRENCE RECORDED, NOT COUNTED — the internal code "(CD-136(b))" in the marker-facing
+`answer_key.model_note` of FIFTEEN items: Q23, Q24, Q25, Q26, Q27, Q32, Q33, Q34, Q35, Q36, Q37,
+Q38, Q39, Q40, Q41 (identical opening clause "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (CD-136(b))"). Not
+counted for two reasons reached before any prior report was opened: (i) this prompt's check 5
+states flatly that internal codes inside a teacher-facing `model_note` are not defects, and that
+specific carve-out is read as governing check 7's general leak rule; (ii) the declaration itself is
+required — tools/teacher_lane_template.md line 115 names CD-136(b) as the rule behind it. The token
+inside the sentence could be dropped without loss (sibling bank C5_BAN_U16 carries the identical
+declaration without it), but its presence is provenance, not escape.
+
+ALSO UNCOUNTED, for the record:
+- Those same fifteen notes write "পাঠ ১৯ এর" without the hyphen used everywhere else in the bank
+  ("পাঠ ১৯-এর") — typographic, marker-facing only.
+- Q15's stem says "একটি শব্দ বেছে নিয়ে" though no set of words is offered to choose from, and its
+  model answer uses the inflected "চরে" rather than the bare rhyme word চর. The note supplies
+  চর · বর to the marker and any correct rhyme is accepted, so no script is misgraded.
+- Q13's stimulus "পাখিরা ঘর থেকে বেরিয়ে পড়ল" uses ঘর for a bird's home where নীড়/বাসা is the
+  idiomatic word. ঘর is one of the chapter's own list words and the sentence is grammatical; the
+  task is to split it, which the oddity does not impede.
+- Q37–Q41 `model_note` ends "শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ" on 1-mark items without
+  saying what the marker should award; the same phrase is house form across U13–U16, so it is a
+  family-wide marking-scheme question rather than a defect of this bank.
+- Q27 calls 'উপর' part of "পাঠ ১৯-এর শব্দতালিকা", the same label Q16/Q17/Q23–Q26 use for the
+  synonym list, though উপর comes from অনুশীলনী ৩. Both are word lists printed by the section.
+- All four MCQ keys (Q19, Q20, Q21, Q22) sit at option ক. Position bias is a paper-build concern,
+  not a factual defect; noted only because it is 4 of 4.
+
+--------------------------------------------------------------------------------
+CD-161(a) DISPOSITION OF THE PRIOR RUNS' FINDINGS
+--------------------------------------------------------------------------------
+All four prior reports were opened only after everything above was complete and written. Every
+disposition below was verified by my own string counts against the bank on disk.
+
+RUN 1 — BAN_U19_REVIEW_2026-08-18.txt, 7 findings:
+R1-1. Q42 "সূর্যের আরেক নাম" → অরুণ/রবি, a gloss the section never states — FIXED. Q42 is now
+      "'মানুষ যেখানে বসবাস করে'" → ঘর/বাড়ি; "সূর্য" 0, "অরুণ" 0, "রবি" 0 in the item set.
+R1-2. Q24/Q26 model_note claiming the pair is "পাশাপাশি ছাপা" — FIXED. "পাশাপাশি" 0; both notes now
+      carry the teacher-supplied-key declaration my check 1 verified as accurate.
+R1-3. Q32–Q36 attributing নাম-শব্দ/গুণ-শব্দ/কাজ-শব্দ to the textbook — FIXED as to the attribution
+      ("বইয়ের নিজের নাম" 0) and as to "গুণ-শব্দ" (0 occurrences); WAS NEVER A DEFECT as to
+      নাম-শব্দ/কাজ-শব্দ, which my own greps found printed by this source file and by
+      C5_BAN_Source_07.md. The successor question — which of the surviving forms is designated the
+      model answer — is my fresh defect 1 and is counted fresh, not carried.
+R1-4. Q15 offering "ঝড়" as an অন্ত্যমিল of ঘর — FIXED. "ঝড়" 0, "ডর" 0; the note lists চর · বর and
+      the model answer is built on চর.
+R1-5. Q40 sample word "রুদ্র" — FIXED. "রুদ্র" 0; the দ্র samples are now দ্রুত and ভদ্র.
+R1-6. Q44/Q45 pair-note licensing an answer the key excludes — FIXED. Both items now accept both
+      pair words and carry the same permissive note as Q42/Q43/Q46.
+R1-7. Q12 non-pronominalised join — FIXED. accepted[0] is "সাগর অনেক বড়ো এবং এর জল নোনতা।", which
+      my check 7 read as idiomatic before the report was opened.
+
+RUN 2 — BAN_U19_REVIEW_2026-08-18_run2.txt, 2 findings:
+R2-1. Q32–Q36 note licensing all three child-terms against a key that rejects them, plus the
+      non-standard terms — FIXED as to the contradiction: the note is now item-scoped ("এই আইটেমের
+      গৃহীত তালিকার প্রথম রূপটিই আদর্শ উত্তর ... কিন্তু অন্য কোনো পদের নাম নয়") and no marker can
+      award a different পদ's name. WAS NEVER A DEFECT as to নাম-শব্দ/কাজ-শব্দ being non-standard —
+      both are printed by this source file. Residue at defect 1 is the ordering, a different claim.
+R2-2. Q16/Q17 open fill-blank stems against closed keys — FIXED. Q17 now reads "পাঠ ১৯-এর
+      শব্দতালিকার একটি শব্দ বসিয়ে" with প্রভাত/সকাল/দিন/দিবস all accepted; Q16 reads "পাঠ ১৯-এর
+      শব্দতালিকা থেকে আকার বোঝায় এমন একটি বিশেষণ" ("পরিশ্রমী" 0, and no longer satisfies the stem).
+      My check 7 read both stems as closed before I saw this finding.
+
+RUN 3 — BAN_U19_REVIEW_2026-08-18_run3.txt, 3 findings:
+R3-1. Q40 accepted[0] "চন্দ্র" not carrying দ্র (its conjunct is ন্দ্র) — FIXED. "চন্দ্র" 0;
+      accepted[0] is now "দ্র = দ্ + র; নতুন শব্দ — দ্রুত", and my letter-by-letter S12 pass found
+      every sample carrying its named conjunct with no larger cluster hiding a smaller target.
+R3-2. "গুণ-শব্দ" accepted in Q32/Q35 — FIXED. Both accepted lists are now বিশেষণ / বিশেষণ পদ only;
+      the string occurs 0 times.
+R3-3. Q44/Q45 refusing a chapter word that satisfies the printed definition, with the refusal only
+      in marker-facing text — FIXED. Both items accept both pair words; "উদ্দীপকে ছাপা শব্দটি" 0,
+      and the permissive note is uniform across all five S13 items.
+
+RUN 4 — BAN_U19_REVIEW_2026-08-18_run4.txt, 1 finding:
+R4-1. Q44/Q45 stems using the coinages "মা-বাবার নারী-সন্তান" / "মা-বাবার পুরুষ-সন্তান" — FIXED.
+      Both strings occur 0 times; the stems are now "'যে সন্তান বালিকা'" and "'যে সন্তান বালক'",
+      relative-clause house form, with বালক/বালিকা attested in canon/sources/c5/ (6 and 3
+      occurrences). No new wording defect was introduced by this fix.
+
+Thirteen prior findings: eleven FIXED, two half-findings disposed WAS NEVER A DEFECT (R1-3's and
+R2-1's নাম-শব্দ/কাজ-শব্দ halves, on the same evidence), none STILL PRESENT. One fresh defect
+stands, and unlike RUN 2→3→4 it was not introduced by the last fix — it is the ordering left
+standing inside the R1-3/R2-1 rewrite, which no prior run tested in this direction.
+
+VERDICT: 1 DEFECT(S)
+
+---
+NOT COMMITTED (the orchestrator commits). RUN 5 IS THE VERDICT OF RECORD: the bank on disk is the
+bank this report was run against, and NO further fix has been applied.
+
+THE ONE STANDING DEFECT IS NOT FIXED BECAUSE IT IS THE PRINCIPAL'S OWN INSTRUCTION, AND THE WORKER
+MAY NOT OVERRIDE A RULING ON ITS OWN AUTHORITY. The Principal's fix 3 for this bank reads: "Drop
+the false attribution and re-rank `accepted` to put বিশেষ্য/বিশেষণ/ক্রিয়া first." RUN 5's defect 1
+says that on the two NOUN items (Q33, Q36) this elevates the form the C5 textbook never prints over
+the one it does. Both halves were verified independently by this worker:
+  · "বিশেষ্য" occurs ZERO times in canon/marklogic/C5_Bangla_Source_13-23.md and zero times in
+    every canon/sources/c5/bangla/*.md file.
+  · "নাম-শব্দ" is printed by that same source file (including "S10 পদ নির্ণয় (নাম-শব্দ/কাজ-শব্দ)")
+    and by canon/sources/c5/bangla/C5_BAN_Source_07.md and canon/sources/c4/bangla/C4_BAN_Source_04.md.
+  · ALL ELEVEN S10 noun items in the four PUSHED banks order it the other way —
+    U13 Q109/Q117, U14 Q59/Q60, U15 Q67/Q68/Q70/Q71, U16 Q70/Q75 all key
+    ["নাম-শব্দ", "বিশেষ্য", "বিশেষ্য পদ"]. U19 as ruled is the only bank in the family that does not.
+The ruling is correct as written for Q32/Q35 (বিশেষণ) and Q34 (ক্রিয়া), because the section itself
+PRINTS those two terms. It is the two noun items alone that are in tension, and the section prints
+no noun term at all. AWAITING A RULING; no script is misgraded either way, since নাম-শব্দ is
+accepted for full marks in both items.

@@ -1,0 +1,148 @@
+BANK  : workstreams/question-banks/banks/C5_BAN_U19_QuestionBank_v1.json
+SOURCE: canon/marklogic/C5_Bangla_Source_13-23.md (lines 412-443)
+RUN   : 2026-08-18  ·  RUN 1  ·  teacher-lane STEP 5b, tools/bank_factual_review_prompt.md
+        Prompt run FROM THAT PATH, never composed in session (CD-151(a)). Only the facts block
+        was filled. Reviewer: independent read-only agent, no write access.
+
+Step 5a disposition pass is vacuous: there is no prior report for পাঠ ১৯ - this is the first run,
+so there are no prior findings to dispose of. Nothing is carried forward or invented (CD-161(a)).
+
+Structure note: the bank has 46 items, no `rubric` block on any item, so all rubric `criterion` /
+`band_descriptors` sweeps below are vacuous by absence, not by omission.
+
+---
+
+1 . FACTUAL ACCURACY - 4 DEFECTS
+
+1. Key not derivable from the section (gloss supplied by the author, not the source).
+   QP-BAN-C5-U19-Q42 - question_text "'সূর্যের আরেক নাম' - পাঠ ১৯-এর শব্দতালিকার শব্দ দিয়ে এক কথায়
+   প্রকাশ করো।" with answer_key.accepted[0] "অরুণ" and accepted[1] "রবি". The section supplies the
+   pair অরুণ/রবি and nothing else about it; it nowhere states that either word means সূর্য. A
+   student holding only the section knows অরুণ = রবি and has no route to সূর্য. True in the world,
+   unsupported by the section. Claim sweep for "সূর্য" across the whole bank: one occurrence only,
+   Q42 question_text; no sibling in any option, why_wrong, model_note or blanks.accepted. The other
+   four S13 items do not carry this defect - in Q43/Q44/Q45/Q46 the paired word is itself an
+   everyday word whose sense the pairing already discloses.
+
+2. Marker note asserts a source fact the section does not state (antonym pair "printed side by
+   side"). Same claim, two items:
+     - QP-BAN-C5-U19-Q24 . answer_key.model_note - "পাঠ ১৯-এর তালিকাতেই দুটি শব্দ পাশাপাশি ছাপা
+       আছে, তাই উত্তরটি পাঠের ভেতর থেকেই আসে।" (item is দিন -> রাত/রজনী)
+     - QP-BAN-C5-U19-Q26 . answer_key.model_note - identical string (item is ছেলে -> মেয়ে)
+   The section prints দিবস/দিন and রজনী/রাত as two separate synonym rows, and মেয়ে/কন্যা and
+   ছেলে/পুত্র as two separate rows. It never prints দিন beside রাত, never prints ছেলে beside মেয়ে,
+   and never states an antonym relation anywhere. Sweep for "পাশাপাশি": exactly these two
+   occurrences, both model_note, same claim. The bank contradicts itself on the same item class -
+   Q23/Q25/Q27 (model_note) correctly say "পাঠ ১৯ এর উত্তর ছাপে না", i.e. teacher-supplied.
+
+3. Marker note attributes terminology to the textbook that the section does not print. Same claim,
+   five items, all in answer_key.model_note: QP-BAN-C5-U19-Q32, Q33, Q34, Q35, Q36 - "বইয়ের নিজের
+   নামই প্রথম গৃহীত উত্তর - নাম-শব্দ / গুণ-শব্দ / কাজ-শব্দ". The section prints বিশেষণ (exercise ২:
+   "গুণ ও বৈশিষ্ট্য বসানো (বিশেষণ)") and ক্রিয়া (exercise ১: "ক্রিয়ার কাল"). It prints নাম-শব্দ /
+   গুণ-শব্দ / কাজ-শব্দ nowhere. The same note also orders "গৃহীত তালিকার বাইরে কিছু নেওয়া যাবে না",
+   so the unsupported attribution is load-bearing on marking. The terms additionally sit as
+   accepted[0] - the first-ranked answer - in: Q32 accepted[0] "গুণ-শব্দ", Q33 accepted[0]
+   "নাম-শব্দ", Q34 accepted[0] "কাজ-শব্দ", Q35 accepted[0] "গুণ-শব্দ", Q36 accepted[0] "নাম-শব্দ".
+   (See also check 6 . S10.)
+
+4. Key gives a word that is not an অন্ত্যমিল of the stimulus. QP-BAN-C5-U19-Q15 - stem asks for a
+   word rhyming with 'ঘর'. answer_key.accepted[0] = "ঝড় থেমে গেলে আকাশ পরিষ্কার হলো।" and
+   answer_key.model_note = "'ঘর'-এর সঙ্গে অন্ত্যমিল আছে এমন শব্দ - ঝড় . চর . ডর . বর।" ঘর ends in
+   র, ঝড় ends in ড় - distinct sounds, not an অন্ত্যমিল; চর . বর are correct, ডর is correct but
+   colloquial register for this class. The defective word is the one the model answer itself is
+   built on. Sweep for "ঝড়": two occurrences, both in Q15 (accepted[0], model_note), same claim;
+   no other item.
+
+2 . THE CHAPTER'S CONTENT BARS - PASS
+
+All sixteen exact strings searched individually across question_text, every option text, every
+why_wrong, every answer_key.accepted, every answer_key.model_note, every blanks.accepted (rubric
+fields absent):
+Bar 1 - "আমরা সবাই মিলে মেলায় যাচ্ছি" 0 . "মেলায় যাচ্ছি" 0 . "মেলায়" 0 . "মেলার" 0 . "মেলা " 0 .
+"মেলা।" 0 . "উৎসব" 0 . "উৎসবে" 0 . "উৎসবের" 0 . "পার্বণ" 0.
+Bar 2 - "রাজা-তরমুজ" 0 . "রাজা" 0 . "রাজার" 0 . "তরমুজ" 0 . "তরমুজের" 0 . "ধারাবাহিক গল্প" 0.
+Exercise ১০ is not referenced anywhere, not even by name.
+Declared-permitted strings, reported for the record and not as bars: "অরুণ" - Q42 accepted[0];
+"রবি" - Q42 accepted[1]; "রজনী" - Q01 question_text, Q17 question_text, Q24 accepted[1], Q29
+accepted[0]. All permitted by the section's own WARNING line.
+
+3 . STANDING CURATION BARS - PASS
+
+C-03: no song, singing, dance, instrument or percussion word anywhere (swept গান/গায়/নাচ/ঢোল/
+বাদ্য/বাঁশি/সুর - 0). C-05: no item requests or describes a picture of a living being; the only
+"ছবি" token in the bank is QP-BAN-C5-U19-Q21 option ঘ "ছবি দেখে নাম লিখতে", a distractor whose
+why_wrong states no such task exists in the lesson - a denial, not a request, and not an
+occurrence. C-18: no flag, monument, wreath, flower-laying, ritual silence, শহিদ, স্মৃতিসৌধ, জাতীয়
+or nation-over-ummah framing (all 0).
+
+4 . INVENTED NAMES - 1 DEFECT
+
+5. QP-BAN-C5-U19-Q40 . answer_key.accepted[1] - "দ্র - দ্ + র; রুদ্র". রুদ্র is offered as a sample
+   word for the দ্র conjunct, but in Bengali it reads as a personal name and as a Hindu deity's
+   name. It is not a figure the chapter records (the section names no person at all) and it is not
+   in canon/names/REF-20_Approved_Names_Pool.md (searched: absent). Also C-01-adjacent under
+   canon/islamic-curation/REF-01_Curation_Policy_v1_3.md section 4.1. Sweep for "রুদ্র": this one
+   occurrence only. No other personal name appears anywhere in the bank; the remaining sample words
+   (চন্দ্র, প্রদীপ, প্রজাপতি, ছাত্র, পত্র, হস্ত, বস্তু, ক্ষমা, পক্ষ) are ordinary common nouns.
+
+5 . NUMERALS - PASS
+
+No ASCII digit occurs in any student-facing string. The only [0-9] matches in the whole bank are
+the string "(CD-136(b))" inside answer_key.model_note of Q23, Q25, Q27, Q32, Q33, Q34, Q35, Q36,
+Q37, Q38, Q39, Q40, Q41 - teacher-facing, exempt by this check's own carve-out. Q18
+blanks[1].accepted uses "১২" (Bengali), correct.
+
+6 . SLOT-SPECIFIC CORRECTNESS - 1 DEFECT
+
+- S12 (Q37-Q41) - clean. প্র = প্ + র . স্ত = স্ + ত . ক্ষ = ক্ + ষ . দ্র = দ্ + র . ত্র = ত্ + র
+  are all orthographically right, and every new word contains its conjunct (প্রদীপ/প্রজাপতি .
+  বস্তু/হস্ত . ক্ষমা/পক্ষ . চন্দ্র/রুদ্র . ছাত্র/পত্র). One stimulus carries two conjuncts -
+  Q39's 'ক্ষুদ্র' (ক্ষ and দ্র) - but the stem names 'ক্ষ' explicitly, so the ambiguity trigger does
+  not fire. প্রভাত, পুস্তক, সমুদ্র, পত্রিকা each carry exactly one. (রুদ্র reported at check 4.)
+- S10 (Q32-Q36) - the পদ is right for every target word as used in its sentence (ক্ষুদ্র/নোনতা =
+  বিশেষণ, জননী/সাগর = বিশেষ্য, পড়ে = সমাপিকা ক্রিয়া); none is a super-class. But নাম-শব্দ /
+  গুণ-শব্দ / কাজ-শব্দ are not standard Bengali grammatical terms, and each sits as accepted[0] in
+  Q32-Q36 on an attribution the section does not support - counted once at check 1 defect 3, not
+  double-counted here.
+- S13 (Q42-Q46) - defect 6 below; Q42 also counted at check 1 defect 1.
+
+6. Marker note licenses an answer the key does not list. answer_key.model_note "গৃহীত উত্তরগুলো পাঠ
+   ১৯-এর নিজের তালিকার শব্দ; জোড়ার যেকোনো একটি শব্দই পূর্ণ নম্বর পাবে।" appears in five items -
+   Q42, Q43, Q44, Q45, Q46. It is consistent with the key in QP-BAN-C5-U19-Q42 (accepted অরুণ +
+   রবি), Q43 (জননী + মাতা) and Q46 (সাগর + সমুদ্র). It is defective in two:
+     - QP-BAN-C5-U19-Q44 - accepted = ["কন্যা"] only, while the note tells the marker to give full
+       marks for either word of the pair মেয়ে/কন্যা; and the stem itself is "'যে সন্তান মেয়ে'", so
+       the note licenses a circular non-answer the key excludes.
+     - QP-BAN-C5-U19-Q45 - accepted = ["পুত্র"] only, same note, pair ছেলে/পুত্র, stem
+       "'ছেলে-সন্তান'" - same circularity.
+   Two markers applying the note and the key will mark the same script differently. No definition
+   in this set is satisfied by an unaccepted chapter word other than through this note.
+- S06 (Q23-Q27) - PASS. ক্ষুদ্র -> বৃহৎ/বিশাল/বড়ো, মাতা -> পিতা, দিন -> রাত/রজনী, ছেলে -> মেয়ে,
+  উপর -> নিচ/নিচে. উপর is a bare list entry in exercise ৩ (spatial/relational use), so নিচ holds;
+  no stimulus is used adverbially or idiomatically in a sense that would void its antonym. (The
+  Q24/Q26 source-attribution problem is a check-1 matter, defect 2.)
+- S11 - not admitted for this chapter; check skipped.
+
+7 . LANGUAGE - 1 DEFECT
+
+7. QP-BAN-C5-U19-Q12 . answer_key.accepted[0] - "সাগর অনেক বড়ো এবং সাগরের জল নোনতা।" The model
+   answer for a joining task repeats the full subject noun instead of pronominalising ("...এবং এর
+   জল নোনতা।"), which is the very pattern the exercise trains out. The bank's own sibling item Q11
+   models the correct behaviour ("পুস্তকটি ছোটো কিন্তু খুব দরকারি।"), so the weak model is isolated
+   to Q12. Sweep of the other joining/splitting keys (Q11, Q13, Q14) finds no repeat.
+
+Noted, not counted: the internal code "CD-136(b)" sits in the marker-facing answer_key.model_note
+of Q23, Q25, Q27, Q32, Q33, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q41 (13 items). Check 5 of this
+prompt expressly declares internal codes inside a teacher-facing model_note not to be defects, and
+that specific carve-out governs over check 7's general leak rule; recorded here so the occurrence
+is on the record. Also uncounted: the same 13 notes write "পাঠ ১৯ এর" without the hyphen ("পাঠ
+১৯-এর" elsewhere in the bank) - typographic, teacher-facing. Stems, options and keys are otherwise
+natural, grammatical and at class level.
+
+VERDICT: 7 DEFECT(S)
+
+---
+NOT COMMITTED. CD-157(d) makes the commit of this report OWED - a 5b run without a committed
+report is not a run - and the commit is HELD by the Principal's stop for this session, which ends
+at step 5's issue table. NO FIX HAS BEEN APPLIED: this is RUN 1 and the bank on disk is the bank
+this report was run against.
