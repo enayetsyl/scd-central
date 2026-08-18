@@ -45,7 +45,7 @@ THE GATES — 21, and where each comes from
 | REF19-SLUG          | §6 row 4 |
 | TOPIC-NUMBER        | **both** — QB_POLICY §5 **promoted from QB-CR-008** · §6 row 5 |
 | KEY-RUBRIC          | §6 row 6 |
-| BLOOM-BAND          | §6 row 7 — CD-121 for the axis (REF-06 §3.6 only; UD-23), **CD-135 for the floor** (pool = lower bounds only; the band is a paper rule) |
+| BLOOM-BAND          | §6 row 7 — CD-121 for the axis (REF-06 §3.6 only; UD-23), **CD-171 for the verdict: REPORT ONLY at pool level**. The `bloom_level` TAG is required and an unknown level FAILs; no distribution does. Both bounds are a PAPER rule (CD-135 superseded) |
 | DIFFICULTY          | §6 row 8, as ruled by CD-122 (easy floor only) |
 | REPETITION          | §6 row 9 |
 | COVERAGE            | §6 row 10 — reads the SLOT REGISTER (CD-138); the header fallback of CD-122(b) is spent |
@@ -1240,7 +1240,31 @@ def g_key_rubric(bank, ctx):
     return errs, rep
 
 def g_bloom_band(bank, ctx):
-    """§6 row 7 — Bloom at POOL level: REF-06 §3.6's LOWER BOUNDS ONLY, read at CHAPTER scope.
+    """§6 row 7 — Bloom at POOL level is REPORT ONLY (CD-171(d), superseding CD-135).
+
+    WHAT STILL FAILS: an item whose `bloom_level` is missing or is not one of the six LOCKED
+    levels. **The tag is required; the distribution is not.** CD-171(b): Bloom levels are
+    RECORDED, NOT RATIONED.
+
+    WHAT NO LONGER FAILS: every per-level count against REF-06 §3.6. **Neither bound binds a
+    pool.** The counts are still printed on every run, for the reason CD-135(f) gave and CD-171
+    does not disturb — a report that always prints is what makes the gate's shape visible rather
+    than something a reader has to infer from the code.
+
+    ⚠ DO NOT RESTORE EITHER BOUND. The ceiling went at CD-135 and the floor at CD-171, and the
+    two seeded negatives below are kept and inverted so neither can creep back unnoticed: a pool
+    ABOVE an upper bound must stay quiet, and a pool BELOW a floor must ALSO stay quiet.
+
+    WHY THE FLOOR WENT, in one line, because the docstring below is now history and reads as
+    live rule: a floor exists so a compliant PAPER stays constructible, and **a paper composes
+    across chapters while a pool is one chapter.** Charging every chapter with the whole paper's
+    distribution made a thin chapter fail for being thin — `PENDING-P-036`'s finding, closed
+    moot by CD-171(f).
+
+    ── HISTORY BELOW THIS LINE (CD-121, CD-135). Kept unedited so a reader arriving by an old
+    ── citation sees what changed and in what order. It is not the live rule.
+
+    §6 row 7 — Bloom at POOL level: REF-06 §3.6's LOWER BOUNDS ONLY, read at CHAPTER scope.
 
     RULED (CD-121, closing Q-1). §6's row said "the wider of REF-06 §3.6 / MarkLogic §৩ at each
     level" and **the §6 text was wrong** — corrected in the same CD row that mints this reading.
@@ -1292,18 +1316,18 @@ def g_bloom_band(bank, ctx):
             errs.append(f"{q.get('qid')}: bloom_level '{bl}' is not one of the six LOCKED levels")
             continue
         counts[bl] += 1
-    for lvl, (lo, hi) in REF06_C3_5.items():
-        share = pct(counts[lvl], total)
-        if share < lo:
-            need = -(-lo * total // 100)          # items required to clear the floor
-            errs.append(f"chapter pool: {lvl} is {counts[lvl]} of {total} items = {share:.1f}%, "
-                        f"below REF-06 §3.6's C3–5 FLOOR of {lo}% — needs {int(need)} "
-                        f"({int(need) - counts[lvl]} more)")
-        # NO upper-bound branch. CD-135: a pool cannot fail a ceiling. See the docstring's ⚠.
-    rep.append("POOL check is FLOORS ONLY (CD-135; CD-121/UD-23 for the axis — MarkLogic §৩ is "
-               "the PAPER's axis and is not read here). Upper bounds are a PAPER rule and are "
-               "not applied to a pool: an author declines the surplus, so absence is the only "
-               "thing a pool can be guilty of.")
+    # NO FLOOR BRANCH AND NO CEILING BRANCH. CD-171(d): a pool is not banded, floored or capped.
+    # The counts below are computed only so they can be PRINTED. See the docstring's ⚠.
+    under = [f"{lvl} {counts[lvl]}/{total}={pct(counts[lvl], total):.1f}% vs {lo}%"
+             for lvl, (lo, _hi) in REF06_C3_5.items() if pct(counts[lvl], total) < lo]
+    rep.append("POOL check is REPORT ONLY (CD-171(d), superseding CD-135; CD-121/UD-23 for the "
+               "axis, unamended — MarkLogic §৩ is the PAPER's axis and is not read here). "
+               "NEITHER bound binds a pool. Both bind the PAPER, which composes across chapters, "
+               "and no single chapter owes a paper's distribution. The `bloom_level` TAG is still "
+               "required on every item and an unknown level still FAILs — recorded, not rationed.")
+    if under:
+        rep.append("levels below REF-06 §3.6's C3–5 indicative lower bound — PRINTED, NOT "
+                   "FAILED, and §3.6 calls its own ranges *only indicative*: " + " · ".join(under))
     rep.append("per-level counts against REF-06 §3.6 C3–5 floors (printed every run, pass or "
                "fail): " + " · ".join(
                    f"{l} {counts[l]}/{total}={pct(counts[l], total):.1f}% vs floor {lo}%"
@@ -1648,23 +1672,25 @@ def g_coverage(bank, ctx):
                               "something the class was never taught, however sound the item is "
                               "otherwise")
 
-    # --- FLOOR over the declared set only (CD-138(g)) -------------------------------------
-    short = []
-    for s in sorted(admissible):
-        row = slots_for_class.get(s)
-        if row is None:
-            continue
-        owed, have = row["items_per_paper"], supply.get(s, 0)
-        if have < owed:
-            short.append(f"{s} {have}/{owed}")
+    # --- NO FLOOR. CD-171(a) retires both counts this block used to enforce. ---------------
+    # (i) CD-138(g)'s per-slot demand is retired AT POOL LEVEL ONLY: `items_per_paper` is what a
+    #     PAPER owes, and no single chapter owes a paper's worth of any slot. The rest of
+    #     CD-138(g) is intact — demand is still undivided and there is still no divisor.
+    # (ii) REF-09 §4.3's 20-item pool minimum is retired as a bank gate. REF-09 §4.3 and
+    #     REF-08 §4.1 are NOT edited and are not wrong: §4.1's 20 sizes a HOMEWORK draw across a
+    #     year so routine rotation and top-ups do not run it dry. The READING as a conformance
+    #     count is what left, not the number.
+    # Both are REPORTED below so the numbers stay visible and their absence is legible as a
+    # ruling rather than as an oversight.
+    short = [f"{s} {supply.get(s, 0)}/{slots_for_class[s]['items_per_paper']}"
+             for s in sorted(admissible) if s in slots_for_class
+             and supply.get(s, 0) < slots_for_class[s]["items_per_paper"]]
+    rep.append(f"pool holds {len(bank['questions'])} item(s) — NO MINIMUM AND NO CEILING "
+               f"(CD-171(a)). The bound is the chapter's content under §4's near-duplicate ban")
     if short:
-        errs.append("admissible slot(s) under the paper's own per-slot demand — an admissible "
-                    "chapter owes the FULL demand, there is no divisor (CD-138(d), CD-138(g)): "
-                    + " · ".join(short))
-
-    if len(bank["questions"]) < 20:
-        errs.append(f"pool holds {len(bank['questions'])} items — REF-09 §4.3's floor is 20 per "
-                    f"chapter (cite §4.3, not REF-08 §4.1, for the chapter reading)")
+        rep.append("slot(s) supplying under the PAPER's per-slot demand — PRINTED, NOT FAILED "
+                   "(CD-171(a)(iv)): the demand is the paper's and the paper composes across "
+                   "chapters. " + " · ".join(short))
 
     # CD-147 — the two counts are reported SEPARATELY because they are different kinds of thing:
     # a content exclusion is the chapter's own declaration and revisable on evidence; a paper-level
@@ -1677,9 +1703,9 @@ def g_coverage(bank, ctx):
                f"C{cls}, {len(admissible)} declared admissible, {n_content_excl} excluded with a "
                f"content reason (CD-138(e)), {n_paper_level} paper-level and outside the "
                f"declaration entirely (CD-147)")
-    rep.append("per-slot demand is PAPER-LEVEL and undivided (CD-138(d)); P-036's `min()` has no "
-               "second term at slot granularity — its other half is a Bloom-axis quantity, and no "
-               "ruling maps slots to Bloom (QB-CR-011 forbids the inference). Reported, not applied")
+    rep.append("per-slot demand is PAPER-LEVEL and undivided (CD-138(d)) and is asked of the "
+               "PAPER, never of a chapter (CD-171(a)(iv)). `PENDING-P-036` is CLOSED-MOOT with "
+               "CD-171: there is no pool floor left for its `min()` to take a minimum of")
     return errs, rep
 
 
@@ -1872,55 +1898,36 @@ def g_envelope_sync(bank, ctx):
 
 
 
-PLAN_MARGIN = 2
-
-# PER-CHAPTER MARGIN EXCEPTIONS — a CLOSED LITERAL, keyed (subject, class, chapter, level).
-#
-# CD-158: পাঠ ১৩ runs at `Understand` +1 because the chapter's Understand surface is EXHAUSTED,
-# measured and not asserted — two authoring attempts each drew a defect, and wave 3's own header had
-# already named S03/S11/S12 as the content limit. The margin could have been held at +2 by keeping
-# Q122 or Q123, and both were independently defective: keeping either would be keeping a known-bad
-# item so a number looks right.
-#
-# WHY A LITERAL AND NOT A BANK FIELD, for the third time in this repo and the same reason each time
-# (CD-155(a), HALF_MARK_ADMITTED, CD-137): a bank that could declare its own exception would carry
-# the PERMISSION beside the SHORTFALL, and the rule would be unfalsifiable by construction. The bank
-# whose margin is short is the last artifact entitled to say the shortfall is fine.
-#
-# RULED PER CHAPTER, BY THE PRINCIPAL, NEVER SELF-SELECTED BY AN AGENT. An agent that finds a floor
-# short REPORTS it; it does not add a key here. Widening this dict is a CD row.
-# The key is exact: one subject, one class, one chapter, one level, one value. A chapter holding an
-# exception at one level still FAILs a shortfall at any other.
-PLAN_MARGIN_EXCEPTIONS = {
-    ("BAN", 5, 13, "Understand"): 1,   # CD-158
-}
-
-
-def _chapter_number(bank):
-    """The chapter number a bank belongs to, from its own `bank_id` — e.g. QB-BAN-C5-U13 -> 13.
-
-    Read from `bank_id` rather than the `chapter` title, because the title is Bengali prose that a
-    later session may reword and the id is the thing the export and the Hub key on.
-    """
-    m = re.search(r"-U(\d+)\b", str(bank.get("bank_id") or ""))
-    return int(m.group(1)) if m else None
-
-
-def plan_margin_for(bank, subject, cls, level):
-    """→ (required margin, the exception's key or None). PLAN_MARGIN unless CD-158-class row says."""
-    key = (subject, cls, _chapter_number(bank), level)
-    if key in PLAN_MARGIN_EXCEPTIONS:
-        return PLAN_MARGIN_EXCEPTIONS[key], key
-    return PLAN_MARGIN, None
+# NEAR-DUPLICATE THRESHOLDS — MEASURED, NOT GUESSED, and UNTOUCHED by CD-171. Jaccard over
+# normalised stem tokens, within a slot. On the live 110-item পাঠ ১৩: zero exact duplicates and a
+# maximum of 0.905, from S12's যুক্তবর্ণ frame where only the word changes and that IS the task. So
+# FAIL sits at 0.95 with real headroom above the legitimate maximum, and 0.85–0.95 REPORTS for the
+# Hub's expert eyes. These are the LAST numbers PLAN reads, and they are not counts of a pool —
+# they are a similarity between two stems, which is a fact about two items and not about a size.
 PLAN_DUP_FAIL = 0.95
 PLAN_DUP_REPORT = 0.85
 
-# The floors are REF06_C3_5's LOWER bounds — the same table BLOOM-BAND reads, not a second copy of
-# it. CD-011: a registry is written from the artifact, never from a derived copy, and two gates
-# disagreeing about the floors because one of them holds a stale transcription is the failure this
-# avoids. The two gates disagree about the MARGIN, deliberately; they must never disagree about the
-# NUMBER.
-BLOOM_FLOORS = {lvl: lo for lvl, (lo, _hi) in REF06_C3_5.items()}
+
+# ── THE MARGIN APPARATUS IS GONE (CD-171(d)) ──────────────────────────────────────────────
+#
+# DELETED IN THIS COMMIT: `PLAN_MARGIN = 2` · `PLAN_MARGIN_EXCEPTIONS` · `plan_margin_for()` ·
+# `_chapter_number()` · `BLOOM_FLOORS`. Every one of them existed to serve a count against a POOL,
+# and CD-171 moves counts to the paper. **PLAN computes no counts**, so there is no margin to
+# require, no exception to grant and no floor table to read.
+#
+# WHAT GOES INERT WITH THEM, named so a later reader is not left hunting: **CD-158**'s পাঠ ১৩
+# `Understand` exception and **CD-162**'s ruling to KEEP that key inert. CD-162(d) kept the key
+# deliberately, as the only live data proving an honoured-but-unexercised exception is REPORTED
+# rather than silent. **That property has no subject once the rule it modified is retired** — an
+# exception to a rule that does not exist is not inert, it is unreadable. Neither row's text is
+# edited and neither is called wrong; both are superseded by CD-171(d) at the mechanism they share.
+# `cd158_selftest` is deleted with them: a seed whose target is gone is TOOLS-CR-007's vacuous
+# shape, and keeping it would prove nothing while looking like proof.
+#
+# ⚠ RE-MINTING ANY OF THESE TAKES A CD ROW. A later session that notices a thin pool and reaches
+# for a floor is reaching for the thing CD-171 removed on measured evidence (PENDING-P-036's two
+# findings: an Analyze floor forbade 28 of 32 chapter-sourced items, and margin cost about two
+# items of authoring per item of margin because the floor rises with the total).
 
 
 def _stem_sim(a, b):
@@ -1938,19 +1945,29 @@ def g_plan(bank, ctx):
     and why the ONE thing it never checked, whether the content is any good, stays with a human
     (CD-136(g), and §6's relocation to Hub subject experts).
 
-    THE MARGIN RULE IS STRICTER THAN BLOOM-BAND'S, DELIBERATELY, AND THE TWO GATES DISAGREE ON
-    PURPOSE. `BLOOM-BAND` implements CD-135: a POOL may sit exactly on a floor, because an author
-    declines the surplus and a compliant paper stays constructible. `PLAN` implements the
-    Principal's standing rule for a bank offered as FINISHED: *a plan landing exactly on a floor is
-    a defect, not a pass*, because one Subject Lead re-tag then reddens it. Same numbers, different
-    question — is this pool legal, versus is this plan safe to sign. Both are seeded and neither
-    may be relaxed into the other.
+    PLAN COMPUTES NO COUNTS (CD-171(d)). What it checks is conformance and nothing arithmetical:
+    the chapter has DECLARED its admissible slots at all (CD-138(e)); no paper-level slot is
+    admitted, refused in PLAN's own voice rather than by leaning on COVERAGE (CD-147, CD-150);
+    every item's `task_index` is complete, admitted, `selected`-honouring and composite-complete
+    (CD-138(b)); P-037's type rule, which is about a TYPE and not a count; and the within-slot
+    near-duplicate stem scan.
 
-    AND THE MARGIN RULE HAS AN ARITHMETIC CONSEQUENCE WORTH STATING ONCE. Requiring margin >= 2 on
-    every positive REF-06 §3.6 floor (20 · 25 · 25 · 10) needs 0.80n + 8 <= n, i.e. **n >= 40. A
-    bank of fewer than 40 items cannot satisfy this rule no matter how it is tagged** — not a bug
-    in the gate, a fact about the floors. It is reported as such rather than as four separate
-    margin failures a reader would try to fix one at a time.
+    WHAT LEFT, named because a reader who knows this gate will look for it. The Bloom margin rule
+    (*every positive REF-06 §3.6 floor clears by >= 2; landing exactly on a floor is a DEFECT*)
+    and CD-138(g)'s full per-slot demand check are RETIRED. Both counted a POOL. CD-171 moves
+    counts to the PAPER, which is the artifact a distribution was ever about — a paper composes
+    across chapters and no single chapter owes a paper's worth of anything.
+
+    THE STATED CONSEQUENCE GOES WITH THE PREMISE, and this is the half most likely to be
+    half-remembered: the `0.80n + 8 <= n` derivation and its `n >= 40` minimum were CD-141(g)'s
+    STATED CONSEQUENCE of the margin rule, not an independent policy. **A consequence outlives
+    its premise only if somebody re-rules it, and nobody has.** There is no minimum pool size.
+
+    PLAN AND BLOOM-BAND NO LONGER DISAGREE, because neither counts. The old comment here recorded
+    their deliberate disagreement (pool-legal versus plan-signable) and it is gone with the
+    numbers it was about.
+
+    ⚠ A BANK CANNOT STOP AT PLAN ON COUNT GROUNDS. That is the ruling, not a side effect of it.
 
     NEAR-DUPLICATE THRESHOLDS ARE MEASURED, NOT GUESSED. Jaccard over normalised stem tokens,
     within a slot. On the live 110-item পাঠ ১৩: zero exact duplicates and a maximum of **0.905**,
@@ -1981,50 +1998,12 @@ def g_plan(bank, ctx):
     rows = {s: r for (sub, c, s), r in (register or {}).items()
             if sub == subject and c == cls and r.get("d_code") not in ("D5", "D6")}
 
-    # --- 1. Bloom floors, margin >= 2 ------------------------------------------------------
-    counts = {lvl: sum(1 for q in items if q.get("bloom_level") == lvl) for lvl in BLOOM_FLOORS}
-    positive = {k: v for k, v in BLOOM_FLOORS.items() if v > 0}
-    required = sum(-(-p * n // 100) + plan_margin_for(bank, subject, cls, k)[0]
-                   for k, p in positive.items())
-    if required > n:
-        errs.append(f"POOL TOO SMALL TO BE SIGNABLE: {n} items cannot clear every positive floor "
-                    f"with margin {PLAN_MARGIN} — the four floors "
-                    f"({' · '.join(f'{k} {v}%' for k, v in positive.items())}) demand "
-                    f"{required} items at this size. The minimum is 40; this is arithmetic, not "
-                    f"tagging, and no re-tag fixes it")
-    else:
-        for lvl, floor_pct in positive.items():
-            need = -(-floor_pct * n // 100)
-            margin = counts[lvl] - need
-            want, exc = plan_margin_for(bank, subject, cls, lvl)
-            if margin < want:
-                errs.append(f"{lvl} {counts[lvl]}/{n} = {100*counts[lvl]/n:.1f}% against a "
-                            f"{floor_pct}% floor ({need} items) — margin +{margin}, and the plan "
-                            f"rule is +{want}"
-                            + (f" (CD-158 exception for this chapter and level)" if exc else "")
-                            + ". "
-                            + ("LANDING EXACTLY ON A FLOOR IS A DEFECT, NOT A PASS: one re-tag "
-                               "reddens the bank" if margin == 0 else
-                               "one re-tag from red is not margin"))
-            elif exc:
-                # A honoured exception is REPORTED every run, pass or fail. An exception that goes
-                # unmentioned is an exception nobody re-examines, and the reduced margin would look
-                # like the ordinary rule to anyone reading a clean verdict.
-                rep.append(f"{lvl} margin +{margin} against a REDUCED requirement of +{want} — "
-                           f"per-chapter exception {exc} (CD-158), ruled by the Principal on "
-                           f"measured evidence and never self-selected. PLAN_MARGIN is "
-                           f"+{PLAN_MARGIN} for every level and chapter this key does not name")
-    rep.append("Bloom margins: " + " · ".join(
-        f"{k} +{counts[k] - -(-v * n // 100)}" for k, v in positive.items())
-        + f"  (rule: every positive floor clears by >= {PLAN_MARGIN}"
-        + (f", except where PLAN_MARGIN_EXCEPTIONS names this chapter and level)"
-           if any(plan_margin_for(bank, subject, cls, k)[1] for k in positive) else ")"))
-    for lvl, floor_pct in BLOOM_FLOORS.items():
-        if floor_pct == 0 and counts[lvl] == 0:
-            rep.append(f"{lvl} is 0 against a 0% floor — nothing owed, and §4 requires the header "
-                       f"to state it as a CONTENT fact (CD-135(d)), which PLAN does not judge")
+    # --- 1. Bloom: NOTHING. (CD-171(d)) ----------------------------------------------------
+    # This block computed per-level counts, a required-items sum, a POOL-TOO-SMALL verdict and a
+    # per-level margin test against PLAN_MARGIN. All of it counted a pool. BLOOM-BAND still PRINTS
+    # the per-level counts every run; PLAN does not read them and does not duplicate the report.
 
-    # --- 2. per-slot demand over the declared-admissible set (CD-138(g)) --------------------
+    # --- 2. the declaration itself, and the paper-level bar (no counts) --------------------
     admissible = set(header.get("admissible_slots") or [])
     if not admissible:
         errs.append("no `admissible_slots` declared — a plan cannot be signed against a chapter "
@@ -2037,17 +2016,9 @@ def g_plan(bank, ctx):
         errs.append("the plan admits paper-level slot(s) " + ", ".join(plan_paper_level)
                     + f" — paper-level for {subject} C{cls} (CD-147 · CD-150): they belong to the "
                       f"paper/exam pipeline for EVERY chapter and no chapter plan may claim them")
-    supply = {}
-    for q in items:
-        s = slot_index.get(q.get("qid"))
-        if s:
-            supply[s] = supply.get(s, 0) + 1
-    short = [f"{s} {supply.get(s, 0)}/{rows[s]['items_per_paper']}"
-             for s in sorted(admissible) if s in rows
-             and supply.get(s, 0) < rows[s]["items_per_paper"]]
-    if short:
-        errs.append("admissible slot(s) under the paper's full demand — demand is paper-level and "
-                    "undivided (CD-138(d), CD-138(g)): " + " · ".join(short))
+    # NO DEMAND TEST. CD-171(a)(iv) retires CD-138(g) at pool level: `items_per_paper` is what a
+    # PAPER owes. A bank supplying one item at a slot the paper wants six of is CONFORMANT — the
+    # paper draws the other five from the chapters that have them. COVERAGE prints the shortfall.
 
     # --- 3. task_index: complete, admitted, selected honoured, every composite part ---------
     for q in items:
@@ -2222,7 +2193,7 @@ GATES = [
     ("REF19-SLUG",         {"qp6": g_ref19_slug},                        "§6.4"),
     ("TOPIC-NUMBER",       {"qb": g_qb_topic_number, "qp6": g_topic_number}, "§5 · QB-CR-008 + §6.5"),
     ("KEY-RUBRIC",         {"qp6": g_key_rubric},                        "§6.6"),
-    ("BLOOM-BAND",         {"qp6": g_bloom_band},                        "§6.7 · CD-121 · CD-135"),
+    ("BLOOM-BAND",         {"qp6": g_bloom_band},             "§6.7 · CD-121 · CD-171 (report)"),
     ("DIFFICULTY",         {"qp6": g_difficulty},                        "§6.8 · CD-122"),
     ("REPETITION",         {"qp6": g_repetition},                        "§6.9"),
     ("COVERAGE",           {"qp6": g_coverage},                          "§6.10 · CD-138"),
@@ -2243,7 +2214,7 @@ GATES = [
     # The 23rd. Like SOURCE-EXCLUSION it carries no § row of its own — it executes a Principal
     # ruling (2026-08-15) taken on a defect nothing in this suite could see, because every other
     # gate reads the bank and §11 imports the envelopes.
-    ("PLAN",               {"qp6": g_plan},          "AGENTS §6 · Principal 2026-08-15"),
+    ("PLAN",               {"qp6": g_plan},   "AGENTS §6 · Principal 2026-08-15 · CD-171(d)"),
     ("ENVELOPE-SYNC",      {"qp6": g_envelope_sync},          "AGENTS §11 · Principal 2026-08-15"),
 ]
 # CD-123's invariant is preserved by counting what CD-123 was counting — the gates that carry a
@@ -2807,7 +2778,11 @@ def _qp_rubric():
             ]}
 
 def _qp_good_bank():
-    """A synthetic chapter bank that passes all eleven. 24 items — above REF-09 §4.3's floor of 20.
+    """A synthetic chapter bank that passes all eleven. 24 items.
+
+    (The size was chosen when REF-09 §4.3's 20-item floor was a gate. CD-171(a)(iii) retires that
+    floor and the fixture is UNCHANGED anyway — a fixture rebuilt to suit a ruling proves the
+    ruling rather than the gate. The 12-item NEGATIVE below is what exercises the new verdict.)
 
     Composition sits inside REF-06 §3.6's SIX bands (CD-121/Q-1) and supplies the easy floor:
     6 Remember (25.0%), 8 Understand (33.3%), 6 Apply (25.0%), 3 Analyze (12.5%), 1 Evaluate
@@ -3004,28 +2979,15 @@ def plan_selftest(ctx):
                 done += 1
 
     cases = [
-        ("EXACTLY-ON-FLOOR", "two Understand re-tagged away — the level lands EXACTLY on its "
-                             "floor, which BLOOM-BAND permits for a pool and the plan rule "
-                             "forbids for a signature",
-         lambda b: retag(b, "Understand", "Remember", 2)),
-        ("MARGIN", "ONE item short of the rule — margin +1 is still one re-tag from red",
-         lambda b: retag(b, "Apply", "Remember", 1)),
+        # EXACTLY-ON-FLOOR · MARGIN · POOL-TOO-SMALL · DEMAND — DELETED (CD-171(d)). All four
+        # seeded a count against a POOL, and PLAN computes no counts. Their inverses are now
+        # NEGATIVES below: each of the four states must make PLAN stay QUIET, which is the only
+        # form of proof that survives a rule's retirement. `retag()` is kept for them.
         ("PAPER-LEVEL", "a plan ADMITTING S15 — CD-147 puts S14/S15 in the paper/exam pipeline for "
                         "EVERY chapter, and PLAN refuses it in its own voice rather than leaning "
                         "on COVERAGE: the two gates ask different questions and a bank is offered "
                         "as FINISHED on this one's verdict",
          lambda b: b["header"]["admissible_slots"].append("S15")),
-        ("POOL-TOO-SMALL", "a 24-item pool — no tagging can satisfy the margin rule below 40 "
-                           "items, and the gate must say THAT rather than emit four margin "
-                           "failures a reader would try to fix one at a time",
-         lambda b: b.update({"questions": b["questions"][:24],
-                             "slot_index": {q["qid"]: b["slot_index"][q["qid"]]
-                                            for q in b["questions"][:24]},
-                             "task_index": {q["qid"]: b["task_index"][q["qid"]]
-                                            for q in b["questions"][:24]}})),
-        ("DEMAND", "an admissible slot under the paper's full per-slot demand (CD-138(g))",
-         lambda b: [b["questions"].remove(q) for q in
-                    [x for x in b["questions"] if b["slot_index"][x["qid"]] == "S07"][:6]]),
         ("TASK-MISSING", "an item that declares no task at all",
          lambda b: b["task_index"].pop(b["questions"][0]["qid"])),
         ("OFF-CHOICE", "an S10 item doing ক্রিয়ার কাল — admitted at the slot, NOT selected at C5",
@@ -3056,7 +3018,42 @@ def plan_selftest(ctx):
             print(f"  FAIL  {label:<17} DID NOT FIRE on: {why}")
             ok = False
 
-    # NEGATIVES.
+    # ── NEGATIVES ────────────────────────────────────────────────────────────────────────
+    # THE FIRST FOUR ARE THE INVERTED SEEDS (CD-171(d)), and they are the load-bearing half of
+    # this amendment. A rule that is retired leaves no failure to seed — the only thing that can
+    # be proved is that the states it used to fail on now pass, and that they pass for the right
+    # reason rather than because the gate stopped running. Each case below FAILED before CD-171.
+    # This is CD-122(a)'s kept-and-inverted device, third use in this file (CD-135 used it for the
+    # Bloom ceiling; CD-150 for the ENG negatives).
+    def shrink(b, n):
+        b["questions"] = b["questions"][:n]
+        keep = {q["qid"] for q in b["questions"]}
+        b["slot_index"] = {k: v for k, v in b["slot_index"].items() if k in keep}
+        b["task_index"] = {k: v for k, v in b["task_index"].items() if k in keep}
+
+    inverted = [
+        ("ZERO-FLOOR-POOL", "a 12-item pool — under CD-141(g)'s retired 40-item minimum, under "
+                            "REF-09 §4.3's retired 20, and short of every REF-06 §3.6 floor at "
+                            "once. THE BRIEF'S NAMED CASE: it must PASS",
+         lambda b: shrink(b, 12)),
+        ("EXACTLY-ON-FLOOR", "a level landing EXACTLY on its floor — FAILED before CD-171 as "
+                             "*landing exactly on a floor is a DEFECT, not a pass*",
+         lambda b: retag(b, "Understand", "Remember", 2)),
+        ("MARGIN", "margin +1, one item short of the retired rule",
+         lambda b: retag(b, "Apply", "Remember", 1)),
+        ("DEMAND", "an admissible slot six items under the PAPER's per-slot demand — CD-138(g) "
+                   "is retired at pool level and the paper draws the rest from other chapters",
+         lambda b: [b["questions"].remove(q) for q in
+                    [x for x in b["questions"] if b["slot_index"][x["qid"]] == "S07"][:6]]),
+    ]
+    for label, why, fn in inverted:
+        errs, _ = g_plan(mut(fn), ctx)
+        if not errs:
+            print(f"  PASS  NEGATIVE  {label:<17} stays quiet on: {why}")
+        else:
+            print(f"  FAIL  NEGATIVE  {label:<17} STILL FIRES on: {why} -> {errs}")
+            ok = False
+
     errs, rep = g_plan(mut(lambda b: b["questions"][1].update(
         {"question_text": b["questions"][0]["question_text"] + " আরও দুটি শব্দ যোগ"})), ctx)
     if not errs and any("BORDERLINE" in r for r in rep):
@@ -3075,8 +3072,9 @@ def plan_selftest(ctx):
         lerrs, lrep = g_plan(lb, {"slot_register": load_slot_register(ROOT)[0]})
         if not lerrs:
             print(f"  PASS  LIVE-CONTROL     stays quiet on: the signed {len(lb['questions'])}-item "
-                  f"পাঠ ১৩ — margins +12 · +2 · +2 · +3, every slot at full demand, and S12's "
-                  f"per-word drill REPORTED as borderline rather than failed")
+                  f"পাঠ ১৩ — every task declared and admitted, no paper-level slot claimed, and "
+                  f"S12's per-word drill REPORTED as borderline rather than failed. (The margin "
+                  f"and full-demand clauses this line used to cite are retired — CD-171(d).)")
         else:
             print(f"  FAIL  LIVE-CONTROL     fired on the signed bank: {lerrs}")
             ok = False
@@ -3140,16 +3138,17 @@ def qp_selftest():
 
     clean, _ = qp_run(_qp_good_bank(), ctx, quiet=True)
     if clean:
-        clean = [(g, e) for g, e in clean if g != "PLAN"]
-    if clean:
         print(f"  FAIL  baseline: the synthetic bank is not clean -> {clean}")
         ok = False
     else:
-        print("  PASS  baseline: an unbroken synthetic chapter bank passes all eleven")
-        print("        (PLAN excluded from THIS baseline and the reason is arithmetic, not a "
-              "waiver: a 24-item pool cannot clear four positive floors with margin 2 — the "
-              "minimum is 40. PLAN carries its own 44-item fixture and its own baseline below, "
-              "and the 24-item case is SEEDED there as POOL-TOO-SMALL.)")
+        print("  PASS  baseline: an unbroken synthetic chapter bank passes all eleven "
+              "INCLUDING PLAN")
+        print("        (PLAN was EXCLUDED from this baseline until 2026-08-18, and the exclusion "
+              "was arithmetic rather than a waiver: a 24-item pool could not clear four positive "
+              "floors with margin 2, so the minimum was 40. CD-171(d) retires the margin rule, "
+              "PLAN computes no counts, and the exclusion is DELETED — the 24-item bank now "
+              "passes every gate in the family with nothing held out. An exclusion kept past its "
+              "reason is how a waiver gets built by accident.)")
 
     cases = []
 
@@ -3170,14 +3169,17 @@ def qp_selftest():
         lambda b: b["questions"][0].update({"topic_tag": "TOP-BAN-C5-99"}))
     add("KEY-RUBRIC", "a descriptive item whose rubric has one band",
         lambda b: b["questions"][20]["rubric"].update({"bands": ["ভালো"]}))
-    add("BLOOM-BAND", "every item becomes Remember — every OTHER level drops under its floor "
-                      "(CD-135: the floors are what bind a pool, not the ceilings)",
-        lambda b: [q.update({"bloom_level": "Remember"}) for q in b["questions"]])
-    add("BLOOM-BAND", "Analyze falls to 1 of 24 = 4.2%, under REF-06 §3.6's 10% floor — the exact "
-                      "case CD-135(h) predicts becomes the binding constraint once the ceiling "
-                      "stops binding",
-        lambda b: _qp_set_blooms(b, ["Remember"] * 8 + ["Understand"] * 8 + ["Apply"] * 7
-                                    + ["Analyze"] * 1))
+    # BLOOM-BAND's two FLOOR seeds are DELETED (CD-171(d)) and re-enter as NEGATIVES below —
+    # both states must now make the gate stay quiet. What replaces them as the fail-seed is the
+    # only thing BLOOM-BAND still fails on: the TAG.
+    add("BLOOM-BAND", "an item tagged `Synthesis` — not one of the six LOCKED levels. CD-171 "
+                      "retires the DISTRIBUTION and keeps the TAG: recorded, not rationed, and "
+                      "an unrecordable level is not a recording",
+        lambda b: b["questions"][0].update({"bloom_level": "Synthesis"}))
+    add("BLOOM-BAND", "an item with NO `bloom_level` at all — the same rule from the other side, "
+                      "seeded separately because a missing key and a wrong value reach the gate "
+                      "by different paths",
+        lambda b: b["questions"][1].pop("bloom_level"))
     add("DIFFICULTY", "the pool cannot supply easy ≥30%",
         lambda b: [q.update({"difficulty": "medium"}) for q in b["questions"]])
     add("REPETITION", "an identical stem on two Understand items",
@@ -3244,10 +3246,7 @@ def qp_selftest():
         lambda b: b["header"]["slot_exclusions"].pop("S12"))
     add("COVERAGE", "a slot excluded with an EMPTY reason — CD-134(c) requires a content reason",
         lambda b: b["header"]["slot_exclusions"].update({"S10": "   "}))
-    add("COVERAGE", "an admissible slot under the paper's own per-slot demand — S07 owes 4 and "
-                    "supplies 2 (CD-138(g): the full demand, no divisor)",
-        lambda b: [b["questions"].remove(q) for q in list(b["questions"])
-                   if b["slot_index"][q["qid"]] == "S07"][:6])
+    # The S07 per-slot-demand fail-seed is DELETED (CD-171(a)(iv)) and re-enters as a NEGATIVE.
     add("COVERAGE", "an item that declares NO task — slot id alone says nothing about what it does",
         lambda b: b["task_index"].pop(b["questions"][0]["qid"]))
     add("COVERAGE", "a bank with no admissibility declaration at all",
@@ -3275,8 +3274,8 @@ def qp_selftest():
         lambda b: b["source_index"].update({"QP-BAN-C5-U99-Q02": "ঘুড়ি"}))
     add("COVERAGE", "the bank header states no reason for its target",
         lambda b: b["header"].pop("reason"))
-    add("COVERAGE", "a pool below REF-09 §4.3's floor of 20",
-        lambda b: b.update({"questions": b["questions"][:12]}))
+    # The below-20 pool fail-seed is DELETED (CD-171(a)(iii)); the 12-item NEGATIVE above is what
+    # replaces it, and it asserts the opposite verdict on the same fixture.
 
     print()
     for gate, label, broken, over in cases:
@@ -3326,6 +3325,28 @@ def qp_selftest():
                        "compliant and must not fire",
          lambda b: _qp_set_blooms(b, ["Remember"] * 6 + ["Understand"] * 6 + ["Apply"] * 6
                                      + ["Analyze"] * 6)),
+        ("BLOOM-BAND", "EVERY item becomes Remember — every OTHER level drops under its floor at "
+                       "once. THIS WAS A FAIL-SEED UNTIL 2026-08-18; it is KEPT AND INVERTED "
+                       "(CD-171(d)) so the floor cannot creep back unnoticed, exactly as CD-135 "
+                       "kept and inverted the ceiling case. Both bounds are now a PAPER rule",
+         lambda b: [q.update({"bloom_level": "Remember"}) for q in b["questions"]]),
+        ("BLOOM-BAND", "Analyze at 1 of 24 = 4.2%, under REF-06 §3.6's 10% floor — the case "
+                       "CD-135(h) predicted would become the binding constraint. It did, on "
+                       "পাঠ ১৩ wave 3, and PENDING-P-036 measured the cost: an Analyze floor "
+                       "forbade 28 of 32 items the chapter could genuinely answer. INVERTED",
+         lambda b: _qp_set_blooms(b, ["Remember"] * 8 + ["Understand"] * 8 + ["Apply"] * 7
+                                     + ["Analyze"] * 1)),
+        ("COVERAGE", "an admissible slot under the PAPER's per-slot demand — S07 owes 4 and "
+                     "supplies 2. A FAIL-SEED UNTIL 2026-08-18; INVERTED (CD-171(a)(iv)). The "
+                     "paper draws S07's other two items from the chapters that carry them, which "
+                     "is what *demand is paper-level* meant before it was asked of a chapter",
+         lambda b: [b["questions"].remove(q) for q in list(b["questions"])
+                    if b["slot_index"][q["qid"]] == "S07"][:6]),
+        ("COVERAGE", "a 12-item pool — under REF-09 §4.3's retired 20-item floor. CD-171(a)(iii) "
+                     "retires the READING, not the number: REF-08 §4.1's 20 sizes a HOMEWORK draw "
+                     "across a year, never a bank's conformance. INVERTED, and the count is still "
+                     "PRINTED so its absence reads as a ruling and not as an oversight",
+         lambda b: b.update({"questions": b["questions"][:12]})),
         ("COVERAGE", "six items in S10 doing পদ নির্ণয় — the task C5 SELECTED from that slot's "
                      "three. The gate must fire on the wrong task and stay silent on the right "
                      "one, or it is not reading the task at all",
@@ -3565,13 +3586,17 @@ def qp_selftest():
     plan_ok = plan_selftest(ctx)
     ok = ok and plan_ok
 
-    cd158_ok = cd158_selftest(ctx)
-    ok = ok and cd158_ok
+    # cd158_selftest DELETED with the margin apparatus it proved (CD-171(d)). Its target,
+    # PLAN_MARGIN_EXCEPTIONS, no longer exists, and a seed with no target is TOOLS-CR-007's
+    # vacuous shape: it would pass every run while proving nothing.
 
     print(f"\nSELFTEST RESULT: {'PASS' if ok else 'FAIL'} "
           f"({len(cases)} seeded failures + {len(negatives)} negatives + {len(decl)} "
           f"CD-055 declaration cases + 1 baseline, across all {sum(1 for _, i, _ in GATES if 'qp6' in i)} gates; "
-          f"PLAN adds 10 seeds + 2 negatives + 1 baseline on its own 44-item fixture)")
+          f"PLAN adds 7 seeds + 6 negatives + 1 baseline on its own 44-item fixture — FOUR of "
+          f"those negatives are CD-171(d)'s inverted seeds, and they are the load-bearing half: "
+          f"a retired rule leaves no failure to seed, so the only available proof is that the "
+          f"states it used to fail on now pass)")
     return ok
 
 
@@ -3893,101 +3918,6 @@ def taught_set_selftest():
     print("  NOTE  the live suite FAILS `QP-BAN-C5-U15-Q75` (ড্যাশ) and `Q81` (সেমিকোলন) — RECORDED "
           "at CD-169 before this check landed, and retained only because পাঠ ১৫'s Apply floor cannot "
           "absorb their retirement")
-    return ok
-
-
-def cd158_selftest(ctx):
-    """CD-158's per-chapter margin exception, both directions.
-
-    **The FAILING direction is the load-bearing one.** An exception mechanism whose only proof is
-    that the exception works has proved the wrong half: what matters is that a bank at a reduced
-    margin WITHOUT a row still FAILs, or the mechanism is a hole rather than a carve-out.
-
-    The fixture is the synthetic 44-item PLAN bank (QB-D-012, CD-121(e)), which sits at EXACTLY +2
-    on all four positive floors, so one item moved is one margin reduced.
-    """
-    print("\n--- CD-158 · per-chapter PLAN margin exceptions "
-          + "-" * 30)
-    ok = True
-
-    def bank_at(bank_id, level, short_by=1):
-        """The 44-item bank with `level` pushed `short_by` under its floor, under a given bank_id."""
-        b = json.loads(json.dumps(_plan_bank()))
-        b["bank_id"] = bank_id
-        moved = 0
-        for q in b["questions"]:
-            if q.get("bloom_level") == level and moved < short_by:
-                q["bloom_level"] = "Remember"     # Remember has +12 of room; it absorbs the move
-                moved += 1
-        return b
-
-    def margins(b):
-        e, r = g_plan(b, ctx)
-        return [x for x in e if "against a" in x and "floor" in x]
-
-    # ── the enumeration, direct on the resolver ───────────────────────────────────────────
-    pairs = [
-        ("QB-BAN-C5-U13", "Understand", 1, "the row's own key — CD-158"),
-        ("QB-BAN-C5-U13", "Apply",      2, "SAME chapter, DIFFERENT level — no exception"),
-        ("QB-BAN-C5-U13", "Remember",   2, "same chapter, another level — no exception"),
-        ("QB-BAN-C5-U13", "Analyze",    2, "same chapter, another level — no exception"),
-        ("QB-BAN-C5-U14", "Understand", 2, "SAME level, DIFFERENT chapter — no exception"),
-        ("QB-BAN-C5-U16", "Understand", 2, "another chapter entirely — no exception"),
-        ("QB-BAN-C4-U13", "Understand", 2, "same chapter NUMBER, different CLASS — no exception"),
-        ("QB-ENG-C5-U13", "Understand", 2, "same chapter and class, different SUBJECT — no exception"),
-    ]
-    bad = []
-    for bank_id, lvl, want, why in pairs:
-        b = {"bank_id": bank_id}
-        subject = bank_id.split("-")[1]
-        cls = int(bank_id.split("-")[2][1:])
-        got, _ = plan_margin_for(b, subject, cls, lvl)
-        if got != want:
-            bad.append((bank_id, lvl, want, got, why))
-    if bad:
-        for bank_id, lvl, want, got, why in bad:
-            print(f"  FAIL  KEY-EXACTNESS {bank_id} {lvl}: required +{got}, expected +{want} — {why}")
-        ok = False
-    else:
-        print(f"  PASS  KEY-EXACTNESS  {len(pairs)} (subject, class, chapter, level) lookups — the "
-              f"exception is honoured for its OWN key and for nothing else: not another level of "
-              f"the same chapter, not the same level of another chapter, not the same chapter "
-              f"number at another class, not another subject")
-
-    # ── through the gate: the FAILING direction first ─────────────────────────────────────
-    cases = [
-        ("no exception, Understand short by 1", "QB-BAN-C5-U99", "Understand", True,
-         "THE LOAD-BEARING SEED — a reduced margin with NO row must FAIL, or the mechanism is a "
-         "hole and not a carve-out"),
-        ("no exception, Apply short by 1", "QB-BAN-C5-U99", "Apply", True,
-         "the same, on a second level, so the seed is not passing on one accident"),
-        ("CD-158's chapter, Understand short by 1", "QB-BAN-C5-U13", "Understand", False,
-         "the exception honoured — +1 is the requirement for THIS chapter and level"),
-        ("CD-158's chapter, APPLY short by 1", "QB-BAN-C5-U13", "Apply", True,
-         "AN EXCEPTION AT ONE LEVEL IS NOT AN EXCEPTION AT ANOTHER — a chapter holding a row for "
-         "Understand still FAILs a shortfall in Apply"),
-        ("a DIFFERENT chapter, Understand short by 1", "QB-BAN-C5-U14", "Understand", True,
-         "the exception does not travel to another chapter"),
-    ]
-    for label, bank_id, lvl, want_fail, why in cases:
-        errs = margins(bank_at(bank_id, lvl))
-        got_fail = bool(errs)
-        if got_fail == want_fail:
-            print(f"  PASS  {'FAIL-SEED ' if want_fail else 'NEGATIVE  '} {label:<42} "
-                  f"{'fires' if got_fail else 'quiet'}: {why}")
-        else:
-            print(f"  FAIL  {'FAIL-SEED ' if want_fail else 'NEGATIVE  '} {label:<42} "
-                  f"expected {'a failure' if want_fail else 'silence'}; got {errs}")
-            ok = False
-
-    # ── and the honoured exception must SAY SO on a passing run ───────────────────────────
-    _, rep = g_plan(bank_at("QB-BAN-C5-U13", "Understand"), ctx)
-    if any("per-chapter exception" in r and "CD-158" in r for r in rep):
-        print("  PASS  REPORTED     an honoured exception is printed on a PASSING run — an "
-              "exception nobody re-examines is how a reduced margin comes to look like the rule")
-    else:
-        print(f"  FAIL  REPORTED     honoured exception not reported: {rep}")
-        ok = False
     return ok
 
 
