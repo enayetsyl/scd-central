@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q56",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'ইচ্ছামতী' কবিতার মূলভাব নিজের ভাষায় লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "পুরো কবিতা থেকে মূল ভাব বের করে আনা — মনের ইচ্ছামতো নদী হয়ে দুই পারের মানুষের কাছে থাকা ও তাদের সঙ্গে কথা বলার আকাঙ্ক্ষা; এবং সেই ইচ্ছাকে ঘর, পড়াশোনা বা বড়োদের কথার বিরোধী করে না দেখানো",
+          "band_descriptors": {
+            "সম্পূর্ণ": "মূলভাব নিজের ভাষায় লেখা হয়েছে, কবিতার চরণ হুবহু না তুলে; নদী হওয়ার ইচ্ছা, দুই পারের সঙ্গে কথা বলা এবং চেনা-অচেনা মানুষের মধ্য দিয়ে বয়ে চলা — এই দিকগুলো এসেছে এবং ভাষা ইতিবাচক।",
+            "আংশিক": "কবিতার চরণ তুলে দেওয়া হয়েছে, বা কেবল একটি দিক এসেছে; অথবা ঘর ছেড়ে চলে যাওয়াই কবিতার শিক্ষা — এমন ভুল ভাব এসেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

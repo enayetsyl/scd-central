@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q34",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'নাম জানি নে, গ্রাম জানি নে' — কাদের সম্পর্কে কবি এ কথা বলেছেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "দূরের মানুষ, যাদের বেশ অন্যরকম",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "গাঁয়ের মানুষ, যারা জলে নাইতে আসে",
+        "is_correct": false,
+        "why_wrong": "গাঁয়ের ওই মানুষদের নদী চেনে বলে কবিতায় আছে।"
+      },
+      {
+        "option_id": "গ",
+        "text": "যারা গোরু মহিষ নিয়ে ওপার যায়",
+        "is_correct": false,
+        "why_wrong": "তারাও গাঁয়েরই মানুষ, যাদের নদী চেনে।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "যারা ঘাটের ধাপে বসে থাকে",
+        "is_correct": false,
+        "why_wrong": "ঘাটের ধাপের প্রসঙ্গটি আলাদা; সেখানে চেনা-অচেনার কথা নেই।"
+      }
+    ]
+  }
+}

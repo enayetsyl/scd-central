@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q54",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "কবিতায় গাঁয়ের মানুষ ও দূরের মানুষের যে বর্ণনা এসেছে, তা নিজের ভাষায় লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "দুই দলের মানুষকে কবিতার তথ্য দিয়েই আলাদা করা হয়েছে কি না, এবং অচেনা মানুষদের নিয়ে কোনো নেতিবাচক বা বিদ্রুপের কথা লেখা হয়নি কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "গাঁয়ের চেনা মানুষ — যারা জলে নাইতে আসে, যারা গোরু মহিষ নিয়ে ওপার যায় — আর দূরের অচেনা মানুষ, যাদের বেশ নতুনতরো এবং যাদের নাম-গ্রাম নদী জানে না; দুই দলই আলাদা করে এসেছে, শ্রদ্ধার ভাষায়।",
+            "আংশিক": "কেবল এক দলের কথা এসেছে; অথবা অচেনা মানুষদের নিয়ে বিদ্রুপ বা মনগড়া কথা যোগ করা হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

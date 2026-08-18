@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q53",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "ইচ্ছামতী নদীর দুই ধারের পার্থক্য বিস্তারিতভাবে লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "দুই ধারের তুলনা কবিতার দেওয়া তথ্য দিয়েই করা হয়েছে কি না — কোনো ধারকে ভালো বা মন্দ বলে বিচার করা হয়নি কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "সূর্য ওঠার দখিন ধার ও সন্ধের অন্ধকার নামা বাঁয়ের ধার, আর সবুজ বরনের মাঠ-ঘাট ও রৌদ্রে ধু ধু বালুর চর — দুই জোড়া বৈসাদৃশ্যই এসেছে এবং তুলনা হিসেবে সাজানো হয়েছে।",
+            "আংশিক": "কেবল এক জোড়া পার্থক্য এসেছে, অথবা দুই ধার আলাদা করে চিহ্নিত হয়নি।"
+          }
+        }
+      ]
+    }
+  }
+}

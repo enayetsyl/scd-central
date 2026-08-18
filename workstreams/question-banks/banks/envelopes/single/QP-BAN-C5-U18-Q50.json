@@ -1,0 +1,43 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q50",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "কবিতার নাম 'ইচ্ছামতী' রাখা হয়েছে কেন — কবিতার প্রথম স্তবক থেকে বুঝিয়ে লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "answer_key": {
+      "accepted": [
+        "প্রথম স্তবকে কবি বলছেন, যখন যেমন মনে করেন তাই হতে পেলে তিনি একখানি নদী হতেন। সেই ইচ্ছা থেকেই নদীর নাম 'ইচ্ছামতী' — যে নদী মনের ইচ্ছামতো বয়ে যায়।"
+      ]
+    }
+  }
+}

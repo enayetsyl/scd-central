@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q31",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "কবি নিজে কী হতে চান বলে কবিতায় বলেছেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "ইচ্ছামতী নদী",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "গাঁয়ের ঘাট",
+        "is_correct": false,
+        "why_wrong": "ঘাট কবিতায় আছে, কিন্তু কবি ঘাট হতে চাননি — তিনি ঘাটে ঘুরে বেড়ানোর কথা বলেছেন।"
+      },
+      {
+        "option_id": "গ",
+        "text": "বালুর চর",
+        "is_correct": false,
+        "why_wrong": "বালুর চর নদীর এক ধারের বর্ণনা, কবির ইচ্ছা নয়।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "দূরের মাঠ",
+        "is_correct": false,
+        "why_wrong": "দূরের মাঠ কবিতায় নদীর যাওয়ার জায়গা, কবির রূপ নয়।"
+      }
+    ]
+  }
+}

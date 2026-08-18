@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q33",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'আধেক কথা দিনের বেলায়, আধেক কথা রাতে।' — এই দুই চরণে কবি কী বোঝাতে চেয়েছেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "নদী তার মনের কথা দুই পারের সঙ্গে ভাগ করে বলবে — কিছু দিনে, কিছু রাতে",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "নদী দিনে কথা বলবে, রাতে চুপ করে থাকবে",
+        "is_correct": false,
+        "why_wrong": "চরণ দুটিতে রাতেও কথা বলার কথা স্পষ্ট করে আছে।"
+      },
+      {
+        "option_id": "গ",
+        "text": "নদীর কথা কেউ শোনে না",
+        "is_correct": false,
+        "why_wrong": "কবিতায় নদী দুই পারের সাথেই কথা বলছে।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "নদী কেবল দূরের মানুষের সঙ্গে কথা বলবে",
+        "is_correct": false,
+        "why_wrong": "দূরের মানুষদের নাম ও গ্রাম নদী জানে না বলে কবিতায় আছে।"
+      }
+    ]
+  }
+}

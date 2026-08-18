@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q37",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'গাঁয়ের লোকে চিনবে আমার কেবল একটুখানি।' — কবি এখানে নদীর কোন দিকটি বোঝাচ্ছেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "নদীর বেশির ভাগটাই মানুষের চেনার বাইরে থেকে যায়",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "গাঁয়ের লোক নদীকে একদমই চেনে না",
+        "is_correct": false,
+        "why_wrong": "'কেবল একটুখানি' কথাটি বলছে চেনে, তবে সামান্য।"
+      },
+      {
+        "option_id": "গ",
+        "text": "নদী গাঁয়ের লোকের কাছ থেকে দূরে সরে যায়",
+        "is_correct": false,
+        "why_wrong": "সরে যাওয়ার কথা নয়, চেনা-না-চেনার কথা।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "নদী কেবল দূরের মানুষকেই চেনে",
+        "is_correct": false,
+        "why_wrong": "দূরের মানুষদের নাম-গ্রাম নদী জানে না বলে কবিতায় আছে।"
+      }
+    ]
+  }
+}

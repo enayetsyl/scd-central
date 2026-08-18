@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q01",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "কবি ও কবিতার নাম লিখে 'ইচ্ছামতী' কবিতার 'যখন যেমন মনে করি' থেকে 'নামবে অন্ধকার।' পর্যন্ত অংশটুকু মুখস্থ লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "structured",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 10,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "answer_key": {
+      "accepted": [
+        "কবিতা: ইচ্ছামতী; কবি: রবীন্দ্রনাথ ঠাকুর। যখন যেমন মনে করি তাই হতে পাই যদি আমি তবে একখনি হই ইচ্ছামতী নদী। রইবে আমার দখিন ধারে সূর্য ওঠার পার, বাঁয়ের ধারে সন্ধেবেলায় নামবে অন্ধকার।"
+      ],
+      "model_note": "নম্বর ভাগ: কবির নাম ১ + কবিতার নাম ১ + প্রথম ৮ লাইন ৮ = ১০। অংশটি বইয়ের ছাপা আট লাইন, অর্থাৎ প্রথম স্তবক। চরণ হুবহু পাঠের মতো হতে হবে; বানান ও যতিচিহ্নে ছাড় দেওয়া যাবে। কবির নাম কেবল তথ্য হিসেবে — কোনো সম্মানসূচক বিশেষণ লেখা যাবে না বা চাওয়া যাবে না।"
+    }
+  }
+}

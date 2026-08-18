@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q36",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'রাত্তিরে থম থম!' — চরণটি নদীতীরের রাত সম্পর্কে কী বোঝায়?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "রাতে চারদিক নিস্তব্ধ ও গম্ভীর হয়ে যায়",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "রাতে অনেক মানুষের ভিড় হয়",
+        "is_correct": false,
+        "why_wrong": "দিনের বেলায় যাওয়া-আসার কথা আছে; রাত্তিরের বর্ণনা তার উল্টো।"
+      },
+      {
+        "option_id": "গ",
+        "text": "রাতে দুই ধারের সবুজ বরন আরও গাঢ় হয়",
+        "is_correct": false,
+        "why_wrong": "সবুজ বরনের কথা মাঠে ঘাটের বর্ণনায় আছে, রাতের প্রসঙ্গে নয়।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "রাতে বৃষ্টি নামে",
+        "is_correct": false,
+        "why_wrong": "বৃষ্টির কোনো কথা কবিতায় নেই।"
+      }
+    ]
+  }
+}

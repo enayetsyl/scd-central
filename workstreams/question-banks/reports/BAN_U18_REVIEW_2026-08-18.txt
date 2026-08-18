@@ -1,0 +1,78 @@
+BAN_U18_REVIEW_2026-08-18.txt
+BANK   : workstreams/question-banks/banks/C5_BAN_U18_QuestionBank_v1.json — 79 items
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৮ — ইচ্ছামতী (line 322 → exclusive at `# পাঠ ১৯ — ভাষার খেলা`, line 412). Read in full at source; the top-of-file `## এক নজরে ১১টি পাঠ` table treated as OUTSIDE the section.
+RUN    : 2026-08-18 — FIRST run. Independent factual/curation review. Read-only.
+PROMPT : tools/bank_factual_review_prompt.md, run FROM THAT PATH; facts block only, filled and kept at workstreams/question-banks/_wip/U18_5B_PROMPT_FILLED_2026-08-18.txt
+SLOTS  : slot_index — S01 1 · S02 8 · S03 10 · S04 10 · S05 8 · S06 5 · S07 8 · S08 5 · S09 1 · S10 8 · S11 6 · S12 4 · S13 5 = 79. Matches ADMITTED SLOTS exactly; S14/S15 carry no items, as declared.
+
+**CD-161(a) — NO PRIOR REPORT.** `ls workstreams/question-banks/reports/ | grep U18` returns nothing; the directory holds U13, U14, U15, U16 and two non-bank files only. There is no prior পাঠ ১৮ report to disposition, so no disposition pass is performed and none is invented. Everything below is derived from the section and the bank alone.
+SOURCE LIMIT ACKNOWLEDGED: অনুশীলনী ২ is absent from the extraction (the list runs ১ ৩ ৪ ৫ ৬); no item is authored from it, and this is not read as an omission.
+ADVISORY LINE: "কোন প্রশ্নে কাজে লাগবে" names S01·S09·S03·S10·S07·S15. Treated as advisory (CD-122(b), CD-134); no slot reported as wrongly admitted on that ground.
+
+---
+
+**1 · FACTUAL ACCURACY — 1 DEFECT.**
+
+1. **Beyond-section attributions in the Q30 distractor set.** `QP-BAN-C5-U18-Q30` (S05) carries three claims the পাঠ ১৮ section nowhere states:
+   - `option[খ].why_wrong` — "কাজী নজরুল ইসলাম 'সংকল্প' কবিতার কবি, 'ইচ্ছামতী'র নয়।"
+   - `option[গ].why_wrong` — "আল মাহমুদ 'পাখির মতো' কবিতার কবি।"
+   - `option[ঘ].why_wrong` — "কাজী কাদের নেওয়াজ 'শিক্ষাগুরুর মর্যাদা' কবিতার কবি।"
+   All three are true in the world and true of the file's top-of-file table (lines 17 · 19 · 24) and of পাঠ ১৩/১৫/২০ — every one of which is OUTSIDE the authority span. The student is marked against পাঠ ১৮, and পাঠ ১৮ prints only "রবীন্দ্রনাথ ঠাকুর · কবিতা". A why_wrong that could only be verified from another chapter reaches beyond the section.
+   **CLAIM SWEEP — all carriers named.** Searched the whole bank (`question_text`, option `text`, `why_wrong`, `answer_key.accepted`, `answer_key.model_note`, `blanks.accepted`, rubric `criterion`, rubric `band_descriptors`) for কাজী · নজরুল · মাহমুদ · নেওয়াজ · সংকল্প · পাখির · শিক্ষাগুরু. **Every hit is inside Q30 and nowhere else**: কাজী ×4 (option[খ].text, option[খ].why_wrong, option[ঘ].text, option[ঘ].why_wrong), নজরুল ×2, মাহমুদ ×2, নেওয়াজ ×2, সংকল্প ×1, পাখির ×1, শিক্ষাগুরু ×1. The three *option texts* are bare poet names used as distractors and are NOT part of this defect — only the three `why_wrong` strings assert the out-of-section fact. No sibling item carries the claim. One qid, three fields, same claim class.
+
+Everything else in check 1 verified carrier by carrier against the section and sound: the ইচ্ছামতী wish (Q01 · Q20 · Q31 · Q43 · Q50 · Q52 · Q55 · Q56 · Q57 · Q71) · দখিন ধারে সূর্য / বাঁয়ের ধারে অন্ধকার (Q21 · Q22 · Q32 · Q44 · Q46 · Q53 · Q58 · Q60 · Q65 · Q72) · আধেক কথা দিনে ও রাতে (Q23 · Q33 · Q45) · গাঁয়ের চেনা মানুষ / নাইতে আসে / গোরু মহিষ সাঁতরে ওপার (Q24 · Q25 · Q34 · Q47 · Q54 · Q61 · Q62 · Q66) · দূরের মানুষের নতুনতরো বেশ, নাম-গ্রাম অজানা (Q06 · Q19 · Q34 · Q37 · Q48 · Q54 · Q67 · Q78) · ঝলোমলো টুকরো আলোর রাশি (Q26) · সবুজ বরন ↔ বালুর চরে ধু ধু রৌদ্র (Q12 · Q27 · Q28 · Q35 · Q46 · Q53 · Q63 · Q69) · কেবল একটুখানি চেনা (Q37 · Q49 · Q68) · দিনের যাওয়া-আসা / রাত্তিরে থম থম / গা ছম ছম (Q14 · Q15 · Q29 · Q36 · Q51 · Q70) · all eight অর্থ জেনে নিই glosses (Q02–Q09, re-used in Q17–Q19 and Q75–Q79). No date, name, role or attribute wrong or swapped. In the seven other MCQs (Q31–Q37) no distractor is arguably also correct. Q01's key is the printed first stanza verbatim, "একখনি" and all, as the section prints it.
+
+**2 · THE CHAPTER'S CONTENT BARS — 1 DEFECT.** Mechanical substring search of every student-facing and teacher-facing string of every item. Every occurrence listed.
+
+- **গান গেয়ে যাই · গান গেয়ে · ঠিক তখনি গান · গেয়ে · গাইতে · গাইব · গাওয়া · গানের · সুর · সুরকার — ZERO occurrences.**
+- **গান — 1 occurrence, reported: `QP-BAN-C5-U18-Q51` (S08) `rubric.criteria[0].criterion`.** It is the substring inside "ভয়-**জাগান**ো" in a row that FORBIDS fear-raising or supernatural explanation. Not the word গান, not declared in PERMITTED NAMES because it is not a name at all. Reported, not a defect.
+- **পরীর নাচন · পরীর · নাচন · নাচ · নাচে · নেচে — ZERO occurrences.**
+- **পরী — 5 occurrences, reported: `Q38` · `Q39` · `Q40` · `Q41` · `Q42` (all S06, `question_text`).** Every one is the substring inside "বি**পরী**ত শব্দ". Not the word পরী. Reported, not a defect.
+- **কোণে কোণে আপন মনে · কোণে কোণে · করছে তারা কী কে · আমারি ভয় করবে কেমন · তাকাতে সেই দিকে — ZERO occurrences.** Printed lines 33–36 are untouched by every anchor.
+- **দুই পারেরই সাথে — ZERO occurrences.** Printed line 10, the poem's only ড্যাশ line, is used as no S11 stimulus and by no key. Q45's key paraphrases the same fact as "দুই পারের মানুষের সঙ্গেই" and requires no dash.
+- **মহান কবি · বিশ্বকবি · কবিগুরু · গুরুদেব · জাতীয় কবি · বিদ্রোহী কবি — ZERO occurrences.** The poet's name appears only as the bare "রবীন্দ্রনাথ ঠাকুর" (Q01 `answer_key.accepted[0]`, Q30 `option[ক].text`), which the subtitle prints. Q01's model_note additionally forbids any honorific — a forbidding row, not an occurrence.
+
+2. **";" and "—" inside `answer_key.accepted` — the one bar that is breached.** PERMITTED NAMES declares ";" — NONE, and declares "—" permitted as prose separator in `question_text`, `model_note`, rubric `criterion`, rubric `band_descriptors`, MCQ option `text` and `why_wrong` only, "a DEFECT only where a student would have to INSERT it — that is, inside an `answer_key.accepted` or `blanks.accepted` string." Every such occurrence, by qid and field:
+   - **";" in `answer_key.accepted`** — `Q01` accepted[0] · `Q04` accepted[2] ("তীর; শুকনো জায়গা") · `Q08` accepted[2] ("বর্ণ; রং") · `Q48` accepted[0] · `Q49` accepted[0] · `Q71` accepted[0],[1],[2] · `Q72` accepted[0],[1],[2] · `Q73` accepted[0],[1],[2] · `Q74` accepted[0],[1],[2].
+   - **"—" in `answer_key.accepted`** — `Q43` accepted[0] · `Q44` accepted[0] · `Q45` accepted[0] · `Q47` accepted[0] · `Q50` accepted[0] · `Q71` accepted[0],[2] · `Q72` accepted[0],[2] · `Q73` accepted[0],[2] · `Q74` accepted[0],[2].
+   - **14 distinct qids: Q01 · Q04 · Q08 · Q43 · Q44 · Q45 · Q47 · Q48 · Q49 · Q50 · Q71 · Q72 · Q73 · Q74.** Sharpest at S12 (Q71–Q74), where the accepted string IS the literal form of the answer — "চ্ছ = চ + ছ; নতুন শব্দ — কচ্ছপ" makes a C5 student write both barred marks to match the key.
+   - `blanks.accepted`: **ZERO** — all ten S04 blanks are single words.
+   - **S11 (Q65–Q70) `answer_key.accepted`: ZERO ";" and ZERO "—"**, i.e. the place the bar says it matters most is clean.
+   - "–" (en dash) and any other dash form: **ZERO** bank-wide. Every remaining "—" sits in `question_text`, `model_note`, `criterion`, `band_descriptors` or MCQ option `text`/`why_wrong` — declared PERMITTED, not listed individually. ASCII hyphens in চেনা-অচেনা · যাওয়া-আসা · মাঠ-ঘাট · নাম-গ্রাম · কাজ-শব্দ · ভয়-জাগানো are hyphens (U+002D), not dashes, and are compound forms the section's own register supports.
+
+**3 · STANDING CURATION BARS — 1 DEFECT.**
+
+3. **`QP-BAN-C5-U18-Q36` (S05) draws on barred printed line 27.** `option[গ].text` = "রাতে নদীতে ঢেউ বেড়ে যায়" and `option[গ].why_wrong` = "ঢেউয়ের কথা অন্য স্তবকে, রাতের প্রসঙ্গে নয়।" **"ঢেউ" occurs in the poem in exactly one place: printed line 27, "ঢেউয়ে ঢেউয়ে পরীর নাচন," — the line the ⚠ block bars under C-03.** The why_wrong does not merely avoid the line; it sends the marker and the student back to it to check where ঢেউ appears. Sweep for ঢেউ across the whole bank returns exactly these two fields and nothing else — a two-field, one-qid class, no siblings. This also falsifies the bank's own `curation` paragraph, which asserts "কোনো stem, বিকল্প, why_wrong, উত্তরকুঞ্জি, model_note, rubric সারি বা S11 উদ্দীপক এই দুই চরণ ছোঁয়নি"; a বিকল্প and its why_wrong do.
+
+Otherwise sound. **C-03** — গান · গেয়ে · সুর · নাচ · নাচন · পরী · হাততালি all ZERO; no percussion, song or dance anywhere; printed line 15 is untouched and S01 correctly takes the first stanza only. **C-05** — ছবি · আঁক · প্রতিকৃতি ZERO; no item shows or requests a depiction of a person. **C-18** — পতাকা · মিনার · ফুল · মাল্য · নীরবতা · সালাম ZERO; no monument, wreath, salute or ritual silence; no nationalist veneration; nothing to separate from factual history because the chapter carries none. শ্রদ্ধা has 1 hit, `Q54` `rubric.band[সম্পূর্ণ]` ("শ্রদ্ধার ভাষায়"), which *requires respectful language about strangers* — a forbidding/requiring row, not an occurrence. Q51 · Q55 rubric rows likewise bar অলৌকিক and ভয়-জাগানো readings and are correct.
+
+**4 · INVENTED NAMES — PASS.** The only personal names in the bank are রবীন্দ্রনাথ ঠাকুর (Q01 accepted, Q30 option ক), whom the section's subtitle records, and the three real poets in Q30's distractor options — historical figures, not invented characters; their problem is the out-of-section *attribution*, already counted under check 1, not fabrication. Q13's "খোকা" is a common noun for a small boy, not a personal name. No other item names any person.
+
+**5 · NUMERALS — PASS.** `[0-9]` across every student-facing string of all 79 items: **ZERO**. Every number a student can see is Bengali. The 18 ASCII-digit hits are all internal codes inside teacher-facing `answer_key.model_note` (CD-136 ×17, CD-138(b) ×8, CD-149 ×1), which this check exempts. Their presence is nevertheless a check-7 defect, reported there.
+
+**6 · SLOT-SPECIFIC CORRECTNESS — 2 DEFECTS.**
+
+4. **S10 — "নামপদ" accepted as the পদ, and the chapter's own term accepted nowhere.** `QP-BAN-C5-U18-Q57` accepted[2] · `QP-BAN-C5-U18-Q58` accepted[2] · `QP-BAN-C5-U18-Q61` accepted[2] · `QP-BAN-C5-U18-Q64` accepted[2] each accept "নামপদ" for নদী · সূর্য · মানুষ · ঘাট. নামপদ is the super-class covering বিশেষ্য, বিশেষণ and সর্বনাম together, not the পদ itself; a student who writes it has not identified the পদ, and in Q59 the same super-class would also cover the keyed সর্বনাম. The compounding fact: **"নাম-শব্দ" — the textbook's own C5 term, and the very term this chapter's অনুশীলনী ৪ uses ("পাঠ থেকে নাম-শব্দ খুঁজে লেখা"), which the source's advisory line ties to S10 — returns ZERO across the entire bank.** So the bank rejects the chapter's term and accepts the super-class instead. Sweep: "নামপদ" appears in exactly these four fields and nowhere else; the parallel ক্রিয়া items (Q60 · Q62) correctly key "কাজ-শব্দ" alongside ক্রিয়া and are sound, as is Q63 (বিশেষণ) and Q59 (সর্বনাম).
+
+5. **S06 — `QP-BAN-C5-U18-Q40` accepts "আপন" as the antonym of "দূরের".** `answer_key.accepted` = ["কাছের", "আপন"]. "কাছের" is right and holds in the chapter's sense (দূরের মানুষ / দূরের মাঠে মাঠে). "আপন" is not an antonym of দূর in any sense — its antonym is পর; the bank appears to have reached for the poem's "আপন গাঁয়ের ঘাটে", which is a different opposition (one's own vs another's, not far vs near). A student writing "আপন" is awarded full marks for a wrong antonym. Sweep: this accepted variant appears only in Q40; the other four S06 items (Q38 অন্ধকার→আলো, Q39 দিনের→রাতের, Q41 ডাঙা→জল, Q42 উপর→নিচ) are all supported by the chapter's own use and carry no second variant.
+
+The rest of check 6 is clean:
+- **S12 (Q71–Q74)** — চ্ছ=চ+ছ · ন্ধ=ন+ধ · দ্ভ=দ+ভ · ত্ত=ত+ত, every decomposition orthographically right; every new word (কচ্ছপ · গচ্ছিত · উচ্ছল · বন্ধু · গন্ধ · অন্ধ · উদ্ভিদ · উদ্ভট · উদ্ভব · উত্তর · উত্তম · পত্তন) really contains its conjunct. Each stimulus word — ইচ্ছামতী · অন্ধকার · অদ্ভুতের · রাত্তিরে — carries exactly ONE conjunct, so no unstated ambiguity arises; every stem names the target conjunct anyway.
+- **S13 (Q75–Q79)** — আধেক · ডাঙা · রাত্তির · নতুনতরো · বরন each match their definition phrase, each drawn from the section's own gloss list, each of a grammatical class that fits.
+- **S11 (Q65–Q70)** — counted per item by diffing the QUOTED STIMULUS in `question_text` against `answer_key.accepted[0]`, excluding the stem's own trailing instruction sentence and its দাঁড়ি. Every stimulus is unpunctuated; the key bodies are identical to the stimuli character for character apart from the inserted marks. **Q65 = 2** (কমা + দাঁড়ি) · **Q66 = 3** (কমা ×2 + দাঁড়ি) · **Q67 = 3** (কমা ×2 + দাঁড়ি) · **Q68 = 2** (দাঁড়ি + প্রশ্নচিহ্ন) · **Q69 = 2** (কমা + দাঁড়ি) · **Q70 = 3** (কমা + বিস্ময়চিহ্ন + দাঁড়ি). No item requires only a single terminal mark; the minimum is two and Q68 · Q70 require two distinct *kinds*. Every required mark is inside the taught set দাঁড়ি · কমা · প্রশ্নচিহ্ন · বিস্ময়চিহ্ন · উদ্ধরণ চিহ্ন; **no ড্যাশ and no সেমিকোলন is required anywhere in S11**, and each key reproduces the section's own printed punctuation exactly.
+
+**7 · LANGUAGE — 2 DEFECTS.**
+
+6. **Internal policy codes leaked into marker-facing `answer_key.model_note` — 18 items.** `CD-136`: Q38 · Q39 · Q40 · Q41 · Q42 · Q57 · Q58 · Q59 · Q60 · Q61 · Q62 · Q63 · Q64 · Q71 · Q72 · Q73 · Q74. `CD-138(b)`: Q57 · Q58 · Q59 · Q60 · Q61 · Q62 · Q63 · Q64. `CD-149`, `SLOT_REGISTER BAN-S01`, `E-AUTHOR-ENDORSE`: Q01. `SLOT_REGISTER BAN-S12 composite`: Q71 · Q72 · Q73 · Q74. `BAN-S10`: Q57–Q64. Distinct qids: **Q01 · Q38 · Q39 · Q40 · Q41 · Q42 · Q57 · Q58 · Q59 · Q60 · Q61 · Q62 · Q63 · Q64 · Q71 · Q72 · Q73 · Q74.** These strings tell a marker nothing about marking; Q57–Q64's note even carries a whole slot-selection ruling ("ভাষারীতি পরিবর্তন ও ক্রিয়ার কাল এই স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়") that concerns the authoring lane, not the marker. Zero policy codes reach any student-facing field.
+
+7. **The open clause "কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য" sits on 17 closed-answer items.** Q38 · Q39 · Q40 · Q41 · Q42 (S06) · Q57 · Q58 · Q59 · Q60 · Q61 · Q62 · Q63 · Q64 (S10) · Q71 · Q72 · Q73 · Q74 (S12), all in `answer_key.model_note`. For S10 there is no "কাছাকাছি অর্থ" of a পদ — a word either is a বিশেষ্য or is not — and for S12 the decomposition half is fixed, so a marker following the clause would accept answers the slot must refuse, while the same note in Q71–Q74 simultaneously insists both halves are required. The clause is only coherent for the free half of S12 (the new word) and roughly so for S06.
+
+Quality notes, NOT counted:
+- `Q44` `answer_key.accepted[0]` is the sole accepted answer and reads "দখিন ধারে — কবিতায় আছে '…'", so it (a) folds a teacher-facing justification into the string the student is graded against, and (b) does not accept "ডান দিকে", which is the section's own gloss of দখিন ধারে and the natural answer to a stem asking "কোন দিকে". Same folded-justification register in Q71–Q74 ("নতুন শব্দ — কচ্ছপ").
+- `Q76` (S13) defines ডাঙা as "নদীর পাশের তীর বা শুকনো জায়গা"; because "বা" makes either half sufficient, the chapter's own "পার" (সূর্য ওঠার পার · ওপার চলে) also satisfies "নদীর পাশের তীর" and is not accepted.
+- `Q34` `option[গ].why_wrong` shifts to honorifics ("তাঁরাও … যাঁদের") for the same villagers option[খ] calls "যারা" — one register in one item.
+- `Q50` `answer_key.accepted[0]` normalises the poem's printed "একখনি" to "একখানি"; harmless in a paraphrase, but Q01 and Q20 preserve the printed form.
+
+Stems, keys and rubric rows are otherwise natural, grammatical and class-5 appropriate; the two-band pairs in Q51–Q56 discriminate cleanly and do not overlap.
+
+VERDICT: 7 DEFECT(S)

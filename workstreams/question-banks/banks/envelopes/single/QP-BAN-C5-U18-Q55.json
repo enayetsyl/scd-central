@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Create",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q55",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "তুমি যদি একটি নদী হতে, কী কী করতে চাইতে? কবিতার ভাব অনুসরণ করে নিজের ভাষায় লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Create",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "লেখাটি কবিতার ভাব ধরে রেখেছে কি না — উপকার ও মিলনের ইচ্ছা, ঘর বা দায়িত্ব ছেড়ে পালানোর ইচ্ছা নয়; এবং কোনো অলৌকিক শক্তির দাবি করা হয়নি কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "নিজের অন্তত তিনটি ইচ্ছা লেখা হয়েছে, প্রতিটির সঙ্গে কবিতার কোনো ভাবের যোগ আছে — মানুষের কাছে থাকা, দূরে যাওয়া, দুই পারকে যুক্ত করা — এবং ভাষা শ্রেণির উপযোগী ও ইতিবাচক।",
+            "আংশিক": "ইচ্ছাগুলো লেখা হয়েছে কিন্তু কবিতার ভাবের সঙ্গে যোগ নেই, অথবা লেখাটি কবিতার চরণ তুলে দেওয়া হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

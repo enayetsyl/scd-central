@@ -1,0 +1,168 @@
+
+You are a verification reviewer for a Class-5 question bank. **Do NOT edit any file. Report only.**
+
+The bank has already passed its full structural gate suite, so conformance is proven. Your job is
+the part no gate can do: **factual and curation correctness**. Read the bank JSON and the named
+section of the source file. The source section is the ONLY authority for fact — not your own
+knowledge of the subject, and not the wider file.
+
+Facts block for this run:
+
+```
+BANK FILE      : workstreams/question-banks/banks/C5_BAN_U18_QuestionBank_v1.json
+SOURCE FILE    : canon/marklogic/C5_Bangla_Source_13-23.md
+SOURCE SECTION : opens at the heading `# পাঠ ১৮ — ইচ্ছামতী` (line 322) and ends where the heading
+                 `# পাঠ ১৯ — ভাষার খেলা` begins (line 412). That span is the ONLY authority for
+                 fact. The file's top-of-file `## এক নজরে ১১টি পাঠ` table is OUTSIDE it.
+ADMITTED SLOTS : S01 · S02 · S03 · S04 · S05 · S06 · S07 · S08 · S09 · S10 · S11 · S12 · S13
+                 (S14 and S15 are paper-level for every chapter per CD-147 and are neither
+                 admitted nor excluded; the bank is silent about them.)
+NAMED CONTENT  :
+  · Author and genre, as the section's own subtitle prints them: রবীন্দ্রনাথ ঠাকুর · কবিতা
+  · The poem is set in 48 PRINTED LINES across six stanzas. The section's own S01 delimiter reads
+    "প্রথম ৮ পঙ্‌ক্তি (S01-এর জন্য): 'যখন যেমন মনে করি…' থেকে '…নামবে অন্ধকার।' পর্যন্ত — প্রথম স্তবক।"
+  · Facts the poem states, each the thing an answer key is checkable against:
+    – কবি চান একখানি ইচ্ছামতী নদী হতে, যদি "যখন যেমন মনে করি তাই হতে পাই"।
+    – দখিন ধারে সূর্য ওঠার পার; বাঁয়ের ধারে সন্ধেবেলায় অন্ধকার নামে।
+    – নদী দুই পারেরই সাথে মনের কথা বলবে — আধেক কথা দিনের বেলায়, আধেক কথা রাতে।
+    – নদী ঘুরে বেড়ায় আপন গাঁয়ের ঘাটে, আর যায় দূরের মাঠে মাঠে।
+    – নদী যে গাঁয়ের মানুষদের চেনে: "যারা নাইতে আসে জলে" এবং "গোরু মহিষ নিয়ে যারা সাঁতরে ওপার চলে"।
+    – দূরের মানুষের "নতুনতরো বেশ"; তাদের "নাম জানি নে, গ্রাম জানি নে — অদ্ভুতের একশেষ"।
+    – "জলের উপর ঝলোমলো টুকরো আলোর রাশি।"
+    – "নিচের তলায় তলিয়ে যেথায় গেছে ঘাটের ধাপ" — সেইখানে কারা সবাই "রয়েছে চুপচাপ"।
+    – "গাঁয়ের লোকে চিনবে আমার কেবল একটুখানি। বাকি কোথায় হারিয়ে যাবে আমিই সে কি জানি?"
+    – "একধারেতে মাঠে ঘাটে সবুজ বরন শুধু, আর একধারে বালুর চরে রৌদ্র করে ধু ধু।"
+    – "দিনের বেলায় যাওয়া আসা, রাত্তিরে থম থম! ডাঙার পানে চেয়ে চেয়ে করবে গা ছম ছম।"
+  · অর্থ জেনে নিই — the section's eight glosses, verbatim and complete:
+    আধেক — অর্ধেক · ঘাটের ধাপ — ঘাটের সিঁড়ি · ডাঙা — তীর; শুকনো জায়গা · দখিন ধারে — ডান দিকে ·
+    নতুনতরো — অন্যরকম · নাইতে — গোসল করতে · বরন — বর্ণ; রং · রাত্তির — রাতের বেলা
+  · অনুশীলনী, as the section lists them — ১ (জোড়া শব্দ দিয়ে বাক্য: চুপচাপ · মাঠে ঘাটে · ধু ধু ·
+    চেয়ে চেয়ে · থম থম · ছম ছম · ঝলমল) · ৩ (প্রশ্নোত্তর ক–ঙ) · ৪ (পাঠ থেকে নাম-শব্দ খুঁজে লেখা) ·
+    ৫ ("আমি যা হতে চাই" — লেখা) · ৬ (ছড়া শেষ করা — দাদুর প্রিয় লাঠি…).
+    **অনুশীলনী ২ IS ABSENT FROM THE EXTRACTION** — the list runs ১ ৩ ৪ ৫ ৬. Nothing in the bank
+    is authored from it. This is a limit of the source, stated so it is not read as an omission.
+  · The section's "কোন প্রশ্নে কাজে লাগবে" line names S01 · S09 · S03 · S10 · S07 · S15. It is
+    ADVISORY (CD-122(b), CD-134) and is not a slot cap; do not report a slot as wrongly admitted
+    on the ground that this line does not name it.
+  · The C5 বিরামচিহ্ন taught set (CD-165 as amended by CD-166) is:
+    দাঁড়ি · কমা · প্রশ্নচিহ্ন · বিস্ময়চিহ্ন · উদ্ধরণ চিহ্ন. ড্যাশ and সেমিকোলন are BARRED at C5.
+CONTENT BARS   :
+  · "গান গেয়ে যাই" · "গান গেয়ে" · "ঠিক তখনি গান" · "গান" · "গেয়ে" · "গাইতে" · "গাইব" · "গাওয়া" ·
+    "গানের" · "সুর" · "সুরকার" — ⚠ C-03. The section's ⚠ block forbids making questions from the
+    printed line "ঠিক তখনি গান গেয়ে যাই" (printed line 15). Music and singing are barred material.
+  · "পরীর নাচন" · "পরীর" · "পরী" · "নাচন" · "নাচ" · "নাচে" · "নেচে" — ⚠ C-03. The section's ⚠
+    block forbids making questions from the printed line "ঢেউয়ে ঢেউয়ে পরীর নাচন," (printed line
+    27). Dance is barred material and পরী is additionally a supernatural being.
+  · "কোণে কোণে আপন মনে" · "কোণে কোণে" · "করছে তারা কী কে" · "আমারি ভয় করবে কেমন" ·
+    "তাকাতে সেই দিকে" — the ⚠ block's third clause: printed lines 33–36 hint at something unseen
+    below the water and the source says questions should not be made from this span.
+  · "দুই পারেরই সাথে" — printed line 10, the poem's ONLY line whose punctuation is a ড্যাশ.
+    Barred as S11 stimulus and as any item whose answer would require that mark (CD-165/CD-166).
+  · "মহান কবি" · "বিশ্বকবি" · "কবিগুরু" · "গুরুদেব" · "জাতীয় কবি" · "বিদ্রোহী কবি" — the ⚠
+    block's fourth clause and the register's own E-AUTHOR-ENDORSE row constraint: the poet's name
+    is carried as information only and no honorific adjective may be written or asked for.
+  · The characters ";" (সেমিকোলন) and "—" / "–" (ড্যাশ), WHERE A STUDENT MUST INSERT THEM — i.e.
+    inside an `answer_key.accepted` or `blanks.accepted` string. Both are barred at C5.
+PERMITTED NAMES:
+  · "গান" · "গেয়ে" · "গাইতে" · "গাইব" · "গাওয়া" · "গানের" · "সুর" · "সুরকার" — NONE. The section
+    prints no proper name containing any of these.
+  · "পরী" · "পরীর" · "পরীর নাচন" · "নাচন" · "নাচ" · "নাচে" · "নেচে" — NONE.
+  · "কোণে কোণে আপন মনে" · "কোণে কোণে" · "করছে তারা কী কে" · "আমারি ভয় করবে কেমন" ·
+    "তাকাতে সেই দিকে" — NONE.
+  · "দুই পারেরই সাথে" — NONE.
+  · "মহান কবি" · "বিশ্বকবি" · "কবিগুরু" · "গুরুদেব" · "জাতীয় কবি" · "বিদ্রোহী কবি" — NONE. The
+    only permitted form of the poet's name is the bare "রবীন্দ্রনাথ ঠাকুর", which the section's
+    own subtitle prints.
+  · ";" — NONE.
+  · "—" / "–" — PERMITTED as ORTHOGRAPHY AND TYPOGRAPHY, and only there: as a prose separator
+    inside `question_text`, `answer_key.model_note`, rubric `criterion`, rubric
+    `band_descriptors`, MCQ option `text` and `why_wrong`, and inside a hyphenated or compound
+    word the section itself prints (e.g. "নাম-শব্দ", "মাঠ-ঘাট", "চেনা-অচেনা", "যাওয়া-আসা").
+    It is a DEFECT only where a student would have to INSERT it — that is, inside an
+    `answer_key.accepted` or `blanks.accepted` string, most of all at S11.
+```
+
+Check the following. Report each as **PASS**, or as a numbered list of defects **each naming the
+exact qid**. Be terse; do not restate at length what is fine.
+
+**1 · FACTUAL ACCURACY.** For every item, is the answer correct against the source section? Cover
+`answer_key.accepted`, the `is_correct` MCQ option, every distractor's `why_wrong`, every
+`blanks.accepted`, and every rubric `band_descriptors` string. Flag: any answer that contradicts
+the source; any date, name, role or attribute that is wrong or swapped between people; any MCQ
+where a distractor is arguably also correct; and **any model answer that asserts something the
+source section does not state** — a key that reaches beyond the section is a defect even when the
+claim is true in the world, because the student is being marked against the section.
+
+**FOR EACH CLAIM YOU FLAG, LIST EVERY ITEM THAT CARRIES IT — with its qid and the field it sits in
+— and say which occurrences are the same claim.** Search the whole bank for the claim, not for the
+item you found it in: `question_text`, option `text`, `why_wrong`, `answer_key.accepted`,
+`answer_key.model_note`, `blanks.accepted`, rubric `criterion` and rubric `band_descriptors`.
+**A single flagged qid with siblings left unnamed is an incomplete finding**, even when the qid is
+right.
+
+**AN OUT-OF-SCOPE LIST SUPPRESSES COUNTING, NEVER SWEEPING (CD-160).** If the run hands you a list
+of deferred or out-of-scope items, **it does not narrow the sweep.** The sweep runs across the whole
+bank; a deferred item carrying a swept claim is **REPORTED UNDER THE CLAIM AND MARKED DEFERRED** —
+never omitted, never silently dropped from the enumeration. **Deferral decides whether a finding is
+COUNTED against the verdict; it never decides whether the finding is LOOKED FOR.**
+**Why, measured:** a deferral list partitions the bank BY ITEM, and a factual defect lives BY CLAIM
+(TOOLS-CR-008). The two carvings cut across each other. Three items once carried a flagged claim,
+sat on a deferral list as slot-check items, and were not swept — the enumerating requirement above
+had found the class and the list is what stopped the fix reaching it. **The sweep defines membership
+in a claim class; the list only marks disposition.** A list that decides who is IN a class will
+drift from the class — that is how one item came to be missing from its own group's list.
+
+**Why this check enumerates (TOOLS-CR-008).** A report is organised by ITEM, because that is what
+you read; **a factual defect is organised by CLAIM**, because one claim can sit in a stem, a key, a
+`why_wrong` and a rubric band across four qids. A session that fixes the qid you name and stops has
+left the defect standing — and this happened twice in one session: a moonlight claim removed from
+one item survived in another, so the bank then **forbade in one item what it keyed in another**; and
+a causal link removed from an answer key went on being **required for full marks** in a rubric band.
+**Check 2 has enumerated from the start and produced no such recurrence; this check did not and
+produced two.** The difference was never diligence — it was that one check was asked to enumerate
+and the other was not.
+
+**2 · THE CHAPTER'S CONTENT BARS.** For each STRING in `CONTENT BARS`, search **every
+student-facing string**: `question_text`, MCQ option `text`, `why_wrong`, `answer_key.accepted`,
+`answer_key.model_note`, rubric `criterion`, and rubric `band_descriptors`. List **every**
+occurrence with its qid and field. For each, say whether it is one of the strings declared in
+`PERMITTED NAMES` — permitted — or anything else, which is a **DEFECT**. Do not decide for
+yourself whether an undeclared use seems harmless; report it.
+
+**3 · STANDING CURATION BARS.** Verified at source in `canon/islamic-curation/`:
+**C-03** music and dance including all percussion · **C-05** depictions of living beings ·
+**C-18** nationalism over ummah and nationalist veneration rituals — flag salutes, wreaths or
+flowers at monuments, ritual silence. C-18's own carve-out permits **factual history** — dates,
+events, contributions — so report the ritual, not the history. Confirm no item draws on barred
+material and no item requests a picture of a person. Note that a rubric row which *forbids* barred
+content is correct and is not an occurrence.
+
+**4 · INVENTED NAMES.** Every personal name in the bank must be either a figure the chapter itself
+records, or a name from the approved pool. Flag any invented character.
+
+**5 · NUMERALS.** Flag any ASCII digit `0-9` in a student-facing string; Bengali numerals only.
+Internal codes inside a teacher-facing `model_note` are not student-facing and are not defects.
+
+**6 · SLOT-SPECIFIC CORRECTNESS.** Apply only the checks whose slot appears in `ADMITTED SLOTS`.
+- **S12 যুক্তবর্ণ** — is the conjunct decomposition orthographically right, and does the newly
+  formed word actually contain that conjunct? Also flag any stimulus word carrying **more than
+  one** conjunct where the stem does not say which one is meant.
+- **S10 পদ নির্ণয়** — is the answer the right part of speech for the target word **as used in the
+  given sentence**? Flag any accepted answer that is a super-class rather than the পদ itself, and
+  any term that is not standard Bengali grammar.
+- **S13 এক কথায় প্রকাশ** — does the answer actually match its definition phrase? Flag a definition
+  the chapter also satisfies with a different word that is not accepted, and any accepted form
+  whose grammatical class does not fit the definition.
+- **S06 বিপরীত শব্দ** — does the stimulus word's use *in this chapter* support the antonym given?
+  A word used adverbially or idiomatically may have no antonym in the sense the chapter uses it.
+- **S11 বিরামচিহ্ন** — is every required mark inside the punctuation set taught at this class, and
+  does each item require more than a single terminal mark?
+
+**7 · LANGUAGE.** Are stems, keys and rubric rows natural, grammatical and appropriate for the
+class? Flag anything clumsy, ambiguous, or above the class level. Flag any internal policy code
+that has leaked into marker-facing or student-facing text.
+
+Finish with one line and nothing after it:
+
+`VERDICT: CLEAN` or `VERDICT: N DEFECT(S)`
+

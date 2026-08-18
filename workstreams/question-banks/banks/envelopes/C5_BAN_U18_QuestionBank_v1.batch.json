@@ -1,0 +1,3725 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question_batch",
+  "batch": {
+    "bank_id": "C5_BAN_U18_QuestionBank",
+    "bank_version": "v1",
+    "item_count": 79,
+    "digest": "495ef249c7dc41157920bddde727abe289e0af95b01b1425d27264b956b35c32"
+  },
+  "items": [
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "medium",
+        "paper_role": "structured"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q01",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "কবি ও কবিতার নাম লিখে 'ইচ্ছামতী' কবিতার 'যখন যেমন মনে করি' থেকে 'নামবে অন্ধকার।' পর্যন্ত অংশটুকু মুখস্থ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "structured",
+        "bloom_level": "Remember",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 10,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "কবিতা: ইচ্ছামতী; কবি: রবীন্দ্রনাথ ঠাকুর। যখন যেমন মনে করি তাই হতে পাই যদি আমি তবে একখনি হই ইচ্ছামতী নদী। রইবে আমার দখিন ধারে সূর্য ওঠার পার, বাঁয়ের ধারে সন্ধেবেলায় নামবে অন্ধকার।"
+          ],
+          "model_note": "নম্বর ভাগ: কবির নাম ১ + কবিতার নাম ১ + প্রথম ৮ লাইন ৮ = ১০। অংশটি বইয়ের ছাপা আট লাইন, অর্থাৎ প্রথম স্তবক। চরণ হুবহু পাঠের মতো হতে হবে; বানান ও যতিচিহ্নে ছাড় দেওয়া যাবে। কবির নাম কেবল তথ্য হিসেবে — কোনো সম্মানসূচক বিশেষণ লেখা যাবে না বা চাওয়া যাবে না।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q02",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "পাঠে ব্যবহৃত 'আধেক' শব্দের অর্থ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "অর্ধেক"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q03",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "পাঠে ব্যবহৃত 'ঘাটের ধাপ' শব্দের অর্থ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "ঘাটের সিঁড়ি"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q04",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "পাঠে ব্যবহৃত 'ডাঙা' শব্দের অর্থ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "তীর",
+            "শুকনো জায়গা",
+            "তীর; শুকনো জায়গা"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q05",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "পাঠে ব্যবহৃত 'দখিন ধারে' শব্দের অর্থ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "ডান দিকে"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q06",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "পাঠে ব্যবহৃত 'নতুনতরো' শব্দের অর্থ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "অন্যরকম"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q07",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "পাঠে ব্যবহৃত 'নাইতে' শব্দের অর্থ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "গোসল করতে"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q08",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "পাঠে ব্যবহৃত 'বরন' শব্দের অর্থ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "বর্ণ",
+            "রং",
+            "বর্ণ; রং"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q09",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "পাঠে ব্যবহৃত 'রাত্তির' শব্দের অর্থ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "রাতের বেলা"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-02",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q10",
+        "topic_tag": "TOP-BAN-C5-02",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'চুপচাপ' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "ক্লাসে সবাই চুপচাপ বসে বইয়ের পাতা উল্টাচ্ছিল।"
+          ],
+          "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-02",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q11",
+        "topic_tag": "TOP-BAN-C5-02",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'মাঠে ঘাটে' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "ছুটির দিনে ছেলেমেয়েরা মাঠে ঘাটে ঘুরে বেড়ায়।"
+          ],
+          "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-02",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q12",
+        "topic_tag": "TOP-BAN-C5-02",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'ধু ধু' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "বৈশাখ মাসে নদীর চর ধু ধু করে।"
+          ],
+          "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-02",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q13",
+        "topic_tag": "TOP-BAN-C5-02",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'চেয়ে চেয়ে' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "খোকা জানালা দিয়ে চেয়ে চেয়ে বৃষ্টি দেখছিল।"
+          ],
+          "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-02",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q14",
+        "topic_tag": "TOP-BAN-C5-02",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'থম থম' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "ঝড়ের আগে চারদিক থম থম করছিল।"
+          ],
+          "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-02",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q15",
+        "topic_tag": "TOP-BAN-C5-02",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'ছম ছম' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "অন্ধকার পথে হাঁটতে গিয়ে গা ছম ছম করে উঠল।"
+          ],
+          "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-02",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q16",
+        "topic_tag": "TOP-BAN-C5-02",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'ঝলমল' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "উৎসবের রাতে সারা শহর আলোয় ঝলমল করছিল।"
+          ],
+          "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-02",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q17",
+        "topic_tag": "TOP-BAN-C5-02",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'ডাঙা' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "নৌকা থেকে নেমে আমরা ডাঙায় উঠে দাঁড়ালাম।"
+          ],
+          "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-02",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q18",
+        "topic_tag": "TOP-BAN-C5-02",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'আধেক' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "আধেক পথ হেঁটে এসে সে খানিক জিরিয়ে নিল।"
+          ],
+          "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-02",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q19",
+        "topic_tag": "TOP-BAN-C5-02",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'নতুনতরো' শব্দটি দিয়ে একটি অর্থপূর্ণ বাক্য লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "মেলায় গিয়ে সে নতুনতরো অনেক জিনিস দেখল।"
+          ],
+          "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q20",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'আমি তবে একখনি হই ______ নদী।' — শূন্যস্থান পূরণ করো।",
+        "question_type": "fill_blank",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "blanks": [
+          {
+            "blank_no": 1,
+            "accepted": [
+              "ইচ্ছামতী"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q21",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'রইবে আমার ______ ধারে সূর্য ওঠার পার,' — শূন্যস্থান পূরণ করো।",
+        "question_type": "fill_blank",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "blanks": [
+          {
+            "blank_no": 1,
+            "accepted": [
+              "দখিন"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q22",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'বাঁয়ের ধারে সন্ধেবেলায় নামবে ______।' — শূন্যস্থান পূরণ করো।",
+        "question_type": "fill_blank",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "blanks": [
+          {
+            "blank_no": 1,
+            "accepted": [
+              "অন্ধকার"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q23",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'আধেক কথা দিনের বেলায়, আধেক কথা ______।' — শূন্যস্থান পূরণ করো।",
+        "question_type": "fill_blank",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "blanks": [
+          {
+            "blank_no": 1,
+            "accepted": [
+              "রাতে"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q24",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'গাঁয়ের মানুষ চিনি, যারা ______ আসে জলে,' — শূন্যস্থান পূরণ করো।",
+        "question_type": "fill_blank",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "blanks": [
+          {
+            "blank_no": 1,
+            "accepted": [
+              "নাইতে"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q25",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'গোরু মহিষ নিয়ে যারা ______ ওপার চলে।' — শূন্যস্থান পূরণ করো।",
+        "question_type": "fill_blank",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "blanks": [
+          {
+            "blank_no": 1,
+            "accepted": [
+              "সাঁতরে"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q26",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'জলের উপর ঝলোমলো টুকরো ______ রাশি।' — শূন্যস্থান পূরণ করো।",
+        "question_type": "fill_blank",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "blanks": [
+          {
+            "blank_no": 1,
+            "accepted": [
+              "আলোর"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q27",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'একধারেতে মাঠে ঘাটে ______ বরন শুধু,' — শূন্যস্থান পূরণ করো।",
+        "question_type": "fill_blank",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "blanks": [
+          {
+            "blank_no": 1,
+            "accepted": [
+              "সবুজ"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q28",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'আর একধারে ______ চরে রৌদ্র করে ধু ধু।' — শূন্যস্থান পূরণ করো।",
+        "question_type": "fill_blank",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "blanks": [
+          {
+            "blank_no": 1,
+            "accepted": [
+              "বালুর"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q29",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'ডাঙার পানে চেয়ে চেয়ে করবে গা ______।' — শূন্যস্থান পূরণ করো।",
+        "question_type": "fill_blank",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "blanks": [
+          {
+            "blank_no": 1,
+            "accepted": [
+              "ছম ছম"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "mcq"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q30",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'ইচ্ছামতী' কবিতাটির কবি কে?",
+        "question_type": "mcq",
+        "paper_role": "mcq",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "options": [
+          {
+            "option_id": "ক",
+            "text": "রবীন্দ্রনাথ ঠাকুর",
+            "is_correct": true
+          },
+          {
+            "option_id": "খ",
+            "text": "কাজী নজরুল ইসলাম",
+            "is_correct": false,
+            "why_wrong": "এই পাঠের শুরুতেই 'ইচ্ছামতী' কবিতার কবির নাম লেখা আছে — রবীন্দ্রনাথ ঠাকুর।"
+          },
+          {
+            "option_id": "গ",
+            "text": "আল মাহমুদ",
+            "is_correct": false,
+            "why_wrong": "পাঠ অনুযায়ী 'ইচ্ছামতী' কবিতার কবি রবীন্দ্রনাথ ঠাকুর।"
+          },
+          {
+            "option_id": "ঘ",
+            "text": "কাজী কাদের নেওয়াজ",
+            "is_correct": false,
+            "why_wrong": "পাঠে এই কবিতার কবি হিসেবে কেবল রবীন্দ্রনাথ ঠাকুরের নামই দেওয়া আছে।"
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "mcq"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q31",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "কবি নিজে কী হতে চান বলে কবিতায় বলেছেন?",
+        "question_type": "mcq",
+        "paper_role": "mcq",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "options": [
+          {
+            "option_id": "ক",
+            "text": "ইচ্ছামতী নদী",
+            "is_correct": true
+          },
+          {
+            "option_id": "খ",
+            "text": "গাঁয়ের ঘাট",
+            "is_correct": false,
+            "why_wrong": "ঘাট কবিতায় আছে, কিন্তু কবি ঘাট হতে চাননি — তিনি ঘাটে ঘুরে বেড়ানোর কথা বলেছেন।"
+          },
+          {
+            "option_id": "গ",
+            "text": "বালুর চর",
+            "is_correct": false,
+            "why_wrong": "বালুর চর নদীর এক ধারের বর্ণনা, কবির ইচ্ছা নয়।"
+          },
+          {
+            "option_id": "ঘ",
+            "text": "দূরের মাঠ",
+            "is_correct": false,
+            "why_wrong": "দূরের মাঠ কবিতায় নদীর যাওয়ার জায়গা, কবির রূপ নয়।"
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "mcq"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q32",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "ইচ্ছামতী নদীর কোন ধারে সূর্য ওঠে?",
+        "question_type": "mcq",
+        "paper_role": "mcq",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "options": [
+          {
+            "option_id": "ক",
+            "text": "দখিন ধারে",
+            "is_correct": true
+          },
+          {
+            "option_id": "খ",
+            "text": "বাঁয়ের ধারে",
+            "is_correct": false,
+            "why_wrong": "বাঁয়ের ধারে সন্ধেবেলায় অন্ধকার নামে বলে কবিতায় আছে।"
+          },
+          {
+            "option_id": "গ",
+            "text": "বালুর চরে",
+            "is_correct": false,
+            "why_wrong": "বালুর চরের কথা এসেছে রৌদ্রের প্রসঙ্গে, সূর্য ওঠার প্রসঙ্গে নয়।"
+          },
+          {
+            "option_id": "ঘ",
+            "text": "ঘাটের ধাপে",
+            "is_correct": false,
+            "why_wrong": "ঘাটের ধাপ জলের নিচে তলিয়ে যাওয়ার প্রসঙ্গে এসেছে।"
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "paper_role": "mcq"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q33",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'আধেক কথা দিনের বেলায়, আধেক কথা রাতে।' — এই দুই চরণে কবি কী বোঝাতে চেয়েছেন?",
+        "question_type": "mcq",
+        "paper_role": "mcq",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "options": [
+          {
+            "option_id": "ক",
+            "text": "নদী তার মনের কথা দুই পারের সঙ্গে ভাগ করে বলবে — কিছু দিনে, কিছু রাতে",
+            "is_correct": true
+          },
+          {
+            "option_id": "খ",
+            "text": "নদী দিনে কথা বলবে, রাতে চুপ করে থাকবে",
+            "is_correct": false,
+            "why_wrong": "চরণ দুটিতে রাতেও কথা বলার কথা স্পষ্ট করে আছে।"
+          },
+          {
+            "option_id": "গ",
+            "text": "নদীর কথা কেউ শোনে না",
+            "is_correct": false,
+            "why_wrong": "কবিতায় নদী দুই পারের সাথেই কথা বলছে।"
+          },
+          {
+            "option_id": "ঘ",
+            "text": "নদী কেবল দূরের মানুষের সঙ্গে কথা বলবে",
+            "is_correct": false,
+            "why_wrong": "দূরের মানুষদের নাম ও গ্রাম নদী জানে না বলে কবিতায় আছে।"
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "paper_role": "mcq"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q34",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'নাম জানি নে, গ্রাম জানি নে' — কাদের সম্পর্কে কবি এ কথা বলেছেন?",
+        "question_type": "mcq",
+        "paper_role": "mcq",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "options": [
+          {
+            "option_id": "ক",
+            "text": "দূরের মানুষ, যাদের বেশ অন্যরকম",
+            "is_correct": true
+          },
+          {
+            "option_id": "খ",
+            "text": "গাঁয়ের মানুষ, যারা জলে নাইতে আসে",
+            "is_correct": false,
+            "why_wrong": "গাঁয়ের ওই মানুষদের নদী চেনে বলে কবিতায় আছে।"
+          },
+          {
+            "option_id": "গ",
+            "text": "যারা গোরু মহিষ নিয়ে ওপার যায়",
+            "is_correct": false,
+            "why_wrong": "তারাও গাঁয়েরই মানুষ, যাদের নদী চেনে।"
+          },
+          {
+            "option_id": "ঘ",
+            "text": "যারা ঘাটের ধাপে বসে থাকে",
+            "is_correct": false,
+            "why_wrong": "ঘাটের ধাপের প্রসঙ্গটি আলাদা; সেখানে চেনা-অচেনার কথা নেই।"
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "paper_role": "mcq"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q35",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "কবিতা অনুসারে নদীর দুই ধারের চেহারা কেমন?",
+        "question_type": "mcq",
+        "paper_role": "mcq",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "options": [
+          {
+            "option_id": "ক",
+            "text": "একধারে সবুজ মাঠ ঘাট, অন্যধারে বালুর চরে ধু ধু রোদ",
+            "is_correct": true
+          },
+          {
+            "option_id": "খ",
+            "text": "দুই ধারেই সবুজ মাঠ",
+            "is_correct": false,
+            "why_wrong": "কবিতা দুই ধারকে আলাদা করে দেখিয়েছে — এক ধারে সবুজ, আর এক ধারে বালুর চর।"
+          },
+          {
+            "option_id": "গ",
+            "text": "দুই ধারেই বালুর চর",
+            "is_correct": false,
+            "why_wrong": "সবুজ বরনের ধারটির কথা কবিতায় স্পষ্ট আছে।"
+          },
+          {
+            "option_id": "ঘ",
+            "text": "একধারে ঘর, অন্যধারে হাট",
+            "is_correct": false,
+            "why_wrong": "ঘর বা হাটের কোনো কথা এই স্তবকে নেই।"
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "paper_role": "mcq"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q36",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'রাত্তিরে থম থম!' — চরণটি নদীতীরের রাত সম্পর্কে কী বোঝায়?",
+        "question_type": "mcq",
+        "paper_role": "mcq",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "options": [
+          {
+            "option_id": "ক",
+            "text": "রাতে চারদিক নিস্তব্ধ ও গম্ভীর হয়ে যায়",
+            "is_correct": true
+          },
+          {
+            "option_id": "খ",
+            "text": "রাতে অনেক মানুষের ভিড় হয়",
+            "is_correct": false,
+            "why_wrong": "দিনের বেলায় যাওয়া-আসার কথা আছে; রাত্তিরের বর্ণনা তার উল্টো।"
+          },
+          {
+            "option_id": "গ",
+            "text": "রাতে দুই ধারের সবুজ বরন আরও গাঢ় হয়",
+            "is_correct": false,
+            "why_wrong": "সবুজ বরনের কথা মাঠে ঘাটের বর্ণনায় আছে, রাতের প্রসঙ্গে নয়।"
+          },
+          {
+            "option_id": "ঘ",
+            "text": "রাতে বৃষ্টি নামে",
+            "is_correct": false,
+            "why_wrong": "বৃষ্টির কোনো কথা কবিতায় নেই।"
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "paper_role": "mcq"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q37",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'গাঁয়ের লোকে চিনবে আমার কেবল একটুখানি।' — কবি এখানে নদীর কোন দিকটি বোঝাচ্ছেন?",
+        "question_type": "mcq",
+        "paper_role": "mcq",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "options": [
+          {
+            "option_id": "ক",
+            "text": "নদীর বেশির ভাগটাই মানুষের চেনার বাইরে থেকে যায়",
+            "is_correct": true
+          },
+          {
+            "option_id": "খ",
+            "text": "গাঁয়ের লোক নদীকে একদমই চেনে না",
+            "is_correct": false,
+            "why_wrong": "'কেবল একটুখানি' কথাটি বলছে চেনে, তবে সামান্য।"
+          },
+          {
+            "option_id": "গ",
+            "text": "নদী গাঁয়ের লোকের কাছ থেকে দূরে সরে যায়",
+            "is_correct": false,
+            "why_wrong": "সরে যাওয়ার কথা নয়, চেনা-না-চেনার কথা।"
+          },
+          {
+            "option_id": "ঘ",
+            "text": "নদী কেবল দূরের মানুষকেই চেনে",
+            "is_correct": false,
+            "why_wrong": "দূরের মানুষদের নাম-গ্রাম নদী জানে না বলে কবিতায় আছে।"
+          }
+        ]
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q38",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-WORDREL",
+        "question_text": "পাঠে ব্যবহৃত 'অন্ধকার' শব্দের বিপরীত শব্দ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "আলো"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q39",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-WORDREL",
+        "question_text": "পাঠে ব্যবহৃত 'দিনের' শব্দের বিপরীত শব্দ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "রাতের"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q40",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-WORDREL",
+        "question_text": "পাঠে ব্যবহৃত 'দূরের' শব্দের বিপরীত শব্দ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "কাছের"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q41",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-WORDREL",
+        "question_text": "পাঠে ব্যবহৃত 'ডাঙা' শব্দের বিপরীত শব্দ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "জল"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q42",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-WORDREL",
+        "question_text": "পাঠে ব্যবহৃত 'উপর' শব্দের বিপরীত শব্দ লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "নিচ"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q43",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "কবি কী হতে চান? কেন হতে চান?",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 2,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "কবি ইচ্ছামতী নদী হতে চান। কারণ তিনি চান যখন যেমন মনে করেন তেমন হতে — নদী হলে তিনি দুই পারের সঙ্গে মনের কথা বলতে পারবেন এবং ঘুরে ঘুরে দূরের মাঠে মাঠে যেতে পারবেন।"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q44",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "ইচ্ছামতী নদীর কোন দিকে সূর্য ওঠে?",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 2,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "দখিন ধারে — কবিতায় আছে 'রইবে আমার দখিন ধারে সূর্য ওঠার পার'।"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q45",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "ইচ্ছামতী নদী কোন পারের মানুষের সাথে কথা বলবে?",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 2,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "দুই পারের মানুষের সঙ্গেই — আধেক কথা দিনের বেলায় আর আধেক কথা রাতে।"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q46",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "ইচ্ছামতী নদীর দুই ধারের পার্থক্য কী?",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 2,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "এক ধারে মাঠে ঘাটে কেবল সবুজ বরন, আর এক ধারে বালুর চরে রৌদ্র ধু ধু করে। আবার দখিন ধারে সূর্য ওঠে আর বাঁয়ের ধারে সন্ধেবেলায় অন্ধকার নামে।"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q47",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "গাঁয়ের কোন মানুষদের নদী চেনে বলে কবি লিখেছেন?",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 2,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "যারা জলে নাইতে আসে, আর যারা গোরু মহিষ নিয়ে সাঁতরে ওপার যায় — এই মানুষদের নদী চেনে।"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Analyze",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q48",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "দূরের মানুষ সম্পর্কে নদী কী জানে না?",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Analyze",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 2,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "তাদের নাম জানে না, গ্রামও জানে না; কেবল দেখে তাদের বেশ নতুনতরো।"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Analyze",
+        "difficulty": "hard",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q49",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'গাঁয়ের লোকে চিনবে আমার কেবল একটুখানি।' — কবি এ কথায় নদী সম্পর্কে কী বোঝাতে চেয়েছেন?",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Analyze",
+        "difficulty": "hard",
+        "tier": "tier1",
+        "marks": 2,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "নদীকে মানুষ যতটুকু দেখে ততটুকুই চেনে; বাকিটা কোথায় হারিয়ে যায় তা নদী নিজেও জানে না। অর্থাৎ নদীর বেশির ভাগটাই মানুষের চেনার বাইরে।"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Analyze",
+        "difficulty": "hard",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q50",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "কবিতার নাম 'ইচ্ছামতী' রাখা হয়েছে কেন — কবিতার প্রথম স্তবক থেকে বুঝিয়ে লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Analyze",
+        "difficulty": "hard",
+        "tier": "tier1",
+        "marks": 2,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "প্রথম স্তবকে কবি বলছেন, যখন যেমন মনে করেন তাই হতে পেলে তিনি একখানি নদী হতেন। সেই ইচ্ছা থেকেই নদীর নাম 'ইচ্ছামতী' — যে নদী মনের ইচ্ছামতো বয়ে যায়।"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Analyze",
+        "difficulty": "hard",
+        "paper_role": "structured"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q51",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "ইচ্ছামতী নদীতীরের দিন ও রাতের বর্ণনা দাও।",
+        "question_type": "descriptive",
+        "paper_role": "structured",
+        "bloom_level": "Analyze",
+        "difficulty": "hard",
+        "tier": "tier1",
+        "marks": 5,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "rubric": {
+          "bands": [
+            "সম্পূর্ণ",
+            "আংশিক"
+          ],
+          "criteria": [
+            {
+              "role": "islamic_alignment",
+              "criterion": "দিন ও রাত — দুটোই কবিতার নিজের চরণ থেকে আলাদা করে এসেছে কি না, এবং বর্ণনায় কোনো ভয়-জাগানো বা অলৌকিক ব্যাখ্যা যোগ করা হয়নি কি না",
+              "band_descriptors": {
+                "সম্পূর্ণ": "দিনের বেলায় যাওয়া-আসা, দুই ধারের সবুজ ও বালুর চরের রোদ, আর রাত্তিরে থম থম নিস্তব্ধতা ও ডাঙার পানে চেয়ে গা ছম ছম করা — দুই সময়ের বর্ণনা নিজের ভাষায় গুছিয়ে লেখা হয়েছে।",
+                "আংশিক": "কেবল দিন বা কেবল রাতের কথা এসেছে; অথবা কবিতার চরণ হুবহু তুলে দেওয়া হয়েছে।"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "paper_role": "structured"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q52",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "নদী হয়ে কবি কী কী করতে চান — কবিতা অনুসরণ করে লেখো।",
+        "question_type": "descriptive",
+        "paper_role": "structured",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 5,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "rubric": {
+          "bands": [
+            "সম্পূর্ণ",
+            "আংশিক"
+          ],
+          "criteria": [
+            {
+              "role": "islamic_alignment",
+              "criterion": "কবির চাওয়াগুলো কবিতার নিজের চরণ থেকে নেওয়া হয়েছে কি না, এবং ঘরবাড়ি বা পড়াশোনা ছেড়ে যাওয়াকে কবিতার শিক্ষা বলে দেখানো হয়নি কি না",
+              "band_descriptors": {
+                "সম্পূর্ণ": "দুই পারের সঙ্গে মনের কথা বলা, আপন গাঁয়ের ঘাটে ঘুরে বেড়ানো, দূরের মাঠে মাঠে যাওয়া, গাঁয়ের মানুষকে চেনা — অন্তত তিনটি চাওয়া কবিতা থেকে এসেছে এবং ইতিবাচক ভাষায় লেখা হয়েছে।",
+                "আংশিক": "একটি বা দুটি চাওয়া এসেছে; অথবা কবিতায় নেই এমন ইচ্ছা যোগ করা হয়েছে।"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Analyze",
+        "difficulty": "hard",
+        "paper_role": "structured"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q53",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "ইচ্ছামতী নদীর দুই ধারের পার্থক্য বিস্তারিতভাবে লেখো।",
+        "question_type": "descriptive",
+        "paper_role": "structured",
+        "bloom_level": "Analyze",
+        "difficulty": "hard",
+        "tier": "tier1",
+        "marks": 5,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "rubric": {
+          "bands": [
+            "সম্পূর্ণ",
+            "আংশিক"
+          ],
+          "criteria": [
+            {
+              "role": "islamic_alignment",
+              "criterion": "দুই ধারের তুলনা কবিতার দেওয়া তথ্য দিয়েই করা হয়েছে কি না — কোনো ধারকে ভালো বা মন্দ বলে বিচার করা হয়নি কি না",
+              "band_descriptors": {
+                "সম্পূর্ণ": "সূর্য ওঠার দখিন ধার ও সন্ধের অন্ধকার নামা বাঁয়ের ধার, আর সবুজ বরনের মাঠ-ঘাট ও রৌদ্রে ধু ধু বালুর চর — দুই জোড়া বৈসাদৃশ্যই এসেছে এবং তুলনা হিসেবে সাজানো হয়েছে।",
+                "আংশিক": "কেবল এক জোড়া পার্থক্য এসেছে, অথবা দুই ধার আলাদা করে চিহ্নিত হয়নি।"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "paper_role": "structured"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q54",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "কবিতায় গাঁয়ের মানুষ ও দূরের মানুষের যে বর্ণনা এসেছে, তা নিজের ভাষায় লেখো।",
+        "question_type": "descriptive",
+        "paper_role": "structured",
+        "bloom_level": "Understand",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 5,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "rubric": {
+          "bands": [
+            "সম্পূর্ণ",
+            "আংশিক"
+          ],
+          "criteria": [
+            {
+              "role": "islamic_alignment",
+              "criterion": "দুই দলের মানুষকে কবিতার তথ্য দিয়েই আলাদা করা হয়েছে কি না, এবং অচেনা মানুষদের নিয়ে কোনো নেতিবাচক বা বিদ্রুপের কথা লেখা হয়নি কি না",
+              "band_descriptors": {
+                "সম্পূর্ণ": "গাঁয়ের চেনা মানুষ — যারা জলে নাইতে আসে, যারা গোরু মহিষ নিয়ে ওপার যায় — আর দূরের অচেনা মানুষ, যাদের বেশ নতুনতরো এবং যাদের নাম-গ্রাম নদী জানে না; দুই দলই আলাদা করে এসেছে, শ্রদ্ধার ভাষায়।",
+                "আংশিক": "কেবল এক দলের কথা এসেছে; অথবা অচেনা মানুষদের নিয়ে বিদ্রুপ বা মনগড়া কথা যোগ করা হয়েছে।"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Create",
+        "difficulty": "hard",
+        "paper_role": "structured"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q55",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "তুমি যদি একটি নদী হতে, কী কী করতে চাইতে? কবিতার ভাব অনুসরণ করে নিজের ভাষায় লেখো।",
+        "question_type": "descriptive",
+        "paper_role": "structured",
+        "bloom_level": "Create",
+        "difficulty": "hard",
+        "tier": "tier1",
+        "marks": 5,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "rubric": {
+          "bands": [
+            "সম্পূর্ণ",
+            "আংশিক"
+          ],
+          "criteria": [
+            {
+              "role": "islamic_alignment",
+              "criterion": "লেখাটি কবিতার ভাব ধরে রেখেছে কি না — উপকার ও মিলনের ইচ্ছা, ঘর বা দায়িত্ব ছেড়ে পালানোর ইচ্ছা নয়; এবং কোনো অলৌকিক শক্তির দাবি করা হয়নি কি না",
+              "band_descriptors": {
+                "সম্পূর্ণ": "নিজের অন্তত তিনটি ইচ্ছা লেখা হয়েছে, প্রতিটির সঙ্গে কবিতার কোনো ভাবের যোগ আছে — মানুষের কাছে থাকা, দূরে যাওয়া, দুই পারকে যুক্ত করা — এবং ভাষা শ্রেণির উপযোগী ও ইতিবাচক।",
+                "আংশিক": "ইচ্ছাগুলো লেখা হয়েছে কিন্তু কবিতার ভাবের সঙ্গে যোগ নেই, অথবা লেখাটি কবিতার চরণ তুলে দেওয়া হয়েছে।"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-05",
+        "bloom_level": "Analyze",
+        "difficulty": "hard",
+        "paper_role": "structured"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q56",
+        "topic_tag": "TOP-BAN-C5-05",
+        "ref19_topic_id": "BAN-POEM",
+        "question_text": "'ইচ্ছামতী' কবিতার মূলভাব নিজের ভাষায় লেখো।",
+        "question_type": "descriptive",
+        "paper_role": "structured",
+        "bloom_level": "Analyze",
+        "difficulty": "hard",
+        "tier": "tier1",
+        "marks": 5,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "rubric": {
+          "bands": [
+            "সম্পূর্ণ",
+            "আংশিক"
+          ],
+          "criteria": [
+            {
+              "role": "islamic_alignment",
+              "criterion": "পুরো কবিতা থেকে মূল ভাব বের করে আনা — মনের ইচ্ছামতো নদী হয়ে দুই পারের মানুষের কাছে থাকা ও তাদের সঙ্গে কথা বলার আকাঙ্ক্ষা; এবং সেই ইচ্ছাকে ঘর, পড়াশোনা বা বড়োদের কথার বিরোধী করে না দেখানো",
+              "band_descriptors": {
+                "সম্পূর্ণ": "মূলভাব নিজের ভাষায় লেখা হয়েছে, কবিতার চরণ হুবহু না তুলে; নদী হওয়ার ইচ্ছা, দুই পারের সঙ্গে কথা বলা এবং চেনা-অচেনা মানুষের মধ্য দিয়ে বয়ে চলা — এই দিকগুলো এসেছে এবং ভাষা ইতিবাচক।",
+                "আংশিক": "কবিতার চরণ তুলে দেওয়া হয়েছে, বা কেবল একটি দিক এসেছে; অথবা ঘর ছেড়ে চলে যাওয়াই কবিতার শিক্ষা — এমন ভুল ভাব এসেছে।"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q57",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-PARTSPEECH",
+        "question_text": "'আমি তবে একখনি হই ইচ্ছামতী নদী।' — এখানে 'নদী' শব্দটি কোন পদ? নির্ণয় করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "বিশেষ্য",
+            "বিশেষ্য পদ",
+            "নাম-শব্দ"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। এই প্রশ্নের উত্তর নির্দিষ্ট — উত্তরকুঞ্জিতে দেওয়া রূপগুলোই গ্রহণযোগ্য, কাছাকাছি অর্থের অন্য উত্তর নয়।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q58",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-PARTSPEECH",
+        "question_text": "'রইবে আমার দখিন ধারে সূর্য ওঠার পার,' — এখানে 'সূর্য' শব্দটি কোন পদ? নির্ণয় করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "বিশেষ্য",
+            "বিশেষ্য পদ",
+            "নাম-শব্দ"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। এই প্রশ্নের উত্তর নির্দিষ্ট — উত্তরকুঞ্জিতে দেওয়া রূপগুলোই গ্রহণযোগ্য, কাছাকাছি অর্থের অন্য উত্তর নয়।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q59",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-PARTSPEECH",
+        "question_text": "'আমি কইব মনের কথা' — এখানে 'আমি' শব্দটি কোন পদ? নির্ণয় করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "সর্বনাম",
+            "সর্বনাম পদ"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। এই প্রশ্নের উত্তর নির্দিষ্ট — উত্তরকুঞ্জিতে দেওয়া রূপগুলোই গ্রহণযোগ্য, কাছাকাছি অর্থের অন্য উত্তর নয়।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q60",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-PARTSPEECH",
+        "question_text": "'বাঁয়ের ধারে সন্ধেবেলায় নামবে অন্ধকার।' — এখানে 'নামবে' শব্দটি কোন পদ? নির্ণয় করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "ক্রিয়া",
+            "ক্রিয়া পদ",
+            "কাজ-শব্দ"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। এই প্রশ্নের উত্তর নির্দিষ্ট — উত্তরকুঞ্জিতে দেওয়া রূপগুলোই গ্রহণযোগ্য, কাছাকাছি অর্থের অন্য উত্তর নয়।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q61",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-PARTSPEECH",
+        "question_text": "'গাঁয়ের মানুষ চিনি, যারা' — এখানে 'মানুষ' শব্দটি কোন পদ? নির্ণয় করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "বিশেষ্য",
+            "বিশেষ্য পদ",
+            "নাম-শব্দ"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। এই প্রশ্নের উত্তর নির্দিষ্ট — উত্তরকুঞ্জিতে দেওয়া রূপগুলোই গ্রহণযোগ্য, কাছাকাছি অর্থের অন্য উত্তর নয়।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q62",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-PARTSPEECH",
+        "question_text": "'সাঁতরে ওপার চলে।' — এখানে 'চলে' শব্দটি কোন পদ? নির্ণয় করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "ক্রিয়া",
+            "ক্রিয়া পদ",
+            "কাজ-শব্দ"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। এই প্রশ্নের উত্তর নির্দিষ্ট — উত্তরকুঞ্জিতে দেওয়া রূপগুলোই গ্রহণযোগ্য, কাছাকাছি অর্থের অন্য উত্তর নয়।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q63",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-PARTSPEECH",
+        "question_text": "'সবুজ বরন শুধু,' — এখানে 'সবুজ' শব্দটি কোন পদ? নির্ণয় করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "বিশেষণ",
+            "বিশেষণ পদ"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। এই প্রশ্নের উত্তর নির্দিষ্ট — উত্তরকুঞ্জিতে দেওয়া রূপগুলোই গ্রহণযোগ্য, কাছাকাছি অর্থের অন্য উত্তর নয়।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q64",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-PARTSPEECH",
+        "question_text": "'আপন গাঁয়ের ঘাটে' — এখানে 'ঘাট' শব্দটি কোন পদ? নির্ণয় করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Understand",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "বিশেষ্য",
+            "বিশেষ্য পদ",
+            "নাম-শব্দ"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। এই প্রশ্নের উত্তর নির্দিষ্ট — উত্তরকুঞ্জিতে দেওয়া রূপগুলোই গ্রহণযোগ্য, কাছাকাছি অর্থের অন্য উত্তর নয়।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-13",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q65",
+        "topic_tag": "TOP-BAN-C5-13",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'রইবে আমার দখিন ধারে সূর্য ওঠার পার বাঁয়ের ধারে সন্ধেবেলায় নামবে অন্ধকার' — অংশটিতে প্রয়োজনীয় বিরামচিহ্নগুলো বসিয়ে আবার লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "রইবে আমার দখিন ধারে সূর্য ওঠার পার, বাঁয়ের ধারে সন্ধেবেলায় নামবে অন্ধকার।"
+          ],
+          "model_note": "দুটি চিহ্ন বসাতে হবে: 'পার'-এর পরে কমা, কারণ কথাটি এখানে শেষ হয়নি; আর 'অন্ধকার'-এর পরে দাঁড়ি, কারণ স্তবকের এই অংশ সেখানেই শেষ।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-13",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q66",
+        "topic_tag": "TOP-BAN-C5-13",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'গাঁয়ের মানুষ চিনি যারা নাইতে আসে জলে গোরু মহিষ নিয়ে যারা সাঁতরে ওপার চলে' — অংশটিতে প্রয়োজনীয় বিরামচিহ্নগুলো বসিয়ে আবার লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "গাঁয়ের মানুষ চিনি, যারা নাইতে আসে জলে, গোরু মহিষ নিয়ে যারা সাঁতরে ওপার চলে।"
+          ],
+          "model_note": "তিনটি চিহ্ন: 'চিনি'-র পরে কমা, কারণ পরের অংশটি বলে দিচ্ছে কাদের কথা; 'জলে'-র পরে কমা, কারণ আরও একটি দল যোগ হচ্ছে; আর 'চলে'-র পরে দাঁড়ি, কারণ বাক্য শেষ।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-13",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q67",
+        "topic_tag": "TOP-BAN-C5-13",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'দূরের মানুষ যারা তাদের নতুনতরো বেশ নাম জানি নে গ্রাম জানি নে অদ্ভুতের একশেষ' — অংশটিতে প্রয়োজনীয় বিরামচিহ্নগুলো বসিয়ে আবার লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "দূরের মানুষ যারা তাদের নতুনতরো বেশ, নাম জানি নে, গ্রাম জানি নে অদ্ভুতের একশেষ।"
+          ],
+          "model_note": "তিনটি চিহ্ন: 'বেশ'-এর পরে কমা, কারণ কথাটি চলতে থাকে; প্রথম 'নে'-র পরে কমা, কারণ পাশাপাশি দুটি কথা বলা হচ্ছে; আর শেষে দাঁড়ি।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-13",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q68",
+        "topic_tag": "TOP-BAN-C5-13",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'গাঁয়ের লোকে চিনবে আমার কেবল একটুখানি বাকি কোথায় হারিয়ে যাবে আমিই সে কি জানি' — অংশটিতে প্রয়োজনীয় বিরামচিহ্নগুলো বসিয়ে আবার লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "গাঁয়ের লোকে চিনবে আমার কেবল একটুখানি। বাকি কোথায় হারিয়ে যাবে আমিই সে কি জানি?"
+          ],
+          "model_note": "দুটি চিহ্ন, দুই রকমের: 'একটুখানি'-র পরে দাঁড়ি, কারণ প্রথম বাক্যটি সেখানেই শেষ; আর শেষে প্রশ্নচিহ্ন, কারণ দ্বিতীয় অংশটি একটি প্রশ্ন।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-13",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q69",
+        "topic_tag": "TOP-BAN-C5-13",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'একধারেতে মাঠে ঘাটে সবুজ বরন শুধু আর একধারে বালুর চরে রৌদ্র করে ধু ধু' — অংশটিতে প্রয়োজনীয় বিরামচিহ্নগুলো বসিয়ে আবার লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "একধারেতে মাঠে ঘাটে সবুজ বরন শুধু, আর একধারে বালুর চরে রৌদ্র করে ধু ধু।"
+          ],
+          "model_note": "দুটি চিহ্ন: 'শুধু'-র পরে কমা, কারণ এরপর দ্বিতীয় ধারের কথা আসছে; আর শেষে দাঁড়ি।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-13",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q70",
+        "topic_tag": "TOP-BAN-C5-13",
+        "ref19_topic_id": "BAN-SENTENCE",
+        "question_text": "'দিনের বেলায় যাওয়া আসা রাত্তিরে থম থম ডাঙার পানে চেয়ে চেয়ে করবে গা ছম ছম' — অংশটিতে প্রয়োজনীয় বিরামচিহ্নগুলো বসিয়ে আবার লেখো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "দিনের বেলায় যাওয়া আসা, রাত্তিরে থম থম! ডাঙার পানে চেয়ে চেয়ে করবে গা ছম ছম।"
+          ],
+          "model_note": "তিনটি চিহ্ন, তিন রকমের: 'আসা'-র পরে কমা; 'থম থম'-এর পরে বিস্ময়চিহ্ন, কারণ এখানে বিস্ময়ের ভাব; আর শেষে দাঁড়ি।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q71",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-JUKTOBARNA",
+        "question_text": "পাঠের 'ইচ্ছামতী' শব্দে থাকা 'চ্ছ' যুক্তবর্ণটি ভেঙে দেখাও এবং ওই যুক্তবর্ণ দিয়ে একটি নতুন শব্দ গঠন করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "চ্ছ = চ + ছ; নতুন শব্দ — কচ্ছপ",
+            "চ্ছ = চ + ছ; গচ্ছিত",
+            "চ্ছ — চ ও ছ; উচ্ছল"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। যুক্তবর্ণ ভাঙার অংশটি নির্দিষ্ট, এতে ছাড় নেই। নতুন শব্দ শিক্ষার্থীর নিজের যেকোনোটি গ্রহণযোগ্য, যদি তাতে ওই যুক্তবর্ণ থাকে। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q72",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-JUKTOBARNA",
+        "question_text": "পাঠের 'অন্ধকার' শব্দে থাকা 'ন্ধ' যুক্তবর্ণটি ভেঙে দেখাও এবং ওই যুক্তবর্ণ দিয়ে একটি নতুন শব্দ গঠন করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "ন্ধ = ন + ধ; নতুন শব্দ — বন্ধু",
+            "ন্ধ = ন + ধ; গন্ধ",
+            "ন্ধ — ন ও ধ; অন্ধ"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। যুক্তবর্ণ ভাঙার অংশটি নির্দিষ্ট, এতে ছাড় নেই। নতুন শব্দ শিক্ষার্থীর নিজের যেকোনোটি গ্রহণযোগ্য, যদি তাতে ওই যুক্তবর্ণ থাকে। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q73",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-JUKTOBARNA",
+        "question_text": "পাঠের 'অদ্ভুতের' শব্দে থাকা 'দ্ভ' যুক্তবর্ণটি ভেঙে দেখাও এবং ওই যুক্তবর্ণ দিয়ে একটি নতুন শব্দ গঠন করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "দ্ভ = দ + ভ; নতুন শব্দ — উদ্ভিদ",
+            "দ্ভ = দ + ভ; উদ্ভট",
+            "দ্ভ — দ ও ভ; উদ্ভব"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। যুক্তবর্ণ ভাঙার অংশটি নির্দিষ্ট, এতে ছাড় নেই। নতুন শব্দ শিক্ষার্থীর নিজের যেকোনোটি গ্রহণযোগ্য, যদি তাতে ওই যুক্তবর্ণ থাকে। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q74",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-JUKTOBARNA",
+        "question_text": "পাঠের 'রাত্তিরে' শব্দে থাকা 'ত্ত' যুক্তবর্ণটি ভেঙে দেখাও এবং ওই যুক্তবর্ণ দিয়ে একটি নতুন শব্দ গঠন করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Apply",
+        "difficulty": "medium",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "ত্ত = ত + ত; নতুন শব্দ — উত্তর",
+            "ত্ত = ত + ত; উত্তম",
+            "ত্ত — ত ও ত; পত্তন"
+          ],
+          "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ১৮ থেকেই নেওয়া। যুক্তবর্ণ ভাঙার অংশটি নির্দিষ্ট, এতে ছাড় নেই। নতুন শব্দ শিক্ষার্থীর নিজের যেকোনোটি গ্রহণযোগ্য, যদি তাতে ওই যুক্তবর্ণ থাকে। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ।"
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q75",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "'অর্ধেক অংশ' — পাঠের শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "আধেক"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q76",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "'নদীর পাশের শুকনো জায়গা' — পাঠের শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "ডাঙা"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q77",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "'রাতের বেলা' — পাঠের শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "রাত্তির"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q78",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "'দেখতে অন্যরকম যা' — পাঠের শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "নতুনতরো"
+          ]
+        }
+      }
+    },
+    {
+      "envelope_version": "1.0",
+      "doc_type": "question",
+      "subject": "BAN",
+      "class_level": 5,
+      "address": {
+        "anchor_word": "Unit",
+        "number": 18,
+        "title": "পাঠ ১৮ — ইচ্ছামতী"
+      },
+      "curation_tag": "FLEXIBLE",
+      "review_status": "draft",
+      "tags": {
+        "topic_tag": "TOP-BAN-C5-01",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "paper_role": "short"
+      },
+      "provenance": {
+        "source_project": "P04",
+        "author": "Principal",
+        "content_version": "1.0",
+        "source_filename": "C5_Bangla_Source_13-23.md"
+      },
+      "payload": {
+        "qid": "QP-BAN-C5-U18-Q79",
+        "topic_tag": "TOP-BAN-C5-01",
+        "ref19_topic_id": "BAN-VOCAB",
+        "question_text": "'বর্ণ বা রং' — পাঠের শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+        "question_type": "short_answer",
+        "paper_role": "short",
+        "bloom_level": "Remember",
+        "difficulty": "easy",
+        "tier": "tier1",
+        "marks": 1,
+        "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+        "answer_key": {
+          "accepted": [
+            "বরন"
+          ]
+        }
+      }
+    }
+  ]
+}

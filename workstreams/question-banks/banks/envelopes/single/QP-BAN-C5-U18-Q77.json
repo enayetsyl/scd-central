@@ -1,0 +1,43 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-01",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q77",
+    "topic_tag": "TOP-BAN-C5-01",
+    "ref19_topic_id": "BAN-VOCAB",
+    "question_text": "'রাতের বেলা' — পাঠের শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "answer_key": {
+      "accepted": [
+        "রাত্তির"
+      ]
+    }
+  }
+}

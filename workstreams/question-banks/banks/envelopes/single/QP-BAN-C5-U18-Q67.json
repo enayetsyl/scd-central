@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 18,
+    "title": "পাঠ ১৮ — ইচ্ছামতী"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-13",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U18-Q67",
+    "topic_tag": "TOP-BAN-C5-13",
+    "ref19_topic_id": "BAN-SENTENCE",
+    "question_text": "'দূরের মানুষ যারা তাদের নতুনতরো বেশ নাম জানি নে গ্রাম জানি নে অদ্ভুতের একশেষ' — অংশটিতে প্রয়োজনীয় বিরামচিহ্নগুলো বসিয়ে আবার লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৮ — ইচ্ছামতী",
+    "answer_key": {
+      "accepted": [
+        "দূরের মানুষ যারা তাদের নতুনতরো বেশ, নাম জানি নে, গ্রাম জানি নে অদ্ভুতের একশেষ।"
+      ],
+      "model_note": "তিনটি চিহ্ন: 'বেশ'-এর পরে কমা, কারণ কথাটি চলতে থাকে; প্রথম 'নে'-র পরে কমা, কারণ পাশাপাশি দুটি কথা বলা হচ্ছে; আর শেষে দাঁড়ি।"
+    }
+  }
+}
