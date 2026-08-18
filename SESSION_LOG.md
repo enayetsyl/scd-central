@@ -3541,3 +3541,91 @@ restores it nor explains it away. **Owner: the Principal.**
 - **NOTHING WAS FIXED THIS SESSION.** No bank file was touched: the ruling closed the pass, so every
   finding above went onto the manifest instead of into an edit — including the fourteenth S11 item and the
   five code tokens I would otherwise have swept.
+
+## 2026-08-18 (cont.) · পাঠ ১৭ · ১৮ · ১৯ built in PARALLEL · CD-173 · CD-174 · PENDING-P-042 · cowork
+
+**Bootstrap.** `HEAD == origin/main == 0574e877`, mount not lagging. Step 4's branch commands run and
+pasted; both (a) and (c) trivially true on equality. **The brief stated no expected HEAD — reported as a
+gap, and the Principal has adopted `0574e877` as the recorded expectation for the next session on this
+mount.**
+
+**STEP 0 stopped once, correctly.** Mount `git status --porcelain` returned two lines where the brief
+expected one: ` M tools/audits/source_check.py` plus `?? FINDSTR`, a zero-byte untracked file at the repo
+root, mtime 2026-08-18 12:11. Held rather than waved through — a shape being explicable is not a shape
+being classified (AGENTS §12.3). Ruled debris by the Principal. **Deletion from the mount was attempted on
+his instruction and FAILED with `Operation not permitted`**, exactly as `session_bootstrap` §5 predicts;
+it needs a desktop grant and remains the Principal's. Both mount reads used `--no-optional-locks`, and no
+`index.lock` was left behind.
+
+**Execution debt (STEP 2) — CLEAR.** Ledgers read at source, not grepped: `canon/DECISIONS.md` 172 rows,
+`tools/CORRECTIONS.md`, `workstreams/question-banks/CORRECTIONS.md`, `PENDING_PRINCIPAL.md` 41 rows.
+**Zero OPEN rows name পাঠ ১৭, ১৮ or ১৯.** Binding-but-ruled: CD-147(g) (পাঠ ১৮ does not admit S15),
+CD-149 (S01's printed-line span, পাঠ ১৮'s delimiter already agrees), CD-171(f) (পাঠ ১৯ buildable, no
+thin-chapter class), PENDING-P-008 FLAGGED and non-blocking. **পাঠ ১৭ is named by no row anywhere.**
+`PENDING-P-040` resolves: recorded at source as deliberately unused, not a phantom.
+
+**Isolation (STEP 3) — three clones did not fit, and the failure is recorded rather than only its fix.**
+Three full clones need 2.19 GB against 2.0 GB free; the third died mid-checkout with
+`write error. Out of diskspace`, leaving two trees unable to write their index. All three were removed and
+the run took STEP 3's other authorised option: **three detached `git worktree`s off the container clone**,
+each with its own index, 1.13 GB total. No worker wrote a ref.
+
+**Three workers, parallel, held at step 5's issue table** — 78 · 79 · 46 items, every chapter gate
+`RESULT: CLEAN (0 failures)`, 5b run 1 returning 7 defects each. Verified independently at fan-in rather
+than taken from the reports: gates re-run, item counts, slot spreads and Bloom counts re-computed, and
+S14/S15 confirmed present only in `header.spine_slots` and a `gaps` note citing CD-147(c) — never in
+`admissible_slots`, never in `slot_exclusions`.
+
+**Three findings all three workers reached independently.** (1) `ENVELOPE-SYNC` declares a never-exported
+bank in sync — now `PENDING-P-042`, raised not built. (2) The taught-set bar's scope — now `CD-173`.
+(3) §4's near-duplicate ban has no executing gate on a qp6 shape, and **`ZERO-OVERLAP` is one of the ten
+N/A gates**; hand-run across every bank, **`U14` and `U15` carry byte-identical cross-slot stems (max
+1.000)** and U13 reaches 0.905. **Principal ruling: keep as is, no gate, no row** — recorded here so the
+next session does not re-derive it.
+
+**FIX LOG (CD-151(b)) — every fix, by qid. Written by the orchestrator; no worker touched this file.**
+
+- **পাঠ ১৭, six fixed.** `Q14` model sentence re-cast so সাম্রাজ্য matches the sense keyed at Q07/Q78 and
+  the unsourced *অনেক দূরের* dropped · `Q60` stem re-worded off শব্দটি for a two-word unit and
+  `যৌগিক ক্রিয়া` removed from `accepted` · `Q74` accepts ঐতিহাসিক alongside ইতিহাসবিদ · `Q65` gains an
+  unquoted সোনাগড়া variant, the source printing the proper noun unquoted; `s11_work_check()` re-run, still
+  4 marks · `Q55–Q60` and `Q67–Q73` stripped of the slot-selection paragraph and the `SLOT_REGISTER`
+  citation · `Q59` stimulus restored to the full source row, the invented terminal দাঁড়ি removed.
+  **`Q44 Q47 Q48 Q49 Q50` DISSOLVED under CD-173 and byte-identical, verified by per-item SHA-256.**
+- **পাঠ ১৮, five fixed plus two uncounted quality notes.** `Q30` three `why_wrong` re-written inside the
+  authority span · `Q36` distractor গ moved off ঢেউ, whose only occurrence is the C-03-barred printed line
+  27 · `Q57 Q58 Q61 Q64` drop `নামপদ` (the super-class) and gain `নাম-শব্দ` · `Q40` drops `আপন` ·
+  `Q01 Q38–Q42 Q57–Q64 Q71–Q74` stripped of `CD-138(b)` · `CD-149` · `SLOT_REGISTER` · `E-AUTHOR-ENDORSE`
+  · `TEACHER_KEY` split so the open clause rides only the five genuinely open items · quality notes `Q34`
+  (honorific register) and `Q76` (stem narrowed). **`Q01 Q04 Q08 Q43 Q44 Q45 Q47 Q48 Q49 Q50 Q71 Q72 Q73
+  Q74` DISSOLVED under CD-173 and byte-identical, including the S12 `; —` key format.**
+  **Then two false header numbers corrected against source, outside 5b:** S12 conjuncts *চারটি* → **seven**
+  named with line numbers, the three unauthored recorded as an **open remainder and expressly not out of
+  scope**; দাঁড়ি *১৩টি লাইনে* → **১৪**, printed line 36 having been missed. The other five mark counts
+  re-verified and confirmed. Recorded as an addendum that opens by saying it is not a run.
+- **পাঠ ১৯, all seven fixed, plus a regression the worker introduced and caught itself.** `Q42` re-stemmed
+  off অরুণ/রবি, which the section never glosses as সূর্য · `Q24 Q26` false *পাশাপাশি ছাপা* note replaced
+  with the sibling items' existing form · `Q32–Q36` false *বইয়ের নিজের নাম* attribution dropped and
+  `accepted` re-ranked · `Q15` rhyme rebuilt on চর, ঝড় and ডর both dropped · `Q40` রুদ্র → ভদ্র → দ্রুত ·
+  `Q44 Q45` pair-mate added and stems re-cut off the circularity · `Q12` pronominalised.
+  **The fix to defect 3 licensed all three পদ triples on every item and contradicted its own note; run 2
+  caught it and it was corrected rather than shipped.** Beyond the ruled seven, evidence-backed: `Q16 Q17`
+  stems closed to the chapter list; `Q40` `accepted[0]` চন্দ্র → দ্রুত, চন্দ্র carrying ন্দ্র and not দ্র;
+  `গুণ-শব্দ` removed as an authoring coinage with zero occurrences in `canon/` or any pushed bank.
+  **The worker ran five review cycles where one was asked for — recorded, not smoothed.**
+
+**Post-fix 5b verdicts of record: পাঠ ১৭ = 1 · পাঠ ১৮ = 4 · পাঠ ১৯ = 1.** All standing defects travel to
+the Hub under CD-142(a): `U17 Q61` (S11 comma required-vs-optional, and the optional branch would force a
+re-stem under QB-CR-017), `U18 Q44` (frozen by CD-173's byte-identical hold), `U18 Q76`, `U18`'s two
+header items now closed, `U19 Q33/Q36` (`বিশেষ্য` unprinted at C5 while `নাম-শব্দ` is printed and is what
+all eleven sibling noun items key first). **CD-161(b) is satisfied by no bank in this set: none has two
+consecutive clean runs, so none is promotable, and `reviewed → gold` remains the Principal's Hub act.**
+
+**Exports (R7) — orchestrator only, serialised, one bank counted before the next began.** `single/` is a
+shared write surface and is named as such for the first time. **Hand-counted, because `ENVELOPE-SYNC`'s
+PASS is not evidence of existence — that is exactly PENDING-P-042:** U17 78·78·78·78, U18 79·79·79·79,
+U19 46·46·46·46 (items · array · `single/` · `batch.item_count`). `validate_import.py` PASS 79/79, 80/80,
+47/47. **Its first invocation reported N content failures and was nothing of the kind** — the harness
+needs `--envelope-schema` and `--question-schema` passed explicitly, the vendored file being
+`import-contract.schema.json` rather than the `*ImportEnvelope*` glob it searches for. Same family as
+`session_bootstrap` §5's `jsonschema` trap; worth the line it costs here.
