@@ -237,6 +237,47 @@ def paper_level_slots(subject, cls):
 # reddens on a RECORDED exception is acceptable; one that reddens on an unwritten state is not.
 TAUGHT_SET_REQUIRED = frozenset({("BAN", 5, "S11")})
 
+# ── CD-172 · THE NAMED EXCLUSION FROM CD-153's REPO-WIDE-GREEN PUSH CONDITION ──────────────
+#
+# TWO ITEM IDS, AND NOTHING ELSE. `QP-BAN-C5-U15-Q75` requires ড্যাশ and `QP-BAN-C5-U15-Q81`
+# requires সেমিকোলন; both marks are barred at C5 (CD-165, amended by CD-166) and both items are
+# therefore genuinely defective. They are RULED RETAINED (CD-169) and CD-170 permits NO in-repo
+# fixing of পাঠ ১৩ · ১৪ · ১৫ · ১৬, so the repo cannot dispose of them: the disposition is the
+# Hub's under CD-142(a), carried there by `P039_HUB_HANDOFF_MANIFEST_2026-08-18.txt`.
+#
+# THIS IS AN EXCLUSION FROM THE PUSH CONDITION, NOT A REPAIR AND NOT A PARDON. The items are still
+# defective, the finding is not retracted, and CD-169(b)'s *retained as DEFECTIVE, not as
+# acceptable* is unchanged. What CD-172 removes is a repo-wide-green stop that no permitted action
+# can clear — CD-153's own (g)(i) accepts that the lane may stop on FAILs it did not cause, but a
+# red nobody is ALLOWED to fix is a different object from a red nobody has fixed yet.
+#
+# KEYED BY ITEM ID, DELIBERATELY, AND A GATE-LEVEL OR CHECK-LEVEL EXCLUSION IS EXPRESSLY REFUSED
+# (Principal, CD-172). The taught-set check goes on failing normally everywhere else, including on
+# any other item in this same bank and this same slot. Excluding the CHECK would have made every
+# future taught-set defect invisible to buy two items' silence.
+#
+# A CLOSED LITERAL IN THE GATE, NEVER A FIELD IN THE BANK — the fourth time in this repo and the
+# same reason each time (CD-137's laundering finding · CD-150(d)'s HALF_MARK_ADMITTED · CD-165(c)'s
+# TAUGHT_SET_DECLARABLE): a bank that could declare its own exclusion would carry the PERMISSION
+# beside the DEFECT, and the rule would be unfalsifiable by construction. The item whose mark is
+# barred is the last artifact entitled to say the bar does not apply to it.
+#
+# REPORTED BY NAME ON EVERY RUN, NEVER A SILENT SKIP. Three lines print each run: which ids are
+# excluded, which of them ACTUALLY exercised the exclusion this run, and which did not. The last
+# is the discharge signal — see below.
+#
+# DISCHARGE IS AUTOMATIC AND THIS ROW CITES ITS OWN EXPIRY. **When the Hub disposes of both items,
+# the exclusion is removed and CD-172 is spent.** The observable condition is that neither id
+# exercises the exclusion any more — because the items were retired, re-stemmed at the Hub's
+# instruction, or the taught set changed under a later row. `UNEXERCISED` in the report IS the
+# expiry notice, and it prints on the run it first becomes true rather than waiting for someone to
+# check. CD-160's finding is why this half exists: a list drifts from the class it describes, and
+# an exclusion nobody re-examines is how a carve-out becomes the rule.
+CD172_TAUGHT_SET_EXCLUDED = frozenset({
+    "QP-BAN-C5-U15-Q75",     # requires ড্যাশ — CD-169(b)
+    "QP-BAN-C5-U15-Q81",     # requires সেমিকোলন — CD-169(b)
+})
+
 # The marks BY CHARACTER, and the two drafts this replaced are recorded because each failed in a way a
 # reader would not predict (CD-169(e)):
 #   * DRAFT 1 scanned mark NAMES in the item's prose. It cannot tell REQUIRES from FORBIDS, and it
@@ -1643,7 +1684,8 @@ def g_coverage(bank, ctx):
                     errs.append(f"{qid}: does `{c}` at slot {slot}, which admits "
                                 f"{declared} at C{cls}. Admitted nowhere in this slot's set")
 
-    # --- TAUGHT SET, per item (CD-165 · CD-166 · the expected failures at CD-169) ----------
+    # --- TAUGHT SET, per item (CD-165 · CD-166 · CD-169's residual · CD-172's exclusion) ---
+    cd172_hit = set()
     for s_short, row in sorted(slots_for_class.items()):
         in_slot = [q for q in bank["questions"] if slot_index.get(q.get("qid")) == s_short]
         declared_set = row.get("taught_set")
@@ -1665,12 +1707,43 @@ def g_coverage(bank, ctx):
                            f"route exists, and is REPORTED because the first-listed variant is the one a "
                            f"marker reads first")
             off = sorted(off_set)
+            if off and q.get("qid") in CD172_TAUGHT_SET_EXCLUDED:
+                # CD-172 — NAMED, JUSTIFIED, ID-KEYED. The defect is REPORTED in full, with the
+                # same text it would have failed with, so nothing is hidden by being excluded.
+                cd172_hit.add(q.get("qid"))
+                rep.append(f"CD-172 NAMED EXCLUSION · {q.get('qid')}: requires "
+                           + " · ".join(off) + f" at slot {s_short}; C{cls}'s taught set is "
+                           + " · ".join(declared_set) + ". THE DEFECT IS REAL AND IS NOT "
+                           "RETRACTED (CD-169(b)) — it is EXCLUDED from CD-153's repo-wide-green "
+                           "push condition because CD-169 rules the item RETAINED and CD-170 bars "
+                           "in-repo fixing of this bank. Disposition is the Hub's under "
+                           "CD-142(a). This id only; the check is unchanged everywhere else")
+                continue
             if off:
                 errs.append(f"{q.get('qid')}: requires " + " · ".join(off)
                             + f" at slot {s_short}; C{cls}'s taught set is " + " · ".join(declared_set)
                             + " (CD-165, amended by CD-166). A mark outside the taught set tests "
                               "something the class was never taught, however sound the item is "
                               "otherwise")
+
+    # CD-172's roster, printed EVERY run on every bank that carries a TAUGHT_SET_REQUIRED slot —
+    # never only when it bites. An exclusion that prints only on the run it is used is invisible on
+    # the run it stops being needed, which is exactly the run somebody must act on.
+    if any((subject, cls, s) in TAUGHT_SET_REQUIRED for s in slots_for_class):
+        in_bank = {q.get("qid") for q in bank["questions"]} & CD172_TAUGHT_SET_EXCLUDED
+        if in_bank:
+            unexercised = sorted(in_bank - cd172_hit)
+            rep.append("CD-172 ROSTER · excluded id(s) present in this bank: "
+                       + " · ".join(sorted(in_bank))
+                       + f"  |  EXERCISED this run: {' · '.join(sorted(cd172_hit)) or 'none'}")
+            if unexercised:
+                rep.append("CD-172 UNEXERCISED — " + " · ".join(unexercised)
+                           + ": listed as excluded and NOT failing the taught-set check. **THIS IS "
+                             "THE DISCHARGE SIGNAL (CD-172).** Either the Hub has disposed of the "
+                             "item, or the taught set moved under a later row, or the list has "
+                             "drifted from the class it describes (CD-160). Whichever it is, the "
+                             "exclusion is no longer earning its place and REMOVING IT IS OWED — "
+                             "the row cites this condition as its own expiry")
 
     # --- NO FLOOR. CD-171(a) retires both counts this block used to enforce. ---------------
     # (i) CD-138(g)'s per-slot demand is retired AT POOL LEVEL ONLY: `items_per_paper` is what a
@@ -2441,8 +2514,11 @@ def sweep(root, ctx):
         # only when a floor is missed and not only on the single-bank path. A check written
         # asymmetrically invites a later symmetric "fix"; a report that always prints is what
         # makes the asymmetry visible rather than something a reader infers from the code.
+        # CD-172: the named exclusion prints HERE, on the sweep, or it is a silent skip in the one
+        # run that decides a push. Caught by asserting the printer rather than the appender —
+        # the seeded test proved g_coverage BUILT the line, and the line still reached nobody.
         for gate, line in rep:
-            if gate == "BLOOM-BAND":
+            if gate == "BLOOM-BAND" or line.startswith("CD-172"):
                 print(f"  REPORT  {gate:<18} {line}")
         if marked and not f:
             msg = (f"passes all eleven while still declaring {MARKER} — the marker is stale and "
@@ -3862,12 +3938,13 @@ def taught_set_selftest():
             r["taught_set_source"] = "SYNTHETIC — not the spine"
         return {("BAN", 5, "S11"): r}
 
-    def bank(accepted, note=""):
-        qs = [{"qid": f"SY-Q{i:02d}", "question_text": "কল্পিত উদ্দীপক", "marks": 1,
+    def bank(accepted, note="", qids=None):
+        ids = qids or [f"SY-Q{i:02d}" for i in range(1, 21)]
+        qs = [{"qid": qid, "question_text": "কল্পিত উদ্দীপক", "marks": 1,
                "bloom_level": "Apply", "question_type": "short_answer", "topic_tag": "SY-TOPIC",
                "difficulty": "easy",
                "answer_key": {"accepted": list(accepted), "model_note": note}}
-              for i in range(1, 21)]
+              for qid in ids]
         return {"subject": "BAN", "class": 5, "questions": qs, "topics": ["SY-TOPIC"],
                 "header": {"admissible_slots": ["S11"], "slot_exclusions": {},
                            "topics": ["SY-TOPIC"], "reason": "synthetic"},
@@ -3912,12 +3989,75 @@ def taught_set_selftest():
         else:
             print(f"  PASS  TAUGHT SET  {label:<44} {state}: {why}")
 
-    # The live consequence, asserted rather than described: the two items CD-169 names must be the
-    # ONLY live failures of this check. A seed proves the instrument; this proves the instrument is
-    # pointed where the ruling says it is.
-    print("  NOTE  the live suite FAILS `QP-BAN-C5-U15-Q75` (ড্যাশ) and `Q81` (সেমিকোলন) — RECORDED "
-          "at CD-169 before this check landed, and retained only because পাঠ ১৫'s Apply floor cannot "
-          "absorb their retirement")
+    # ── CD-172 · THE NAMED EXCLUSION, SEEDED BOTH DIRECTIONS ─────────────────────────────
+    #
+    # THE FIXTURE IS SYNTHETIC AND THE IDS ARE REAL, and that combination is deliberate rather
+    # than sloppy. QB-D-012 bars a seed from reading the LIVE POOL, and nothing here does: the
+    # register row, the bank, the stimulus and the answers are all invented. What is borrowed is
+    # two ID STRINGS, and it has to be — the exclusion is keyed by id, so a seed using invented
+    # ids would exercise nothing and prove nothing. Reading a literal out of the gate under test
+    # is what a seed IS.
+    #
+    # THE SECOND CASE IS THE LOAD-BEARING ONE. An exclusion whose only proof is that the excluded
+    # ids pass has proved the wrong half: what matters is that a THIRD item, in the same bank, in
+    # the same slot, requiring the SAME barred mark, still FAILS. Otherwise the id key is
+    # decoration over a check-level exclusion, which CD-172 expressly refuses.
+    print()
+    excluded = sorted(CD172_TAUGHT_SET_EXCLUDED)
+    cd172 = [
+        ("the two CD-172 ids, each requiring a BARRED mark", excluded, ["তালিকা — শেষ;"],
+         False,
+         "NAMED, JUSTIFIED, ID-KEYED — the defect is real and is REPORTED in full; what it does "
+         "not do is fail CD-153's push condition, because CD-169 rules the items RETAINED and "
+         "CD-170 bars the repo from fixing them"),
+        ("a THIRD id in the SAME slot requiring ড্যাশ", excluded + ["QP-BAN-C5-U15-Q99"],
+         ["তালিকা — শেষ;"], True,
+         "THE LOAD-BEARING SEED — same bank, same slot, same barred mark, id not on the list. It "
+         "MUST still FAIL, or the exclusion is check-level in disguise and every future taught-set "
+         "defect went invisible to buy two items' silence"),
+    ]
+    for label, qids, accepted, want_fail, why in cd172:
+        errs, rep = g_coverage(bank(accepted, "", qids),
+                               {"slot_register": reg(FIVE), "slot_register_error": []})
+        taught_errs = [e for e in errs if "taught set" in e]
+        got_fail = bool(taught_errs)
+        named = [r for r in rep if "CD-172 NAMED EXCLUSION" in r]
+        if got_fail == want_fail and len(named) == len(excluded):
+            print(f"  PASS  CD-172  {'FAIL-SEED' if want_fail else 'NEGATIVE '} {label:<48} "
+                  f"{'fires' if got_fail else 'quiet'}, {len(named)} excluded id(s) REPORTED BY "
+                  f"NAME: {why}")
+        else:
+            print(f"  FAIL  CD-172  {label:<48} expected "
+                  f"{'a failure' if want_fail else 'silence'} with {len(excluded)} named report(s); "
+                  f"got {'a failure' if got_fail else 'silence'} with {len(named)} — {taught_errs}")
+            ok = False
+
+    # NEVER A SILENT SKIP, asserted on its own rather than inferred from the two cases above.
+    errs, rep = g_coverage(bank(["তালিকা — শেষ;"], "", excluded),
+                           {"slot_register": reg(FIVE), "slot_register_error": []})
+    roster = [r for r in rep if "CD-172 ROSTER" in r]
+    if len(roster) == 1 and all(q in roster[0] for q in excluded):
+        print(f"  PASS  CD-172  ROSTER    prints every run, naming both ids and which EXERCISED "
+              f"the exclusion — an exclusion that prints only when used is invisible on the run "
+              f"it stops being needed")
+    else:
+        print(f"  FAIL  CD-172  ROSTER    did not print both ids: {roster}")
+        ok = False
+
+    # THE DISCHARGE SIGNAL — the same fixture with the barred mark REMOVED, standing in for the
+    # Hub having disposed of the items. The roster must then say UNEXERCISED, which is CD-172's
+    # own expiry notice.
+    errs, rep = g_coverage(bank(["তালিকা, শেষ।"], "", excluded),
+                           {"slot_register": reg(FIVE), "slot_register_error": []})
+    disch = [r for r in rep if "CD-172 UNEXERCISED" in r]
+    if not errs and len(disch) == 1 and all(q in disch[0] for q in excluded):
+        print("  PASS  CD-172  DISCHARGE prints UNEXERCISED once the ids stop needing the "
+              "exclusion — the expiry condition announces itself on the run it becomes true, "
+              "rather than waiting for somebody to re-read the row (CD-160: a list drifts)")
+    else:
+        print(f"  FAIL  CD-172  DISCHARGE signal did not print: {disch} / {errs}")
+        ok = False
+
     return ok
 
 
