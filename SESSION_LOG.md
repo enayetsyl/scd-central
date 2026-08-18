@@ -3431,3 +3431,68 @@ restores it nor explains it away. **Owner: the Principal.**
   bangla_script_check · support-books all CLEAN; question-banks SELFTEST PASS, **live FAIL (2) — the
   two CD-169 names and nothing else.** Repo-wide green is not attainable while that residual stands,
   and that is a ruled state, not a chosen one.
+
+## 2026-08-18 (cont.) · U14/U16 closeout · the fix that needed fixing · cowork
+- **PUSHED FIRST.** 13 held commits went up; `origin/main` `b098f9e` → **`6156629`**, verified by
+  `git ls-remote` against the server. Range check per commit pasted before the push; both (c) clauses
+  held. **The suite was RED at the moment of push and that was reported, not hidden** — CD-169's
+  residual is a ruled state and the brief named it as not a push blocker.
+- **RULING 1 — U13 Q82 and Q80 fixed, AND THE ADVISOR WAS OVERTURNED BY THE REVIEWER AT SOURCE.**
+  `Q82`'s stem no longer demands a শহরের ছবি the section does not print; it asks the DIRECTION of the
+  wish in the two printed চরণ, and its criterion now BARS a city description in terms. `Q80`'s stem
+  moved from "কবির জায়গা" to where the poem's picture happens — which is what its key already
+  answered. **THE PRINCIPAL'S "BOTH STAND" WAS WITHDRAWN, and this is the FOURTH time in this chain
+  that a reading not checked against the printed section was wrong.** The other three: the advisor's
+  বিশেষ্য ruling (overturned by B1's at-source count), CD-165's four-mark set (read off TASK names,
+  corrected by CD-166), and my own "বিশেষণ is editorial" report (corrected by পাঠ ১৯).
+- **RULING 2 — POLICY CODES OUT, 100 NOTES, SWEPT AS A FAMILY.** U13 28 · U14 18 · U15 29 · U16 25 —
+  far past the qids RUN5 listed, because CD-160 makes the SWEEP define membership. Provenance kept in
+  plain Bengali; the slot-inventory aside DELETED in all three variants; every code token — CD-nnn ·
+  BAN-Snn · SLOT_REGISTER · MarkLogic §৭ · নেপ §১ · (S09) · (E-AUTHOR-ENDORSE) — now ZERO in every
+  item field of all four banks.
+- **AND THE FIX NEEDED FIXING. THIS IS THE FINDING OF THE SESSION.** U14 run 7 passed the code sweep
+  and still failed the bank: (i) my replacement clause "শিক্ষকের দেওয়া ভাষাগত উত্তর গ্রহণযোগ্য" read
+  as a PERMISSION and sat four clauses from "গৃহীত তালিকার বাইরে কিছু নেওয়া যাবে না" — **the note
+  granted what it forbade**, sharpest where "'নামপদ' নয়" follows; (ii) my 5b closed-list clause was
+  laid over the OPEN half of the S12 task, so a marker had to REFUSE correct new words. Both were
+  mine, both were fixed across all four banks (95 notes + 6), and the lesson is the question the
+  reviewer was given: **not "are the codes gone" but "does what SURVIVED still tell a marker what to
+  do".** A grep for the codes would have reported total success.
+- **RULING 3 — U14's four, each read at source.** `Q59` target 'বাঘ' → **'বাঘের'**, the only form the
+  quoted sentence prints. `Q60` stimulus now VERBATIM — "অরণ্য। এক পাশে মাটির টিবি, দেখতে কুয়ার মতো।";
+  a দাঁড়ি had been silently turned into a কমা, splicing two sentences **in a bank that marks exactly
+  that wrong at Q65/Q70**. `Q61` re-stemmed onto printed text ("কিন্তু খরগোশ রাজি নয়", target রাজি,
+  key বিশেষণ unchanged) — 'ক্ষুদ্রকায় প্রাণী' is nowhere in the section. `Q14`'s model sentence
+  rewritten; পরিতাপ does not take হচ্ছে with a possessor. Untouched as ruled: Q33 · Q63 · Q64 · Q65 ·
+  Q68.
+- **A GATE CAUGHT MY FIRST Q61 ATTEMPT.** I re-stemmed it onto "বাঘ প্রতিদিন নির্বিচারে বহু পশু হত্যা
+  করে" and **PLAN failed it — 100% identical to Q62's stem**, which quotes the same sentence for a
+  different target. The second attempt uses a different printed sentence. A near-duplicate I would not
+  have seen by reading.
+- **RULING 4 — U16 Q51's "বাড়ি থেকে" removed**; the section states no circumstance. 0 bank-wide.
+- **THE CLASS CLOSED IN ALL FOUR BANKS, on CD-160's discipline.** U16's run 6 and then U13's run 14 and
+  U15's run 7 found the SAME classes: notes claiming the section is silent where it prints the answer
+  (16 items across U13 · U15 · U16), the S10 grant-versus-forbid collision (24 items), and the S12
+  loose clause (18 items). The Principal had ruled these classes for U14 only; **fixing two banks and
+  leaving two would have been TOOLS-CR-008 exactly.**
+- **EIGHT RUNS THIS SESSION: U14 7 → 2 · U14 8 → CLEAN · U16 6 → 4 · U16 7 → CLEAN · U13 14 → 3 ·
+  U15 7 → 8.** U14's clean is the first of its RESTARTED count (CD-168); U16's is its first ever.
+- **TWO MORE STEP-3a GAPS, mine, disclosed:** U14 RUN8 and U16 RUN7 were each handed a prior-report
+  path that did not exist, because RUN7 and RUN6 were returned and their reports queued behind other
+  work. Both reviewers searched name, content and all of git history, **said so plainly**, and
+  dispositioned the newest report that did exist. Twice in two sessions: a run is not a run until its
+  report is committed.
+- **U15 STILL CANNOT VERDICT-CLEAN, and the brief said so.** Four defects are carried and unruled
+  (Q01's superseded "পঙ্‌ক্তি" anchor · header.gaps[1]'s stale framing of a question CD-149 closed ·
+  Q19's ভেঙে-পড়া gloss with its false pointer at Q36 · Q50's "চন্দ্র-তারা জায়গা নয়" against the
+  section and its own Q47). **Plus THREE CODE TOKENS MY RULING-2 STRIP MISSED** — Q66's `source_index`
+  is the advisory slot-map line "S09 মূলভাব · S07/S08 প্রশ্নোত্তর", Q01's carries "(S01-এর জন্য)", and
+  Q19's note carries "Q36". A note-sweep does not reach `source_index`, and replacing an anchor is
+  choosing new evidence, so all three are REPORTED rather than fixed. CD-169's Q75/Q81 residual stands
+  and keeps the suite red by design.
+- Floors, before and after every bank, nothing moved: U13 106 · +9/+2/+3/+3 · U14 84 · +5/+3/+3/+3 ·
+  U15 95 · +7/+4/+2/+3 · U16 96 · +6/+3/+4/+3. Final digests: U13 `9c38f37e757d` · U14 `2a1b13ee2510`
+  · U15 `349fe8d27938` · U16 `5a7adbd9264d`.
+- Gates per CD-153: canon_check · tools_check · ledger_check · slot_register_check · int_id_check ·
+  bangla_script_check · support-books all CLEAN; question-banks SELFTEST PASS, **live FAIL (2) —
+  `U15 Q75` and `Q81`, CD-169's recorded residual and nothing else.**
