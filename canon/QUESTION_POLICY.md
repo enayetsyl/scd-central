@@ -1,4 +1,25 @@
-# QUESTION_POLICY — v1.9 (canon)
+# QUESTION_POLICY — v2.0 (canon)
+
+**v2.0 — 2026-08-18. THE MAJOR BUMP, AND IT IS MAJOR BECAUSE THE SUBJECT OF THE COUNTS CHANGED,
+NOT THEIR VALUES (CD-171).** Every count this file placed on a POOL now sits on the PAPER. A
+chapter pool is bounded by its chapter's content under §4's near-duplicate ban and by nothing
+arithmetical. **The Bloom and domain axes are unchanged; the artifact they bind is not.** Bloom
+levels are still tagged per item — recorded, not rationed.
+
+| § | Was | Now | Row |
+|---|---|---|---|
+| §4 Sizing | floor **20 per chapter** (REF-09 §4.3, reading REF-08 §4.1 at chapter scope) | **no pool minimum** — the bound is the chapter's content, §4's own unattributed sentence. REF-08 §4.1 and REF-09 §4.3 are read, not edited: the 20 sizes a HOMEWORK draw over a year, not a bank's conformance | **CD-171(a)** |
+| §4 Bloom at pool level | **a FLOOR** — REF-06 §3.6's lower bounds bind the pool (CD-135) | **nothing binds the pool.** Both bounds bind the PAPER, which composes across chapters | **CD-171(a)(b)**, superseding **CD-135** |
+| §6 Bloom band row | pool = REF-06 §3.6's LOWER BOUNDS ONLY, per-level counts REPORTed | **pool = REPORT ONLY.** The gate still prints every per-level count and fails on none of them | **CD-171(d)** |
+| §6 Plan row | Bloom margins ≥2 · full per-slot demand (CD-138(g)) · task declarations · P-037 · near-duplicate scan | **counts out, conformance kept** — task declarations, the paper-level bar, P-037's type rule and the near-duplicate scan. **PLAN computes no counts** | **CD-171(d)**, amending **CD-142(b)** |
+| §4 / §6 per-slot demand | an admissible chapter owes the paper's FULL `items_per_paper` (CD-138(g)) | **paper level only.** No single chapter owes a paper's worth of any slot; CD-138(g) is otherwise untouched | **CD-171(a)(iv)(b)** |
+| §9 | — | two rows added: the §4/§6 pool-Bloom clause, and CD-121(a)'s UD-23 pool half | **CD-171(b)** |
+
+**What v2.0 does NOT change, listed because a bump this size invites the assumption that it does.**
+CD-121(a)'s axis assignment (REF-06 §3.6 is the Bloom axis, MarkLogic §৩ the domain axis, and *the
+wider of* is still wrong) · CD-122's difficulty reading · CD-133 · CD-138's register mechanism apart
+from (g) at pool level · CD-147 and CD-150's paper-level slots · CD-165/CD-166's taught set · the
+near-duplicate ban · every metadata, key, rubric and content clause in §4.
 
 **v1.9 — 2026-08-16.** §4's S14/S15 clause is superseded: they are **paper-level for every chapter, categorically** (**CD-147**), not per-chapter content declarations. CD-139's admission of S14 at পাঠ ৪ is reversed by name; no chapter owes a content reason for either slot.
 
@@ -125,11 +146,21 @@ is right and the rule changes.
 
 **Unit.** One Pool per chapter, per class × subject, topic-tagged within.
 
-**Sizing.** Floor **20 per chapter**, per **REF-09 §4.3** — REF-08 §4.1's own words are *"minimum 20
-questions per **lesson** Pool"*, and §4.3 is what reads that floor at chapter scope under master
-D-050. Cite §4.3, not §4.1, for the chapter reading. **No ceiling.** The real upper bound
-is content: stop when the chapter's extraction is exhausted, because past that point new questions
-are near-duplicates of existing ones.
+**Sizing. NO FLOOR AND NO CEILING — the bound is the chapter's own content (CD-171(a)).**
+**No ceiling.** The real upper bound is content: stop when the chapter's extraction is exhausted,
+because past that point new questions are near-duplicates of existing ones. **That sentence is this
+section's own and carries no external citation; it is the whole of the rule.**
+
+> **SUPERSEDED WORDING, quoted in place per this file's forward-only rule (CD-171(a)(iii)).** This
+> paragraph read: *"**Sizing.** Floor **20 per chapter**, per **REF-09 §4.3** — REF-08 §4.1's own
+> words are "minimum 20 questions per **lesson** Pool", and §4.3 is what reads that floor at chapter
+> scope under master D-050. Cite §4.3, not §4.1, for the chapter reading."* **The floor is retired
+> as a bank gate. REF-08 §4.1 and REF-09 §4.3 are NOT edited and are not wrong** — §4.1 sizes a
+> HOMEWORK pool at 20 so routine rotation and reactive top-ups do not run it dry, which is a claim
+> about a teacher's draw across a year and not about a bank's conformance. **The reading was
+> retired, not the number.** The instruction *cite §4.3, not §4.1* is kept above as a warning: the
+> exhaustion sentence has already been misattributed to REF-08 §4.1 once, and §4.1's own words are
+> the floor, not the exhaustion.
 
 Built in **waves**, each sized to what the extraction supports. The per-chapter target is decided at
 production time and **stated in the bank file header with a one-line reason**. The governing test is
@@ -151,10 +182,16 @@ The register carries, per (subject, class, slot), the spine's **কারণ col
   **one-line CONTENT reason per excluded slot** (`slot_exclusions`), countersigned at §6's human
   review pass. **The gate never infers admissibility from content** — that inference is
   `QB-CR-011`'s shape. An item in a slot the chapter declared inadmissible **FAILs**.
-- **Demand is paper-level and undivided (CD-138(d)).** An admissible chapter owes the paper's full
-  `items_per_paper` for that slot, capped by `PENDING-P-036`'s `min()`. **`items_per_paper` and
-  `marks` are separate facts** — BAN C5 is **56 items and 100 marks**, and only the marks column
-  totals 100.
+- **Demand is paper-level and undivided (CD-138(d)) — AND IT IS ASKED OF THE PAPER, NOT OF A
+  CHAPTER (CD-171(a)(iv), retiring CD-138(g) AT POOL LEVEL ONLY).** `items_per_paper` is what a
+  PAPER owes at a slot. **No single chapter owes a paper's worth of any slot**, and no gate asks a
+  bank whether it has met one. **`items_per_paper` and `marks` are separate facts** — BAN C5 is
+  **56 items and 100 marks**, and only the marks column totals 100. **CD-138(g) is otherwise
+  untouched: demand is still undivided and there is still no per-chapter divisor** — the reading
+  that produced the divisor question is what left. `PENDING-P-036`'s `min()` cap is CLOSED-MOOT
+  with the row (CD-171(f)): there is no floor left to take a `min()` of.
+  > **SUPERSEDED WORDING (CD-171(a)(iv)):** *"An admissible chapter owes the paper's full
+  > `items_per_paper` for that slot, capped by `PENDING-P-036`'s `min()`."*
 
 **`chapter_authorable` is DERIVED, never authored (CD-138(f)).** It is computed from the per-chapter
 declarations above; the register carries no authored copy, and a register row that carries one FAILs.
@@ -187,18 +224,30 @@ at the chapter's lower end, later sessions reach into Apply/Analyze as the band 
 note; REF-02 §2.9 holds the per-session focus). A pool banded flat against the chapter band is
 correct; **a bank built session-by-session drifts low** if the band is read per session.
 
-**Bloom at POOL level is a FLOOR, not a band (CD-135).** REF-06 §3.6's **lower bounds bind the
-pool; its upper bounds do not.** This is the difficulty paragraph's own argument on the other axis:
-**a pool cannot fail a ceiling**, because an author can always decline the surplus and a compliant
-paper stays constructible however skewed the pool is. **The BAND — both bounds — continues to apply
-at PAPER level**, alongside the domain ratio. Where a level's floor is 0 (`Evaluate`, `Create`)
-nothing is required, but **a level the chapter cannot supply is stated in the bank header as a
-content fact rather than left silent** — a 0% level passing a 0% floor is otherwise
-indistinguishable from a level nobody looked for. **Recorded because it is the shape that recurs:
-a percentage floor implicitly caps every other level.** Understand 25 + Apply 25 + Analyze 10 = 60,
-so `Remember` can never exceed **40%** of a pool however large it grows. **Removing the ceiling does
-not make the pool unbounded — it moves the binding constraint to the floors, and `Analyze` at 10%
-is the first to bite.**
+**BLOOM DOES NOT BIND A POOL AT ALL (CD-171(a)(b), superseding CD-135).** REF-06 §3.6's bounds —
+**both of them** — bind the **PAPER**, alongside the domain ratio. **Bloom levels are still tagged
+on every item: recorded, not rationed.** An untagged item, or one tagged outside the six LOCKED
+levels, still FAILs; a distribution does not. **Per-level counts against §3.6 are REPORTED on every
+run and enforce nothing** (§6's Bloom band row). **A level the chapter cannot supply is still stated
+in the bank header as a content fact rather than left silent** (CD-135(d), which survives its own
+row): a level nobody looked for and a level the chapter does not carry are indistinguishable in
+silence, and that was never an arithmetic point.
+
+**Why the enforcement point moved, recorded because the floors read as harmless and were not.** A
+floor exists so a compliant PAPER stays constructible. **A paper composes across chapters; a pool is
+one chapter.** Charging every chapter with the whole paper's distribution made a thin chapter fail
+for being thin — and CD-135(g)'s own arithmetic is the tell: *Understand 25 + Apply 25 + Analyze 10
+= 60*, so a percentage floor implicitly caps every other level and **the pool is punished for
+growing**, on the one axis where the Sizing paragraph above asks for growth. That is
+`PENDING-P-036`'s observation, and CD-171(f) closes P-036 as moot on the strength of it.
+
+> **SUPERSEDED WORDING, quoted in place (CD-171(a)(i)).** This paragraph read: *"**Bloom at POOL
+> level is a FLOOR, not a band (CD-135).** REF-06 §3.6's **lower bounds bind the pool; its upper
+> bounds do not.** … **The BAND — both bounds — continues to apply at PAPER level**, alongside the
+> domain ratio. … **Removing the ceiling does not make the pool unbounded — it moves the binding
+> constraint to the floors, and `Analyze` at 10% is the first to bite.**"* **CD-135 corrected which
+> BOUND binds; CD-171 corrects which ARTIFACT is bound. CD-135's text is unedited and its (d) —
+> a zero-floor level is a stated content fact — is carried forward above.**
 
 **Metadata.** Every item carries, in the LOCKED payload: `qid` · `topic_tag` · `ref19_topic_id` ·
 `question_text` · `question_type` · `paper_role` · `bloom_level` · `difficulty` · `tier` · `marks`.
@@ -287,12 +336,12 @@ proportion, so there is no per-CT domain gate.
 | `ref19_topic_id` resolves | against REF-19's slug set |
 | `topic_tag` resolves | against `TOPIC_NUMBERS.md`; an unminted number FAILs, never auto-mints |
 | Key/rubric present | every item, per type |
-| Bloom band | **Pool level: REF-06 §3.6's LOWER BOUNDS ONLY**, read at **chapter** scope — six Bloom levels (CD-121 for the axis, **CD-135** for the floor). No upper bound fails a pool; per-level counts against floors are REPORTed every run. The band, both bounds, is a **paper** rule |
+| Bloom band | **REPORT ONLY at pool level (CD-171(d), superseding CD-135).** The gate validates that every item carries one of the six LOCKED levels — **an unknown or missing `bloom_level` still FAILs** — and then PRINTS the per-level counts against REF-06 §3.6 and fails on none of them. **Neither bound binds a pool.** The band, both bounds, is a **paper** rule. CD-121's axis assignment is untouched: REF-06 §3.6 is the Bloom axis, MarkLogic §৩ is the domain axis and appears at paper level only |
 | Difficulty | **Pool level: easy ≥30% present.** No pool-level hard test — hard ≤25% is a paper rule (CD-122) |
 | Repetition | no verbatim reuse of non-`Remember` items |
 | Coverage | every topic supplied, and **every item does the task its class ADMITS at the slot it sits in** — read against `canon/marklogic/SLOT_REGISTER.json` (**CD-138**), not against slot-id presence and no longer against the header-stated target |
 | Domain ratio | **paper level only**, never per pool |
-| **Plan** | **The machine replacement for the plan-table human countersign** (Principal 2026-08-15). Every REF-06 §3.6 positive floor clears with **margin ≥ 2 items — landing exactly on a floor is a DEFECT, not a pass**; every declared-admissible slot meets full paper demand (CD-138(g)); `task_index` complete, task admitted, `selected` honoured, every composite `part` present; P-037's type rule on teacher-keyed items; and a **within-slot near-duplicate stem scan** — exact or ≥95% FAILs, 85–95% REPORTS for the Hub's subject expert. **It deliberately disagrees with the Bloom row above:** CD-135 lets a POOL sit exactly on a floor because an author declines the surplus; a bank offered as FINISHED may not, because one re-tag then reddens it. Same numbers, different question — is this pool legal, versus is this plan safe to sign. **Consequence, stated once: the margin rule needs 0.80n + 8 ≤ n, so no bank under 40 items can satisfy it.** What PLAN does NOT judge is whether the content is any good; that is §6's human half and it moves to Hub subject experts (**CD-142**) |
+| **Plan** | **The machine replacement for the plan-table human countersign** (Principal 2026-08-15, **CD-142(b)**) — **AND IT COMPUTES NO COUNTS (CD-171(d))**. What it checks: **every declared-admissible slot is declared at all** (a plan cannot be signed against a chapter that has not said which slots its content supports, CD-138(e)); **no paper-level slot is admitted**, refused in PLAN's own voice rather than leaning on COVERAGE (CD-147, CD-150); **`task_index` complete, task admitted, `selected` honoured, every composite `part` present** (CD-138(b)); **P-037's type rule** on teacher-keyed items, which is about a TYPE and not a count; and a **within-slot near-duplicate stem scan** — exact or ≥95% FAILs, 85–95% REPORTS for the Hub's subject expert. **WHAT LEFT, and why the row says so rather than going quiet:** the Bloom margin rule (every positive REF-06 §3.6 floor clearing by ≥2, *landing exactly on a floor is a DEFECT*) and the full per-slot demand check (CD-138(g)) are **RETIRED** — both were counts against a POOL, and CD-171 moves counts to the paper. **The stated consequence goes with them: the `0.80n + 8 ≤ n` derivation and its `n ≥ 40` minimum are retired, not merely unenforced** (CD-171(a)(ii)). **PLAN and BLOOM-BAND no longer disagree, because neither counts.** What PLAN does NOT judge is still whether the content is any good; that is §6's human half and it sits with Hub subject experts (**CD-142(a)**) |
 | **Export sync** | **`banks/envelopes/` must match the bank** — same qid set, same payload per id, and the array and `single/` must agree with each other. **ADDED 2026-08-15 on the wave-2 staleness incident:** the export sat at **36 envelopes while the bank held 88 and then 110, for two waves**, and no gate could see it because every gate here reads the BANK while **§11 imports the ENVELOPES**. It would have carried ten `S10 ভাব নির্ণয়` items — a task admitted at no class — into the Hub as `draft`, **past COVERAGE, the gate built for that exact defect**. A bank with no export at all is REPORTED, not failed: that is an unrun flow, not drift. **EXTENDED at contract v1.1 (CD-143) to the `question_batch` wrapper** — the third export artifact, and the one the Hub actually reads as a single upload: drift, `item_count` disagreeing with its own items, and a `digest` describing a different bank all FAIL. **The digest check matters most and is the least obvious:** the contract calls that field an audit value and does **not recompute it at import**, so a wrong digest is caught **nowhere downstream** — only here. A missing `.batch.json` is REPORTED, not failed, so the gate does not fire on every bank exported before v1.1 |
 
 **Two axes, not two ranges on one axis (CD-121, correcting this section).** This table read
@@ -302,6 +351,11 @@ never measured the same thing, which is why "the wider at each level" had no com
 Apply — REF-06 bands six Bloom levels, MarkLogic §৩ bands four NAPE domains. MarkLogic §৩ appears
 at paper level, in the domain-ratio row, and nowhere else. §3 row 9 is unaffected: it resolves
 whether the two conflict, and they do not, because they are different axes.
+
+**FORWARD POINTER (CD-171, 2026-08-18): the paragraph below is HISTORY, not the live rule.** CD-135
+moved the pool reading from a band to a floor; **CD-171 removed the pool as the reading's subject
+altogether.** Both bounds bind the paper. The paragraph is kept unedited because a reader arriving
+by an old citation must see what changed and in what order.
 
 **And the surviving range was still read as a BAND at pool level until 2026-08-15 — corrected by
 CD-135.** This row read *"Pool spans **REF-06 §3.6**, read at **chapter** scope — six Bloom levels
@@ -360,6 +414,9 @@ actual use · the storybook venture.
 | **This file** | **§6 Bloom row** (pool-level band) | **Superseded by CD-135** — pool level is REF-06 §3.6's **lower bounds only**; the band, both bounds, is a paper rule. **CD-121(a) is superseded only to the extent it reads as a band; its axis assignment stands** |
 | **QUESTION_BANK_POLICY** | **§4, first bullet** — *"Content ONLY from the chapter's source extraction"* | **Amended to STIMULUS scope by CD-136** — the stimulus must resolve to the extraction; a **key that is a general Bangla language fact may be teacher-supplied**, declared in the item's own `model_note`. Supersede-with-archive per master §5.3 |
 | **This file** | **§6 Mark value row** (*"against MarkLogic spine values"*) | **Amended 2026-08-15** — the authority is the SLOT REGISTER's declared `marks_per_item`, which `tools/audits/slot_register_check.py` proves against the spine at build time. The gate still never opens a spine file (CD-138(b)); it now reads the proven data instead of a hand-kept copy of it. Both vendored tables are RETIRED |
+| **This file** | **§4 Bloom-at-pool clause · §6 Bloom band row** (pool-level FLOOR) | **Superseded by CD-171** — **nothing binds a pool on the Bloom axis.** REF-06 §3.6's bounds, both of them, bind the PAPER, which composes across chapters. **CD-135 is SUPERSEDED**, its text unedited: it corrected which BOUND binds and CD-171 corrects which ARTIFACT is bound. **CD-135(d) survives** — a level the chapter cannot supply is still stated in the header as a content fact. Bloom levels remain tagged per item: recorded, not rationed |
+| **CD-121(a)** | **UD-23's POOL half** (*"the Bloom axis governs the pool"*) | **Superseded by CD-171(b) to the extent it licenses pool-level ENFORCEMENT, and no further.** **The axis assignment itself STANDS**: REF-06 §3.6 is the Bloom axis, MarkLogic §৩ is the domain axis, the two never measured the same thing, and *"the wider of"* remains wrong. This is the same narrow ground CD-135 already superseded CD-121(a) on, one step further |
+| **This file** | **§4 Sizing** (floor 20 per chapter) · **§6 Plan row** (Bloom margin ≥2, full per-slot demand) | **Superseded by CD-171(a)(d)** — **no pool minimum, no margin rule, no per-slot demand at pool level, and no `n ≥ 40` consequence.** **REF-09 §4.3 and REF-08 §4.1 are read, not edited**: §4.1's 20 sizes a HOMEWORK draw across a year, not a bank's conformance. **CD-141(g) is retired** and **CD-138(g) is retired at pool level only**. PLAN keeps its conformance half and CD-142(b)'s substitution holds for that half |
 
 **REF-09 §4's mark totals were overridden by the permission §4 itself grants, not superseded — REF-09
 needs no edit beyond §4.1.** **`TOPIC_NUMBERS.md` is not demoted** — an earlier draft proposed it on

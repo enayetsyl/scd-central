@@ -1129,7 +1129,23 @@ relying on a gate reading a note somewhere else.
 
 ## ⚑ PENDING-P-036 — should POOL floors be ABSOLUTE COUNTS rather than percentages?
 
-**Status: OPEN — raised by CD-135, not ruled. Nothing built.**
+**Status: CLOSED-MOOT 2026-08-18 → CD-171. Nothing was ever built, and nothing now can be.**
+**The question was whether pool floors should be ABSOLUTE COUNTS rather than percentages. CD-171(a)
+removes pool floors entirely, so there is nothing left to convert** — the row is closed as moot,
+not answered. **CLOSED-MOOT is recorded rather than CLOSED because the two are different facts about
+a row**: closed means the question was decided, moot means the question stopped having a subject,
+and a later reader who finds this row must not take it for a ruling that percentages lost to counts.
+**Its findings are NOT retired and are the evidentiary spine of CD-171** — the second live case
+below, measured on পাঠ ১৩ wave 3 and accepted by the Principal 2026-08-15, is what CD-171 rests on:
+**an `Analyze` floor forbade 28 of 32 chapter-sourced items a chapter could genuinely answer**, and
+**margin cost about two items of authoring per item of margin because the floor rises with the
+total.** Both are recorded above, unedited, and both now read as arguments that the POOL was the
+wrong artifact to charge rather than as arguments about which form the charge should take.
+**The demand-side question this row could not answer — how many papers a chapter's pool must
+supply — passes to the PAPER lane, where `MODEL_PAPERS_POLICY` holds the data to answer it.**
+**Nothing here is a licence to re-mint a pool floor in another form; that takes a new CD row.**
+
+**Superseded status line, quoted in place:** *"OPEN — raised by CD-135, not ruled. Nothing built."*
 *(Next free number verified at source: no `P-036` token existed anywhere in the repo before this row.)*
 
 **Where it comes from.** CD-135 made the pool-level Bloom check **REF-06 §3.6's lower bounds only**.
