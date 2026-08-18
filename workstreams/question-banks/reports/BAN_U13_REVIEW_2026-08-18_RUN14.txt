@@ -1,0 +1,64 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U13_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৩ ("# পাঠ ১৩ — পাখির মতো" → "# পাঠ ১৪ — কুপোকাত"), including the `## ভাব (অধ্যক্ষের অনুমোদিত পাঠ)` block
+RUN    : 2026-08-18 — FOURTEENTH run. Independent factual/curation review. Read-only.
+METHOD : 106 items, every field in FIELDS TO SWEEP (source_index included) plus the source section read in full. All seven checks and the check-1 claim sweep completed and written BEFORE RUN13 was opened (CD-161(a)).
+SLOTS  : slot_index 1:1 with qids, no duplicates, every qid in source_index. S01 1 · S02 7 · S03 16 · S04 5 · S05 7 · S06 5 · S07 21 · S08 15 · S09 1 · S10 10 · S11 8 · S12 5 · S13 5 = 106 — equal to ADMITTED SLOTS and to header.slot_counts.
+
+JUST-CHANGED ITEMS, re-derived first:
+· Q82 — FIXED. Stem now asks the DIRECTION of the wish in the two printed চরণ; criterion states outright "পাঠে শহরের কোনো বর্ণনা নেই, তাই শহরের ছবি দাবি করা যাবে না"; band[সম্পূর্ণ] asks for two চরণ that exist ('নদীর কাছে থাকতে', 'সবুজ গাঁয়ে ঘুরব') and band[আংশিক] penalises an added city description. Fully answerable from the section; every band names earnable evidence.
+· Q80 — FIXED. Stem now "কবিতার ছবিটি কোথায় ঘটছে"; accepted answers that question from the gloss plus "কর্ণফুলীর কূলটায়"; model_note bars the poet's-life inference it no longer invites.
+· POLICY-CODE STRIP — CLEAN. Mechanical scan of every swept field for `CD-nnn · BAN-Snn · SLOT_REGISTER · MarkLogic · নেপ § · S01–S15 · (S09) · E-AUTHOR-ENDORSE · QB-CR · REF-nn · CR-nnn` returns ZERO, and `[0-9]` returns ZERO across all swept fields. What survived reads as marker instruction, with the three exceptions counted below.
+
+1 · FACTUAL ACCURACY — 3 defects
+
+1. **Q120 · answer_key.model_note** — "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — এটি বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই।" is FALSE of this item: the section's `অর্থ জেনে নিই` table prints the pair verbatim — "কাঁঠালচাঁপা | হলুদ রঙের একধরনের ফুল" — which is exactly the stem's definition phrase and exactly the key. CLAIM SWEEP, every carrier of "পাঠে এর উত্তর দেওয়া নেই" (25 items, all in answer_key.model_note): S06 Q48·Q49·Q50·Q101·Q102 — TRUE, no antonym is printed. S12 Q51·Q52·Q53·Q92·Q93 — TRUE, পাঠ ১৩ sets no যুক্তবর্ণ task. S10 Q109–Q118 — TRUE, পদ নির্ণয় is not taught in this chapter. S13 Q54 (কূল), Q56 (গাঁ) — TRUE, neither is glossed; Q119 (পূর্ণিমা) — defensible, only "পূর্ণিমার চাঁদ" is printed. **Q55** (বন্য) — SAME CLAIM, borderline-false: the definition phrase is the teacher's, but the answer word IS glossed ("বন্য — বুনো"), so the flat claim overstates. Q120 is the one outright false carrier; Q55 named for the ruling.
+2. **Q109 · Q112 · Q116 · Q117 · Q118 · answer_key.model_note** — the note GRANTS what it then FORBIDS: "কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য" followed by "'নামপদ' নয়". নামপদ is precisely a close-meaning answer. The wider fault is that the permission does not belong on a পদ-নির্ণয় item at all — the answer is determinate; it sits on all ten S10 items (Q109–Q118). U16's sibling group now carries the correct closed-list clause; U13's does not.
+3. **Q51 · Q52 · Q53 · Q92 · Q93 · answer_key.model_note** — "কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য" on a যুক্তবর্ণ decomposition instructs the marker to do the wrong thing: the decomposition has exactly one right form and is not a matter of meaning. U16's S12 group now states that the decomposition is fixed and that the accepted list is samples for the new word only; U13's does not.
+
+Swept and NOT counted, with reason:
+· The বাঁধন/মুক্তি class (Q16 · Q19 · Q32 · Q46 · Q84 · Q88 · Q108) — sourced by the ভাব block; re-derived carrier by carrier.
+· রাত/পূর্ণিমা family (Q12 · Q31 · Q47ক · Q71 · Q75 · Q83 · Q99ক · Q100ক · Q119) — entailed by the gloss; Q71 and Q75 notes expressly bar any light/moonlight claim.
+· Attribution never swapped (আম্মা/"পড়রে সোনা", আব্বা/"মন দে") at Q37 · Q43 · Q57 · Q60 · Q74 · Q109 · Q112 · Q118. Q01's eight lines and Q37–Q41 blanks match the printed text. Q77's ইচ্ছা is on অনুশীলনী ৫'s printed list. Q108's অন্ত্যমিল premise holds in all five স্তবক. No MCQ distractor is arguably correct across the seven MCQs (Q42 · Q43 · Q45 · Q46 · Q47 · Q99 · Q100).
+· Q87 — RULED CORRECT AS IT STANDS; named, not flagged.
+· Q73 — accepted restates the wish rather than its cause; the note declares the stem an opinion stem. Reported, not counted (same disposition as RUN10/11/13).
+
+2 · THE CHAPTER'S CONTENT BARS — PASS. Every string searched as a substring across all swept fields of all 106 items.
+· "আর একটা গান গাও না!" · গাও · সুর · নাচ · নৃত্য · সংগীত · ঢোল · তবলা · বাদ্য · বাঁশি = ZERO.
+· গান = 1: Q18 rubric.band[সম্পূর্ণ], inside লাগানোর — PERMITTED.
+· "জাতীয় কবি" · "বিদ্রোহী কবি" · "মহান কবি" · মহান = ZERO. "আল মাহমুদ" = 1: Q01 answer_key.accepted[0], bare — PERMITTED.
+· ছবি = 22: Q31 qt · Q36 qt+criterion+both bands · Q46 why_wrong · Q47 why_wrong+option text · Q71 qt · Q80 qt+accepted+note · Q82 criterion · Q85 qt+criterion+both bands · Q88 qt+criterion+both bands · Q119 qt — all verbal word-imagery; no item asks for a drawing — PERMITTED.
+· চিত্রকল্প = 5: Q71 accepted · Q83 qt+criterion+band · Q100 why_wrong — PERMITTED.
+· আঁক-forms = 1 (Q31 qt "ছবি আঁকা হয়েছে … নিজের ভাষায় **লেখো**") · এঁকে = 1 (Q71 qt "… নিজের ভাষায় **লেখো**") — answer demanded is WRITTEN — PERMITTED. আঁকো = ZERO.
+· ফেরেস্তা/ফেরেস্তারা — Q29 · Q31 · Q71 · Q83 · Q98 · Q100 · Q116 — PERMITTED by the ⚠ block.
+
+3 · STANDING CURATION BARS — PASS. C-03 no music/dance/percussion. C-05 no depiction shown or requested. C-18 জাতীয় · পতাকা · শহিদ · মিনার · মূর্তি · মুক্তিযুদ্ধ = ZERO; Q83's "ফেরেস্তা প্রসঙ্গে শ্রদ্ধাশীল ভাষা" is a decorum row. C-19 অভিনয় = ZERO.
+
+4 · INVENTED NAMES — PASS. আম্মা · আব্বা (the poem's), আল মাহমুদ (attribution), কর্ণফুলী (glossed river). Distractors use generic categories.
+
+5 · NUMERALS — PASS. `[0-9]` on question_text, option text, why_wrong, accepted, blanks.accepted, criterion and every band_descriptor across 106 items: ZERO. Also ZERO in model_note and source_index — the internal-code residue RUN13 recorded is gone.
+
+6 · SLOT-SPECIFIC CORRECTNESS
+· **S01** — Q01's span is the first two স্তবক, as the section declares; text verbatim. PASS.
+· **S12** (Q51 · Q52 · Q53 · Q92 · Q93) — র্ণ=র+ণ · ন্য=ন+য · চ্ছ=চ+ছ · ন্ধ=ন+ধ · ল্ট=ল+ট, all right; each accepted new word carries its conjunct and none is in the poem; each stimulus carries exactly one conjunct. Reported not counted: Q93 lists পাল্টা twice; Q53's উচ্ছ্বাস is a triple conjunct above class level; the marker instruction is defect 3.
+· **S10** (Q109–Q118) — every key right for the word as used in its sentence: আম্মা · কর্ণফুলী নাম-শব্দ/বিশেষ্য · সবুজ · বন্য বিশেষণ · আমার · তোমরা সর্বনাম · বলেন · উল্টায় কাজ-শব্দ/ক্রিয়া · কেবল অব্যয় · Q118 পড়রে ক্রিয়া + পড়া বিশেষ্য. No super-class key, no non-standard term. DEFERRED: Q111 · Q113 · Q115 (untaught পদ, KEPT UNCHANGED by ruling). Q110 · Q114 key বিশেষণ, the same class but outside the deferral list — declared, not judged, per the U16 precedent. Marker instruction is defect 2.
+· **S13** (Q54 · Q55 · Q56 · Q119 · Q120) — every answer matches its definition phrase. Q56's stem is a word-form question rather than a definition — reported, not counted. Note falsity at defect 1.
+· **S06** (Q48 · Q49 · Q50 · Q101 · Q102) — শহর→গ্রাম/গাঁ/পল্লি · কূল→অকূল · বন্য→পোষা/গৃহপালিত · ইচ্ছা→অনিচ্ছা · মানুষ→অমানুষ. PASS.
+· **S11** (Q57 · Q58 · Q59 · Q60 · Q61 · Q89 · Q90 · Q91) — required marks taken as the intersection of every accepted variant. All lie inside the FIVE taught marks; **no ড্যাশ and no সেমিকোলন anywhere in the bank.** Q60's উদ্ধরণ চিহ্ন sits in accepted[0] only, so it is not required, and is taught in any case. Multi-mark: Q57 · Q59 · Q60. DEFERRED, reported not counted: Q58 (single কমা) · Q61 (single বিস্ময়চিহ্ন) · Q89 (কমা only) · Q90 (single দাঁড়ি) · Q91 (single প্রশ্নচিহ্ন) — QB-CR-017's held thirteen. Within that group and re-found: Q89's key and note insert a কমা after "পড়া" that the printed line does not carry, and Q60's key adds a দাঁড়ি after "সোনা" where the printed line has no terminal mark.
+
+7 · LANGUAGE — no counted defect beyond check 1; no policy code in any marker- or student-facing string. DEFERRED, reported not counted: Q94–Q98 (accepted is a rule, not an answer, while the note claims "নমুনা উত্তর দেওয়া হলো"); Q62–Q66; Q60 · Q61 ("যেকোনো শুদ্ধ ও প্রাসঙ্গিক উত্তর গ্রহণযোগ্য" on punctuation items with one determinate answer); Q27 (accepted lists গ্রাম twice); Q79 (stem calls three quoted চরণ "এই স্তবক"); Q73 (stem/key mismatch); Q57 and the five S12 items award "অর্ধেক" on 1-mark items. The S02 quartet Q25–Q28 keeps the older provenance wording ("প্রধান শিক্ষকের সিদ্ধান্ত, ১৪ আগস্ট ২০২৬") instead of the new clause — inconsistent, but true of those four, so not counted.
+
+STEP 5a — RUN13 DISPOSITIONED
+· RUN13 defect 1, Q82 শহরের ছবি — **FIXED** at source; stem, criterion and both bands re-derived independently this run.
+· RUN13 defect 2, Q80 "কবির জায়গা" stem — **FIXED**; stem now asks where the poem's picture happens and the key answers it.
+· RUN13's PRIOR-REPORT FINDING that RUN12 never existed — noted; RUN13 is on disk and is dispositioned here.
+· RUN13 check 2 PASS — **CONFIRMED**, string by string; counts now 22 ছবি and 1 আঁক + 1 এঁকে. Q31's passive "আঁকা হয়েছে" stays closed on the WRITTEN-answer test.
+· RUN13 check 3 · 4 PASS — **CONFIRMED**.
+· RUN13 check 5 PASS — **CONFIRMED**, and its whole caveat is now moot: the CD-136 ×25, "(S09)", BAN-S10, BAN-S12, "নেপ §১" and "MarkLogic §৭" residues it recorded in model_note are **GONE** — zero code tokens and zero ASCII digits in any swept field.
+· RUN13 check 6 S01 · S12 · S13 · S06 · S11 findings and deferrals — **CONFIRMED**, same sets re-found, including the Q89 added-কমা and Q60 added-দাঁড়ি observations and the five-mark taught set.
+· RUN13 check 6 S10 deferral Q111 · Q113 · Q115 — **CONFIRMED**; নামপদ still appears only as an explicit refusal.
+· RUN13 check 7 deferrals — **CONFIRMED**, same set re-found; its INTERNAL-CODE CLASS item is **FIXED**.
+· RUN13's Q87 "ruled correct" and Q73 "reported, not counted" — **CONFIRMED** on the same reasoning.
+· RUN13 "106 items / 1:1 indexes / totals equal header.slot_counts and ADMITTED SLOTS" — **CONFIRMED**.
+· NEW THIS RUN, introduced or exposed by the reword: defects 1 · 2 · 3 above. Defect 1 is a positive false claim about the section that the old CD-136 boilerplate did not make; defects 2 and 3 are the collision and the wrong-task instruction that U16's parallel groups have already been corrected for and U13's have not.
+
+VERDICT: 3 DEFECT(S)

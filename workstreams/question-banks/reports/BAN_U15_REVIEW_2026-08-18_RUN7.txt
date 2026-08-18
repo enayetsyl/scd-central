@@ -1,0 +1,64 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U15_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৫ ("# পাঠ ১৫ — সংকল্প" → exclusive at "# পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা")
+RUN    : 2026-08-18 — SEVENTH run. Independent factual/curation review. Read-only.
+METHOD : 95 items, every field in FIELDS TO SWEEP (source_index included) plus the source section read in full. All seven checks and the claim sweep completed and written BEFORE RUN6 was opened (CD-161(a)).
+SLOTS  : slot_index — S01 1 · S02 8 · S03 13 · S04 6 · S05 8 · S06 6 · S07 14 · S08 9 · S09 1 · S10 8 · S11 7 · S12 6 · S13 8 = 95. Matches header.slot_counts exactly and header.target 95. **S11 = 7 as required.** Q80 stays retired: absent from questions, slot_index, source_index.
+
+POLICY-CODE STRIP — NOT CLEAN. See defect 8; three swept fields still carry code tokens, and they are the only ASCII digits in the bank.
+
+1 · FACTUAL ACCURACY — 8 defects (4 carried, 4 new)
+
+STILL PRESENT, not new:
+1. **Q01 · source_index** — "প্রথম ৮ পঙ্‌ক্তি (S01-এর জন্য)". That string exists in the source ONLY inside the CD-149 parenthetical recording the SUPERSEDED wording; the live heading is "প্রথম ৮ লাইন". The item's own stem and note use the corrected "প্রথম আট লাইন", so the one item whose span CD-149 fixed is anchored to the retracted line. CLAIM SWEEP: carriers are Q01 source_index and header.gaps[1] (defect 2).
+2. **header.gaps[1]** — still presents the S01 span as an open source inconsistency awaiting a Principal ruling and quotes the source as declaring "প্রথম ৮ পঙ্‌ক্তি" with the boundary "…বরণ মরণ-যন্ত্রণাকে।". CD-149 closed that on 2026-08-17 and the source no longer carries that wording.
+3. **Q19 · answer_key.model_note** — two false limbs, both unchanged. (a) "'লুটে পড়া' মানে ভেঙে পড়া" — the section assigns ভেঙে to **টুটে** ("টুটে — ভেঙে; ছিঁড়ে") and gives লুটে only as "ছড়িয়ে". (b) "(Q36 সেই অর্থকেই ভুল বলে চিহ্নিত করে)" — Q36's four options are ছড়িয়ে · কেড়ে নিয়ে · লুকিয়ে · গড়িয়ে and no option or why_wrong there mentions ভেঙে পড়া. The note also bars the collocation its own accepted answer uses. CLAIM SWEEP on "ভেঙে পড়া": single carrier, Q19 model_note. The correct claim লুটে=ছড়িয়ে is carried soundly at Q19 model_note, Q19 source_index, Q36 option ক and Q36 why_wrong খ/ঘ.
+4. **Q50 · answer_key.model_note** — "বাতাস বা চন্দ্র-তারা জায়গা নয়". The section's line is "দেখব এ-সব ভুবন ঘুরে— আকাশ-বাতাস চন্দ্র-তারায় সাগর-জলে পাহাড়-চূড়ে।": চন্দ্র-তারায় carries the same locative as সাগর-জলে and পাহাড়-চূড়ে. CLAIM SWEEP: single carrier for the negative assertion; the OPPOSITE claim sits in **Q47 accepted** ("আকাশ-বাতাস, চন্দ্র-তারা, সাগর-জল আর পাহাড়-চূড়া — সব জায়গায়") and in Q61's তিন-জগত framing, so the bank still contradicts itself across Q47 / Q50 / Q61.
+
+NEW, surfaced by the reworded provenance clause and the code strip:
+5. **Q89 · Q90 · Q91 · Q92 · Q93 · Q94 · Q95 · Q96 (all S13) · answer_key.model_note** — "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — এটি বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই।" is FALSE of every one of the eight. The section's `অর্থ জেনে নিই` list prints each mapping, in most cases with the stem's definition phrase lifted word for word: "ডুবুরি — ডুব দিয়ে পানির তলদেশ থেকে বিভিন্ন বস্তু তুলে আনা যার পেশা" (Q89) · "ঘূর্ণিপাক — পানি বা বাতাসের প্রচণ্ড ঘূর্ণন" (Q90) · "দেশান্তর — অন্য দেশ" (Q91) · "যুগান্তর — অন্য যুগ" (Q92) · "সংকল্প — মনের ইচ্ছা; মনোবাসনা" (Q93) · "মরণ-যন্ত্রণা — মৃত্যুর কষ্ট" (Q94) · "দুঃসাহসী — নির্ভীক; অত্যধিক সাহসী" (Q95) · "সিন্ধু-যান — জাহাজ" (Q96). Each item's own source_index quotes the printed gloss row that the note says does not exist. This is the class U16 has already had corrected; U15's S13 group has not. CLAIM SWEEP, all 28 carriers: S06 Q37–Q42 — TRUE. S12 Q83–Q88 — defensible. S10 Q67–Q74 — borderline, named for the ruling, counted only in the S13 eight.
+6. **Q67 · Q68 · Q69 · Q70 · Q71 · Q73 · answer_key.model_note** — the note GRANTS what it FORBIDS: "কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য" followed by "'নামপদ' নয়". The permission does not belong on a পদ-নির্ণয় item at all and sits on all eight S10 items (Q67–Q74); U16's sibling group now carries the closed-list clause instead. Q71 compounds it: the same note says only "বিশেষণ" is insufficient, another refusal the blanket permission overrides.
+7. **Q83 · Q84 · Q85 · Q86 · Q87 · Q88 (all S12) · answer_key.model_note** — the loose clause instructs the marker to accept an approximate answer to a decomposition that has exactly one right form. U16's S12 group now states the fixed/sample split; U15's does not.
+8. **CODE TOKENS SURVIVING IN SWEPT FIELDS** — the strip missed three. **Q66 · source_index** = "S09 মূলভাব · S07/S08 প্রশ্নোত্তর" — three slot ids and raw markdown emphasis, and the anchor points at the advisory "কোন প্রশ্নে কাজে লাগবে" slot-map line rather than at poem content. **Q01 · source_index** = "(S01-এর জন্য)" (also defect 1). **Q19 · answer_key.model_note** = the internal item reference "Q36". These three are also the bank's only ASCII digits in any swept field.
+
+Considered and cleared, not counted: Q45 keys অনুশীলনী ৩(গ) and the motive stays inside stanza 1's own imagery; Q05 accepts সমুদ্র; Q49's ঝুঁটি reading rests on "জাপটে — দুহাতে জড়িয়ে"; Q86 চন্দ্রিমা and Q87 বিশ্বাস build on the stimulus stem, which the stem permits; Q85's second variant names র্ণ as "রেফ + ণ". Q01 accepted is verbatim printed lines 1–8. Q02–Q09 · Q30 · Q31 · Q32 · Q35 · Q36 reproduce অর্থ জেনে নিই exactly. Q29's is_correct is কাজী নজরুল ইসলাম and all three why_wrong strings confine the claim to the section. No distractor is arguably also correct across the eight MCQs. All rubric bands stay inside the two stanzas.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS.
+· "জাতীয় কবি" · "বিদ্রোহী কবি" · "মহান কবি" · মহান · বিদ্রোহী · শ্রেষ্ঠ = ZERO. "কাজী নজরুল ইসলাম" — Q01 accepted, Q29 option ক text + three why_wrong + source_index; bare attribution — PERMITTED.
+· স্বর্গ/স্বর্গপানে = 7: Q01 question_text · Q01 accepted · Q01 model_note · Q71 question_text · Q88 question_text · source_index at Q54 · Q71. Every one is the poem's own word quoted; no item asks or supplies its meaning. বেহেশত · জান্নাত · পরলোক · স্বর্গলোক = ZERO — PERMITTED. ("আকাশের দিকে" appears once, Q32 option খ, about আকাশ ফুঁড়ে.)
+
+3 · STANDING CURATION BARS — PASS. C-03: গান returns 26 substring hits, every one inside যুগান্তর/যুগান্তরের/যুগান্তরে; নাচ · নৃত্য · সংগীত · ঢোল · তবলা · বাদ্য · বাঁশি = ZERO; সুর at Q52 ("এক সুর") and Q57 ("অহংকারের সুরে") is figurative. C-05: no depiction shown or requested; "ছবি এঁকে" (Q49), ছবি (Q54 · Q61) and চিত্রকল্প (Q60) are verbal word-imagery. C-18: শহিদ · পতাকা · মিনার · মূর্তি · জাতীয় = ZERO; Q62's "আত্মত্যাগকে শ্রদ্ধার সঙ্গে দেখা" is an attitude row. C-19: অভিনয় = ZERO.
+
+4 · INVENTED NAMES — PASS. Four personal names, all real poets, all in Q29: কাজী নজরুল ইসলাম (the chapter's) plus আল মাহমুদ · রবীন্দ্রনাথ ঠাকুর · কাজী কাদের নেওয়াজ as authorship distractors, each named only to be excluded and none credited with any work; all three are printed in this source file's own chapter table (পাঠ ১৩ · ১৮ · ২০). No invented character.
+
+5 · NUMERALS — PASS on student-facing strings: `[0-9]` on question_text, option text, why_wrong, accepted, blanks.accepted, criterion and every band_descriptor = ZERO. The three residual digits are marker-facing and counted at defect 8.
+
+6 · SLOT-SPECIFIC CORRECTNESS
+· **S01** — span is the CD-149-corrected one, printed lines 1–8; Q01's stem quotes that span and accepted is verbatim, token by token. The superseded wording survives at Q01 source_index — defect 1.
+· **S12** (Q83–Q88) — ন্ধ=ন+ধ · ন্ত=ন+ত · র্ণ=র+ণ · ন্দ্র=ন+দ+র · শ্ব=শ+ব · স্ব=স+ব, all right; all eighteen keyed new words carry their conjunct and none occurs in the poem; all six conjuncts are on অনুশীলনী ২'s list; Q88, the only multi-conjunct stimulus, names স্ব in its stem. Correctness PASS; marker instruction is defect 7.
+· **S10** (Q67–Q74) — keys right for the word as used: Q67 মানুষ · Q68 দেশ · Q70 ডুবুরি নাম-শব্দ; Q69 ছুটছে · Q73 পড়ব কাজ-শব্দ; Q71 দুঃসাহসী as subject of চলছে নাম-শব্দ/বিশেষ্য, correctly reasoned in its note. No super-class key; নামপদ occurs only as a refusal. DEFERRED (KEPT UNCHANGED): Q72 · Q74 key সর্বনাম and their notes lack the book's-own-term paragraph the other six carry. Marker instruction is defect 6.
+· **S13** (Q89–Q96) — every answer matches its definition phrase; the seven glossary phrases are lifted exactly and Q96's authored phrase is accurate. Correctness PASS; note falsity is defect 5.
+· **S06** (Q37–Q42) — every stimulus is used in this chapter and its use supports the antonym: বদ্ধ(=আটকা)→মুক্ত/খোলা · মরণ→জীবন/জনম · দুঃসাহসী(=নির্ভীক)→ভীরু/কাপুরুষ · আশা→নিরাশা/হতাশা · নিচে→উপরে · জোরে→আস্তে/ধীরে. PASS.
+· **S11** (Q75 · Q76 · Q77 · Q78 · Q79 · Q81 · Q82) — required marks taken as the intersection of every accepted variant. Taught set as amended = দাঁড়ি · কমা · প্রশ্নচিহ্ন · বিস্ময়চিহ্ন · উদ্ধরণ চিহ্ন; ড্যাশ and সেমিকোলন barred.
+  · RECORDED, KNOWN-DEFECTIVE, RETAINED BY RULING (CD-169) — **Q75** requires কমা + **ড্যাশ** · **Q81** requires কমা + **সেমিকোলন**. Every accepted variant carries the barred mark, so both REQUIRE it. Reported as RECORDED, not as fresh defects.
+  · DEFERRED, single mark only — Q76 (দাঁড়ি) · Q78 (দাঁড়ি) · Q82 (দাঁড়ি) · Q77 (কমা) · Q79 (কমা). Not counted.
+
+7 · LANGUAGE — no counted defect beyond checks 1–8. Observations, not counted: Q71's fourth accepted "বিশেষণ থেকে বিশেষ্য (বিশেষণের বিশেষ্যরূপ)" is above C5 register but is a marker-side allowance; Q52's অভিন্ন and Q60's চিত্রকল্প sit at the class ceiling; Q29 repeats one why_wrong sentence verbatim across all three distractors; Q93 · Q95 · Q96 stems omit the "'সংকল্প' কবিতার শব্দ দিয়ে" restriction the other five S13 stems carry; the twenty-eight provenance notes are identical boilerplate whose defects are counted at 5 · 6 · 7. Q66's source_index anchor is the advisory slot-map line, counted at defect 8.
+
+STEP 5a — RUN6 DISPOSITIONED
+· RUN6 defect 1, Q01 source_index — **STILL PRESENT**, byte-identical; independently flagged this run. Counted as defect 1.
+· RUN6 defect 2, header.topic_tag_ruling's S11 item count — **FIXED**. The sentence now reads "বিরামচিহ্নের সাতটি আইটেম -13 বহন করছে" and appends the dated correction naming RUN6 as the catcher. Re-derived: S11 is seven items (Q75 · Q76 · Q77 · Q78 · Q79 · Q81 · Q82), all TOP-BAN-C5-13.
+· RUN6 defect 3, header.gaps[1] — **STILL PRESENT**, unchanged. Counted as defect 2.
+· RUN6 defect 4, Q19 model_note — **STILL PRESENT**, both limbs unchanged. Counted as defect 3.
+· RUN6 defect 5, Q50 model_note — **STILL PRESENT**, unchanged, and Q47's contradicting key also unchanged. Counted as defect 4.
+· RUN6 check 2 PASS — **CONFIRMED**, occurrence by occurrence; স্বর্গ count identical at 7, no religious gloss.
+· RUN6 check 3 · 4 PASS — **CONFIRMED**, string by string and name by name.
+· RUN6 check 5 PASS — **PARTLY SUPERSEDED**. Its student-facing PASS holds, but the CD-136 ×27, CD-149, SLOT_REGISTER/BAN-S01, BAN-S10 ×8, BAN-S12 ×6 and C5 ×8 residues it exempted are now **GONE**; three tokens survive and are counted at defect 8, which RUN6 could not have counted because the strip had not happened.
+· RUN6 check 6 S01 · S12 · S13 · S06 correctness findings — **CONFIRMED**, same sets re-derived. The S13 and S12 note text has since changed, producing defects 5 and 7.
+· RUN6 check 6 S10 Q72/Q74 deferral — **CONFIRMED**; নামপদ still only a refusal, and the refusal now collides with the permission (defect 6).
+· RUN6 check 6 S11 — **CONFIRMED**. Q75 and Q81 RECORDED under CD-169; the five single-mark items deferred; Q80 stays retired and its retirement is complete across every index.
+· RUN6 check 7 PASS and its observations — **CONFIRMED**, same set re-found.
+· RUN6's clearances of Q45, Q05 সমুদ্র, Q49 ঝুঁটি, Q86/Q87, Q42/Q38, Q29's repeated why_wrong, Q52 অভিন্ন, Q60 চিত্রকল্প — **CONFIRMED** independently.
+· RUN6 "95 items / indexes 1:1 / totals equal header.slot_counts and target" — **CONFIRMED**.
+· NEW THIS RUN: defects 5 · 6 · 7 · 8, all of them consequences of the two changes the instruction names — the reworded provenance clause now makes a positive false claim wherever the section is not in fact silent, and the code strip left three tokens standing.
+
+VERDICT: 8 DEFECT(S)

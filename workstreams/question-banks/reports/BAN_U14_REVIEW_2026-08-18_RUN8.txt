@@ -1,0 +1,60 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U14_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · "# পাঠ ১৪ — কুপোকাত" to "# পাঠ ১৫ — সংকল্প" (exclusive)
+RUN    : 2026-08-18 · EIGHTH run · independent verification review
+METHOD : CD-161(a) honoured. All seven checks and the check-1 claim sweep completed and written
+         before any prior report was opened. 84 items; every field in FIELDS TO SWEEP read
+         mechanically (question_text · option text · why_wrong · answer_key.accepted ·
+         model_note · blanks.accepted · rubric criterion · every band_descriptor · source_index).
+SLOTS  : slot_index tallies S02 8 · S03 12 · S04 6 · S05 8 · S06 6 · S07 10 · S08 8 · S10 6 ·
+         S11 6 · S12 6 · S13 8 = 84. Matches ADMITTED SLOTS. pool_index 38 HW + 32 AS + 14 CT = 84.
+
+1 · FACTUAL ACCURACY — PASS. 0 new defects. Four deferred items re-derived and reported below.
+
+Claim sweep, every carrier named. সভাপতি = মোষ (Q23 blank · Q28 opt ক · Q32 why_wrong ঘ · Q43 accepted · Q50 accepted) — correct. আপস-রফা = শেয়াল, terms = প্রতিদিন একটি পশু (Q24 blank · Q28 why_wrong গ · Q29 opt ক · Q42 accepted · Q44 accepted · Q57 stem) — correct. খরগোশ's refusal (Q32 opt ক · Q45 accepted · Q66 stimulus) — matches the printed quote. নিজের ছায়া → প্রতিদ্বন্দ্বী → ঝাঁপ → ডুবে মরা (Q22 blank · Q31 opt ক · Q46 accepted · Q47 accepted · Q52 band সম্পূর্ণ · Q53 band সম্পূর্ণ) — correct; Q22's alternative প্রতিবিম্ব is a true synonym, not a rival fact. সেজ আপা / আরেকটা বাঘ (Q49 accepted · Q64 question_text · Q64 source_index) — correct. Excuses named only for শজারু (কাঁটা) and ময়ূর (সৌন্দর্য), হরিণ's unstated (Q29 why_wrong গ/ঘ · Q34 why_wrong ঘ · Q48 accepted · Q54 band সম্পূর্ণ, which prints the gap explicitly) — correct. Closing ছড়া (Q21 blank · Q55 band · Q69 accepted) — verbatim. All S02 and S13 glosses match অর্থ জেনে নিই character-for-character. No distractor is arguably also correct; no date, name, role or attribute swapped.
+
+Marker-note truth sweep, both families re-derived against the section, not inherited:
+· "পাঠে এর উত্তর দেওয়া নেই" stands 18 times — Q37 · Q38 · Q39 · Q40 (no antonym printed: বিষণ্ন · বিমর্ষ · দুঃখিত · বৃহৎ · বিশাল · বড়ো · রোগা · শীর্ণ · কৃশ · সুবোধ · বুদ্ধিমান all absent, checked mechanically) · Q59–Q64 (no পদ answer printed) · Q71–Q76 (no decomposition printed) · Q81 · Q82 (অনুশীলনী ৪ prints the phrases, no answer; রাগী · ক্রোধী · তেজি · তেজস্বী absent). TRUE at all eighteen.
+· "উত্তরটি পাঠেই আছে" stands 8 times — Q35 · Q36 (অনুশীলনী ৫ জোড়াশব্দ, plus কদাকার in the ছক) · Q77 · Q78 · Q79 · Q80 · Q83 · Q84. Each citation verified, including the added "অনুশীলনী ৪-এ … আছে" at Q77/Q78/Q79 and the exercise numbers (৪ = এক শব্দে প্রকাশ, ৫ = জোড়াশব্দ). TRUE at all eight.
+· source_index: all 84 anchors resolve to printed section text (punctuation-normalised match, 0 unresolved).
+· Rubric bands (Q51–Q58) add no fact the section lacks. Q52's "তার লোভের কথা" is an inference from the printed "কিছু খায়, কিছু ফেলে রাখে" — not a new fact. Q54's parenthetical that হরিণ's excuse is unstated is exactly right.
+
+DEFERRED per CD-160 — reported, NOT COUNTED: **Q65** (দাঁড়ি only) · **Q68** (প্রশ্নচিহ্ন only), single-mark S11, QB-CR-017's held thirteen. **Q63** (দ্রুত → ক্রিয়া-বিশেষণ · ক্রিয়াবিশেষণ · বিশেষণ) · **Q64** (তার → সর্বনাম), untaught পদ, kept unchanged by ruling; within that deferral Q63 still accepts the plain super-class বিশেষণ. **Q33** `why_wrong[খ]` "খরগোশ ক্ষুদ্রকায় ও দুর্বল" — ruled NO CHANGE. Sole carrier: the phrase's other former site, Q61's stem, no longer exists.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS. All nine declared strings searched across every swept field. অভিনয় · সেজে · সাজো · চরিত্র সাজ — ZERO. ছবি · আঁক · আঁকো · আঁকা · এঁকে — ZERO. Complete near-hit inventory, each a declared PERMITTED NAMES string: সাজানো (arrange) — Q51 criterion, Q54 criterion; সেজ আপা — Q49 accepted[0], Q64 question_text, Q64 source_index; চরিত্র as a character of the play — Q54 criterion. Nothing undeclared. অনুশীলনী ৬ is unused; no সংলাপ or role-play item exists in any slot.
+
+3 · STANDING CURATION BARS — PASS. C-03: no music, song, tune or percussion; সুর-substring hits are সুরভি/সুরভিত (Q27 opt গ + why_wrong) and the idioms "উল্লাসের সুরে" / "উপভোগের সুরে". C-05: no picture supplied, described or requested. C-18: no nationalism and no veneration ritual; Q58's "জাতীয়" is the classifier in "ঠকানোই বুদ্ধি জাতীয় ভুল সিদ্ধান্ত". C-19: nothing asks a student to act, dress as, or speak as a character.
+
+4 · INVENTED NAMES — PASS. Only the section's seven cast animals, its own সেজ আপা, and unnamed generics (শিক্ষক Q15 · ছেলেটি Q12 · গরুগুলো Q16 · সভাপতি Q19).
+
+5 · NUMERALS — PASS. Mechanical `[0-9]` scan of all swept fields: ZERO ASCII digits anywhere, student-facing or marker-facing. Exercise and item numbers are Bengali throughout.
+
+6 · SLOT-SPECIFIC CORRECTNESS — PASS on S12 · S13 · S06 · S10(non-deferred) · S11(non-deferred).
+S12 (Q71–Q76): ণ্য=ণ+য · ন্ন=ন+ন · দ্ধ=দ+ধ · প্ত=প+ত · ল্ল=ল+ল · ষ্ট=ষ+ট all right; all 18 sample new words carry the named conjunct and none occurs in the section (checked mechanically: পুণ্য · গণ্য · অন্ন · ভিন্ন · প্রসন্ন · যুদ্ধ · শুদ্ধ · সিদ্ধ · সুপ্ত · তৃপ্ত · গুপ্ত · উল্লেখ · পল্লি · বল্লম · কষ্ট · দৃষ্টি · সৃষ্টি all absent). Multi-conjunct scan: only ক্ষিপ্ত holds two distinct conjuncts, and Q74's stem names both and designates প্ত; Q76's হৃষ্টপুষ্ট repeats one and the same ষ্ট, so "যুক্তবর্ণটি" is determinate.
+**JUST CHANGED, verified stem by stem:** each of Q71–Q76 now reads "যুক্তবর্ণ ভাঙার উত্তরটি নির্দিষ্ট — সেখানে বিকল্প নেই। নতুন শব্দ যেকোনো শুদ্ধ শব্দ হতে পারে, যদি তাতে সেই যুক্তবর্ণ থাকে এবং শব্দটি পাঠে না থাকে; গৃহীত তালিকা কেবল নমুনা।" That is the correct reading for all six: the closed half is the decomposition, the open half is the new word, the accepted list is samples, and the two conditions the note imposes on the open half are exactly the two the stems impose. No closed list is ordered against the open half at any of the six.
+S13 (Q77–Q84): every answer matches its definition phrase; প্রাণ বিসর্জন is glossed "জীবন দেওয়া" without "পরের জন্য", so it does not compete with আত্মত্যাগ at Q77.
+S06 (Q35–Q40): each antonym holds in the chapter's own sense of its stimulus; Q40's বুদ্ধিমান agrees with Q30's own why_wrong খ.
+S10 (Q59–Q62): বাঘের নাম-শব্দ/বিশেষ্য · অরণ্য নাম-শব্দ/বিশেষ্য · রাজি বিশেষণ · করে কাজ-শব্দ/ক্রিয়া — each right for the word as used in its own sentence; no super-class key, no non-standard term; নামপদ appears only inside a forbidding clause.
+S11 (Q66 · Q67 · Q69 · Q70): required marks are কমা + উদ্ধরণ চিহ্ন + দাঁড়ি · কমা + দাঁড়ি · কমা + বিস্ময়চিহ্ন · কমা + দাঁড়ি — all inside the taught five, each item requiring more than one mark. Q67's accepted[0] prints the section's own ড্যাশ but accepted[1] is comma-only, so under the per-variant test no barred mark is required; the note names only কমা and দাঁড়ি, consistent with that. Q66's note writes উদ্ধৃতিচিহ্ন where the register writes উদ্ধরণ চিহ্ন — a synonym.
+
+7 · LANGUAGE — PASS.
+Policy-code sweep, re-derived: **ZERO code tokens survive in any swept field** — CD-nnn, BAN-Snn, SLOT_REGISTER, MarkLogic §, নেপ §, slot ids, C-nn, QB-CR-nnn, REF19 and the former slot-inventory aside all return 0. The only Latin left in a swept field is the schema key `rubric.criteria[].role = "islamic_alignment"` (Q51–Q58), a field name, not prose.
+**Survivability test — what is left still tells a marker what to do:** S10 (Q59–Q64) keeps "নির্দিষ্ট উত্তরই লাগবে — এই কাজে কাছাকাছি অর্থের কোনো বিকল্প নেই, গৃহীত তালিকার বাইরে কিছু নেওয়া যাবে না", and Q59/Q60/Q62 add "'নামপদ' নয়". S12 keeps the fixed/open split quoted above. S06 and S13 keep either "উত্তরটি পাঠেই আছে" with the printed line cited or the provenance sentence, plus "কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর গ্রহণযোগ্য" — and a genuine meaning-neighbour exists at each of those fourteen (Q35–Q40 · Q77–Q84). Every note is actionable; none is a bare citation.
+**Grant-versus-forbid test:** the provenance clause now reads "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — এটি বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই।" — a statement of origin, not a permission. In the six S10 notes it sits beside a closed-list clause and in the six S12 notes beside a fixed-decomposition clause without contradiction. **No note in this bank grants what it forbids.** Q14's model sentence now reads "সময় নষ্ট করেছি — এখন সেটাই আমার সবচেয়ে বড়ো পরিতাপ।", which is idiomatic; the other eleven S03 models and both constructed S04 stems (Q25 · Q26) are natural and class-appropriate.
+Uncounted observations: (a) Q41 · Q42 · Q43 are 2-mark S07 items whose keys are single words duplicating Q23 · Q24 · Q28 · Q29 — depth-versus-marks, not a factual matter; (b) policy codes still sit in the bank-level `curation` paragraph and `header.content_facts` / `header.gaps` — curator-facing provenance, outside FIELDS TO SWEEP and outside "note"; flagged for scope, not counted.
+
+STEP 5a — RUN7 NOT FOUND; RUN6 DISPOSITIONED INSTEAD
+
+`BAN_U14_REVIEW_2026-08-18_RUN7.txt` **does not exist on disk, is not in the index or working tree, and is in no commit reachable from any ref** (checked: `ls`, `find`, `git status --porcelain` clean, `git log --all --diff-filter=A`). Saying so plainly as instructed, I dispositioned `BAN_U14_REVIEW_2026-08-18_RUN6.txt` — the latest U14 report that exists — and read it only after the seven checks and the claim sweep above were written. If RUN7 raised anything RUN6 did not, this run cannot have dispositioned it.
+
+- RUN6 check-7 defect 1 (policy codes in marker-facing `model_note`: CD-136 ×18, BAN-S10 + slot-inventory aside ×6, SLOT_REGISTER BAN-S12 ×6): **FIXED** — zero occurrences of any of the three families in any swept field; verified mechanically, not read off the ruling.
+- RUN6 check-7 defect 2 (Q14 unidiomatic): **FIXED** — পরিতাপ now stands as the predicate noun, which is how it takes.
+- RUN6 deferred item, Q60's spliced quotation: **FIXED** — the stem now prints "অরণ্য। এক পাশে মাটির টিবি, দেখতে কুয়ার মতো।", the দাঁড়ি restored and the sentence completed, matching the section exactly.
+- RUN6 deferred item, Q61's unprinted 'ক্ষুদ্রকায় প্রাণী': **FIXED** — the stimulus is now "কিন্তু খরগোশ রাজি নয়", printed verbatim in কাহিনির ধারা ৩, with রাজি → বিশেষণ correctly keyed. The sibling RUN6 named, **Q33 `why_wrong[খ]`, is STILL PRESENT** and is the CD-160 deferral reported under check 1 above.
+- RUN6 deferred item, Q59's target token: **FIXED** — the stem now asks for 'বাঘের', the token that actually occurs.
+- RUN6 deferred Q65 · Q68 and Q63 · Q64: **STILL PRESENT** — re-derived independently; reported as CD-160 deferrals, not counted.
+- RUN6 checks 2, 3, 4, 5 PASS, its permitted-name inventory and its substring reasoning: **WAS NEVER A DEFECT** — every one reproduced from a fresh sweep.
+- RUN6 check-6 findings: **WAS NEVER A DEFECT and CORRECT** — all reached independently before RUN6 was opened.
+- RUN6 check-1 PASS and its two boilerplate counts (18 / 8): **CORRECT** — my independent counts land on the same 18 and the same 8, with the same qids.
+- RUN6's "VERDICT: 2 DEFECT(S)": **CORRECT as a record** — both were real and both are now fixed; nothing it passed has since proved false.
+
+VERDICT: CLEAN
