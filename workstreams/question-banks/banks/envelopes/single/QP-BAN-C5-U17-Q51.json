@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q51",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "উয়ারী-বটেশ্বরে প্রাচীন নগর আবিষ্কারের ধারাবাহিক ইতিহাস লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "১৯৩৩ থেকে ২০০০ পর্যন্ত ঘটনাগুলো সাল ধরে ক্রম মেনে লেখা, প্রতিটি সালের সঙ্গে কী পাওয়া গেল তা মিলিয়ে — কেবল পাঠের তথ্যই ব্যবহার করে",
+          "band_descriptors": {
+            "সম্পূর্ণ": "চারটি ধাপই ক্রম মেনে এসেছে — ১৯৩৩ সালে হানিফ পাঠানের সংগ্রহ করা মুদ্রা, ১৯৫৫ সালে বটেশ্বরের লোহার টুকরা, ১৯৫৬ সালে উয়ারীর রৌপ্যমুদ্রার ভান্ডার এবং ২০০০ সালে প্রত্নতত্ত্ববিদদের খননকাজ; হাবিবুল্লাহ পাঠানের নিদর্শন সংগ্রহের কথাও আছে; ভাষা সংযত এবং পাঠে নেই এমন কোনো তথ্য যোগ করা হয়নি।",
+            "আংশিক": "দু-একটি ধাপ বাদ পড়েছে বা সালের ক্রম গুলিয়ে গেছে; অথবা পাঠে নেই এমন তথ্য যোগ হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

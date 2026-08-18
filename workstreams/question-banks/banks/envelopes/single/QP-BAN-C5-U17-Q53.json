@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q53",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "প্রাচীনকালে এই অঞ্চলের নদীপথ ও সমুদ্রপথের বাণিজ্য সম্পর্কে যা জান লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "শীতলক্ষ্যা থেকে ব্রহ্মপুত্র, ব্রহ্মপুত্র থেকে বঙ্গোপসাগর, সেখান থেকে দূরের দেশ — পথটি ধাপে ধাপে দেখানো এবং বাণিজ্যের নিদর্শনগুলোর সঙ্গে মিলিয়ে লেখা",
+          "band_descriptors": {
+            "সম্পূর্ণ": "শীতলক্ষ্যা যে ব্রহ্মপুত্রের শাখা তা বলা হয়েছে; নদীপথে বাণিজ্যের কথা আছে; বঙ্গোপসাগর হয়ে সমুদ্রপথে রোমান সাম্রাজ্যের সাথে যোগাযোগের কথা আছে; বন্দর, মুদ্রাভান্ডার বা বাটখারার মতো অন্তত একটি নিদর্শন যুক্তি হিসেবে এসেছে।",
+            "আংশিক": "পথের এক-দুটি ধাপ বাদ পড়েছে, অথবা রোমান সাম্রাজ্যের যোগাযোগের কথা আসেনি।"
+          }
+        }
+      ]
+    }
+  }
+}

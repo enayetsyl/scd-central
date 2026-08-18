@@ -1,0 +1,47 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q22",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "'______ নদী ব্রহ্মপুত্রের একটি শাখা।' — শূন্যস্থান পূরণ করো।",
+    "question_type": "fill_blank",
+    "paper_role": "short",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "blanks": [
+      {
+        "blank_no": 1,
+        "accepted": [
+          "শীতলক্ষ্যা"
+        ],
+        "marks": 1
+      }
+    ]
+  }
+}

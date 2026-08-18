@@ -1,0 +1,45 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-01",
+    "bloom_level": "Understand",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q59",
+    "topic_tag": "TOP-BAN-C5-01",
+    "ref19_topic_id": "BAN-PARTSPEECH",
+    "question_text": "'বটেশ্বর গ্রামে দুটি পুরানো লোহার টুকরা — ত্রিকোণাকৃতির, একদিকে সুচালো' — এখানে 'পুরানো' শব্দটি কোন পদ? নির্ণয় করো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "answer_key": {
+      "accepted": [
+        "বিশেষণ",
+        "বিশেষণ পদ"
+      ],
+      "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ব্যাকরণের সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপকটি পাঠেরই। নির্দিষ্ট উত্তরই লাগবে — গৃহীত তালিকার বাইরে কিছু নেওয়া যাবে না।"
+    }
+  }
+}

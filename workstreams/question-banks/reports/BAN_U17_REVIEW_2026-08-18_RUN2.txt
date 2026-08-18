@@ -1,0 +1,151 @@
+BANK : workstreams/question-banks/banks/C5_BAN_U17_QuestionBank_v1.json
+RUN  : 2026-08-18  (run 2 — the post-fix re-review of পাঠ ১৭; run 1 is
+       BAN_U17_REVIEW_2026-08-18.txt and is NOT overwritten)
+PROMPT: tools/bank_factual_review_prompt.md, run FROM THAT PATH, facts block unchanged from run 1
+       (nothing in the source or the CD-138(e) declaration changed) — it remains at
+       workstreams/question-banks/_wip/U17_5b_FACTS_BLOCK_2026-08-18.txt
+REVIEWER: independent read-only reviewer, no write access, in-session (a self-run review in
+       CD-151(b)'s sense — any fix taken from it is owed a SESSION_LOG entry with its qid).
+CD-161(a): A PRIOR REPORT EXISTS (run 1, VERDICT: 7 DEFECT(S)) and was taken as an INPUT. The
+       ordering was enforced: the seven checks and the check-1 enumerating claim sweep were run
+       FRESH and written out IN FULL before the prior report was opened. Only then was it opened
+       and each of its seven findings dispositioned FIXED · STILL PRESENT · WAS NEVER A DEFECT.
+WHAT CHANGED BETWEEN THE RUNS: six fixes applied by Principal ruling, made in
+       workstreams/question-banks/authoring/author_U17_wave1.py and the bank REGENERATED from it
+       (LOCAL.md — the script is the source of reproducibility; the JSON is never hand-edited).
+       Item count unchanged at 78. Chapter-scoped gate re-run: RESULT: CLEAN (0 failures).
+RULING R1 (Principal, this session) was supplied to the reviewer as STANDING POLICY, not as a
+       prior finding: the C5 taught-set punctuation bar (CD-165/CD-166) is a bar on marks the
+       STUDENT PLACES, not on marks appearing inside a model answer, stem, stimulus, model_note
+       or rubric. Run 1's defect 5 is dissolved by it and its five items are untouched and
+       byte-identical.
+CD-157(d): this report is a committed artifact and the commit IS OWED. Nothing is staged,
+       committed or pushed by this worker — the orchestrator commits at fan-in.
+STATUS  : ONE DEFECT STANDS (Q61, NEW — not seen by run 1). NO FIX APPLIED to it; it is
+       escalated for a ruling rather than fixed unilaterally.
+
+--- reviewer's report, verbatim -------------------------------------------------------------
+
+# Independent Verification Review — QB-BAN-C5-U17 (পাঠ ১৭ — মাটির নিচে পুরানো নগর)
+
+**Reviewer:** independent, read-only. Did not author this bank. No file written, moved, staged or committed.
+**Files read:** `/sessions/exciting-kind-meitner/work/wt17/workstreams/question-banks/banks/C5_BAN_U17_QuestionBank_v1.json` (all 78 items read individually, not sampled) and `/sessions/exciting-kind-meitner/work/wt17/canon/marklogic/C5_Bangla_Source_13-23.md` lines 270–321, plus line 29 (the এক নজরে sentence the header quotes).
+**CD-161(a) ordering:** Phase 1 below was completed in full from the bank and the source only. `workstreams/question-banks/reports/BAN_U17_REVIEW_2026-08-18.txt` was not opened until Phase 1 was fixed.
+
+---
+
+# PHASE 1 — FRESH REVIEW
+
+## 1 · FACTUAL ACCURACY
+
+**PASS.**
+
+Every date, district, person, role, artefact and quantity in the bank was traced to the section and cross-swept across the whole bank, not per item. The claim classes and their full occurrence sets:
+
+- **হানিফ পাঠান = স্কুলশিক্ষক, ১৯৩৩, ২০–৩০ coins, oldest silver coins found so far** — Q24 `blanks.accepted`, Q31 `why_wrong[খ]`, Q34 `why_wrong[খ]`, Q43 `answer_key.accepted`, Q47 `answer_key.accepted`, Q51 `rubric.band[সম্পূর্ণ]`, Q63 `question_text` + `answer_key.accepted`. All correct, all the same claim, none swapped with the son. Q43's "কুড়ি-ত্রিশটি" is the section's ২০–৩০ in words.
+- **হাবিবুল্লাহ পাঠান = হানিফের পুত্র, নিদর্শন → জাদুঘর** — Q34 option ক `text` + `why_wrong[খ]`, Q47 `answer_key.accepted`, Q51 `rubric.band[সম্পূর্ণ]`, Q63 `question_text` + `answer_key.accepted`. Correct throughout.
+- **১৯৫৫ বটেশ্বর = দুটি লোহার টুকরা / ১৯৫৬ উয়ারী = প্রায় চার হাজার রৌপ্যমুদ্রা** — Q25, Q31 `why_wrong[গ]`+`[ঘ]`, Q33 option ক + `why_wrong[খ]`, Q36 `why_wrong[খ]`, Q44, Q51 band. Correct; the two years are never swapped and চার হাজার is never attached to the city's age.
+- **২০০০ = খননকাজ শুরু, আড়াই হাজার বছরের দুর্গ-নগর + artefact list** — Q26, Q31 option ক, Q33 `why_wrong[গ]`+`[ঘ]`, Q36 option ক, Q45, Q49, Q50, Q52 criterion + band, Q54 band, Q64, Q66. Correct.
+- **ময়নামতি–কুমিল্লা–সাত-আট শতক / মহাস্থানগড়–বগুড়া–তৃতীয় শতকের পরে / উয়ারী-বটেশ্বর–নরসিংদী–খ্রি.পূ. ছয়-সাত শতক** — Q18, Q19, Q20, Q21, Q29 (all four options), Q30 (all four options), Q36 `why_wrong[ঘ]`, Q42, Q48, Q61. Correct; the three date-attributions are never crossed.
+- **শীতলক্ষ্যা = ব্রহ্মপুত্রের শাখা; ব্রহ্মপুত্র → বঙ্গোপসাগর → সমুদ্রপথ → রোমান সাম্রাজ্য** — Q22, Q23, Q32 (all options), Q35 (all options), Q46, Q53 criterion + band, Q55. Correct.
+- **সোনাগড়া / পঞ্চাশটি জায়গা** — Q27, Q28, Q36 `why_wrong[গ]`, Q58, Q65. Correct.
+- **অর্থ জেনে নিই glosses (7)** — Q01–Q07 `answer_key.accepted` and Q74–Q78 `answer_key.accepted` reproduce the section's seven glosses verbatim in both directions. Correct.
+
+No MCQ distractor (Q29–Q36) is arguably also correct.
+
+**Swept and cleared — reported so the class is on record, not counted.** The *"artefact implies function"* inference class: Q49 `answer_key.accepted` ("বন্দর দিয়ে নৌকা ভিড়ত… বাটখারা দিয়ে ওজন করা হতো"), Q50 `answer_key.accepted` ("এগুলো মানুষের গড়া বসতির নিদর্শন"), Q53 `rubric.criterion` (the শীতলক্ষ্যা→ব্রহ্মপুত্র→বঙ্গোপসাগর route as a *trade* path; the section states the tributary relation and the trade route separately), Q54 `rubric.band[সম্পূর্ণ]`, Q16 `answer_key.accepted`. None of these propositions is printed verbatim in the section. Each sits in an Analyze/Evaluate item whose stem asks "কীভাবে বোঝা যায়" / "যুক্তি দিয়ে লেখো" — the reasoning the source's own ✅ block requires — and each reasons only from artefacts the section names. Not defects.
+
+## 2 · THE CHAPTER'S CONTENT BARS
+
+**PASS.** All nineteen declared strings swept across `question_text`, option `text`, `why_wrong`, `answer_key.accepted`, `answer_key.model_note`, `rubric.criterion` and every `rubric.band_descriptors` value of all 78 items: **zero occurrences** of ডাকটিকিট / ডাকটিকিটের / ডাকটিকিটগুলো / ডাকটিকিটও · দেশলাই / দেশলাইয়ের / দেশলাইয়ের বাক্স · অন্য দেশের টাকা · অন্য দেশের মুদ্রা · সংগ্রহ করি · সংগ্রহ করো · সংগ্রহ কোরো · সংগ্রহ করে আনো · সংগ্রহ করে আনবে · জোগাড় করো · জোগাড় করে আনো · নিয়ে এসো · নিয়ে আসবে · শ্রেণিকক্ষে দেখাও · ক্লাসে দেখাও · মন্দির (any form) · ভিটা (any form) · বৌদ্ধ (any form) · বিহার (any form).
+
+Per CD-157(f), the bare token **সংগ্রহ** occurs six times and none is a barred string: Q24 `question_text`, Q34 `question_text` and `why_wrong[খ]`, Q43 `answer_key.accepted`, Q47 `answer_key.accepted`, Q51 `rubric.band[সম্পূর্ণ]`. All are third-person history about হানিফ পাঠান and হাবিবুল্লাহ পাঠান; none instructs a student to collect, fetch, bring or display anything.
+
+## 3 · STANDING CURATION BARS
+
+**PASS.** C-03 — the chapter contains no music, dance or percussion material and no item reaches for any. C-05 — no item supplies or requests a depiction of a living being; there is no "ছবি আঁকো"/"ছবি দেখো" anywhere. C-18 — রোমান সাম্রাজ্য, the museum deposit and the discovery chronology are factual history under C-18's own carve-out; no flag salute, wreath, flower, monument ritual or ritual silence appears in any item.
+
+*Observation, not counted:* the four rubric items (Q51–Q54) each carry a single criterion whose `role` is `islamic_alignment`, but Q52's and Q53's criterion/band text contains no alignment element at all (Q51 and Q54 at least require "ভাষা সংযত"). Role composition is a structural matter the gate suite governs, so this is recorded, not counted.
+
+## 4 · INVENTED NAMES
+
+**PASS.** The only personal names anywhere in the bank are **হানিফ পাঠান** and **হাবিবুল্লাহ পাঠান**, both recorded by the section. The S03 model sentences (Q08–Q17) invent no character; the S11 stimuli (Q61–Q66) use only chapter figures and place names.
+
+## 5 · NUMERALS
+
+**PASS.** No ASCII digit occurs in any student-facing string. All years and quantities are Bengali (২০০০, ১৯৩৩, ১৯৫৫, ১৯৫৬, চার হাজার, আড়াই হাজার, পঞ্চাশটি, কুড়ি-ত্রিশটি). The only ASCII digits in the file are the bare `(CD-136)` provenance tags inside teacher-facing `answer_key.model_note` at Q08–Q17, Q37–Q41, Q55–Q60, Q67–Q73 — exempt under this check's own carve-out and correct under standing policy.
+
+## 6 · SLOT-SPECIFIC CORRECTNESS
+
+**S12 যুক্তবর্ণ (Q67–Q73) — PASS.** All seven decompositions are orthographically right (ত্ত=ত+ত · দ্র=দ+র · ম্র=ম+র · স্থ=স+থ · ত্র=ত+র · জ্য=জ+য · শ্ব=শ+ব) and every newly formed word actually contains its conjunct (উত্তর, সমুদ্র, নম্র, স্থান, ছাত্র, রাজ্য, বিশ্বাস). Three stimuli carry more than one conjunct — রৌপ্যমুদ্রা (প্য, দ্র; Q68), সাম্রাজ্য (ম্র, জ্য; Q69), স্থাপত্য (স্থ, ত্য; Q70) — and each stem names its target conjunct explicitly, so none is ambiguous. All seven stimulus words are printed in the section.
+
+**S10 পদ নির্ণয় (Q55–Q60) — PASS.** শাখা=বিশেষ্য, প্রাচীন=বিশেষণ, করেন=ক্রিয়া, সভ্যতা=বিশেষ্য, পুরানো=বিশেষণ, পাওয়া যায়=ক্রিয়া — each correct for the word *as used in the given sentence*. No accepted answer is a super-class of the পদ itself, and no non-standard term (no সমাপিকা/যৌগিক sub-classification) is admitted. Q60's stem is carefully worded "কোন পদ হিসেবে ব্যবহৃত হয়েছে", which is the right construction for a যৌগিক ক্রিয়া unit.
+
+**S13 এক কথায় প্রকাশ (Q74–Q78) — PASS.** Each answer matches its definition phrase. Q74 correctly accepts both ইতিহাসবিদ and ঐতিহাসিক, the two words the section prints that satisfy "ইতিহাস বিষয়ে অভিজ্ঞ যিনি" (অর্থ জেনে নিই and the অনুশীলনী ১ list respectively), with a `model_note` saying so. Q75–Q78 have no chapter-internal alternative. No accepted form's grammatical class fails its definition.
+
+**S06 বিপরীত শব্দ (Q37–Q41) — PASS.** পুরানো→নতুন, প্রাচীন→আধুনিক/নবীন, মূল্যবান→মূল্যহীন, অভিজ্ঞ→অনভিজ্ঞ hold in the chapter's own sense of each word. নিচে (Q40) is used positionally in "মাটির নিচে", where উপরে is a genuine antonym — not an adverbial or idiomatic use with no opposite.
+
+**S11 বিরামচিহ্ন (Q61–Q66) — one defect.** Every mark any item requires is inside the C5 taught set (দাঁড়ি, কমা, প্রশ্নচিহ্ন, বিস্ময়চিহ্ন, উদ্ধরণ চিহ্ন); no key requires a ড্যাশ or a সেমিকোলন. Q62 (?, কমা, দাঁড়ি), Q64 (?, দাঁড়ি), Q65 (দাঁড়ি, বিস্ময়চিহ্ন, with উদ্ধরণ চিহ্ন correctly made optional in a second accepted variant) and Q63/Q66 (two দাঁড়ি each, requiring the student to find an unmarked sentence boundary) all require more than a single terminal mark.
+
+**1. QP-BAN-C5-U17-Q61 — the second required mark is not a required mark, which leaves the item at a single terminal দাঁড়ি.**
+`question_text` gives the stimulus `'উয়ারী ও বটেশ্বর নরসিংদী জেলার দুটি গ্রাম'`; the sole `answer_key.accepted` is `"উয়ারী ও বটেশ্বর, নরসিংদী জেলার দুটি গ্রাম।"` and `answer_key.model_note` justifies the comma as *"গ্রাম দুটির নামের পরে পরিচয় বসেছে, তাই সেখানে কমা"*. That is not a Bengali comma rule and is not in the C5 taught set's use of কমা. As presented, the stimulus is a complete nominal sentence (উদ্দেশ্য "উয়ারী ও বটেশ্বর" + বিধেয় "নরসিংদী জেলার দুটি গ্রাম"), and standard Bangla does not place a comma between উদ্দেশ্য and বিধেয়; the only mark the sentence *requires* is the terminal দাঁড়ি. Two consequences, both defects: (a) a student who writes `উয়ারী ও বটেশ্বর নরসিংদী জেলার দুটি গ্রাম।` — fully correct — is marked wrong, since that form is not among the accepted variants; (b) with the spurious comma removed, Q61 requires exactly one terminal mark, which the S11 rule bars, and which `header.taught_set_note` expressly asserts is impossible ("ছয়টি S11 আইটেমের প্রতিটিতে অন্তত দুটি চিহ্ন বসাতে হয়" — `s11_work_check()` counted the comma as the second mark). The comma is an artefact of the source line the stimulus was cut from: the section prints "এগুলোর চেয়েও পুরানো **—** উয়ারী ও বটেশ্বর, নরসিংদী জেলার দুটি গ্রাম।", where the comma opens an appositive to a dash-introduced phrase. The dash was dropped when the stimulus was made standalone; the comma's licence went with it.
+*Sweep — every occurrence of this sentence in the bank:* **Q20** `question_text` ("'উয়ারী ও বটেশ্বর ______ জেলার দুটি গ্রাম।'") — no comma, correct. **Q42** `answer_key.accepted` ("উয়ারী ও বটেশ্বর নরসিংদী জেলার দুটি গ্রাম।") — **no comma, and this is the same sentence Q61 keys with one**. The bank therefore keys the sentence unpunctuated in Q42 and marks it wrong in Q61. **Q29** `question_text` and **Q30** `why_wrong[গ]` carry the same fact in other wordings and are unaffected. Q61 is the only occurrence carrying the defect.
+
+*Observation, not counted:* Q63 and Q66 test an identical rule with an identical solution shape (two independent clauses → two দাঁড়ি) and carry a byte-identical `model_note` ("এখানে দুটি আলাদা পূর্ণ বাক্য, তাই দুটিরই শেষে দাঁড়ি।"). Near-duplication is a §4 matter the gate suite governs, so it is recorded, not counted.
+
+## 7 · LANGUAGE
+
+**PASS.** Stems, keys and rubric rows are natural, grammatical and at class level. The S03 model sentences (Q08–Q17) are simple and idiomatic; the S07/S08 keys and band descriptors are plain Bangla a Class-5 marker can apply; no stem is ambiguous about what it asks. No internal policy code appears in any student-facing string, and no slot-registry code or slot-selection rationale appears in any `model_note` — the only codes present are the bare `(CD-136)` provenance tags, which are the house form and not a leak.
+
+Per RULING R1, the em-dashes and semicolons that appear in `answer_key.accepted` at Q44, Q47, Q48, Q49, Q50, in the `question_text` separator at Q18–Q28 / Q54–Q66 / Q74–Q78, in the quoted stimulus at Q59, in `why_wrong` at Q32(ঘ)/Q34(খ)/Q36(খ), in the gloss notation at Q03 and Q67–Q73, and in `rubric.criterion`/`band_descriptors` at Q51–Q54 are marks inside model answers, stems, stimuli, model_notes and rubrics — not marks the student is required to place. **Not defects.** No item anywhere requires a student to place a ড্যাশ or a সেমিকোলন.
+
+**VERDICT: 1 DEFECT(S)**
+
+---
+
+# PHASE 2 — CD-161(a) DISPOSITION OF THE PRIOR REPORT
+
+Prior report: `workstreams/question-banks/reports/BAN_U17_REVIEW_2026-08-18.txt` (run 1, verdict 7 DEFECT(S), status NO FIX APPLIED at time of writing). All seven numbered findings dispositioned against the bank as it stands now.
+
+| # | Prior finding | Disposition | Reason |
+|---|---|---|---|
+| 1 | **Q14** `answer_key.accepted` = "রোমান সাম্রাজ্য ছিল অনেক দূরের দেশ।" — equates সাম্রাজ্য with দেশ, and "অনেক দূরের" is not in the section | **FIXED** | Q14's sole accepted answer now reads "একজন সম্রাট রোমান সাম্রাজ্য শাসন করতেন।", which uses সাম্রাজ্য in exactly the sense of the bank's own gloss and asserts nothing beyond the section. |
+| 2 | **Q60** — stem calls the two-word "পাওয়া যায়" a শব্দ, and `answer_key.accepted` admits "যৌগিক ক্রিয়া", a sub-class outside the C5 পদ set | **FIXED** | Stem now reads "…'পাওয়া যায়' কোন পদ হিসেবে ব্যবহৃত হয়েছে? নির্ণয় করো।" and `accepted` is exactly ["ক্রিয়া", "ক্রিয়া পদ"] — no যৌগিক anywhere in the bank. |
+| 3 | **Q74** — accepts only ইতিহাসবিদ though the chapter also prints ঐতিহাসিক, which satisfies the same definition | **FIXED** | `accepted` is now ["ইতিহাসবিদ", "ঐতিহাসিক"], with a `model_note` naming both source locations (অর্থ জেনে নিই and the অনুশীলনী ১ list) and awarding full marks for either. |
+| 4 | **Q65** — sole accepted answer requires উদ্ধরণ চিহ্ন round সোনাগড়া, which the section does not print | **FIXED** | Q65 now carries two accepted variants, quoted and unquoted, and the `model_note` states the quotes are correct but not required, citing the section's unquoted printing. Consistent with Q27/Q58, which print the name unquoted. |
+| 5 | **Barred-at-C5 punctuation inside model answers** — semicolon at Q47, em-dashes at Q44, Q48, Q49, Q50 | **WAS NEVER A DEFECT** | The marks are still present in those five keys, unchanged. Under RULING R1 the CD-165/CD-166 bar governs marks the *student places*; a semicolon or em-dash inside an `answer_key.accepted` model answer for a short-answer item is outside the bar. No item in the bank requires a student to place either mark, so nothing here was ever in scope. |
+| 6 | **Q55–Q60 and Q67–Q73** `model_note` — slot-selection rationale and registry codes ("BAN-S10", "অনুশীলনী ৪ থেকে কোনো প্রশ্ন করা হয়নি", "(SLOT_REGISTER BAN-S12 composite)") leaked into marker-facing text | **FIXED** | Both note families were rewritten. Q55–Q60 now carry only marking guidance ("নির্দিষ্ট উত্তরই লাগবে — গৃহীত তালিকার বাইরে কিছু নেওয়া যাবে না।") and Q67–Q73 only task guidance; no registry slot code, no SLOT_REGISTER token and no not-written rationale survives in any item. A whole-bank regex sweep for `CD-\d+ / QB-CR / REF-19 / PENDING-P / S0n / S1n / BAN-[A-Z]+ / TOP-BAN` returns only the bare `(CD-136)` tags, which are the permitted house form. |
+| 7 | **Q59** — stimulus truncated to the verbless fragment "'বটেশ্বর গ্রামে দুটি পুরানো লোহার টুকরা।'" with a দাঁড়ি the source does not print | **FIXED** | Q59's stimulus now reproduces the source row in full and without an added terminal mark: "'বটেশ্বর গ্রামে দুটি পুরানো লোহার টুকরা — ত্রিকোণাকৃতির, একদিকে সুচালো'". Its named sibling Q56 is unchanged and was correctly not a defect. |
+
+**Net:** six of the seven prior findings are fixed in the bank as it stands; the seventh was never a defect under RULING R1 and needs no fix. The prior run's S11 pass did not reach Q61's comma — Phase 1 finding 1 is new and is the only defect standing in the bank today.
+
+VERDICT: 1 DEFECT(S)
+
+--- reviewer's report ends -------------------------------------------------------------------
+
+--- worker's note on the ONE standing defect, for the Principal ------------------------------
+
+Q61 IS NOT FIXED AND WAS DELIBERATELY NOT FIXED. The worker's remit this run was to apply six
+ruled fixes and re-review; a NEW finding goes up, it is not fixed unilaterally. Two facts the
+Principal will want before ruling, both verified at source by the worker after the review:
+
+(a) THE REVIEWER IS WRONG THAT THE COMMA IS THE BANK'S INVENTION. Line 276 of the extraction
+    prints it: "এগুলোর চেয়েও পুরানো — **উয়ারী ও বটেশ্বর**, নরসিংদী জেলার দুটি গ্রাম।" Q61's
+    accepted answer reproduces the source's own punctuation of that span verbatim, and the
+    anchor A_UWARI is that span including the comma. The reviewer's argument is narrower than
+    its wording: that once "এগুলোর চেয়েও পুরানো —" is dropped, what licensed the comma (an
+    appositive after a dash-introduced phrase) is gone, so the comma becomes optional rather
+    than required.
+
+(b) THE INTERNAL INCONSISTENCY THE REVIEWER FOUND IS REAL AND IS THE STRONGER HALF OF THE
+    FINDING. Q42 `answer_key.accepted` prints "উয়ারী ও বটেশ্বর নরসিংদী জেলার দুটি গ্রাম।"
+    WITHOUT the comma; Q61 marks that exact string wrong. Whichever way the comma question is
+    ruled, the bank should not print a sentence one way and require it the other.
+
+    If the comma is REQUIRED, Q42's model answer should carry it.
+    If the comma is OPTIONAL, Q61 needs an unquoted-comma variant in `accepted` — and then Q61
+    falls to ONE required mark, which is QB-CR-017's defect exactly, and Q61 must be re-stemmed
+    onto a different span instead. `s11_work_check()` would catch that automatically: it
+    refuses to write the file at a count of one.
+
+    A ruling is needed on which. The worker has not chosen.

@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q46",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "শীতলক্ষ্যা নদীর সঙ্গে প্রাচীন বাণিজ্যের সম্পর্ক কী?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "answer_key": {
+      "accepted": [
+        "শীতলক্ষ্যা ব্রহ্মপুত্রের একটি শাখা। প্রাচীনকালে ব্রহ্মপুত্র নদীপথে বাণিজ্য হতো, আর সেই নদী থেকে বঙ্গোপসাগর হয়ে সমুদ্রপথে রোমান সাম্রাজ্যের সাথে যোগাযোগ ছিল।"
+      ],
+      "model_note": "নদী থেকে সাগর, সাগর থেকে দূরের দেশ — এই পথের কথাটি ধরা পড়লেই পূর্ণ নম্বর।"
+    }
+  }
+}

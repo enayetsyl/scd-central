@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-13",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q66",
+    "topic_tag": "TOP-BAN-C5-13",
+    "ref19_topic_id": "BAN-SENTENCE",
+    "question_text": "'প্রত্নতত্ত্ববিদরা খননকাজ শুরু করলেন মাটির নিচে বেরিয়ে এল আড়াই হাজার বছরের প্রাচীন দুর্গ-নগর' — বাক্যটিতে প্রয়োজনীয় বিরামচিহ্ন বসিয়ে আবার লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "answer_key": {
+      "accepted": [
+        "প্রত্নতত্ত্ববিদরা খননকাজ শুরু করলেন। মাটির নিচে বেরিয়ে এল আড়াই হাজার বছরের প্রাচীন দুর্গ-নগর।"
+      ],
+      "model_note": "এখানে দুটি আলাদা পূর্ণ বাক্য, তাই দুটিরই শেষে দাঁড়ি।"
+    }
+  }
+}

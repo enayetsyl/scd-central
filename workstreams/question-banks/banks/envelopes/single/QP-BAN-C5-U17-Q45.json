@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q45",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "২০০০ সালের খননে মাটির নিচে কী কী পাওয়া গিয়েছিল?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "answer_key": {
+      "accepted": [
+        "আড়াই হাজার বছরের প্রাচীন একটি দুর্গ-নগর পাওয়া যায়। সেখানে ছিল ইটের স্থাপত্য, বন্দর, রাস্তা ও গলি, পোড়ামাটির ফলক, মূল্যবান পাথর, পাথরের বাটখারা, কাচের পুঁতি ও মুদ্রাভান্ডার।"
+      ],
+      "model_note": "কয়েকটি নিদর্শনের নাম ঠিকভাবে লিখলেই পূর্ণ নম্বর; সবগুলো নাম লেখা জরুরি নয়।"
+    }
+  }
+}

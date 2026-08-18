@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q36",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "মাটির নিচে পাওয়া দুর্গ-নগরটি কত বছরের পুরানো?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "আড়াই হাজার বছরের",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "চার হাজার বছরের",
+        "is_correct": false,
+        "why_wrong": "চার হাজার সংখ্যাটি মুদ্রার — ১৯৫৬ সালে প্রায় চার হাজার মুদ্রার ভান্ডার পাওয়া যায়।"
+      },
+      {
+        "option_id": "গ",
+        "text": "পঞ্চাশ বছরের",
+        "is_correct": false,
+        "why_wrong": "পঞ্চাশ সংখ্যাটি আশেপাশের পুরানো জায়গার।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "সাত-আট শতকের",
+        "is_correct": false,
+        "why_wrong": "সাত-আট শতক ময়নামতির সময়, উয়ারী-বটেশ্বরের নয়।"
+      }
+    ]
+  }
+}

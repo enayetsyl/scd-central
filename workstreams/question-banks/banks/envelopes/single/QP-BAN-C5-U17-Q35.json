@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q35",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "প্রাচীনকালে সমুদ্রপথে কোন সাম্রাজ্যের সাথে এই অঞ্চলের যোগাযোগ ছিল?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "রোমান সাম্রাজ্য",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "মোগল সাম্রাজ্য",
+        "is_correct": false,
+        "why_wrong": "পাঠে যে যোগাযোগের কথা আছে তা নদীপথ ও সমুদ্রপথের বাণিজ্য নিয়ে, আর সেখানে কেবল রোমান সাম্রাজ্যের নাম আছে।"
+      },
+      {
+        "option_id": "গ",
+        "text": "গ্রিক সাম্রাজ্য",
+        "is_correct": false,
+        "why_wrong": "পাঠে গ্রিক সাম্রাজ্যের কোনো উল্লেখ নেই।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "পারস্য সাম্রাজ্য",
+        "is_correct": false,
+        "why_wrong": "পাঠে পারস্য সাম্রাজ্যের কোনো উল্লেখ নেই।"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q49",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "প্রাচীনকালে এখানে বাইরের দেশের সঙ্গে বাণিজ্য হতো — নিদর্শন দেখে তা কীভাবে বোঝা যায়?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "answer_key": {
+      "accepted": [
+        "মাটির নিচে পাওয়া গেছে বন্দর, মুদ্রাভান্ডার আর পাথরের বাটখারা। বন্দর দিয়ে নৌকা ভিড়ত, মুদ্রা দিয়ে দাম মেটানো হতো আর বাটখারা দিয়ে ওজন করা হতো — এগুলোই কেনাবেচার নিদর্শন।"
+      ],
+      "model_note": "নিদর্শনের নাম আর তার কাজ — দুটোই লাগবে।"
+    }
+  }
+}

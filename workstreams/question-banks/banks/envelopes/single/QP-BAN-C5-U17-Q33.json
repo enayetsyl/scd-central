@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q33",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "১৯৫৫ সালে বটেশ্বর গ্রামে কী পাওয়া যায়?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "দুটি পুরানো লোহার টুকরা",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "প্রায় চার হাজার রৌপ্যমুদ্রা",
+        "is_correct": false,
+        "why_wrong": "রৌপ্যমুদ্রার ভান্ডার পাওয়া যায় ১৯৫৬ সালে, উয়ারী গ্রামে।"
+      },
+      {
+        "option_id": "গ",
+        "text": "পাথরের বাটখারা",
+        "is_correct": false,
+        "why_wrong": "বাটখারা পাওয়া যায় ২০০০ সালের খননে।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "ইটের স্থাপত্য",
+        "is_correct": false,
+        "why_wrong": "ইটের স্থাপত্যও পাওয়া যায় ২০০০ সালের খননে।"
+      }
+    ]
+  }
+}

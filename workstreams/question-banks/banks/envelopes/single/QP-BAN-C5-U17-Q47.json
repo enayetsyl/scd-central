@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q47",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "হানিফ পাঠান ও হাবিবুল্লাহ পাঠানের অবদান কী ছিল?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "answer_key": {
+      "accepted": [
+        "হানিফ পাঠান ছিলেন একজন স্কুলশিক্ষক; ১৯৩৩ সালে তিনি উয়ারী গ্রামে পাওয়া পুরানো রৌপ্যমুদ্রা সংগ্রহ করেন। তাঁর পুত্র হাবিবুল্লাহ পাঠান প্রচুর নিদর্শন সংগ্রহ করে জাদুঘরে জমা দেন।"
+      ],
+      "model_note": "দুজনের কাজ আলাদা করে বোঝা গেলেই পূর্ণ নম্বর।"
+    }
+  }
+}

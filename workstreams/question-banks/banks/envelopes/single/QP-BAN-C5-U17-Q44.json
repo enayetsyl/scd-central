@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 17,
+    "title": "পাঠ ১৭ — মাটির নিচে পুরানো নগর"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U17-Q44",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "১৯৫৫ ও ১৯৫৬ সালে কী কী পাওয়া গিয়েছিল?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ১৭ — মাটির নিচে পুরানো নগর",
+    "answer_key": {
+      "accepted": [
+        "১৯৫৫ সালে বটেশ্বর গ্রামে দুটি পুরানো লোহার টুকরা পাওয়া যায় — ত্রিকোণাকৃতির, একদিকে সুচালো। ১৯৫৬ সালে উয়ারী গ্রামে পাওয়া যায় রৌপ্যমুদ্রার ভান্ডার, প্রায় চার হাজার মুদ্রা।"
+      ],
+      "model_note": "দুটি সালের দুটি তথ্যই লাগবে; শব্দে শব্দে মিল থাকা জরুরি নয়।"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+BANK : workstreams/question-banks/banks/C5_BAN_U17_QuestionBank_v1.json
+RUN  : 2026-08-18  (run 1 — the first review of পাঠ ১৭)
+PROMPT: tools/bank_factual_review_prompt.md, run FROM THAT PATH, facts block filled from this
+        session's CD-138(e) declaration and the source's own ⚠ block; nothing else edited.
+        The filled facts block is at workstreams/question-banks/_wip/U17_5b_FACTS_BLOCK_2026-08-18.txt
+REVIEWER: independent read-only reviewer, no write access, in-session (a self-run review in
+        CD-151(b)'s sense — any fix taken from it is owed a SESSION_LOG entry with its qid).
+CD-161(a): NO PRIOR REPORT EXISTS for পাঠ ১৭. The disposition pass is VACUOUS on this run and
+        none was invented.
+CD-157(d): this report is a committed artifact and the commit IS OWED. It is HELD by the
+        Principal's stop at step 5 for this session — nothing is staged, committed or pushed.
+STATUS  : NO FIX APPLIED. The session holds at the issue table by Principal ruling.
+
+--- reviewer's report, verbatim -------------------------------------------------------------
+
+# Independent Verification Review — QB-BAN-C5-U17 (পাঠ ১৭ — মাটির নিচে পুরানো নগর)
+
+**Scope note (CD-161(a)).** There is **no prior review report for পাঠ ১৭**; this is the first run. The disposition pass of step 5a is therefore **vacuous** — no previous findings exist to disposition, and none are invented. All seven checks and the check-1 claim sweep were run fresh across all **78/78 items** (read individually, not sampled).
+
+Files read: `/sessions/exciting-kind-meitner/work/wt17/workstreams/question-banks/banks/C5_BAN_U17_QuestionBank_v1.json` and `/sessions/exciting-kind-meitner/work/wt17/canon/marklogic/C5_Bangla_Source_13-23.md` (lines 270–321, plus line 30).
+
+---
+
+## 1 · FACTUAL ACCURACY
+
+Every date, district, name, artefact and number in Q18–Q36, Q42–Q54 and the S02/S13 glosses was checked against the section and is correct. Roles are not swapped (Q34, Q47, Q51 all keep হানিফ পাঠান = ১৯৩৩ coin collector / school teacher and হাবিবুল্লাহ পাঠান = son, museum deposits). No MCQ distractor is arguably also correct.
+
+**1. QP-BAN-C5-U17-Q14** — `answer_key.accepted`: *"রোমান সাম্রাজ্য ছিল অনেক দূরের দেশ।"* Two problems in one model answer: it equates **সাম্রাজ্য with দেশ**, which contradicts the gloss the bank itself keys elsewhere, and *"অনেক দূরের"* is not stated in the section (the section says only that sea-route contact existed).
+*Claim sweep — every item carrying the সাম্রাজ্য gloss class:* **Q07** `answer_key.accepted` ("সম্রাটের শাসনাধীন রাজ্য") · **Q78** `answer_key.accepted` (same definition, keyed to সাম্রাজ্য) · **Q23** `blanks.accepted` ("রোমান") · **Q35** `question_text` + option ক `text` + why_wrong খ/গ/ঘ. All five of those are **correct**; **Q14 is the only occurrence carrying the defective form**, and Q14's own `model_note` sets the standard it fails ("যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয়").
+
+*Swept and cleared (reported so the class is on record, not counted):* the **"artefacts evidence trade / settlement"** inference class — **Q16** `answer_key.accepted` ("মুদ্রাগুলোই বাণিজ্যের সবচেয়ে বড়ো প্রমাণ"), **Q49** `answer_key.accepted` ("বন্দর দিয়ে নৌকা ভিড়ত… বাটখারা দিয়ে ওজন করা হতো"), **Q50** `answer_key.accepted`, **Q53** `rubric.band[সম্পূর্ণ]`, **Q54** `rubric.band[সম্পূর্ণ]`. None of these propositions is printed verbatim in the section, but each sits in an Analyze/Evaluate item whose stem explicitly asks "কীভাবে বোঝা যায়" — the reasoning the source's own ✅ block mandates. Not defects.
+
+## 2 · THE CHAPTER'S CONTENT BARS
+
+**PASS.** All 19 declared strings were swept across `question_text`, option `text`, `why_wrong`, `answer_key.accepted`, `answer_key.model_note`, `rubric.criterion` and every `rubric.band_descriptors` value of all 78 items: **zero occurrences** of ডাকটিকিট · দেশলাই · অন্য দেশের টাকা/মুদ্রা · any of the eleven instruction strings · মন্দির · ভিটা · বৌদ্ধ · বিহার (in any listed form).
+
+Per CD-157(f), the bare token **সংগ্রহ** occurs eight times and none is a barred string: **Q24** `question_text` ("মুদ্রা সংগ্রহ করেন" — হানিফ পাঠান, history) · **Q34** `question_text` and `why_wrong[খ]` · **Q43** `answer_key.accepted` · **Q47** `answer_key.accepted` (×2) · **Q51** `rubric.band[সম্পূর্ণ]` ("সংগ্রহ করা মুদ্রা", "সংগ্রহের কথা"). All are third-person history about the two named men; none instructs a student to collect, fetch, bring or display anything.
+
+## 3 · STANDING CURATION BARS
+
+**PASS.** No C-03 material (the chapter has none). No C-05 issue — no item requests or supplies a depiction; no "ছবি আঁকো". No C-18 ritual — রোমান সাম্রাজ্য, জাদুঘর and the museum deposit are factual history under C-18's carve-out; no flag salute, wreath, flower or ritual silence anywhere. The tokens ছবি / গান / বাজনা / শ্রদ্ধা appear **once each, in the bank's `curation` field only**, as declarations that the material is absent — correctly not occurrences.
+
+## 4 · INVENTED NAMES
+
+**PASS.** The only personal names in the bank are **হানিফ পাঠান** and **হাবিবুল্লাহ পাঠান**, both recorded by the section. A full token diff of every student-facing string against the section turned up no other name-like token.
+
+## 5 · NUMERALS
+
+**PASS.** No ASCII digit occurs in any student-facing string; all years and quantities are Bengali (২০০০, ১৯৩৩, ১৯৫৫, ১৯৫৬, চার হাজার, আড়াই হাজার, পঞ্চাশটি). The only ASCII digits in the file sit inside teacher-facing `answer_key.model_note` as `CD-136`, `BAN-S10`, `BAN-S12` — exempt per this check's own carve-out. (See defect 6 for a separate issue with that same text.)
+
+## 6 · SLOT-SPECIFIC CORRECTNESS
+
+**S12 (Q67–Q73) — PASS.** All seven decompositions are orthographically right (ত্ত=ত+ত · দ্র=দ+র · ম্র=ম+র · স্থ=স+থ · ত্র=ত+র · জ্য=জ+য · শ্ব=শ+ব) and every newly formed word contains its conjunct (উত্তর, সমুদ্র, নম্র, স্থান, ছাত্র, রাজ্য, বিশ্বাস). Three stimuli carry more than one conjunct — **রৌপ্যমুদ্রা** (প্য, দ্র, Q68), **সাম্রাজ্য** (ম্র, জ্য, Q69), **স্থাপত্য** (স্থ, ত্য, Q70) — and all three stems name the target conjunct explicitly, so none is ambiguous.
+
+**S06 (Q37–Q41) — PASS.** পুরানো→নতুন, প্রাচীন→আধুনিক/নবীন, মূল্যবান→মূল্যহীন, অভিজ্ঞ→অনভিজ্ঞ all hold in the chapter's sense. নিচে (Q40) is used positionally ("মাটির নিচে"), where উপরে is a genuine antonym, not adverbially/idiomatically. No defect.
+
+**S10 (Q55–Q60) — one defect.**
+
+**2. QP-BAN-C5-U17-Q60** — the stem asks *"'পাওয়া যায়' **শব্দটি** কোন পদ?"* of a **two-word** unit; and `answer_key.accepted` admits **"যৌগিক ক্রিয়া"**, a sub-classification outside the C5 পদ set (বিশেষ্য · সর্বনাম · বিশেষণ · ক্রিয়া · অব্যয়) and above class level. The base answer ক্রিয়া is correct and is not a super-class. *Sweep:* "যৌগিক" occurs **only** in Q60 `answer_key.accepted`; the "শব্দটি"-for-a-phrase construction occurs **only** in Q60 (Q55–Q59 all target single words).
+
+**S13 (Q74–Q78) — one defect.**
+
+**3. QP-BAN-C5-U17-Q74** — definition *'ইতিহাস বিষয়ে অভিজ্ঞ যিনি'* accepts **only ইতিহাসবিদ**, but the chapter also prints **ঐতিহাসিক** (অনুশীলনী ১ word list), which in standard Bengali is equally a noun meaning "historian" and satisfies the same definition. The stem says "পাঠের শব্দ দিয়ে", so a student writing ঐতিহাসিক is defensibly right and would be marked wrong. *Sweep — every item carrying ঐতিহাসিক:* **Q17** `question_text` and `answer_key.accepted` ("মহাস্থানগড় একটি ঐতিহাসিক জায়গা।" — adjectival use, correct there). **Q01** `answer_key.accepted` carries the same definition keyed to ইতিহাসবিদ and is fine, because Q01 runs word→meaning, not meaning→word. Q74 is the only direction in which the ambiguity bites. Q75–Q78 have no chapter-internal alternative.
+
+**S11 (Q61–Q66) — one defect.** Every mark required across the six items is inside the C5 taught set (দাঁড়ি, কমা, প্রশ্নচিহ্ন, বিস্ময়চিহ্ন, উদ্ধরণ চিহ্ন); no item requires only a single mark (Q63 and Q66 each require two দাঁড়ি).
+
+**4. QP-BAN-C5-U17-Q65** — the sole `answer_key.accepted` is *"এই সভ্যতা প্রাচীনকালে **'সোনাগড়া'** নামে পরিচিত ছিল। কী সুন্দর নাম!"* and `model_note` states *"বিশেষ নামটি উদ্ধরণ চিহ্নের ভেতরে"*. The section prints the name **without quotation marks**, and a proper noun does not require them; a student who supplies the দাঁড়ি and the বিস্ময়চিহ্ন correctly but no quotes is marked wrong against a rule the source never states. *Sweep — every item printing সোনাগড়া:* **Q27** `question_text` (unquoted) · **Q58** `question_text` (the same sentence, "এই সভ্যতা প্রাচীনকালে সোনাগড়া নামে বিশ্বজুড়ে পরিচিত ছিল।", **unquoted**) · **Q65** `question_text` (unquoted in the stimulus) and `answer_key.accepted` + `model_note` (**quoted, required**). The bank therefore **prints in Q27/Q58 what it requires quoted in Q65**. Q65 is also the bank's only উদ্ধরণ চিহ্ন item, so the mark has no clean instance.
+
+## 7 · LANGUAGE
+
+**5. Barred-at-C5 punctuation inside model answers.** The bank's own `header.taught_set_note` records that **ড্যাশ and সেমিকোলন are barred at C5** (CD-165/CD-166) and that S11 stimuli were chosen to avoid them — but the marks then appear inside answer sentences the student is marked against:
+- **Q47** `answer_key.accepted` — semicolon: *"হানিফ পাঠান ছিলেন একজন স্কুলশিক্ষক**;** ১৯৩৩ সালে…"*. This is the **same clause pair** that **Q63** presents as its S11 stimulus and keys with **দাঁড়ি** (*"…স্কুলশিক্ষক**।** তাঁর পুত্র…"*). The bank thus **keys in Q47 the join it teaches against in Q63**.
+- **Q44** `answer_key.accepted` — em-dash inside the answer sentence ("…লোহার টুকরা পাওয়া যায় **—** ত্রিকোণাকৃতির, একদিকে সুচালো।")
+- **Q48** `answer_key.accepted` — em-dash ("…ছয়-সাত শতকে **—** অর্থাৎ আরও অনেক আগে।")
+- **Q49** `answer_key.accepted` — em-dash ("…ওজন করা হতো **—** এগুলোই কেনাবেচার নিদর্শন।")
+- **Q50** `answer_key.accepted` — em-dash ("…বন্দর এবং দুর্গ **—** এগুলো এমনি এমনি…")
+
+*Same sweep, not counted:* the em-dash used as the house separator between a quoted stimulus and its instruction (Q18–Q28, Q48–Q49, Q54–Q66, Q74–Q78 `question_text`) is metatext, not student output; semicolons and dashes in `rubric.criterion` / `rubric.band_descriptors` (Q51, Q52, Q53, Q54) are marker-facing prose; the `;` and `—` in Q67–Q73 `answer_key.accepted` and in Q03's "প্রমাণ; উদাহরণ" are notation separators reproducing the source's own gloss punctuation. Also uncounted: `why_wrong` semicolons/dashes at Q32(ঘ), Q34(খ), Q36(খ) — marker-facing.
+
+**6. Bank-authoring rationale leaked into marker-facing text — Q55, Q56, Q57, Q58, Q59, Q60** (`answer_key.model_note`, identical in all six): *"পদ নির্ণয় C5-এ **BAN-S10**-এর নির্বাচিত কাজ; ক্রিয়ার কাল স্লটে স্বীকৃত হলেও পঞ্চম শ্রেণিতে নির্বাচিত নয়, তাই **অনুশীলনী ৪ থেকে কোনো প্রশ্ন করা হয়নি**."* This is slot-selection justification that belongs in `header.gaps` (where it is already stated verbatim); it names a registry slot code and explains why *other* questions were not written — nothing a marker can act on. Lesser instance of the same class: **Q67–Q73** `answer_key.model_note` carry *"(SLOT_REGISTER BAN-S12 composite)"*. I am **not** counting the bare "(CD-136)" tags (Q08–Q17, Q37–Q41, Q55–Q60, Q67–Q73), which check 5 expressly carves out.
+
+**7. QP-BAN-C5-U17-Q59** — the stimulus *"'বটেশ্বর গ্রামে দুটি পুরানো লোহার টুকরা।'"* is a verbless fragment: the bank truncates the source's table row (*"…লোহার টুকরা — ত্রিকোণাকৃতির, একদিকে সুচালো"*) and **adds a দাঁড়ি that the source does not print**, presenting a fragment as a complete sentence in an item whose whole premise is the word's function *"as used in the given sentence"*. *Sibling named:* **Q56** uses the same shape ("মাটির নিচে আড়াই হাজার বছরের প্রাচীন দুর্গ-নগর।") but reproduces the source's own terminal দাঁড়ি verbatim and is therefore **not** a defect. Q55, Q57, Q58, Q60 all use genuine full sentences.
+
+Everything else in stems, keys and rubric rows is natural, grammatical and at class level. No internal policy code appears in any student-facing string.
+
+VERDICT: 7 DEFECT(S)
+
+--- reviewer's report ends -------------------------------------------------------------------
