@@ -218,6 +218,71 @@ def paper_level_slots(subject, cls):
     """→ {slot shorts} barred for this (subject, class). For the set-algebra call sites."""
     return {s for (sub, c, s) in PAPER_LEVEL_SLOTS if sub == subject and c == cls}
 
+
+# ── CD-165 + CD-166 · the বিরামচিহ্ন a class is TAUGHT, declared in the register, enforced on items ──
+#
+# The register declares the SET — `taught_set` at (BAN, C5, BAN-S11): দাঁড়ি · কমা · প্রশ্নচিহ্ন ·
+# বিস্ময়চিহ্ন · উদ্ধরণ চিহ্ন — and `tools/audits/slot_register_check.py` proves its shape and holds the
+# closed literal of WHICH rows may declare one. This half asks the question only a bank can answer:
+# does any item REQUIRE a mark the class is not taught?
+#
+# TAUGHT_SET_REQUIRED is why absence cannot pass quietly. For these cells a missing `taught_set` is a
+# FAILURE, not a waiver: read the other way the mechanism would be worse than nothing, because the one
+# cell whose marks went unchecked would be the cell nobody declared, and the remedy for a failing bank
+# would be to delete its declaration.
+#
+# THIS GATE IS EXPECTED TO FAIL TWO ITEMS, AND THAT IS RECORDED BEFORE IT LANDED (CD-169). `U15 Q75`
+# requires ড্যাশ and `Q81` requires সেমিকোলন; both are barred, both are the poem's own typography, and
+# both are retained ONLY because retiring them drops পাঠ ১৫'s Apply margin below the rule. A gate that
+# reddens on a RECORDED exception is acceptable; one that reddens on an unwritten state is not.
+TAUGHT_SET_REQUIRED = frozenset({("BAN", 5, "S11")})
+
+# The marks BY CHARACTER, and the two drafts this replaced are recorded because each failed in a way a
+# reader would not predict (CD-169(e)):
+#   * DRAFT 1 scanned mark NAMES in the item's prose. It cannot tell REQUIRES from FORBIDS, and it
+#     failed `U16 Q78` for a note reading "ড্যাশের দরকার নেই" — for saying the mark is NOT needed. The
+#     review prompt has to state that distinction in words ("a rubric row which forbids barred content
+#     is not an occurrence"); characters do not need to be told.
+#   * DRAFT 2 scanned characters in the accepted answers JOINED. It cannot see per-variant structure,
+#     and it failed `U14 Q67`, whose first key mirrors the section's dash while its second is
+#     comma-only — a student writing the comma form is right, so the dash is not REQUIRED.
+# হাইফেন and ইলেক are deliberately absent: a hyphen inside যুদ্ধ-জাহাজ or মরণ-যন্ত্রণা is ORTHOGRAPHY,
+# not punctuation a student inserts, and counting it would fail every item that quotes a compound word.
+MARK_CHARS = {
+    "দাঁড়ি": ("।",),
+    "কমা": (",",),
+    "প্রশ্নচিহ্ন": ("?",),
+    "বিস্ময়চিহ্ন": ("!",),
+    "উদ্ধরণ চিহ্ন": ("'", "\u2018", "\u2019", "\u201c", "\u201d", '"'),
+    "সেমিকোলন": (";",),
+    "কোলন": (":",),
+    "ড্যাশ": ("\u2014", "\u2013"),
+}
+
+
+def _marks_in(text):
+    return {canon for canon, chars in MARK_CHARS.items() if any(c in text for c in chars)}
+
+
+def marks_required_by(q, admitted):
+    """→ ({marks outside `admitted` that EVERY accepted variant needs}, index of a clean variant | None).
+
+    REQUIRED means every route to full marks needs it. Answer strings only — `accepted` and
+    `blanks.accepted`; not the stem, whose marks are GIVEN rather than asked for, and not the note,
+    because prose about a mark contains no mark.
+    """
+    ak = q.get("answer_key") or {}
+    variants = [a for a in (ak.get("accepted") or []) if isinstance(a, str)]
+    for b in (q.get("blanks") or []):
+        variants += [a for a in (b.get("accepted") or []) if isinstance(a, str)]
+    if not variants:
+        return set(), None
+    per = [_marks_in(v) - set(admitted) for v in variants]
+    for i, off in enumerate(per):
+        if not off:
+            return set(), i
+    return set().union(*per), None
+
 NEAR_DUP_JACCARD = 0.80
 
 MIN_ANCHOR_TOKENS = 3
@@ -1553,6 +1618,35 @@ def g_coverage(bank, ctx):
                 else:
                     errs.append(f"{qid}: does `{c}` at slot {slot}, which admits "
                                 f"{declared} at C{cls}. Admitted nowhere in this slot's set")
+
+    # --- TAUGHT SET, per item (CD-165 · CD-166 · the expected failures at CD-169) ----------
+    for s_short, row in sorted(slots_for_class.items()):
+        in_slot = [q for q in bank["questions"] if slot_index.get(q.get("qid")) == s_short]
+        declared_set = row.get("taught_set")
+        required = (subject, cls, s_short) in TAUGHT_SET_REQUIRED
+        if declared_set is None:
+            if required and in_slot:
+                errs.append(f"slot {s_short} carries {len(in_slot)} item(s) and its register row for "
+                            f"{subject} C{cls} declares NO `taught_set` — absence reads as NOT "
+                            f"DECLARED, never as permissive (CD-165). The marks a class is taught are "
+                            f"the Principal's to declare; until the row carries them nothing here can "
+                            f"be checked and nothing passes")
+            continue
+        admitted = set(declared_set)
+        for q in in_slot:
+            off_set, clean_at = marks_required_by(q, admitted)
+            if clean_at not in (None, 0):
+                rep.append(f"{q.get('qid')}: accepted[0] uses a mark outside C{cls}'s taught set while "
+                           f"accepted[{clean_at}] stays inside it — the item PASSES, because a full-mark "
+                           f"route exists, and is REPORTED because the first-listed variant is the one a "
+                           f"marker reads first")
+            off = sorted(off_set)
+            if off:
+                errs.append(f"{q.get('qid')}: requires " + " · ".join(off)
+                            + f" at slot {s_short}; C{cls}'s taught set is " + " · ".join(declared_set)
+                            + " (CD-165, amended by CD-166). A mark outside the taught set tests "
+                              "something the class was never taught, however sound the item is "
+                              "otherwise")
 
     # --- FLOOR over the declared set only (CD-138(g)) -------------------------------------
     short = []
@@ -3714,6 +3808,94 @@ def unselected_selftest():
     return ok
 
 
+def taught_set_selftest():
+    """CD-165 · CD-166 · CD-169 — the taught-set check, seeded BOTH ways and against BOTH failed drafts.
+
+    Fixtures synthetic (QB-D-012, CD-121(e)): a fictional (BAN, C5, S11) row and a 20-item bank whose
+    only variable is what punctuation its accepted answers carry.
+
+    THE LAST TWO CASES ARE REGRESSION SEEDS FOR DRAFTS THAT SHIPPED WRONG IN THIS FILE'S HISTORY, and
+    they are the reason this block exists rather than a single fail-case:
+      * a note that MENTIONS a barred mark while the answer carries none must stay QUIET — draft 1
+        scanned prose and failed an item for saying "ড্যাশের দরকার নেই", i.e. for saying no.
+      * an item whose FIRST variant carries a barred mark and whose SECOND does not must stay quiet and
+        be REPORTED — draft 2 scanned the variants joined and failed an item a student could answer
+        correctly.
+    """
+    print("\n--- TAUGHT SET · the বিরামচিহ্ন a class is taught " + "-" * 27)
+    ok = True
+    FIVE = ["দাঁড়ি", "কমা", "প্রশ্নচিহ্ন", "বিস্ময়চিহ্ন", "উদ্ধরণ চিহ্ন"]
+
+    def reg(taught):
+        r = {"subject": "BAN", "class": 5, "slot": "BAN-S11", "task_mode": "alternative",
+             "slot_task": "synthetic বিরামচিহ্ন", "nape_frame": "synthetic",
+             "admitted_set": ["বিরামচিহ্ন বসানো"], "selected": "বিরামচিহ্ন বসানো",
+             "items_per_paper": 5, "marks": 5, "marks_per_item": 1, "d_code": "D0",
+             "authority": "SYNTHETIC — not NAPE", "row_constraints": []}
+        if taught is not None:
+            r["taught_set"] = taught
+            r["taught_set_source"] = "SYNTHETIC — not the spine"
+        return {("BAN", 5, "S11"): r}
+
+    def bank(accepted, note=""):
+        qs = [{"qid": f"SY-Q{i:02d}", "question_text": "কল্পিত উদ্দীপক", "marks": 1,
+               "bloom_level": "Apply", "question_type": "short_answer", "topic_tag": "SY-TOPIC",
+               "difficulty": "easy",
+               "answer_key": {"accepted": list(accepted), "model_note": note}}
+              for i in range(1, 21)]
+        return {"subject": "BAN", "class": 5, "questions": qs, "topics": ["SY-TOPIC"],
+                "header": {"admissible_slots": ["S11"], "slot_exclusions": {},
+                           "topics": ["SY-TOPIC"], "reason": "synthetic"},
+                "slot_index": {q["qid"]: "S11" for q in qs},
+                "task_index": {q["qid"]: "বিরামচিহ্ন বসানো" for q in qs}}
+
+    def run_case(taught, accepted, note=""):
+        errs, rep = g_coverage(bank(accepted, note),
+                               {"slot_register": reg(taught), "slot_register_error": []})
+        return ([e for e in errs if "taught set" in e or "`taught_set`" in e],
+                [r for r in rep if "accepted[0]" in r])
+
+    cases = [
+        ("a সেমিকোলন in the only accepted answer", FIVE, ["কথাটি চলছে;"], "", True, False,
+         "the poem's own mark is still a mark the class is not taught"),
+        ("a ড্যাশ in the only accepted answer", FIVE, ["কথাটি চলছে—"], "", True, False,
+         "same, on the other barred mark"),
+        ("the four admitted marks, all at once", FIVE,
+         ["আম্মা বলেন, 'পড়ো।' কে বলল? কী আনন্দ!"], "", False, False,
+         "কমা · উদ্ধরণ · দাঁড়ি · প্রশ্নচিহ্ন · বিস্ময়চিহ্ন together — every one admitted, so silence"),
+        ("NO `taught_set` on the row at all", None, ["কথাটি শেষ।"], "", True, False,
+         "ABSENCE IS NOT PERMISSION (CD-165) — a class whose marks are undeclared cannot have its "
+         "S11 items checked, so none of them passes"),
+        ("a note SAYING the barred mark is not needed", FIVE, ["কথাটি শেষ।"],
+         "ড্যাশের দরকার নেই; এখানে কেবল দাঁড়ি।", False, False,
+         "DRAFT-1 REGRESSION SEED — prose about a mark is not a mark, and a check that cannot tell "
+         "REQUIRES from FORBIDS fails an item for getting it right"),
+        ("variant 1 barred, variant 2 clean", FIVE, ["তালিকা — শেষ।", "তালিকা, শেষ।"], "",
+         False, True,
+         "DRAFT-2 REGRESSION SEED — a student writing variant 2 is right, so nothing is REQUIRED "
+         "outside the set; PASSES and is REPORTED, because accepted[0] is what a marker reads first"),
+    ]
+    for label, taught, accepted, note, want_fail, want_rep, why in cases:
+        errs, reps = run_case(taught, accepted, note)
+        bad = (bool(errs) != want_fail) or (bool(reps) != want_rep)
+        state = ("fires" if errs else "quiet") + (" + REPORTS" if reps else "")
+        if bad:
+            print(f"  FAIL  TAUGHT SET  {label:<44} expected "
+                  f"{'a failure' if want_fail else 'silence'}"
+                  f"{' + a report' if want_rep else ''}; got {state} {errs or ''}")
+            ok = False
+        else:
+            print(f"  PASS  TAUGHT SET  {label:<44} {state}: {why}")
+
+    # The live consequence, asserted rather than described: the two items CD-169 names must be the
+    # ONLY live failures of this check. A seed proves the instrument; this proves the instrument is
+    # pointed where the ruling says it is.
+    print("  NOTE  the live suite FAILS `QP-BAN-C5-U15-Q75` (ড্যাশ) and `Q81` (সেমিকোলন) — RECORDED "
+          "at CD-169 before this check landed, and retained only because পাঠ ১৫'s Apply floor cannot "
+          "absorb their retirement")
+    return ok
+
+
 def cd158_selftest(ctx):
     """CD-158's per-chapter margin exception, both directions.
 
@@ -3820,7 +4002,8 @@ def main():
     b = qp_selftest()
     c = cd150_selftest()
     d = unselected_selftest()
-    if not (a and b and c and d):
+    e = taught_set_selftest()
+    if not (a and b and c and d and e):
         print("\nRESULT: FAIL (selftest red — no bank verdict is believable, nothing was judged)")
         sys.exit(1)
     print(f"\nSUITE: {len(GATES)} gates "
