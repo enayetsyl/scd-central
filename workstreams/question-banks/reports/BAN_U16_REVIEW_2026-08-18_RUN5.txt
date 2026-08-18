@@ -1,0 +1,66 @@
+BANK   : workstreams/question-banks/banks/C5_BAN_U16_QuestionBank_v1.json
+SOURCE : canon/marklogic/C5_Bangla_Source_13-23.md · পাঠ ১৬ section (opens "# পাঠ ১৬ — স্মরণীয় যাঁরা বরণীয় যাঁরা", ends before "# পাঠ ১৭")
+RUN    : 2026-08-18 · independent verification review · all seven checks and the claim sweep completed BEFORE opening RUN4
+FIELDS SWEPT: question_text · option text · option why_wrong · answer_key.accepted · answer_key.model_note · blanks.accepted · rubric criteria[].criterion · rubric criteria[].band_descriptors (every band) · source_index — 449 strings over 96 items
+SLOT COUNTS: slot_index tallies S02 8 · S03 14 · S04 7 · S05 9 · S06 6 · S07 16 · S08 9 · S10 6 · S11 7 · S12 7 · S13 7 = 96. Matches ADMITTED SLOTS exactly; pool_index 46 HW + 36 AS + 14 CT = 96.
+
+1 · FACTUAL ACCURACY — 1 DEFECT.
+
+(1) Q51 — answer_key.accepted "নতুন করে হত্যাযজ্ঞ শুরু হয় — অধ্যাপক, সাংবাদিক, লেখক ও চিকিৎসকদের **বাড়ি থেকে** ধরে নিয়ে যাওয়া হয়।" The section says only "ধরে নিয়ে যাওয়া হয় অধ্যাপক মুনীর চৌধুরী, …"; it nowhere states they were taken from their homes. A model answer asserting a circumstance the section does not state, in the field a marker reads as the standard.
+CLAIM SWEEP — every carrier of the "১৪ই ডিসেম্বর তুলে নেওয়া" claim, with field:
+· Q51 answer_key.accepted — the only occurrence of "বাড়ি থেকে" in the bank (mechanical count: 1).
+· Q61 rubric.criterion / bands, Q62 bands, Q63 stem + criterion + both bands, Q65 stem + criterion + both bands, Q67 band[সম্পূর্ণ], Q57 stem + accepted, Q49 accepted, Q66 band[সম্পূর্ণ] — all carry the same 14-December claim WITHOUT the added circumstance; they are the same claim, correctly stated. Q51 is the sole defective carrier.
+
+All other fact-bearing strings verified against the section: ২৫শে মার্চ ১৯৭১ গভীর রাত · নিরস্ত্র ও ঘুমন্ত · ছাত্রাবাস/পুলিশ ব্যারাক/আবাসিক এলাকা (Q23 · Q30 · Q35 · Q38 · Q45 · Q56 · Q61 · Q67 · Q71 · Q76 · Q85 · Q87 · Q88) · নয় মাস হত্যাকাণ্ড (Q24 · Q74 · Q76) · ধীরেন্দ্রনাথ দত্ত, ১৯৪৮, গণপরিষদ, প্রথম রাষ্ট্রভাষা দাবি, বয়স ৮৫ (Q25 · Q32ঘ · Q33ঘ · Q34 · Q37ঘ · Q46 · Q58 · Q62 · Q67 · Q72 · Q77) · যোগেশচন্দ্র ঘোষ · সাধনা ঔষধালয় · চুরাশি (Q26 · Q32 · Q33খ · Q34খ · Q53 · Q64 · Q80) · রণদাপ্রসাদ সাহা 'দানবীর' · দানশীলতা (Q32খ · Q33 · Q48 · Q64 · Q82 · Q96) · নূতনচন্দ্র সিংহ চট্টগ্রামের সমাজসেবক (Q27 · Q32গ · Q33গ · Q34গ · Q53 · Q64 · Q73) · এম. মুনিরুজ্জামান বিজ্ঞানের শিক্ষক + পবিত্র কুরআন (Q52) · সংবাদপত্র অফিস — শহিদ সাবের · সেলিনা পারভীন · কবি-সাংবাদিক মেহেরুন্নেসা পঁচিশ (Q47 · Q49 · Q66) · সিরাজুদ্দীন হোসেন সাংবাদিক · শহীদুল্লা কায়সার লেখক (Q49 · Q66) · মিরপুর ও রায়ের বাজারের বধ্যভূমি (Q37 · Q54 · Q75) · শহিদ বুদ্ধিজীবী দিবস ১৪ই ডিসেম্বর (Q31 · Q51 · Q65 · Q79 · Q83) · সর্বস্তরের মানুষের তালিকা (Q36 · Q55 · Q78) · all eight অর্থ জেনে নিই glosses (Q01–Q08 · Q90–Q95) · মিলকরণ list (Q92–Q95). No attribute swapped between people. No distractor arguably also correct — Q30–Q38 why_wrong strings are each true of the section, and ১৬ই ডিসেম্বর · একুশে ফেব্রুয়ারি · ছাব্বিশে মার্চ are genuinely absent from it. Q58's model_note still bars the ১৯৪৮→১৯৭১ causal reading, and no item asserts it.
+
+2 · THE CHAPTER'S CONTENT BARS — PASS (every occurrence listed).
+শহিদ — 8: Q31 question_text · Q65 question_text · Q79 question_text · Q79 accepted ('শহিদ বুদ্ধিজীবী দিবস', PERMITTED) · Q47 accepted · Q66 band[সম্পূর্ণ] (শহিদ সাবের, PERMITTED) · Q51 accepted (দিবসের নাম, PERMITTED) · Q86 source_index "২৫শে মার্চের মধ্যরাতেই শহিদ হন" — not a name, but a verbatim book sentence in a teacher-facing anchor, no student-facing or definitional use: NOT A DEFECT (noted because the bank's `curation` paragraph claims the word sits "কেবল দুটি নামের ভেতরেই" — true of items, inexact for source_index).
+শহীদ — 2: Q49 source_index · Q66 band[সম্পূর্ণ], both "শহীদুল্লা কায়সার", PERMITTED.
+No definitional item and no "who counts as one" item; elsewhere the bank writes প্রাণ দেন · প্রাণ হারান · হত্যা করা হয় · বুদ্ধিজীবী.
+গান · সুরকার · গীতিকার · সংগীত · কণ্ঠ — zero. সুর — 3 substring hits, all the idiom "in the tone of" inside prohibitive rubric rows: Q64 · Q68 · Q69 criterion. Not uses of the গান/সুরকার paragraph.
+মিনার · ফুল · পুষ্প · মাল্য · নীরবতা · সালাম — zero. শ্রদ্ধা — 2: Q61 criterion, Q65 criterion; both FORBID শ্রদ্ধা নিবেদন. Not occurrences of the ritual.
+ছবি · আঁক · আঁকো · আঁকা · এঁকে · প্রতিকৃতি — the 9 "ছবি" hits are all the substring inside বাছবিচার (Q04 · Q05 · Q11 · Q12 · Q28 · Q42 · Q94 across source_index/stem/accepted). No image supplied, none asked.
+
+3 · STANDING CURATION BARS — PASS. C-03: no music, song, tune or percussion. C-05: no depiction shown or requested. C-18: no salute, wreath, flower, monument or ritual silence anywhere; Q61 · Q65 · Q68 rubrics hold answers to dates, events and contributions and explicitly bar the আচার-অনুষ্ঠান drift (C-18's own carve-out, correctly applied), and Q62 · Q64 · Q69 bar the বন্দনা / ব্যক্তিপূজা / জাতি-শ্রেষ্ঠত্ব register.
+
+4 · INVENTED NAMES — PASS. Personal names used: ধীরেন্দ্রনাথ দত্ত · যোগেশচন্দ্র ঘোষ · রণদাপ্রসাদ সাহা · নূতনচন্দ্র সিংহ · এম. মুনিরুজ্জামান · শহিদ সাবের · সেলিনা পারভীন · মেহেরুন্নেসা · সিরাজুদ্দীন হোসেন · শহীদুল্লা কায়সার — all recorded by the section. Place/institution names (ঢাকা · চট্টগ্রাম · মিরপুর · রায়ের বাজার · সাধনা ঔষধালয় · পাকিস্তান গণপরিষদ) likewise. Q17 "বড়ো ভাই" and Q19 "একজন শিক্ষানুরাগী" are unnamed.
+
+5 · NUMERALS — PASS. [0-9] scan of all swept fields: every hit is an internal code in a teacher-facing model_note (CD-136 · CD-166 · C5 · BAN-S10 · SLOT_REGISTER BAN-S12), exempt by rule. Student-facing strings and source_index: zero ASCII digits; ১৯৪৮ · ১৯৭১ · ৮৫ · চুরাশি · পঁচিশ all Bengali.
+
+6 · SLOT-SPECIFIC CORRECTNESS — 0 counted defects; 1 DEFERRED.
+S12 (Q83–Q89) — decompositions all right (দ্ধ=দ+ধ · ষ্ঠ=ষ+ঠ · ত্র=ত+র · ধ্য=ধ+য · শ্ব=শ+ব · স্ত্র=স+ত+র · ণ্ড=ণ+ড) and each new word carries the conjunct (যুদ্ধ · শ্রেষ্ঠ · পাত্র · অধ্যায় · বিশ্বাস · অস্ত্র · দণ্ড). Multi-conjunct stimuli name their target: Q84 প্রতিষ্ঠাতা (প্র+ষ্ঠ) names ষ্ঠ, Q87 বিশ্ববিদ্যালয় (শ্ব+দ্য) names শ্ব, Q88 নিরস্ত্র names স্ত্র. No unstated ambiguity.
+S10 (Q70–Q75) — each key right for the word as used: স্বাধীনতার নাম-শব্দ ✓ · ঘুমন্ত বিশেষণ ✓ · তোলেন কাজ-শব্দ ✓ · বিখ্যাত বিশেষণ ✓ · চলে কাজ-শব্দ ✓ · দেশ নাম-শব্দ ✓. No super-class key, no non-standard term ('নামপদ' expressly excluded); the নাম-শব্দ/কাজ-শব্দ lead and the বিশেষণ keys are declared, not judged.
+S13 (Q90–Q96) — each answer matches its definition phrase (আত্মদানকারী · বরেণ্য/বরণীয় · মেধাবী · নিরহংকার · নির্বিচার · অপূরণীয় · দানবীর), all from the section's gloss list or মিলকরণ list.
+S06 (Q39–Q44) — antonyms hold in this chapter's sense: স্বাধীনতা→পরাধীনতা · নিরস্ত্র→সশস্ত্র · অবরুদ্ধ→মুক্ত/স্বাধীন (chapter gloss বন্দি; আটক) · খ্যাতনামা→অখ্যাত · নিষ্ঠুর→দয়ালু (নিষ্ঠুর is the section's own পাষণ্ড gloss) · প্রথম→শেষ (ordinal use in the ১৯৪৮ দাবি).
+S11 (Q76–Q82) — required marks, taking a mark as required only when every accepted variant has it: Q76 দাঁড়ি + বিস্ময়চিহ্ন · Q77 কমা + দাঁড়ি · Q78 তিন কমা + দাঁড়ি (variant 2 adds a fourth কমা) · Q79 উদ্ধরণ চিহ্ন + প্রশ্নচিহ্ন · Q80 দাঁড়ি x2 · Q82 উদ্ধরণ চিহ্ন + দাঁড়ি. All six multi-mark and wholly inside the five taught marks; no ড্যাশ and no সেমিকোলন anywhere in the bank's keys (mechanical scan of the seven keys: no em/en dash, no ;, no :).
+· Q81 — accepted "কী ভয়ংকর রাত ছিল সেটি!" still requires one single terminal mark. DEFECT · DEFERRED (reported, not counted).
+
+7 · LANGUAGE — PASS. Stems, keys and rubric rows are natural, grammatical and class-5 appropriate; band pairs (সম্পূর্ণ/আংশিক) discriminate and do not overlap. No policy code in any student-facing string or in any rubric row; CD-136 · CD-166 · BAN-S10 · SLOT_REGISTER BAN-S12 sit only in teacher-facing model_note. Two quality notes, not counted: (a) Q56 accepted says "উৎস বলছে …" — pipeline register in a model answer where the rest of the bank writes "পাঠে বলা হয়েছে"; (b) Q78 model_note says "মোট চারটি চিহ্ন", which is true of accepted[0] only — accepted[1] carries five.
+
+WHAT CHANGED SINCE RUN 4 — re-derived, not taken on trust.
+· Q64 — stem now "পাঠে তিনজনের যে পরিচয় দেওয়া আছে, তা আলাদা করে লেখো"; criterion and both bands now name ঔষধালয় প্রতিষ্ঠা · দানশীলতা · সমাজসেবা, one attribute per man, exactly as the section assigns them. The সমাজসেবা-for-three presupposition is gone. FIXED.
+· Q59 — the closing sentence "তিনজনের পরিচয়ই সেবার পরিচয়।" is absent (0 hits for "পরিচয়ই" outside Q64's harmless "তিনটি পরিচয়ই"). The surviving key keeps the three attributes distinct and correct; its generalisation "তিনজনই নিজের কাজ দিয়ে সাধারণ মানুষের উপকার করেছেন" is the inference the Analyze stem itself demands, not an assigned category. Clean.
+· Q29 — carrier is now "'পাহাড়ধসে রাস্তা বন্ধ হয়ে গ্রামটি ছিল ______।'" with `blanks` only and no answer_key; "সারা দেশ" · "নিশ্চিন্তে" · "ঘর থেকে" return 0 hits bank-wide. The vocabulary use of অবরুদ্ধ matches the section's gloss. FIXED.
+· Q78 — key requires three কমা and a দাঁড়ি, multi-mark, both marks taught; ড্যাশ removed from key and note. FIXED.
+· Q70 · Q72 · Q74 · Q75 — model_notes carry no পাঠ ১৫/১৮ citation ("পাঠ ১৫" appears once in the bank, in header.admissibility_declaration; "পাঠ ১৮" zero). FIXED.
+
+STEP 5a — RUN4 DISPOSITIONED
+· 1 · defect (1) Q64/Q59 সমাজসেবা claim — FIXED. Q64 recast to পরিচয় with one section-given attribute each; Q59's সেবার-পরিচয় sentence deleted.
+· 1 · defect (2) Q29 carrier sentence — FIXED. Replaced by a vocabulary sentence, blanks-only item, no war claim remains.
+· 1 · "All other fact-bearing strings verified against the section … ১৪ই ডিসেম্বর হত্যাযজ্ঞ ও পেশার তালিকা (Q51 · Q57 · Q63 · Q67)" — STILL PRESENT (incomplete). Q51's "বাড়ি থেকে" is a reach beyond the section and was cleared by that very line; my defect (1).
+· 1 · "Q58 model_note correctly bars the ১৯৪৮→১৯৭১ causal reading" — WAS NEVER A DEFECT. Re-derived: only Q58 pairs the two dates, its key gives the same-person link the section prints.
+· 2 · CONTENT BARS PASS — WAS NEVER A DEFECT. Conclusion reproduced; tally is wider this run because source_index is now in scope (Q86 book-verbatim শহিদ হন, Q49 শহীদুল্লা কায়সার), and neither is a defect.
+· 3 · STANDING CURATION BARS PASS — WAS NEVER A DEFECT. Confirmed string by string.
+· 4 · INVENTED NAMES PASS — WAS NEVER A DEFECT. Confirmed name by name.
+· 5 · NUMERALS PASS — WAS NEVER A DEFECT. Confirmed mechanically, source_index included.
+· 6 · S12 · S10 · S13 · S06 PASS — WAS NEVER A DEFECT. Re-derived item by item.
+· 6 · "Q71 · Q73 keying বিশেষণ — NOT DEFECTS" — WAS NEVER A DEFECT. Declared; swept for completeness.
+· 6 · Q78 ড্যাশ DEFECT · DEFERRED — FIXED. Key and note now demand কমা + দাঁড়ি only.
+· 6 · Q81 single terminal mark DEFECT · DEFERRED — STILL PRESENT. Text unchanged; deferred again this run, not counted.
+· 6 · Q79 UNRULED (উদ্ধরণ চিহ্ন) — WAS NEVER A DEFECT under CD-166. উদ্ধরণ চিহ্ন is now admitted; Q79 requires উদ্ধরণ + প্রশ্নচিহ্ন, multi-mark, inside the taught five. Nothing owed.
+· 6 · Q82 UNRULED (উদ্ধরণ চিহ্ন, with collapse risk) — WAS NEVER A DEFECT under CD-166. Q82 requires উদ্ধরণ + দাঁড়ি, so the single-mark collapse never occurred. Nothing owed.
+· 7 · LANGUAGE PASS — WAS NEVER A DEFECT. Confirmed; two uncounted quality notes added above.
+· 7 · quality note "Q28 and Q29 carrier sentences are near-self-answering" — Q29 half FIXED (sentence replaced); Q28 half STILL PRESENT as a quality note only, not a defect.
+· VERDICT: 2 DEFECT(S) — FIXED. Both counted defects were remediated; one new counted defect (Q51) surfaced by the widened field sweep.
+
+VERDICT: 1 DEFECT(S)
