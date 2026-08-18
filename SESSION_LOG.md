@@ -3354,3 +3354,80 @@ restores it nor explains it away. **Owner: the Principal.**
   and is corrected here) · U14 84 · 22/24/24/12/2 · U15 96 · 26/28/27/13/2 · U16 96 · 26/27/28/13/2.
   Exports rebuilt for all four: `e1d94f63e411` · `bc2180bb43e2` · `bef277859b14` · `0fc084015201`.
 - Gates: all eight in-condition suites CLEAN, before and after every one of the six commits.
+
+## 2026-08-18 · push · উদ্ধরণ admitted · the ভাব block · Q80 retired · CD-166–169 · cowork
+- **PUSHED FIRST (CD-163).** 12 held commits went up; `origin/main` `dd40a93` → **`b098f9e`**, verified
+  by `git ls-remote` against the SERVER and not a local ref. Range check and both (c) clauses pasted
+  before the push. Origin had moved twice earlier in this chain; every numbered filing this session
+  re-fetched before writing (CD-154), and `CD-166` · `CD-167` · `CD-168` · `CD-169` were each verified
+  free on a freshly fetched origin in the same command that wrote the row.
+- **CD-166 — উদ্ধরণ চিহ্ন ADMITTED; the C5 set is FIVE.** The Principal's test is the part worth
+  keeping: **a mark the printed sentence FORCES cannot be barred without barring the sentence.** `U14
+  Q66` is reported speech, so its quotation mark is the sentence's requirement; ড্যাশ fails the same
+  test from the other side, being a typographic choice, and stays barred. Clause (c) records where
+  CD-165's four came from — **the spine's TASK names, which are not an inventory of what printed
+  Bangla contains.** Register amended to five marks; `taught_set_source` now carries both rulings.
+- **CD-167 — SOURCE-RULING PROPAGATION, BOTH DIRECTIONS, one row.** CD-164 covered corrections; the
+  same day produced the opposite direction, and the discharge condition is identical either way, so
+  direction is a property of the RULING and not of the mechanism. **The ভাব block is its first
+  discharge** — written to `C5_Bangla_Source_13-23.md` in the Principal's wording, *মুক্তভাবে* cut,
+  anchored to অনুশীলনী ৪(ঘ), with the honest limit written INTO the block: **অনুশীলনী ৬ exists in the
+  printed book and is absent from this extraction.** `CR-004` filed in lane `c5-bangla`.
+- **AND IT WORKED, MEASURED.** U13's seven মুক্তি carriers came back CLEAN in runs 12 and 13 — "now
+  source-supported" — after **two runs and two sessions of false defects.** Three lines of source text
+  closed what no bank edit could.
+- **PART 2 — MEASURED, THEN STOPPED, THEN RULED.** Retiring all three barred-mark items put Apply at
+  **24/93, need 24, margin +0**; two at **+1**; one at **+2**. I reported the arithmetic rather than
+  spend a floor. The Principal then ruled **Q80 only** — its চরণ's sole printed mark is a semicolon, so
+  unlike Q75/Q81 it has **no form at all**, not a wrong one. Retired through `questions`, all five
+  indexes, `pool_index["HW"]` 48→47 and `envelopes/single/`; 96 → 95, Apply +3 → **+2**, every floor
+  holds, **no replacement authored** (CD-162's Q122 lesson).
+- **CD-169 — THE RESIDUAL WRITTEN DOWN.** `Q75` and `Q81` are known-defective and retained **solely**
+  because the floor cannot absorb them, with the discharge condition recorded: **if পাঠ ১৫'s Apply
+  supply ever rises, both are retired.** Filed BEFORE the gate that fails them, deliberately — **a gate
+  that reddens on a RECORDED exception is acceptable; one that reddens on an unwritten state is not.**
+- **4d LANDED, AND IT TOOK THREE DRAFTS — the fourth instance of CD-168's pattern.** Draft 1 scanned
+  mark NAMES in prose and **failed `U16 Q78` for a note saying ড্যাশের দরকার নেই** — a name-scan cannot
+  tell REQUIRES from FORBIDS. Draft 2 scanned mark CHARACTERS in the answers JOINED and **failed `U14
+  Q67`, whose second key is comma-only.** Draft 3 asks PER VARIANT: an item fails only when NO accepted
+  variant stays inside the set. Both discarded drafts are now REGRESSION SEEDS that must stay quiet.
+  Six seeds both directions; হাইফেন deliberately outside the map (a hyphen in যুদ্ধ-জাহাজ is
+  orthography). **THE SUITE IS RED BY DESIGN: live FAIL (2), exactly `U15 Q75` and `Q81`.**
+- **PART 5 — U14's three classes and U16's two claims.** 5a's eight false notes corrected against the
+  section, **and Q35/Q36's STEMS moved with them** (disclosed as past the letter of 5a: correcting the
+  note alone would have left the stem asserting what the note denies). 5b's twelve now require the
+  exact answer. **5c stripped the citation from all EIGHTEEN notes across four banks**, not just U14's
+  three — both strings now 0 everywhere. 5d: Q64's presupposition gone, Q59's sibling sentence removed,
+  Q29's manufactured nine-month claim replaced. **5e needed no stop** — the section prints that list
+  with commas only, so Q78 requires three কমা + দাঁড়ি, all admitted, still multi-mark.
+- **A GATE CAUGHT ME MID-FIX**: Q29's explanatory note went in as `answer_key` and KEY-RUBRIC failed it
+  — a `fill_blank` item carries `blanks` and nothing else. The note was dropped, not the schema bent.
+- **PART 4 — the seven untaught-পদ items UNTOUCHED, as ruled**, and the B1 correction is on the record:
+  **বিশেষণ IS exercise material at পাঠ ১৯** (*গুণ ও বৈশিষ্ট্য বসানো (বিশেষণ)* → S10 · S04), so U13
+  `Q110`/`Q114` · U14 `Q61` · U16 `Q71`/`Q73` needed nothing. My at-source check corrected the
+  advisor's বিশেষ্য ruling and then corrected **its own first report.**
+- **CD-168 — TWO CLEAN RUNS AGREED WRONGLY.** U14 was CLEAN on runs 3 and 4 and returned SEVEN defects
+  on run 5, unchanged, because both earlier runs drew check 7 to EXCLUDE `model_note`. **They agreed
+  because they were looking in the same wrong place.** Two cleans stay NECESSARY and are now
+  demonstrably NOT SUFFICIENT; U14's count RESTARTS.
+- **FIVE RUNS COMMITTED: U13 12 → 3 · U13 13 → 2 · U14 6 → 2 · U15 6 → 5 · U16 5 → 1.** U14 fixed five
+  of seven; U16 fixed both and CD-166 discharged its two UNRULED items outright.
+- **MY OWN STEP-3a FAILURE, disclosed:** RUN12 was returned and its report went uncommitted when the
+  session was interrupted, so RUN13 was handed a path that did not exist — **and opened by saying so**,
+  after searching name, content and all of git history. For one session the repo held a verdict nobody
+  could check. That is precisely what step 3a exists to prevent, and both reports are now committed.
+- **THE WIDENED SWEEP FOUND WHAT THE NARROW ONE COULD NOT — CD-168's pattern, fifth instance.** Naming
+  `source_index` in `FIELDS TO SWEEP` turned up **`U15 Q01` still anchored to the SUPERSEDED "প্রথম ৮
+  পঙ্‌ক্তি" wording** — the one item CD-149 corrected — where RUN5 had stated the superseded wording
+  "appears nowhere in the bank". **CD-149's unpropagated correction has now surfaced in a THIRD
+  artifact class.** U16's শহিদ tally moved 7 → 8 for the same reason.
+- **ONE FIX OF MINE, one disclosure:** `header.topic_tag_ruling` said "আটটি আইটেম" — **my retirement
+  falsified it** — corrected to সাতটি with its history, and disclosed as NOT covered by a fresh run.
+  U15's other four defects are reported and untouched; three predate this session.
+- Floors, before and after every bank: U13 106 · +9/+2/+3/+3 · U14 84 · +5/+3/+3/+3 · U15 **95** ·
+  +7/+4/**+2**/+3 · U16 96 · +6/+3/+4/+3. Digests: U13 `fa22259d7014` · U14 `ef6cbf24a7e3` · U15
+  `3b632e2aa6d0` · U16 `ff319e0fdd02`.
+- Gates per CD-153: canon_check · tools_check · ledger_check · slot_register_check · int_id_check ·
+  bangla_script_check · support-books all CLEAN; question-banks SELFTEST PASS, **live FAIL (2) — the
+  two CD-169 names and nothing else.** Repo-wide green is not attainable while that residual stands,
+  and that is a ruled state, not a chosen one.
