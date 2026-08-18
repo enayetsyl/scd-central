@@ -1,0 +1,203 @@
+P-039 · HUB HANDOFF MANIFEST · C5 BANGLA পাঠ ১৩ · ১৪ · ১৫ · ১৬
+Written 2026-08-18 on the Principal's ruling that the REPO-SIDE factual/curation pass is COMPLETE.
+Authority: CD-170 (this session) · CD-142(a) (item-level review belongs to the Hub's subject experts).
+
+WHAT THIS DOCUMENT IS. Every defect and every deliberate exception the repo knows about, per bank, with
+its qid, one line on what is wrong, and where it was found. It exists so a Hub reviewer INHERITS the
+findings instead of rediscovering them.
+
+WHAT IT IS NOT. It is not a claim that these banks are defect-free. It is the opposite: it is the list of
+what is still wrong, handed over. Nor does it satisfy CD-161(b)'s promotion condition — see §7.
+
+EVERY LINE BELOW WAS BUILT FROM THE COMMITTED REPORTS AND RE-VERIFIED AGAINST THE BANK JSON AT HEAD.
+Nothing here is from session prose or memory.
+
+--------------------------------------------------------------------------------------------------
+§0 · VERDICTS OF RECORD AT CLOSE, quoted verbatim from each bank's last committed report
+--------------------------------------------------------------------------------------------------
+  U13  BAN_U13_REVIEW_2026-08-18_RUN14.txt   "VERDICT: 3 DEFECT(S)"
+  U14  BAN_U14_REVIEW_2026-08-18_RUN8.txt    "VERDICT: CLEAN"
+  U15  BAN_U15_REVIEW_2026-08-18_RUN7.txt    "VERDICT: 8 DEFECT(S)"
+  U16  BAN_U16_REVIEW_2026-08-18_RUN7.txt    "VERDICT: CLEAN"
+
+TWO OF THESE VERDICTS ARE ONE COMMIT STALE, AND THAT IS STATED HERE RATHER THAN LEFT TO BE DISCOVERED.
+U13's RUN14 and U15's RUN7 were both returned BEFORE commit `586c44d`, which fixed several of the very
+defects they counted. No run was re-dispatched after it, because the Principal's ruling closes the pass.
+Re-verified at source at HEAD:
+  · U13's three are ALL FIXED — Q120 and Q55's notes now read "উত্তরটি পাঠেই আছে …"; zero S10 and zero
+    S12 items still carry the loose "কাছাকাছি অর্থের যেকোনো শুদ্ধ উত্তর" grant. **U13 has no open defect
+    from RUN14, though its verdict of record still says 3.**
+  · U15's eight are FOUR FIXED (the S13 eight-note class, the S10 collision, the S12 loose clause) and
+    FOUR OPEN (§3 below), plus the code tokens at §5.
+A Hub reviewer should read the verdict lines as of the run date and this manifest as of HEAD.
+
+--------------------------------------------------------------------------------------------------
+§1 · S11 SINGLE-MARK ITEMS — QB-CR-017's held group. THE TRUE NUMBER IS FOURTEEN, NOT THIRTEEN.
+--------------------------------------------------------------------------------------------------
+Fault, identical in every one: the item asks "প্রয়োজনীয় বিরামচিহ্ন বসিয়ে লেখো" and is satisfied by ONE
+distinct mark, against S11's rule that an item must require more than a single terminal mark.
+Found by: the vendored review's check-6 S11 clause, across four separate runs; filed as QB-CR-017.
+
+QB-CR-017's own row lists THIRTEEN (an earlier brief said twelve; the row records that discrepancy). A
+mechanical sweep of every S11 item in all four banks at HEAD — taking a mark as REQUIRED only where every
+accepted variant carries it — returns FOURTEEN:
+
+  U13 Q58   কমা only                     · on QB-CR-017's list
+  U13 Q61   বিস্ময়চিহ্ন only              · on the list
+  U13 Q89   কমা only (two instances, one distinct mark) · on the list
+  U13 Q90   দাঁড়ি only                    · on the list
+  U13 Q91   প্রশ্নচিহ্ন only               · on the list
+  U14 Q65   দাঁড়ি only                    · on the list
+  U14 Q68   প্রশ্নচিহ্ন only               · on the list
+  U15 Q76   দাঁড়ি only                    · on the list
+  U15 Q77   কমা only                     · on the list
+  U15 Q78   দাঁড়ি only                    · on the list
+  U15 Q79   কমা only                     · on the list
+  U15 Q82   দাঁড়ি only                    · on the list
+  U16 Q81   বিস্ময়চিহ্ন only              · on the list
+  U16 Q80   দাঁড়ি only (two instances, one distinct mark) · **NOT ON THE LIST**
+
+U16 Q80 IS THE FOURTEENTH AND IT IS THE CLASS-BOUNDARY DEFECT CD-160 DESCRIBES. Its shape is identical
+to U13 Q89's — two instances of one mark — and Q89 is on the list while Q80 is not. U16's RUN7 flagged it
+for the ruling body rather than counting it. **The list drifted from the class; the sweep is what found
+the member the list had lost.**
+
+--------------------------------------------------------------------------------------------------
+§2 · U15 Q75 AND Q81 — CD-169's PERMANENT RESIDUAL. KNOWN-DEFECTIVE AND DELIBERATELY RETAINED.
+--------------------------------------------------------------------------------------------------
+  U15 Q75  sole accepted "থাকব না কো বদ্ধ ঘরে, দেখব এবার জগৎটাকে—" requires কমা + **ড্যাশ**
+  U15 Q81  sole accepted "পাতাল ফেড়ে নামব নিচে, উঠব আবার আকাশ ফুঁড়ে;" requires কমা + **সেমিকোলন**
+ড্যাশ and সেমিকোলন are NOT in C5's taught set (দাঁড়ি · কমা · প্রশ্নচিহ্ন · বিস্ময়চিহ্ন · উদ্ধরণ চিহ্ন —
+CD-165 as amended by CD-166). Both marks are the printed poem's own typography.
+
+WHY THEY WERE NOT RETIRED, with the arithmetic:
+  now, 96 items → 95 after Q80's retirement · Apply 26/95, need 24, margin **+2** — at the rule
+  retire all three barred-mark items → 93 items · Apply 24, need 24, margin **+0** — BREAK
+  retire two of the three          → 94 items · Apply 25, need 24, margin **+1** — BREAK
+  retire exactly one               → 95 items · margin **+2** — the only affordable retirement
+The one was spent on Q80, whose printed চরণ carries NO admitted mark at all, so unlike these two it had
+no possible form rather than a wrong one. CD-162 retracted the per-chapter margin exception that would
+have covered a reduced margin, and authoring Apply items to hold a floor is what CD-162 records as wrong.
+DISCHARGE CONDITION, recorded at CD-169(c): **if পাঠ ১৫'s Apply supply ever rises, both are retired.**
+They are not to be re-keyed or reviewed into soundness.
+Found by: COVERAGE's taught-set check (the gate FAILS on exactly these two — see §6) and U15 RUN6/RUN7.
+
+--------------------------------------------------------------------------------------------------
+§3 · U15's FOUR OPEN ITEMS — reported across RUN6 and RUN7, never ruled, NOT fixed
+--------------------------------------------------------------------------------------------------
+  U15 Q01 · source_index = "প্রথম ৮ পঙ্‌ক্তি (S01-এর জন্য)"
+      That wording exists in the source ONLY inside the CD-149 parenthetical recording the SUPERSEDED
+      text; the live heading is "প্রথম ৮ লাইন". The one item whose span CD-149 corrected is anchored to
+      the retracted line. Its own stem and note use the corrected wording.
+      Found by: U15 RUN6 defect 1, re-confirmed RUN7 defect 1. Not fixed because replacing an anchor is
+      choosing new evidence, not editing a note.
+  U15 header.gaps[1]
+      Still presents the S01 span as an OPEN source inconsistency "PRINCIPAL-এর রায় প্রয়োজন" and quotes
+      the source as declaring "প্রথম ৮ পঙ্‌ক্তি" with the boundary "…বরণ মরণ-যন্ত্রণাকে।". CD-149 closed
+      that on 2026-08-17 and the source no longer carries either string.
+      Found by: RUN6 defect 3, re-confirmed RUN7 defect 2.
+  U15 Q19 · model_note
+      Two false limbs. (a) "'লুটে পড়া' মানে ভেঙে পড়া" — the section assigns ভেঙে to **টুটে** ("টুটে —
+      ভেঙে; ছিঁড়ে") and gives লুটে only as "ছড়িয়ে". (b) "(Q36 সেই অর্থকেই ভুল বলে চিহ্নিত করে)" — Q36's
+      options are ছড়িয়ে · কেড়ে নিয়ে · লুকিয়ে · গড়িয়ে and none mentions ভেঙে পড়া, so the marker is
+      pointed at a ruling Q36 does not make. The note also bars the collocation its own key uses.
+      Found by: RUN6 defect 4, re-confirmed RUN7 defect 3.
+  U15 Q50 · model_note = "কেবল জায়গার নামই ধরা হবে; বাতাস বা চন্দ্র-তারা জায়গা নয়"
+      The section's line is "দেখব এ-সব ভুবন ঘুরে— আকাশ-বাতাস চন্দ্র-তারায় সাগর-জলে পাহাড়-চূড়ে।":
+      চন্দ্র-তারায় carries the same locative as সাগর-জলে and পাহাড়-চূড়ে. **The bank contradicts itself**
+      — Q47's own accepted answer reads "আকাশ-বাতাস, চন্দ্র-তারা, সাগর-জল আর পাহাড়-চূড়া — সব জায়গায়".
+      Found by: RUN6 defect 5, re-confirmed RUN7 defect 4.
+
+--------------------------------------------------------------------------------------------------
+§4 · U16 AND U14 — what their CLEAN verdicts leave open
+--------------------------------------------------------------------------------------------------
+U16 Q78 — RESOLVED, recorded because the brief asks for it: its key required a ড্যাশ and no longer does.
+  At HEAD the accepted answers are "কৃষক, শ্রমিক, ছাত্র, শিক্ষক সবাই প্রাণ দিয়েছেন।" and a comma variant;
+  the section prints that list with commas only. Its note, however, still says "মোট চারটি চিহ্ন", which
+  is true of accepted[0] and one short of accepted[1]'s five — an UNCOUNTED quality note in RUN5, RUN6
+  and RUN7. Hub reviewers may wish to reconcile the count.
+U16 Q82 — note names the mark "উদ্ধৃতিচিহ্ন" where Q79 and the register say "উদ্ধরণ চিহ্ন": one mark, two
+  names. Uncounted note, RUN7.
+U16 Q56 — accepted answer says "উৎস বলছে …", pipeline register in a model answer where the rest of the
+  bank writes "পাঠে বলা হয়েছে". Uncounted note, RUN5 · RUN6 · RUN7.
+U16 Q28 — carrier sentence half-answers itself, glossing নির্বিচারে inside its own stem. Uncounted note.
+U14 Q33 · why_wrong[খ] — "খরগোশ ক্ষুদ্রকায় ও দুর্বল": দুর্বল is the section's own framing, ক্ষুদ্রকায় is
+  a glossary headword the section attaches to no character. **RULED NO CHANGE by the Principal**; it is
+  the same extra-section attribution for which Q61's old stimulus was struck. Recorded, not a defect.
+U14 Q41 · Q42 · Q43 — 2-mark S07 items whose keys are single words duplicating Q23 · Q24 · Q28 · Q29;
+  depth-versus-marks, uncounted, RUN8.
+U13, from RUN14's deferred list, all uncounted and all still open:
+  Q94–Q98  accepted[0] is a rule, not an answer, while each note claims "নমুনা উত্তর দেওয়া হলো" — false,
+           no sample exists. Q62–Q66 carry the same placeholder keys WITHOUT the false claim.
+  Q60 · Q61 notes say "যেকোনো শুদ্ধ ও প্রাসঙ্গিক উত্তর গ্রহণযোগ্য" on punctuation items with one
+           determinate answer.
+  Q27      accepted lists গ্রাম twice — three advertised variants are two. Same shape at Q93 (পাল্টা).
+  Q79      stem calls three quoted চরণ "এই স্তবক" while omitting the stanza's first line.
+  Q73      accepted restates the wish rather than its cause; the note declares the stem an opinion stem.
+  Q89      key and note insert a কমা after "পড়া" that the printed line does not carry — the line is
+           quoted correctly at Q18 · Q30 · Q106 · Q115 · Q118. Q60 mirrors it, adding a দাঁড়ি after
+           "সোনা" where the printed line has no terminal mark.
+  Q56      stem is a word-form question rather than an এক কথায় প্রকাশ definition, though গাঁ fits it.
+  Q57 and the five S12 items award "অর্ধেক" on 1-mark items.
+  Q25–Q28  keep an older provenance wording ("প্রধান শিক্ষকের সিদ্ধান্ত, ১৪ আগস্ট ২০২৬") rather than the
+           current clause — inconsistent, but true of those four.
+
+--------------------------------------------------------------------------------------------------
+§5 · POLICY-CODE STRIP — FIVE OCCURRENCES SURVIVE, ALL IN U15, NONE IN A NOTE THE SWEEP REACHED
+--------------------------------------------------------------------------------------------------
+Verified this session by grepping CD-1xx · BAN-Sxx · SLOT_REGISTER · MarkLogic § · নেপ § · bare slot
+codes · QB-CR/REF/CR · E-AUTHOR-ENDORSE · item references, across EVERY item field and source_index of
+all four banks. Item-field survivors:
+  U15 Q01 · source_index   "(S01-এর জন্য)"                          — bare slot code (also §3)
+  U15 Q66 · source_index   "**S09** মূলভাব · **S07/S08** প্রশ্নোত্তর" — three slot codes and raw markdown;
+                            the anchor points at the advisory "কোন প্রশ্নে কাজে লাগবে" slot-map line
+                            rather than at any poem content
+  U15 Q19 · model_note     "Q36"                                    — internal item reference (also §3)
+U13, U14, U16: ZERO occurrences in any item field. Why U15 alone: the strip was executed over
+`model_note` and every student-facing field, and TWO of these three sit in `source_index`, which a
+note-sweep does not reach. **The claim family was bank-wide; my instrument was field-narrow — the same
+shape as CD-168's finding, recorded again here rather than discovered again later.**
+NOT FIXED, per the ruling. Choosing a replacement anchor is selecting new evidence.
+Bank-level `curation`, `header.content_facts` and `header.gaps` still carry policy codes in all four
+banks (U13 10 CD-rows · U14 7 · U15 12 · U16 6, plus slot ids). Those blocks are CURATOR-facing
+provenance, not marker-facing item text, and were outside the ruling's scope. Reported for completeness.
+
+--------------------------------------------------------------------------------------------------
+§6 · DO-NOT-CORRECT — the untaught-পদ items. SEVEN ITEMS. NOT DEFECTS.
+--------------------------------------------------------------------------------------------------
+RULED BY THE PRINCIPAL: kept exactly as they are. He will teach these terms separately and will not put
+them on a paper until he has. A Hub reviewer should NOT "fix" these to the book's নাম-শব্দ / কাজ-শব্দ
+vocabulary and should not flag them as term errors.
+  সর্বনাম ×5   U13 Q111 ('আমার') · U13 Q115 ('তোমরা') · U14 Q64 ('তার') · U15 Q72 ('আমার') ·
+               U15 Q74 ('আমি')
+  অব্যয় ×1    U13 Q113 ('কেবল')
+  ক্রিয়া-বিশেষণ ×1  U14 Q63 ('দ্রুত') — accepts ক্রিয়া-বিশেষণ · ক্রিয়াবিশেষণ · বিশেষণ, and the plain
+               super-class বিশেষণ acceptance is part of what is KEPT
+Measured at source and why it matters: সর্বনাম and অব্যয় are printed ZERO times anywhere in C5 বাংলা —
+not in পাঠ ১–১১ and not in পাঠ ১৩–২৩. The items do not mis-key; they ask for a distinction the
+fifth-class book does not draw. বিশেষণ, by contrast, IS printed as exercise material at পাঠ ১৯, so
+U13 Q110 · Q114 · U14 Q61 · U16 Q71 · Q73 are on a taught term and need nothing.
+
+--------------------------------------------------------------------------------------------------
+§7 · WHAT THIS HANDOFF DOES NOT DO
+--------------------------------------------------------------------------------------------------
+· It does NOT declare the banks defect-free. §§1–5 are the standing list.
+· It does NOT satisfy CD-161(b)'s promotion condition. Two CONSECUTIVE clean runs are required for
+  promotion; U14 has ONE (RUN8, the first of a count CD-168 restarted after two cleans agreed wrongly)
+  and U16 has ONE (RUN7). U13 and U15's last verdicts are not clean.
+· It does NOT waive that condition, and promotion `reviewed → gold` remains the Principal's act in the
+  Hub (CD-003).
+· A CLEAN 5b verdict was never approval: step 5b is PRE-IMPORT SCREENING, and CD-142(a) leaves
+  item-level content review — whether a question is good, whether a key is right, whether a stem suits
+  the class — to the Hub's subject experts. That is who this manifest is addressed to.
+
+--------------------------------------------------------------------------------------------------
+§8 · IMPORT SET AT HEAD
+--------------------------------------------------------------------------------------------------
+  U13  106 items  digest 9c38f37e757d  workstreams/question-banks/banks/envelopes/C5_BAN_U13_QuestionBank_v1.batch.json
+  U14   84 items  digest 2a1b13ee2510  workstreams/question-banks/banks/envelopes/C5_BAN_U14_QuestionBank_v1.batch.json
+  U15   95 items  digest 349fe8d27938  workstreams/question-banks/banks/envelopes/C5_BAN_U15_QuestionBank_v1.batch.json
+  U16   96 items  digest 5a7adbd9264d  workstreams/question-banks/banks/envelopes/C5_BAN_U16_QuestionBank_v1.batch.json
+Each digest was recomputed from the bank JSON at HEAD and matches the `batch.digest` and `item_count`
+inside the corresponding .batch.json. The `.envelopes.json` arrays are the intermediate product and are
+NOT the import artifact.
