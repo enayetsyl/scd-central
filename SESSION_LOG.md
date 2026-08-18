@@ -3496,3 +3496,48 @@ restores it nor explains it away. **Owner: the Principal.**
 - Gates per CD-153: canon_check · tools_check · ledger_check · slot_register_check · int_id_check ·
   bangla_script_check · support-books all CLEAN; question-banks SELFTEST PASS, **live FAIL (2) —
   `U15 Q75` and `Q81`, CD-169's recorded residual and nothing else.**
+
+## 2026-08-18 (cont.) · P-039 repo-side pass CLOSED · handoff to the Hub · cowork
+- Bootstrap: `HEAD` `f9060e5` vs `origin/main` `6156629`, **(c) BENIGN AHEAD**, six commits held and each
+  accounted for by hash and subject; step 4's branch read from the file, not from this brief.
+- **TASK 1 — NOTHING WAS IN FLIGHT, and that is stated rather than assumed.** No review run was dispatched
+  and none was pending, so nothing had to be completed. **I did NOT dispatch a fresh run**, which matters:
+  U13's `RUN14` and U15's `RUN7` are the verdicts of record and both PREDATE `586c44d`, the commit that
+  fixed defects they counted. Re-verified at source at HEAD: **all three of U13's are fixed** (Q120 and
+  Q55's notes now read *উত্তরটি পাঠেই আছে …*; zero S10 and zero S12 items keep the loose grant) and **four
+  of U15's eight are.** So both standing verdicts OVERSTATE the open defects, and a friendlier number was
+  available for the asking — I did not ask for it.
+- **TASK 2 — `CD-170` filed.** Verdicts of record quoted verbatim: U13 *3 DEFECT(S)* · U14 **CLEAN** ·
+  U15 *8 DEFECT(S)* · U16 **CLEAN**. The row says in terms that this is a **HANDOFF, NOT a claim the banks
+  are defect-free**, that item-level disposition was always CD-142(a)'s allocation, and that
+  **CD-161(b) is NEITHER satisfied NOR waived** — U14 has ONE clean run (the first of the count CD-168
+  restarted) and U16 has ONE, so no bank qualifies for promotion and `reviewed → gold` stays the
+  Principal's Hub act.
+- **TASK 3 — the manifest: `P039_HUB_HANDOFF_MANIFEST_2026-08-18.txt`, 203 lines, built from the committed
+  reports and re-verified against the banks at HEAD.** Every count in it is a sweep result.
+- **AND THE COUNT CAME OUT WRONG IN THE FILED ROW'S FAVOUR OF NOBODY: QB-CR-017 SAYS THIRTEEN, THE SWEEP
+  FINDS FOURTEEN.** The fourteenth is **`U16 Q80`** — two দাঁড়ি, **one distinct mark** — which is
+  byte-for-byte `U13 Q89`'s shape, and **Q89 is on the list while Q80 is not.** The brief had said twelve
+  and thirteen at different times; the true number against the class as APPLIED is fourteen. **CD-160's
+  lesson landing again: the list drifted from the class, and counting found the member reading had lost.**
+- **TASK 4 — THE STRIP DID NOT REACH EVERYTHING, AND MY INSTRUMENT IS WHY.** Five occurrences survive, all
+  in U15: `Q01 source_index` "(S01-এর জন্য)" · `Q66 source_index` "**S09** মূলভাব · **S07/S08**
+  প্রশ্নোত্তর" (three slot codes, and the anchor points at the advisory slot-map line rather than at poem
+  content) · `Q19 model_note` "Q36". U13 · U14 · U16 are ZERO in every item field. **Two of the three sit
+  in `source_index`, which a note-sweep does not reach — the claim family was bank-wide and my instrument
+  was field-narrow.** Fourth instance this session of one shape (QB-CR-017 · CD-166(c) · CD-168). Reported,
+  NOT fixed: replacing an anchor is choosing new evidence, and the pass is closed.
+- **TASK 5 — the import set at HEAD, digests recomputed from the banks and matched against each
+  `.batch.json`'s own `digest` and `item_count`:** U13 106 `9c38f37e757d` · U14 84 `2a1b13ee2510` ·
+  U15 95 `349fe8d27938` · U16 96 `5a7adbd9264d`. The Principal imports the four
+  `…_v1.batch.json` files; the `.envelopes.json` arrays are the intermediate product and are not the
+  import artifact.
+- **TASK 6 — the gate position, unchanged and recorded:** `question-banks/audits/gates.py` is **RED BY
+  DESIGN — live FAIL (2) on `U15 Q75` and `Q81`** under CD-169, whose row was filed BEFORE the check that
+  fails them precisely so the redness would sit on a recorded exception. **CD-153's repo-wide green is
+  unattainable while that residual stands.** The other seven suites are CLEAN: canon_check · tools_check ·
+  ledger_check · slot_register_check · int_id_check · bangla_script_check · support-books (RED=0 GREY=4
+  PASS=13). Selftest PASS. **This is an exception, not a regression.**
+- **NOTHING WAS FIXED THIS SESSION.** No bank file was touched: the ruling closed the pass, so every
+  finding above went onto the manifest instead of into an edit — including the fourteenth S11 item and the
+  five code tokens I would otherwise have swept.
