@@ -52,7 +52,7 @@ trigger the "promote me" warn on a VENDORED-UNPROVEN row.
 | tools/images/verify_strip.py | REQUIRED |
 | tools/images/crop_edges.py | REQUIRED |
 | tools/images/pick_placements.py | VENDORED-UNPROVEN |
-
+| tools/run_all.py | REQUIRED |
 ## DEFERRED rows — carrying their reason and their trigger
 
 A `DEFERRED` row is silent to the gate by design, so the row itself has to say **why** it is
