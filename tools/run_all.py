@@ -331,6 +331,13 @@ def main():
         rp.write_text(json.dumps(receipt, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"  receipt: {rp}")
 
+    # CD-176 — machine-readable sentinel, ALWAYS THE LAST LINE of stdout, on every path.
+    # The prose "RUN_ALL VERDICT:" line above is not last (FAILED / REFUSED / dirty /
+    # receipt lines follow it conditionally), and exit 2 is shared with argparse's own
+    # usage error. Neither position nor exit code alone tells a consumer that a verdict
+    # was actually reached. Absence of this line is a refusal, not a silence.
+    print(f"RUNALL_SENTINEL={receipt['verdict']}")
+
     sys.exit(2 if refused else (1 if failed else 0))
 
 
