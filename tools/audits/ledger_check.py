@@ -75,7 +75,11 @@ LANE = re.compile(r"<!--\s*ledger-lane:\s*([^>]*?)\s*-->", re.IGNORECASE)
 # of citations to other ledgers' IDs (QB-CR-009 cites CD-044, TOOLS-CR-001 cites CR-012) and a
 # gate that counted citations as mints would fire on every correctly-written cross-reference —
 # AGENTS.md §5.1's exact failure: the gate would make the citation unwriteable.
-ROW_ID = re.compile(r"^\|\s*\**\s*`?([A-Z][A-Z0-9]*(?:-[A-Z][A-Z0-9]*)*-\d+)`?\s*\**\s*\|")
+# TOOLS-CR-010: the id may carry a trailing label INSIDE its own cell — `| **TOOLS-CR-005 ·
+# PATTERN CANDIDATE** |` — and that row went uncounted from the day it was filed. `[^|]*`
+# admits anything up to the closing pipe; the id must still be the cell's FIRST token, so a
+# citation in prose is still not a mint (AGENTS §5.1).
+ROW_ID = re.compile(r"^\|\s*\**\s*`?([A-Z][A-Z0-9]*(?:-[A-Z][A-Z0-9]*)*-\d+)`?[^|]*\|")
 
 # A ledger whose header declares NO prefix still has its rows read, so the collision half keeps
 # working on a repo that has not yet been repaired. Undeclared prefixes are reported separately.
@@ -475,6 +479,20 @@ def selftest():
         hit = any(n == "DUPLICATE-IN-FILE" and "HH-CR-001" in e for n, e in fails)
         results.append(("DUPLICATE-IN-FILE", "one ID minted twice in one ledger", hit, ""))
 
+    # --- ROW-ID · TOOLS-CR-010, seeded BOTH directions. No fixture files: row_ids reads text.
+    got = [t for t, _ in row_ids("| ID |\n|---|\n"
+                                 "| **ZZ-CR-005 · PATTERN CANDIDATE** | label inside the bold |\n")]
+    results.append(("ROW-ID", "an id cell carrying a trailing label inside the bold is COUNTED "
+                              "— the shape TOOLS-CR-005 was filed in, and read as absent",
+                    got == ["ZZ-CR-005"], f"read: {got}"))
+
+    # --- the control, because widening a regex is how a gate stops discriminating.
+    got = [t for t, _ in row_ids("| ID |\n|---|\n"
+                                 "| see ZZ-CR-006 for the ruling | a citation, not a mint |\n")]
+    results.append(("ROW-ID", "a cell whose FIRST token is not an id is still NOT counted — "
+                              "AGENTS §5.1's mint-vs-cite line, kept through the widening",
+                    got == [], f"read: {got}"))
+
     for gate, label, passed, note in results:
         print(f"  {'PASS' if passed else 'FAIL':<4}  {gate:<18} {label}"
               + (f"\n        {note}" if note and not passed else ""))
@@ -496,7 +514,13 @@ def main():
         decls = declared_prefixes(text)
         n = len(row_ids(text))
         tag = ", ".join(decls) if decls else ("POINTER" if is_pointer(text) else "«undeclared»")
-        print(f"  {rel(p):<52} prefix: {tag:<14} rows: {n}")
+                # TOOLS-CR-010(3): a bare count is an absolute number nothing cross-reads, so it can
+        # only be wrong quietly — it read 8 while the file held 9, before AND after a row was
+        # added, because the +1 and the −1 cancelled. The highest ordinal gives the reader
+        # something to compare it against. Lexical max over the RAW strings: no int(), no
+        # arithmetic, nothing for CD-088's lint to waive. REPORT, not a verdict.
+        hw = max((split_prefix(t)[1] for t, _ in row_ids(text)), default="—")
+        print(f"  {rel(p):<52} prefix: {tag:<14} rows: {n:<4} high water: {hw}")
     print()
     fails = run(paths)
     print(f"RESULT: {'FAIL' if fails else 'CLEAN'} ({len(fails)} failures)")
