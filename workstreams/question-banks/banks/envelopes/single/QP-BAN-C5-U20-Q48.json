@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q48",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "এই কবিতা থেকে শিক্ষকের মর্যাদা সম্পর্কে আমরা কী শিখি?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "answer_key": {
+      "accepted": [
+        "আমরা শিখি, শিক্ষকের মর্যাদা রাজার মর্যাদার চেয়েও উঁচু; জ্ঞান দান করেন বলে শিক্ষককে সম্মান করা সবার কর্তব্য এবং বড়ো মানুষও শিক্ষককে সম্মান করেন।"
+      ],
+      "model_note": "শিক্ষকের সম্মান ও জ্ঞানের মর্যাদা — এই ভাবটিই মূল উত্তর। শিক্ষার্থী নিজের ভাষায় লিখবে।"
+    }
+  }
+}

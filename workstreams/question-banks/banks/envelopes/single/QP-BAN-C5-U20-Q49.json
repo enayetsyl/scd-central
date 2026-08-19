@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q49",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'শিক্ষাগুরুর মর্যাদা' কবিতায় বর্ণিত ঘটনাটি নিজের ভাষায় লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "ঘটনার তিনটি ধাপ — সকালের দৃশ্য, শিক্ষকের ভয় ও সাহস, কেল্লায় বাদশাহর কথা — ক্রম মেনে এসেছে কি না, এবং শিক্ষকের প্রতি সম্মানের দিকটিই মুখ্য থেকেছে কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "তিনটি ধাপই ক্রম মেনে নিজের ভাষায় লেখা হয়েছে; শেষে বাদশাহর আক্ষেপ ও শিক্ষকের মর্যাদার স্বীকৃতি এসেছে; কবিতার চরণ হুবহু তোলা হয়নি।",
+            "আংশিক": "কেবল একটি ধাপ এসেছে, বা ঘটনার ক্রম গুলিয়ে গেছে; অথবা কবিতার চরণ হুবহু তুলে দেওয়া হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

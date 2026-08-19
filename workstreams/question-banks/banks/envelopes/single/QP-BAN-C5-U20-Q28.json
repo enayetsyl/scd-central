@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q28",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'শিক্ষাগুরুর মর্যাদা' কবিতাটির কবি কে?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "কাজী কাদের নেওয়াজ",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "কাজী নজরুল ইসলাম",
+        "is_correct": false,
+        "why_wrong": "'সংকল্প' কবিতার কবি তিনি, এই কবিতার নন।"
+      },
+      {
+        "option_id": "গ",
+        "text": "রবীন্দ্রনাথ ঠাকুর",
+        "is_correct": false,
+        "why_wrong": "'ইচ্ছামতী' কবিতার কবি তিনি।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "আল মাহমুদ",
+        "is_correct": false,
+        "why_wrong": "'পাখির মতো' কবিতার কবি তিনি।"
+      }
+    ]
+  }
+}

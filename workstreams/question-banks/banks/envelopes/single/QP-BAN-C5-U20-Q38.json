@@ -1,0 +1,45 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-01",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q38",
+    "topic_tag": "TOP-BAN-C5-01",
+    "ref19_topic_id": "BAN-WORDREL",
+    "question_text": "'প্রাতে' — পাঠ ২০-এর শব্দতালিকায় থাকা এই শব্দটির বিপরীত শব্দ লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "answer_key": {
+      "accepted": [
+        "সন্ধ্যায়",
+        "রাতে"
+      ],
+      "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (CD-136(b)) — এটি বাংলা ভাষার সাধারণ তথ্য, পাঠ ২০ এর উত্তর ছাপে না। উদ্দীপকের শব্দ পাঠ ২০ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ বিপরীত শব্দ গ্রহণযোগ্য।"
+    }
+  }
+}

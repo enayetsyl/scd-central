@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q54",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'শিক্ষাগুরুর মর্যাদা' কবিতার মূলভাব নিজের ভাষায় লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "পুরো কবিতা থেকে মূল ভাব বের করে আনা — শিক্ষকের মর্যাদা রাজার মর্যাদার চেয়েও উঁচু এবং জ্ঞানকে সম্মান করা সবার কর্তব্য; এবং চরণে পানি ঢালার ঘটনাটিকে অনুসরণীয় আচার হিসেবে উপস্থাপন না করা",
+          "band_descriptors": {
+            "সম্পূর্ণ": "মূলভাব নিজের ভাষায় লেখা হয়েছে, কবিতার চরণ হুবহু না তুলে; শিক্ষকের মর্যাদা, জ্ঞানের সম্মান এবং বাদশাহর উদারতা — এই দিকগুলো এসেছে এবং ঘটনাটি সম্মানের রূপক হিসেবেই বোঝানো হয়েছে।",
+            "আংশিক": "কবিতার ঘটনা কেবল আবার বলা হয়েছে, মূলভাব আসেনি; অথবা চরণ ধোয়ার আচারটিকেই কবিতার শিক্ষা বলে লেখা হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

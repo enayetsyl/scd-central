@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q30",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "শাহজাদা গুরুর চরণে কী ঢালছিলেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "বারি বা পানি",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "সুগন্ধি তেল",
+        "is_correct": false,
+        "why_wrong": "তেলের কথা কবিতায় নেই।"
+      },
+      {
+        "option_id": "গ",
+        "text": "ফুলের পাপড়ি",
+        "is_correct": false,
+        "why_wrong": "ফুলের কথা কবিতায় নেই।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "দুধ",
+        "is_correct": false,
+        "why_wrong": "দুধের কথা কবিতায় নেই।"
+      }
+    ]
+  }
+}

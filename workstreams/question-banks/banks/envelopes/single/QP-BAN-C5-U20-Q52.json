@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Create",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q52",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "শিক্ষকের প্রতি একজন শিক্ষার্থীর কীভাবে সম্মান দেখানো উচিত — নিজের ভাষায় লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Create",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "শিক্ষার্থী নিজের জীবনের বাস্তব আচরণের কথা লিখেছে কি না, এবং কবিতার চরণ ধোয়ার ঘটনাটিকে অনুকরণীয় আচার হিসেবে না নিয়ে সম্মানের রূপক হিসেবেই বুঝেছে কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "সালাম ও অভিবাদন, মনোযোগ দিয়ে পড়া শোনা, আদব রক্ষা করে কথা বলা, শিক্ষকের নির্দেশ মেনে চলা — এমন অন্তত তিনটি বাস্তব আচরণ নিজের ভাষায় লেখা হয়েছে এবং চরণ ধোয়ার আচারটিকে অনুকরণীয় বলে দেখানো হয়নি।",
+            "আংশিক": "কেবল কবিতার ঘটনাই আবার লেখা হয়েছে, নিজের আচরণের কথা আসেনি; অথবা চরণ ধোয়াকেই সম্মান দেখানোর নিয়ম বলে লেখা হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

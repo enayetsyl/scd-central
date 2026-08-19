@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q53",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'আজ হতে চির উন্নত হলো শিক্ষাগুরুর শির' — চরণটির তাৎপর্য ব্যাখ্যা করো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "চরণটির অর্থ ঘটনার সঙ্গে মিলিয়ে ব্যাখ্যা করা হয়েছে কি না, এবং শিক্ষকের মর্যাদাকে জ্ঞানের মর্যাদা হিসেবে দেখানো হয়েছে কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "বাদশাহর স্বীকৃতির ফলে শিক্ষকের মর্যাদা চিরকালের জন্য উঁচু হলো — এই অর্থ ঘটনার সঙ্গে মিলিয়ে লেখা হয়েছে, এবং জ্ঞানকে সম্মান করার কথা এসেছে।",
+            "আংশিক": "চরণটির আক্ষরিক অনুবাদ করা হয়েছে, তাৎপর্য আসেনি; অথবা ঘটনার সঙ্গে যোগ দেখানো হয়নি।"
+          }
+        }
+      ]
+    }
+  }
+}

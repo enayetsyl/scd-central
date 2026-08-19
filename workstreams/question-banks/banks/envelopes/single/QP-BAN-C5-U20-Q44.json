@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q44",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "শিক্ষক কী ভেবে মনে সাহস পেলেন?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "answer_key": {
+      "accepted": [
+        "শিক্ষক ভাবলেন, শিক্ষক সবার শ্রেষ্ঠ; প্রাণের চেয়েও মান বড়ো। তাই তিনি ভয় না করে বাদশাহর সামনে শাস্ত্রের কথা বলবেন বলে ঠিক করলেন।"
+      ],
+      "model_note": "দুটি ভাব এলেই পূর্ণ নম্বর — শিক্ষকের শ্রেষ্ঠত্ব, আর প্রাণের চেয়ে মান বড়ো।"
+    }
+  }
+}

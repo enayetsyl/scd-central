@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q47",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "'প্রাণের চেয়েও মান বড়ো' — কথাটি দিয়ে শিক্ষক কী বোঝাতে চেয়েছেন?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "answer_key": {
+      "accepted": [
+        "শিক্ষক বোঝাতে চেয়েছেন, জীবন হারানোর ভয়ের চেয়েও নিজের সম্মান ও শিক্ষকের মর্যাদা রক্ষা করা তাঁর কাছে বড়ো; তাই তিনি ভয় না করে সত্য কথা বলবেন।"
+      ],
+      "model_note": "মর্যাদাকে প্রাণের ওপরে স্থান দেওয়ার ভাবটি ধরা পড়লেই পূর্ণ নম্বর।"
+    }
+  }
+}

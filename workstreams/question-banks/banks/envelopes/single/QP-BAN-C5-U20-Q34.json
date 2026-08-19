@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q34",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "বাদশাহর আসল অভিযোগ কী ছিল?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "শাহজাদা শিক্ষকের প্রতি যতটুকু সম্মান দেখানো উচিত ছিল ততটুকু দেখায়নি",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "শাহজাদা একদম পড়তে চায় না",
+        "is_correct": false,
+        "why_wrong": "পড়তে না চাওয়ার কথা কবিতায় নেই।"
+      },
+      {
+        "option_id": "গ",
+        "text": "শিক্ষক দেরি করে আসেন",
+        "is_correct": false,
+        "why_wrong": "দেরির কোনো প্রসঙ্গ কবিতায় নেই।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "শিক্ষক শাহজাদাকে বকেছেন",
+        "is_correct": false,
+        "why_wrong": "বকার কথা কবিতায় নেই।"
+      }
+    ]
+  }
+}

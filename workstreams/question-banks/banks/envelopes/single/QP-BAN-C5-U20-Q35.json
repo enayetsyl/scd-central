@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q35",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "কবিতার শেষে শিক্ষক বাদশাহকে কী বললেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "বাদশাহ মহান ও উদার, আর আজ থেকে শিক্ষাগুরুর শির চির উন্নত হলো",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "তিনি আর পড়াবেন না",
+        "is_correct": false,
+        "why_wrong": "পড়ানো ছাড়ার কথা কবিতায় নেই।"
+      },
+      {
+        "option_id": "গ",
+        "text": "তিনি দিল্লি ছেড়ে যাবেন",
+        "is_correct": false,
+        "why_wrong": "দিল্লি ছাড়ার কথা কবিতায় নেই।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "তিনি শাহজাদাকে শাস্তি দেবেন",
+        "is_correct": false,
+        "why_wrong": "শাস্তির কথা কবিতায় নেই।"
+      }
+    ]
+  }
+}

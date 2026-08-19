@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q51",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "বাদশাহ আলমগীরের চরিত্রের যে গুণগুলো এই কবিতায় ফুটে উঠেছে তা লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Evaluate",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "গুণগুলো কবিতার ঘটনা থেকেই দেখানো হয়েছে কি না, এবং বাদশাহকে অতিমানবীয় বা অলৌকিক করে না দেখিয়ে ন্যায়পরায়ণ ও বিনয়ী মানুষ হিসেবে দেখানো হয়েছে কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "মহত্ত্ব, উদারতা, শিক্ষকের প্রতি শ্রদ্ধা ও সন্তানের শিক্ষার প্রতি যত্ন — অন্তত তিনটি গুণ কবিতার ঘটনা দিয়ে বুঝিয়ে লেখা হয়েছে।",
+            "আংশিক": "গুণের নাম লেখা হয়েছে কিন্তু কবিতার ঘটনা থেকে দেখানো হয়নি; অথবা একটিমাত্র গুণ এসেছে।"
+          }
+        }
+      ]
+    }
+  }
+}

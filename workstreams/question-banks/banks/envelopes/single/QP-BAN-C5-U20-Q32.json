@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q32",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "পাঠ ২০ অনুযায়ী শিক্ষক কোন কথা মনে করে নিজের ভয় কাটিয়ে উঠলেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "শিক্ষক সবার শ্রেষ্ঠ, তাই ভয়ের কিছু নেই",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "বাদশাহ তাঁর আত্মীয়",
+        "is_correct": false,
+        "why_wrong": "আত্মীয়তার কথা কবিতায় নেই।"
+      },
+      {
+        "option_id": "গ",
+        "text": "শাহজাদা তাঁকে বাঁচিয়ে দেবে",
+        "is_correct": false,
+        "why_wrong": "শাহজাদার সাহায্যের কথা কবিতায় নেই।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "দূত তাঁর পরিচিত",
+        "is_correct": false,
+        "why_wrong": "দূতের সঙ্গে পরিচয়ের কথা কবিতায় নেই।"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q50",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "শিক্ষকের ভয় ও পরে সাহস পাওয়ার কারণ দুটি ব্যাখ্যা করো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "islamic_alignment",
+          "criterion": "ভয় ও সাহস — দুটি আলাদা কারণ আলাদা করে ব্যাখ্যা করা হয়েছে কি না, এবং সাহসের ভিত্তি হিসেবে শিক্ষকের মর্যাদা ও সত্য বলার দায়িত্ব এসেছে কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "ভয়ের কারণ (বাদশাহর ছেলেকে দিয়ে সেবা নেওয়ায় অপরাধের আশঙ্কা) ও সাহসের কারণ (শিক্ষক সবার শ্রেষ্ঠ, প্রাণের চেয়ে মান বড়ো) — দুটিই নিজের ভাষায় গুছিয়ে লেখা হয়েছে।",
+            "আংশিক": "কেবল ভয় বা কেবল সাহসের কথা এসেছে; অথবা কারণ না লিখে শুধু ঘটনা বর্ণনা করা হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

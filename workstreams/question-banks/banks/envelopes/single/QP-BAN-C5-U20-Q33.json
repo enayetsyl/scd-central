@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q33",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "বাদশাহ শিক্ষককে কোথায় ডেকে নিলেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "কেল্লার খাস কামরায়",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "মক্তবের বারান্দায়",
+        "is_correct": false,
+        "why_wrong": "মক্তবের কথা কবিতায় নেই।"
+      },
+      {
+        "option_id": "গ",
+        "text": "বাগানের ছায়ায়",
+        "is_correct": false,
+        "why_wrong": "বাগানের কথা কবিতায় নেই।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "নদীর ঘাটে",
+        "is_correct": false,
+        "why_wrong": "নদীর কথা কবিতায় নেই।"
+      }
+    ]
+  }
+}

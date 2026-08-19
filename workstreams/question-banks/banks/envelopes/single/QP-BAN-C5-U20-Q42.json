@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 20,
+    "title": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-05",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_Bangla_Source_13-23.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U20-Q42",
+    "topic_tag": "TOP-BAN-C5-05",
+    "ref19_topic_id": "BAN-POEM",
+    "question_text": "বাদশাহর ছেলে পানি ঢেলে দেওয়ার সময় শিক্ষক কী করছিলেন?",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 2,
+    "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
+    "answer_key": {
+      "accepted": [
+        "শিক্ষক নিজের হাত দিয়েই নিজের পায়ের ধুলা ধুয়ে-মুছে পরিষ্কার করছিলেন।"
+      ],
+      "model_note": "শিক্ষক নিজেই নিজের পা পরিষ্কার করছিলেন — এটুকু ধরা পড়লেই যথেষ্ট।"
+    }
+  }
+}
