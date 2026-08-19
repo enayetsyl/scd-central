@@ -35,6 +35,14 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+# TOOLS-CR-012: the runner set PYTHONIOENCODING for its CHILDREN but not itself, so any
+# redirect or pipe killed it on the first Bengali character. A4's hook runs it piped.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8")
+    except Exception:                                               # noqa: BLE001
+        pass
+
 ROOT = Path(os.environ.get("SCD_ROOT") or Path(__file__).resolve().parents[1])
 
 # Repo-wide hygiene gates: no required argument, verdict is repo-scoped.
@@ -123,10 +131,126 @@ def parse_bank_output(text):
     return facts
 
 
+# A2 · Principal, 2026-08-19. Files under canon/sources/ that are NOT extractions and
+# therefore cannot carry a `**\u098f\u0987 \u09ab\u09be\u0987\u09b2\u09c7\u09b0 \u0985\u0982\u09b6:**` scope line or a spot-check sign-off.
+# source_check judges them RED by construction. They are EXEMPTED BY NAME, never by
+# pattern: a rule like "skip anything without _Source_ in the name" would silently drop
+# a real extraction that was misnamed, which is the failure this whole lane exists to
+# prevent. Each entry carries its reason, and each is PRINTED on every run.
+EXEMPT_SOURCES = {
+    "canon/sources/README.md":
+        "lane README \u2014 explains the directory, extracts nothing",
+    "canon/sources/c5/english/evidence/TEXTLAYER_ARTEFACTS_U11_U12_2026-08-09.md":
+        "evidence note \u2014 records a text-layer artefact, is not a source extraction",
+    "canon/sources/c5/english/evidence/TEXTLAYER_ARTEFACTS_U17_U19_2026-08-09.md":
+        "evidence note \u2014 records a text-layer artefact, is not a source extraction",
+}
+
+
+def run_sources():
+    """Walk canon/sources/**/*.md and judge each with source_check.py.
+
+    A2. Five of eleven tools/audits scripts take a path argument and are run by
+    nothing in a default pass; that is how a Principal-ruled source_check fix sat
+    uncommitted for two days while every gate run reported clean.
+
+    THE SKIP (CD-152(d)). Files carrying source_check's own UNDER_CONSTRUCTION
+    literal are held out and NAMED BEFORE THE VERDICT. A naive walk reddens 92 of
+    126 in-progress files permanently, and a permanently red gate is one everybody
+    learns to wave through.
+
+    THE CODE MAP. source_check.py returns 2=FAIL, 1=PENDING(sign-off owed), 0=GREEN.
+    run_all.py reads 1=FAILED and anything else=REFUSED. The two are INVERTED, so a
+    red source would record as REFUSED and a merely unsigned one as FAILED. This
+    function maps at the boundary and does not touch source_check.py.
+
+    PENDING IS REPORTED, NOT FAILED (Principal, 2026-08-19). Sign-off is a human
+    step; failing on it would make the gate permanently red for the same reason the
+    skip exists. Every unsigned file is named.
+
+    Every judged file is named whatever its verdict, including the three that are not
+    extractions at all (README, evidence/) and cannot satisfy a scope line (Principal
+    ruled them judged and listed rather than filtered out, 2026-08-19).
+    """
+    marker = "**\u0985\u09ac\u09b8\u09cd\u09a5\u09be:** \u09a8\u09bf\u09b0\u09cd\u09ae\u09be\u09a3\u09be\u09a7\u09c0\u09a8"
+    script = ROOT / "tools/audits/source_check.py"
+    if not script.exists():
+        return {"gate": "SOURCES", "script": "tools/audits/source_check.py",
+                "script_sha256": None, "exit_code": 2, "elapsed_s": 0.0, "stdout": "",
+                "error": f"gate script not found at {script}"}
+
+    t0 = time.time()
+    files = sorted((ROOT / "canon/sources").rglob("*.md"))
+    held = [f for f in files if marker in f.read_text(encoding="utf-8", errors="replace")]
+    exempt = [f for f in files
+              if f not in held and f.relative_to(ROOT).as_posix() in EXEMPT_SOURCES]
+    judged = [f for f in files if f not in held and f not in exempt]
+
+    env = dict(os.environ, PYTHONIOENCODING="utf-8", SCD_ROOT=str(ROOT))
+    rows = []
+    for f in judged:
+        p = subprocess.run([sys.executable, str(script), str(f)], capture_output=True,
+                           text=True, encoding="utf-8", errors="replace", env=env, cwd=str(ROOT))
+        rows.append((f, p.returncode, (p.stdout or "") + (p.stderr or "")))
+
+    red = [f for f, c, _ in rows if c == 2]
+    pending = [f for f, c, _ in rows if c == 1]
+    green = [f for f, c, _ in rows if c == 0]
+    odd = [(f, c) for f, c, _ in rows if c not in (0, 1, 2)]
+
+    out = []
+    out.append(f"source pass — canon/sources/**/*.md   ({len(files)} file(s))")
+    out.append("-" * 78)
+    out.append(f"HELD OUT — carry the \u09a8\u09bf\u09b0\u09cd\u09ae\u09be\u09a3\u09be\u09a7\u09c0\u09a8 marker, not judged: {len(held)}")
+    for f in held:
+        out.append(f"  SKIP     {f.relative_to(ROOT).as_posix()}")
+    out.append("-" * 78)
+    out.append(f"EXEMPT \u2014 not extractions, cannot satisfy \u00a75; named individually, never by pattern: {len(exempt)}")
+    for f in exempt:
+        rel = f.relative_to(ROOT).as_posix()
+        out.append(f"  EXEMPT   {rel}")
+        out.append(f"           reason: {EXEMPT_SOURCES[rel]}")
+    for rel in sorted(EXEMPT_SOURCES):
+        if not (ROOT / rel).exists():
+            out.append(f"  STALE    {rel} \u2014 exempted but no longer on disk; the list has drifted")
+    out.append("-" * 78)
+    out.append(f"JUDGED: {len(judged)}")
+    for f, c, _ in rows:
+        label = {0: "GREEN", 1: "PENDING", 2: "FAIL"}.get(c, f"EXIT-{c}")
+        out.append(f"  {label:8} {f.relative_to(ROOT).as_posix()}")
+    out.append("-" * 78)
+    if pending:
+        out.append(f"PENDING — mechanical checks pass, spot-check sign-off owed: {len(pending)}")
+        out.append("  REPORTED, NOT FAILED (Principal, 2026-08-19). Sign-off is a human step.")
+        for f in pending:
+            out.append(f"  PENDING  {f.relative_to(ROOT).as_posix()}")
+    for f, c in odd:
+        out.append(f"  UNEXPECTED EXIT {c} — {f.relative_to(ROOT).as_posix()}")
+    out.append(f"SOURCES: {len(green)} green \u00b7 {len(pending)} pending \u00b7 {len(red)} fail "
+               f"\u00b7 {len(held)} held out \u00b7 {len(exempt)} exempt \u00b7 {len(files)} total")
+    if red or odd:
+        out.append("RESULT: FAIL")
+        code = 1
+    else:
+        out.append("RESULT: CLEAN (0 failures)")
+        code = 0
+
+    return {"gate": "SOURCES", "script": "tools/audits/source_check.py",
+            "script_sha256": sha256(script), "exit_code": code,
+            "elapsed_s": round(time.time() - t0, 1), "stdout": "\n".join(out),
+            "sources": {"total": len(files), "held_out": len(held),
+                        "exempt": {f.relative_to(ROOT).as_posix(): EXEMPT_SOURCES[f.relative_to(ROOT).as_posix()] for f in exempt},
+                        "green": [f.relative_to(ROOT).as_posix() for f in green],
+                        "pending": [f.relative_to(ROOT).as_posix() for f in pending],
+                        "fail": [f.relative_to(ROOT).as_posix() for f in red]}}
+
+
 def main():
     ap = argparse.ArgumentParser(description="Run the scd-central gate suite and emit a receipt")
     ap.add_argument("--bank", help="path to a question-bank JSON (artifact lane)")
     ap.add_argument("--repo", action="store_true", help="run the repo-wide hygiene gates + bank sweep")
+    ap.add_argument("--sources", action="store_true",
+                    help="judge canon/sources/**/*.md (A2); implied by --repo")
     ap.add_argument("--receipt", help="write the run receipt JSON here")
     ap.add_argument("--quiet", action="store_true", help="suppress gate stdout (receipt still carries it verbatim)")
     args = ap.parse_args()
@@ -135,8 +259,8 @@ def main():
     # receipt into the tree. Assembly-time made the field describe its own output.
     tree_dirty_at_start = bool(git("status", "--porcelain"))
 
-    if not args.bank and not args.repo:
-        ap.error("nothing to run: pass --bank <path> and/or --repo")
+    if not args.bank and not args.repo and not args.sources:
+        ap.error("nothing to run: pass --bank <path> and/or --repo and/or --sources")
 
     rows = []
 
@@ -152,6 +276,12 @@ def main():
     if args.repo:
         for name, argv in REPO_GATES:
             rows.append(run_gate(name, argv))
+
+    # Principal, 2026-08-19: --repo RUNS the source pass. A2 exists because a script
+    # nobody runs by default is how a ruled fix sat uncommitted for two days; keeping
+    # --sources opt-in would move that same risk onto whoever writes the hook line.
+    if args.sources or args.repo:
+        rows.append(run_sources())
 
     for r in rows:
         if not args.quiet:
