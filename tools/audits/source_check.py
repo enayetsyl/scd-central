@@ -46,6 +46,15 @@ SPINE = {
     "BAN": REPO / "canon/marklogic/MarkLogic_BAN_Spine.md",
     "MATH": REPO / "canon/marklogic/MarkLogic_MATH_Spine.md",
     "SCI-BGS": REPO / "canon/marklogic/MarkLogic_SCI_BGS_Spine.md",
+    # The filename is the subject token, and no file is ever named `C5_SCI-BGS_Source_NN.md`.
+    # `parse_subject` reads `C5_BGS_Source_01.md` as `BGS` and `C5_SCI_Source_01.md` as `SCI`,
+    # so the combined key matched neither and SLOTS reported "no spine file registered" on
+    # thirty-one correct extractions — a gate reporting red for a reason that has nothing to
+    # do with the book (the same failure mode §7.17 and the UNIT_RE fix already cost us once).
+    # The two subjects share one spine file; that is the spine's shape, not the gate's licence
+    # to be unreachable. Both tokens resolve to it. (Principal ruling 2026-08-17.)
+    "BGS": REPO / "canon/marklogic/MarkLogic_SCI_BGS_Spine.md",
+    "SCI": REPO / "canon/marklogic/MarkLogic_SCI_BGS_Spine.md",
 }
 
 BN_DIGITS = str.maketrans("০১২৩৪৫৬৭৮৯", "0123456789")
