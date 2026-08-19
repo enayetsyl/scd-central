@@ -121,6 +121,15 @@ import re
 import sys
 import tempfile
 from pathlib import Path
+# TOOLS-CR-013: a gate run DIRECTLY (not through run_all.py) inherits Windows' cp1252
+# and dies on the first Bengali character the moment its output is piped or redirected.
+# run_all.py sets PYTHONIOENCODING for its children, which masks this from the suite.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8")
+    except Exception:  # noqa: BLE001
+        pass
+
 
 ROOT = Path(__file__).resolve().parents[2]
 
