@@ -27,6 +27,7 @@ import argparse
 import hashlib
 import json
 import os
+import platform
 import re
 import subprocess
 import sys
@@ -65,6 +66,17 @@ def git(*args):
                               capture_output=True, text=True, timeout=30).stdout.strip()
     except Exception:
         return ""
+
+
+def git_config(key):
+    """One git config key. None means UNSET, which is distinct from set-to-empty.
+    A1: two receipts disagreeing is only diagnosable if each records its machine."""
+    try:
+        p = subprocess.run(["git", "-C", str(ROOT), "config", "--get", key],
+                           capture_output=True, text=True, timeout=30)
+    except Exception:
+        return None
+    return p.stdout.strip() if p.returncode == 0 else None
 
 
 def run_gate(name, argv, extra=None):
@@ -148,13 +160,17 @@ def main():
     refused = [r["gate"] for r in rows if r["exit_code"] not in (0, 1)]
 
     receipt = {
-        "run_all_version": "1",
+        "run_all_version": "2",
         "run_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "root": str(ROOT),
         "git": {"head": git("rev-parse", "HEAD"),
                 "branch": git("rev-parse", "--abbrev-ref", "HEAD"),
                 "dirty": bool(git("status", "--porcelain"))},
         "python": sys.version.split()[0],
+        "machine": {"platform": sys.platform,
+                    "os": platform.platform(),
+                    "core.symlinks": git_config("core.symlinks"),
+                    "core.autocrlf": git_config("core.autocrlf")},
         "artifact": None,
         "gates": rows,
         "failed": failed,
