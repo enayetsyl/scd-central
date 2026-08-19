@@ -1,7 +1,8 @@
-# AGENTS.md — scd-central canonical protocol · v1.4
+# AGENTS.md — scd-central canonical protocol · v1.5
 
-Every agent session (Claude Cowork, Claude Code, Codex, or any other tool) in this repository
-follows this file. `CLAUDE.md` is a pointer here. Per-workstream rules live in
+Every session in this repository follows this file. **The chat lane (BUILD · REVIEW · SWEEP) is
+the routine lane for authoring; Claude Cowork, Claude Code, Codex and any other agent tool are
+exceptions-only (CD-177).** `CLAUDE.md` is a pointer here. Per-workstream rules live in
 `workstreams/<name>/LOCAL.md`, read AFTER this file; a LOCAL.md may tighten this protocol,
 never loosen it. This protocol generalizes the field-proven EnglishDrive CLAUDE.md.
 
@@ -20,12 +21,25 @@ absolute no-crossover). `archive/old-account/` is read-only provenance.
 - **Agent** — proposes, executes gates, logs, never self-approves, never improvises policy.
 
 **Never two agents on one workstream simultaneously.** Different workstreams in parallel are
-fine. Each tool commits under its own identity (e.g. `scd-agent-cowork`, `scd-agent-codex`);
-each device uses its own fine-grained PAT embedded in the remote URL.
+fine. **Each agent tool commits under its own identity** (e.g. `scd-agent-cowork`,
+`scd-agent-codex`); **the chat lane commits under the Principal's own identity**, which is what
+distinguishes a chat commit from every `scd-agent-*` commit in `git log`.
+
+**Credentials: SSH, via the per-device host alias recorded in `SETUP.md`. The former practice —
+a fine-grained PAT embedded in the remote URL — is SUPERSEDED (CD-177).** The PAT was revoked
+2026-08-19; a PAT in the remote URL is printed in plain text by `git remote -v`, the most
+commonly run diagnostic in this repo.
 
 ## 3. Session protocol
 
-**Start:** `git pull` first — on any conflict, STOP and report; never resolve silently.
+**Start — by lane.**
+
+- **Chat lanes (BUILD · REVIEW · SWEEP): fresh clone, never `git pull`.** A chat holds no
+  persistent tree to pull into. `git log --oneline -1` from that clone is pasted verbatim as the
+  first line of the receipt, and code execution is a declared precondition of BUILD (CD-177).
+- **Cowork, Codex and local Principal sessions: `git pull` first** — on any conflict, STOP and
+  report; never resolve silently.
+
 Read order: AGENTS.md → the workstream's LOCAL.md → its `_wip/STATE.md` → its DECISIONS.md
 tail → its corrections ledger (if present) → PENDING_PRINCIPAL.md (rows for this workstream).
 
