@@ -131,6 +131,10 @@ def main():
     ap.add_argument("--quiet", action="store_true", help="suppress gate stdout (receipt still carries it verbatim)")
     args = ap.parse_args()
 
+    # TOOLS-CR-011: read BEFORE any gate runs and before this run writes its own
+    # receipt into the tree. Assembly-time made the field describe its own output.
+    tree_dirty_at_start = bool(git("status", "--porcelain"))
+
     if not args.bank and not args.repo:
         ap.error("nothing to run: pass --bank <path> and/or --repo")
 
@@ -165,7 +169,7 @@ def main():
         "root": str(ROOT),
         "git": {"head": git("rev-parse", "HEAD"),
                 "branch": git("rev-parse", "--abbrev-ref", "HEAD"),
-                "dirty": bool(git("status", "--porcelain"))},
+                "dirty": tree_dirty_at_start},
         "python": sys.version.split()[0],
         "machine": {"platform": sys.platform,
                     "os": platform.platform(),
