@@ -82,14 +82,36 @@ Exit 0 = CLEAN, 1 = FAIL. Paste output verbatim per AGENTS.md §5.
 """
 import hashlib
 import json
+import os
 import re
 import sys
 import unicodedata
 from pathlib import Path
+def _resolve_root():
+    """Repo root. SCD_ROOT overrides; the committed-path default is unchanged.
 
-ROOT = Path(__file__).resolve().parents[3]
+    CD-175. parents[3] only resolves at this file's committed depth, so run_all.py
+    exported SCD_ROOT to every child while gates.py ignored it.
+
+    THE OVERRIDE IS VERIFIED, NOT TRUSTED. Eighteen sites read canon, the slot
+    register, TOPIC_NUMBERS, PENDING_PRINCIPAL and live banks off this value, and
+    two are inside the selftest. A wrong root would not error — it would read a
+    different corpus and report PASS.
+    """
+    env = os.environ.get("SCD_ROOT")
+    if not env:
+        return Path(__file__).resolve().parents[3]
+    p = Path(env).resolve()
+    missing = [m for m in ("canon", "workstreams", "tools") if not (p / m).is_dir()]
+    if missing:
+        sys.stderr.write(
+            f"gates.py: SCD_ROOT={p} does not look like scd-central "
+            f"(missing: {', '.join(missing)}). REFUSED — no verdict reached (§7.17).\n")
+        sys.exit(2)
+    return p
 
 
+ROOT = _resolve_root()
 # =================================================================================
 # CONSTANTS — QUESTION_BANK_POLICY §5 family
 # =================================================================================
