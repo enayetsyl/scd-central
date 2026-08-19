@@ -1,0 +1,53 @@
+#!/bin/sh
+# tools/hooks/pre-push — CD-176. The CI substitute.
+#
+# Install:  cp tools/hooks/pre-push .git/hooks/pre-push && chmod +x .git/hooks/pre-push
+# .git/hooks/ is not tracked, so this file is the source of truth and the installed
+# copy is a copy. Re-install after any change here.
+#
+# Blocks unless run_all.py prints RUNALL_SENTINEL=CLEAN as its last line AND exits 0.
+# Anything else — FAIL, REFUSED, a crash, an encoding death, a bad interpreter, a
+# mis-invocation — produces no CLEAN sentinel and blocks. Absence is a refusal.
+# Bypass is `git push --no-verify`, which is a deliberate act and leaves no receipt.
+
+PY="${SCD_PYTHON:-python}"
+
+if ! command -v "$PY" >/dev/null 2>&1; then
+    echo "pre-push BLOCKED: interpreter '$PY' not found on the hook's PATH." >&2
+    echo "  Set SCD_PYTHON to a full path, e.g. /c/Users/HP/anaconda3/python.exe" >&2
+    exit 1
+fi
+
+OUT="$(mktemp)" || { echo "pre-push BLOCKED: mktemp failed." >&2; exit 1; }
+
+"$PY" tools/run_all.py --repo >"$OUT" 2>&1
+RC=$?
+
+cat "$OUT"
+
+SENT="$(grep '^RUNALL_SENTINEL=' "$OUT" | tail -n 1)"
+rm -f "$OUT"
+
+if [ -z "$SENT" ]; then
+    echo "" >&2
+    echo "pre-push BLOCKED: no RUNALL_SENTINEL line (exit $RC)." >&2
+    echo "  The suite reached no verdict. SOURCE_POLICY 7.17: that is not a pass." >&2
+    exit 1
+fi
+
+if [ "$SENT" != "RUNALL_SENTINEL=CLEAN" ]; then
+    echo "" >&2
+    echo "pre-push BLOCKED: $SENT (exit $RC)." >&2
+    exit 1
+fi
+
+if [ "$RC" -ne 0 ]; then
+    echo "" >&2
+    echo "pre-push BLOCKED: sentinel says CLEAN but exit was $RC." >&2
+    echo "  Sentinel and exit code disagree. Report this; do not bypass." >&2
+    exit 1
+fi
+
+echo ""
+echo "pre-push: suite CLEAN — push allowed."
+exit 0
