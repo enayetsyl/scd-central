@@ -475,6 +475,53 @@ declaration is a header convention shared across subjects, so the exposure is no
 
 **Status: OPEN. Not built mid-chapter.**
 
+### Widened again, 2026-08-20 — a THIRD door, and twelve live files are standing in it.
+
+**The same switch-off is reachable by NO DECLARATION AT ALL.** `check_depth` at
+`source_check.py:545` reads `if SINGLE_CHANNEL not in text: return "PASS", "dual-channel source
+— §7.4 sampling depth governs, nothing to enforce here"`. **A file that says nothing about its
+channel count is therefore reported as a POSITIVE CLAIM IT NEVER MADE.** P-023's first door was
+a WRONG declaration (`দুই`); this door is an ABSENT one, and it is worse in the way that matters:
+CR-008's `দুই` was a word somebody typed and could be found by reading headers, whereas an
+absence is invisible to every sweep that looks at declarations.
+
+**TWELVE LIVE FILES ARE IN THAT STATE RIGHT NOW.** Measured at source 2026-08-20:
+`C5_BAN_Source_12.md` through `C5_BAN_Source_23.md` carry **no `যাচাই-চ্যানেল` line at all**;
+`C5_BAN_Source_01.md` through `_11.md` **all declare `একক`**. Same book, same subject, same class
+— *আমার বাংলা বই*, পঞ্চম শ্রেণি, the §7.7 book measured at 421 extractable characters across 142
+pages. **DEPTH has never run on any of the twelve, and `SOURCES` reports them green while saying
+they are dual-channel.**
+
+**THE BOUNDARY IS THE SCHEMA SPLIT, WHICH LOCATES THE CAUSE RATHER THAN LEAVING IT A MYSTERY.**
+The twelve are schema B (CD-185): `## সই-ছক` with columns `| অংশ | পাতা | পরীক্ষক | তারিখ |
+অবস্থা |`. The eleven are schema A: `## স্পট-চেক সই` with `| যাচাই করার অংশ | ছাপা পৃষ্ঠা |
+গভীরতা | সই | তারিখ |`. **CD-185 widened `source_check` to JUDGE schema B and recorded `DEPTH is
+unchanged` — which was true of the code and is exactly the gap: the clause was not carried
+across, so schema B has no depth vocabulary and no declaration.** Schema B's sign-off table has
+**no `গভীরতা` column at all**, so there is nothing for DEPTH to read even once it is switched on.
+
+**CONSEQUENCE FOR THE SWEEP SCOPE, WHICH THIS APPEND WIDENS.** P-023 recorded the sweep as
+*every source file carrying a `যাচাই-চ্যানেল` declaration*. **That scope cannot see this case.**
+It is widened to **EVERY source file under `canon/sources/**`, declaration or none** — the files
+that declare nothing are the ones the original scope was structurally unable to reach.
+
+**WHY THIS IS NOT BUILT NOW.** Adding the declaration to the twelve without first giving schema B
+a depth vocabulary would fire DEPTH's missing-column branch (`source_check.py:559`) and turn
+twelve correct files RED — a gate reddening correct work is how a gate gets waved through, which
+is CD-152(d) and the failure P-023 itself is trying to prevent. And supplying that column changes
+what **Sajeda Jannat attested**: she has signed all twelve, and a depth column added after signing
+is a claim made on her behalf that she did not make. **That is a Principal-and-teacher question,
+not a mechanical one, and it is owed a ruling before any file is touched.**
+
+**RELATED, NOT MERGED:** `CD-191` (2026-08-20) found that seven of these same chapters have no
+second channel in the legacy file either, and that **U14 · U16 · U17 · U19** were authored against
+summary prose. **Those four banks sit inside these twelve files.** Two independent checks, both
+reporting green, both reaching nothing — recorded together so the coincidence is legible, but
+they are different defects with different remedies and this row does not merge them.
+
+**Status: OPEN — widened, still not built. (a) and (b) both still owed, now with a third trigger
+and a wider sweep scope.**
+
 ---
 
 ## ⚑ PENDING-P-024 — `bangla_script_check.py` sees Assamese `ৰ`/`ৱ` and nothing else; every other non-Bengali script passes silently in authored text
