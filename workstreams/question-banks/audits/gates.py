@@ -1835,14 +1835,14 @@ def envelope_prefix(qids):
 
 
 def load_envelope_index(bank_path, qids):
-    """→ ({qid: payload}, {qid: payload}, note) — the split `single/` set and the array set.
+    """→ ({qid: payload}, {qid: payload}, batch|None, note) — FOUR values on EVERY path (TOOLS-CR-024) — the split `single/` set and the array set.
 
     Both are read because they are two artifacts that can drift from the bank AND from each other.
     `split_envelopes.py` writes `single/` from the array, so they agree at build time and diverge
     the moment either is regenerated alone.
     """
     if bank_path is None:
-        return None, None, "no bank path in context — the export directory cannot be located"
+        return None, None, None, "no bank path in context — the export directory cannot be located"
     prefix = envelope_prefix(qids)
     if prefix is None:
         return None, None, None, ("this bank's qids do not share one QP-SUBJ-Cn-Uu prefix — the export "
@@ -1870,7 +1870,7 @@ def load_envelope_index(bank_path, qids):
         try:
             batch = json.loads(batch_path.read_text(encoding="utf-8"))
         except Exception as e:  # noqa: BLE001
-            return None, None, f"{batch_path.as_posix()} is unreadable: {e}"
+            return None, None, None, f"{batch_path.as_posix()} is unreadable: {e}"
     sing = {}
     if single.exists():
         for f in sorted(single.glob(prefix + "*.json")):
