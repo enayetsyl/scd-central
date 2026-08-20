@@ -223,8 +223,14 @@ def run_sources():
         out.append(f"  {label:8} {f.relative_to(ROOT).as_posix()}")
     out.append("-" * 78)
     if pending:
-        out.append(f"PENDING — mechanical checks pass, spot-check sign-off owed: {len(pending)}")
-        out.append("  REPORTED, NOT FAILED (Principal, 2026-08-19). Sign-off is a human step.")
+        out.append(f"PENDING — mechanical checks pass; a human step or a declaration is owed: {len(pending)}")
+        out.append("  REPORTED, NOT FAILED (Principal, 2026-08-19). TWO CAUSES REACH THIS LIST "
+                   "and this line does not distinguish them: (i) spot-check sign-off owed "
+                   "— a human step; (ii) no `যাচাই-চ্যানেল` declaration, so DEPTH did not "
+                   "judge (TOOLS-CR-026). Both return exit 1 from source_check.py, so the "
+                   "reason per file is NOT AVAILABLE HERE. Read the file's own gate lines "
+                   "for which applies. Splitting them needs the exit-code contract widened "
+                   "— deliberately not done (TOOLS-CR-026).")
         for f in pending:
             out.append(f"  PENDING  {f.relative_to(ROOT).as_posix()}")
     for f, c in odd:
