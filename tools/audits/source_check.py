@@ -107,6 +107,99 @@ def parse_scope(text: str):
     return list(range(lo, hi + 1)), int(pages.group(1)), int(pages.group(2)), word
 
 
+SCHEMA_B_MARK = "## পরিসর"
+
+
+def schema_of(text: str) -> str:
+    r"""`"A"` (the C5_BAN_Source_01–11 shape) or `"B"` (the extraction-prompt shape). CD-185.
+
+    **Two different documents both called "the §5 schema".** Schema A is what this gate was
+    written against and what `canon/sources/c5/bangla/C5_BAN_Source_01–11.md` carry:
+    `**এই ফাইলের অংশ:**`, `## পৃষ্ঠা-অফসেট`, `## স্পট-চেক সই`, `## MarkLogic স্লট মিলকরণ`.
+    Schema B is what the extraction lane has been producing since: `## পরিসর` · `## উৎস-নোট` ·
+    `## পাঠ্য` · `## চিত্র-বাহিত লেখা` · `## ⛔ উৎস-সীমা` · `## সই-ছক`.
+
+    **Detection is on `## পরিসর` and nothing else.** A detector that tried to score both shapes
+    would eventually call a malformed schema-A file schema-B and judge it by the wrong rules —
+    silently, and in the direction that turns a defect into a pass. One unambiguous marker, and
+    a file carrying neither stays schema A and fails RANGE by name as it always did.
+    """
+    return "B" if re.search(r"^## পরিসর\s*$", text, re.M) else "A"
+
+
+def parse_scope_b(text: str):
+    r"""Schema B's `## পরিসর` -> (units, first_page, last_page, word). CD-185.
+
+    The printed folio range is authoritative and the PDF range is split-local — the same rule
+    schema A states in its offset table, carried here in the form schema B writes it.
+    """
+    sec = re.search(r"^## পরিসর.*?(?=^## |\Z)", text, re.M | re.S)
+    if not sec:
+        return None
+    head = re.search(rf"^#\s+.*?({UNIT_RE})\s*(\d+)", dg(text), re.M)
+    pages = re.search(r"ছাপা\s*:?\s*(\d+)\s*[–-]\s*(\d+)", dg(sec.group(0)))
+    if not head or not pages:
+        return None
+    word = head.group(1)
+    u = int(head.group(2))
+    return [u], int(pages.group(1)), int(pages.group(2)), word
+
+
+def check_range_b(text, scope):
+    r"""Schema B states one unit per file, and the title carries it. CD-185."""
+    units, _, _, word = scope
+    if not re.search(r"^## পাঠ্য\s*$", text, re.M):
+        return "FAIL", "no '## পাঠ্য' section — schema B's transcription body is absent"
+    return "PASS", f"stated unit {word} {units[0]}; '## পাঠ্য' present"
+
+
+def check_pages_b(text, scope):
+    r"""Schema B's `### ছাপা NN` headings, monotonic and inside the declared range. CD-185.
+
+    Schema A proves the offset from a verified table; schema B declares the printed range and
+    heads each page. **The property being checked is the same one** — that the transcription
+    walks the book forward and cites no page the file does not cover.
+    """
+    _, first, last, _w = scope
+    heads = [int(x) for x in re.findall(r"^###\s*ছাপা\s*(\d+)", dg(text), re.M)]
+    if not heads:
+        return "FAIL", "no '### ছাপা NN' page headings in '## পাঠ্য'"
+    out = [p for p in heads if not (first <= p <= last)]
+    if out:
+        return "FAIL", f"page heading(s) outside stated range {first}-{last}: {out}"
+    if heads != sorted(heads):
+        return "FAIL", f"page headings are not monotonic: {heads}"
+    if heads[0] != first or heads[-1] != last:
+        return "FAIL", (f"headings run {heads[0]}-{heads[-1]} but the stated range is "
+                        f"{first}-{last} — a range wider than the transcription is a silent gap")
+    return "PASS", (f"{len(heads)} page heading(s) monotonic and exactly covering "
+                    f"{first}-{last}")
+
+
+def check_signoff_b(text):
+    r"""Schema B's `## সই-ছক`. All rows PENDING is the AUTHORED state, not a defect. CD-185.
+
+    §7.9's `নির্মাণাধীন` marker and an all-PENDING সই-ছক are **two different states** and the
+    twelve C5 Bangla extractions arrived carrying both. The marker means *transcription
+    unfinished, resume here*; সই-ছক PENDING means *transcribed, human sign-off owed*. Conflating
+    them held a finished file out of the walk entirely — invisible rather than counted, which is
+    CD-152(d)'s failure with the sign reversed.
+    """
+    m = re.search(r"^## সই-ছক.*?(?=^## |\Z)", text, re.M | re.S)
+    if not m:
+        return "FAIL", "no '## সই-ছক' section"
+    rows = [l for l in m.group(0).splitlines()
+            if l.strip().startswith("|") and not re.match(r"^\|[\s\-:|]+\|$", l.strip())]
+    rows = [l for l in rows if "পরীক্ষক" not in l]
+    if not rows:
+        return "FAIL", "'## সই-ছক' has no rows"
+    pending = [l for l in rows if "PENDING" in l]
+    if pending:
+        return "PENDING", (f"{len(pending)} of {len(rows)} সই-ছক row(s) PENDING — human sign-off "
+                           f"is the only closing mechanism and no script may close them")
+    return "PASS", f"all {len(rows)} সই-ছক row(s) signed"
+
+
 def parse_offset_table(text: str):
     """Rows of the offset table -> [(pdf_page, printed_folio), ...].
 
@@ -232,6 +325,17 @@ def check_slots(text, subject):
         return "FAIL", f"no spine file registered for subject {subject}"
     m = re.search(r"^## MarkLogic স্লট মিলকরণ.*?(?=^## |\Z)", text, re.M | re.S)
     if not m:
+        # CD-185, Principal ruling 2026-08-20 (option (i)). Schema B has no slot section, and
+        # §5's requirement — every spine slot cross-referenced or explicitly marked absent — is
+        # REAL CONTENT, not schema-A decoration. So it is neither passed nor failed: it is
+        # PENDING, the file can never reach GREEN while it is owed, and the debt is counted and
+        # named on every run. **A FAIL here would redden twelve finished transcriptions for a
+        # section nobody has been asked for yet; a PASS would fabricate a cross-reference that
+        # does not exist.** Neither is honest and the middle state already exists.
+        if schema_of(text) == "B":
+            return "PENDING", (f"schema B carries no '## MarkLogic স্লট মিলকরণ' section; "
+                               f"{len(slots)} spine slot(s) for {subject} are neither "
+                               f"cross-referenced nor marked absent. OWED, not failed (CD-185)")
         return "FAIL", "no 'MarkLogic স্লট মিলকরণ' section"
     section = m.group(0)
     cited = set(re.findall(r"([A-Z\-]+-[SL]\d\d)", section))
@@ -506,16 +610,28 @@ def check_depth(text):
 def run(path: Path):
     text = path.read_text(encoding="utf-8")
     cls, subject = parse_subject(path)
-    scope = parse_scope(text)
+    schema = schema_of(text)
     results = []
-    if scope is None:
-        results.append(("RANGE", "FAIL", "cannot read the '**এই ফাইলের অংশ:**' scope line"))
-        results.append(("PAGES", "FAIL", "skipped — scope unreadable"))
+    if schema == "B":
+        scope = parse_scope_b(text)
+        if scope is None:
+            results.append(("RANGE", "FAIL", "cannot read the '## পরিসর' scope section"))
+            results.append(("PAGES", "FAIL", "skipped — scope unreadable"))
+        else:
+            results.append(("RANGE",) + check_range_b(text, scope))
+            results.append(("PAGES",) + check_pages_b(text, scope))
+        results.append(("SLOTS",) + check_slots(text, subject))
+        results.append(("SIGNOFF",) + check_signoff_b(text))
     else:
-        results.append(("RANGE",) + check_range(text, scope))
-        results.append(("PAGES",) + check_pages(text, scope, parse_offset_table(text)))
-    results.append(("SLOTS",) + check_slots(text, subject))
-    results.append(("SIGNOFF",) + check_signoff(text))
+        scope = parse_scope(text)
+        if scope is None:
+            results.append(("RANGE", "FAIL", "cannot read the '**এই ফাইলের অংশ:**' scope line"))
+            results.append(("PAGES", "FAIL", "skipped — scope unreadable"))
+        else:
+            results.append(("RANGE",) + check_range(text, scope))
+            results.append(("PAGES",) + check_pages(text, scope, parse_offset_table(text)))
+        results.append(("SLOTS",) + check_slots(text, subject))
+        results.append(("SIGNOFF",) + check_signoff(text))
     results.append(("DEPTH",) + check_depth(text))
     order = {"RANGE": 0, "SLOTS": 1, "PAGES": 2, "SIGNOFF": 3, "DEPTH": 4}
     results.sort(key=lambda r: order[r[0]])
@@ -525,6 +641,7 @@ def run(path: Path):
     print(f"subject : class {cls} · {subject}")
     print(f"grammar : chapter word '{scope[3]}'" if scope else "grammar : —")
     print(f"channel : {'single (§7.4 sampling unavailable)' if SINGLE_CHANNEL in text else 'dual'}")
+    print(f"schema  : {schema} ({'পরিসর / সই-ছক' if schema == 'B' else 'এই ফাইলের অংশ / স্পট-চেক সই'})")
     print("-" * 78)
     for name, status, detail in results:
         print(f"[{status:7}] {name:8} {detail}")
@@ -546,7 +663,9 @@ UNDER_CONSTRUCTION = "**অবস্থা:** নির্মাণাধীন"
 
 
 def fixture_pool():
-    """Every *finished* extraction on disk, in either half of the pipeline, in any subject.
+    """-> (schema-A controls, নির্মাণাধীন skips, schema-B files). CD-185 added the third.
+
+    Every *finished* extraction on disk, in either half of the pipeline, in any subject.
 
     Was: the C5 English folders only. That was correct when English was the only extraction
     and wrong the moment Bangla existed — the Bangla-grammar and single-channel seeds have
@@ -569,13 +688,25 @@ def fixture_pool():
     red until it is finished and the marker comes out.
     """
     roots = list((REPO / "canon/sources").glob("*/*")) + list((REPO / "canon/_wip").glob("*"))
-    out, skipped = [], []
+    out, skipped, schema_b = [], [], []
     for r in roots:
         if not r.is_dir():
             continue
         for f in sorted(r.glob("C*_*_Source_*.md")):
-            (skipped if UNDER_CONSTRUCTION in f.read_text(encoding="utf-8") else out).append(f)
-    return sorted(set(out)), sorted(set(skipped))
+            body = f.read_text(encoding="utf-8")
+            if UNDER_CONSTRUCTION in body:
+                skipped.append(f)
+            elif schema_of(body) == "B":
+                # CD-185. Schema B is held out of the schema-A SEED pool on purpose. The ten
+                # seeds below mutate schema-A structures — an offset table, a স্লট মিলকরণ row,
+                # a `(পৃষ্ঠা N)` inline reference — none of which schema B has. A seed that
+                # picked a schema-B fixture would change nothing, report MISSED, and turn the
+                # selftest red for a gate that is working. Schema B gets its OWN seeds, on
+                # synthetic fixtures, in `schema_b_selftest()`.
+                schema_b.append(f)
+            else:
+                out.append(f)
+    return sorted(set(out)), sorted(set(skipped)), sorted(set(schema_b))
 
 
 DEPTH_FIXTURE = """\
@@ -665,7 +796,7 @@ def selftest():
     written about.
     """
     import tempfile
-    pool, skipped = fixture_pool()
+    pool, skipped, sbfiles = fixture_pool()
     if not pool:
         print("SELFTEST: no finished extraction on disk to mutate — nothing to prove against")
         return 2
@@ -774,16 +905,33 @@ def selftest():
     ]
 
     def verdict(p: Path):
+        """The same dispatch `run()` makes. CD-185.
+
+        Before this it was schema-A only, so a schema-B fixture would have been judged by rules
+        it does not follow and reported FALSE+ — a selftest going red because the gate was
+        WIDENED correctly. Kept in step with `run()` deliberately: two dispatchers that can
+        disagree is the defect this whole row is about.
+        """
         text = p.read_text(encoding="utf-8")
-        scope = parse_scope(text)
         rs = []
-        if scope:
-            rs.append(check_range(text, scope)[0])
-            rs.append(check_pages(text, scope, parse_offset_table(text))[0])
+        if schema_of(text) == "B":
+            scope = parse_scope_b(text)
+            if scope:
+                rs.append(check_range_b(text, scope)[0])
+                rs.append(check_pages_b(text, scope)[0])
+            else:
+                rs.append("FAIL")
+            rs.append(check_slots(text, parse_subject(p)[1])[0])
+            rs.append(check_signoff_b(text)[0])
         else:
-            rs.append("FAIL")
-        rs.append(check_slots(text, parse_subject(p)[1])[0])
-        rs.append(check_signoff(text)[0])
+            scope = parse_scope(text)
+            if scope:
+                rs.append(check_range(text, scope)[0])
+                rs.append(check_pages(text, scope, parse_offset_table(text))[0])
+            else:
+                rs.append("FAIL")
+            rs.append(check_slots(text, parse_subject(p)[1])[0])
+            rs.append(check_signoff(text)[0])
         rs.append(check_depth(text)[0])
         return rs
 
@@ -792,6 +940,8 @@ def selftest():
         print(f"          {p.relative_to(REPO)}")
     for p in skipped:
         print(f"  SKIPPED {p.relative_to(REPO)}  — declares itself নির্মাণাধীন; not a control")
+    for p in sbfiles:
+        print(f"  SCHEMA-B {p.relative_to(REPO)}  — seeded separately below (CD-185)")
     print("SELFTEST — every seeded error must turn the gate RED")
     print("-" * 78)
     ok = True
@@ -818,10 +968,136 @@ def selftest():
             print(f"[{'CLEAN  ' if clean else 'FALSE+ '}] control · {src.name} must not be red")
             ok = ok and clean
     print("-" * 78)
+    ok = schema_b_selftest() and ok
+    print("-" * 78)
     ok = depth_selftest() and ok
     print("-" * 78)
     print(f"SELFTEST: {'PASS' if ok else 'FAIL'}")
     return 0 if ok else 2
+
+
+SCHEMA_B_FIXTURE = """\
+# C5 বাংলা — পাঠ ৯: একটি সিন্থেটিক পাঠ
+
+## পরিসর
+
+- ছাপা: ১০–১২ (authoritative)
+- PDF (split-ফাইল): ১–৩
+- PDF (পূর্ণ বই): অজানা
+
+## উৎস-নোট
+
+- সিন্থেটিক ফিক্সচার — কোনো বই থেকে নেওয়া নয় (CD-121(e))।
+
+## পাঠ্য
+
+### ছাপা ১০
+
+একটি বাক্য।
+
+### ছাপা ১১
+
+আরেকটি বাক্য।
+
+### ছাপা ১২
+
+শেষ বাক্য।
+
+## চিত্র-বাহিত লেখা (raster-only)
+
+এই পাঠে চিত্র-বাহিত লেখা নেই।
+
+## ⛔ উৎস-সীমা
+
+1. সিন্থেটিক — কোনো প্রকৃত সীমা নেই।
+
+## সই-ছক
+
+| অংশ | পাতা | পরীক্ষক | তারিখ | অবস্থা |
+|---|---|---|---|---|
+| ## পাঠ্য | ছাপা ১০–১২ | | | PENDING |
+"""
+
+
+def schema_b_selftest():
+    r"""CD-185. Schema B judged in BOTH directions, on a synthetic fixture.
+
+    The seeds below are what makes the widening a gate rather than a waiver. **Widening a gate
+    to admit a shape it used to reject is the single easiest way to build a waiver by accident**
+    — the files stop being red and nobody checks whether anything is still being checked. So
+    every schema-B check is seeded red, and the unmutated fixture is proved NOT red.
+
+    `SLOTS` and `SIGNOFF` are PENDING by ruling, not PASS: the controls assert exactly that,
+    because a PENDING that quietly became a PASS would be invisible in the suite's green line.
+    """
+    import tempfile
+    print("SCHEMA-B SELFTEST (CD-185) — synthetic fixture, both directions")
+    results = []
+
+    def judge(text):
+        rs = {}
+        scope = parse_scope_b(text)
+        rs["RANGE"] = check_range_b(text, scope)[0] if scope else "FAIL"
+        rs["PAGES"] = check_pages_b(text, scope)[0] if scope else "FAIL"
+        rs["SLOTS"] = check_slots(text, "BAN")[0]
+        rs["SIGNOFF"] = check_signoff_b(text)[0]
+        return rs
+
+    f = SCHEMA_B_FIXTURE
+
+    # --- detection, first: everything below is meaningless if the file is judged as schema A.
+    results.append(("detector · the fixture is recognised as schema B", schema_of(f) == "B"))
+    results.append(("detector · a schema-A file is NOT recognised as schema B",
+                    schema_of("**এই ফাইলের অংশ:** পাঠ ১ — ক · ছাপা পৃষ্ঠা ১–৫") == "A"))
+
+    # --- BASELINE. A gate that fires on everything is as useless as one that fires on nothing.
+    base = judge(f)
+    results.append(("baseline · the unmutated fixture is NOT red", "FAIL" not in base.values()))
+    results.append(("baseline · SLOTS is PENDING, not PASS — the debt stays counted",
+                    base["SLOTS"] == "PENDING"))
+    results.append(("baseline · SIGNOFF is PENDING, not PASS — human sign-off is the only close",
+                    base["SIGNOFF"] == "PENDING"))
+
+    # --- RANGE: the transcription body is gone.
+    results.append(("RANGE   · '## পাঠ্য' removed",
+                    judge(f.replace("## পাঠ্য", "## অন্য কিছু"))["RANGE"] == "FAIL"))
+
+    # --- PAGES: three ways the page headings can lie, and each must be caught separately.
+    results.append(("PAGES   · a heading OUTSIDE the stated range",
+                    judge(f.replace("### ছাপা ১১", "### ছাপা ৯৯"))["PAGES"] == "FAIL"))
+    swapped = f.replace("### ছাপা ১০", "### ছাপা §A§").replace("### ছাপা ১২", "### ছাপা ১০")
+    swapped = swapped.replace("### ছাপা §A§", "### ছাপা ১২")
+    results.append(("PAGES   · headings out of order", judge(swapped)["PAGES"] == "FAIL"))
+    results.append(("PAGES   · the range is WIDER than the transcription — a silent gap",
+                    judge(f.replace("ছাপা: ১০–১২", "ছাপা: ১০–১৫"))["PAGES"] == "FAIL"))
+    results.append(("PAGES   · no page headings at all",
+                    judge(f.replace("### ছাপা", "#### ছাপা"))["PAGES"] == "FAIL"))
+
+    # --- SIGNOFF: the section and its rows.
+    results.append(("SIGNOFF · '## সই-ছক' removed",
+                    judge(f.replace("## সই-ছক", "## অন্য"))["SIGNOFF"] == "FAIL"))
+    results.append(("SIGNOFF · the সই-ছক table has no data rows",
+                    judge(f.replace("| ## পাঠ্য | ছাপা ১০–১২ | | | PENDING |\n", ""))
+                    ["SIGNOFF"] == "FAIL"))
+    # --- and the direction that matters: a SIGNED table must close, or PENDING is permanent.
+    signed = f.replace("| ## পাঠ্য | ছাপা ১০–১২ | | | PENDING |",
+                       "| ## পাঠ্য | ছাপা ১০–১২ | Teacher | 2026-08-20 | SIGNED |")
+    results.append(("SIGNOFF · a SIGNED সই-ছক closes to PASS — PENDING is not a dead end",
+                    check_signoff_b(signed)[0] == "PASS"))
+
+    # --- SLOTS closes too: a schema-B file that DOES carry the section is judged, not excused.
+    withslots = f.replace("## ⛔ উৎস-সীমা",
+                          "## MarkLogic স্লট মিলকরণ\n\n| স্লট | পাঠ |\n|---|---|\n"
+                          "| `BAN-S01` | অনুপস্থিত |\n\n## ⛔ উৎস-সীমা")
+    results.append(("SLOTS   · a schema-B file WITH the section is judged on its content, "
+                    "not excused by its schema", check_slots(withslots, "BAN")[0] != "PENDING"))
+
+    ok = True
+    for label, good in results:
+        print(f"  {'PASS' if good else 'FAIL'}  {label}")
+        ok = ok and good
+    print(f"SCHEMA-B SELFTEST: {'PASS' if ok else 'FAIL'} ({len(results)} cases)")
+    return ok
 
 
 def _cli(argv=None):
