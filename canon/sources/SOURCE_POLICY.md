@@ -604,6 +604,46 @@ now demonstrated in both directions on one chapter.
   extraction a fence carries authored transcription of the book, so contamination there is
   contamination.
 
+## 7.19 An extracted chapter under a consumption exclusion declares it in its own header — adds to §5 and §7.6 (Principal ruling 2026-08-20, CD-182, closing PENDING-P-035)
+
+CD-127 split পাঠ ১২ into two layers: **extraction permitted, consumption still forbidden.** While no
+extraction existed the prohibition was carried entirely by `canon/_wip/c5-bangla/EXCLUDED_paath_12.md`,
+and that sufficed — nothing can consume a file that is not there. **CD-127(c) named what happens the
+moment (a) is exercised:** the extracted file sits in `canon/sources/` looking exactly like every
+unrestricted chapter, and no field, gate or convention downstream would tell a reader otherwise.
+The Principal called for the পাঠ ১২ extraction on 2026-08-20, so this clause is now owed rather than
+proposed — which is the trigger PENDING-P-035 named for itself.
+
+**An extraction of a chapter under a consumption exclusion carries the declaration in its own header,
+on one machine-read line:**
+
+```
+<!-- excluded-from-consumption: subject=<SUBJ> class=<n> chapter=<n> cd=<CD-row> -->
+```
+
+- **The form is not minted here.** It is CD-131's line, already parsed by `load_exclusions()` in
+  `workstreams/question-banks/audits/gates.py`, which `rglob`s every `*.md` under `canon/` —
+  headers included. **No gate change is required for this clause to take effect**, which is why a
+  policy clause was what was owed and a code change was not. Read at source before this row was
+  written, not recalled.
+- **This is a SECOND site, not a replacement.** The `_wip` note stays and stays enforcing. Two
+  declarations for one chapter is the intended state, not a duplication to be cleaned up:
+  `_chapter_tokens` widens on the declaration side and the gate fails closed, so a redundant
+  declaration costs a false refusal that never fires, while a missing one ships a forbidden question.
+- **Placement: in the header, above `## পরিসর`**, where a human reader meets it before the text —
+  §7.9's `**অবস্থা:** নির্মাণাধীন` occupies the same region for the same reason.
+- **Removing the line is part of RELEASING the chapter, and only a Principal ruling releases it.**
+  §7.9's named opposite-direction failure applies unchanged: a marker nobody takes out would keep a
+  chapter excluded forever after it had been released. **The removal obligation belongs to the CD row
+  that lifts CD-127(b)** — not to whoever next edits the file, and not to a session that finds the
+  line inconvenient.
+- **A fenced block SHOWS the form; it does not use it.** `_is_declaration_line` requires a standalone
+  comment and the loader skips fenced regions, which is what lets this clause print its own
+  convention without minting a phantom exclusion — AGENTS.md §5.1, and the same mint-vs-cite anchor
+  `ledger_check.py` uses.
+- **The clause is general, not পাঠ ১২-specific.** Any chapter under any consumption exclusion, in any
+  subject or class, declares the same way. পাঠ ১২ is the first instance and is not the scope.
+
 ## 7.15 The trip-wire counts only the disagreements it was built to catch — supersedes 7.14.2a's counting rule (Principal ruling 2026-08-10, CD-069)
 
 **7.14.2a was written direction-blind, and the very first control set walked into the gap.** It

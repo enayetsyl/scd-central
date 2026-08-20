@@ -1090,7 +1090,11 @@ nothing currently scheduled reaches one.
 
 ## ⚑ PENDING-P-035 — the consumption-exclusion declaration on an EXTRACTION HEADER: proposed, and stopped short of inventing the convention
 
-**Status: OPEN — proposed only, per the ruling's own instruction. Nothing written.**
+**Status: CLOSED 2026-08-20 — approved as proposed and written → `SOURCE_POLICY` §7.19, filed as CD-182.**
+*Trigger was this row's own: the Principal called for the পাঠ ১২ extraction on 2026-08-20, exercising CD-127(a).*
+*Proposal 3 ("no gate change is needed") was VERIFIED at source before the clause was written — `load_exclusions()`
+`rglob`s `canon/**/*.md` headers included and skips fenced regions — rather than accepted from this row's own text.*
+*CD-127(b) is untouched: পাঠ ১২ remains unconsumable.*
 *(Next free number verified at source: no `P-035` token existed anywhere in the repo before this row.)*
 
 CD-131 built `SOURCE-EXCLUSION` and put the declaration in
