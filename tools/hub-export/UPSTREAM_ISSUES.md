@@ -7,6 +7,51 @@ here until `scd-hub` resolves it in **its own D-series** and ships a superseding
 
 ---
 
+## UP-004 — the envelope-schema default globs `*ImportEnvelope*`, which matches no file the contract ships
+
+**Status:** OPEN · raised 2026-08-20 (TOOLS-CR-023 named it and deliberately left it) · owner: `scd-hub` repo, its D-series
+**Component:** `validate_import.py` — `_resolve()` at the `--envelope-schema` default, `main()` line 301
+**Blocks:** nothing. The script must simply be run WITH `--envelope-schema` passed explicitly.
+
+**What.** Run with no `--envelope-schema`, the harness resolves its own default by globbing, next to
+`validate_import.py`, for:
+
+```
+*ImportEnvelope*Schema*.json
+*ImportEnvelope*.json
+```
+
+**Nothing in this repo matches either pattern.** Measured 2026-08-20 by walking the whole tree with
+`.git` excluded: **zero files match `*ImportEnvelope*`**, and the only schema that exists is
+`tools/hub-export/import-contract.schema.json`. So the default can never resolve, and the flag is in
+practice mandatory rather than optional.
+
+**What it does NOT do, stated because the opposite was assumed before the code was read.** It does
+**not** validate against nothing and it does **not** pass silently. `_resolve()` exits by name:
+
+```
+ERROR: envelope schema not found (looked for [...]); pass it explicitly.
+```
+
+That is a refusal, and it is correct — `SOURCE_POLICY` §7.17's line, honoured. **This issue is a
+usability defect, not a correctness defect**, and it is filed at that weight. TOOLS-CR-023's
+description of the glob was accurate; the inference that it produced a silent pass was not, and the
+distinction is recorded here so no later reader re-raises this as a false-green.
+
+**Why it is not fixed here.** `validate_import.py` is **vendored and LOCKED** (SMOKE.md records
+*v1.0 LOCKED 2026-06-09*; CD-003 · CD-013 · AGENTS.md §7 make it supersede-only). A one-line change to
+the glob would be a local patch to the contract the Hub actually enforces — the precise divergence
+CD-013 exists to prevent, and the same reasoning that routed UP-001 and UP-003 upstream instead of
+patching. **The Principal ruled 2026-08-20 to fix it; this is the only route the ruling can take.**
+
+**What would close it.** A superseding `validate_import.py` whose envelope-schema default names the
+file the contract actually ships — e.g. `*import-contract*.schema.json` alongside the existing
+patterns, so both the historical and current names resolve. On arrival: re-vendor, update `VENDOR.md`
+and `SMOKE.md`, run the harness **with no `--envelope-schema`** and confirm it finds the schema, and
+log the supersede as a CD row.
+
+---
+
 ## UP-003 — `ref19_topic_id`'s pattern forbids a hyphen after the subject prefix, so two real REF-19 slugs are unrepresentable
 
 **Status:** OPEN · raised 2026-08-14 (CD-125 / TOOLS-CR-002 / PENDING-P-029) · owner: `scd-hub` repo, its D-series
