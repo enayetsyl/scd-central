@@ -543,7 +543,21 @@ def check_depth(text):
     what earns the reduction there.
     """
     if SINGLE_CHANNEL not in text:
-        return "PASS", "dual-channel source — §7.4 sampling depth governs, nothing to enforce here"
+        # TOOLS-CR-026 (Principal ruling 2026-08-20). THIS BRANCH USED TO RETURN PASS AND PRINT
+        # "dual-channel source" — a POSITIVE CLAIM THE FILE NEVER MADE. Absence of a declaration
+        # is not a declaration of two channels. Measured when the row was filed: of the 43 judged
+        # files, 32 carry no declaration — C5 English (legitimately dual-channel under CD-046/047,
+        # so the sentence was TRUE BUT UNEARNED) and C5 Bangla ১২–২৩ (the §7.7 book measured at 421
+        # extractable characters in 142 pages, so the same inference was FALSE). A gate right by
+        # luck on twenty files and wrong on twelve is reporting an inference as a reading in both.
+        #
+        # PENDING rather than a corrected PASS, because PENDING-P-023(b) asks for a disabled check
+        # to be visible IN THE VERDICT, not only in its sentence. This is CD-185's mechanism: the
+        # file cannot reach GREEN while the declaration is owed, and the debt is counted and named.
+        return "PENDING", (f"no `{SINGLE_CHANNEL}` declaration — CHANNEL COUNT NOT ESTABLISHED, so "
+                           f"depth is NOT JUDGED here. This is not a pass: §7.7 requires the header to "
+                           f"declare the source class, and a file that declares nothing is not thereby "
+                           f"dual-channel (TOOLS-CR-026, PENDING-P-023)")
     m = re.search(r"^## স্পট-চেক সই.*?(?=^---|\Z)", text, re.M | re.S)
     if not m:
         return "FAIL", "declares single-channel but has no sign-off section to check depth in"
@@ -763,6 +777,16 @@ def depth_selftest():
          lambda t: t.replace("আমের সংখ্যার এগারোটি ঘর, ক্রমসহ", "ছকের এগারোটি মান", 1), "FAIL"),
         ("seed · inflected 'ঘরগুলো' still demands the order token",
          lambda t: t.replace("আমের সংখ্যার এগারোটি ঘর, ক্রমসহ", "ঘরগুলো মিলিয়ে দেখা", 1), "FAIL"),
+        # ---- TOOLS-CR-026: the UNDECLARED branch, seeded BOTH ways because the row named the
+        # opposite risk. Removing the declaration must not buy silence, and keeping it must not
+        # lose enforcement — a fix that traded a false claim for a gate that says nothing on the
+        # case it was built for would be the worse of the two.
+        ("seed · TOOLS-CR-026 · the channel declaration REMOVED — PENDING, never PASS: absence of a "
+         "declaration is not a declaration of two channels",
+         lambda t: t.replace(SINGLE_CHANNEL, "**যাচাই-চ্যানেল-নয়:**", 1), "PENDING"),
+        ("seed · TOOLS-CR-026 · control · the declaration PRESENT still reaches enforcement and "
+         "still PASSes a clean file — the fix narrowed the claim, it did not silence the gate",
+         lambda t: t, "PASS"),
     ]
     print("SELFTEST · §7.14 depth value (CD-070) — synthetic fixture, always bites")
     print("-" * 78)
@@ -776,7 +800,11 @@ def depth_selftest():
     real = REPO / "canon/_wip/c5-math/C5_MATH_Source_03.md"
     if real.exists():
         got = check_depth(real.read_text(encoding="utf-8"))[0]
-        hit = got != "FAIL"
+        # TOOLS-CR-026: was `got != "FAIL"`, which also passes on PENDING — so the control could
+        # not tell ENFORCEMENT RAN AND WAS CLEAN from ENFORCEMENT NEVER RAN. That is P-023(b)'s
+        # complaint one level up, inside the control meant to catch it. This file declares `একক`,
+        # so PASS is the only correct verdict and anything else is a real regression.
+        hit = got == "PASS"
         print(f"[{'PASS' if hit else 'FAIL':7}] control · the live {real.name} must not be RED on DEPTH -> {got}")
         ok = ok and hit
     else:
