@@ -12,8 +12,8 @@
   "review_status": "draft",
   "tags": {
     "topic_tag": "TOP-BAN-C5-05",
-    "bloom_level": "Remember",
-    "difficulty": "easy",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
     "paper_role": "mcq"
   },
   "provenance": {
@@ -26,37 +26,37 @@
     "qid": "QP-BAN-C5-U20-Q30",
     "topic_tag": "TOP-BAN-C5-05",
     "ref19_topic_id": "BAN-POEM",
-    "question_text": "শাহজাদা গুরুর চরণে কী ঢালছিলেন?",
+    "question_text": "শাহজাদা সকালে ঠিক কী করছিলেন?",
     "question_type": "mcq",
     "paper_role": "mcq",
-    "bloom_level": "Remember",
-    "difficulty": "easy",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
     "tier": "tier1",
     "marks": 1,
     "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
     "options": [
       {
         "option_id": "ক",
-        "text": "বারি বা পানি",
+        "text": "গুরুর চরণে পাত্র থেকে পানি ঢালছিলেন",
         "is_correct": true
       },
       {
         "option_id": "খ",
-        "text": "সুগন্ধি তেল",
+        "text": "গুরুর চরণ নিজ হাতে ধুয়ে দিচ্ছিলেন",
         "is_correct": false,
-        "why_wrong": "তেলের কথা কবিতায় নেই।"
+        "why_wrong": "এটি শিক্ষক নিজেই করছিলেন — শাহজাদা কেবল পানি ঢালছিলেন। পার্থক্যটিই কবিতার মূল কথা।"
       },
       {
         "option_id": "গ",
-        "text": "ফুলের পাপড়ি",
+        "text": "গুরুকে কুর্নিশ করছিলেন",
         "is_correct": false,
-        "why_wrong": "ফুলের কথা কবিতায় নেই।"
+        "why_wrong": "কুর্নিশ করেন শিক্ষক, কবিতার শেষে, বাদশাহকে।"
       },
       {
         "option_id": "ঘ",
-        "text": "দুধ",
+        "text": "গুরুর কাছে পড়া শোনাচ্ছিলেন",
         "is_correct": false,
-        "why_wrong": "দুধের কথা কবিতায় নেই।"
+        "why_wrong": "পড়ার দৃশ্য কবিতায় নেই; দৃশ্যটি সেবার।"
       }
     ]
   }

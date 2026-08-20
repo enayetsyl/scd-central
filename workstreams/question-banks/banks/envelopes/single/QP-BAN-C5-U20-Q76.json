@@ -12,7 +12,7 @@
   "review_status": "draft",
   "tags": {
     "topic_tag": "TOP-BAN-C5-01",
-    "bloom_level": "Understand",
+    "bloom_level": "Remember",
     "difficulty": "easy",
     "paper_role": "short"
   },
@@ -29,7 +29,7 @@
     "question_text": "'সংবাদ বহন করে আনেন যিনি' — পাঠ ২০-এর শব্দতালিকার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
     "question_type": "short_answer",
     "paper_role": "short",
-    "bloom_level": "Understand",
+    "bloom_level": "Remember",
     "difficulty": "easy",
     "tier": "tier1",
     "marks": 1,

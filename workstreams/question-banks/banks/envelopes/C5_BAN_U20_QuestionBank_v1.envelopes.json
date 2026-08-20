@@ -14,7 +14,7 @@
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
       "bloom_level": "Remember",
-      "difficulty": "medium",
+      "difficulty": "hard",
       "paper_role": "structured"
     },
     "provenance": {
@@ -31,7 +31,7 @@
       "question_type": "short_answer",
       "paper_role": "structured",
       "bloom_level": "Remember",
-      "difficulty": "medium",
+      "difficulty": "hard",
       "tier": "tier1",
       "marks": 10,
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
@@ -839,7 +839,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "paper_role": "short"
     },
@@ -856,7 +856,7 @@
       "question_text": "বাদশাহ আলমগীরের ছেলেকে পড়াতেন দিল্লির এক ______। — পাঠ ২০ অনুযায়ী শূন্যস্থান পূরণ করো।",
       "question_type": "fill_blank",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "tier": "tier1",
       "marks": 1,
@@ -886,7 +886,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "paper_role": "short"
     },
@@ -903,7 +903,7 @@
       "question_text": "শাহজাদা এক পাত্র হাতে নিয়ে গুরুর চরণে ______ ঢালছিলেন। — পাঠ ২০ অনুযায়ী শূন্যস্থান পূরণ করো।",
       "question_type": "fill_blank",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "tier": "tier1",
       "marks": 1,
@@ -934,7 +934,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "paper_role": "short"
     },
@@ -951,7 +951,7 @@
       "question_text": "শিক্ষক নিজের হাত দিয়ে নিজেরই পায়ের ______ ধুয়ে-মুছে সাফ করছিলেন। — পাঠ ২০ অনুযায়ী শূন্যস্থান পূরণ করো।",
       "question_type": "fill_blank",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "tier": "tier1",
       "marks": 1,
@@ -982,7 +982,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "paper_role": "short"
     },
@@ -999,7 +999,7 @@
       "question_text": "ভাবতে ভাবতে শিক্ষকের ______ চিন্তার রেখা দেখা দিলো। — পাঠ ২০ অনুযায়ী শূন্যস্থান পূরণ করো।",
       "question_type": "fill_blank",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "tier": "tier1",
       "marks": 1,
@@ -1030,7 +1030,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "paper_role": "short"
     },
@@ -1047,7 +1047,7 @@
       "question_text": "শিক্ষক ভাবলেন, আজ আর ______ নেই। — পাঠ ২০ অনুযায়ী শূন্যস্থান পূরণ করো।",
       "question_type": "fill_blank",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "tier": "tier1",
       "marks": 1,
@@ -1077,7 +1077,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "paper_role": "short"
     },
@@ -1094,7 +1094,7 @@
       "question_text": "বাদশাহর ______ শিক্ষককে ডেকে কেল্লায় নিয়ে গেল। — পাঠ ২০ অনুযায়ী শূন্যস্থান পূরণ করো।",
       "question_type": "fill_blank",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "tier": "tier1",
       "marks": 1,
@@ -1124,7 +1124,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "paper_role": "short"
     },
@@ -1141,7 +1141,7 @@
       "question_text": "শিক্ষক বললেন, প্রাণের চেয়েও ______ বড়ো। — পাঠ ২০ অনুযায়ী শূন্যস্থান পূরণ করো।",
       "question_type": "fill_blank",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "tier": "tier1",
       "marks": 1,
@@ -1171,7 +1171,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "paper_role": "short"
     },
@@ -1188,7 +1188,7 @@
       "question_text": "শেষে শিক্ষক বললেন, আজ থেকে চির ______ হলো শিক্ষাগুরুর শির। — পাঠ ২০ অনুযায়ী শূন্যস্থান পূরণ করো।",
       "question_type": "fill_blank",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "medium",
       "tier": "tier1",
       "marks": 1,
@@ -1250,19 +1250,19 @@
           "option_id": "খ",
           "text": "কাজী নজরুল ইসলাম",
           "is_correct": false,
-          "why_wrong": "'সংকল্প' কবিতার কবি তিনি, এই কবিতার নন।"
+          "why_wrong": "নামের প্রথম অংশ মিললেও তিনি 'সংকল্প'-এর কবি।"
         },
         {
           "option_id": "গ",
           "text": "রবীন্দ্রনাথ ঠাকুর",
           "is_correct": false,
-          "why_wrong": "'ইচ্ছামতী' কবিতার কবি তিনি।"
+          "why_wrong": "তিনি 'ইচ্ছামতী'-র কবি, পাঠ ১৮-এর।"
         },
         {
           "option_id": "ঘ",
           "text": "আল মাহমুদ",
           "is_correct": false,
-          "why_wrong": "'পাখির মতো' কবিতার কবি তিনি।"
+          "why_wrong": "তিনি 'পাখির মতো'-র কবি, পাঠ ১৩-এর।"
         }
       ]
     }
@@ -1295,7 +1295,7 @@
       "qid": "QP-BAN-C5-U20-Q29",
       "topic_tag": "TOP-BAN-C5-05",
       "ref19_topic_id": "BAN-POEM",
-      "question_text": "পাঠ ২০ অনুযায়ী বাদশাহর ছেলেকে কে পড়াতেন?",
+      "question_text": "পাঠ ২০ অনুযায়ী শাহজাদাকে পড়াতেন কে?",
       "question_type": "mcq",
       "paper_role": "mcq",
       "bloom_level": "Remember",
@@ -1311,21 +1311,21 @@
         },
         {
           "option_id": "খ",
-          "text": "বাদশাহ নিজে",
+          "text": "দিল্লির প্রধান কাজি",
           "is_correct": false,
-          "why_wrong": "বাদশাহ পড়াতেন না; তিনি সকালে দৃশ্যটি দেখেছিলেন।"
+          "why_wrong": "কবিতায় কাজির কথা নেই; শিক্ষক একজন মৌলভী।"
         },
         {
           "option_id": "গ",
-          "text": "কেল্লার এক প্রহরী",
+          "text": "বাদশাহ আলমগীর নিজে",
           "is_correct": false,
-          "why_wrong": "প্রহরীর কথা কবিতায় নেই।"
+          "why_wrong": "বাদশাহ পড়াননি — তিনি সকালে দৃশ্যটি দেখেছিলেন মাত্র।"
         },
         {
           "option_id": "ঘ",
-          "text": "দরবারের এক দূত",
+          "text": "কেল্লার দূত",
           "is_correct": false,
-          "why_wrong": "দূত কেবল শিক্ষককে ডেকে আনার কাজ করেছেন।"
+          "why_wrong": "দূতের একমাত্র কাজ ছিল পরদিন শিক্ষককে ডেকে আনা।"
         }
       ]
     }
@@ -1344,8 +1344,8 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Remember",
-      "difficulty": "easy",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
       "paper_role": "mcq"
     },
     "provenance": {
@@ -1358,37 +1358,37 @@
       "qid": "QP-BAN-C5-U20-Q30",
       "topic_tag": "TOP-BAN-C5-05",
       "ref19_topic_id": "BAN-POEM",
-      "question_text": "শাহজাদা গুরুর চরণে কী ঢালছিলেন?",
+      "question_text": "শাহজাদা সকালে ঠিক কী করছিলেন?",
       "question_type": "mcq",
       "paper_role": "mcq",
-      "bloom_level": "Remember",
-      "difficulty": "easy",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
       "tier": "tier1",
       "marks": 1,
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
       "options": [
         {
           "option_id": "ক",
-          "text": "বারি বা পানি",
+          "text": "গুরুর চরণে পাত্র থেকে পানি ঢালছিলেন",
           "is_correct": true
         },
         {
           "option_id": "খ",
-          "text": "সুগন্ধি তেল",
+          "text": "গুরুর চরণ নিজ হাতে ধুয়ে দিচ্ছিলেন",
           "is_correct": false,
-          "why_wrong": "তেলের কথা কবিতায় নেই।"
+          "why_wrong": "এটি শিক্ষক নিজেই করছিলেন — শাহজাদা কেবল পানি ঢালছিলেন। পার্থক্যটিই কবিতার মূল কথা।"
         },
         {
           "option_id": "গ",
-          "text": "ফুলের পাপড়ি",
+          "text": "গুরুকে কুর্নিশ করছিলেন",
           "is_correct": false,
-          "why_wrong": "ফুলের কথা কবিতায় নেই।"
+          "why_wrong": "কুর্নিশ করেন শিক্ষক, কবিতার শেষে, বাদশাহকে।"
         },
         {
           "option_id": "ঘ",
-          "text": "দুধ",
+          "text": "গুরুর কাছে পড়া শোনাচ্ছিলেন",
           "is_correct": false,
-          "why_wrong": "দুধের কথা কবিতায় নেই।"
+          "why_wrong": "পড়ার দৃশ্য কবিতায় নেই; দৃশ্যটি সেবার।"
         }
       ]
     }
@@ -1432,26 +1432,26 @@
       "options": [
         {
           "option_id": "ক",
-          "text": "দিল্লিপতির ছেলেকে দিয়ে পায়ে পানি নেওয়া বড়ো অপরাধ হয়েছে ভেবে",
+          "text": "দিল্লিপতির ছেলেকে দিয়ে সেবা নেওয়া বড়ো স্পর্ধা হয়েছে ভেবে",
           "is_correct": true
         },
         {
           "option_id": "খ",
-          "text": "পড়া শেষ করাতে পারেননি বলে",
+          "text": "শাহজাদা তাঁর কথা শোনেনি বলে",
           "is_correct": false,
-          "why_wrong": "পড়ার কথা এখানে বলা হয়নি।"
+          "why_wrong": "শাহজাদার আচরণ নিয়ে শিক্ষকের কোনো অভিযোগ ছিল না।"
         },
         {
           "option_id": "গ",
-          "text": "বাদশাহ তাঁকে বেতন দেননি বলে",
+          "text": "বাদশাহ তাঁকে দেখে ফেলেছেন বলে",
           "is_correct": false,
-          "why_wrong": "বেতনের কোনো প্রসঙ্গ কবিতায় নেই।"
+          "why_wrong": "দেখাটাই ভয়ের কারণ নয় — কারণ হলো যা দেখা গেল সেটিকে তিনি অপরাধ ভাবলেন।"
         },
         {
           "option_id": "ঘ",
-          "text": "কেল্লার পথ হারিয়ে ফেলেছিলেন বলে",
+          "text": "তাঁকে কেল্লায় ডাকা হয়েছে বলে",
           "is_correct": false,
-          "why_wrong": "পথ হারানোর কথা কবিতায় নেই।"
+          "why_wrong": "ডাক আসে পরদিন; ভয় তার আগেই, সেই সকালেই।"
         }
       ]
     }
@@ -1495,26 +1495,26 @@
       "options": [
         {
           "option_id": "ক",
-          "text": "শিক্ষক সবার শ্রেষ্ঠ, তাই ভয়ের কিছু নেই",
+          "text": "শিক্ষক সবার শ্রেষ্ঠ, তাই প্রাণের চেয়েও মান বড়ো",
           "is_correct": true
         },
         {
           "option_id": "খ",
-          "text": "বাদশাহ তাঁর আত্মীয়",
+          "text": "বাদশাহ ন্যায়পরায়ণ, তাই শাস্তি দেবেন না",
           "is_correct": false,
-          "why_wrong": "আত্মীয়তার কথা কবিতায় নেই।"
+          "why_wrong": "বাদশাহর উদারতা শিক্ষক জানতে পারেন পরে, কেল্লায় গিয়ে — সাহস তার আগেই এসেছিল।"
         },
         {
           "option_id": "গ",
-          "text": "শাহজাদা তাঁকে বাঁচিয়ে দেবে",
+          "text": "দোষ শাহজাদার, তাঁর নয়",
           "is_correct": false,
-          "why_wrong": "শাহজাদার সাহায্যের কথা কবিতায় নেই।"
+          "why_wrong": "শিক্ষক দোষ কারও ঘাড়ে চাপাননি; তিনি শিক্ষকের মর্যাদার কথা ভেবেছেন।"
         },
         {
           "option_id": "ঘ",
-          "text": "দূত তাঁর পরিচিত",
+          "text": "পালিয়ে যাওয়ার পথ আছে",
           "is_correct": false,
-          "why_wrong": "দূতের সঙ্গে পরিচয়ের কথা কবিতায় নেই।"
+          "why_wrong": "পালানোর কথা কবিতায় নেই; তিনি মুখোমুখি হয়েছেন।"
         }
       ]
     }
@@ -1563,21 +1563,21 @@
         },
         {
           "option_id": "খ",
-          "text": "মক্তবের বারান্দায়",
+          "text": "কেল্লার ভরা দরবারে",
           "is_correct": false,
-          "why_wrong": "মক্তবের কথা কবিতায় নেই।"
+          "why_wrong": "উলটোটাই — কথাটি নিরালায় হয়েছিল, সবার সামনে নয়।"
         },
         {
           "option_id": "গ",
-          "text": "বাগানের ছায়ায়",
+          "text": "শাহজাদার পড়ার ঘরে",
           "is_correct": false,
-          "why_wrong": "বাগানের কথা কবিতায় নেই।"
+          "why_wrong": "পড়ার ঘরের দৃশ্য আগের দিন সকালের।"
         },
         {
           "option_id": "ঘ",
-          "text": "নদীর ঘাটে",
+          "text": "নিজের বাগানে",
           "is_correct": false,
-          "why_wrong": "নদীর কথা কবিতায় নেই।"
+          "why_wrong": "কবিতা স্থান হিসেবে কেল্লার খাস কামরার কথাই বলে।"
         }
       ]
     }
@@ -1626,21 +1626,21 @@
         },
         {
           "option_id": "খ",
-          "text": "শাহজাদা একদম পড়তে চায় না",
+          "text": "শাহজাদা শিক্ষকের চরণে পানি ঢেলে বাড়াবাড়ি করেছে",
           "is_correct": false,
-          "why_wrong": "পড়তে না চাওয়ার কথা কবিতায় নেই।"
+          "why_wrong": "শিক্ষক এটিই আশঙ্কা করেছিলেন, কিন্তু বাদশাহর অভিযোগ ঠিক উলটো দিকের।"
         },
         {
           "option_id": "গ",
-          "text": "শিক্ষক দেরি করে আসেন",
+          "text": "শিক্ষক শাহজাদাকে যথেষ্ট আদব শেখাননি",
           "is_correct": false,
-          "why_wrong": "দেরির কোনো প্রসঙ্গ কবিতায় নেই।"
+          "why_wrong": "বাদশাহ শিক্ষকের ঘাটতির কথা বলেননি, ছেলের ঘাটতির কথা বলেছেন।"
         },
         {
           "option_id": "ঘ",
-          "text": "শিক্ষক শাহজাদাকে বকেছেন",
+          "text": "শিক্ষক নিজের চরণ নিজে ধুয়ে ছেলেকে ছোটো করেছেন",
           "is_correct": false,
-          "why_wrong": "বকার কথা কবিতায় নেই।"
+          "why_wrong": "বাদশাহর আক্ষেপ এর উলটো — ছেলেই কেন চরণ ধুয়ে দিলো না।"
         }
       ]
     }
@@ -1659,8 +1659,8 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Understand",
-      "difficulty": "medium",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
       "paper_role": "mcq"
     },
     "provenance": {
@@ -1673,37 +1673,37 @@
       "qid": "QP-BAN-C5-U20-Q35",
       "topic_tag": "TOP-BAN-C5-05",
       "ref19_topic_id": "BAN-POEM",
-      "question_text": "কবিতার শেষে শিক্ষক বাদশাহকে কী বললেন?",
+      "question_text": "কবিতার শেষে শিক্ষকের উচ্ছ্বাসের কারণ কী?",
       "question_type": "mcq",
       "paper_role": "mcq",
-      "bloom_level": "Understand",
-      "difficulty": "medium",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
       "tier": "tier1",
       "marks": 1,
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
       "options": [
         {
           "option_id": "ক",
-          "text": "বাদশাহ মহান ও উদার, আর আজ থেকে শিক্ষাগুরুর শির চির উন্নত হলো",
+          "text": "শিক্ষকের মর্যাদা স্বয়ং বাদশাহর কাছে স্বীকৃতি পেয়েছে",
           "is_correct": true
         },
         {
           "option_id": "খ",
-          "text": "তিনি আর পড়াবেন না",
+          "text": "শাস্তির আশঙ্কা কেটে গেছে",
           "is_correct": false,
-          "why_wrong": "পড়ানো ছাড়ার কথা কবিতায় নেই।"
+          "why_wrong": "স্বস্তি নিশ্চয়ই এসেছে, কিন্তু উচ্ছ্বাসের কারণ ভয় কাটা নয় — মর্যাদার স্বীকৃতি।"
         },
         {
           "option_id": "গ",
-          "text": "তিনি দিল্লি ছেড়ে যাবেন",
+          "text": "বাদশাহ তাঁকে পুরস্কার দিয়েছেন",
           "is_correct": false,
-          "why_wrong": "দিল্লি ছাড়ার কথা কবিতায় নেই।"
+          "why_wrong": "পুরস্কারের কথা কবিতায় নেই।"
         },
         {
           "option_id": "ঘ",
-          "text": "তিনি শাহজাদাকে শাস্তি দেবেন",
+          "text": "শাহজাদা ক্ষমা চেয়েছে",
           "is_correct": false,
-          "why_wrong": "শাস্তির কথা কবিতায় নেই।"
+          "why_wrong": "শাহজাদা এই দৃশ্যে উপস্থিতই নন।"
         }
       ]
     }
@@ -1736,7 +1736,7 @@
       "qid": "QP-BAN-C5-U20-Q36",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'উন্নত' — পাঠ ২০-এর শব্দতালিকায় থাকা এই শব্দটির বিপরীত শব্দ লেখো।",
+      "question_text": "'সাফ' — পাঠ ২০-এর শব্দতালিকায় থাকা এই শব্দটির বিপরীত শব্দ লেখো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Understand",
@@ -1746,8 +1746,8 @@
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
       "answer_key": {
         "accepted": [
-          "অবনত",
-          "নত"
+          "নোংরা",
+          "অপরিষ্কার"
         ],
         "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (CD-136(b)) — এটি বাংলা ভাষার সাধারণ তথ্য, পাঠ ২০ এর উত্তর ছাপে না। উদ্দীপকের শব্দ পাঠ ২০ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ বিপরীত শব্দ গ্রহণযোগ্য।"
       }
@@ -1781,7 +1781,7 @@
       "qid": "QP-BAN-C5-U20-Q37",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-WORDREL",
-      "question_text": "'মহান' — পাঠ ২০-এর শব্দতালিকায় থাকা এই শব্দটির বিপরীত শব্দ লেখো।",
+      "question_text": "'তফাতে' — পাঠ ২০-এর শব্দতালিকায় থাকা এই শব্দটির বিপরীত শব্দ লেখো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Understand",
@@ -1791,8 +1791,8 @@
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
       "answer_key": {
         "accepted": [
-          "ক্ষুদ্র",
-          "নীচ"
+          "কাছে",
+          "নিকটে"
         ],
         "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (CD-136(b)) — এটি বাংলা ভাষার সাধারণ তথ্য, পাঠ ২০ এর উত্তর ছাপে না। উদ্দীপকের শব্দ পাঠ ২০ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ বিপরীত শব্দ গ্রহণযোগ্য।"
       }
@@ -1926,8 +1926,8 @@
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
       "answer_key": {
         "accepted": [
-          "অন্যে",
-          "পরের দ্বারা"
+          "পরের দ্বারা",
+          "অন্যের দ্বারা"
         ],
         "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (CD-136(b)) — এটি বাংলা ভাষার সাধারণ তথ্য, পাঠ ২০ এর উত্তর ছাপে না। উদ্দীপকের শব্দ পাঠ ২০ থেকেই নেওয়া। কাছাকাছি অর্থের যেকোনো শুদ্ধ বিপরীত শব্দ গ্রহণযোগ্য।"
       }
@@ -2461,7 +2461,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-05",
-      "bloom_level": "Create",
+      "bloom_level": "Evaluate",
       "difficulty": "hard",
       "paper_role": "structured"
     },
@@ -2478,7 +2478,7 @@
       "question_text": "শিক্ষকের প্রতি একজন শিক্ষার্থীর কীভাবে সম্মান দেখানো উচিত — নিজের ভাষায় লেখো।",
       "question_type": "descriptive",
       "paper_role": "structured",
-      "bloom_level": "Create",
+      "bloom_level": "Evaluate",
       "difficulty": "hard",
       "tier": "tier1",
       "marks": 5,
@@ -2907,7 +2907,7 @@
       "qid": "QP-BAN-C5-U20-Q61",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-PARTSPEECH",
-      "question_text": "'মা সযতনে বইগুলো গুছিয়ে রাখলেন।' — এখানে 'সযতনে' শব্দটি কোন পদ? নির্ণয় করো।",
+      "question_text": "'শিক্ষক বাদশাহকে নিজের কথা শুনাব বলে ঠিক করলেন।' — এখানে 'শুনাব' শব্দটি কোন পদ? নির্ণয় করো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Understand",
@@ -2917,8 +2917,8 @@
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
       "answer_key": {
         "accepted": [
-          "ক্রিয়া-বিশেষণ",
-          "ক্রিয়াবিশেষণ"
+          "ক্রিয়া",
+          "ক্রিয়া পদ"
         ],
         "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (CD-136(b)) — এটি বাংলা ভাষার সাধারণ তথ্য, পাঠ ২০ এর উত্তর ছাপে না। উদ্দীপকের শব্দ পাঠ ২০ থেকেই নেওয়া। নির্দিষ্ট উত্তরই লাগবে — এই কাজে কাছাকাছি অর্থের কোনো বিকল্প নেই, গৃহীত তালিকার বাইরে কিছু নেওয়া যাবে না। গৃহীত তালিকার প্রথম রূপটিই আদর্শ উত্তর; বাকিগুলো একই পদেরই অন্য নাম।"
       }
@@ -3009,7 +3009,7 @@
         "accepted": [
           "পুত্র আমার আপনার কাছে সৌজন্য কি কিছু শিখিয়াছে?"
         ],
-        "model_note": "বাক্যটি একটি প্রশ্ন, তাই শেষে প্রশ্নচিহ্ন বসবে।"
+        "model_note": "বাক্যটি একটি প্রশ্ন, তাই শেষে প্রশ্নচিহ্ন বসবে। পাঠে ছাপা রূপও এটিই।"
       }
     }
   },
@@ -3053,7 +3053,7 @@
         "accepted": [
           "কী কথা বলিতে আজিকে আমায় ডেকেছেন নিরালায়?"
         ],
-        "model_note": "শিক্ষক জানতে চাইছেন, তাই শেষে প্রশ্নচিহ্ন বসবে।"
+        "model_note": "শিক্ষক জানতে চাইছেন, তাই শেষে প্রশ্নচিহ্ন বসবে। পাঠে ছাপা রূপও এটিই।"
       }
     }
   },
@@ -3085,7 +3085,7 @@
       "qid": "QP-BAN-C5-U20-Q65",
       "topic_tag": "TOP-BAN-C5-13",
       "ref19_topic_id": "BAN-SENTENCE",
-      "question_text": "'প্রাণের চেয়েও মান বড়ো আমি শুনাব শাহানশাহে' — পাঠ ২০ থেকে নেওয়া এই অংশে প্রয়োজনীয় বিরামচিহ্নগুলো বসিয়ে আবার লেখো।",
+      "question_text": "'ভাবিলেন আজি নিস্তার নাহি যায় বুঝি তাঁর সবি' — পাঠ ২০ থেকে নেওয়া এই অংশে প্রয়োজনীয় বিরামচিহ্নগুলো বসিয়ে আবার লেখো।",
       "question_type": "short_answer",
       "paper_role": "short",
       "bloom_level": "Apply",
@@ -3095,9 +3095,9 @@
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
       "answer_key": {
         "accepted": [
-          "প্রাণের চেয়েও মান বড়ো, আমি শুনাব শাহানশাহে।"
+          "ভাবিলেন, আজি নিস্তার নাহি, যায় বুঝি তাঁর সবি।"
         ],
-        "model_note": "'বড়ো'-এর পরে কমা, কারণ কথাটি সেখানে শেষ হয়নি; আর বাক্যের শেষে দাঁড়ি।"
+        "model_note": "'ভাবিলেন'-এর পরে কমা, 'নাহি'-র পরে কমা, আর শেষে দাঁড়ি — তিনটিই পাঠে ছাপা আছে।"
       }
     }
   },
@@ -3227,9 +3227,10 @@
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
       "answer_key": {
         "accepted": [
+          "সত্যই তুমি মহান উদার বাদশাহ আলমগীর।",
           "সত্যই তুমি মহান, উদার বাদশাহ আলমগীর।"
         ],
-        "model_note": "দুটি বিশেষণের মাঝে কমা, আর বাক্যের শেষে দাঁড়ি।"
+        "model_note": "পাঠে এই চরণে কোনো কমা ছাপা নেই — শেষের দাঁড়িটিই প্রয়োজনীয় বিরামচিহ্ন, আর গৃহীত তালিকার প্রথম রূপটিই পাঠের রূপ। দুটি বিশেষণের মাঝে কমা দিলেও ভুল নয়, তাই সেটিও গ্রহণযোগ্য; কমা না দেওয়ার জন্য নম্বর কাটা যাবে না।"
       }
     }
   },
@@ -3452,7 +3453,7 @@
       "answer_key": {
         "accepted": [
           "হ্ম = হ্ + ম; নতুন শব্দ — ব্রাহ্ম",
-          "হ্ম — হ্ + ম; চিহ্ম"
+          "হ্ম — হ্ + ম; ব্রাহ্মণ"
         ],
         "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া (CD-136(b)) — এটি বাংলা ভাষার সাধারণ তথ্য, পাঠ ২০ এর উত্তর ছাপে না। উদ্দীপকের শব্দ পাঠ ২০ থেকেই নেওয়া। যুক্তবর্ণ ভাঙার উত্তরটি নির্দিষ্ট — সেখানে বিকল্প নেই। নতুন শব্দ যেকোনো শুদ্ধ শব্দ হতে পারে, যদি তাতে সেই যুক্তবর্ণ থাকে; গৃহীত তালিকা কেবল নমুনা। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ।"
       }
@@ -3562,7 +3563,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-01",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "paper_role": "short"
     },
@@ -3579,7 +3580,7 @@
       "question_text": "'সংবাদ বহন করে আনেন যিনি' — পাঠ ২০-এর শব্দতালিকার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
       "question_type": "short_answer",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "tier": "tier1",
       "marks": 1,
@@ -3605,7 +3606,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-01",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "paper_role": "short"
     },
@@ -3622,7 +3623,7 @@
       "question_text": "'দিল্লির অধিপতি বা শাসক' — পাঠ ২০-এর শব্দতালিকার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
       "question_type": "short_answer",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "tier": "tier1",
       "marks": 1,
@@ -3649,7 +3650,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-01",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "paper_role": "short"
     },
@@ -3666,7 +3667,7 @@
       "question_text": "'বাদশাহর জন্য সম্মানসূচক সম্বোধন' — পাঠ ২০-এর শব্দতালিকার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
       "question_type": "short_answer",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "tier": "tier1",
       "marks": 1,
@@ -3692,7 +3693,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-01",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "paper_role": "short"
     },
@@ -3706,17 +3707,17 @@
       "qid": "QP-BAN-C5-U20-Q79",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-VOCAB",
-      "question_text": "'ধোওয়ার কাজ' — পাঠ ২০-এর শব্দতালিকার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_text": "'মাথা বা মস্তক' — পাঠ ২০-এর শব্দতালিকার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
       "question_type": "short_answer",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "tier": "tier1",
       "marks": 1,
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
       "answer_key": {
         "accepted": [
-          "প্রক্ষালন"
+          "শির"
         ]
       }
     }
@@ -3735,7 +3736,7 @@
     "review_status": "draft",
     "tags": {
       "topic_tag": "TOP-BAN-C5-01",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "paper_role": "short"
     },
@@ -3749,17 +3750,17 @@
       "qid": "QP-BAN-C5-U20-Q80",
       "topic_tag": "TOP-BAN-C5-01",
       "ref19_topic_id": "BAN-VOCAB",
-      "question_text": "'বাদশাহর নিজের ঘর' — পাঠ ২০-এর শব্দতালিকার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
+      "question_text": "'লোকজন নেই এমন নির্জন জায়গায়' — পাঠ ২০-এর শব্দতালিকার শব্দ দিয়ে এক কথায় প্রকাশ করো।",
       "question_type": "short_answer",
       "paper_role": "short",
-      "bloom_level": "Understand",
+      "bloom_level": "Remember",
       "difficulty": "easy",
       "tier": "tier1",
       "marks": 1,
       "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
       "answer_key": {
         "accepted": [
-          "খাস কামরা"
+          "নিরালায়"
         ]
       }
     }

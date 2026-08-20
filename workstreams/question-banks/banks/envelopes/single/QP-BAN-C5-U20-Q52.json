@@ -12,7 +12,7 @@
   "review_status": "draft",
   "tags": {
     "topic_tag": "TOP-BAN-C5-05",
-    "bloom_level": "Create",
+    "bloom_level": "Evaluate",
     "difficulty": "hard",
     "paper_role": "structured"
   },
@@ -29,7 +29,7 @@
     "question_text": "শিক্ষকের প্রতি একজন শিক্ষার্থীর কীভাবে সম্মান দেখানো উচিত — নিজের ভাষায় লেখো।",
     "question_type": "descriptive",
     "paper_role": "structured",
-    "bloom_level": "Create",
+    "bloom_level": "Evaluate",
     "difficulty": "hard",
     "tier": "tier1",
     "marks": 5,

@@ -578,7 +578,14 @@ def selftest():
          lambda r: row(r, 5, "BAN-S10").update({"selected": "ভাব নির্ণয়"})),
         ("UNSELECTED", "`selected` nulled with NO `unselected_reason` — a bare null is an "
                        "unfilled field, not a declaration",
-         lambda r: row(r, 5, "BAN-S10").update({"selected": None})),
+         # CD-181 · TOOLS-CR-021: the seed must ASSERT THE ABSENCE IT TESTS, not inherit it
+         # from whatever the live row happens to hold. Before CD-181 this seed fired only
+         # because C5 BAN-S10 carried no `unselected_reason`; the moment that row legitimately
+         # gained one, the mutated row became the VALID UNSELECTED state and the seed went
+         # silent while still reporting itself as a case. Popping the key makes the seed
+         # state-independent — it now fires whatever the register says.
+         lambda r: (row(r, 5, "BAN-S10").update({"selected": None}),
+                    row(r, 5, "BAN-S10").pop("unselected_reason", None))),
         ("UNSELECTED", "`selected` nulled with an EMPTY-STRING reason — whitespace is not a "
                        "reason either",
          lambda r: row(r, 5, "BAN-S10").update({"selected": None, "unselected_reason": "   "})),

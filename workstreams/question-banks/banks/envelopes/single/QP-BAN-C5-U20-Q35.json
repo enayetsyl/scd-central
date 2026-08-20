@@ -12,8 +12,8 @@
   "review_status": "draft",
   "tags": {
     "topic_tag": "TOP-BAN-C5-05",
-    "bloom_level": "Understand",
-    "difficulty": "medium",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
     "paper_role": "mcq"
   },
   "provenance": {
@@ -26,37 +26,37 @@
     "qid": "QP-BAN-C5-U20-Q35",
     "topic_tag": "TOP-BAN-C5-05",
     "ref19_topic_id": "BAN-POEM",
-    "question_text": "কবিতার শেষে শিক্ষক বাদশাহকে কী বললেন?",
+    "question_text": "কবিতার শেষে শিক্ষকের উচ্ছ্বাসের কারণ কী?",
     "question_type": "mcq",
     "paper_role": "mcq",
-    "bloom_level": "Understand",
-    "difficulty": "medium",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
     "tier": "tier1",
     "marks": 1,
     "chapter_ref": "পাঠ ২০ — শিক্ষাগুরুর মর্যাদা",
     "options": [
       {
         "option_id": "ক",
-        "text": "বাদশাহ মহান ও উদার, আর আজ থেকে শিক্ষাগুরুর শির চির উন্নত হলো",
+        "text": "শিক্ষকের মর্যাদা স্বয়ং বাদশাহর কাছে স্বীকৃতি পেয়েছে",
         "is_correct": true
       },
       {
         "option_id": "খ",
-        "text": "তিনি আর পড়াবেন না",
+        "text": "শাস্তির আশঙ্কা কেটে গেছে",
         "is_correct": false,
-        "why_wrong": "পড়ানো ছাড়ার কথা কবিতায় নেই।"
+        "why_wrong": "স্বস্তি নিশ্চয়ই এসেছে, কিন্তু উচ্ছ্বাসের কারণ ভয় কাটা নয় — মর্যাদার স্বীকৃতি।"
       },
       {
         "option_id": "গ",
-        "text": "তিনি দিল্লি ছেড়ে যাবেন",
+        "text": "বাদশাহ তাঁকে পুরস্কার দিয়েছেন",
         "is_correct": false,
-        "why_wrong": "দিল্লি ছাড়ার কথা কবিতায় নেই।"
+        "why_wrong": "পুরস্কারের কথা কবিতায় নেই।"
       },
       {
         "option_id": "ঘ",
-        "text": "তিনি শাহজাদাকে শাস্তি দেবেন",
+        "text": "শাহজাদা ক্ষমা চেয়েছে",
         "is_correct": false,
-        "why_wrong": "শাস্তির কথা কবিতায় নেই।"
+        "why_wrong": "শাহজাদা এই দৃশ্যে উপস্থিতই নন।"
       }
     ]
   }
