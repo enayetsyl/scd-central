@@ -480,6 +480,52 @@ SINGLE_CHANNEL = "**যাচাই-চ্যানেল:** একক"
 FULL, SAMPLED = "পূর্ণ", "নমুনা"
 DEPTH_COL = "গভীরতা"
 
+CHANNEL_MARKER = "**যাচাই-চ্যানেল:**"
+
+
+def channel_label(text: str) -> str:
+    """THREE states, never two. TOOLS-CR-027.
+
+    Was `'single …' if SINGLE_CHANNEL in text else 'dual'` — so a file that declares NOTHING
+    fell to the `else` and the header asserted a channel count the file never stated. That is
+    TOOLS-CR-026's own sentence (*ABSENCE OF A DECLARATION IS NOT A DECLARATION OF TWO
+    CHANNELS*) surviving at a site its scope did not reach, and it printed ABOVE the gate lines,
+    where it reads as a settled fact rather than a verdict.
+
+    Keyed on the MARKER, not on the `দুই` spelling: a file carrying the marker with any other
+    value has declared something, and this function reports that it declared rather than
+    guessing which word it used.
+    """
+    if SINGLE_CHANNEL in text:
+        return "single (§7.4 sampling unavailable)"
+    if CHANNEL_MARKER in text:
+        return "dual (declared)"
+    return "not declared (§7.7, PENDING-P-023)"
+
+
+def verdict_for(results):
+    """The verdict sentence, built FROM `results`. TOOLS-CR-027.
+
+    Was a fixed string naming spot-check sign-off, written when sign-off was the only route
+    into PENDING. CD-185 gave SLOTS that route and TOOLS-CR-026 gave it to DEPTH, and the
+    sentence was not updated — so `C5_BAN_Source_22.md` printed *spot-check sign-off owed*
+    beside `[PASS] SIGNOFF all 7 সই-ছক row(s) signed`, sending a reader after a signature
+    already in the file. TOOLS-CR-026(A) fixed exactly this at `run_all.py:226` and left the
+    per-file summary carrying the same stale wording.
+
+    THE EXIT-CODE CONTRACT IS UNCHANGED — 2 / 1 / 0. `run_all.py`, the pre-push hook and the
+    sentinel read it, and TOOLS-CR-026 ruled widening it deliberately not done. This names the
+    causes in the SENTENCE only.
+    """
+    statuses = [r[1] for r in results]
+    if "FAIL" in statuses:
+        return "RED — returns to build phase (AGENTS.md §5)", 2
+    if "PENDING" in statuses:
+        owed = " · ".join(r[0] for r in results if r[1] == "PENDING")
+        return f"NOT DONE — mechanical checks pass; PENDING: {owed}", 1
+    return "GREEN", 0
+
+
 # ---- §7.14 (CD-068) + §7.14.2c cell-order (CD-070): the third depth value and its price.
 #
 # `OCR-corroborated` entered the vocabulary with CD-068 and for one session was enforced by
@@ -654,19 +700,13 @@ def run(path: Path):
     print(f"file    : {path.relative_to(REPO)}")
     print(f"subject : class {cls} · {subject}")
     print(f"grammar : chapter word '{scope[3]}'" if scope else "grammar : —")
-    print(f"channel : {'single (§7.4 sampling unavailable)' if SINGLE_CHANNEL in text else 'dual'}")
+    print(f"channel : {channel_label(text)}")
     print(f"schema  : {schema} ({'পরিসর / সই-ছক' if schema == 'B' else 'এই ফাইলের অংশ / স্পট-চেক সই'})")
     print("-" * 78)
     for name, status, detail in results:
         print(f"[{status:7}] {name:8} {detail}")
     print("-" * 78)
-    statuses = {r[1] for r in results}
-    if "FAIL" in statuses:
-        verdict, code = "RED — returns to build phase (AGENTS.md §5)", 2
-    elif "PENDING" in statuses:
-        verdict, code = "NOT DONE — mechanical checks pass; spot-check sign-off owed", 1
-    else:
-        verdict, code = "GREEN", 0
+    verdict, code = verdict_for(results)
     print(f"VERDICT : {verdict}")
     return code
 
@@ -1000,8 +1040,51 @@ def selftest():
     print("-" * 78)
     ok = depth_selftest() and ok
     print("-" * 78)
+    ok = reporting_selftest() and ok
+    print("-" * 78)
     print(f"SELFTEST: {'PASS' if ok else 'FAIL'}")
     return 0 if ok else 2
+
+
+def reporting_selftest():
+    """TOOLS-CR-027 — the two reporting surfaces, BOTH DIRECTIONS.
+
+    A fix that silences a false sentence without proving the true one still prints is a waiver.
+    So each seed has its negative: the undeclared file must not say `dual` AND the declared one
+    must still say `single`; a SIGNOFF-only PENDING must still name sign-off AND a SLOTS/DEPTH
+    PENDING must not name it.
+    """
+    print("REPORTING SELFTEST (TOOLS-CR-027) — channel label and verdict sentence")
+    r = []
+    r.append(("channel · a file declaring একক still reads single",
+              channel_label(f"x {SINGLE_CHANNEL} y").startswith("single")))
+    r.append(("channel · a file declaring the marker with another value reads dual DECLARED",
+              channel_label(f"x {CHANNEL_MARKER} দুই y") == "dual (declared)"))
+    r.append(("channel · a file declaring NOTHING does not read dual — the TOOLS-CR-027 case",
+              "dual" not in channel_label("no declaration anywhere in this text")))
+    r.append(("channel · and it names its own state rather than going quiet",
+              "not declared" in channel_label("no declaration anywhere in this text")))
+    only_signoff = [("RANGE", "PASS", ""), ("SLOTS", "PASS", ""),
+                    ("SIGNOFF", "PENDING", ""), ("DEPTH", "PASS", "")]
+    v, c = verdict_for(only_signoff)
+    r.append(("verdict · SIGNOFF-only PENDING still names SIGNOFF", "SIGNOFF" in v and c == 1))
+    slots_depth = [("RANGE", "PASS", ""), ("SLOTS", "PENDING", ""),
+                   ("SIGNOFF", "PASS", ""), ("DEPTH", "PENDING", "")]
+    v, c = verdict_for(slots_depth)
+    r.append(("verdict · SLOTS+DEPTH PENDING names both", "SLOTS" in v and "DEPTH" in v))
+    r.append(("verdict · and does NOT name SIGNOFF — the live পাঠ ২২ case",
+              "SIGNOFF" not in v))
+    r.append(("verdict · PENDING still exits 1 — the contract is untouched", c == 1))
+    v, c = verdict_for([("RANGE", "FAIL", "")] + slots_depth)
+    r.append(("verdict · a FAIL outranks PENDING and still exits 2", c == 2 and "RED" in v))
+    v, c = verdict_for([("RANGE", "PASS", ""), ("SLOTS", "PASS", "")])
+    r.append(("verdict · all PASS is GREEN and exits 0", c == 0 and v == "GREEN"))
+    ok = True
+    for label, good in r:
+        print(f"  {'PASS' if good else 'FAIL'}  {label}")
+        ok = ok and good
+    print(f"REPORTING SELFTEST: {'PASS' if ok else 'FAIL'} ({len(r)} cases)")
+    return ok
 
 
 SCHEMA_B_FIXTURE = """\
