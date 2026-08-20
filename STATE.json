@@ -2,7 +2,7 @@
   "doc_type": "repo_state",
   "version": "1.0",
   "note": "High-water frontier of every ID series, cached so a session can read it once instead of re-deriving it by grep. THIS FILE IS NOT AUTHORITY. CD-154 still requires next-free to be re-verified against a freshly fetched origin immediately before the commit that files a row, and TOOLS-CR-005 still requires it by both methods. tools/audits/state_check.py asserts every number here against the ledger's own rows, so a stale value cannot be pushed. Values are RAW STRINGS with zero-padding intact and are never int()-ed (CD-088(d)(i)).",
-  "authored_against": "37e61a5",
+  "authored_against": "763bdbd",
   "read_on": "2026-08-20",
   "provenance_note": "`authored_against` is the PARENT commit this file was written against, not the commit it lands in — a file cannot carry its own SHA. The `high_water` values describe the tree AS COMMITTED, which includes rows added in the same commit. That is why the SHA is provenance and not authority: state_check.py re-derives every value from the ledgers on every run, so the field being stale can never make a number wrong.",
   "high_water": {
@@ -12,7 +12,7 @@
     },
     "canon/DECISIONS.md": {
       "prefix": "CD",
-      "value": "188"
+      "value": "189"
     },
     "canon/_wip/c5-bangla/CORRECTIONS.md": {
       "prefix": "CR",
@@ -32,7 +32,7 @@
     },
     "workstreams/question-banks/CORRECTIONS.md": {
       "prefix": "QB-CR",
-      "value": "020"
+      "value": "021"
     },
     "workstreams/question-banks/DECISIONS.md": {
       "prefix": "QB-D",
