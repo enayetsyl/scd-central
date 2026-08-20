@@ -3629,3 +3629,199 @@ U19 46·46·46·46 (items · array · `single/` · `batch.item_count`). `validat
 needs `--envelope-schema` and `--question-schema` passed explicitly, the vendored file being
 `import-contract.schema.json` rather than the `*ImportEnvelope*` glob it searches for. Same family as
 `session_bootstrap` §5's `jsonschema` trap; worth the line it costs here.
+
+> **BACKFILL NOTE (2026-08-20).** Every block from here to the end of 2026-08-19 was written on
+> 2026-08-20, not at the sessions' own close. `SESSION_LOG.md` went unwritten for the whole of
+> 2026-08-19 — the day AGENTS.md v1.5 amended the protocol that requires it. The blocks are
+> reconstructed from the sessions' own chat transcripts and summaries, **not from the handoff
+> documents**, which record decisions and forward state rather than what a session did.
+> **They are a reconstruction and are marked as one.** Commit SHAs, ledger rows and gate verdicts
+> in them were re-read at source on 2026-08-20 and are not taken from the transcripts. Where a
+> transcript does not establish something, the block says so rather than filling the gap.
+> Today's own blocks (2026-08-20) are contemporaneous and carry no such caveat.
+
+## 2026-08-19 · question-banks · Principal · cowork *(reconstructed)*
+- Did: পাঠ ১৭ · ১৮ · ১৯ built in PARALLEL on a three-worker Cowork architecture. Agent surfaced
+  several stops (missing repo in one session type, a stray zero-byte `FINDSTR` file on the mount,
+  all three banks' exports absent at R3's hand-check). R5 fixes applied, exports serialised, seven
+  commits pushed to `778e008`, server-confirmed.
+- Decisions logged: CD-173 (taught-set widening) · CD-174 (`[[CD-136]]` provenance delimiter, filed
+  with a discharge condition, not implemented) · PENDING-P-042 (ENVELOPE-SYNC gate defect).
+- Gates run + result: post-fix 5b counts পাঠ ১৭=1 · ১৮=4 · ১৯=1, down from 7·7·7. Six defects
+  travel to the Hub under CD-142(a).
+- Open items: PAT rotation (agent cannot do it) · Hub import of ১৭–১৯ `.batch.json` · Hub re-import
+  of U13–U16 with the P-039 manifest · header-arithmetic gate before পাঠ ২০. Sizing held at three
+  chapters per run rather than scaled up.
+
+## 2026-08-19 · migration design · Principal · chat *(reconstructed)*
+- Did: ruled the move from Cowork to chat-native production. `gates.py` read structurally and its
+  24 bank gates classified — **zero corpus-wide**, which is what makes a clone unnecessary for a
+  BUILD chat. Built `tools/run_all.py`, the orchestrator every prior handoff had referenced and
+  which had never existed; tested both platforms.
+- Decisions logged: none filed this session; the rulings were written into
+  `PLAN_2026-08-19_chat-native-production.md`.
+- Gates run + result: `run_all.py` exercised on Linux and Windows; seeded `marks=99` produced
+  exit 1 as designed.
+- Open items / findings: **a live PAT was found in `git remote -v` and revoked immediately**;
+  remote repointed to the `github-personal` SSH alias. **The symlink split was found** — two
+  `workstreams/lesson-plans/audits/` files are tracked as symlinks and Windows with
+  `core.symlinks=false` had written the link targets as file content, making `validate_plan.py`
+  inert on the Principal's machine with nothing reporting it. Fixed by Developer Mode plus
+  `core.symlinks=true` local **and** global. SSH fixed with `icacls /inheritance:r` + `/grant:r`
+  after a stale SID from a deleted account made the key world-readable.
+
+## 2026-08-19 · tools · Principal · chat *(reconstructed)*
+- Did: committed the deferred `source_check.py` BGS/SCI spine fix (it had sat uncommitted two days
+  while every gate run reported clean); committed `run_all.py` as a tracked entry point with a
+  `tools/MANIFEST.md` row and `tools/SMOKE.md` proving the runner can go red.
+- Decisions logged: TOOLS-CR-009 (SCI/BGS spine key defect and the two-day gap) · TOOLS-CR-010
+  (`ledger_check.py`'s `ROW_ID` regex silently omitted `TOOLS-CR-005`, whose cell carries trailing
+  text inside the bold markers — a ledger reader blind to one of its own rows).
+- Gates run + result: seeded exit 1 confirmed. Commits pushed to `origin/main`.
+- Open items: `ledger_check.py` `ROW_ID` widening authorised and in progress at close. Phase A not
+  yet begun.
+
+## 2026-08-19 · tools (Phase A · A1) · Principal · chat *(reconstructed)*
+- Did: A1 — run receipt v1 → v2, adding `platform`, `os`, `core.symlinks`, `core.autocrlf` and a
+  `git_config()` helper returning `None` rather than `""` for unset keys, so *unset* stays
+  distinguishable from *set to empty*.
+- Decisions logged: TOOLS-CR-011 — the receipt's `git.dirty` was read at receipt-assembly time, so
+  **a receipt writing into the repo it inspects could never honestly report a clean tree.** Ruled:
+  snapshot `tree_dirty_at_start` immediately after `parse_args()`, before any gate runs.
+- Gates run + result: suite CLEAN at exit 0; the `machine` object read back from the written JSON.
+- Open items: at close the fix was committed (`010bdc4`) but **not yet demonstrated on a genuinely
+  clean tree** — the row says so rather than claiming the proof. A2–A4 open.
+
+## 2026-08-19 · tools (Phase A · A4) · Principal · chat *(reconstructed)*
+- Did: built and closed A4, the pre-push hook. Two rulings taken at session start: the hook is
+  **committed** to `tools/hooks/` rather than left local-only, and it trusts a **positive sentinel**
+  rather than exit codes alone — because argparse's own usage error also exits 2, making a
+  mis-invoked hook indistinguishable from a genuine REFUSED gate. Sentinel added to `run_all.py`
+  before the hook was written.
+- Decisions logged: TOOLS-CR-013 (all eleven gate scripts lacked the utf-8 stdout reconfigure block
+  `run_all.py` got at TOOLS-CR-012) · TOOLS-CR-014 (the control script first chosen,
+  `ledger_check.py`, **could not exercise the defect** — its output has no character outside
+  cp1252; and the mangling seen on console was `Get-Content -Encoding UTF8` reading cp1252 bytes,
+  not corruption in the file).
+- Gates run + result: **the hook blocked three pushes** — one synthetic red-path test and twice on
+  a real duplicate-id defect introduced while filing TOOLS-CR-014. HEAD `52a8cd8` → `88a0a95`,
+  seven commits. TOOLS-CR-013 demonstrated in both directions on `gates.py`.
+- Open items: a chat has no hashing primitive, so **PLAN §5's B2 as specified was a check aimed at
+  a machine that could not run it** — flagged as needing a ruling before any of B2 was written.
+
+## 2026-08-19 · governance (Phase C) · Principal · chat *(reconstructed)*
+- Did: filed CD-177 through CD-180 and updated `SETUP.md`. Cloned `origin/main` at `88a0a95` and
+  re-read `gates.py` at source before drafting any row rather than citing the plan's own figures.
+- Decisions logged: CD-177 (chat replaces Cowork for routine authoring; code execution a declared
+  BUILD-lane precondition) · CD-178 (the 24-gate classification filed so it cannot drift) ·
+  CD-179 (new artifacts JSON, existing markdown untouched) · CD-180 (**Phase B dissolved unbuilt** —
+  a chat sandbox that can clone removes the premise for `canon_manifest.json` and the dual home).
+- Gates run + result: `run_all.py --repo` CLEAN, 7 gates, 0 FAIL — the Linux verdict matching
+  Windows. HEAD `88a0a95` → `ac38a68`, two commits, hook fired and allowed.
+- Open items / method: an editor save **did not reach disk** and was caught only by
+  `git --no-pager diff --stat` reading 11 insertions where 8 were expected. A PowerShell transcript
+  was re-pasted into the shell and re-executed. `[System.IO.File]` resolved paths against the
+  process working directory rather than `Set-Location`'s. **Lesson recorded: print the number
+  before and after, and refuse to write if it did not move.**
+
+## 2026-08-19 · governance (AGENTS v1.5) · Principal · chat *(reconstructed)*
+- Did: `AGENTS.md` v1.4 → v1.5 — chat lane named the routine authoring lane with Cowork/Code/Codex
+  demoted to exceptions-only (CD-177), the PAT-in-URL directive superseded to the SSH alias, and
+  §3's session-start protocol branched by lane.
+- Decisions logged: TOOLS-CR-015 (`int_id_check` should REFUSE, not FAIL, on an unparseable symlink
+  stub) · TOOLS-CR-016 (three `SyntaxWarning` docstrings need `r` prefixes; **the trap is that two
+  openers sit at line 2, far from the reported warning line**) · TOOLS-CR-017 (`source_check.py`
+  crashes on `--help`, no argparse). **All three filed as proposed, not built.**
+- Gates run + result: two commits — `f010dcb` (AGENTS v1.5) and `941b16c` (the three rows).
+- Open items / method: **two arithmetic errors** (predicted 322 lines for AGENTS.md, actual 328;
+  predicted 6 insertions, actual 5), both caught by printing counts before and after — the
+  print-the-number rule holding on its first real test. **Four shell-mismatch faults**, which is
+  what later became CD-183. The prior handoff's Cowork site count of two was **wrong** — reading at
+  source found four. `tools/CORRECTIONS.md` found to have **two structurally different tables**, so
+  an EOF append lands a row in the wrong one.
+
+## 2026-08-19 · question-banks (P04 · C5 BAN · U20 · BUILD) · Principal · chat *(reconstructed)*
+- Did: **`run_all.py --bank` exercised in a chat sandbox for the first time** — fresh shallow clone,
+  `pip install jsonschema`, full pass in under 4s. The BUILD lane's central claim settled. Authored
+  the U20 bank (80 items) and published `dd7077e`; then took the REVIEW findings and built the
+  correction patch.
+- Decisions logged: CD-181 (`BAN-S10` at C5 → UNSELECTED, all three forms admitted; spine superseded
+  in place) · QB-CR-019 (a cross-slot verbatim reuse REPETITION caught) · QB-CR-020 (the ten REVIEW
+  findings) · TOOLS-CR-018/019/020/021/022.
+- Gates run + result: suite CLEAN, 8 gates, 0 FAIL, 0 REFUSED. **TOOLS-CR-021 red-path proven in
+  BOTH directions** — the `slot_register_check` UNSELECTED seed fired only because C5 S10 happened
+  to carry no `unselected_reason`; CD-181 gave it one and the seed went silent, taking the whole
+  register verdict red. Fixed by popping the key and proven against **both** register states.
+- Open items: **the patch was not pushed in this session** — the sandbox holds no key; it was handed
+  to the Principal and pushed on 2026-08-20. The other 27 seeds in `slot_register_check.py` all
+  mutate the live register and **whether any carries the same hidden dependence is unmeasured.**
+
+## 2026-08-19 · question-banks (P04 · C5 BAN · U20 · REVIEW) · Principal · chat *(reconstructed)*
+- Did: independent REVIEW of `C5_BAN_U20_QuestionBank_v1.json` at `dd7077e`. Cloned the repo and
+  fetched the bank itself rather than accepting it pasted; re-hashed all 9 artifact and gate-script
+  SHA-256 values against the run receipt; read the bank item by item.
+- Decisions logged: none — REVIEW reports and never edits. Wrote
+  `reviews/C5_BAN_U20_QuestionBank_v1.review.json`, verdict SHIP WITH FIXES.
+- Gates run + result: suite CLEAN, 8 gates, 0 FAIL; all 9 hash checks matched. **Twelve findings in
+  a bank that had passed every gate.** Three were factually false statements to a student: `Q73`
+  offered চিহ্ম, which is not a word; `Q36`/`Q37` asserted উন্নত and মহান are in a glossary that
+  does not contain them.
+- Open items: **the lesson, now attested rather than argued** — `BLOOM-BAND` checks a tag is one of
+  six, never that it is the right one; `SOURCE-TRACE` checks an anchor resolves, never that the
+  stem's claim about the source is true. **A green hook proves an artifact is well-formed; it
+  proves nothing about whether it is true.** REVIEW is not optional for future chapters.
+
+## 2026-08-19 · extraction lane · Principal · chat *(reconstructed — summary only)*
+- Did: five parallel extraction sessions producing schema-B source files — C5 MATH অধ্যায় ৬ · ৯ · ১০;
+  C4 SCI অধ্যায় ১–৬, ৭–১১ + শব্দকোষ; C4 BGS অধ্যায় ১–১০, ১১–১৪ + শব্দভান্ডার.
+- Decisions logged: none — extraction records, it never curates.
+- Gates run + result: none; these files were not in a walked tree at the time.
+- Open items / findings: **দ্রুত is printed as দুত throughout the C4 science book** (র-ফলা absent,
+  specific to the দ্রু conjunct) — caught mid-run after two files had already been written with the
+  corrected form; all nine instances reversed and the self-correction documented. Out-of-text
+  distractors in matching tables found in **six of ten** C4 BGS chapters, recorded as a property of
+  the book rather than isolated errors. Two image sources filed unusable rather than guessed
+  (ছাপা ৩৭ poster at 100 ppi, ছাপা ৮১ river map) — **the printed ক) task instructs students to read
+  rivers off a map the book cannot support.** Every সই-ছক row left PENDING with পরীক্ষক and তারিখ
+  blank.
+
+## 2026-08-20 · publish + governance + tools + C5 Bangla sources · Principal · chat
+- Did: **seven pushes**, `dd7077e` → `2165fc2` → `8fef244` → `66e50e1` → `d1bf6d5` → `2496dd4` →
+  `aef83ba` → `94ee747` → `<this commit>`. Applied and pushed the U20 correction patch left
+  unpushed by the 2026-08-19 BUILD session (42 files, 536/492). Filed §7.19 and CD-182/183. Built
+  `STATE.json` + `STATE-CHECK` and the six unbuilt TOOLS-CR rows. Widened `source_check.py` to
+  judge schema B. Landed the twelve C5 Bangla পাঠ ১২–২৩ extractions, recorded teacher sign-off,
+  and authored the পাঠ ১৩–২০ slot maps.
+- Decisions logged: CD-182 (an extracted chapter under a consumption exclusion declares it in its
+  own header — `SOURCE_POLICY` §7.19; **PENDING-P-035 CLOSED**) · CD-183 (paste-ready command
+  blocks declare their shell on the first line — the open question from four prior sessions) ·
+  CD-184 (`STATE.json` high-water cache with a gate asserting it against the ledgers; **`claims[]`
+  dissolved unbuilt**, its collision risk gone with one-chapter-per-chat) · CD-185 (**two schemas
+  are both called §5**; schema B judged on its own structure, schema A legacy and not retired;
+  SLOTS PENDING for schema B) · CD-186 (slot maps for পাঠ ১৩–২০) · CD-187 (**correcting CD-186**) ·
+  TOOLS-CR-023 (TOOLS-CR-015/016/017/018/019/020 all BUILT and proven).
+- Gates run + result: `RUNALL_SENTINEL=CLEAN` on every push; the hook fired and allowed each.
+  `SOURCES` moved **31 green → 39 green · 4 pending**, from 12 files that were previously invisible.
+  TOOLS-CR-015 proven three directions including a **live** red path (`render_plan.py` replaced by
+  its own target text → `REFUSE SYMLINK-STUB`, exit 2, then restored). TOOLS-CR-019 proven by
+  regenerating the live U20 wrapper **byte-identically** (digest `3484d4f87fdc` unchanged).
+  `STATE-CHECK` red-path proven live by setting CD to `182` → FAIL, exit 1.
+- Open items: **TOOLS-CR-022 is still OPEN.** Re-pointing the banks was attempted and stopped: all
+  80 U20 anchors fail against the new file — 44 on the **অঙ্গুলি / অঞ্জুলি** disagreement between
+  the legacy combined file and the raster extraction, 34 on multi-line block formatting (each
+  individual line resolves), and **2 on anchors that were never book text at all**
+  (`'প্রথম ৮ পঙ্‌ক্তি (S01-এর জন্য)'` is a heading of the legacy file). That last is the serious
+  one: `SOURCE-TRACE` green on the legacy file was **partly self-satisfying**, an anchor resolving
+  against a label rather than against the book. Its own lane, opening on the অঙ্গুলি ruling.
+  Also open: পাঠ ১২/২১/২২/২৩ slot maps (no bank, so no attestation) · `validate_import.py`'s
+  unmatched schema glob, named in TOOLS-CR-023 and deliberately not fixed · the hook printing 8
+  gate runs where `--bank --repo` prints 9 · Hub imports · পাঠ ২২ with REVIEW.
+- Method faults this session, recorded rather than quietly fixed: **`CANON-CHECK` caught the
+  advisor citing `CD-184` and again `CD-186` in code before either row existed** — row-commits-
+  precede-code enforced by a gate rather than remembered, twice. **A word-sweep returned a clean
+  zero and was mistaken for a check** — `আবেদন`/`ফরম`/`রচনা`/`ছক পূরণ` found nothing in twelve
+  files, and a second sweep on the content shape found ছক content in **every one**; পাঠ ২০'s own
+  ⛔ row describing a ten-row empty table had been read earlier in the same session without the
+  connection being made. **And CD-186(d) re-ruled a question `CD-147` closed sixteen days earlier**
+  — the next-free sweep proved the NUMBER was free and nothing checked whether the SUBJECT was
+  already decided (CD-187(f)).
