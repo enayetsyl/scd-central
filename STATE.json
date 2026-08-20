@@ -12,7 +12,7 @@
     },
     "canon/DECISIONS.md": {
       "prefix": "CD",
-      "value": "190"
+      "value": "191"
     },
     "canon/_wip/c5-bangla/CORRECTIONS.md": {
       "prefix": "CR",
@@ -24,7 +24,7 @@
     },
     "tools/CORRECTIONS.md": {
       "prefix": "TOOLS-CR",
-      "value": "024"
+      "value": "025"
     },
     "workstreams/class-tests/CORRECTIONS.md": {
       "prefix": "CR",
