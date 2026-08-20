@@ -37,6 +37,7 @@ Principal signs its spot-check off, and only then moves to `canon/sources/<class
 from __future__ import annotations
 
 import re
+import argparse
 import sys
 from pathlib import Path
 # TOOLS-CR-013: a gate run DIRECTLY (not through run_all.py) inherits Windows' cp1252
@@ -190,7 +191,7 @@ def spine_slots(subject: str):
 
 
 def spine_labels(subject: str):
-    """-> {slot id: the spine's own label}, read from `### \`XXX-Snn\` — <label>`.
+    r"""-> {slot id: the spine's own label}, read from `### \`XXX-Snn\` — <label>`.
 
     **P-021 (CD-077).** The label is why this function exists. `check_slots` used to ask only
     whether an ID appeared somewhere in the section — and a table in which *every row was
@@ -823,8 +824,32 @@ def selftest():
     return 0 if ok else 2
 
 
+def _cli(argv=None):
+    """TOOLS-CR-017 — argparse, so `--help` REFUSES by name instead of crashing.
+
+    Before this, an unrecognised argument was not rejected: it was carried straight into a path
+    operation and died with `FileNotFoundError: '--help'`. **A traceback is not a refusal** — it
+    reaches no verdict and says nothing about what the script accepts, which is `SOURCE_POLICY`
+    §7.17's line arriving through the argument surface (TOOLS-CR-015's family).
+
+    **The zero-argument and `--selftest` behaviours are UNCHANGED and that is deliberate**: they are
+    what `run_all.py` invokes, and this row fixes the argument surface, not the contract. `PATH` is
+    optional so a bare call still selftests.
+    """
+    ap = argparse.ArgumentParser(
+        prog="source_check.py",
+        description="Executes SOURCE_POLICY.md §5 against a source extraction. "
+                    "With no PATH, runs the selftest.")
+    ap.add_argument("path", nargs="?", metavar="PATH",
+                    help="a source extraction .md to judge; relative paths resolve against the repo root")
+    ap.add_argument("--selftest", action="store_true",
+                    help="prove the instrument on synthetic seeds and exit (the default with no PATH)")
+    args = ap.parse_args(argv)
+    if args.selftest or args.path is None:
+        return selftest()
+    target = Path(args.path)
+    return run(target if target.is_absolute() else REPO / target)
+
+
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    if not args or args[0] == "--selftest":
-        sys.exit(selftest())
-    sys.exit(run(Path(args[0]) if Path(args[0]).is_absolute() else REPO / args[0]))
+    sys.exit(_cli())

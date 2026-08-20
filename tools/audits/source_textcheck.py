@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""source_textcheck.py — cross-channel check for a source extraction.
+r"""source_textcheck.py — cross-channel check for a source extraction.
 
 SOURCE_POLICY §7.3 permits a PDF's text layer as "a disagreement-hunting second channel,
 never as a source". This script is that channel, executed.

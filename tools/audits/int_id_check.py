@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""int_id_check.py — CD-088(d)(i): the `int()`-on-a-captured-ID source lint.
+r"""int_id_check.py — CD-088(d)(i): the `int()`-on-a-captured-ID source lint.
 
 Run from repo root:
     python tools/audits/int_id_check.py
@@ -475,22 +475,71 @@ def in_scope(root):
     return sorted(set(out))
 
 
-def analyse_text(src, relpath):
+def is_symlink_stub(src, path=None):
+    r"""TOOLS-CR-015 — is this file a git symlink written as TEXT, rather than broken code?
+
+    With `core.symlinks=false` (the Windows default without Developer Mode or admin) git writes a
+    symlinked file's TARGET PATH as its content. `render_plan.py` materialised as a 36-byte file
+    reading `../../../tools/render/render_plan.py`, `ast.parse` died at line 1, and the gate went
+    **red on Windows and green on Linux at one commit**.
+
+    **The test is not "short and unparseable" — it is "this content IS a path that resolves."**
+    That distinction is the whole of the row: a refusal that also swallowed genuine syntax errors
+    would be a way for real defects to leave the suite green. A file whose entire content is one
+    relative path pointing at an existing sibling is exactly what git writes and is nothing a
+    developer writes by accident.
+    """
+    body = src.strip()
+    if not body or "\n" in body or len(body) > 4096:
+        return False
+    if body.startswith(("/", "\\")) or ":" in body[:3]:
+        return False
+    if "/" not in body and "\\" not in body:
+        return False
+    if path is None:
+        return False
+    try:
+        return (Path(path).parent / body).resolve().exists()
+    except OSError:
+        return False
+
+
+def analyse_text(src, relpath, path=None):
     try:
         tree = ast.parse(src)
     except SyntaxError as e:
+        if is_symlink_stub(src, path):
+            return [("SYMLINK-STUB", e.lineno or 0,
+                     f"file content is the symlink target `{src.strip()}`, not Python. "
+                     f"This is an ENVIRONMENT defect, not a code defect: `core.symlinks` is false "
+                     f"for this checkout, so git wrote the link target as file content. "
+                     f"Fix the checkout (`git config core.symlinks true`, Developer Mode or an "
+                     f"admin shell, then re-checkout the file) — do NOT edit the file")]
         return [("PARSE", e.lineno or 0, f"could not parse: {e.msg}")]
     return Analyser(tree, src.splitlines(), relpath).findings
 
 
 def run(paths, quiet=False):
-    fails, reports = [], []
+    """-> (fails, reports, refusals). TOOLS-CR-015 added the third.
+
+    A refusal is NOT a pass and NOT a failure: it is the state `SOURCE_POLICY` §7.17 names when a
+    gate reached no verdict. `run_all.py` reads exit 2 as REFUSED and the pre-push hook blocks on
+    it (CD-176), so routing here does not weaken the hook.
+    """
+    fails, reports, refusals = [], [], []
     for p in paths:
         rel = p.relative_to(ROOT).as_posix() if p.is_absolute() and ROOT in p.parents else p.name
-        for gate, line, detail in analyse_text(p.read_text(encoding="utf-8"), rel):
+        for gate, line, detail in analyse_text(p.read_text(encoding="utf-8"), rel, p):
             row = (gate, f"{rel}:{line}", detail)
-            (reports if gate == "INT-ON-CAPTURE-UNTYPED" else fails).append(row)
+            if gate == "SYMLINK-STUB":
+                refusals.append(row)
+            elif gate == "INT-ON-CAPTURE-UNTYPED":
+                reports.append(row)
+            else:
+                fails.append(row)
     if not quiet:
+        for gate, where, detail in refusals:
+            print(f"  REFUSE {gate:<24} {where}\n         {detail}")
         for gate, where, detail in fails:
             print(f"  FAIL   {gate:<24} {where}\n         {detail}")
         if reports:
@@ -498,15 +547,15 @@ def run(paths, quiet=False):
                   f"patterns — printed, not judged (SOURCE_POLICY §7.17)")
             for _, where, detail in reports:
                 print(f"         - {where}  {detail.split('  — ')[0].split('int() on a capture ')[-1]}")
-    return fails, reports
+    return fails, reports, refusals
 
 
 # ---------------------------------------------------------------------------------
 # SELFTEST — synthetic fixtures only (CD-055, CD-064(f); seeds synthetic, CD-121(e))
 # ---------------------------------------------------------------------------------
 
-def _t(src):
-    return analyse_text(src, "fixture.py")
+def _t(src, path=None):
+    return analyse_text(src, "fixture.py", path)
 
 
 def selftest():
@@ -657,6 +706,44 @@ def selftest():
          'm = re.search(rf"({UNIT}) (\\d+)", line)\n'
          'p = int(m.group(2))\n', True, "not statically resolvable")
 
+    # --- 11b. TOOLS-CR-015, BOTH DIRECTIONS. Seeds are SYNTHETIC (CD-121(e)): a real temp dir is
+    # --- built here rather than a live checkout, because the defect is a PROPERTY OF THE CHECKOUT
+    # --- and cannot be seeded from file text alone — `is_symlink_stub` must resolve the path.
+    import tempfile
+    with tempfile.TemporaryDirectory() as _d:
+        _dp = Path(_d)
+        (_dp / "target.py").write_text("x = 1\n", encoding="utf-8")
+        _stub_src = "target.py\n" if False else "./target.py"
+        _stub = _dp / "stub.py"
+        _stub.write_text(_stub_src, encoding="utf-8")
+        _f = _t(_stub_src, _stub)
+        results.append(("SYMLINK-STUB",
+                        "a symlink written as text (core.symlinks=false) REFUSES, it does not FAIL",
+                        any(g == "SYMLINK-STUB" for g, _, _ in _f),
+                        "" if any(g == "SYMLINK-STUB" for g, _, _ in _f) else f"got: {_f}"))
+
+        # --- THE DIRECTION THAT MATTERS. A refusal that also swallowed genuine syntax errors would
+        # --- be a way for real defects to leave the suite green — the row names this explicitly.
+        _bad = _dp / "bad.py"
+        _bad_src = "def f(:\n    pass\n"
+        _bad.write_text(_bad_src, encoding="utf-8")
+        _f2 = _t(_bad_src, _bad)
+        _ok2 = any(g == "PARSE" for g, _, _ in _f2) and not any(g == "SYMLINK-STUB" for g, _, _ in _f2)
+        results.append(("PARSE",
+                        "genuine invalid syntax still FAILS — the refusal is not a way out",
+                        _ok2, "" if _ok2 else f"got: {_f2}"))
+
+        # --- A path-shaped file whose target does NOT resolve is NOT a stub. Over-refusing would
+        # --- hide real defects behind an environment excuse.
+        _dang = _dp / "dangling.py"
+        _dang_src = "../nowhere/absent.py"
+        _dang.write_text(_dang_src, encoding="utf-8")
+        _f3 = _t(_dang_src, _dang)
+        _ok3 = any(g == "PARSE" for g, _, _ in _f3) and not any(g == "SYMLINK-STUB" for g, _, _ in _f3)
+        results.append(("PARSE",
+                        "a path-shaped file whose target does not resolve is NOT a stub — still FAILS",
+                        _ok3, "" if _ok3 else f"got: {_f3}"))
+
     # --- 12. BASELINE. A gate that fires on everything is as useless as one that fires on nothing.
     f = _t('import re\n'
            'PAT = re.compile(r"CD-(\\d{3})")\n'
@@ -686,8 +773,14 @@ def main():
     for p in paths:
         print(f"  {p.relative_to(ROOT).as_posix()}")
     print()
-    fails, reports = run(paths)
+    fails, reports, refusals = run(paths)
     print()
+    if refusals:
+        print(f"RESULT: REFUSED ({len(refusals)} file(s) could not be read as Python because the "
+              f"CHECKOUT is wrong, not the code — TOOLS-CR-015). No verdict was reached on them, "
+              f"and a gate that reached no verdict is not a pass (SOURCE_POLICY §7.17). "
+              f"{len(fails)} INT-ON-ID-CAPTURE failure(s) among the files that DID parse.")
+        sys.exit(2)
     print(f"RESULT: {'FAIL' if fails else 'CLEAN'} "
           f"({len(fails)} INT-ON-ID-CAPTURE failure(s), "
           f"{len(reports)} untyped site(s) reported and not judged)")

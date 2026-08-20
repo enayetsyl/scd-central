@@ -1993,11 +1993,27 @@ def g_envelope_sync(bank, ctx):
                         f"contract's const is \"1.0\" — the DOCUMENT is v1.1, the WIRE VALUE is not")
 
     if not errs:
-        rep.append(f"export in sync: {len(sing or arr)} envelope(s) == {len(items)} bank item(s), "
-                   f"ids and payloads, array and single/"
-                   + (f", and the v1.1 batch wrapper at item_count "
-                      f"{(batch.get('batch') or {}).get('item_count')}" if batch else "")
-                   + f" (digest {bank_content_digest(list(items.values()))[:12]})")
+        # TOOLS-CR-018 (Principal ruling 2026-08-20). The `N == M` sentence is reserved for a
+        # comparison that ACTUALLY HELD. On a freshly authored bank with nothing exported yet this
+        # line printed `0 envelope(s) == 80 bank item(s) … export in sync` — the VERDICT was right
+        # (an unrun step is not drift, §7.17) and the SENTENCE was false, which is the harder half:
+        # `in sync` is the phrase that stops a reader looking further. The chat BUILD lane authors
+        # before exporting (CD-177), so this branch is on the normal path for every chapter.
+        n_env = len(sing or arr)
+        if not (sing or arr):
+            rep.append(f"NOT COMPARED: no envelopes exist beside this bank, so the export was never "
+                       f"checked against its {len(items)} item(s). REPORTED, not failed — an unrun "
+                       f"step is not drift (SOURCE_POLICY §7.17). Run "
+                       f"build_question_envelopes.py → split_envelopes.py → build_batch.py"
+                       + ("" if batch is None else
+                          f"; a `.batch.json` IS present, at item_count "
+                          f"{(batch.get('batch') or {}).get('item_count')}, which is itself odd"))
+        else:
+            rep.append(f"export in sync: {n_env} envelope(s) == {len(items)} bank item(s), "
+                       f"ids and payloads, array and single/"
+                       + (f", and the v1.1 batch wrapper at item_count "
+                          f"{(batch.get('batch') or {}).get('item_count')}" if batch else "")
+                       + f" (digest {bank_content_digest(list(items.values()))[:12]})")
     return errs, rep
 
 
@@ -3601,6 +3617,29 @@ def qp_selftest():
              "there would fire on every bank exported before v1.1 (SOURCE_POLICY §7.17)"
              if ok_absent else f"absent-batch case wrong: errs={e3}"))
     ok = ok and ok_absent
+
+    # --- TOOLS-CR-018, BOTH DIRECTIONS. The fix trades a false green for nothing only if the
+    # --- healthy case still speaks: a gate that goes quiet on the healthy case is the gate an
+    # --- author learns to ignore, which is the failure the row names on the other side.
+    c4 = dict(ctx); c4["envelope_index"] = ({}, {}, None, None)
+    e4, r4 = g_envelope_sync(good, c4)
+    ok_noexport = (not e4) and any("NOT COMPARED" in r for r in r4) \
+        and not any("in sync" in r for r in r4)
+    print(f"  {'PASS' if ok_noexport else 'FAIL'}  ENVELOPE-SYNC  "
+          + ("fires on: a bank with NO export prints NOT COMPARED and does NOT print `in sync` — "
+             "the verdict was always right and the sentence was false, and `0 == 80 … in sync` is "
+             "the phrase that stops a reader looking further (TOOLS-CR-018)"
+             if ok_noexport else f"no-export case wrong: errs={e4} rep={r4}"))
+    ok = ok and ok_noexport
+
+    c5 = dict(ctx); c5["envelope_index"] = (_qp_envelopes(), _qp_envelopes(), None, None)
+    e5, r5 = g_envelope_sync(good, c5)
+    ok_stillsync = (not e5) and any("in sync" in r for r in r5)
+    print(f"  {'PASS' if ok_stillsync else 'FAIL'}  ENVELOPE-SYNC  "
+          + ("stays quiet on: a bank with a REAL in-sync export still prints `in sync` — the "
+             "TOOLS-CR-018 fix narrowed the sentence, it did not silence the gate"
+             if ok_stillsync else f"in-sync case lost its line: errs={e5} rep={r5}"))
+    ok = ok and ok_stillsync
 
     # --- CD-138(b): THE MARKER-EDIT SEED. A gate whose verdict moves when a marker string is
     # --- edited is non-conformant. Here the whole of the register's PROSE — the fields that

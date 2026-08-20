@@ -51,6 +51,9 @@ ROOT = Path(os.environ.get("SCD_ROOT") or Path(__file__).resolve().parents[1])
 REPO_GATES = [
     ("CANON-CHECK",    ["tools/audits/canon_check.py"]),
     ("LEDGER-CHECK",   ["tools/audits/ledger_check.py"]),
+    # CD-184. Sits immediately after LEDGER-CHECK because it asserts that census's own
+    # numbers against STATE.json, and a reader comparing the two wants them adjacent.
+    ("STATE-CHECK",    ["tools/audits/state_check.py"]),
     ("INT-ID-CHECK",   ["tools/audits/int_id_check.py"]),
     ("SLOT-REGISTER",  ["tools/audits/slot_register_check.py"]),
     ("TOOLS-CHECK",    ["tools/audits/tools_check.py"]),

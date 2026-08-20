@@ -52,6 +52,7 @@ so emitting one would only move the failure later. It also refuses at >500 items
 size guard) and on an empty array, for the same reason.
 """
 import hashlib
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -70,11 +71,25 @@ def bank_content_digest(items):
                                      ensure_ascii=False, sort_keys=True).encode()).hexdigest()
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("usage: build_batch.py <envelopes.json>")
-        return 2
-    src = Path(sys.argv[1])
+def main(argv=None):
+    """TOOLS-CR-019 — argparse, so `--help` REFUSES by name instead of crashing.
+
+    Before this, `sys.argv[1]` went straight into `Path(...).read_text()`, so an unrecognised
+    argument was not rejected — it was read as a filename and died with
+    `FileNotFoundError: '--help'`. **A traceback is not a refusal** (`SOURCE_POLICY` §7.17), and
+    the file already carried a `usage:` string for the zero-argument case, which is what makes the
+    omission legible as an oversight rather than a decision.
+
+    **Exit codes are UNCHANGED**: 2 when no envelope path is given (argparse's own code for a usage
+    error, which is what the hand-rolled branch returned), 1 on a content defect, 0 on success.
+    """
+    ap = argparse.ArgumentParser(
+        prog="build_batch.py",
+        description="Wrap an envelope array in the v1.1 batch wrapper the Hub imports.")
+    ap.add_argument("envelopes", metavar="ENVELOPES_JSON",
+                    help="path to a *.envelopes.json array produced by split/build_question_envelopes")
+    args = ap.parse_args(argv)
+    src = Path(args.envelopes)
     envelopes = json.loads(src.read_text(encoding="utf-8"))
     if not isinstance(envelopes, list):
         print(f"{src} is not an envelope array")

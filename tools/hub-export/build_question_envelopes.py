@@ -14,7 +14,7 @@ envelopes, each then run UNCHANGED through validate_import.py (this script does 
 
 DERIVED FROM THE DATA, not fabricated — like build_envelope.py:
   * envelope STRUCTURE (envelope_version const, required field sets, addressBlock keys,
-    provenance keys) is read from the envelope schema (docs/import-contract.schema.json).
+    provenance keys) is read from the envelope schema (tools/hub-export/import-contract.schema.json).
   * subject / class_level / unit are PARSED from the item ids (the durable identity):
         qid          QP-{SUBJ}-C{n}-U{u}[-L{l}]-Q{nn}
         stimulus_id  STIM-{SUBJ}-C{n}-U{u}[-L{l}]-{nn}
@@ -37,7 +37,7 @@ plans). The bank's companion .md / register .tsv are human read-views and are NO
 Usage:
   python build_question_envelopes.py --json <bank.json>
       --curation-tag {KEEP_AS_IS|NEEDS_REPLACEMENT|FLEXIBLE}
-      [--envelope-schema <path>]   (default: ../../docs/import-contract.schema.json)
+      [--envelope-schema <path>]   (default: the sibling import-contract.schema.json)
       [--author NAME] [--source-file NAME] [--unit-title TITLE] [--out PATH]
 
 Exit 0 = a JSON ARRAY of envelopes written to --out or stdout (UTF-8; stimuli first, then
@@ -56,7 +56,10 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_ENV_SCHEMA = os.path.normpath(os.path.join(HERE, "..", "..", "docs", "import-contract.schema.json"))
+# TOOLS-CR-020 (Principal ruling 2026-08-20, option (a)): the schema lives BESIDE the scripts
+# that read it. The old default named `docs/`, a directory this repo has never had — verified
+# by `find`, which returns exactly one `import-contract.schema.json`, at `tools/hub-export/`.
+DEFAULT_ENV_SCHEMA = os.path.normpath(os.path.join(HERE, "import-contract.schema.json"))
 
 # Identity parsers (the qid/stimulus_id schemes the LOCKED payloads pin down).
 QID_RE = re.compile(r"^QP-([A-Z]+)-C([1-5])-U(\d+)(?:-L\d+)?-Q\d{2,}$")

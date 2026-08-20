@@ -6,7 +6,7 @@ never hand-write one).
 
 The wrap is DERIVED FROM THE LIVE CONTRACTS, not hardcoded:
   * envelope STRUCTURE (envelope_version const, required fields, the provenance/address key
-    sets) is read from the envelope schema (docs/import-contract.schema.json).
+    sets) is read from the envelope schema (tools/hub-export/import-contract.schema.json).
   * the plan->envelope FIELD CORRESPONDENCES are exactly the indexed copies the gate
     reconciles in validate_import.py `consistency()` (the authority):
         doc_type     <- payload.plan_type        (plan branch requires plan_type == doc_type)
@@ -28,7 +28,7 @@ is rejected. This script enforces it on the (--json, --md) pair it is given.
 
 Usage:
   python build_envelope.py --json <plan.json> --md <plan.md>
-      [--envelope-schema <path>]   (default: ../../docs/import-contract.schema.json)
+      [--envelope-schema <path>]   (default: the sibling import-contract.schema.json)
       [--author NAME] [--authored-at ISO8601] [--source-file NAME] [--out PATH]
 
 Exit 0 = envelope written to --out or stdout (UTF-8). Exit 2 = refused (orphan / not a plan /
@@ -46,7 +46,10 @@ except Exception:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_ENV_SCHEMA = os.path.normpath(os.path.join(HERE, "..", "..", "docs", "import-contract.schema.json"))
+# TOOLS-CR-020 (Principal ruling 2026-08-20, option (a)): the schema lives BESIDE the scripts
+# that read it. The old default named `docs/`, a directory this repo has never had — verified
+# by `find`, which returns exactly one `import-contract.schema.json`, at `tools/hub-export/`.
+DEFAULT_ENV_SCHEMA = os.path.normpath(os.path.join(HERE, "import-contract.schema.json"))
 
 
 def die(msg, code=2):
