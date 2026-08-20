@@ -35,6 +35,7 @@ trigger the "promote me" warn on a VENDORED-UNPROVEN row.
 | tools/audits/bangla_script_check.py | REQUIRED |
 | tools/audits/grid_count_check.py | REQUIRED |
 | tools/audits/ledger_check.py | REQUIRED |
+| tools/audits/state_check.py | REQUIRED |
 | tools/audits/int_id_check.py | REQUIRED |
 | tools/audits/slot_register_check.py | REQUIRED |
 | tools/hub-export/validate_import.py | REQUIRED |
@@ -53,6 +54,7 @@ trigger the "promote me" warn on a VENDORED-UNPROVEN row.
 | tools/images/crop_edges.py | REQUIRED |
 | tools/images/pick_placements.py | VENDORED-UNPROVEN |
 | tools/run_all.py | REQUIRED |
+| tools/subject_search.py | REQUIRED |
 ## DEFERRED rows — carrying their reason and their trigger
 
 A `DEFERRED` row is silent to the gate by design, so the row itself has to say **why** it is
