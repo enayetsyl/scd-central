@@ -24,7 +24,7 @@
     },
     "tools/CORRECTIONS.md": {
       "prefix": "TOOLS-CR",
-      "value": "027"
+      "value": "028"
     },
     "workstreams/class-tests/CORRECTIONS.md": {
       "prefix": "CR",
@@ -32,7 +32,7 @@
     },
     "workstreams/question-banks/CORRECTIONS.md": {
       "prefix": "QB-CR",
-      "value": "021"
+      "value": "022"
     },
     "workstreams/question-banks/DECISIONS.md": {
       "prefix": "QB-D",
