@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q44",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "১৯৮৩ সালে শিক্ষার অধিকার রক্ষা করতে গিয়ে কারা শহিদ হন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "সালাম ও রফিক",
+        "is_correct": false,
+        "why_wrong": "তাঁরা বায়ান্নর ভাষাশহিদ।"
+      },
+      {
+        "option_id": "খ",
+        "text": "সেলিম-দেলোয়ারসহ অনেকে",
+        "is_correct": true
+      },
+      {
+        "option_id": "গ",
+        "text": "মিলন ও জেহাদ",
+        "is_correct": false,
+        "why_wrong": "তাঁরা নিহত হন ১৯৯০ সালে।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "আসাদ ও মতিয়ুর",
+        "is_correct": false,
+        "why_wrong": "তাঁরা শহিদ হন ১৯৬৯-এর গণ-অভ্যুত্থানে।"
+      }
+    ]
+  }
+}

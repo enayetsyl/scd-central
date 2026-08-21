@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q36",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "বাংলাদেশ স্বাধীন হওয়ার আগে পাকিস্তানের শাসক ছিলেন⸺",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "ইয়াহিয়া খান",
+        "is_correct": false,
+        "why_wrong": "পাঠে এই নাম নেই।"
+      },
+      {
+        "option_id": "খ",
+        "text": "বেনজির ভুট্টো",
+        "is_correct": false,
+        "why_wrong": "পাঠে এই নাম নেই।"
+      },
+      {
+        "option_id": "গ",
+        "text": "আইয়ুব খান",
+        "is_correct": true
+      },
+      {
+        "option_id": "ঘ",
+        "text": "খাজা নাজিমুদ্দিন",
+        "is_correct": false,
+        "why_wrong": "পাঠে এই নাম নেই।"
+      }
+    ]
+  }
+}

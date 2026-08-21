@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q43",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "নিচের কোন নামটি বায়ান্নর ভাষাশহিদদের তালিকায় আছে?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "বরকত",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "আসাদ",
+        "is_correct": false,
+        "why_wrong": "আসাদ ১৯৬৯-এর গণ-অভ্যুত্থানের ছাত্রনেতা।"
+      },
+      {
+        "option_id": "গ",
+        "text": "জেহাদ",
+        "is_correct": false,
+        "why_wrong": "জেহাদ নিহত হন ১৯৯০ সালে।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "ওয়াসিম আকরাম",
+        "is_correct": false,
+        "why_wrong": "ওয়াসিম আকরাম শহিদ হন ২০২৪ সালে, চট্টগ্রামে।"
+      }
+    ]
+  }
+}

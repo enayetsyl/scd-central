@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q46",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "অধ্যাপক শামসুজ্জোহা কোথায় নিহত হন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "ঢাকা বিশ্ববিদ্যালয়ে",
+        "is_correct": false,
+        "why_wrong": "পাঠে ঢাকা বিশ্ববিদ্যালয়ের কথা নেই।"
+      },
+      {
+        "option_id": "খ",
+        "text": "রাজশাহী বিশ্ববিদ্যালয়ে",
+        "is_correct": true
+      },
+      {
+        "option_id": "গ",
+        "text": "চট্টগ্রামে",
+        "is_correct": false,
+        "why_wrong": "চট্টগ্রামে শহিদ হন ওয়াসিম আকরাম।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "উত্তরায়",
+        "is_correct": false,
+        "why_wrong": "উত্তরায় নিহত হন মীর মাহফুজুর রহমান মুগ্ধ।"
+      }
+    ]
+  }
+}

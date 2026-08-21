@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q40",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "শহিদ মিনার কাদের স্মরণে তৈরি করা হয়েছে?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "ভাষাশহিদদের",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "মুক্তিযোদ্ধাদের",
+        "is_correct": false,
+        "why_wrong": "পাঠ অনুযায়ী শহিদ মিনার ভাষাশহিদদের স্মরণে তৈরি।"
+      },
+      {
+        "option_id": "গ",
+        "text": "ছাত্রনেতা আসাদের",
+        "is_correct": false,
+        "why_wrong": "আসাদের স্মরণে ঢাকায় নির্মিত হয়েছে আসাদ গেট।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "তিতুমীরের",
+        "is_correct": false,
+        "why_wrong": "পাঠে তিতুমীরের স্মরণে কোনো স্থাপনার কথা নেই।"
+      }
+    ]
+  }
+}

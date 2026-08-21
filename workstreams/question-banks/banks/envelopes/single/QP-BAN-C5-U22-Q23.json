@@ -1,0 +1,46 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q23",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "তিতুমীর যুদ্ধ করেছিলেন এ দেশের ______ বাঁচাতে।",
+    "question_type": "fill_blank",
+    "paper_role": "short",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "blanks": [
+      {
+        "blank_no": 1,
+        "accepted": [
+          "কৃষকদের"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-01",
+    "bloom_level": "Apply",
+    "difficulty": "hard",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q86",
+    "topic_tag": "TOP-BAN-C5-01",
+    "ref19_topic_id": "BAN-PARTSPEECH",
+    "question_text": "\"দুই হাত প্রসারিত করে তিনি পুলিশের সামনে দাঁড়ান।\" — এই বাক্যের 'তিনি' ও 'দাঁড়ান' শব্দ দুটির পদ নির্ণয় করো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Apply",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "answer_key": {
+      "accepted": [
+        "তিনি — সর্বনাম; দাঁড়ান — ক্রিয়া"
+      ],
+      "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ২২ থেকেই নেওয়া। এই প্রশ্নের উত্তর নির্দিষ্ট — উত্তরকুঞ্জিতে দেওয়া রূপগুলোই গ্রহণযোগ্য, কাছাকাছি অর্থের অন্য উত্তর নয়।"
+    }
+  }
+}

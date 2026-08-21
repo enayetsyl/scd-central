@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q47",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "মুক্তিযুদ্ধের সময় এ দেশের নাম কী ছিল?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "বাংলাদেশ",
+        "is_correct": false,
+        "why_wrong": "১৯৭১ সালের মুক্তিযুদ্ধের মধ্য দিয়েই বাংলাদেশ স্বাধীন হয়।"
+      },
+      {
+        "option_id": "খ",
+        "text": "পশ্চিম পাকিস্তান",
+        "is_correct": false,
+        "why_wrong": "পশ্চিম পাকিস্তান ছিল শাসকগোষ্ঠীর অঞ্চল।"
+      },
+      {
+        "option_id": "গ",
+        "text": "পূর্ব পাকিস্তান",
+        "is_correct": true
+      },
+      {
+        "option_id": "ঘ",
+        "text": "পূর্ব বাংলা",
+        "is_correct": false,
+        "why_wrong": "পাঠে এই নাম লেখা নেই।"
+      }
+    ]
+  }
+}

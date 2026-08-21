@@ -1,0 +1,62 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q72",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "১৯৬৯ সালের গণ-অভ্যুত্থান সম্পর্কে যা জানো তা লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Analyze",
+    "difficulty": "hard",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "content",
+          "criterion": "আইয়ুব খানের শাসন, অভ্যুত্থানের কারণ, এবং আসাদ · মতিয়ুর · আনোয়ারা বেগম · জহুরুল হক · শামসুজ্জোহা — পাঠে নাম-ধরে লেখা শহিদদের কথা এসেছে কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "অভ্যুত্থানের কারণ ও অন্তত তিনজন শহিদের কথা পাঠ অনুযায়ী নিজের ভাষায় গুছিয়ে লেখা হয়েছে।",
+            "আংশিক": "কেবল সাল বা একটি নাম এসেছে; কারণ বা ঘটনাক্রম আসেনি।"
+          }
+        },
+        {
+          "role": "islamic_alignment",
+          "criterion": "শহিদদের ত্যাগ শ্রদ্ধার সঙ্গে বর্ণিত হয়েছে কি না, কোনো ব্যক্তিকে অতিমানবীয় করে তোলা হয়নি কি না, এবং প্রতিহিংসা বা ঘৃণার ভাষা আসেনি কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "ত্যাগের কথা শ্রদ্ধার সঙ্গে ও সংযত ভাষায় লেখা হয়েছে; কারও প্রতি ঘৃণা বা প্রতিহিংসার ভাষা নেই।",
+            "আংশিক": "ভাষা অসংযত বা প্রতিহিংসামূলক; অথবা কোনো ব্যক্তিকে অতিমানবীয় করে উপস্থাপন করা হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

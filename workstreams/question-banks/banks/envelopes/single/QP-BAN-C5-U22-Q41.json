@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q41",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "তিতুমীর কাদের রক্ষা করতে জীবন দিয়েছিলেন?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "easy",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "এ দেশের কৃষকদের",
+        "is_correct": true
+      },
+      {
+        "option_id": "খ",
+        "text": "এ দেশের ছাত্রদের",
+        "is_correct": false,
+        "why_wrong": "ছাত্রদের বাঁচাতে গিয়ে নিহত হন অধ্যাপক শামসুজ্জোহা।"
+      },
+      {
+        "option_id": "গ",
+        "text": "এ দেশের শ্রমিকদের",
+        "is_correct": false,
+        "why_wrong": "পাঠে তিতুমীরের সঙ্গে শ্রমিকদের কথা বলা হয়নি।"
+      },
+      {
+        "option_id": "ঘ",
+        "text": "এ দেশের সৈনিকদের",
+        "is_correct": false,
+        "why_wrong": "পাঠে এমন কথা নেই।"
+      }
+    ]
+  }
+}

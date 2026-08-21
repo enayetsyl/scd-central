@@ -1,0 +1,63 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "paper_role": "mcq"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q45",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "সার্জেন্ট জহুরুল হককে কোথায় আটক রেখে হত্যা করা হয়?",
+    "question_type": "mcq",
+    "paper_role": "mcq",
+    "bloom_level": "Remember",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "options": [
+      {
+        "option_id": "ক",
+        "text": "রাজশাহী বিশ্ববিদ্যালয়ে",
+        "is_correct": false,
+        "why_wrong": "সেখানে নিহত হন অধ্যাপক শামসুজ্জোহা।"
+      },
+      {
+        "option_id": "খ",
+        "text": "ঢাকার রাস্তায়",
+        "is_correct": false,
+        "why_wrong": "রাস্তায় গুলি করে হত্যা করা হয় মতিয়ুরকে।"
+      },
+      {
+        "option_id": "গ",
+        "text": "ক্যান্টনমেন্টের মধ্যে",
+        "is_correct": true
+      },
+      {
+        "option_id": "ঘ",
+        "text": "রংপুরে",
+        "is_correct": false,
+        "why_wrong": "রংপুরে শহিদ হন আবু সাঈদ।"
+      }
+    ]
+  }
+}

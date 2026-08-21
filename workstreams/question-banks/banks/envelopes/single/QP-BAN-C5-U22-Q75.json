@@ -1,0 +1,62 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-07",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "paper_role": "structured"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q75",
+    "topic_tag": "TOP-BAN-C5-07",
+    "ref19_topic_id": "BAN-INFOTEXT",
+    "question_text": "১৯৭১ সালের মুক্তিযুদ্ধ সম্পর্কে পাঁচটি বাক্য লেখো।",
+    "question_type": "descriptive",
+    "paper_role": "structured",
+    "bloom_level": "Understand",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 5,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "rubric": {
+      "bands": [
+        "সম্পূর্ণ",
+        "আংশিক"
+      ],
+      "criteria": [
+        {
+          "role": "content",
+          "criterion": "সাল, যুদ্ধের উদ্দেশ্য, তৎকালীন দেশের নাম, শাসকগোষ্ঠীর আচরণ ও মুক্তিযোদ্ধাদের অংশগ্রহণ — পাঠের তথ্য অনুযায়ী পাঁচটি আলাদা বাক্য হয়েছে কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "পাঁচটি শুদ্ধ ও আলাদা বাক্য লেখা হয়েছে, প্রতিটি পাঠের তথ্যভিত্তিক।",
+            "আংশিক": "পাঁচটির কম বাক্য, বা একই কথা ঘুরিয়ে লেখা হয়েছে।"
+          }
+        },
+        {
+          "role": "islamic_alignment",
+          "criterion": "শহিদদের ত্যাগ শ্রদ্ধার সঙ্গে বর্ণিত হয়েছে কি না, কোনো ব্যক্তিকে অতিমানবীয় করে তোলা হয়নি কি না, এবং প্রতিহিংসা বা ঘৃণার ভাষা আসেনি কি না",
+          "band_descriptors": {
+            "সম্পূর্ণ": "ত্যাগের কথা শ্রদ্ধার সঙ্গে ও সংযত ভাষায় লেখা হয়েছে; কারও প্রতি ঘৃণা বা প্রতিহিংসার ভাষা নেই।",
+            "আংশিক": "ভাষা অসংযত বা প্রতিহিংসামূলক; অথবা কোনো ব্যক্তিকে অতিমানবীয় করে উপস্থাপন করা হয়েছে।"
+          }
+        }
+      ]
+    }
+  }
+}

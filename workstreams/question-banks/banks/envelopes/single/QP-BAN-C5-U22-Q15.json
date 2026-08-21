@@ -1,0 +1,44 @@
+{
+  "envelope_version": "1.0",
+  "doc_type": "question",
+  "subject": "BAN",
+  "class_level": 5,
+  "address": {
+    "anchor_word": "Unit",
+    "number": 22,
+    "title": "পাঠ ২২ — আমরা তোমাদের ভুলব না"
+  },
+  "curation_tag": "FLEXIBLE",
+  "review_status": "draft",
+  "tags": {
+    "topic_tag": "TOP-BAN-C5-02",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "paper_role": "short"
+  },
+  "provenance": {
+    "source_project": "P04",
+    "author": "Principal",
+    "content_version": "1.0",
+    "source_filename": "C5_BAN_Source_22.md"
+  },
+  "payload": {
+    "qid": "QP-BAN-C5-U22-Q15",
+    "topic_tag": "TOP-BAN-C5-02",
+    "ref19_topic_id": "BAN-SENTENCE",
+    "question_text": "পাঠে আছে — \"তারপর গণ-অভ্যুত্থান ঘটে।\" এখানকার 'গণ-অভ্যুত্থান' শব্দটি দিয়ে তোমার নিজের একটি নতুন বাক্য লেখো।",
+    "question_type": "short_answer",
+    "paper_role": "short",
+    "bloom_level": "Apply",
+    "difficulty": "medium",
+    "tier": "tier1",
+    "marks": 1,
+    "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
+    "answer_key": {
+      "accepted": [
+        "অন্যায় শাসনের বিরুদ্ধে দেশে একটি গণ-অভ্যুত্থান হয়েছিল।"
+      ],
+      "model_note": "শিক্ষার্থীর নিজের যেকোনো শুদ্ধ বাক্য গ্রহণযোগ্য, যদি শব্দটি সঠিক অর্থে ব্যবহৃত হয় এবং বাক্যটি বিরামচিহ্নসহ সম্পূর্ণ হয়। নমুনা উত্তর দেওয়া হলো। এই প্রশ্ন সবসময় নিজের আলাদা প্রশ্ন — যুক্তবর্ণ বা কারচিহ্নের প্রশ্নের সঙ্গে জুড়ে দেওয়া যাবে না (BAN-S03-NOJOIN)।"
+    }
+  }
+}
