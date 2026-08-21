@@ -23,6 +23,7 @@ tagged, or fit for Class 5. That is REVIEW's work and no script substitutes for 
 (QB-CR-020: twelve findings in a bank that passed all 24 gates).
 """
 import collections
+import hashlib
 import itertools
 import json
 import re
@@ -365,6 +366,41 @@ def emit(header):
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(bank, f, ensure_ascii=False, indent=1)
     print("WROTE %s" % OUT_PATH)
+    raw = open(OUT_PATH, "rb").read()
+    print("  bytes  : %d" % len(raw))
+    print("  sha256 : %s" % hashlib.sha256(raw).hexdigest())
+    print("           ^ REVIEW needs both before it will read the file (LANE_PROMPTS v3).")
+    export_reminder(len(QS))
+
+
+def export_reminder(n):
+    """The bank is NOT finished when this script exits. BUILD_CONTRACT.md section 6, and the
+    reason paath 22 wave 2 was RETURNED by REVIEW: the three export artifacts are keyed by
+    qid, not by version, so the PREVIOUS wave's export stays on disk and stays wrong until it
+    is rebuilt. A wave that retires items also leaves orphans, because split_envelopes.py
+    writes and never deletes. Printed at emit because 'outside the script' is exactly how a
+    mandatory step gets skipped -- that contract section was written and skipped the same day."""
+    stem = OUT_PATH.replace("\\", "/").rsplit("/", 1)[-1][:-5]
+    print("")
+    print("=" * 78)
+    print("NOT FINISHED. The export is three tools outside this script and none has run.")
+    print("Rebuild it before gating, or ENVELOPE-SYNC fails and the push condition is unmet.")
+    print("")
+    print("  1. DELETE this bank's stale singles FIRST -- split_envelopes.py never deletes,")
+    print("     so any item this wave retired survives as an orphan. Delete BY PREFIX, never")
+    print("     the whole directory: single/ holds EVERY bank's envelopes, not just this one.")
+    print("       Remove-Item ...\\banks\\envelopes\\single\\%s-*.json" % QID_PREFIX)
+    print("")
+    print("  2. tools/hub-export/build_question_envelopes.py")
+    print("       --json <bank> --curation-tag FLEXIBLE --source-file %s" % EXTRACTION_PATH)
+    print("       --unit-title \"%s\" --out ...\\envelopes\\%s.envelopes.json" % (CHAPTER, stem))
+    print("  3. workstreams/question-banks/authoring/split_envelopes.py  <that .envelopes.json>")
+    print("  4. workstreams/question-banks/authoring/build_batch.py      <that .envelopes.json>")
+    print("")
+    print("  Each must report %d. Then gate. ENVELOPE-SYNC must name array AND single/ AND" % n)
+    print("  the wrapper -- if it names fewer, an artifact was not rebuilt and the run is")
+    print("  half blind. PowerShell, not cmd.exe: --unit-title is Bengali.")
+    print("=" * 78)
 
 
 # preflight(ADMISSIBLE, EXCLUSIONS)

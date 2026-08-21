@@ -3825,3 +3825,49 @@ needs `--envelope-schema` and `--question-schema` passed explicitly, the vendore
   connection being made. **And CD-186(d) re-ruled a question `CD-147` closed sixteen days earlier**
   — the next-free sweep proved the NUMBER was free and nothing checked whether the SUBJECT was
   already decided (CD-187(f)).
+
+## 2026-08-21 · question-banks (P04 · C5 BAN · U22 · BUILD + REVIEW loop) · Principal · chat
+- Did: **five pushes**, `9e7dda3` → `e0db0da` → `8a0e647` → `0f177dc` → `54e4702` → `e7e986f`.
+  Authored the পাঠ ২২ question bank and took it through **two full REVIEW rounds**, the first time
+  the BUILD→REVIEW→fix→REVIEW loop has run end to end. Also filed and built `TOOLS-CR-028`, filed
+  `QB-CR-022`, and committed `BUILD_CONTRACT.md` + `author_TEMPLATE.py` so the next chapter does not
+  relearn what this one cost.
+- Decisions logged: `TOOLS-CR-028` (`ENVELOPE-SYNC`'s in-sync line named `single/` on an array-only
+  export where the loop had skipped it — `TOOLS-CR-018`'s own defect one branch over; **BUILT and
+  seeded both directions in the same session**) · `QB-CR-022` (all 117 `source_index` anchors written
+  as citation labels rather than verbatim spans; 114 SOURCE-TRACE failures on the first run) ·
+  **five Principal rulings on REVIEW wave-1 findings** — `বিশেষণ` only for adverbs at C5 · printed
+  option spelling in feedback with the source variance declared · `why_wrong` chapter-bound but not
+  false · `S10` to draw a second admitted form · *retained* reaches the scaffold, not only the
+  sentence · **one on wave-2**: `ক্রিয়ার কাল` DROPPED rather than ruled (**`PENDING-P-043` raised**).
+- Gates run + result: `RUNALL_SENTINEL=CLEAN` on every push; the hook fired and allowed each. Two
+  runs came back red and both were the same kind of fault — **not the gate finding a subtle defect,
+  the gate finding an instruction that had been read and not followed.** (i) `RESULT: FAIL (114
+  failures)` on the first bank run: `g_source_trace` requires an anchor of ≥3 tokens present verbatim
+  in the extraction, stated in its own docstring, and `gates.py` was open throughout authoring with
+  four other functions in it read that session. (ii) `RUNALL_SENTINEL=FAIL` on REVIEW's own wave-2
+  run: the export chain was never rebuilt, against a `BUILD_CONTRACT.md` §6 that says *"Run all three
+  before gating"* — **written by this session that morning and skipped by it that afternoon.**
+- Open items / PENDING-P raised: **`PENDING-P-043`** — how many কাল does C5 teach, and is `BAN-S10 C5`
+  owed a `taught_set` the way `BAN-S11` is. Also owed on this chapter: teacher sign-off on the bank ·
+  the `SLOT_REGISTER` mapping for পাঠ ২২ · Hub import of the wrapper at digest `189f279ee5e8`.
+  `C5_BAN_Source_22.md` is still `NOT DONE` (SLOTS · DEPTH pending) and a finished bank now sits on
+  it — lane-wide, not chapter-local: twelve C5 BAN and twenty C5 ENG sources are PENDING together,
+  which reads as one missing declaration convention rather than 32 owed sign-offs. `TOOLS-CR-024`'s
+  recorded sweep of **1244 files** is unexplained against this session's **1046** by the same method;
+  what that number counted is unmeasured and is not disputed.
+- Method faults, recorded not corrected quietly: **four predicted numbers were wrong** — 99,824 bytes,
+  a `15 6` diff shape, a `29 seeded` line assumed stale that was computed, and **916 tracked files,
+  which reached a draft of `TOOLS-CR-028` as evidence before the Principal's check caught it.** All
+  four are the same shape: a number asserted before it was read, which is the fault the *print the
+  number before and after* rule exists to stop, and the rule this session broke most. The 916 was
+  `git ls-files` piped through an extension-anchored match, which silently drops the two
+  Bengali-named sources git quotes and octal-escapes — `TOOLS-CR-024`'s family, reappearing inside
+  the evidence of a row about a check that claims more than it performed.
+- What the loop bought: **REVIEW found 25 findings across two rounds in a bank that passed all 24
+  gates on every run** — three of them would have put wrong marks on real scripts (a synonym note on
+  ten antonym items, one grammatical judgement keyed two ways, a task that was not the task it
+  named). It also found that Bloom levels had been used as a distribution dial across five slots and
+  reported as if they described the items. **A green suite proves well-formedness, not truth**, which
+  `QB-CR-020` established and this session re-established from the other side: the bank was pushed
+  before review, wave 1 at `0f177dc`, and that wrong order is what made three waves necessary.
