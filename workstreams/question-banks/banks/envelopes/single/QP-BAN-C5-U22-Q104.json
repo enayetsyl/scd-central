@@ -12,8 +12,8 @@
   "review_status": "draft",
   "tags": {
     "topic_tag": "TOP-BAN-C5-01",
-    "bloom_level": "Apply",
-    "difficulty": "medium",
+    "bloom_level": "Understand",
+    "difficulty": "easy",
     "paper_role": "short"
   },
   "provenance": {
@@ -25,20 +25,19 @@
   "payload": {
     "qid": "QP-BAN-C5-U22-Q104",
     "topic_tag": "TOP-BAN-C5-01",
-    "ref19_topic_id": "BAN-JUKTOBARNA",
-    "question_text": "পাঠের 'গণতন্ত্র' শব্দে থাকা 'ন্ত' যুক্তবর্ণটি ভেঙে দেখাও এবং ওই যুক্তবর্ণ দিয়ে একটি নতুন শব্দ গঠন করো।",
+    "ref19_topic_id": "BAN-VOCAB",
+    "question_text": "'অন্যের ওপর হামলা' — এক কথায় প্রকাশ করো।",
     "question_type": "short_answer",
     "paper_role": "short",
-    "bloom_level": "Apply",
-    "difficulty": "medium",
+    "bloom_level": "Understand",
+    "difficulty": "easy",
     "tier": "tier1",
     "marks": 1,
     "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
     "answer_key": {
       "accepted": [
-        "ন্ত = ন + ত; নতুন শব্দ — শান্তি"
-      ],
-      "model_note": "এই উত্তরকুঞ্জি শিক্ষকের দেওয়া — বাংলা ভাষার সাধারণ তথ্য, পাঠে এর উত্তর দেওয়া নেই (CD-136)। উদ্দীপক পাঠ ২২ থেকেই নেওয়া। যুক্তবর্ণ ভাঙার অংশটি নির্দিষ্ট, এতে ছাড় নেই। নতুন শব্দ শিক্ষার্থীর নিজের যেকোনোটি গ্রহণযোগ্য, যদি তাতে ওই যুক্তবর্ণ থাকে। দুটি কাজই করতে হবে — শুধু ভাঙলে বা শুধু শব্দ গঠন করলে অর্ধেক কাজ (CD-138(b))।"
+        "আক্রমণ"
+      ]
     }
   }
 }

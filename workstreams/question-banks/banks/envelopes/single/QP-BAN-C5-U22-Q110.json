@@ -13,7 +13,7 @@
   "tags": {
     "topic_tag": "TOP-BAN-C5-01",
     "bloom_level": "Understand",
-    "difficulty": "easy",
+    "difficulty": "medium",
     "paper_role": "short"
   },
   "provenance": {
@@ -26,18 +26,19 @@
     "qid": "QP-BAN-C5-U22-Q110",
     "topic_tag": "TOP-BAN-C5-01",
     "ref19_topic_id": "BAN-VOCAB",
-    "question_text": "'কোনো দাবি আদায়ের জন্য একসাথে বিক্ষোভ করা' — এক কথায় প্রকাশ করো।",
+    "question_text": "'মুক্তিযুদ্ধে অস্ত্র হাতে নিয়ে যুদ্ধে অংশ নিয়েছেন যাঁরা' — এক কথায় প্রকাশ করো।",
     "question_type": "short_answer",
     "paper_role": "short",
     "bloom_level": "Understand",
-    "difficulty": "easy",
+    "difficulty": "medium",
     "tier": "tier1",
     "marks": 1,
     "chapter_ref": "পাঠ ২২ — আমরা তোমাদের ভুলব না",
     "answer_key": {
       "accepted": [
-        "আন্দোলন"
-      ]
+        "মুক্তিযোদ্ধা"
+      ],
+      "model_note": "পাঠ মুক্তিযোদ্ধাদের কাজ বর্ণনা করে — 'মুক্তিযোদ্ধারা অস্ত্র হাতে নিয়ে যুদ্ধে অংশ নেন।' — সংজ্ঞা দেয় না; উদ্দীপকটি সেই বর্ণনা থেকেই তৈরি (F-07)।"
     }
   }
 }

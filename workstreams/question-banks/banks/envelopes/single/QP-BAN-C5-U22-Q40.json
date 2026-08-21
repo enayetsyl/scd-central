@@ -12,7 +12,7 @@
   "review_status": "draft",
   "tags": {
     "topic_tag": "TOP-BAN-C5-07",
-    "bloom_level": "Understand",
+    "bloom_level": "Remember",
     "difficulty": "easy",
     "paper_role": "mcq"
   },
@@ -29,7 +29,7 @@
     "question_text": "শহিদ মিনার কাদের স্মরণে তৈরি করা হয়েছে?",
     "question_type": "mcq",
     "paper_role": "mcq",
-    "bloom_level": "Understand",
+    "bloom_level": "Remember",
     "difficulty": "easy",
     "tier": "tier1",
     "marks": 1,

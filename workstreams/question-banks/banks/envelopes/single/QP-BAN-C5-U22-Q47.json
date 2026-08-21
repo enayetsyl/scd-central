@@ -12,7 +12,7 @@
   "review_status": "draft",
   "tags": {
     "topic_tag": "TOP-BAN-C5-07",
-    "bloom_level": "Understand",
+    "bloom_level": "Remember",
     "difficulty": "medium",
     "paper_role": "mcq"
   },
@@ -29,7 +29,7 @@
     "question_text": "মুক্তিযুদ্ধের সময় এ দেশের নাম কী ছিল?",
     "question_type": "mcq",
     "paper_role": "mcq",
-    "bloom_level": "Understand",
+    "bloom_level": "Remember",
     "difficulty": "medium",
     "tier": "tier1",
     "marks": 1,
@@ -54,9 +54,9 @@
       },
       {
         "option_id": "ঘ",
-        "text": "পূর্ব বাংলা",
+        "text": "পশ্চিম বাংলা",
         "is_correct": false,
-        "why_wrong": "পাঠে এই নাম লেখা নেই।"
+        "why_wrong": "পাঠ বলছে তখন এ দেশের নাম ছিল পূর্ব পাকিস্তান।"
       }
     ]
   }

@@ -39,13 +39,13 @@
         "option_id": "ক",
         "text": "ইয়াহিয়া খান",
         "is_correct": false,
-        "why_wrong": "পাঠে এই নাম নেই।"
+        "why_wrong": "পাঠ অনুযায়ী উত্তর আইয়ুব খান।"
       },
       {
         "option_id": "খ",
         "text": "বেনজির ভুট্টো",
         "is_correct": false,
-        "why_wrong": "পাঠে এই নাম নেই।"
+        "why_wrong": "পাঠ অনুযায়ী উত্তর আইয়ুব খান।"
       },
       {
         "option_id": "গ",
@@ -56,7 +56,7 @@
         "option_id": "ঘ",
         "text": "খাজা নাজিমুদ্দিন",
         "is_correct": false,
-        "why_wrong": "পাঠে এই নাম নেই।"
+        "why_wrong": "পাঠ অনুযায়ী উত্তর আইয়ুব খান।"
       }
     ]
   }

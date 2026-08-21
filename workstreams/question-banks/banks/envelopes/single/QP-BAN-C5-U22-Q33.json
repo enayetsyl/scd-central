@@ -12,7 +12,7 @@
   "review_status": "draft",
   "tags": {
     "topic_tag": "TOP-BAN-C5-07",
-    "bloom_level": "Understand",
+    "bloom_level": "Remember",
     "difficulty": "medium",
     "paper_role": "short"
   },
@@ -29,7 +29,7 @@
     "question_text": "ঢাকার ______ নিহত হন শিক্ষার্থী মীর মাহফুজুর রহমান মুগ্ধ।",
     "question_type": "fill_blank",
     "paper_role": "short",
-    "bloom_level": "Understand",
+    "bloom_level": "Remember",
     "difficulty": "medium",
     "tier": "tier1",
     "marks": 1,

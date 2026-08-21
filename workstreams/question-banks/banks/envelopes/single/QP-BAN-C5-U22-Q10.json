@@ -12,7 +12,7 @@
   "review_status": "draft",
   "tags": {
     "topic_tag": "TOP-BAN-C5-01",
-    "bloom_level": "Remember",
+    "bloom_level": "Understand",
     "difficulty": "medium",
     "paper_role": "short"
   },
@@ -29,7 +29,7 @@
     "question_text": "\"দুঃশাসনের বিরুদ্ধে রংপুরে প্রতিবাদ করেন ছাত্রনেতা আবু সাঈদ।\" — 'দুঃশাসন' বলতে কী বোঝানো হয়েছে?",
     "question_type": "short_answer",
     "paper_role": "short",
-    "bloom_level": "Remember",
+    "bloom_level": "Understand",
     "difficulty": "medium",
     "tier": "tier1",
     "marks": 1,
