@@ -2009,11 +2009,26 @@ def g_envelope_sync(bank, ctx):
                           f"; a `.batch.json` IS present, at item_count "
                           f"{(batch.get('batch') or {}).get('item_count')}, which is itself odd"))
         else:
+            # TOOLS-CR-028. The artifact NAMES are built from what was ACTUALLY READ. This was
+            # a fixed string: `array and single/` printed whenever EITHER existed, so an
+            # array-only export -- the state every chapter passes through, because CD-177's
+            # chat lane authors before exporting -- reported single/ as verified while the
+            # directory was absent and the loop above had skipped it at `if not got: continue`.
+            # TOOLS-CR-018 reserved this sentence for a comparison that HELD, but closed only
+            # the ZERO-export branch. Same defect one branch over. Measured live on U22.
+            read = [lbl for lbl, got in (("array", arr), ("single/", sing)) if got]
+            unread = [lbl for lbl, got in (("array", arr), ("single/", sing)) if not got]
             rep.append(f"export in sync: {n_env} envelope(s) == {len(items)} bank item(s), "
-                       f"ids and payloads, array and single/"
+                       f"ids and payloads, " + " and ".join(read)
                        + (f", and the v1.1 batch wrapper at item_count "
                           f"{(batch.get('batch') or {}).get('item_count')}" if batch else "")
                        + f" (digest {bank_content_digest(list(items.values()))[:12]})")
+            if unread:
+                rep.append(f"NOT COMPARED: {' and '.join(unread)} does not exist beside this "
+                           f"bank, so it was never checked against its {len(items)} item(s). "
+                           f"REPORTED, not failed -- an unrun step is not drift "
+                           f"(SOURCE_POLICY 7.17). Run split_envelopes.py"
+                           + ("" if batch else " then build_batch.py"))
     return errs, rep
 
 
@@ -3640,6 +3655,36 @@ def qp_selftest():
              "TOOLS-CR-018 fix narrowed the sentence, it did not silence the gate"
              if ok_stillsync else f"in-sync case lost its line: errs={e5} rep={r5}"))
     ok = ok and ok_stillsync
+
+    # --- TOOLS-CR-028, BOTH DIRECTIONS. TOOLS-CR-018 closed the ZERO-export branch. The
+    # --- ARRAY-ONLY branch went on printing `array and single/` with no single/ on disk,
+    # --- because the artifact names were a fixed string rather than a reading of what was
+    # --- read. Measured live on C5_BAN_U22 before split_envelopes.py had been run -- twice,
+    # --- on two consecutive CLEAN runs, either of which could have been pushed. single/ is
+    # --- what validate_import.py reads, one envelope per file.
+    c6 = dict(ctx); c6["envelope_index"] = ({}, _qp_envelopes(), None, None)
+    e6, r6 = g_envelope_sync(good, c6)
+    ok_arronly = (not e6) and any("NOT COMPARED" in r and "single/" in r for r in r6) \
+        and not any("in sync" in r and "single/" in r for r in r6)
+    print(f"  {'PASS' if ok_arronly else 'FAIL'}  ENVELOPE-SYNC  "
+          + ("fires on: an ARRAY-ONLY export -- single/ is absent, so it is NAMED as NOT "
+             "COMPARED and is NOT claimed in the in-sync sentence. The state every chapter "
+             "passes through under CD-177 (TOOLS-CR-028)"
+             if ok_arronly else f"array-only case wrong: errs={e6} rep={r6}"))
+    ok = ok and ok_arronly
+
+    c7 = dict(ctx); c7["envelope_index"] = (_qp_envelopes(), _qp_envelopes(), _qp_batch(), None)
+    e7, r7 = g_envelope_sync(good, c7)
+    ok_bothnamed = (not e7) \
+        and any("in sync" in r and "array" in r and "single/" in r for r in r7) \
+        and not any("NOT COMPARED" in r for r in r7)
+    print(f"  {'PASS' if ok_bothnamed else 'FAIL'}  ENVELOPE-SYNC  "
+          + ("stays quiet on: a FULL export still names array AND single/ AND the wrapper -- "
+             "the fix narrowed the sentence to what was read, it did not stop it naming a "
+             "real comparison. Without this half the fix trades a false green for a gate "
+             "that says nothing on the healthy case (TOOLS-CR-028)"
+             if ok_bothnamed else f"full-export case wrong: errs={e7} rep={r7}"))
+    ok = ok and ok_bothnamed
 
     # --- CD-138(b): THE MARKER-EDIT SEED. A gate whose verdict moves when a marker string is
     # --- edited is non-conformant. Here the whole of the register's PROSE — the fields that
